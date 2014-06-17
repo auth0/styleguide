@@ -1,0 +1,39 @@
+{
+  "name": "styleguide",
+  "version": "0.2.8",
+  "description": "Auth0 Styleguide component.",
+  "dependencies": {
+    "pose/opentip": "*"
+  },
+  "images": [
+    "css/budicon/fonts/budicon-font.eot",
+    "css/budicon/fonts/budicon-font.ttf",
+    "css/budicon/fonts/budicon-font.woff",
+    "css/budicon/fonts/budicon-font.svg",
+    "img/favicon.png",
+    "img/logo.svg",
+    "img/badge.png",
+    "img/badge.ai",
+    "img/logo-blue.ai",
+    "img/logo-grey.ai",
+    "img/logo-blue-horizontal.ai",
+    "img/logo-blue-horizontal.png",
+    "img/logo-blue-horizontal.ai",
+    "img/logo-blue-horizontal.svg",
+    "img/logo-grey-horizontal.ai",
+    "img/logo-grey-horizontal.png",
+    "img/logo-grey-horizontal.ai",
+    "img/logo-grey-horizontal.svg",
+    "img/logo-blue.png",
+    "img/logo-grey.png",
+    "img/logo.png"
+  ],
+  "styles": [
+    "css/index.css"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "main": "./index.js",
+  "license": "MIT"
+}

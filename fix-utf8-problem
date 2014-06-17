@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var filePath = __dirname + '/css/index.css';
+
+var css = fs.readFileSync(filePath)
+            .toString()
+            .replace(/\\(\w*)(\W)/ig, function (match, p1, p2) {
+              if (!p1 || p1 === '"' || p1 === '\\') return p1;
+              var utf_char = String.fromCharCode(parseInt(p1, 16));
+              return utf_char + p2;
+            });
+
+fs.writeFileSync(filePath, css);

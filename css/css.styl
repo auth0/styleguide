@@ -1,0 +1,141 @@
+/*==========  Typography  ==========*/
+
+body 
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-family: "proxima-nova", "Helvetica Neue", sans-serif;
+	color: #4d4d4d;
+
+h1,h2,h3
+	font-weight: 100;
+
+
+h4,h5,h6
+	font-weight: bold
+
+h1,h2,h3,h4,h5,h6
+	font-family: "proxima-nova", "Helvetica Neue", sans-serif;
+	color: black;
+	a
+		color: black;
+
+
+h5.styled
+	border-bottom: 1px solid #333;
+	text-transform: uppercase
+	padding-bottom: 10px;
+	letter-spacing: 2px;
+	font-size: 13px;
+
+p 
+	line-height: 24px;
+
+a
+	color: darken(color_blue_light, 40%);
+
+	&:focus
+		outline: 0;
+
+	&:hover
+		text-decoration: none
+		color: color_blue_light
+
+pre
+	border: 0;
+
+h1,h2,h3,h4,h5, p, li, pre
+	margin: 20px 0;
+
+h1:first-child
+	margin-top: 0;
+
+nav
+	ul 
+		margin: 0;
+		li 
+			padding: 0;
+			margin: 0;
+
+/*==========  Buttons  ==========*/
+.btn, a.btn
+	-webkit-transition: background-color 0.2s ease;
+	-moz-transition: background-color 0.2s ease;
+	-ms-transition: background-color 0.2s ease;
+	-o-transition: background-color 0.2s ease;
+	transition: background-color 0.2s ease;
+	text-transform: uppercase
+	font-size: 16px;
+	letter-spacing: 2px;
+	border: 0;
+	font-weight: bold
+	border: 1px solid color_grey;
+	background: none;
+
+	&:hover 
+		background-color: color_grey;
+
+	&.btn-none
+		border: 0;
+		text-transform: none
+		letter-spacing: 0;
+		padding-left: 20px;
+		padding-right: 20px;
+
+	&.btn-sm
+		font-size: 12px;
+		line-height: 12px;
+		padding: 10px 14px;
+
+	&.btn-lg
+		line-height: 30px;
+		padding-left: 32px;
+		padding-right: 30px;
+		font-size: 15px;
+
+	&.btn-success
+		background-color: color_red;
+		color: #fff;
+		border: 0;
+		&:hover
+			background-color: darken(color_red, 30%);
+			color: #fff
+
+	&.btn-default
+		background: white;
+		border-color: color_grey;
+		&:hover
+			background: color_grey;
+
+
+	&.btn-primary 
+		background-color: color_blue_light;
+		border: 0;
+		&:hover 
+			background-color: darken(color_blue_light, 30%);
+
+
+	&:active
+		box-shadow: none;
+
+
+.bg-primary, .bg-success, .bg-danger, .bg-info, .bg-warning
+	font-weight: bold
+	color: white;
+	border-radius: 3px;
+	padding: 10px 14px;
+
+.bg-primary
+	background: color_blue;
+
+.bg-success
+	background: color_green;
+
+.bg-warning
+	background: color_yellow;
+
+.bg-info 
+	background-color: color_blue_light;
+
+.bg-danger
+	background: color_red_alt;
+

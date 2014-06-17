@@ -1,0 +1,83 @@
+body {
+  padding-bottom: 200px;
+  font-family: "proxima-nova";
+}
+hr {
+  margin-bottom: 100px;
+  opacity: 0;
+}
+.text-content .container {
+  max-width: 100%;
+}
+.logo-branding {
+  text-align: center;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background-image: url("../img/transparent.png");
+}
+.logo-branding h5 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+  margin-top: 0;
+}
+.logo-branding img {
+  max-width: 100%;
+  display: block;
+  max-height: 140px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.logo-branding.logo-dark {
+  background-image: url("../img/transparent-dark.png");
+}
+.logo-branding a {
+  font-weight: bold;
+  border: 1px solid #44c7f4;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #44c7f4;
+}
+.logo-branding a:hover {
+  color: #fff;
+  background: #44c7f4;
+}
+.color {
+  background: #f00;
+  border-radius: 3px;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  padding-top: 100px;
+}
+.color span {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+}
+.color strong {
+  display: block;
+  text-transform: uppercase;
+}
+.color.color-blue {
+  background: #16214d;
+}
+.color.color-blue-light {
+  background: #44c7f4;
+}
+.color.color-red {
+  background: #eb5424;
+}
+.color.color-grey {
+  background: #d0d2d3;
+  color: #333;
+}
+.text-content .box {
+  background: #f1f1f1;
+  padding: 20px;
+}

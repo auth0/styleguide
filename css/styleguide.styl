@@ -1,0 +1,94 @@
+@import 'vars.styl';
+
+body 
+	padding-bottom: 200px;
+	font-family: "proxima-nova";
+
+hr
+	margin-bottom: 100px;
+	opacity: 0;
+
+.text-content
+	.container
+		max-width: 100%;
+
+.logo-branding
+	text-align: center
+	border: 1px solid #eee;
+	padding: 20px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	background-image: url('../img/transparent.png')
+
+	h5 
+		text-transform: uppercase
+		letter-spacing: 1px;
+		color: #999;
+		margin-top: 0;
+
+	img 
+		max-width: 100%;
+		display: block
+		max-height: 140px;
+		margin: auto;
+		margin-bottom: 20px;
+
+
+	&.logo-dark
+		background-image: url('../img/transparent-dark.png')
+
+	a 
+		font-weight: bold
+		border: 1px solid color_blue_light;
+		padding: 4px 10px;
+		text-transform: uppercase
+		border-radius: 3px;
+		font-size: 11px;
+		letter-spacing: 1px;
+		color: color_blue_light;
+		&:hover 
+			color: white
+			background: color_blue_light;
+
+
+
+
+.color
+	// height: 200px;
+	background: red;
+	border-radius: 3px;
+	color: white;
+	padding: 20px;
+	margin-bottom: 20px;
+	padding-top: 100px;
+
+	span 
+		font-size: 16px;
+		display: block
+		margin-bottom: 10px;
+
+	strong 
+		display: block
+		text-transform: uppercase
+
+	&.color-blue
+		background: color_blue;
+
+	&.color-blue-light
+		background: color_blue_light;
+
+	&.color-red
+		background: color_red;
+
+	&.color-grey
+		background: color_grey;
+		color: #333;
+
+
+.text-content .box 
+	background: #f1f1f1;
+	padding: 20px;
+
+
+
+

@@ -1,6 +1,6 @@
 {
   "name": "styleguide",
-  "version": "0.2.9",
+  "version": "0.3.1",
   "description": "Auth0 Styleguide component.",
   "dependencies": {
     "pose/opentip": "*"
@@ -34,7 +34,9 @@
   "scripts": [
     "index.js"
   ],
-  "remotes": ["https://raw.githubusercontent.com"],
+  "remotes": [
+    "https://raw.githubusercontent.com"
+  ],
   "main": "./index.js",
   "license": "MIT"
 }

@@ -217,7 +217,6 @@ a.btn:active {
 .quotes {
   text-align: center;
   padding: 20px 0;
-  position: relative;
 }
 .quotes blockquote {
   border: 0;
@@ -228,7 +227,6 @@ a.btn:active {
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
-  position: absolute;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -239,7 +237,7 @@ a.btn:active {
 .quotes blockquote p {
   font-size: 24px;
   font-weight: 100;
-  line-height: 40px;
+  line-height: 140%;
   font-style: italic;
   color: #333;
 }

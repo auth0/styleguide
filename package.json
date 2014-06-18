@@ -3,5 +3,9 @@
   "version": "0.2.9",
   "engines": {
     "node": "0.10.x"
+  },
+  "dependencies": {
+    "component": "~0.17.0",
+    "component-builder": "~0.9.0"
   }
 }

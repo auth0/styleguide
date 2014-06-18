@@ -1,1 +1,1 @@
-web: ./node_modules/.bin/component-install && ./node_modules/.bin/component-build
+web: ./node_modules/.bin/serve -p $PORT

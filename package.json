@@ -4,8 +4,12 @@
   "engines": {
     "node": "0.10.x"
   },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/component-install && ./node_modules/.bin/component-build"
+  },
   "dependencies": {
     "component": "~0.17.0",
-    "component-builder": "~0.9.0"
+    "component-builder": "~0.9.0",
+    "serve": "~1.4.0"
   }
 }

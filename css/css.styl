@@ -16,8 +16,11 @@ h4,h5,h6
 h1,h2,h3,h4,h5,h6
 	font-family: "proxima-nova", "Helvetica Neue", sans-serif;
 	color: black;
-	a
-		color: black;
+	a 
+		color: darken(color_blue_light, 40%);
+		font-weight: 300;
+		&:hover 
+			color: darken(color_blue_light, 60%);
 
 
 h5.styled
@@ -38,7 +41,7 @@ a
 
 	&:hover
 		text-decoration: none
-		color: color_blue_light
+		color: darken(color_blue_light, 80%);
 
 pre
 	border: 0;

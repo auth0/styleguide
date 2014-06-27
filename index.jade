@@ -122,6 +122,10 @@ html
                   i
                   span Footer
 
+              li
+                a(href='#footer')
+                  i
+                  span Browser
 
               li
                 a(href='#breadcrumb')
@@ -143,9 +147,7 @@ html
 
           p In order to install auth0-styleguide, you can use Bower and then add this line:
 
-          pre.
-            &lt;link href=&quot;auth0-styleguide/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
-
+          pre  &lt;link href=&quot;auth0-styleguide/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
 
           hr 
 
@@ -395,6 +397,38 @@ html
                         a(href='mailto:support@auth0.com') Contact Us
                 .left.col-xs-2
                   a(href='/') Auth0 ©
+
+
+            h5.styled 
+              a(name="browser") Browser
+
+
+            .browser-window
+              .top
+                  .toolbar
+                    span.first
+                    span.second
+                    span.third
+                  .nav
+                    span.prev.active
+                      i.icon-budicon-463
+                    span.next
+                      i.icon-budicon-461
+                    span.set
+                      i.icon-budicon-715
+                    span.address
+                      input.address(type='text', value='auth0.com')
+                      i.icon-budicon-434
+                  .nav.right
+                    span.share
+                      i.icon-budicon-447
+                    span.tabs
+                      i.icon-budicon-433
+                  span.new
+                    span.plus.x
+                    span.plus.y
+                .inside(style="background-image: url(https://i.cloudup.com/y0we-xx0Er.png)")
+
 
 
             h5.styled 

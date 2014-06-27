@@ -51,19 +51,15 @@
   overflow:hidden;
   border:1px solid #C1C2C2;
 
-  .inside {
+  .browser-inside {
     overflow:hidden;
     padding:10px;
     background-position: top center;
     height: 400px;
     background-size: cover;
   }
-  .inside .blok {
-    width:32%;float:left;margin-right:1.5%;
-    height:50px;
-    background:#efefef;
-  }
-  .top {
+
+  .browser-top {
     padding:7px 0;
     position:relative;
     background: #f1f1f1;
@@ -81,17 +77,17 @@
     border-bottom:2px solid #BDBCC1;
   }
 
-  .top > div {
+  .browser-top > div {
     float:left;
   }
 
 
-  .toolbar {
+  .browser-toolbar {
     padding-left:12px;
     padding-top:6px;
   }
 
-  .toolbar > span {
+  .browser-toolbar > span {
     display:inline-block;
     float:left;
     width:12px;
@@ -104,24 +100,24 @@
 
   }
 
-  .toolbar span.first {
+  .browser-toolbar span.first {
     background:#FF5F4F;
   }
 
-  .toolbar span.second {
+  .browser-toolbar span.second {
     background:#F9C206;
   }
 
-  .toolbar span.third {
+  .browser-toolbar span.third {
     background:#19CC32;
   }
 
 
-  .nav {
+  .browser-nav {
     overflow:hidden;
   }
 
-  .nav > span {
+  .browser-nav > span {
     display:inline-block;
     float:left;
     background:#FBFBFB;
@@ -134,11 +130,11 @@
     color:#B4B4B4;
     border-bottom:1px solid #CECECE;
   }
-  .nav > span:hover {
+  .browser-nav > span:hover {
     background:#f2f2f2;
     color:#666;
   }
-  .nav > span i {
+  .browser-nav > span i {
       font-size:14px;
       line-height: 30px;
       display: inline-block
@@ -147,22 +143,20 @@
       text-align: center;
   }
 
-  .nav span.active {
+  .browser-nav span.active {
     color:#707070;
   }
 
-  .nav span.prev {
+  .browser-nav span.prev {
     margin-right:1px;
     margin-left:7px;
   }
 
-  .nav span.next {
+  .browser-nav span.next {
     margin-right:7px;
   }
 
-
-
-  .nav span.address {
+  .browser-nav span.address {
     width:400px;
     margin-left:75px;
     display:inline-block;
@@ -172,7 +166,8 @@
     position:relative;
     padding-top: 3px;
   }
-  .nav span.address > input {
+
+  .browser-nav span.address > input {
     font-size:12px;
     color:#505050;
     border:none;
@@ -182,17 +177,15 @@
     width:300px;
   }
 
-  .nav span.address > input:focus {
+  .browser-nav span.address > input:focus {
     outline:none;
   }
 
-  .nav span.address > input.class {
+  .browser-nav span.address > input.class {
     text-align:left;
   }
 
-
-
-  .nav span.address > i {
+  .browser-nav span.address > i {
     position:absolute;
     right:5px;
     top:7px;
@@ -200,22 +193,22 @@
     color:#010101;
   }
 
-  .nav.right {
+  .browser-nav.right {
     float:right !important;
     margin-right:35px;
   }
 
-  .nav span.share {
+  .browser-nav span.share {
     margin-right:7px;
   }
 
-  .nav span.tabs {
+  .browser-nav span.tabs {
     position:relative;
     width:26px;
     padding-left: 6px;
   }
 
-  .nav span.tabs span {
+  .browser-nav span.tabs span {
     height:7px;
     width:7px;
     border:1px solid #B4B4B4;
@@ -224,19 +217,19 @@
     background:#FBFBFB;
   }
 
-  .nav span.tabs span.front {
+  .browser-nav span.tabs span.front {
     top:8px;
     left:6px;
     z-index:6;
   }
 
-  .nav span.tabs span.behind {
+  .browser-nav span.tabs span.behind {
     top:6px;
     left:8px;
     z-index:5;
   }
 
-  .nav span.tabs:hover span {
+  .browser-nav span.tabs:hover span {
     border:1px solid #666;
   }
 

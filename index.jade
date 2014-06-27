@@ -10,6 +10,7 @@ html
     link(href='css/styleguide.css', rel='stylesheet')
     link(href='build/build.css', rel='stylesheet')
 
+    script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=none")
     script(type='text/javascript', src='//use.typekit.net/iws6ohy.js')
     script(type='text/javascript', src='build/build.js')
     script.
@@ -147,7 +148,7 @@ html
 
           p In order to install auth0-styleguide, you can use Bower and then add this line:
 
-          pre  &lt;link href=&quot;auth0-styleguide/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
+          pre.prettyprint  &lt;link href=&quot;auth0-styleguide/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
 
           hr 
 
@@ -495,7 +496,7 @@ html
 
           p In order to install javascript components, you can use Bower and then add this line:
 
-          pre.
+          pre.prettyprint.
             &lt;link href=&quot;auth0-styleguide/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
             &lt;script src=&quot;auth0-styleguide/index.js&quot;&gt; &lt;/script&gt;
 
@@ -505,15 +506,13 @@ html
             script.
               var auth0StyleGuide = require('styleguide');
           h6 As HTML:
-          pre
-            code.
-                &lt;div data-ot="The content" data-ot-delay="2" data-ot-hide-trigger="closeButton"&gt;Hover me&lt;/div&gt;
+          pre.prettyprint
+            &lt;div data-ot="The content" data-ot-delay="2" data-ot-hide-trigger="closeButton"&gt;Hover me&lt;/div&gt;
 
           h6 As Javascript:
-          pre
-            code.
-              var Opentip = require('styleguide').Opentip;
-              new Opentip("#my-trigger-element", "Optional content", "Optional title", { ...options... });
+          pre.prettyprint
+            var Opentip = require('styleguide').Opentip;
+            new Opentip("#my-trigger-element", "Optional content", "Optional title", { ...options... });
           p
             a(data-ot="You can put your <strong>custom</strong> HTML here", data-ot-title="Did you know?" data-ot-show-on="click") Click to open
 

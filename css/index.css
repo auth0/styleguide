@@ -3182,26 +3182,26 @@ header.site-header nav li .btn-dro i {
   display: inline-block;
   font-size: 10px;
 }
-body.dark-layout header.site-header {
+.dark-layout header.site-header {
   background: #000;
 }
-body.dark-layout header.site-header h1.navbar-brand a {
+.dark-layout header.site-header h1.navbar-brand a {
   background-image: url("/auth0-styleguide/img/logo-grey-horizontal.png");
 }
-body.dark-layout header.site-header a {
+.dark-layout header.site-header a {
   color: #999;
 }
-body.dark-layout header.site-header a:hover {
+.dark-layout header.site-header a:hover {
   color: #fff;
 }
-body.dark-layout header.site-header a.btn {
+.dark-layout header.site-header a.btn {
   border-color: #666;
 }
-body.dark-layout header.site-header a.btn:hover {
+.dark-layout header.site-header a.btn:hover {
   border-color: #fff;
   color: #000;
 }
-body.dark-layout .dropdown a {
+.dark-layout .dropdown a {
   color: #333;
 }
 @media screen and (max-width: 768px) {

@@ -2796,66 +2796,13 @@ a.btn:active {
 .bg-danger {
   background: #f00;
 }
-.glyphs.character-mapping {
-  margin: 0 0 20px 0;
-  padding: 20px 0 20px 30px;
-  color: rgba(0,0,0,0.5);
-  border: 1px solid #d8e0e5;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-.glyphs.character-mapping li {
-  margin: 0 30px 20px 0;
-  display: inline-block;
-  width: 90px;
-}
-.glyphs.character-mapping .icon {
-  margin: 10px 0 10px 15px;
-  padding: 15px;
-  position: relative;
-  width: 55px;
-  height: 55px;
-  color: #162a36 !important;
-  overflow: hidden;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  font-size: 32px;
-}
-.glyphs.character-mapping .icon svg {
-  fill: #000;
-}
-.glyphs.character-mapping input {
-  margin: 0;
-  padding: 5px 0;
-  line-height: 12px;
-  font-size: 12px;
-  display: block;
-  width: 100%;
-  border: 1px solid #d8e0e5;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  text-align: center;
-  outline: 0;
-}
-.glyphs.character-mapping input:focus {
-  border: 1px solid #fbde4a;
-  -webkit-box-shadow: inset 0 0 3px #fbde4a;
-  box-shadow: inset 0 0 3px #fbde4a;
-}
-.glyphs.character-mapping input:hover {
-  -webkit-box-shadow: inset 0 0 3px #fbde4a;
-  box-shadow: inset 0 0 3px #fbde4a;
-}
 .glyphs.css-mapping {
-  margin: 0 0 60px 0;
-  padding: 30px 0 20px 30px;
   color: rgba(0,0,0,0.5);
-  border: 1px solid #d8e0e5;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  padding: 0;
+  margin: 0;
 }
 .glyphs.css-mapping li {
-  margin: 0 30px 20px 0;
+  margin: 0 20px 20px 0;
   padding: 0;
   display: inline-block;
   overflow: hidden;
@@ -2878,7 +2825,7 @@ a.btn:active {
   line-height: 16px;
   font-size: 16px;
   display: block;
-  width: 150px;
+  width: 120px;
   height: 40px;
   border: 1px solid #d8e0e5;
   -webkit-border-radius: 5px;

@@ -9,11 +9,13 @@ html
     link(href='css/index.css', rel='stylesheet')
     link(href='css/styleguide.css', rel='stylesheet')
     link(href='build/build.css', rel='stylesheet')
+    link(rel="shortcut icon", href="img/favicon.png")
 
     script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=none")
     script(type='text/javascript', src='//use.typekit.net/iws6ohy.js')
     script(type='text/javascript', src='build/build.js')
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
     script.
       try{Typekit.load();}catch(e){}
 
@@ -28,34 +30,67 @@ html
     header.site-header
       nav.navbar.navbar-default(role='navigation')
         .container
-          
           .navbar-header
             button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
               span.sr-only Toggle navigation
               span.icon-bar
               span.icon-bar
               span.icon-bar
-          
-          h1.navbar-brand
-            a(href='https://auth0.com/')
-              img(src='https://auth0.com/auth0-styleguide/img/logo.png')
-              span Auth0
-          
+            h1.navbar-brand
+              a(href="/")
+                img(src="/auth0-styleguide/img/logo.png")
+                span Auth0
+
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
-            ul.nav.navbar-nav.navbar-left.hide
+            ul.nav.navbar-nav.navbar-left
               li.li-why
-                a(href='http://auth0.com/why-auth0') Why Auth0
+                a(href="/why-auth0") Why Auth0
               li.li-how
-                a(href='http://auth0.com/how-it-works') How It Works
+                a(href="/how-it-works") How It Works
+          
               li.li-pricing
-                a(href='http://auth0.com/pricing') Pricing
-            ul.nav.navbar-nav.navbar-right.hide
+                a(href="/pricing") Pricing
+
+
+            ul.nav.navbar-nav.navbar-right
+
+
+              li.dropdown
+                  span(role='button', data-toggle='dropdown', data-target='#').btn-dro More
+                    i.icon-budicon-460
+                  ul.dropdown-menu(role='menu', aria-labelledby='dLabel').animated
+
+                    li
+                      a(href="/lock") Lock
+
+                    li
+                      a(href="/opensource") Open Source    
+                    
+                    li.divider              
+
+                    li 
+
+                      a(href="/about") About
+
+
+
+                    li
+                      a(href="/customers") Customers
+
+                    li
+                      a(href="https://auth0.com/blog") Blog
+
+
               li.li-docs
-                a(href='http://auth0.com/docs') Documentation
+                a(href="https://docs.auth0.com") Docs
+
+
+
               li
-                a(href='http://blog.auth0.com') Blog
+                a.signin-button(href="javascript:login()").login Login
+
               li
-                a.signin-button.btn.btn-sm.signup(href='https://app.auth0.com') Open Dashboard
+                a.signin-button(href="javascript:signup()").btn.btn-sm.signup Sign Up
 
     .container
       .breadcrumb

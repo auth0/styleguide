@@ -13,23 +13,34 @@ html
     script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=none")
     script(type='text/javascript', src='//use.typekit.net/iws6ohy.js')
     script(type='text/javascript', src='build/build.js')
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
     script.
       try{Typekit.load();}catch(e){}
+
+
+    script.
+      $.getJSON( "component.json", function( data ) {
+        $("#styleguide-version").html(data.version);
+      });
+
 
   body
     header.site-header
       nav.navbar.navbar-default(role='navigation')
         .container
+          
           .navbar-header
             button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
               span.sr-only Toggle navigation
               span.icon-bar
               span.icon-bar
               span.icon-bar
+          
           h1.navbar-brand
             a(href='https://auth0.com/')
               img(src='https://auth0.com/auth0-styleguide/img/logo.png')
               span Auth0
+          
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-left.hide
               li.li-why
@@ -45,11 +56,13 @@ html
                 a(href='http://blog.auth0.com') Blog
               li
                 a.signin-button.btn.btn-sm.signup(href='https://app.auth0.com') Open Dashboard
+
     .container
       .breadcrumb
         ul.page-list
           li
-            a(href='https://github.com/auth0/styleguide', target='_blank') Styleguide v1.0
+            a(href='https://github.com/auth0/styleguide', target='_blank') Styleguide v
+              span#styleguide-version 
     
         ul.external-links
           li
@@ -127,11 +140,6 @@ html
                 a(href='#footer')
                   i
                   span Footer
-
-              li
-                a(href='#browser')
-                  i
-                  span Browser
 
               li
                 a(href='#breadcrumb')
@@ -411,36 +419,6 @@ html
                   a(href='/') Auth0 ©
 
 
-            h5.styled 
-              a(name="browser") Browser
-
-
-            .browser-window
-              .browser-top
-                .browser-toolbar
-                  span.first
-                  span.second
-                  span.third
-                .browser-nav
-                  span.prev.active
-                    i.icon-budicon-463
-                  span.next
-                    i.icon-budicon-461
-                  span.set
-                    i.icon-budicon-715
-                  span.address
-                    input.address(type='text', value='auth0.com')
-                    i.icon-budicon-434
-                .browser-nav.right
-                  span.share
-                    i.icon-budicon-447
-                  span.tabs
-                    i.icon-budicon-433
-                span.new
-                  span.plus.x
-                  span.plus.y
-              .browser-inside(style="background-image: url(https://i.cloudup.com/y0we-xx0Er.png)")
-
 
 
             h5.styled 
@@ -500,47 +478,6 @@ html
                 img(src="https://auth0.com/homepage/img/avatars/avatar-4.png")
                 img(src="https://auth0.com/homepage/img/avatars/avatar-5.jpg")
                 img(src="https://auth0.com/homepage/img/avatars/avatar-6.png")
-
-
-          a(name="js-components")
-            h1 Javascript Components
-
-          p In order to install javascript components, you can use Bower and then add this line:
-
-          pre.prettyprint.
-            &lt;link href=&quot;auth0-styleguide/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
-            &lt;script src=&quot;auth0-styleguide/index.js&quot;&gt; &lt;/script&gt;
-
-          h5.styled 
-            a(name="breadcrumb") Tooltip
-
-            script.
-              var auth0StyleGuide = require('styleguide');
-          h6 As HTML:
-          pre.prettyprint
-            &lt;div data-ot="The content" data-ot-delay="2" data-ot-hide-trigger="closeButton"&gt;Hover me&lt;/div&gt;
-
-          h6 As Javascript:
-          pre.prettyprint
-            var Opentip = require('styleguide').Opentip;
-            new Opentip("#my-trigger-element", "Optional content", "Optional title", { ...options... });
-          p
-            a(data-ot="You can put your <strong>custom</strong> HTML here", data-ot-title="Did you know?" data-ot-show-on="click") Click to open
-
-          p
-            a(data-ot="This tooltip uses the dark theme", data-ot-title="Paint it Black", data-ot-style="auth0-dark", data-ot-show-on="click") Click to open (dark)
-
-          p
-            a(data-ot="You can put your <strong>custom</strong> HTML here", data-ot-title="Did you know?", data-ot-hide-trigger="trigger") Hover to open
-
-          p
-            a(data-ot="This tooltip uses the dark theme", data-ot-title="Paint it Black", data-ot-style="auth0-dark", data-ot-hide-trigger="trigger") Hover to open (dark)
-
-          p
-            a(data-ot="You can put your <strong>custom</strong> HTML here", data-ot-title="Did you know?", data-ot-hide-trigger="") Hover but never closes!
-
-          p
-            a(data-ot="This tooltip uses the dark theme", data-ot-title="Paint it Black", data-ot-style="auth0-dark", data-ot-hide-trigger="") Hover but never closes! (dark)
 
 
      

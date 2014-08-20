@@ -2706,6 +2706,7 @@ a.btn {
   border: 1px solid #d0d2d3;
   padding-left: 15px;
   padding-right: 15px;
+  border-radius: 3px;
 }
 .btn.btn-none,
 a.btn.btn-none {
@@ -2881,6 +2882,72 @@ a.btn:active {
 }
 .breadcrumb ul.external-links li a:hover {
   opacity: 1;
+}
+.center-title-block {
+  text-align: center;
+  max-width: 680px;
+  padding: 0 20px;
+  margin: auto;
+  margin-bottom: 80px;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+.center-title-block h2 {
+  font-size: 34px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: block;
+}
+.center-title-block p {
+  font-size: 120%;
+  color: #798291;
+  line-height: 160%;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 20px;
+  color: rgba(0,0,0,0.5);
+}
+.center-title-block img {
+  margin-top: 17px;
+  height: 26px;
+}
+.center-title-block img.help-circle {
+  margin-top: -5px;
+}
+.big-tabs {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+  position: relative;
+  margin: 0;
+  margin-bottom: 40px;
+}
+.big-tabs li {
+  display: inline-block;
+  float: none;
+  font-weight: bold;
+  margin: 0;
+  border: 1px solid #0eb3ec;
+  margin-left: -1px;
+}
+.big-tabs li:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.big-tabs li:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.big-tabs li a {
+  color: #0eb3ec;
+  line-height: 32px;
+  display: inline-block;
+  padding: 0 30px;
+}
+.big-tabs li.active a {
+  background: #0eb3ec;
+  color: #fff;
 }
 .browser-window {
   border-radius: 4px;
@@ -3369,8 +3436,8 @@ footer.site-footer .col-md-11 {
 /* W3C */
 }
 .banner h1 {
-  font-size: 270%;
   color: #fff;
+  font-size: 34px;
 }
 .banner p {
   font-size: 120%;
@@ -3558,6 +3625,22 @@ footer.site-footer .col-md-11 {
 body {
   overflow-x: hidden;
 }
+.container {
+  max-width: 1016px;
+}
+.banner-container {
+  position: relative;
+}
+.grid {
+  background-image: linear-gradient(0deg, transparent 24%, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.05) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.05) 75%, rgba(255,255,255,0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.05) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.05) 75%, rgba(255,255,255,0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
 .banner-container {
   display: block;
   -webkit-animation-name: appear;
@@ -3584,6 +3667,9 @@ body {
 }
 .float-left {
   float: left;
+}
+.align-center {
+  text-align: center;
 }
 .container.spacing-content {
   padding-top: 80px;
@@ -3683,29 +3769,6 @@ span.icon-badge {
   background: url("/homepage/img/icon-checkmark.png") left 4px no-repeat;
   padding-left: 30px;
   list-style: none;
-}
-.center-title-block {
-  text-align: center;
-  max-width: 680px;
-  padding: 0 20px;
-  margin: auto;
-  margin-bottom: 80px;
-}
-.center-title-block h2 {
-  margin-bottom: 20px;
-  color: block;
-}
-.center-title-block p {
-  font-size: 120%;
-  color: #798291;
-  line-height: 160%;
-}
-.center-title-block img {
-  margin-top: 17px;
-  height: 26px;
-}
-.center-title-block img.help-circle {
-  margin-top: -5px;
 }
 .pln {
   color: #000;

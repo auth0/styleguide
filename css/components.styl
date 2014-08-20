@@ -34,6 +34,76 @@
             opacity: 1;
 
 
+/*==========  Center title block  ==========*/
+
+.center-title-block
+  text-align: center
+  max-width: 680px;
+  padding: 0 20px;
+  margin: auto;
+  margin-bottom: 80px;
+  max-width: 600px;
+  margin-bottom: 40px
+
+  h2
+    font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 0
+    color: block;
+  p
+    font-size: 120%;
+    color: #798291;
+    line-height: 160%;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 20px;
+    color: rgba(0,0,0,.5)
+
+  img
+    margin-top: 17px
+    height: 26px;
+
+    &.help-circle
+      margin-top: -5px
+
+
+
+
+/*==========  Big Tabs  ==========*/
+.big-tabs
+  text-transform: uppercase
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+  position: relative;
+  margin: 0;
+  margin-bottom: 40px;
+  li
+    display: inline-block
+    float: none;
+    font-weight: bold
+    margin: 0;
+    border: 1px solid darken(color_blue_light, 20%);
+    margin-left: -1px;
+
+    &:first-child
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    
+    &:last-child
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+
+    a
+      color: darken(color_blue_light, 20%);
+      line-height: 32px;
+      display: inline-block
+      padding: 0 30px;
+
+    &.active
+      a
+        background: darken(color_blue_light, 20%);
+        color: white;
 
 
 /*==========  Browser  ==========*/
@@ -555,9 +625,8 @@ footer.site-footer
   background: linear-gradient(120deg,  rgba(20,32,77,1) 0%,rgba(60,200,244,1) 100%); /* W3C */
 
   h1
-    font-size: 270%;
-    // margin-top: 0;
     color: white;
+    font-size: 34px;
   p
     font-size: 120%;
     max-width: 580px;
@@ -565,7 +634,6 @@ footer.site-footer
     margin-top: 20px;
     line-height: 170%;
     color: rgba(255,255,255,.8);
-
 
   i
     font-size: 50px;

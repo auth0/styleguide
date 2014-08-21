@@ -57,29 +57,29 @@ html
 
 
               li.dropdown
-                  span(role='button', data-toggle='dropdown', data-target='#').btn-dro More
-                    i.icon-budicon-460
-                  ul.dropdown-menu(role='menu', aria-labelledby='dLabel').animated
+                span(role='button', data-toggle='dropdown', data-target='#').btn-dro More
+                  i.icon-budicon-460
+                ul.dropdown-menu(role='menu', aria-labelledby='dLabel').animated
 
-                    li
-                      a(href="/lock") Lock
+                  li
+                    a(href="/lock") Lock
 
-                    li
-                      a(href="/opensource") Open Source    
-                    
-                    li.divider              
+                  li
+                    a(href="/opensource") Open Source    
+                  
+                  li.divider              
 
-                    li 
+                  li 
 
-                      a(href="/about") About
+                    a(href="/about") About
 
 
 
-                    li
-                      a(href="/customers") Customers
+                  li
+                    a(href="/customers") Customers
 
-                    li
-                      a(href="https://auth0.com/blog") Blog
+                  li
+                    a(href="https://auth0.com/blog") Blog
 
 
               li.li-docs
@@ -92,11 +92,9 @@ html
                 a.signin-button(href="javascript:signup()").btn.btn-sm.signup Sign Up
 
     .container
-      .breadcrumb
-        ul.page-list
-          li
-            a(href='https://github.com/auth0/styleguide', target='_blank') Version 
-              span#styleguide-version 
+      .sub-header
+        span.sub-header-text Version 
+          strong#styleguide-version 
     
         ul.external-links
           li
@@ -109,7 +107,6 @@ html
 
           .sidebar-box
             strong General
-
           
             ul 
 
@@ -176,9 +173,9 @@ html
                   span Footer
 
               li
-                a(href='#breadcrumb')
+                a(href='#sub-header')
                   i
-                  span Breadcrumb
+                  span Sub Header
 
 
               li
@@ -371,14 +368,10 @@ html
             h1 Components
 
             h5.styled 
-              a(name="breadcrumb") Breadcrumb
+              a(name="sub-header") Sub Header
             
-            .breadcrumb
-              ul.page-list
-                li
-                  a(href='http://auth0.com/docs') Documentation
-                li »
-                li Getting started with Auth0
+            .sub-header
+              span.sub-header-text  Text goes here
                 
               ul.external-links
                 li
@@ -389,6 +382,35 @@ html
                   a(href='http://chat.auth0.com', target='_blank') Chat With Us
                 li
                   a(href='mailto:support@auth0.com', target='_blank') Contact Us
+
+            .sub-header.sub-header-dropdown
+
+              ul.external-links
+                li
+                  a(href='http://twitter.com/authzero', target='_blank') Twitter
+                li
+                  a(href='http://github.com/auth0', target='_blank') Github
+                li
+                  a(href='http://chat.auth0.com', target='_blank') Chat With Us
+                li
+                  a(href='mailto:support@auth0.com', target='_blank') Contact Us
+
+
+              .dropdown
+                button#dropdownMenu1.btn.dropdown-toggle(type='button', data-toggle='dropdown')
+                  | Application Name
+                  span.caret
+                ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Action
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Another action
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Something else here
+                  li.divider(role='presentation')
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Separated link
+
 
 
             h5.styled 
@@ -467,6 +489,18 @@ html
                 p.call-to-action
                 a.btn.btn-lg.btn-success(href='javascript:signup()') Create Free Account
                 em No credit card required • No commitment
+
+
+
+            h5.styled 
+              a(name="center-title-content") Center Title Content
+
+            .center-title-block
+              span.icon-badge.icon-budicon-329
+              h2 How It Works
+              p Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient.
+
+
 
 
 

@@ -54,9 +54,10 @@ ul.breadcrumb
     position: relative;
     text-align: left;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 40px;
     letter-spacing: 0.5px;
-    
+    display: inline-block
+
     span 
       position: absolute;
       right: 20px;
@@ -74,28 +75,32 @@ ul.breadcrumb
       outline: none;
 
 
+
+  .dropdown 
+    display: inline-block
   .dropdown-menu
+    
     li 
       margin: 0;
 
     .divider 
       margin: 10px 0;
       font-size: 14px;  
-  ul
 
-    &.external-links
-      float: right;
-      li
-        float: left
-        display: inline-block
-        color: white;
-        font-size: 12px;
-        padding: 0;
-        margin: 0;
-        a
-          opacity: .6;
-          &:hover
-            opacity: 1;
+  ul.external-links
+    display: inline-block
+    float: right;
+    li
+      float: left
+      display: inline-block
+      color: white;
+      font-size: 12px;
+      padding: 0;
+      margin: 0;
+      a
+        opacity: .6;
+        &:hover
+          opacity: 1;
 
 
   &.sub-header-dropdown

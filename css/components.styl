@@ -1,3 +1,27 @@
+/*==========  Breadcrumb  ==========*/
+ul.breadcrumb
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 10px;
+  background: none;
+  border-radius: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase
+  letter-spacing: 1px;
+
+  &>li+li:before
+    content: "";
+    padding: 0;
+  li
+    display: inline-block
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+    font-size: 11px;
+
+
 /*==========  Subheader  ==========*/
 .sub-header
   border-radius: 3px;
@@ -25,9 +49,18 @@
     background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,.8) 100%); /* W3C */
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    letter-spacing: .5;
+    letter-spacing: .5px;
+
+    position: relative;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    letter-spacing: 0.5px;
+    
     span 
-      margin-left: 10px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
 
     &:hover 
       background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.8) 100%); /* W3C */

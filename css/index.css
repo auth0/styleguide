@@ -680,8 +680,28 @@ header.site-header {
   background: #fff;
   font-size: 14px;
 }
-header.site-header * {
+header.site-header li * {
   -webkit-backface-visibility: hidden !important;
+}
+header.site-header .dropdown-menu {
+  min-width: 130px;
+  background: #eb5424;
+}
+header.site-header .dropdown-menu a {
+  color: #fff !important;
+}
+header.site-header .dropdown-menu ::after {
+  position: absolute;
+  top: -6px;
+  left: 26px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #eb5424;
+  border-left: 6px solid transparent;
+  content: '';
+}
+header.site-header .dropdown-menu .divider {
+  background-color: rgba(0,0,0,0.1);
 }
 header.site-header.header-fixed {
   background: rgba(255,255,255,0.8);

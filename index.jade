@@ -8,22 +8,13 @@ html
 
     link(href='css/index.css', rel='stylesheet')
     link(href='css/styleguide.css', rel='stylesheet')
-    link(href='build/build.css', rel='stylesheet')
     link(rel="shortcut icon", href="img/favicon.png")
 
-    script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=none")
+
     script(type='text/javascript', src='//use.typekit.net/iws6ohy.js')
-    script(type='text/javascript', src='build/build.js')
-    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
-    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
     script.
       try{Typekit.load();}catch(e){}
 
-
-    script.
-      $.getJSON( "component.json", function( data ) {
-        $("#styleguide-version").html(data.version);
-      });
 
 
   body
@@ -31,18 +22,18 @@ html
       nav.navbar.navbar-default(role='navigation')
         .container
           .navbar-header
-            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
               span.sr-only Toggle navigation
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            
+                
             h1.navbar-brand
               a(href="/")
-                img(src="/auth0-styleguide/img/logo.png")
                 span Auth0
 
-          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          #navbar-collapse.collapse.navbar-collapse
+
             ul.nav.navbar-nav.navbar-left
               li.li-why
                 a(href="/why-auth0") Why Auth0
@@ -54,6 +45,9 @@ html
 
 
             ul.nav.navbar-nav.navbar-right
+
+              li.li-docs
+                a(href="https://docs.auth0.com") Documentation
 
 
               li.dropdown
@@ -81,15 +75,12 @@ html
                   li
                     a(href="https://auth0.com/blog") Blog
 
-
-              li.li-docs
-                a(href="https://docs.auth0.com") Docs
-
               li
                 a.signin-button(href="javascript:login()").login Login
 
               li
                 a.signin-button(href="javascript:signup()").btn.btn-sm.signup Sign Up
+
 
     .container
       .sub-header
@@ -102,7 +93,7 @@ html
     
     .container
       .row
-        .col-xs-3
+        .col-md-3
 
 
           .sidebar-box
@@ -184,7 +175,7 @@ html
                   span Banner
 
 
-        .col-xs-9.text-content
+        .col-md-9.text-content
 
 
           h1 
@@ -419,36 +410,6 @@ html
               a(name="header") Header 
 
 
-            header.site-header
-              nav.navbar.navbar-default(role='navigation')
-                .container
-                  .navbar-header
-                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
-                      span.sr-only Toggle navigation
-                      span.icon-bar
-                      span.icon-bar
-                      span.icon-bar
-                  h1.navbar-brand
-                    a(href='https://auth0.com/')
-                      img(src='https://auth0.com/auth0-styleguide/img/logo.png')
-                      span Auth0
-                  
-                  #bs-example-navbar-collapse-1.collapse.navbar-collapse
-                    ul.nav.navbar-nav.navbar-left
-                      li.li-why
-                        a(href='http://auth0.com/why-auth0') Why Auth0
-                      li.li-how
-                        a(href='http://auth0.com/how-it-works') How It Works
-                      li.li-pricing
-                        a(href='http://auth0.com/pricing') Pricing
-                    
-                    ul.nav.navbar-nav.navbar-right
-                      li.li-docs
-                        a(href='http://auth0.com/docs') Documentation
-                      li
-                        a(href='http://blog.auth0.com') Blog
-                      li
-                        a.signin-button.btn.btn-sm.signup(href='https://app.auth0.com') Open Dashboard
 
 
             h5.styled 
@@ -554,3 +515,15 @@ html
 
           p For more information check 
             a(href="http://www.opentip.org/documentation.html"). Opentip documentation
+
+
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+
+    script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+
+
+    script.
+      $.getJSON( "component.json", function( data ) {
+        $("#styleguide-version").html(data.version);
+      });

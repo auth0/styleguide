@@ -80,34 +80,7 @@ body
   &:hover
       opacity: 1;
 
-pre.code-snippet.prettyprint
-  background: rgba(255,255,255,.96);
-  border: 0;
-  border-left: 30px solid #f1f1f1;
-  color: #333;
-  font-size: 11px;
-  font-family: monospace;
-  line-height: 20px;
-  margin-bottom: 0;
-  padding: 10px 10px 10px 2px ;
-  border-radius: 3px;
-  box-shadow: 0 1px 6px rgba(0,0,0,.4);
-  list-style: dotted;
-  // overflow: hidden
 
-  ol
-    margin: 0;
-    padding: 0;
-    color: #999;
-    width: 600px;
-
-  li.L1, li.L3, li.L5, li.L7, li.L9
-    background: none;
-  li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8
-    list-style: inherit;
-  li
-    padding-left: 10px;
-    margin: 0;
 
 section.section
   margin-bottom: 80px;
@@ -149,9 +122,40 @@ span.icon-badge
       list-style: none;
 
 
+
+/*==========  Prettyprint  ==========*/
+
+pre.code-snippet.prettyprint
+  background: rgba(255,255,255,.96);
+  border: 0;
+  border-left: 30px solid #f1f1f1;
+  color: #333;
+  font-size: 11px;
+  font-family: monospace;
+  line-height: 20px;
+  margin-bottom: 0;
+  padding: 10px 10px 10px 2px ;
+  border-radius: 3px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.4);
+  list-style: dotted;
+  // overflow: hidden
+
+  ol
+    margin: 0;
+    padding: 0;
+    color: #999;
+    width: 600px;
+
+  li.L1, li.L3, li.L5, li.L7, li.L9
+    background: none;
+  li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8
+    list-style: inherit;
+  li
+    padding-left: 10px;
+    margin: 0;
+
 .pln
   color: #000
-
 
 
 @media screen {
@@ -265,28 +269,6 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
 }
 
 
-@media (max-width: 991px) {
-  .navbar-header {
-    float: none;
-  }
-  .navbar-toggle {
-    display: block;
-  }
-
-  .navbar-collapse.collapse {
-    display: none!important;
-  }
-  .nav{
-    display: block
-    width: 100%
-  }
-  .navbar-nav>li {
-    float: none;
-    display: block
-  }
-
-
-}
 
 
 @media screen and (max-width: 768px)

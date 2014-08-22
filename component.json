@@ -1,6 +1,6 @@
 {
   "name": "styleguide",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Auth0 Styleguide component.",
   "dependencies": {
     "pose/opentip": "*"

@@ -3363,8 +3363,8 @@ header.site-header .navbar-default .navbar-collapse {
   border-color: transparent;
 }
 header.site-header .navbar-default .navbar-collapse li.active a {
-  background: none !important;
-  color: #000 !important;
+  background: none;
+  color: #000;
 }
 header.site-header .navbar-toggle {
   border: 0;

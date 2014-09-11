@@ -74,8 +74,6 @@ ul.breadcrumb
     &:focus
       outline: none;
 
-
-
   .dropdown 
     display: inline-block
   .dropdown-menu
@@ -458,11 +456,6 @@ ul.breadcrumb
 
 /*==========  Header  ==========*/
 header.site-header
-  padding: 20px 0 20px 0;
-  // position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
   z-index: 1000;
   background: white;
   font-size: 14px;
@@ -627,9 +620,10 @@ header.site-header
       color: #333;  
   
 
-
 header.site-header
 
+  position:static;
+  padding:0;
 
   .navbar-default .navbar-nav>.open>a
     background: none;  
@@ -645,46 +639,42 @@ header.site-header
         background: color_blue_light;
         color: white;
 
-
-
-
-
-
-
-.header-dark
-  header.site-header
-    position: absolute;
-    background: transparent !important;
-    border-bottom: 1px solid rgba(255,255,255,.1)
-
-    h1.navbar-brand
-      a
-        background-image: url('/auth0-styleguide/img/logo-grey-horizontal.png')
+@media screen and (min-width: 992px)
     
-    .navbar-default 
-      .navbar-nav>li>a
-        color: color_grey;
-        &:hover 
-          color: white;
-          background: none;
+  header.site-header 
+    position:absolute;
+    padding: 20px 0 20px 0;
+    left: 0;
+    right: 0;
+    top: 0;
 
-    nav li .btn-dro
-      color: color_grey;
+  .header-dark header.site-header
+    position: absolute;
+    background: transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 
+  .header-dark header.site-header h1.navbar-brand a
+    background-image: url("/auth0-styleguide/img/logo-grey-horizontal.png");
 
-    a.btn 
-      border-color: #fff;
-      &:hover 
-        border-color: white;
-        color: black;  
-        b
+  .header-dark header.site-header .navbar-default .navbar-nav>li>a
+    color: #d0d2d3;
 
-  .dropdown 
-    a 
-      color: #333;  
+  .header-dark header.site-header .navbar-default .navbar-nav>li>a:hover
+    color: #fff;
+    background: none;
 
+  .header-dark header.site-header nav li .btn-dro
+    color: #d0d2d3;
 
+  .header-dark header.site-header a.btn
+    border-color: #fff;
 
+  .header-dark header.site-header a.btn:hover
+    border-color: #fff;
+    color: #000;
+
+  .header-dark .dropdown a
+    color: #333;
 
 /*==========  Footer  ==========*/
 footer.site-footer
@@ -705,7 +695,7 @@ footer.site-footer
   .col-md-11
     float: right
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 992px)
   footer.site-footer
     .col-md-11
       float: none;

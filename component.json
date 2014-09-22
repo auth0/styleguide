@@ -1,9 +1,8 @@
 {
   "name": "styleguide",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "Auth0 Styleguide component.",
-  "dependencies": {
-  },
+  "dependencies": {},
   "images": [
     "css/budicon/fonts/budicon-font.eot",
     "css/budicon/fonts/budicon-font.ttf",

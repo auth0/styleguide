@@ -3,7 +3,6 @@
   "version": "0.5.7",
   "description": "Auth0 Styleguide component.",
   "dependencies": {
-    "pose/opentip": "*"
   },
   "images": [
     "css/budicon/fonts/budicon-font.eot",

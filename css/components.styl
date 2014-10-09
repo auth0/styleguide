@@ -463,22 +463,39 @@ header.site-header
   li *
     -webkit-backface-visibility: hidden !important;
 
+  a 
+    // pointer-events: none;
 
-  .dropdown-menu
-    min-width: 130px;
-    background: color_red;
-    a
-      color: white !important;
+  .dropdown 
 
-    ::after
-      position: absolute;
-      top: -6px;
-      left: 26px;
-      display: inline-block;
-      border-right: 6px solid transparent;
-      border-bottom: 6px solid color_red;
-      border-left: 6px solid transparent;
-      content: '';
+    .dropdown-menu
+      min-width: 130px;
+      background: #fff;
+      -webkit-transform: scale(.8) translateY(-10%);
+      transform: scale(.8) translateY(-10%);
+      transition: .1s cubic-bezier(.3, 0, 0, 1.3);    
+      opacity: 0;
+      pointer-events: none;
+      display: block
+      ::after
+        position: absolute;
+        top: -6px;
+        left: 26px;
+        display: inline-block;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #fff;
+        border-left: 6px solid transparent;
+        content: '';
+
+    &.open 
+      .dropdown-menu
+        opacity: 1;
+        pointer-events: auto;
+        -webkit-transform: none;
+        transform: none;
+
+
+
     
     .divider
       background-color: rgba(0,0,0,.1)
@@ -529,21 +546,23 @@ header.site-header
     a 
       color: #333;
 
-    a.login
-      margin-left: 20px;
-      font-weight: bold
 
-    a.signup   
+    a.login   
       color: #666
       border: 1px solid #f1f1f1;
-      padding-left: 16px;
-      padding-right: 14px
-      border-radius: 3px;
+      border-radius: 100px;
       margin-left: 10px;
-      padding-bottom: 0;
-      padding-top: 0;
-      line-height: 40px;
-      margin-top: 4px;
+      text-transform: uppercase
+      letter-spacing: 1px;
+      font-weight: bold
+      padding: 0;
+      line-height: 30px;
+      display: inline-block
+      padding-left: 15px;
+      padding-right: 14px;
+      margin-top: 10px;
+      font-size: 12px;
+
       &:hover 
         background: #f1f1f1;
 
@@ -734,13 +753,8 @@ footer.site-footer
   position: relative;
   overflow: hidden
   background-color: #14204d;
-  background: rgb(20,32,77); /* Old browsers */
-  background: -moz-linear-gradient(120deg,  rgba(20,32,77,1) 0%, rgba(60,200,244,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(20,32,77,1)), color-stop(100%,rgba(60,200,244,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(120deg,  rgba(20,32,77,1) 0%,rgba(60,200,244,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(120deg,  rgba(20,32,77,1) 0%,rgba(60,200,244,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(120deg,  rgba(20,32,77,1) 0%,rgba(60,200,244,1) 100%); /* IE10+ */
-  background: linear-gradient(120deg,  rgba(20,32,77,1) 0%,rgba(60,200,244,1) 100%); /* W3C */
+  background: linear-gradient(180deg, color_blue 0%, color_blue_light 200%); /* W3C */
+
 
   h1
     color: white;
@@ -848,6 +862,52 @@ footer.site-footer
           // font-weight: bold;
 
 
+
+/*==========  Browser lite  ==========*/
+.browser-lite
+  border: 1px solid lighten(color_grey, 50%);
+  border-radius: 3px;
+  overflow: hidden
+  .browser-toolbar
+    border-bottom: 1px solid lighten(color_grey, 50%);
+    overflow: hidden
+    padding: 14px;
+    i 
+      background: lighten(color_grey, 50%);
+      border-radius: 100px;
+      float: left
+      display: inline-block
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+      margin-top: 4px;
+
+      &.r 
+        background: #FC625C;
+      &.y
+        background: #FDBC40;
+      &.g
+        background: #34C849;
+
+    .input 
+      width: 70%;
+      height: 20px;
+      border-radius: 3px;
+      margin: auto;
+      background: lighten(color_grey, 50%);
+      margin-top: 0px;
+      font-size: 10px;
+      color: #999;
+      line-height: 20px;
+
+    .button 
+      background: lighten(color_grey, 50%);
+      border-radius: 3px;
+      height: 20px;
+      width: 20px;
+      margin-left: 6px;
+      float: right
+      display: block
 
 /*==========  Try Banner  ==========*/
 .try-banner

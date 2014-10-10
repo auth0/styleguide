@@ -2592,11 +2592,31 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 .icon-1392070209-icon-social-github:before {
   content: "\e2f4";
 }
+html {
+  font-size: 16px;
+}
 body {
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   font-family: "proxima-nova", "Helvetica Neue", sans-serif;
   color: #4d4d4d;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.5;
+}
+h1 {
+  font-size: 2.25rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
 }
 h1,
 h2,
@@ -2656,7 +2676,7 @@ h5.styled a {
   font-weight: bold;
 }
 p {
-  line-height: 24px;
+  line-height: 1.8;
 }
 a {
   color: #0a86b1;
@@ -2961,16 +2981,17 @@ ul.breadcrumb li {
   max-width: 600px;
   margin-bottom: 40px;
 }
+.center-title-block .icon-badge {
+  margin-bottom: 10px;
+}
 .center-title-block h2 {
-  font-size: 34px;
-  margin-top: 0;
-  margin-bottom: 0;
   color: block;
   font-weight: 300;
+  margin: 10px 0;
 }
 .center-title-block p {
   color: #798291;
-  line-height: 1.6;
+  font-size: 1.2rem;
   margin-top: 0;
   color: rgba(0,0,0,0.5);
 }
@@ -3247,9 +3268,6 @@ ul.breadcrumb li {
 }
 .quotes img.active {
   opacity: 1;
-}
-.tip {
-  font-size: 14px;
 }
 .tip a {
   font-weight: bold;
@@ -3545,15 +3563,15 @@ footer.site-footer .col-md-11 {
 }
 .banner h1 {
   color: #fff;
-  font-size: 34px;
+  font-size: 2.4rem;
   font-weight: 300;
+  margin-bottom: 0;
 }
 .banner p {
-  font-size: 120%;
   max-width: 580px;
+  font-size: 1.4rem;
   margin: auto;
-  margin-top: 20px;
-  line-height: 170%;
+  margin-top: 10px;
   color: rgba(255,255,255,0.8);
 }
 .banner i {
@@ -3779,6 +3797,9 @@ footer.site-footer .col-md-11 {
     opacity: 1;
     top: 0;
   }
+}
+html {
+  font-size: 14px;
 }
 body {
   overflow-x: hidden;

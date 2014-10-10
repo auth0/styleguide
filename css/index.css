@@ -2826,7 +2826,7 @@ a.btn:active {
   line-height: 16px;
   font-size: 16px;
   display: block;
-  width: 120px;
+  width: 100px;
   height: 40px;
   border: 1px solid #d8e0e5;
   -webkit-border-radius: 5px;
@@ -2966,14 +2966,12 @@ ul.breadcrumb li {
   margin-top: 0;
   margin-bottom: 0;
   color: block;
+  font-weight: 300;
 }
 .center-title-block p {
-  font-size: 120%;
   color: #798291;
-  line-height: 160%;
-  font-size: 20px;
-  line-height: 30px;
-  margin-top: 20px;
+  line-height: 1.6;
+  margin-top: 0;
   color: rgba(0,0,0,0.5);
 }
 .center-title-block img {
@@ -3449,7 +3447,6 @@ header.site-header .dropdown-menu a:hover {
 }
 @media screen and (min-width: 992px) {
   header.site-header {
-    position: absolute;
     padding: 20px 0 20px 0;
     left: 0;
     right: 0;
@@ -3549,6 +3546,7 @@ footer.site-footer .col-md-11 {
 .banner h1 {
   color: #fff;
   font-size: 34px;
+  font-weight: 300;
 }
 .banner p {
   font-size: 120%;

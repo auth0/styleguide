@@ -742,7 +742,6 @@ footer.site-footer
 
 
 /*==========  Banner  ==========*/
-
 .banner
   color: white;
   text-align: center
@@ -753,11 +752,11 @@ footer.site-footer
   overflow: hidden
   background-color: #14204d;
   background: linear-gradient(180deg, color_blue 0%, color_blue_light 200%); /* W3C */
-
+  padding:80px 0;
 
   h1
     color: white;
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     font-weight: 300
     margin-bottom: 0;
 
@@ -773,6 +772,9 @@ footer.site-footer
     -webkit-animation: icon_banner 1s;
     position: relative;
 
+  a 
+    color: color_blue_light;
+    font-weight: bold
   .btn
     margin-top: 10px;
 
@@ -783,6 +785,15 @@ footer.site-footer
     letter-spacing: 1px;
 
 
+  .icon-banner
+    border: 2px solid white;
+    border-radius: 100px;
+    line-height: 90px;
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
+    display: inline-block
+
 @keyframes icon_banner
   from
     top: -100px;
@@ -791,6 +802,10 @@ footer.site-footer
     opacity: 1;
     top: 0;
 
+
+@media screen and (min-width: 992px)
+  .header-dark .banner
+    padding-top:160px;
 
 @media screen and (max-width: 660px)
   .banner
@@ -807,12 +822,13 @@ footer.site-footer
   margin-bottom: 20px;
   padding: 14px 20px;
   list-style: none;
+  font-size: 14px;
 
   strong
     text-transform: uppercase
     font-weight: bold;
     font-size: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     display: block
     letter-spacing: 1px;
     color: #999;
@@ -830,7 +846,7 @@ footer.site-footer
         color: black;
 
     li
-      line-height: 28px;
+      line-height: 32px;
       margin: 0;
 
       li 

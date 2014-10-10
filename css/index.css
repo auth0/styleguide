@@ -2610,13 +2610,19 @@ h5 {
   line-height: 1.5;
 }
 h1 {
-  font-size: 2.25rem;
+  font-size: 3rem;
 }
 h2 {
   font-size: 2rem;
 }
 h3 {
   font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+h5 {
+  font-size: 16px;
 }
 h1,
 h2,
@@ -2657,7 +2663,7 @@ h3 a {
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-weight: 600;
 }
 h4 a,
 h5 a,
@@ -3560,10 +3566,11 @@ footer.site-footer .col-md-11 {
   background-color: #14204d;
   background: linear-gradient(180deg, #16214d 0%, #44c7f4 200%);
 /* W3C */
+  padding: 80px 0;
 }
 .banner h1 {
   color: #fff;
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   font-weight: 300;
   margin-bottom: 0;
 }
@@ -3579,6 +3586,10 @@ footer.site-footer .col-md-11 {
   -webkit-animation: icon_banner 1s;
   position: relative;
 }
+.banner a {
+  color: #44c7f4;
+  font-weight: bold;
+}
 .banner .btn {
   margin-top: 10px;
 }
@@ -3587,6 +3598,20 @@ footer.site-footer .col-md-11 {
   font-size: 12px;
   margin-top: 4px;
   letter-spacing: 1px;
+}
+.banner .icon-banner {
+  border: 2px solid #fff;
+  border-radius: 100px;
+  line-height: 90px;
+  width: 80px;
+  height: 80px;
+  font-size: 36px;
+  display: inline-block;
+}
+@media screen and (min-width: 992px) {
+  .header-dark .banner {
+    padding-top: 160px;
+  }
 }
 @media screen and (max-width: 660px) {
   .banner {
@@ -3603,12 +3628,13 @@ footer.site-footer .col-md-11 {
   margin-bottom: 20px;
   padding: 14px 20px;
   list-style: none;
+  font-size: 14px;
 }
 .sidebar-box strong {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   display: block;
   letter-spacing: 1px;
   color: #999;
@@ -3625,7 +3651,7 @@ footer.site-footer .col-md-11 {
   color: #000;
 }
 .sidebar-box ul li {
-  line-height: 28px;
+  line-height: 32px;
   margin: 0;
 }
 .sidebar-box ul li li {

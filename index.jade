@@ -9,6 +9,8 @@ html
     link(href='css/index.css', rel='stylesheet')
     link(href='css/styleguide.css', rel='stylesheet')
     link(rel="shortcut icon", href="img/favicon.png")
+    link(href="https://cdn.auth0.com/web-header/latest/standalone.css", rel='stylesheet')
+    script(type='text/javascript', src='//cdn.auth0.com/web-header/latest/standalone.min.js')
 
 
     script(type='text/javascript', src='//use.typekit.net/iws6ohy.js')
@@ -16,69 +18,15 @@ html
       try{Typekit.load();}catch(e){}
 
 
-
   body
-    header.site-header
-      nav.navbar.navbar-default(role='navigation')
-        .container
-          .navbar-header
-            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
-              span.sr-only Toggle navigation
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-                
-            h1.navbar-brand
-              a(href="/")
-                span Auth0
 
-          #navbar-collapse.collapse.navbar-collapse
+    header.site-header.clearfix
+    script(type='text/javascript').
+      (function() {
+        var header = new WebHeader({ base_url: 'https://auth0.com' });
+        header.render('header.site-header');
+      })();
 
-            ul.nav.navbar-nav.navbar-left
-              li.li-why
-                a(href="/why-auth0") Why Auth0
-              li.li-how
-                a(href="/how-it-works") How It Works
-          
-              li.li-pricing
-                a(href="/pricing") Pricing
-
-
-            ul.nav.navbar-nav.navbar-right
-
-              li.li-docs
-                a(href="https://docs.auth0.com") Documentation
-
-
-              li.dropdown
-                span(role='button', data-toggle='dropdown', data-target='#').btn-dro More
-                  i.icon-budicon-460
-                ul.dropdown-menu(role='menu', aria-labelledby='dLabel').animated
-
-                  li
-                    a(href="/lock") Lock
-
-                  li
-                    a(href="/opensource") Open Source    
-                  
-                  li.divider              
-
-                  li 
-
-                    a(href="/about") About
-
-
-
-                  li
-                    a(href="/customers") Customers
-
-                  li
-                    a(href="https://auth0.com/blog") Blog
-
-              li
-                a.signin-button(href="javascript:login()").login Login
-
-         
     .container
       .sub-header
         span.sub-header-text Version 

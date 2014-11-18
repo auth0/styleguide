@@ -47,6 +47,9 @@ hr {
   color: #fff;
   background: #44c7f4;
 }
+header.site-header {
+  position: static !important;
+}
 .color {
   background: #f00;
   border-radius: 3px;

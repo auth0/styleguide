@@ -1,10 +1,10 @@
 @font-face {
   font-family: "budicon-font";
-  src:url("//cdn.auth0.com/fonts/budicons/fonts/budicon-font.eot");
-  src:url("//cdn.auth0.com/fonts/budicons/fonts/budicon-font.eot?#iefix") format("embedded-opentype"),
-    url("//cdn.auth0.com/fonts/budicons/fonts/budicon-font.woff") format("woff"),
-    url("//cdn.auth0.com/fonts/budicons/fonts/budicon-font.ttf") format("truetype"),
-    url("//cdn.auth0.com/fonts/budicons/fonts/budicon-font.svg#budicon-font") format("svg");
+  src:url("https://cdn.auth0.com/fonts/budicons/fonts/budicon-font.eot");
+  src:url("https://cdn.auth0.com/fonts/budicons/fonts/budicon-font.eot?#iefix") format("embedded-opentype"),
+    url("https://cdn.auth0.com/fonts/budicons/fonts/budicon-font.woff") format("woff"),
+    url("https://cdn.auth0.com/fonts/budicons/fonts/budicon-font.ttf") format("truetype"),
+    url("https://cdn.auth0.com/fonts/budicons/fonts/budicon-font.svg#budicon-font") format("svg");
   font-weight: normal;
   font-style: normal;
 

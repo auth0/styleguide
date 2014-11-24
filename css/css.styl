@@ -97,7 +97,6 @@ nav
   -o-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
   text-transform: uppercase
-  font-size: 16px;
   letter-spacing: 2px;
   border: 0;
   font-weight: bold
@@ -136,7 +135,7 @@ nav
   &.btn-success
     background-color: color_red;
     color: #fff;
-    border: 0;
+    border-color: transparent;
     &:hover
       background-color: darken(color_red, 30%);
       color: #fff
@@ -148,14 +147,13 @@ nav
       background: color_grey;
 
   &.btn-danger
-    border: 0;
+    border-color: transparent;
 
   &.btn-primary 
     background-color: color_blue_light;
-    border: 0;
+    border-color: transparent;
     &:hover 
       background-color: darken(color_blue_light, 30%);
-
 
   &:active
     box-shadow: none;
@@ -166,6 +164,11 @@ nav
   color: white;
   border-radius: 3px;
   padding: 10px 14px;
+  a
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 1px;
+
 
 .bg-primary
   background: color_blue;

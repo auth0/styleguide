@@ -118,6 +118,11 @@ html
                 a(href='#banner')
                   i
                   span Banner
+              
+              li
+                a(href='#Modal')
+                  i
+                  span Modal
 
 
         .col-md-9.text-content
@@ -397,6 +402,31 @@ html
                 p.call-to-action
                 a.btn.btn-lg.btn-success(href='javascript:signup()') Create Free Account
                 em No credit card required • No commitment
+
+
+            h5.styled 
+              a(name="modal") Modal
+
+            .modal-container
+              button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+                | Launch demo modal
+                Modal 
+
+              #myModal.modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      button.close(type='button', data-dismiss='modal')
+                        span(aria-hidden='true') ×
+                        span.sr-only Close
+                      h4#myModalLabel.modal-title Modal title
+                    .modal-body
+                      | ...
+                    .modal-footer
+                      //- button.btn.btn-default(type='button', data-dismiss='modal') Close
+                      button.btn.btn-primary(type='button') Save changes
+
+
 
 
 

@@ -27,7 +27,7 @@
     "img/logo.png"
   ],
   "styles": [
-    "css/index.css"
+    "css/index.styl"
   ],
   "scripts": [
     "index.js"

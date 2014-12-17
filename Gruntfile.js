@@ -85,7 +85,7 @@ module.exports = function (grunt) {
           options: { gzip: false }
         }, {
           rel:    'build',
-          src:    'build/*',
+          src:    'build/**/*',
           dest:   'styleguide/latest/',
           options: { gzip: false }
         }]

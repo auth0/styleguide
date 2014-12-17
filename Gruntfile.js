@@ -2,10 +2,9 @@ var pkg = require('./package');
 
 var minorVersion = pkg.version.replace(/\.(\d)*$/, '');
 var majorVersion = pkg.version.replace(/\.(\d)*\.(\d)*$/, '');
+
 var path = require('path');
 var join = path.join;
-var fs = require('fs');
-var read = fs.readFileSync;
 
 module.exports = function (grunt) {
 
@@ -18,46 +17,49 @@ module.exports = function (grunt) {
           hostname: '*',
           port: 8989,
           middleware: function (connect, options) {
-            return [connect.static(__dirname) ];
+            return [connect.static(join(__dirname, 'build')) ];
           }
         }
       },
     },
     watch: {
       dev: {
-        files: ['*', 'lib/**/*'],
-        tasks: ["shell:component_install", "shell:component_build"]
+        files: ['*', 'lib/**/*', 'css/**/*', 'bin/**/*'],
+        tasks: ["build"]
       }
     },
     clean: [
-      'release/'
+      'build/'
     ],
     shell: {
+      fix_utf8: {
+        command: './bin/fix-utf8-problem css/budicon/budicon.css css/budicon/budicon.fixed.css'
+      },
       generate_index: {
-        command: './node_modules/.bin/jade index.jade'
+        command: './node_modules/.bin/jade index.jade -O package.json --out build/'
       },
-      component_install: {
-        command: './node_modules/.bin/component-install'
+      generate_css: {
+        command: './node_modules/.bin/stylus css/index.styl --include css --include-css --out build/'
       },
-      component_install_dev: {
-        command: './node_modules/.bin/component-install --dev'
-      },
-      component_build: {
-        command: './node_modules/.bin/component-build --use component-stylus,component-jade'
-      },
-      component_build_dev: {
-        command: './node_modules/.bin/component-build --dev --use component-stylus,component-jade'
-      },
-      component_build_release: {
-        command: [
-          './node_modules/.bin/component-build --use component-stylus,component-jade --out release',
-          './node_modules/.bin/component-build --use component-stylus,component-jade,component-minify --out release --name build.min',
-          './node_modules/.bin/component-build --use component-stylus,component-jade --out release --standalone Styleguide --name standalone',
-          './node_modules/.bin/component-build --use component-stylus,component-jade,component-minify --out release --standalone Styleguide --name standalone.min'
-        ].join(' && ')
+      generate_demo_css: {
+        command: './node_modules/.bin/stylus css/styleguide.styl --include-css --out build/'
       }
     },
-
+    copy: {
+      main: {
+        files: [
+          { expand: true, cwd: 'css/', src: ['budicon/fonts/*'], dest: 'build'},
+          { expand: true, src: ['img/*'], dest: 'build'},
+        ]
+      }
+    },
+    cssmin: {
+      main: {
+        files: {
+          'build/index.min.css': ['build/index.css']
+        }
+      }
+    },
     s3: {
       options: {
         key:    process.env.S3_KEY,
@@ -69,14 +71,21 @@ module.exports = function (grunt) {
         }
       },
       publish: {
-        upload: [{
-          rel:    'release',
-          src:    'release/**/*',
-          dest:   'styleguide/' + pkg.version + '/',
+        upload: [
+        {
+          rel:    'build',
+          src:    'build/**/*',
+          dest:   'styleguide/' + majorVersion  + '/',
+          options: { gzip: false }
+        },
+        {
+          rel:    'build',
+          src:    'build/**/*',
+          dest:   'styleguide/' + majorVersion + '.' + minorVersion + '/',
           options: { gzip: false }
         }, {
-          rel:    'release',
-          src:    'release/*',
+          rel:    'build',
+          src:    'build/*',
           dest:   'styleguide/latest/',
           options: { gzip: false }
         }]
@@ -84,8 +93,19 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('dev', ['shell:generate_index', 'shell:component_install_dev', 'shell:component_build_dev', 'connect', 'watch']);
-  grunt.registerTask('build', ['clean', 'shell:component_install', 'shell:component_build_release']);
+  grunt.registerTask('build', [
+    'clean',
+    'shell:fix_utf8',
+    'shell:generate_index',
+    'shell:generate_css',
+    'shell:generate_demo_css',
+    'cssmin:main',
+    'copy:main',
+  ]);
+
+  grunt.registerTask('dev', ['build', 'connect', 'watch']);
+
   grunt.registerTask('cdn', ['build', 's3']);
+
   grunt.registerTask('default', ['build']);
 };

@@ -1,14 +1,20 @@
 #!/usr/bin/env node
 
+var path = require('path');
 var fs = require('fs');
-var filePath = __dirname + '/css/index.css';
+var filePath = path.join(process.cwd(), process.argv[2]);
+var targetPath = path.join(process.cwd(), process.argv[3]);
+
+var exclude = ['"', '\\', '9', '0', '2b', '2a'];
 
 var css = fs.readFileSync(filePath)
             .toString()
             .replace(/\\(\w*)(\W)/ig, function (match, p1, p2) {
-              if (!p1 || p1 === '"' || p1 === '\\') return p1;
+              if (!p1 || ~exclude.indexOf(p1)) return match;
               var utf_char = String.fromCharCode(parseInt(p1, 16));
-              return utf_char + p2;
+              var result = utf_char + p2;
+              return result;
             });
 
-fs.writeFileSync(filePath, css);
+fs.writeFileSync(targetPath, css);
+console.log('fixed:', targetPath);

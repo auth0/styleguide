@@ -6,7 +6,8 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title Styleguide
 
-    link(href='/release/build.css', rel='stylesheet')
+    link(href='/index.css', rel='stylesheet')
+    link(href='/styleguide.css', rel='stylesheet')
     link(rel="shortcut icon", href="img/favicon.png")
     link(href="https://cdn.auth0.com/web-header/latest/standalone.css", rel='stylesheet')
     script(type='text/javascript', src='//cdn.auth0.com/web-header/latest/standalone.min.js')
@@ -30,6 +31,8 @@ html
       .sub-header
         span.sub-header-text Version
           strong#styleguide-version
+            |  #{version}
+
 
         ul.external-links
           li
@@ -130,9 +133,9 @@ html
           h1
             a(name="get-started") Get Started
 
-          p In order to install auth0-styleguide, you can use Bower and then add this line:
+          p In order to use the styleguide, you can use from cdn as follow:
 
-          pre.prettyprint  &lt;link href=&quot;auth0-styleguide/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
+          pre.prettyprint  &lt;link href=&quot;https://cdn.auth0.com/styleguide/latest/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
 
           hr
 
@@ -495,9 +498,3 @@ html
 
     script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js")
     script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
-
-
-    script.
-      $.getJSON( "component.json", function( data ) {
-        $("#styleguide-version").html(data.version);
-      });

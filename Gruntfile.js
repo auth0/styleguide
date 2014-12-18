@@ -43,6 +43,15 @@ module.exports = function (grunt) {
       },
       generate_demo_css: {
         command: './node_modules/.bin/stylus css/styleguide.styl --include-css --out build/'
+      },
+      purge_cdn_latest: {
+        command: 'curl -X DELETE -sv https://cdn.auth0.com/styleguide/latest'
+      },
+      purge_cdn_major: {
+        command: 'curl -X DELETE -sv https://cdn.auth0.com/styleguide/styleguide/' + majorVersion
+      },
+      purge_cdn_minor: {
+        command: 'curl -X DELETE -sv https://cdn.auth0.com/styleguide/styleguide/' + minorVersion
       }
     },
     copy: {
@@ -81,7 +90,7 @@ module.exports = function (grunt) {
         {
           rel:    'build',
           src:    'build/**/*',
-          dest:   'styleguide/' + majorVersion + '.' + minorVersion + '/',
+          dest:   'styleguide/' + minorVersion + '/',
           options: { gzip: false }
         }, {
           rel:    'build',
@@ -105,7 +114,13 @@ module.exports = function (grunt) {
 
   grunt.registerTask('dev', ['build', 'connect', 'watch']);
 
-  grunt.registerTask('cdn', ['build', 's3']);
+  grunt.registerTask('cdn', [
+    'build',
+    's3',
+    'purge_cdn_latest',
+    'purge_cdn_major',
+    'purge_cdn_minor'
+  ]);
 
   grunt.registerTask('default', ['build']);
 };

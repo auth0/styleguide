@@ -45,13 +45,13 @@ module.exports = function (grunt) {
         command: './node_modules/.bin/stylus css/styleguide.styl --include-css --out build/'
       },
       purge_cdn_latest: {
-        command: 'curl -X DELETE -sv https://cdn.auth0.com/styleguide/latest'
+        command: 'curl -X DELETE https://cdn.auth0.com/styleguide/latest'
       },
       purge_cdn_major: {
-        command: 'curl -X DELETE -sv https://cdn.auth0.com/styleguide/styleguide/' + majorVersion
+        command: 'curl -X DELETE https://cdn.auth0.com/styleguide/styleguide/' + majorVersion
       },
       purge_cdn_minor: {
-        command: 'curl -X DELETE -sv https://cdn.auth0.com/styleguide/styleguide/' + minorVersion
+        command: 'curl -X DELETE https://cdn.auth0.com/styleguide/styleguide/' + minorVersion
       }
     },
     copy: {

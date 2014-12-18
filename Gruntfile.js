@@ -117,9 +117,9 @@ module.exports = function (grunt) {
   grunt.registerTask('cdn', [
     'build',
     's3',
-    'purge_cdn_latest',
-    'purge_cdn_major',
-    'purge_cdn_minor'
+    'shell:purge_cdn_latest',
+    'shell:purge_cdn_major',
+    'shell:purge_cdn_minor'
   ]);
 
   grunt.registerTask('default', ['build']);

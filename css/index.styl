@@ -1,16 +1,19 @@
 @charset "UTF-8";
 
-@import 'vars.styl';
+// Vendor
+@import 'bower_components/bootstrap-stylus/bootstrap/index.styl';
+@import 'bower_components/animate-css/animate.min.css';
 
-@import 'bootstrap.min.css';
+// CSS 
+@import 'css/budicon/budicon.fixed.css';
+@import 'css/buttons/index.styl';
 
-@import 'animate.css';
+// Components
 
-@import 'budicon/budicon.fixed.css';
+// JS
+@import 'js/prettify/index.styl';
 
-@import 'css.styl';
 
-@import 'components.styl';
 
 html
   font-size: 14px;
@@ -102,151 +105,6 @@ span.icon-badge
       list-style: none;
 
 
-
-/*==========  Prettyprint  ==========*/
-
-pre.code-snippet.prettyprint
-  background: rgba(255,255,255,.96);
-  border: 0;
-  border-left: 30px solid #f1f1f1;
-  color: #333;
-  font-size: 11px;
-  font-family: monospace;
-  line-height: 20px;
-  margin-bottom: 0;
-  padding: 10px 10px 10px 2px ;
-  border-radius: 3px;
-  box-shadow: 0 1px 6px rgba(0,0,0,.4);
-  list-style: dotted;
-  // overflow: hidden
-
-  ol
-    margin: 0;
-    padding: 0;
-    color: #999;
-    width: 600px;
-
-  li.L1, li.L3, li.L5, li.L7, li.L9
-    background: none;
-  li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8
-    list-style: inherit;
-  li
-    padding-left: 10px;
-    margin: 0;
-
-.pln
-  color: #000
-
-
-@media screen {
-  .str {
-    color: #080
-  }
-
-  .kwd {
-    color: #008
-  }
-
-  .com {
-    color: #800
-  }
-
-  .typ {
-    color: #606
-  }
-
-  .lit {
-    color: #066
-  }
-
-  .pun, .opn, .clo {
-    color: #660
-  }
-
-  .tag {
-    color: #008
-  }
-
-  .atn {
-    color: #606
-  }
-
-  .atv {
-    color: #080
-  }
-
-  .dec, .var {
-    color: #606
-  }
-
-  .fun {
-    color: red
-  }
-}
-
-@media print, projection {
-  .str {
-    color: #060
-  }
-
-  .kwd {
-    color: #006;
-    font-weight: bold
-  }
-
-  .com {
-    color: #600;
-    font-style: italic
-  }
-
-  .typ {
-    color: #404;
-    font-weight: bold
-  }
-
-  .lit {
-    color: #044
-  }
-
-  .pun, .opn, .clo {
-    color: #440
-  }
-
-  .tag {
-    color: #006;
-    font-weight: bold
-  }
-
-  .atn {
-    color: #404
-  }
-
-  .atv {
-    color: #060
-  }
-}
-
-pre.prettyprint {
-  padding: 20px ;
-  border: 0 ;
-}
-
-pre.prettyprint.prettyprinted{
-  border: 0 !important;
-  padding: 20px !important;
-}
-ol.linenums {
-  margin-top: 0;
-  margin-bottom: 0
-}
-
-li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
-  list-style-type: none
-}
-
-li.L1, li.L3, li.L5, li.L7, li.L9 {
-  background: #eee
-}
 
 
 @media screen and (max-width: 992px)

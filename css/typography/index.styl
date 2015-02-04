@@ -1,0 +1,78 @@
+/*==========  Typography  ==========*/
+html
+  font-size: 16px;
+
+body
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-family: "proxima-nova", "Helvetica Neue", sans-serif;
+  color: #4d4d4d;
+
+h1,h2,h3,h4,h5
+  line-height: 1.5;
+
+h1
+  font-size: 3rem;
+
+h2
+  font-size: 2rem;
+
+h3
+  font-size: 1.5rem;
+
+h4
+  font-size: 1.3rem;
+
+h5
+  font-size: 16px;
+
+
+h1,h2,h3,h4,h5,h6
+  font-family: "proxima-nova", "Helvetica Neue", sans-serif;
+  color: black;
+  a
+    color: black;
+    font-weight: 300;
+    &:hover
+      color: darken(color_blue_light, 60%);
+
+h1.light,h2.light,h3.light
+  font-weight: 100;
+  a
+    font-weight: 100;
+
+
+h1,h2,h3,h4,h5,h6
+  font-weight: 600
+  a
+    font-weight: bold
+
+h5.styled
+  border-bottom: 1px solid #333;
+  text-transform: uppercase
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  font-size: 13px;
+  a
+    color: black;
+    font-weight: bold
+
+p
+  line-height: 1.8;
+
+a
+  color: darken(color_blue_light, 40%);
+
+  &:focus
+    outline: 0;
+
+  &:hover
+    text-decoration: none
+    color: darken(color_blue_light, 80%);
+
+pre
+  border: 0;
+
+h1,h2,h3,h4,h5, p, li, pre
+  margin: 20px 0;

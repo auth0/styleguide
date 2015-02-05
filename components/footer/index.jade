@@ -1,21 +1,27 @@
 footer.site-footer
   .row
-    .col-md-10.pull-right
+    .left.pull-right
+      iframe(allowtransparency="true", frameborder="0", scrolling="no", src="//platform.twitter.com/widgets/follow_button.html?screen_name=auth0", style="width:300px; height:20px;")
+
+    .col-md-11.pull-left
       nav
         ul
           li
-            a(href='https://auth0.com/about') About
+            a(href="/about") About
           li
-            a(href='https://auth0.com/availability-trust') Availability & Trust
+            a(href="/availability-trust") Availability & Trust
           li
-            a(href='https://auth0.com/terms') Terms Of Service
+            a(href="/security") Security
           li
-            a(href='https://auth0.com/privacy') Privacy
+            a(href="/terms") Terms Of Service
           li
-            a(href='http://chat.auth0.com') Support
+            a(href="/privacy") Privacy
           li
-            a(href='https://docs.auth0.com') Documentation
+            a(href="javascript:window.location = '/privacy#cookies'") Cookies
           li
-            a(href='mailto:support@auth0.com') Contact Us
-    .left.col-xs-2
-      a(href='/') Auth0 ©
+            a(href="/support") Support
+
+          li
+            a(href="mailto:support@auth0.com", target="_blank") Contact Us
+
+

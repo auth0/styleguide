@@ -5,22 +5,5 @@
   "styles": [
     "release/build.css"
   ],
-  "fonts": [
-    "release/styleguide/css/budicon/fonts/budicon-font.eot",
-    "release/styleguide/css/budicon/fonts/budicon-font.svg",
-    "release/styleguide/css/budicon/fonts/budicon-font.ttf",
-    "release/styleguide/css/budicon/fonts/budicon-font.woff"
-  ],
-  "images": [
-    "release/styleguide/img/badge.png",
-    "release/styleguide/img/favicon.png",
-    "release/styleguide/img/logo-blue-horizontal.png",
-    "release/styleguide/img/logo-blue-horizontal.svg",
-    "release/styleguide/img/logo-blue.png",
-    "release/styleguide/img/logo-grey-horizontal.png",
-    "release/styleguide/img/logo-grey-horizontal.svg",
-    "release/styleguide/img/logo-grey.png",
-    "release/styleguide/img/logo.png",
-    "release/styleguide/img/logo.svg"
-  ]
+  "fonts": []
 }

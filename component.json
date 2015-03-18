@@ -12,18 +12,13 @@
     "release/styleguide/css/budicon/fonts/budicon-font.woff"
   ],
   "images": [
-    "release/styleguide/img/badge.ai",
     "release/styleguide/img/badge.png",
     "release/styleguide/img/favicon.png",
-    "release/styleguide/img/logo-blue-horizontal.ai",
     "release/styleguide/img/logo-blue-horizontal.png",
     "release/styleguide/img/logo-blue-horizontal.svg",
-    "release/styleguide/img/logo-blue.ai",
     "release/styleguide/img/logo-blue.png",
-    "release/styleguide/img/logo-grey-horizontal.ai",
     "release/styleguide/img/logo-grey-horizontal.png",
     "release/styleguide/img/logo-grey-horizontal.svg",
-    "release/styleguide/img/logo-grey.ai",
     "release/styleguide/img/logo-grey.png",
     "release/styleguide/img/logo.png",
     "release/styleguide/img/logo.svg"

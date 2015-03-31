@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+@import 'lib/vars/index.styl';
+
+// Vendor
+@import 'node_modules/bootstrap/dist/css/bootstrap.css';
+@import 'node_modules/animate.css/animate.min.css';
+
+// CSS
+@import 'lib/budicon/budicon.fixed.css';
+@import 'lib/grid/index.styl';
+@import 'lib/buttons/index.styl';
+@import 'lib/logos/index.styl';
+@import 'lib/typography/index.styl';
+
+// Components
+@import 'lib/sidebar-box/index.styl';
+@import 'lib/banner/index.styl';
+@import 'lib/big-tabs/index.styl';
+@import 'lib/breadcrumb/index.styl';
+@import 'lib/browser/index.styl';
+@import 'lib/center-title-block/index.styl';
+@import 'lib/footer/index.styl';
+@import 'lib/navs/index.styl';
+@import 'lib/sidebar-box/index.styl';
+@import 'lib/sub-header/index.styl';
+
+// JS
+@import 'lib/modal/index.styl';
+@import 'lib/popover/index.styl';
+@import 'lib/prettify/index.styl';
+@import 'lib/quotes/index.styl';
+@import 'lib/tooltip/index.styl';
+@import 'lib/try-banner/index.styl';
+
+
+.bg-grey
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  background: none;
+
+
+.help-circle
+  max-height: 14px;
+  max-width: 14px;
+  opacity: .2;
+  margin-left: 4px;
+  position: relative;
+  top: -2px;
+
+  &:hover
+      opacity: 1;
+
+section.section
+  margin-bottom: 80px;
+
+@media screen and (max-width: 992px)
+  .zopim
+    display: none
+

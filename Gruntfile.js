@@ -24,7 +24,7 @@ module.exports = function (grunt) {
     },
     watch: {
       dev: {
-        files: ['*', 'lib/**/*', 'css/**/*', 'bin/**/*'],
+        files: ['*', 'lib/**/*', 'bin/**/*', 'landing/*'],
         tasks: ["build"]
       }
     },
@@ -33,16 +33,16 @@ module.exports = function (grunt) {
     ],
     shell: {
       fix_utf8: {
-        command: './bin/fix-utf8-problem css/budicon/budicon.css css/budicon/budicon.fixed.css'
+        command: './bin/fix-utf8-problem lib/budicon/budicon.css lib/budicon/budicon.fixed.css'
       },
       generate_index: {
-        command: './node_modules/.bin/jade index.jade -O package.json --out build/'
+        command: './node_modules/.bin/jade landing/index.jade -O package.json --out build/'
       },
       generate_css: {
-        command: './node_modules/.bin/stylus css/index.styl --include css --include-css --out build/'
+        command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ index.styl'
       },
       generate_demo_css: {
-        command: './node_modules/.bin/stylus css/styleguide.styl --include-css --out build/'
+        command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ landing/landing.styl'
       },
       purge_cdn_latest: {
         command: 'curl -X DELETE https://cdn.auth0.com/styleguide/latest'
@@ -57,8 +57,7 @@ module.exports = function (grunt) {
     copy: {
       main: {
         files: [
-          { expand: true, cwd: 'css/', src: ['budicon/fonts/*'], dest: 'build'},
-          { expand: true, src: ['css/**/*'], dest: 'build'},
+          { expand: true, src: ['lib/**/*', '!**/*.styl', '!**/*.jade'], dest: 'build', filter: 'isFile'}
         ]
       }
     },

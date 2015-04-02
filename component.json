@@ -2,8 +2,29 @@
   "name": "auth0-styleguide",
   "version": "0.6.7",
   "dependencies": {},
-  "styles": [
-    "release/build.css"
-  ],
-  "fonts": []
+  "fonts": [],
+  "files": [
+    "index.styl",
+    "lib/banner/index.styl",
+    "lib/big-tabs/index.styl",
+    "lib/breadcrumb/index.styl",
+    "lib/browser/index.styl",
+    "lib/buttons/index.styl",
+    "lib/center-title-block/index.styl",
+    "lib/colors/index.styl",
+    "lib/footer/index.styl",
+    "lib/grid/index.styl",
+    "lib/logos/index.styl",
+    "lib/modal/index.styl",
+    "lib/navs/index.styl",
+    "lib/popover/index.styl",
+    "lib/prettify/index.styl",
+    "lib/quotes/index.styl",
+    "lib/sidebar-box/index.styl",
+    "lib/sub-header/index.styl",
+    "lib/tooltip/index.styl",
+    "lib/try-banner/index.styl",
+    "lib/typography/index.styl",
+    "lib/vars/index.styl"
+  ]
 }

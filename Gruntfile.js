@@ -91,7 +91,14 @@ module.exports = function (grunt) {
           src:    'build/**/*',
           dest:   'styleguide/' + minorVersion + '/',
           options: { gzip: false }
-        }, {
+        },
+        {
+          rel:    'build',
+          src:    'build/**/*',
+          dest:   'styleguide/' + pkg.version + '/',
+          options: { gzip: false }
+        },
+        {
           rel:    'build',
           src:    'build/**/*',
           dest:   'styleguide/latest/',

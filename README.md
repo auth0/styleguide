@@ -19,6 +19,8 @@ Using our CDN is the simplest solution. Just add the following line in your proj
 
 If you require any other asset listed under the `lib` folder, you can follow a simple rule: `https://cdn.auth0.com/styleguide/latest/<path-to-asset-under-lib>`
 
+For example, if you want to retrieve our logo:
+
 ```html
 <!-- Retrieving the logo at `lib/logos/img/badge.png` -->
 <img src="https://cdn.auth0.com/styleguide/latest/lib/logos/img/badge.png">

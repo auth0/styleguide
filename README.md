@@ -49,7 +49,7 @@ bower install auth0/styleguide
 Since we use stylus for compiling our assets. So you should translate this build tasks to your own build process:
 
 ```bash
-stylus --include-css --include . --resolve-url --out <your_dest_path> index.styl
+stylus --include-css --include bower_components --resolve-url --out <your_dest_path> your_index.styl
 cp -R lib/**/* <your_dest_path>
 ```
 
@@ -183,5 +183,9 @@ All the logos and branding are Auth0's property.
 <!-- Resources -->
 [cdn-hash]: #cdn
 [component-home]: https://github.com/componentjs/component
+[component-guide]: https://github.com/componentjs/guide
+[component-builer-home]: https://github.com/componentjs/builder2.js
+[gulp-home]: http://gulpjs.com/
+[grunt-home]: http://gruntjs.com/
 [bower-home]: https://bower.io
 [stylus-api-home]: http://learnboost.github.io/stylus/docs/js.html

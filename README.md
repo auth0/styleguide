@@ -28,7 +28,7 @@ For example, if you want to retrieve our logo:
 
 ### Component(1)
 
-Component usage is only recomended when you plan on extending base colors or mixins.
+Component usage is only recomended when you plan on extending base colors or mixins. If that's not the case just user our CDN as described [before][cdn-hash]
 
 ### Bower
 
@@ -39,5 +39,6 @@ Bower usage is only recomended when you plan on extending base colors or mixins.
 All the logos and branding are Auth0's property.
 
 <!-- Resources -->
+[cdn-hash]: #cdn
 [component-home]: https://github.com/componentjs/component
 [bower-home]: https://bower.io

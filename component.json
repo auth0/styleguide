@@ -3,48 +3,14 @@
   "version": "0.6.7",
   "dependencies": {},
   "fonts": [
-    "lib/budicon/fonts/budicon-font.ttf",
-    "lib/budicon/fonts/budicon-font.eot",
-    "lib/budicon/fonts/budicon-font.woff",
-    "lib/budicon/fonts/budicon-font.svg"
+    "lib/budicon/fonts/*"
   ],
   "files": [
     "index.styl",
-    "lib/banner/index.styl",
-    "lib/big-tabs/index.styl",
-    "lib/breadcrumb/index.styl",
-    "lib/browser/index.styl",
-    "lib/buttons/index.styl",
-    "lib/center-title-block/index.styl",
-    "lib/colors/index.styl",
-    "lib/footer/index.styl",
-    "lib/grid/index.styl",
-    "lib/logos/index.styl",
-    "lib/modal/index.styl",
-    "lib/navs/index.styl",
-    "lib/popover/index.styl",
-    "lib/prettify/index.styl",
-    "lib/quotes/index.styl",
-    "lib/sidebar-box/index.styl",
-    "lib/sub-header/index.styl",
-    "lib/tooltip/index.styl",
-    "lib/try-banner/index.styl",
-    "lib/typography/index.styl",
-    "lib/vars/index.styl"
+    "lib/**/*.styl"
   ],
   "images": [
-    "lib/logos/img/badge.png",
-    "lib/logos/img/favicon.png",
-    "lib/logos/img/logo-blue-200.png",
-    "lib/logos/img/logo-blue.png",
-    "lib/logos/img/logo-grey-100-blue.png",
-    "lib/logos/img/logo-grey-100-grey.png",
-    "lib/logos/img/logo-grey.png",
-    "lib/logos/img/transparent-dark.png",
-    "lib/logos/img/transparent.png",
-    "lib/logos/img/badge.svg",
-    "lib/logos/img/logo-blue.svg",
-    "lib/logos/img/logo-grey.svg",
-    "lib/logos/img/logo-lock-grey.svg"
+    "lib/logos/img/*.png",
+    "lib/logos/img/*.svg"
   ]
 }

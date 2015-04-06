@@ -76,7 +76,7 @@ body.my-custom
     color: red;
 ```
 
-Or perhaps you would just want to extend parts of it by
+Or perhaps you want to extend just parts of it by:
 
 ```stylus
 // use only colors
@@ -146,7 +146,7 @@ var stylus = require('./stylus-plugin.js');
 var Builder = require('component-builder');
 
 Builder.styles(tree)
-  .use(stylus)
+  .use('styles', stylus)
   .end(function (err, result) {
     // done
   });
@@ -166,7 +166,7 @@ body.my-custom
     color: red;
 ```
 
-Or perhaps you would just want to extend parts of it by
+Or perhaps you want to extend just parts of it by:
 
 ```stylus
 // use only colors
@@ -184,7 +184,7 @@ All the logos and branding are Auth0's property.
 [cdn-hash]: #cdn
 [component-home]: https://github.com/componentjs/component
 [component-guide]: https://github.com/componentjs/guide
-[component-builer-home]: https://github.com/componentjs/builder2.js
+[component-builder-home]: https://github.com/componentjs/builder2.js
 [gulp-home]: http://gulpjs.com/
 [grunt-home]: http://gruntjs.com/
 [bower-home]: https://bower.io

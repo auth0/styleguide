@@ -4,12 +4,15 @@
   "engines": {
     "node": "0.10.x"
   },
-  "scripts": {},
-  "dependencies": {
-    "animate.css": "^3.2.5",
-    "bootstrap": "^3.3.4"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/auth0/lock"
   },
+  "author": "Auth0 <support@auth0.com> (http://auth0.com)",
+  "scripts": {},
+  "dependencies": {},
   "devDependencies": {
+    "bump": "git://github.com/ianstormtaylor/bump",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "~0.5.0",
@@ -22,7 +25,6 @@
     "grunt-shell": "^0.7.0",
     "jade": "^1.7.0",
     "matchdep": "^0.3.0",
-    "opentip": "~2.4.3",
     "serve": "*",
     "stylus": "~0.49.3"
   }

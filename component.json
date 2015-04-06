@@ -9,7 +9,8 @@
   "files": [
     "index.styl",
     "lib/**/*.styl",
-    "vendor/**/*.css"
+    "vendor/animate.css/*",
+    "vendor/bootstrap/css/*"
   ],
   "images": [
     "lib/logos/img/*.png",

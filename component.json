@@ -1,13 +1,15 @@
 {
   "name": "auth0-styleguide",
-  "version": "0.6.7",
+  "version": "2.0.0",
   "dependencies": {},
   "fonts": [
-    "lib/budicon/fonts/*"
+    "lib/budicon/fonts/*",
+    "vendor/bootstrap/fonts/*"
   ],
   "files": [
     "index.styl",
-    "lib/**/*.styl"
+    "lib/**/*.styl",
+    "vendor/**/*.css"
   ],
   "images": [
     "lib/logos/img/*.png",

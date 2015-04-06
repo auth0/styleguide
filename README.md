@@ -48,11 +48,12 @@ bower install auth0/styleguide
 
 Since we use stylus for compiling our assets. So you should translate this build tasks to your own build process:
 
-For building the styles: `stylus --include-css --include . --resolve-url --out <your_dest_path> index.styl`
+```bash
+stylus --include-css --include . --resolve-url --out <your_dest_path> index.styl
+cp -R lib/**/* <your_dest_path>
+```
 
-For copying assets: `cp -R lib/**/* <your_dest_path>`
-
-You should have a final structure like this:
+You may use [bower][bower-home] or [gulp][gulp-home] or any task/build helper of your preference. Just make sure the final folder structure looks like this:
 
 ```
 <your_dest_path>/

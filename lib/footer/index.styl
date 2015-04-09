@@ -1,18 +1,133 @@
 /*==========  Footer  ==========*/
-footer.site-footer
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 12px;
-  padding: 20px 0;
-  color: #999;
-  nav 
-    text-align: right
-    float: right
-    li 
-      display: inline-block
-      margin-left: 30px;
-  a 
-    color: #999;
 
-  .col-md-11
-    float: right
+footer.site-footer
+  clearfix();
+  font-size: 13px;
+
+  +breakpoint("desktop")
+    padding-top: 40px;
+
+  a
+    color: darken(color_grey, 60%);
+
+    &:active
+      text-decoration: underline
+
+    &:hover
+      color: darken(color_grey, 40%);
+
+  .logo
+    margin-bottom: 15px;
+    text-align: center;
+
+    img
+      width: 20px;
+
+    +breakpoint("desktop")
+      float: left;
+      width: 8%;
+      text-align: left;
+      padding-top: 10px;
+
+      img
+        width: 30px;
+
+  h6
+    color: darken(color_grey, 20%);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+    padding: 10px 0;
+
+  .footer-grid
+    grid(1, 0, ".column")
+    text-align: left;
+
+    +breakpoint("desktop")
+      grid(7, 10px, ".column")
+      float: left;
+      width: 92%;
+      margin-bottom: 25px;
+
+  .column
+    margin-bottom: 10px;
+
+    +breakpoint("desktop")
+      margin-bottom: 15px;
+
+
+    &.no-heading
+        +breakpoint("desktop")
+          padding-top: 30px;
+
+    .item
+      margin-bottom: 4px;
+      a
+        border-bottom: 1px solid lighten(color_grey, 60%);
+        display: block;
+        padding: 10px 0;
+
+        +breakpoint("desktop")
+          padding: 0;
+          border: 0;
+          line-height: 1.8;
+
+  .contact
+    clearfix();
+    padding-top: 10px;
+    float: left;
+    width: 100%;
+
+    +breakpoint("desktop")
+      border-bottom: 1px solid lighten(color_grey, 60%);
+      border: 0;
+      float: none;
+      width: auto;
+      padding-top: 0;
+      padding-bottom: 10px;
+
+    .column
+      .item
+        a
+          border: 0;
+
+    .no-heading
+      .item
+        a
+          padding: 0;
+          padding-bottom: 5px;
+
+          +breakpoint("desktop")
+            padding: 0;
+
+  .social
+    clearfix();
+    padding-top: 10px;
+    text-align: left;
+
+    > div
+      height: 20px;
+      margin-bottom: 8px;
+
+      +breakpoint("desktop")
+        float: left;
+        width: 200px;
+
+  .colophon
+    clear: both;
+
+    +breakpoint("mobile-landscape")
+      grid(2, 0, ".column")
+
+    +breakpoint("desktop")
+      border-top: 1px solid lighten(color_grey, 60%);
+
+    ul
+      margin-top: 5px;
+
+    li
+      margin:  5px 0;
+      padding: 0 5px;
+
+      +breakpoint("desktop")
+        margin-left: 10px;

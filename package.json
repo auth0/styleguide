@@ -1,6 +1,6 @@
 {
   "name": "auth0-styleguide",
-  "version": "2.0.3",
+  "version": "patch",
   "engines": {
     "node": "0.10.x"
   },

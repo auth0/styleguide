@@ -176,6 +176,16 @@ Or perhaps you want to extend just parts of it by:
 color_red = '#ff0000';
 ```
 
+## Releasing a new version
+
+Run the command `bin/version <patch|minor|major|version-no>` insithe the root of the repo. This will commit a new version for you.
+
+Example
+```
+bin/version minor
+```
+
+
 ## Licence
 
 All the logos and branding are Auth0's property.

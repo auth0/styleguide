@@ -1,7 +1,7 @@
 Auth0 Styleguide
 ================
 
-Auth0 Product Style Guide. Use from our CDN!
+Auth0 Product Style Guide. **This is for internal use by Auth0 only.**
 
 <img src="https://i.cloudup.com/xJ2BeIkuhR.png" />
 
@@ -188,7 +188,9 @@ bin/version minor
 
 ## Licence
 
-All the logos and branding are Auth0's property.
+All the logos and branding are copyright Auth0 and may not be used or reproduced without explicit permission from Auth0 Inc.
+
+The icons are licensed from [Budi Harto Tanrim](http://budicon.buditanrim.co/). All other third-party components are subject to their own licenses.
 
 <!-- Resources -->
 [cdn-hash]: #cdn

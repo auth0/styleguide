@@ -37,7 +37,6 @@
   border-bottom: 1px solid #f1f1f1;
   background: none;
 
-
 .help-circle
   max-height: 14px;
   max-width: 14px;
@@ -48,8 +47,11 @@
 
   &:hover
       opacity: 1;
+    
++breakpoint("tablet")
+  .container
+    width: 100%;
 
-@media screen and (max-width: 992px)
++breakpoint("desktop")
   .zopim
     display: none
-

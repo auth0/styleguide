@@ -3,6 +3,8 @@
 footer.site-footer
   clearfix();
   font-size: 13px;
+  padding-top: 30px;
+  background-color: white;
 
   +breakpoint("desktop")
     padding-top: 40px;
@@ -131,3 +133,8 @@ footer.site-footer
 
       +breakpoint("desktop")
         margin-left: 10px;
+  
+  [class^='skype_pnh_container']
+    display: none !important;
+  [class^='skype_pnh_print_container']
+    display: inline !important;

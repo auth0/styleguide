@@ -4,6 +4,7 @@ body
 	font-family: "proxima-nova";
 	padding-top: 100px;
 	background: #e3e5e9
+	position: relative;
 
 hr
 	margin-bottom: 100px;
@@ -41,17 +42,30 @@ header.site-header.site-header
 	bottom: 0;
 	width: 260px;
 
-	strong
+	a
 		color: rgba(255,255,255,.4);
 		text-transform: uppercase;
 
-	a
-		color: white;
+
 
 	ul
 		margin-bottom: 30px;
+		padding: 0;
 		li
 			padding: 0;
+			list-style: none;
+			a
+				color: white;
+
+
+
+.nav
+
+	li ul
+		display:none;
+
+	li.active>ul
+		display:visible;
 
 .styleguide-content
 	margin-left: 300px;

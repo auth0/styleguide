@@ -17,7 +17,7 @@ html
         
     script(src="//localhost:35729/livereload.js")
       
-  body
+  body(data-spy="scroll", data-target="#myNavbar", data-offset="0")
 
     include ../lib/header/index.jade
 
@@ -25,86 +25,84 @@ html
     .container
 
       .sidebar
-        strong General
+        #myNavbar
+          ul(class="nav", role="tablist")
+            li
+              a(href="#general") General
+              ul
+                li 
+                  a(href="#getstarted") Get Started
+            li 
+              a(href="#branding") Branding
+              ul
+                li
+                  a(href='#logos')
+                    i
+                    span Logos
+            
+                li
+                  a(href='#colors')
+                    i
+                    span Colors
+    
 
-        ul
-
-          li
-            a(href='#get-started')
-              i
-              span Get Started
-
-        strong Branding
-        ul
-          li
-            a(href='#logos')
-              i
-              span Logos
-
-          li
-            a(href='#colors')
-              i
-              span Colors
-
-          li
-            a(href='#information')
-              i
-              span Information
-
-        strong CSS
-        ul
-
-          li
-            a(href='#typography')
-              i
-              span Typography
-
-          li
-            a(href='#buttons')
-              i
-              span Buttons
-          li
-            a(href='#icons')
-              i
-              span Icons
-
-
-        strong Components
-        ul
-
-          li
-            a(href='#header')
-              i
-              span Header
-
-
-          li
-            a(href='#footer')
-              i
-              span Footer
-
-          li
-            a(href='#sub-header')
-              i
-              span Sub Header
-
-
-          li
-            a(href='#banner')
-              i
-              span Banner
-
-          li
-            a(href='#Modal')
-              i
-              span Modal
-
+            li
+              a(href="#css") CSS
+              ul
+            
+                li
+                  a(href='#typography')
+                    i
+                    span Typography
+            
+                li
+                  a(href='#buttons')
+                    i
+                    span Buttons
+                li
+                  a(href='#icons')
+                    i
+                    span Icons
+            
+            //- 
+            //- li 
+            //-   a(href="#components") Components
+            //-   ul.nav
+            //- 
+            //-     li
+            //-       a(href='#header')
+            //-         i
+            //-         span Header
+            //- 
+            //- 
+            //-     li
+            //-       a(href='#footer')
+            //-         i
+            //-         span Footer
+            //- 
+            //-     li
+            //-       a(href='#sub-header')
+            //-         i
+            //-         span Sub Header
+            //- 
+            //- 
+            //-     li
+            //-       a(href='#banner')
+            //-         i
+            //-         span Banner
+            //- 
+            //-     li
+            //-       a(href='#Modal')
+            //-         i
+            //-         span Modal
+            //- 
 
       .styleguide-content
 
-
-        h1
-          a(name="get-started") Get Started
+        
+        
+        h1(id="general")
+          a(id="getstarted") Get Started
 
         p In order to use the styleguide, you can use from cdn as follow:
 
@@ -113,82 +111,80 @@ html
         hr
 
         h1
-          a(name="branding") Branding
+          a(id="branding") Branding
 
         //- p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac erat lectus. Vestibulum non accumsan turpis, ut tristique libero. Pellentesque tincidunt leo vel mauris rutrum, sit amet pretium dui imperdiet.
 
         h5.styled
-          a(name="logos") Logos
+          a(id="logos") Logos
         include ../lib/logos/demo
 
         h5.styled
-          a(name="colors") Colors
+          a(id="colors") Colors
         include ../lib/colors/demo
 
         hr
 
-        a(name="css")
+        a(id="css")
           h1 CSS
 
         h5.styled
-          a(name="typography") Typography
+          a(id="typography") Typography
         include ../lib/typography/demo
 
 
         h5.styled
-          a(name="buttons") Buttons
+          a(id="buttons") Buttons
         include ../lib/buttons/demo
 
 
         h5.styled
-          a(name="icons") Icons
+          a(id="icons") Icons
         include ../lib/budicon/demo
 
         hr
 
-        a(name="components")
+        a(id="components")
           h1 Components
 
         h5.styled
-          a(name="sub-header") Sub Header
+          a(id="sub-header") Sub Header
         include ../lib/sub-header/demo
 
 
         h5.styled
-          a(name="footer") Footer
+          a(id="footer") Footer
         include ../lib/footer/demo
 
 
         h5.styled
-          a(name="banner") Banner
+          a(id="banner") Banner
         include ../lib/banner/demo
 
         h5.styled
-          a(name="modal") Modal
+          a(id="modal") Modal
         include ../lib/modal/demo
 
 
         h5.styled
-          a(name="center-title-content") Center Title Content
+          a(id="center-title-content") Center Title Content
         include ../lib/center-title-block/demo
 
 
         h5.styled
-          a(name="try-banner") Try Auth0
+          a(id="try-banner") Try Auth0
         include ../lib/try-banner/demo
 
 
         h5.styled
-          a(name="quotes") Quotes
+          a(id="quotes") Quotes
         include ../lib/quotes/demo
 
 
-    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+
+
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
 
     script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js")
-    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
       
-    script. 
-      $(document).ready(function(){
-        $(".scroll-area").scrollspy({target: "#myNavbar"}) 
-      });

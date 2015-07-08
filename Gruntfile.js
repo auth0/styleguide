@@ -25,7 +25,10 @@ module.exports = function (grunt) {
     watch: {
       dev: {
         files: ['*', 'lib/**/*', 'bin/**/*', 'landing/*'],
-        tasks: ["build"]
+        tasks: ["build"],
+        options: {
+          livereload: true
+        }
       }
     },
     clean: [

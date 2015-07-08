@@ -62,6 +62,11 @@ module.exports = function (grunt) {
         files: [
           { expand: true, src: ['lib/**/*', '!**/*.styl', '!**/*.jade'], dest: 'build', filter: 'isFile'}
         ]
+      },
+      auth0bootstrap: {
+        files: {
+          'build/auth0-bootstrap.js': ['vendor/auth0-bootstrap/auth0-bootstrap.js']
+        }
       }
     },
     cssmin: {
@@ -119,6 +124,7 @@ module.exports = function (grunt) {
     'shell:generate_demo_css',
     'cssmin:main',
     'copy:main',
+    'copy:auth0bootstrap'
   ]);
 
   grunt.registerTask('dev', ['build', 'connect', 'watch']);

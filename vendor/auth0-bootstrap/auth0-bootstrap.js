@@ -1,3 +1,7 @@
+// NOTE: This file is just a temp hack that removes some herustics from
+// scrollspy so it works with the current styling which causes the window object
+// to have the same height as the entire document.
+
 /*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -1863,7 +1867,6 @@ if (typeof jQuery === 'undefined') {
   }
 
   ScrollSpy.prototype.getScrollHeight = function () {
-    console.log('???');
     return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
   }
 
@@ -1909,18 +1912,20 @@ if (typeof jQuery === 'undefined') {
     var activeTarget = this.activeTarget
     var i
 
+
     if (this.scrollHeight != scrollHeight) {
       this.refresh()
     }
 
-    if (scrollTop >= maxScroll) {
-      return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
-    }
+    // if (scrollTop >= maxScroll) {
+    //   return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+    // }
 
-    if (activeTarget && scrollTop < offsets[0]) {
-      this.activeTarget = null
-      return this.clear()
-    }
+
+    // if (activeTarget && scrollTop < offsets[0]) {
+    //   this.activeTarget = null
+    //   return this.clear()
+    // }
 
     for (i = offsets.length; i--;) {
       activeTarget != targets[i]

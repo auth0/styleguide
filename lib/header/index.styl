@@ -15,12 +15,12 @@ header.site-header.site-header
 
   li *
     -webkit-backface-visibility: hidden !important;
-    
+
   .navbar-header
     margin-right: -15px;
     margin-left: -15px;
     float: none;
-    
+
     +breakpoint("desktop")
       margin-right: 0;
       margin-left: 0;
@@ -49,7 +49,7 @@ header.site-header.site-header
       padding: 0 15px 0 18px;
       margin: 0;
       width: 120px;
-      
+
       +breakpoint("desktop")
         padding: 0 15px 0 0;
 
@@ -77,13 +77,13 @@ header.site-header.site-header
     .navbar-collapse
       border-color: transparent;
       padding: 0;
-      
+
       &.collapse
         display: none !important;
-        
+
         &.in
           display: block !important;
-        
+
         +breakpoint("desktop")
           display: block !important;
 
@@ -92,10 +92,10 @@ header.site-header.site-header
 
     .navbar-nav>.open>a
       background: none;
-      
+
     .navbar-nav
       float: none !important;
-      
+
       &.navbar-right
         +breakpoint("desktop")
           float: right !important;
@@ -103,26 +103,26 @@ header.site-header.site-header
       &.navbar-left
         +breakpoint("desktop")
           float: left !important;
-        
-      
+
+
       > li
         float: none;
-        
+
         +breakpoint("desktop")
           float: left;
 
   .navbar-toggle
     border: 0;
     display: block;
-    
+
     +breakpoint("desktop")
       display: none;
-    
+
     &:hover
       background: none;
       .icon-bar
         background: black;
-        
+
 
 
 
@@ -159,25 +159,26 @@ header.site-header.site-header
       border-bottom: 1px solid #f1f1f1;
       -webkit-transform: none;
       transform: none;
-      
+
       +breakpoint("desktop")
         -webkit-transform: scale(.8) translateY(-10%);
         transform: scale(.8) translateY(-10%);
         pointer-events: none;
-        
+        opacity: 0;
+
         .divider
           margin: 8px 0;
-      
+
       li > a
         padding: 10px 15px;
         line-height: 20px;
-        
+
         +breakpoint("desktop")
           padding: 5px 20px;
-        
+
         &:hover
           background: none;
-          
+
           +breakpoint("desktop")
             background: #f1f1f1;
 

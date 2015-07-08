@@ -1,0 +1,83 @@
+header.site-header.site-header.clearfix
+
+  nav.navbar.navbar-default(role='navigation')
+    .container
+
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+
+
+
+        h1.navbar-brand
+          a(href="/")
+            span Auth0
+
+        a(href="#{base_url}/jobs").hiring.animated.bounce.hidden-sm.hidden-xs.hidden-md We're hiring!
+
+
+      #navbar-collapse.collapse.navbar-collapse
+
+
+        ul.nav.navbar-nav.navbar-left
+          li.li-why
+            a(href="#{base_url}/why-auth0") Why Auth0
+          li.li-how
+            a(href="#{base_url}/how-it-works") How It Works
+
+          li.li-pricing
+            a(href="#{base_url}/pricing") Pricing
+
+          li.dropdown
+            span(role='button', data-toggle='dropdown').btn-dro More
+              i.icon-budicon-460
+            ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+
+              li
+                a(href="#{base_url}/lock") Lock
+
+              li
+                a(href="#{base_url}/wordpress") Wordpress
+
+
+
+              li.divider
+
+              li
+
+                a(href="#{base_url}/about") About
+
+              li
+                a(href="#{base_url}/blog") Blog
+
+
+              li
+                a(href="#{base_url}/customers") Customers
+
+
+              li
+                a(href="#{base_url}/opensource") Open Source
+
+              li
+                a(href="#{base_url}/jobs") Jobs
+
+
+
+        ul.nav.navbar-nav.navbar-right
+
+          li.li-docs
+            a(href="#{base_url}/support") Help & Support
+
+
+          li.li-docs
+            a(href="#{base_url}/docs") Documentation
+
+
+
+
+
+          li
+            a.signin-button(href="javascript:login()").login Login

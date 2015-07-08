@@ -1,23 +1,65 @@
 @import 'lib/vars/index.styl';
 
 body
-	font-family: "proxima-nova"; 
+	font-family: "proxima-nova";
+	padding-top: 100px;
+	background: #e3e5e9
 
 hr
 	margin-bottom: 100px;
 	opacity: 0;
 
+.container
+	width: 100% !important;
+	min-width: 100% !important;
+	max-width: 100% !important;
+
 .text-content
 	.container
 		max-width: 100%;
-    
-header.site-header
-	position: static !important;
 
 .text-content .box
 	background: #f1f1f1;
 	padding: 20px;
 
+header.site-header.site-header
+	position: fixed !important
+	padding: 20px 10px;
+	right: 0;
+	left: 0;
+	top: 0;
+	background: rgba(255,255,255,.8)
+	.hiring
+		display: none;
 
+.sidebar
+	position: fixed;
+	background: #111118
+	left: 0;
+	padding: 30px 30px;
+	top: 90px;
+	bottom: 0;
+	width: 260px;
 
+	strong
+		color: rgba(255,255,255,.4);
+		text-transform: uppercase;
 
+	a
+		color: white;
+
+	ul
+		margin-bottom: 30px;
+		li
+			padding: 0;
+
+.styleguide-content
+	margin-left: 300px;
+	margin-right: 30px;
+
+.shades
+	border-radius: 3px;
+	overflow: hidden;
+	.shade
+		padding: 10px 20px;
+		background: #000

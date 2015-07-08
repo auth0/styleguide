@@ -4,210 +4,191 @@ html
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
+    
     title Styleguide
 
     link(href='index.css', rel='stylesheet')
     link(href='landing.css', rel='stylesheet')
     link(rel="shortcut icon", href="img/favicon.png")
-    link(href="https://cdn.auth0.com/web-header/latest/standalone.css", rel='stylesheet')
-    script(type='text/javascript', src='//cdn.auth0.com/web-header/latest/standalone.min.js')
-
 
     script(type='text/javascript', src='//use.typekit.net/iws6ohy.js')
     script.
       try{Typekit.load();}catch(e){}
-
-
+        
+    script(src="//localhost:35729/livereload.js")
+      
   body
 
-    header.site-header.clearfix
-    script(type='text/javascript').
-      (function() {
-        var header = new WebHeader({ base_url: 'https://auth0.com' });
-        header.render('header.site-header');
-      })();
+    include ../lib/header/index.jade
+
 
     .container
-      .sub-header
-        span.sub-header-text Version
-          strong#styleguide-version
-            |  #{version}
 
+      .sidebar
+        strong General
 
-        ul.external-links
+        ul
+
           li
-            a(href='https://github.com/auth0/style', target='_blank') View on Github
+            a(href='#get-started')
+              i
+              span Get Started
 
-    .container
-      .row
-        .col-md-3
+        strong Branding
+        ul
+          li
+            a(href='#logos')
+              i
+              span Logos
 
-          .sidebar-box
-            strong General
+          li
+            a(href='#colors')
+              i
+              span Colors
 
-            ul
+          li
+            a(href='#information')
+              i
+              span Information
 
-              li
-                a(href='#get-started')
-                  i
-                  span Get Started
+        strong CSS
+        ul
 
-          .sidebar-box
-            strong Branding
-            ul
-              li
-                a(href='#logos')
-                  i
-                  span Logos
+          li
+            a(href='#typography')
+              i
+              span Typography
 
-              li
-                a(href='#colors')
-                  i
-                  span Colors
-
-              li
-                a(href='#information')
-                  i
-                  span Information
-
-          .sidebar-box
-            strong CSS
-            ul
-
-              li
-                a(href='#typography')
-                  i
-                  span Typography
-
-              li
-                a(href='#buttons')
-                  i
-                  span Buttons
-              li
-                a(href='#icons')
-                  i
-                  span Icons
+          li
+            a(href='#buttons')
+              i
+              span Buttons
+          li
+            a(href='#icons')
+              i
+              span Icons
 
 
+        strong Components
+        ul
+
+          li
+            a(href='#header')
+              i
+              span Header
 
 
-          .sidebar-box
-            strong Components
-            ul
+          li
+            a(href='#footer')
+              i
+              span Footer
 
-              li
-                a(href='#header')
-                  i
-                  span Header
-
-
-              li
-                a(href='#footer')
-                  i
-                  span Footer
-
-              li
-                a(href='#sub-header')
-                  i
-                  span Sub Header
+          li
+            a(href='#sub-header')
+              i
+              span Sub Header
 
 
-              li
-                a(href='#banner')
-                  i
-                  span Banner
+          li
+            a(href='#banner')
+              i
+              span Banner
 
-              li
-                a(href='#Modal')
-                  i
-                  span Modal
-
-
-        .col-md-9.text-content
+          li
+            a(href='#Modal')
+              i
+              span Modal
 
 
-          h1
-            a(name="get-started") Get Started
-
-          p In order to use the styleguide, you can use from cdn as follow:
-
-          pre.prettyprint  &lt;link href=&quot;https://cdn.auth0.com/styleguide/latest/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
-
-          hr
-
-          h1
-            a(name="branding") Branding
-
-          //- p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac erat lectus. Vestibulum non accumsan turpis, ut tristique libero. Pellentesque tincidunt leo vel mauris rutrum, sit amet pretium dui imperdiet.
-
-          h5.styled
-            a(name="logos") Logos
-          include ../lib/logos/demo
-
-          h5.styled
-            a(name="colors") Colors
-          include ../lib/colors/demo
-
-          hr
-
-          a(name="css")
-            h1 CSS
-
-          h5.styled
-            a(name="typography") Typography
-          include ../lib/typography/demo
+      .styleguide-content
 
 
-          h5.styled
-            a(name="buttons") Buttons
-          include ../lib/buttons/demo
+        h1
+          a(name="get-started") Get Started
+
+        p In order to use the styleguide, you can use from cdn as follow:
+
+        pre.prettyprint  &lt;link href=&quot;https://cdn.auth0.com/styleguide/latest/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
+
+        hr
+
+        h1
+          a(name="branding") Branding
+
+        //- p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac erat lectus. Vestibulum non accumsan turpis, ut tristique libero. Pellentesque tincidunt leo vel mauris rutrum, sit amet pretium dui imperdiet.
+
+        h5.styled
+          a(name="logos") Logos
+        include ../lib/logos/demo
+
+        h5.styled
+          a(name="colors") Colors
+        include ../lib/colors/demo
+
+        hr
+
+        a(name="css")
+          h1 CSS
+
+        h5.styled
+          a(name="typography") Typography
+        include ../lib/typography/demo
 
 
-          h5.styled
-            a(name="icons") Icons
-          include ../lib/budicon/demo
-
-          hr
-
-          a(name="components")
-            h1 Components
-
-          h5.styled
-            a(name="sub-header") Sub Header
-          include ../lib/sub-header/demo
+        h5.styled
+          a(name="buttons") Buttons
+        include ../lib/buttons/demo
 
 
-          h5.styled
-            a(name="footer") Footer
-          include ../lib/footer/demo
+        h5.styled
+          a(name="icons") Icons
+        include ../lib/budicon/demo
+
+        hr
+
+        a(name="components")
+          h1 Components
+
+        h5.styled
+          a(name="sub-header") Sub Header
+        include ../lib/sub-header/demo
 
 
-          h5.styled
-            a(name="banner") Banner
-          include ../lib/banner/demo
-
-          h5.styled
-            a(name="modal") Modal
-          include ../lib/modal/demo
+        h5.styled
+          a(name="footer") Footer
+        include ../lib/footer/demo
 
 
-          h5.styled
-            a(name="center-title-content") Center Title Content
-          include ../lib/center-title-block/demo
+        h5.styled
+          a(name="banner") Banner
+        include ../lib/banner/demo
+
+        h5.styled
+          a(name="modal") Modal
+        include ../lib/modal/demo
 
 
-          h5.styled
-            a(name="try-banner") Try Auth0
-          include ../lib/try-banner/demo
+        h5.styled
+          a(name="center-title-content") Center Title Content
+        include ../lib/center-title-block/demo
 
 
-          h5.styled
-            a(name="quotes") Quotes
-          include ../lib/quotes/demo
+        h5.styled
+          a(name="try-banner") Try Auth0
+        include ../lib/try-banner/demo
 
-    include ../lib/footer/demo
+
+        h5.styled
+          a(name="quotes") Quotes
+        include ../lib/quotes/demo
+
 
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
 
     script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js")
     script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+      
+    script. 
+      $(document).ready(function(){
+        $(".scroll-area").scrollspy({target: "#myNavbar"}) 
+      });

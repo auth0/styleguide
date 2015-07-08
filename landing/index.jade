@@ -1,3 +1,14 @@
+mixin example_block(title, description, code)
+  .example-block
+    h1= title
+    .example-block-content
+      p= description
+      block
+    if(code)
+      pre.example-block-code.prettyprint= code
+
+    
+
 doctype html5
 html
   head
@@ -98,30 +109,18 @@ html
             //- 
 
       .styleguide-content
-
         
-        
-        h1(id="general")
-          a(id="getstarted") Get Started
+        +example_block("Get Started", "In order to use the styleguide, you can use from cdn as follow:", '<link href="https://cdn.auth0.com/styleguide/latest/index.css" rel="stylesheet" />')
+  
+      
+        +example_block("Branding")
+          h5.styled
+            a(id="colors") Logos
+          include ../lib/logos/demo
 
-        p In order to use the styleguide, you can use from cdn as follow:
-
-        pre.prettyprint  &lt;link href=&quot;https://cdn.auth0.com/styleguide/latest/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
-
-        hr
-
-        h1
-          a(id="branding") Branding
-
-        //- p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac erat lectus. Vestibulum non accumsan turpis, ut tristique libero. Pellentesque tincidunt leo vel mauris rutrum, sit amet pretium dui imperdiet.
-
-        h5.styled
-          a(id="logos") Logos
-        include ../lib/logos/demo
-
-        h5.styled
-          a(id="colors") Colors
-        include ../lib/colors/demo
+          h5.styled
+            a(id="colors") Colors
+          include ../lib/colors/demo
 
         hr
 

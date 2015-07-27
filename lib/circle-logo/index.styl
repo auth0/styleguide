@@ -224,6 +224,7 @@ rel_width = 8em;
         background-image: url('img/android.svg');
         
   &[data-name^="windows"],
+  &[data-name^="azure"],
   &[data-name^="wpf"]
     .logo
       background: -webkit-linear-gradient(-220deg, #68217a 23%, #9b62a9 100%);
@@ -279,7 +280,7 @@ rel_width = 8em;
       &:after
         background-image: url('img/amazon.svg');
         
-  &[data-name="salesforce"]
+  &[data-name^="salesforce"]
     .logo
       background: -webkit-linear-gradient(-220deg, #2990E5 23%, #1A5095 100%);
       background: linear-gradient(-220deg, #2990E5 23%, #1A5095 100%);
@@ -297,6 +298,24 @@ rel_width = 8em;
       &:after
         background-image: url('img/firebase.svg');
         
+  &[data-name="sap"],
+  &[data-name="sap-odata"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #98AABD 23%, #547F88 100%);
+      background: linear-gradient(-220deg, #98AABD 23%, #547F88 100%);
+
+      &:after
+        background-image: url('img/sap.svg');
+        
+  &[data-name="spring"],
+  &[data-name="java-spring-security"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #57A343 23%, #757149 100%);
+      background: linear-gradient(-220deg, #57A343 23%, #757149 100%);
+
+      &:after
+        background-image: url('img/spring.svg');
+        
   &[data-name="play"],
   &[data-name="scala"]
     .logo
@@ -310,7 +329,8 @@ rel_width = 8em;
         
   &[data-name="net"],
   &[data-name^="wcf"],
-  &[data-name^="aspnet"]
+  &[data-name^="aspnet"],
+  &[data-name="webapi-owin"]
     .logo
       background: -webkit-linear-gradient(-220deg, #68217A 23%, #9B62A9 100%);
       background: linear-gradient(-220deg, #68217A 23%, #9B62A9 100%);

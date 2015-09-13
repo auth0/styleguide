@@ -7,7 +7,7 @@ Auth0 Product Style Guide. **This is for internal use by Auth0 only.**
 
 ## Usage
 
-We encourage to use our CDN resource, but if you want to extend you can either use [Component(1)][component-home] or [Bower][bower-home] for that.
+We encourage you to use our CDN resource, but if you want to extend you can either use [Component(1)][component-home] or [Bower][bower-home] for that.
 Instructions on the build process are detailed below.
 
 ### CDN

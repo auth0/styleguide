@@ -68,41 +68,63 @@ module.exports = function (grunt) {
         }
       }
     },
-    s3: {
+    aws_s3: {
       options: {
-        key:    process.env.S3_KEY,
-        secret: process.env.S3_SECRET,
+        accessKeyId:  process.env.S3_KEY,
+        secretAccessKey: process.env.S3_SECRET,
         bucket: process.env.S3_BUCKET,
         access: 'public-read',
-        headers: {
-          'Cache-Control':  'public, max-age=300'
+        params: {
+          CacheControl: 'public, max-age=300'
         }
       },
       publish: {
-        upload: [
+        files: [
         {
           rel:    'build',
           src:    'build/**/*',
           dest:   'styleguide/' + majorVersion  + '/',
-          options: { gzip: false }
+          options: {
+            params: {
+              gzip: false
+            }
+          },
+          action: 'upload'
         },
         {
           rel:    'build',
           src:    'build/**/*',
           dest:   'styleguide/' + minorVersion + '/',
-          options: { gzip: false }
+          options: {
+            params: {
+              gzip: false
+            }
+          },
+
+          action: 'upload'
         },
         {
           rel:    'build',
           src:    'build/**/*',
           dest:   'styleguide/' + pkg.version + '/',
-          options: { gzip: false }
+          options: {
+            params: {
+              gzip: false
+            }
+          },
+          action: 'upload'
         },
         {
           rel:    'build',
           src:    'build/**/*',
           dest:   'styleguide/latest/',
-          options: { gzip: false }
+          options: {
+            params: {
+              gzip: false
+            }
+          },
+
+          action: 'upload'
         }]
       }
     }

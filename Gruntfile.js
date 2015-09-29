@@ -43,15 +43,6 @@ module.exports = function (grunt) {
       },
       generate_demo_css: {
         command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ landing/landing.styl'
-      },
-      purge_cdn_latest: {
-        command: 'curl -X DELETE https://cdn.auth0.com/styleguide/latest'
-      },
-      purge_cdn_major: {
-        command: 'curl -X DELETE https://cdn.auth0.com/styleguide/styleguide/' + majorVersion
-      },
-      purge_cdn_minor: {
-        command: 'curl -X DELETE https://cdn.auth0.com/styleguide/styleguide/' + minorVersion
       }
     },
     copy: {
@@ -128,6 +119,26 @@ module.exports = function (grunt) {
           action: 'upload'
         }]
       }
+    },
+    http: {
+      purge_cdn_latest: {
+        options: {
+          url: process.env.CDN_ROOT + '/styleguide/latest',
+          method: 'DELETE'
+        }
+      },
+      purge_cdn_major: {
+        options: {
+          url: process.env.CDN_ROOT + '/styleguide/styleguide/' + majorVersion,
+          method: 'DELETE'
+        }
+      },
+      purge_cdn_minor: {
+        options: {
+          url: process.env.CDN_ROOT + '/styleguide/styleguide/' + minorVersion,
+          method: 'DELETE'
+        }
+      }
     }
   });
 
@@ -146,9 +157,9 @@ module.exports = function (grunt) {
   grunt.registerTask('cdn', [
     'build',
     'aws_s3',
-    'shell:purge_cdn_latest',
-    'shell:purge_cdn_major',
-    'shell:purge_cdn_minor'
+    'http:purge_cdn_latest',
+    'http:purge_cdn_major',
+    'http:purge_cdn_minor'
   ]);
 
   grunt.registerTask('default', ['build']);

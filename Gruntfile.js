@@ -144,7 +144,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('cdn', [
     'build',
-    's3',
+    'aws_s3',
     'shell:purge_cdn_latest',
     'shell:purge_cdn_major',
     'shell:purge_cdn_minor'

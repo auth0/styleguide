@@ -65,58 +65,32 @@ module.exports = function (grunt) {
         secretAccessKey: process.env.S3_SECRET,
         bucket: process.env.S3_BUCKET,
         region: process.env.S3_REGION,
-        access: 'public-read',
+        uploadConcurrency: 5,
         params: {
           CacheControl: 'public, max-age=300'
         }
       },
       publish: {
-        files: [
-        {
-          rel:    'build',
-          src:    'build/**/*',
-          dest:   'styleguide/' + majorVersion  + '/',
-          options: {
-            params: {
-              gzip: false
-            }
-          },
-          action: 'upload'
-        },
-        {
-          rel:    'build',
-          src:    'build/**/*',
-          dest:   'styleguide/' + minorVersion + '/',
-          options: {
-            params: {
-              gzip: false
-            }
-          },
-
-          action: 'upload'
-        },
-        {
-          rel:    'build',
-          src:    'build/**/*',
-          dest:   'styleguide/' + pkg.version + '/',
-          options: {
-            params: {
-              gzip: false
-            }
-          },
-          action: 'upload'
-        },
-        {
-          rel:    'build',
-          src:    'build/**/*',
-          dest:   'styleguide/latest/',
-          options: {
-            params: {
-              gzip: false
-            }
-          },
-
-          action: 'upload'
+        files: [{
+          src: ['**'],
+          dest: 'styleguide/' + majorVersion  + '/',
+          expand: true,
+          cwd: 'build/'
+        },{
+          src: ['**'],
+          dest: 'styleguide/' + minorVersion + '/',
+          expand: true,
+          cwd: 'build/'
+        },{
+          src: ['**'],
+          dest: 'styleguide/' + pkg.version + '/',
+          expand: true,
+          cwd: 'build/'
+        },{
+          src: ['**'],
+          dest: 'styleguide/latest/',
+          expand: true,
+          cwd: 'build/'
         }]
       }
     },

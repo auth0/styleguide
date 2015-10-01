@@ -1,4 +1,5 @@
-/*==========  Buttons  ==========*/
+
+
 .btn, a.btn
   -webkit-transition: background-color 0.2s ease;
   -moz-transition: background-color 0.2s ease;
@@ -67,7 +68,6 @@
   &:active
     box-shadow: none;
 
-
 .bg-primary, .bg-success, .bg-danger, .bg-info, .bg-warning
   font-weight: bold
   color: white;
@@ -77,7 +77,6 @@
     color: white;
     border-bottom: 1px solid white;
     padding-bottom: 1px;
-
 
 .bg-primary
   background: color_blue;
@@ -94,6 +93,21 @@
 .bg-danger
   background: color_red_alt;
 
+fieldset[disabled]
+  .btn
+    background-color: gray !important;
+    border-color: gray !important;
+
+.help-circle
+  max-height: 14px;
+  max-width: 14px;
+  opacity: .2;
+  margin-left: 4px;
+  position: relative;
+  top: -2px;
+
+  &:hover
+      opacity: 1;
 
 .glyphs.css-mapping{color:rgba(0,0,0,0.5); padding: 0; margin: 0;}
 .glyphs.css-mapping li{margin:0 20px 20px 0;padding:0;display:inline-block;overflow:hidden}

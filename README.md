@@ -178,7 +178,7 @@ color_red = '#ff0000';
 
 ## Releasing a new version
 
-Run the command `bin/version <patch|minor|major|version-no>` insithe the root of the repo. This will commit a new version for you.
+Run the command `bin/version <patch|minor|major|version-no>` inside the root of the repo. This will commit a new version for you.
 
 Example
 ```

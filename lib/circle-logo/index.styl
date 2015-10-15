@@ -48,6 +48,11 @@ rel_width = 8em;
     margin: 10px 0;
     min-height: 3em;
 
+  &[data-name]
+    .logo
+      &:after
+        background-image: url('img/generic.svg');
+
   &[data-name="how-to"]
     .logo:before
       top: 55%;

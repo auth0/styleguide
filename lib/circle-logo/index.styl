@@ -7,14 +7,14 @@ rel_width = 8em;
   width: rel_width;
   -webkit-transition: transform 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: transform 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  
+
   &:hover
     text-decoration: none;
     transform: scale(1.05);
-    
-    .logo 
+
+    .logo
       opacity: 0.9;
-    
+
   .logo
     position: relative;
     height: rel_width;
@@ -22,7 +22,7 @@ rel_width = 8em;
     background: #EAEEF3;
     color: #333;
     border-radius: 50%;
-    
+
     &:before,
     &:after
       position: absolute;
@@ -32,7 +32,7 @@ rel_width = 8em;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       font-size: 3em;
-    
+
     &:after
       content: "";
       display: block;
@@ -41,26 +41,42 @@ rel_width = 8em;
       background-repeat: no-repeat;
       width: 50%;
       height: 50%;
-      
+
   .title
     color: #333;
     font-weight: bold;
     margin: 10px 0;
     min-height: 3em;
-    
+
   &[data-name="how-to"]
     .logo:before
       top: 55%;
-    
+
   &[data-name="angular"],
   &[data-name="angularjs"]
     .logo
       background: -webkit-linear-gradient(top left, #008BFF 40%, #2C6FAD 140%);
       background: linear-gradient(top left, #008BFF 40%, #2C6FAD 140%);
-      
+
       &:after
         background-image: url('img/angular.svg');
-        
+
+  &[data-name^="nginx"]
+    .logo
+      background: -webkit-linear-gradient(top left, #defbda 40%, #97bcd2 140%);
+      background: linear-gradient(top left, #defbda 40%, #97bcd2 140%);
+
+      &:after
+        background-image: url('img/nginx.svg');
+
+  &[data-name^="relay"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #3B3738 23%, #4B5357 100%);
+      background: linear-gradient(-220deg, #3B3738 23%, #4B5357 100%);
+
+      &:after
+        background-image: url('img/relay.svg');
+
 
   &[data-name^="php"],
   &[data-name="laravel"],
@@ -68,46 +84,46 @@ rel_width = 8em;
     .logo
       background: -webkit-linear-gradient(top left, #6D7BCE 40%, #3B2862 140%);
       background: linear-gradient(top left, #6D7BCE 40%, #3B2862 140%);
-      
+
       &:after
         background-image: url('img/php.svg');
         width: 55%;
         height: 55%;
-        
+
   &[data-name="ember"],
   &[data-name="emberjs"]
     .logo
       background: -webkit-linear-gradient(top left, #F46642 40%, #9C2202 140%);
       background: linear-gradient(top left, #F46642 40%, #9C2202 140%);
-      
+
       &:after
         background-image: url('img/ember.svg');
         width: 80%;
         height: 80%;
-        
+
   &[data-name="node"],
   &[data-name="nodejs"]
     .logo
       background: -webkit-linear-gradient(top left, #78B743 40%, #9FE861 140%);
       background: linear-gradient(top left, #78B743 40%, #9FE861 140%);
-      
+
       &:after
         background-image: url('img/nodejs.svg');
         width: 50%;
         height: 50%;
-        
+
   &[data-name="ruby"]
     .logo
       background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #cebbbb 100%);
       background: linear-gradient(-220deg, #f3f3f3 23%, #cebbbb 100%);
-      
+
       &:after
         top: 50%;
         left: 48%;
         background-image: url('img/ruby.svg');
         width: 40%;
         height: 40%;
-        
+
   &[data-name="apple"],
   &[data-name="osx"],
   &[data-name^="ios"]
@@ -120,7 +136,7 @@ rel_width = 8em;
         background-image: url('img/apple.svg');
         width: 45%;
         height: 45%;
-        
+
   &[data-name="cordova"],
   &[data-name="apache-cordova"]
     .logo
@@ -129,7 +145,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/cordova.svg');
-        
+
 
   &[data-name="ionic"]
     .logo
@@ -139,7 +155,7 @@ rel_width = 8em;
       &:after
         background-image: url('img/ionic.svg');
         opacity: 0.8;
-        
+
   &[data-name="java"]
     .logo
       background: -webkit-linear-gradient(-220deg, #F83F3F 23%, #A11818 100%);
@@ -147,7 +163,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/java.svg');
-        
+
   &[data-name="socket-io"],
   &[data-name="socketio"]
     .logo
@@ -156,7 +172,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/socketio.svg');
-        
+
   &[data-name="vanillajs"]
     .logo
       background: -webkit-linear-gradient(-180deg, #F0DB4F 0%, #EDD223 100%);
@@ -166,7 +182,7 @@ rel_width = 8em;
         background-image: url('img/vanillajs.svg');
         width: 38%;
         height: 38%;
-        
+
   &[data-name="go"],
   &[data-name="golang"]
     .logo
@@ -175,7 +191,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/go.svg');
-        
+
   &[data-name="xamarin"]
     .logo
       background: -webkit-linear-gradient(-220deg, #578BD3 23%, #3F6E97 100%);
@@ -183,7 +199,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/xamarin.svg');
-        
+
   &[data-name="python"]
     .logo
       background: -webkit-linear-gradient(-220deg, #cbeaff 23%, #91adff 100%);
@@ -191,7 +207,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/python.svg');
-        
+
   &[data-name="react"]
     .logo
       background: -webkit-linear-gradient(-220deg, #3A5795 23%, #338bbc 100%);
@@ -199,7 +215,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/react.svg');
-        
+
   &[data-name="phonegap"]
     .logo
       background: -webkit-linear-gradient(-220deg, #738386 23%, #4E575B 100%);
@@ -207,7 +223,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/phonegap.svg');
-        
+
 
   &[data-name="nancyfx"]
     .logo
@@ -216,7 +232,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/nancyfx.svg');
-        
+
   &[data-name="android"]
     .logo
       background: -webkit-linear-gradient(-220deg, #B0D949 23%, #83B830 100%);
@@ -224,7 +240,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/android.svg');
-        
+
   &[data-name^="windows"],
   &[data-name^="azure"],
   &[data-name^="wpf"]
@@ -237,7 +253,7 @@ rel_width = 8em;
         width: 45%;
         height: 45%;
         left: 49%;
-        
+
   &[data-name="servicestack"]
     .logo
       background: -webkit-linear-gradient(-220deg, #D1D1D1 23%, #89969D 100%);
@@ -245,7 +261,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/servicestack.svg');
-        
+
   &[data-name="jquery"]
     .logo
       background: -webkit-linear-gradient(-220deg, #323DAE 23%, #338bbc 100%);
@@ -255,7 +271,7 @@ rel_width = 8em;
         background-image: url('img/jquery.svg');
         width: 60%;
         height: 60%;
-        
+
   &[data-name="rails"]
     .logo
       background: -webkit-linear-gradient(-220deg, #FF0046 23%, #951A3C 100%);
@@ -263,7 +279,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/rails.svg');
-        
+
   &[data-name="apache"]
     .logo
       background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
@@ -273,7 +289,7 @@ rel_width = 8em;
         background-image: url('img/apache.svg');
         width: 55%;
         height: 55%;
-        
+
   &[data-name="aws"]
     .logo
       background: -webkit-linear-gradient(-220deg, #595155 23%, #1C1C1C 100%);
@@ -281,7 +297,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/amazon.svg');
-        
+
   &[data-name^="salesforce"]
     .logo
       background: -webkit-linear-gradient(-220deg, #2990E5 23%, #1A5095 100%);
@@ -291,7 +307,7 @@ rel_width = 8em;
         background-image: url('img/salesforce.svg');
         width: 60%;
         height: 60%;
-        
+
   &[data-name^="falcor"]
     .logo
       background: -webkit-linear-gradient(-220deg, #B6DBE9 23%, #F1B9F3 100%);
@@ -301,7 +317,7 @@ rel_width = 8em;
         background-image: url('img/falcor.svg');
         width: 60%;
         height: 60%;
-        
+
   &[data-name="firebase"]
     .logo
       background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
@@ -309,7 +325,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/firebase.svg');
-        
+
   &[data-name="sap"],
   &[data-name="sap-odata"]
     .logo
@@ -318,7 +334,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/sap.svg');
-        
+
   &[data-name="spring"],
   &[data-name="java-spring-security"]
     .logo
@@ -327,7 +343,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/spring.svg');
-        
+
   &[data-name="play"],
   &[data-name="scala"]
     .logo
@@ -338,7 +354,7 @@ rel_width = 8em;
         background-image: url('img/play.svg');
         left: 54%;
         top: 51%;
-        
+
   &[data-name="net"],
   &[data-name^="wcf"],
   &[data-name^="aspnet"],
@@ -349,7 +365,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/net.svg');
-        
+
   &[data-name="netclassic"],
   &[data-name="asp-classic"]
     .logo
@@ -358,7 +374,7 @@ rel_width = 8em;
 
       &:after
         background-image: url('img/netold.svg');
-        
+
   &[data-name="auth0"],
   &[data-name="lock"]
     .logo
@@ -370,6 +386,3 @@ rel_width = 8em;
         top: 53%;
         width: 40%;
         height: 40%;
-        
-
-

@@ -33,7 +33,7 @@ breakpoint(point, value = 0)
     @media (point: value)
       {block}
 
-grid(cols = 1, gutter = 0, childs = ".item")
+grid(cols = 1, gutter = 0, childs = ".item", orientation="right")
   clearfix()
   width: auto
   margin-right: -(gutter)
@@ -41,5 +41,5 @@ grid(cols = 1, gutter = 0, childs = ".item")
   {childs}
     float: left
     width: (100% / cols)
-    padding-right: gutter
+    padding-{orientation}: gutter
     background-clip: content-box

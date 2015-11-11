@@ -15,7 +15,7 @@ module.exports = function (grunt) {
       dev: {
         options: {
           hostname: '*',
-          port: 8989,
+          port: 8888,
           middleware: function (connect, options) {
             return [connect.static(join(__dirname, 'build')) ];
           }

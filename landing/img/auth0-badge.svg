@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="34px" viewBox="0 0 31 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>badge</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-125.000000, -15.000000)" fill="#EB5424">
+            <g id="badge" sketch:type="MSLayerGroup" transform="translate(125.000000, 15.000000)">
+                <g id="Page-1" sketch:type="MSShapeGroup">
+                    <g id="badge">
+                        <g id="Clipped">
+                            <path d="M24.4995855,27.4956786 L21.0630724,16.9993929 L30.0585789,10.5140952 L18.9391645,10.5140952 L15.5022434,0.0182142857 L15.5012237,0.0153809524 L26.6224737,0.0153809524 L30.0600066,10.5130833 L30.0600066,10.512881 L30.0628618,10.5112619 C32.0595066,16.6013095 30.0033092,23.528 24.4995855,27.4956786 L24.4995855,27.4956786 L24.4995855,27.4956786 Z M6.50449342,27.4956786 L6.50163816,27.4977024 L15.4995921,33.984619 L24.4995855,27.495881 L15.5024474,21.0087619 L6.50449342,27.4956786 L6.50449342,27.4956786 Z M0.943052632,10.5114643 L0.943052632,10.5114643 C-1.15842105,16.9311905 1.28099342,23.733619 6.50265789,27.4968929 L6.50347368,27.4936548 L9.94039474,16.9979762 L0.946723684,10.5138929 L12.0634868,10.5138929 L15.5006118,0.0180119048 L15.5014276,0.0151785714 L4.37956579,0.0151785714 L0.943052632,10.5114643 L0.943052632,10.5114643 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

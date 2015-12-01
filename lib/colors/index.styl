@@ -1,50 +1,184 @@
 // Colors
-
-.color
-  // height: 200px;
-  background: red;
+.color {
   border-radius: 3px;
-  color: white;
   padding: 20px;
   margin-bottom: 20px;
-  padding-top: 100px;
+  padding-top: 80%;
+  position: relative;
 
-  span
-    font-size: 16px;
+  .color-info {
+    background-color: rgba(0, 0, 0, .1);
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color #fff;
     display: block
-    margin-bottom: 10px;
-
-  strong
-    display: block
-    text-transform: uppercase
-
-  &.color-blue
-    background: color_blue;
-
-  &.color-blue-light
-    background: color_blue_light;
-
-  &.color-red
-    background: color_red;
-
-  &.color-grey
-    background: color_grey;
-    color: #333;
+    font-size: 12px;
+    line-height: 22px;
+    margin: 0 -20px -20px -20px;
+    padding: 15px 20px;
     
+    strong {
+      display: block;
+    }
+  }
 
-  &.color-orange
-    background: color_orange;
+  &.color-red {
+    background-color: $color-red;
+  }
 
-  &.color-yellow
-    background: color_yellow;
+  &.color-blue {
+    background-color: $color-blue;
+  }
 
-  &.color-old
-    background: color_oil;
+  &.color-blue-light {
+    background-color: $color-blue-light;
+  }
 
-  &.color-green
-    background: color_green;
-    color: #333;
+  &.color-yellow {
+    background-color: $color-yellow;
+  }
+    
+  &.color-orange {
+    background-color: $color-orange;
+  }
 
-  &.color-pink
-    background: color_pink;
-    color: #333;
+  &.color-oil {
+    background-color: $color-oil;
+  }
+
+  &.color-green {
+    background-color: $color-green;
+  }
+
+  &.color-grey {
+    background-color: $color-grey;
+  }
+  
+  &.color-pink {
+    background-color: $color-pink;
+  }
+  
+  &.bg-color-blue-dark {
+    background-color: $bg-color-blue-dark;
+  }
+  
+  &.bg-color-oil {
+    background-color: $bg-color-oil;
+  }
+  
+  &.bg-color-grey {
+    background-color: $bg-color-grey;
+  }
+  
+  &.bg-color-grey-light {
+    background-color: $bg-color-grey-light;
+  }
+}
+
+// Hue Palette
+.hue-palette {
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 22px;
+  list-style: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+  
+  li {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 15px 20px;
+
+    strong {
+      float: right;
+    }
+  }
+  
+  .hex {
+    float: left;
+  }
+  
+  &.color-red {
+    background-color: $color-red;
+  }
+  
+  &.color-blue-light {
+    background-color: $color-blue-light;
+  }
+  
+  &.color-blue {
+    background-color: $color-blue;
+  }
+  
+  li:nth-child(1) {
+    background-color: rgba(255, 255, 255, .3);
+  }
+  
+  li:nth-child(2) {
+    background-color: rgba(255, 255, 255, .2);
+  }
+  
+  li:nth-child(3) {
+    background-color: rgba(255, 255, 255, .1);
+  }
+  
+  li:nth-child(5) {
+    background-color: rgba(0, 0, 0, .1);
+  }
+  
+  li:nth-child(6) {
+    background-color: rgba(0, 0, 0, .2);
+  }
+  
+  li:nth-child(7) {
+    background-color: rgba(0, 0, 0, .3);
+  }
+  
+  &.color-blue-light {
+    
+    // for i in (1..3) {
+
+    //   li:nth-child({i}) {
+    //     content: i;
+    //   }
+      
+      // li:nth-child(i) {
+        // background-color: lighten($color-blue-light, 30%);
+        // content: i;
+      // } 
+    // }
+    
+    // for i in (5..7) {
+
+    //   li:nth-child({i}) {
+    //     content: i;
+    //   }
+    // }
+
+    li:nth-child(1) {
+      background-color: lighten($color-blue-light, 30%);
+    }
+    
+    li:nth-child(2) {
+      background-color: lighten($color-blue-light, 20%);
+    }
+    
+    li:nth-child(3) {
+      background-color: lighten($color-blue-light, 10%);
+    }
+    
+    li:nth-child(5) {
+      background-color: darken($color-blue-light, 10%);
+    }
+    
+    li:nth-child(6) {
+      background-color: darken($color-blue-light, 20%);
+    }
+    
+    li:nth-child(7) {
+      background-color: darken($color-blue-light, 30%);
+    }
+  }
+}

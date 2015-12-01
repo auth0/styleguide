@@ -18,47 +18,33 @@ html
       .row
         
         // aside styleguide
-        .col-md-3.col-aside
+        .col-md-3
 
-          aside.aside-styleguide(role='complementary')
-
-            header
-              h1: img(src='/landing/img/auth0-badge.svg', alt='', width='', height='')
-
-            section
-              nav.nav-styleguide
-                ul.nav-styleguide-list
-                  li: a(href='#') Getting started
-                  li 
-                    a(href='#') Design
-                    .in
-                      ul.nav-styleguide-in-list
-                        li: a(href='#') Typography
-                        li: a(href='#') Colors
-                        li: a(href='#') Grid system
-                        li: a(href='#') Something
-                        li: a(href='#') Colors
-                  li: a(href='#') Components
-                  li: a(href='#') Resources
-
-            footer
-              span#styleguide-version
-                | Version #{version}
+          include includes/sidebar
 
         // main content styleguide
-        .col-md-9.col-main-content.alt
+        .col-md-9.col-main-content-styleguide
 
           main.main-content-styleguide(role='main')
 
             section.jumbotron
               
               h2 
-              h1 Components
+              h1 Getting Started
               p Lorem ipsum dolor sit amet, consectetur adipiscing elit quis risus eget urna mollis.
 
             section.content-styleguide
 
-              include ../lib/budicon/budicon
+              h1 Why Styleguide?
+              p Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.
+              pre.prettyprint &lt;link href=&quot;https://cdn.auth0.com/styleguide/latest/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
+
+              h1 From CDN
+              p Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+              pre.prettyprint npm install styleguide
+
+              h1 Installing from Github
+              p Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
 
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
 

@@ -4,7 +4,7 @@
   background-color: #e3e5e7;
 }
 
-// aside styleguide
+// Aside Styleguide
 .col-aside {
   padding-right: 0;
   padding-left: 0;
@@ -17,7 +17,11 @@
     overflow: hidden;
     text-align: center;
     
-    img {
+    h1 {
+      margin: 15px 0 14px 0;
+    }
+    
+    a, img {
       display: block;
       margin: 0 auto;
     }
@@ -57,6 +61,15 @@
       color: inherit;
       display: block;
       padding: 20px 0 20px 20px;
+      
+      > .icon {
+        margin-right: 10px;
+        
+        &:before {
+          -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+        }
+      }
     }
   }
 }
@@ -84,7 +97,7 @@
   }
 }
 
-// content styleguide
+// Content Styleguide
 .col-main-content {
   background-color: #fff;
   padding-right: 0;
@@ -98,9 +111,29 @@
 .content-styleguide {
   overflow: hidden;
   padding: 0 120px 0 60px;
+  
+  .title {
+    border-bottom: 1px solid #d0d2d3;
+    color: #eb5424;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    padding: 15px 0;
+  }
+  
+  .box {
+    background-color: #e3e5e7;
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding: 0 40px;
+
+    &.box-dark {
+      background-color: #222228;
+    }
+  }
 }
 
-// playground
+// Playground
 .playground-options {
   margin-bottom: 20px;
   overflow: hidden;

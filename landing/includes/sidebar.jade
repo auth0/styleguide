@@ -1,15 +1,29 @@
 aside.aside-styleguide(role='complementary')
 
   header
-    h1: img(src='/landing/img/auth0-badge.svg', alt='', width='', height='')
+    h1
+      a(href='#', title='Go to Auth0!')
+        img(src='https://cdn.auth0.com/styleguide/1.0.0/img/badge.png', alt='Auth0 badge', width='30', height='')
 
   section
     nav.nav-styleguide
-      ul
-        li: a(href='#') Getting started
-        li: a(href='#') Design
-        li: a(href='#') Components
-        li: a(href='#') Resources
+      ul.nav-styleguide-list
+        li
+          a(href='#') 
+            span.icon.icon-budicon-464(aria-hidden='true')
+            | Getting started
+        li 
+          a(href='#')
+            span.icon.icon-budicon-258(aria-hidden='true')
+            | Design
+        li
+          a(href='#') 
+            span.icon.icon-budicon-690(aria-hidden='true')
+            | Components
+        li
+          a(href='#')
+            span.icon.icon-budicon-845(aria-hidden='true')
+            | Resources
 
   footer
     span#styleguide-version

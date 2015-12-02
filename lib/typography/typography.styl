@@ -1,0 +1,144 @@
+//
+// Typography
+// --------------------------------------------------
+
+$headings-font-family = inherit;
+$headings-font-weight = 500;
+$headings-line-height = 1.5;
+$headings-color = #000;
+
+$font-size-h1 = 3rem;
+$font-size-h2 = 2rem;
+$font-size-h3 = 1.5rem;
+$font-size-h4 = 1.3rem;
+$font-size-h5 = 16px;
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  color: $headings-color;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin: 20px 0;
+}
+
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+h4, .h4 { font-size: $font-size-h4; }
+h5, .h5 { font-size: $font-size-h5; }
+
+p {
+  margin: 20px 0;
+  
+  &.caption {
+    color: rgba(0, 0, 0, .26);
+    letter-spacing: .5px;
+  }
+  
+  &.body-2 {
+    font-size: 13px;
+  }
+  
+  &.body-1 {
+    color: #333;
+  }
+}
+
+// Typography Section
+// -------------------------
+
+.typography-section {
+
+  .font-family {
+    font-size: 60px;
+    font-weight: normal;
+    line-height: 82px;
+    margin: 40px 0;
+  }
+  
+  // box
+  .box {
+    padding: 10px 40px !important;
+    
+    &.box-table {
+      padding: 20px 40px !important;
+    }
+    
+    a {
+      display: block;
+      margin: 20px 0;
+    }
+  }
+  
+  // box-dark
+  .box-dark {
+
+    h1, h2, h3, h4, h5, 
+    .body-2, .body-1 {
+      color: #fff;
+    }
+    
+    p.caption {
+      color: rgba(255, 255, 255, .26);
+    }
+  }
+}
+
+// typography table
+.typography-table {
+  width: 100%;
+
+  td {
+    color: #000;
+    font-size: 13px;
+    padding: 15px 0;
+  }
+  
+  .big {
+    font-size: 16px;
+  }
+  
+  .opacity-87 {
+    color: rgba(0, 0, 0, .87);
+  }
+  
+  .opacity-54 {
+    color: rgba(0, 0, 0, .54);
+  }
+  
+  .opacity-26 {
+    color: rgba(0, 0, 0, .26);
+  }
+  
+  .rowspan {
+    line-height: 20px;
+    vertical-align: bottom;
+  }
+}
+
+// typography table box black
+.box-dark {
+
+  .typography-table {
+    
+    td {
+      color: #fff;
+    }
+    
+    .opacity-100 {
+      color: rgba(255, 255, 255, 1);
+    }
+    
+    .opacity-70 {
+      color: rgba(255, 255, 255, .7);
+    }
+    
+    .opacity-30 {
+      color: rgba(255, 255, 255, .3);
+    }
+  }
+}

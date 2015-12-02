@@ -4,8 +4,6 @@
 
 $font-size-base =          14px;
 
-$border-radius-large =     0;
-
 // Small screen / tablet
 $screen-sm-min =           768px;
 
@@ -40,8 +38,14 @@ $jumbotron-font-size =     ceil(($font-size-base * 1.5));
     margin-right: auto;
     margin-bottom: 0;
     margin-left: auto;
+    overflow: hidden;
     width: 100px;
     height: 100px;
+    
+    img {
+      display: block;
+      margin: 25px 0 0 24px;
+    }
   }
 
   p {
@@ -56,7 +60,7 @@ $jumbotron-font-size =     ceil(($font-size-base * 1.5));
 
   .container &,
   .container-fluid & {
-    border-radius: $border-radius-large; // Only round corners at higher resolutions if contained in a container
+    border-radius: 0; // Round corners to zero
   }
 
   .container {

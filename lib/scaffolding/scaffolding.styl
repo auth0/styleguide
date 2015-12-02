@@ -1,0 +1,38 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+$font-family-base = "avenir-next-web", Avenir, "Helvetica Neue", Hevetica, sans-serif;
+$font-size-base = 14px;
+$line-height-base = 1.5;
+
+$link-color = #44c7f4;
+
+// Body reset
+
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: inherit;
+  line-height: $line-height-base;
+  color: #000;
+}
+
+// Links
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: darken($link-color, 80%);
+    text-decoration: none; 
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+}

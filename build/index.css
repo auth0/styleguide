@@ -13297,91 +13297,6 @@ fieldset[disabled] .btn {
 .help-circle:hover {
   opacity: 1;
 }
-.glyphs.css-mapping {
-  color: rgba(0,0,0,0.5);
-  padding: 0;
-  margin: 0;
-}
-.glyphs.css-mapping li {
-  margin: 0 20px 20px 0;
-  padding: 0;
-  display: inline-block;
-  overflow: hidden;
-}
-.glyphs.css-mapping .icon {
-  margin: 0;
-  margin-right: 10px;
-  padding: 13px;
-  height: 50px;
-  width: 50px;
-  color: #162a36 !important;
-  overflow: hidden;
-  float: left;
-  font-size: 24px;
-}
-.glyphs.css-mapping input {
-  margin: 0;
-  margin-top: 5px;
-  padding: 8px;
-  line-height: 16px;
-  font-size: 16px;
-  display: block;
-  width: 100px;
-  height: 40px;
-  border: 1px solid #d8e0e5;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  background: #fff;
-  outline: 0;
-  float: right;
-}
-.glyphs.css-mapping input:focus {
-  border: 1px solid #fbde4a;
-  -webkit-box-shadow: inset 0 0 3px #fbde4a;
-  box-shadow: inset 0 0 3px #fbde4a;
-}
-.glyphs.css-mapping input:hover {
-  -webkit-box-shadow: inset 0 0 3px #fbde4a;
-  box-shadow: inset 0 0 3px #fbde4a;
-}
-.logo-branding {
-  text-align: center;
-  border: 1px solid #eee;
-  padding: 20px;
-  border-radius: 3px;
-  margin-bottom: 20px;
-  background-image: url("lib/logos/img/transparent.png");
-}
-.logo-branding h5 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #999;
-  margin-top: 0;
-}
-.logo-branding img {
-  max-width: 100%;
-  display: block;
-  max-height: 140px;
-  margin: auto;
-  margin-bottom: 20px;
-}
-.logo-branding.logo-dark {
-  background-image: url("lib/logos/img/transparent-dark.png");
-}
-.logo-branding a {
-  font-weight: bold;
-  border: 1px solid #44c7f4;
-  padding: 4px 10px;
-  text-transform: uppercase;
-  border-radius: 3px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: #44c7f4;
-}
-.logo-branding a:hover {
-  color: #fff;
-  background: #44c7f4;
-}
 .sidebar-box {
   max-width: 230px;
   border: 1px solid #eee;
@@ -18035,3 +17950,68 @@ p.body-1 {
   content: "";
 }
 
+.glyphs.css-mapping {
+  margin: 0;
+  padding: 0;
+}
+.glyphs.css-mapping li {
+  display: inline-block;
+  margin: 0 20px 40px 0;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+  min-width: 120px;
+}
+.glyphs.css-mapping .icon {
+  font-size: 24px;
+  margin: 0;
+  overflow: hidden;
+  padding: 13px;
+  width: 50px;
+  height: 50px;
+}
+.glyphs.css-mapping .name {
+  display: block;
+  margin-top: 10px;
+}
+.budicon-section h1 {
+  margin-bottom: 40px;
+}
+.logo-branding {
+  text-align: center;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background-image: url("lib/logos/img/transparent.png");
+}
+.logo-branding h5 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+  margin-top: 0;
+}
+.logo-branding img {
+  max-width: 100%;
+  display: block;
+  max-height: 140px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.logo-branding.logo-dark {
+  background-image: url("lib/logos/img/transparent-dark.png");
+}
+.logo-branding a {
+  font-weight: bold;
+  border: 1px solid #44c7f4;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #44c7f4;
+}
+.logo-branding a:hover {
+  color: #fff;
+  background: #44c7f4;
+}

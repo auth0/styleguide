@@ -1,0 +1,278 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base =              #000;
+$gray-darker =            lighten($gray-base, 13.5%); // #222
+$gray-dark =              lighten($gray-base, 20%);   // #333
+$gray =                   lighten($gray-base, 33.5%); // #555
+$gray-light =             lighten($gray-base, 46.7%); // #777
+$gray-lighter =           lighten($gray-base, 93.5%); // #eee
+
+$brand-primary =         $color-blue-light;
+$brand-success =         $color-red;
+$brand-warning =         $color-yellow;
+$brand-danger =          #f61940;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-default-color =               #333;
+$btn-default-bg =                  #fff;
+$btn-default-border =              #ccc;
+
+$btn-primary-color =               #fff;
+$btn-primary-bg =                  $brand-primary;
+$btn-primary-border =              darken($btn-primary-bg, 5%);
+
+$btn-success-color =               #fff;
+$btn-success-bg =                  $brand-success;
+$btn-success-border =              darken($btn-success-bg, 5%);
+
+$btn-warning-color =               #fff;
+$btn-warning-bg =                  $brand-warning;
+$btn-warning-border =              darken($btn-warning-bg, 5%);
+
+$btn-danger-color =                #fff;
+$btn-danger-bg =                   $brand-danger;
+$btn-danger-border =               darken($btn-danger-bg, 5%);
+
+$btn-link-disabled-color =         $gray-light;
+
+
+// Base styles
+// --------------------------------------------------
+
+$font-size-base-button = 12px;
+$line-height-base-button = normal;
+
+$padding-base-vertical = 15px;
+$padding-base-horizontal = 20px;
+
+$padding-medium-vertical = 9px;
+$padding-medium-horizontal = 20px;
+
+$padding-small-vertical = 7px;
+$padding-small-horizontal = 20px;
+
+$padding-xs-vertical = 5px;
+$padding-xs-horizontal = 20px;
+
+$border-radius-base = 3px;
+
+.btn {
+  letter-spacing .5px
+  text-transform uppercase
+  button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base-button, $line-height-base-button, $border-radius-base)
+  
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      @extend .tab-focus()
+    }
+  }
+  
+  &:hover, 
+  &:focus, 
+  &.focus {
+    color $btn-default-color
+    text-decoration none
+  }
+    
+  &:active, 
+  &.active {
+    outline 0
+    background-image none
+    box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125))
+  }
+    
+  &.disabled, 
+  &[disabled], 
+  fieldset[disabled] & {
+    cursor $cursor-disabled
+    pointer-events none // Future-proof disabling of clicks
+    opacity(0.65)
+    box-shadow(none)
+  }
+}
+
+    
+// Alternate buttons
+// --------------------------------------------------
+      
+.btn-default {
+  button-variant($btn-default-color, $btn-default-bg, $btn-default-border)
+}
+  
+.btn-primary {
+  button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border)
+}
+
+// Success appears as green  
+.btn-success {
+  button-variant($btn-success-color, $btn-success-bg, $btn-success-border)
+}
+
+// Warning appears as orange
+.btn-warning {
+  button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border)
+}
+
+// Danger and error appear as red
+.btn-danger {
+  button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border)
+}
+ 
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color $link-color
+  font-weight normal
+  border-radius 0
+  
+  &, 
+  &:active, 
+  &.active, 
+  &[disabled], 
+  fieldset[disabled] & {
+    background-color transparent
+    box-shadow(none)
+  }
+  
+  &, 
+  &:hover, 
+  &:focus, 
+  &:active {
+    border-color transparent
+  }
+    
+  &:hover, 
+  &:focus {
+    color $link-hover-color
+    text-decoration $link-hover-decoration
+    background-color transparent
+  }
+    
+  &[disabled], 
+  fieldset[disabled] & {
+    
+    &:hover, 
+    &:focus {
+      color $btn-link-disabled-color
+      text-decoration none
+    }
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-md {
+  // line-height: ensure even-numbered height of button next to large input
+  button-size($padding-medium-vertical, $padding-medium-horizontal, $font-size-base-button, $line-height-base-button, $border-radius-base )
+}
+
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  button-size($padding-small-vertical, $padding-small-horizontal, $font-size-base-button, $line-height-base-button, $border-radius-base )
+}
+
+.btn-xs {
+  button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-base-button, $line-height-base-button, $border-radius-base )
+}
+
+
+// Button with left favicon
+// -------------------------
+
+.btn-icon {
+  padding-right 15px
+  padding-left 60px
+  position relative
+  
+  // Por ahora: Solo un tamaño para los iconos que acompañan al botón
+  > .icon {
+    border-right 1px solid rgba(255, 255, 255, .2)
+    font-size 18px
+    padding 15px 14px 13px 12px
+    position absolute
+    top -1px
+    bottom -1px
+    left 0
+  }
+}
+
+// btn-default theme
+.btn-default.btn-icon > .icon {
+  border-right-color rgba(0, 0, 0, .1)
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display block
+  width 100%
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top 5px
+}
+
+// Specificity overrides
+input[type="submit"], 
+input[type="reset"], 
+input[type="button"] {
+  &.btn-block {
+    width 100%
+  }
+}
+
+
+// Buttons section
+// -------------------------
+
+.buttons-different-sizes {
+
+  .buttons-list {
+    padding-left 0
+    list-style none
+    
+    li {
+      margin-bottom 10px
+    }
+  }
+}
+
+.buttons-default-state {
+  margin-right -60px
+    
+  .btn {
+    margin-right 10px
+  }
+}
+
+// Split button dropdowns section
+// -------------------------
+
+.split-button-dropdowns {
+  margin-right -60px
+    
+  .btn-group {
+    margin-right 10px
+  } 
+}

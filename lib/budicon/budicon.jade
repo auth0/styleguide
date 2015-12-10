@@ -2,7 +2,7 @@
   
   mixin budicon(cssClass, name)
     li
-      i(class!=cssClass + " icon")
+      i(class!=cssClass + " icon", aria-hidden='true')
       span.name= name || cssClass
 
   section

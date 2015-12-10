@@ -18205,7 +18205,7 @@ fieldset[disabled] .btn-link:focus {
 .btn-icon > .icon {
   border-right: 1px solid rgba(255,255,255,0.2);
   font-size: 18px;
-  padding: 15px 14px 13px 12px;
+  padding: 15px 14px 13px 13px;
   position: absolute;
   top: -1px;
   bottom: -1px;

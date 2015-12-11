@@ -2,8 +2,9 @@
 
 // container styleguide
 .container-styleguide {
-  min-width: 768px;
+  width: 100vw;
   height: 100vh;
+  min-width: 768px;
   
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -20,10 +21,6 @@
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
 }
 
 // aside styleguide
@@ -48,15 +45,14 @@
   -ms-flex-pack: start;
   justify-content: flex-start;
   
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 // content styleguide
 .main-content-styleguide {
   background-color: #fff;
-  display: block;
   
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -71,6 +67,7 @@
   }
 }
 
+// aside styleguide
 .aside-styleguide {
 
   .header {
@@ -113,8 +110,6 @@
 }
 
 .nav-styleguide {
-  display: block;
-  
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -176,7 +171,7 @@
 
 // content styleguide
 .content-styleguide {
-  clearfix();
+  overflow: hidden;
   padding: 0 120px 0 60px;
   
   .title {
@@ -234,6 +229,7 @@
 .playground-canvas {
   background-color: #fff;
   border-radius: 3px;
+  margin-bottom: 14px;
   height: 170px;
 }
 

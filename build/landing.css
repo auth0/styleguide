@@ -1,6 +1,7 @@
 .container-styleguide {
-  min-width: 768px;
+  width: 100vw;
   height: 100vh;
+  min-width: 768px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -13,9 +14,6 @@
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
 }
 .aside-styleguide {
   background-color: #e3e5e7;
@@ -33,13 +31,12 @@
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 .main-content-styleguide {
   background-color: #fff;
-  display: block;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -82,7 +79,6 @@
   line-height: normal;
 }
 .nav-styleguide {
-  display: block;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -133,6 +129,7 @@
   padding: 10px 0 10px 40px;
 }
 .content-styleguide {
+  overflow: hidden;
   padding: 0 120px 0 60px;
 }
 .content-styleguide .title {
@@ -180,6 +177,7 @@
 .playground-canvas {
   background-color: #fff;
   border-radius: 3px;
+  margin-bottom: 14px;
   height: 170px;
 }
 .playground-actions {

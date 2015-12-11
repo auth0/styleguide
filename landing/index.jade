@@ -56,17 +56,19 @@ html
       // main content styleguide
       main.main-content-styleguide(role='main')
 
-        //- include ../lib/getting-started/getting-started
+        include ../lib/getting-started/getting-started
 
-        section.jumbotron
-          
-          h2: img(src='/lib/logos/img/icon-styleguide.svg', alt='Styleguide Icon', width='48', height='')
-          h1 Components
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit quis risus eget urna mollis.
+        include ../lib/design/design
 
-        section.content-styleguide
+        include ../lib/components/components
 
-          include ../lib/buttons/buttons
+        include ../lib/budicon/budicon
+
+        include ../lib/buttons/buttons
+
+        include ../lib/logos/demo
+
+        include ../lib/typography/typography
 
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
 

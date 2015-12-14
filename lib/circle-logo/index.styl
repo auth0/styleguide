@@ -57,11 +57,19 @@ rel_width = 8em;
     .logo:before
       top: 55%;
 
-  &[data-name="angular"],
-  &[data-name="angularjs"]
+  &[data-name="angular2"]
     .logo
       background: -webkit-linear-gradient(top left, #008BFF 40%, #2C6FAD 140%);
       background: linear-gradient(to bottom right, #008BFF 40%, #2C6FAD 140%);
+
+      &:after
+        background-image: url('img/angular2.svg');
+
+  &[data-name="angular"],
+  &[data-name="angularjs"]
+    .logo
+      background: -webkit-linear-gradient(top left, #2c2c2c 40%, #737373 140%);
+      background: linear-gradient(to bottom right, #2c2c2c 40%, #737373 140%);
 
       &:after
         background-image: url('img/angular.svg');
@@ -213,13 +221,22 @@ rel_width = 8em;
       &:after
         background-image: url('img/python.svg');
 
-  &[data-name="react"]
+  &[data-name^="react"]
     .logo
-      background: -webkit-linear-gradient(-220deg, #3A5795 23%, #338bbc 100%);
-      background: linear-gradient(-220deg, #3A5795 23%, #338bbc 100%);
+      background: -webkit-linear-gradient(-220deg, #2d2d2d 23%, #6D6D6D 100%);
+      background: linear-gradient(-220deg, #2d2d2d 23%, #6D6D6D 100%);
 
       &:after
         background-image: url('img/react.svg');
+
+
+  &[data-name^="react-native"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #05A5D1 23%, #338bbc 100%);
+      background: linear-gradient(-220deg, #05A5D1 23%, #338bbc 100%);
+
+      &:after
+        background-image: url('img/react-native.svg');
 
   &[data-name="phonegap"]
     .logo

@@ -1,10 +1,11 @@
 /*==========  Header  ==========*/
 
-header.site-header.site-header
+header.site-header
   z-index: 1000;
   background: transparent;
   font-size: 14px;
   position:static;
+  padding: 20px 0 20px 0;
 
   &.header-fixed
     background: rgba(255,255,255,.8);
@@ -15,12 +16,10 @@ header.site-header.site-header
 
   li *
     -webkit-backface-visibility: hidden !important;
-    
+
   .navbar-header
-    margin-right: -15px;
-    margin-left: -15px;
     float: none;
-    
+
     +breakpoint("desktop")
       margin-right: 0;
       margin-left: 0;
@@ -49,7 +48,7 @@ header.site-header.site-header
       padding: 0 15px 0 18px;
       margin: 0;
       width: 120px;
-      
+
       +breakpoint("desktop")
         padding: 0 15px 0 0;
 
@@ -77,13 +76,13 @@ header.site-header.site-header
     .navbar-collapse
       border-color: transparent;
       padding: 0;
-      
+
       &.collapse
         display: none !important;
-        
+
         &.in
           display: block !important;
-        
+
         +breakpoint("desktop")
           display: block !important;
 
@@ -92,10 +91,10 @@ header.site-header.site-header
 
     .navbar-nav>.open>a
       background: none;
-      
+
     .navbar-nav
       float: none !important;
-      
+
       &.navbar-right
         +breakpoint("desktop")
           float: right !important;
@@ -103,26 +102,26 @@ header.site-header.site-header
       &.navbar-left
         +breakpoint("desktop")
           float: left !important;
-        
-      
+
+
       > li
         float: none;
-        
+
         +breakpoint("desktop")
           float: left;
 
   .navbar-toggle
     border: 0;
     display: block;
-    
+
     +breakpoint("desktop")
       display: none;
-    
+
     &:hover
       background: none;
       .icon-bar
         background: black;
-        
+
 
 
 
@@ -159,25 +158,26 @@ header.site-header.site-header
       border-bottom: 1px solid #f1f1f1;
       -webkit-transform: none;
       transform: none;
-      
+
       +breakpoint("desktop")
         -webkit-transform: scale(.8) translateY(-10%);
         transform: scale(.8) translateY(-10%);
         pointer-events: none;
-        
+        opacity: 0;
+
         .divider
           margin: 8px 0;
-      
+
       li > a
         padding: 10px 15px;
         line-height: 20px;
-        
+
         +breakpoint("desktop")
           padding: 5px 20px;
-        
+
         &:hover
           background: none;
-          
+
           +breakpoint("desktop")
             background: #f1f1f1;
 
@@ -219,6 +219,13 @@ header.site-header.site-header
 
     &:hover
       background: #f1f1f1;
+
+
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand
+    +breakpoint("desktop")
+      margin-left: 0;
+
 
 
 /*==========  Header with dark background behind  ==========*/
@@ -281,25 +288,36 @@ a.hiring
   background: #44C7F4;
   text-transform: uppercase;
   position: absolute;
-  top: 16px;
-  left: -104px;
   font-weight: bold;
   padding: 2px 6px;
   border-radius: 3px;
   color: white !important;
-  display: inline-block
+  display: block !important;
   font-size: 11px;
+  display: block;
+  left: 120px;
+  top: 16px;
+
+  +breakpoint("desktop")
+    left: -104px;
 
   &::after
     position: absolute;
     content: "";
-    right: -4px;
+    left: -4px;
     top: 5px;
     width: 0;
     height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-left: 5px solid #44C7F4;
+    border-right: 5px solid #44C7F4;
+    border-left: 0;
+
+    +breakpoint("desktop")
+      left: auto;
+      right: -4px;
+      border-right: 0;
+      border-left: 5px solid #44C7F4;
 
 /*==========  Responsive  ==========*/
 

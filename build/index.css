@@ -12935,6 +12935,7 @@ header.site-header.site-header .dropdown .dropdown-menu {
     -webkit-transform: scale(0.8) translateY(-10%);
     transform: scale(0.8) translateY(-10%);
     pointer-events: none;
+    opacity: 0;
   }
   header.site-header.site-header .dropdown .dropdown-menu .divider {
     margin: 8px 0;
@@ -14530,10 +14531,17 @@ li.L9 {
 .circle-logo[data-name="how-to"] .logo:before {
   top: 55%;
 }
-.circle-logo[data-name="angular"] .logo,
-.circle-logo[data-name="angularjs"] .logo {
+.circle-logo[data-name="angular2"] .logo {
   background: -webkit-linear-gradient(top left, #008bff 40%, #2c6fad 140%);
   background: linear-gradient(to bottom right, #008bff 40%, #2c6fad 140%);
+}
+.circle-logo[data-name="angular2"] .logo:after {
+  background-image: url("lib/circle-logo/img/angular2.svg");
+}
+.circle-logo[data-name="angular"] .logo,
+.circle-logo[data-name="angularjs"] .logo {
+  background: -webkit-linear-gradient(top left, #2c2c2c 40%, #737373 140%);
+  background: linear-gradient(to bottom right, #2c2c2c 40%, #737373 140%);
 }
 .circle-logo[data-name="angular"] .logo:after,
 .circle-logo[data-name="angularjs"] .logo:after {
@@ -14678,12 +14686,19 @@ li.L9 {
 .circle-logo[data-name="python"] .logo:after {
   background-image: url("lib/circle-logo/img/python.svg");
 }
-.circle-logo[data-name="react"] .logo {
-  background: -webkit-linear-gradient(-220deg, #3a5795 23%, #338bbc 100%);
-  background: linear-gradient(-220deg, #3a5795 23%, #338bbc 100%);
+.circle-logo[data-name^="react"] .logo {
+  background: -webkit-linear-gradient(-220deg, #2d2d2d 23%, #6d6d6d 100%);
+  background: linear-gradient(-220deg, #2d2d2d 23%, #6d6d6d 100%);
 }
-.circle-logo[data-name="react"] .logo:after {
+.circle-logo[data-name^="react"] .logo:after {
   background-image: url("lib/circle-logo/img/react.svg");
+}
+.circle-logo[data-name^="react-native"] .logo {
+  background: -webkit-linear-gradient(-220deg, #05a5d1 23%, #338bbc 100%);
+  background: linear-gradient(-220deg, #05a5d1 23%, #338bbc 100%);
+}
+.circle-logo[data-name^="react-native"] .logo:after {
+  background-image: url("lib/circle-logo/img/react-native.svg");
 }
 .circle-logo[data-name="phonegap"] .logo {
   background: -webkit-linear-gradient(-220deg, #738386 23%, #4e575b 100%);
@@ -14982,70 +14997,6 @@ p.body-2 {
 }
 p.body-1 {
   color: #333;
-}
-.typography-section .font-family {
-  font-size: 60px;
-  font-weight: normal;
-  line-height: 82px;
-  margin: 40px 0;
-}
-.typography-section .box {
-  padding: 10px 40px !important;
-}
-.typography-section .box.box-table {
-  padding: 20px 40px !important;
-}
-.typography-section .box a {
-  display: block;
-  margin: 20px 0;
-}
-.typography-section .box-dark h1,
-.typography-section .box-dark h2,
-.typography-section .box-dark h3,
-.typography-section .box-dark h4,
-.typography-section .box-dark h5,
-.typography-section .box-dark .body-2,
-.typography-section .box-dark .body-1 {
-  color: #fff;
-}
-.typography-section .box-dark p.caption {
-  color: rgba(255,255,255,0.26);
-}
-.typography-table {
-  width: 100%;
-}
-.typography-table td {
-  color: #000;
-  font-size: 13px;
-  padding: 15px 0;
-}
-.typography-table .big {
-  font-size: 16px;
-}
-.typography-table .opacity-87 {
-  color: rgba(0,0,0,0.87);
-}
-.typography-table .opacity-54 {
-  color: rgba(0,0,0,0.54);
-}
-.typography-table .opacity-26 {
-  color: rgba(0,0,0,0.26);
-}
-.typography-table .rowspan {
-  line-height: 20px;
-  vertical-align: bottom;
-}
-.box-dark .typography-table td {
-  color: #fff;
-}
-.box-dark .typography-table .opacity-100 {
-  color: #fff;
-}
-.box-dark .typography-table .opacity-70 {
-  color: rgba(255,255,255,0.7);
-}
-.box-dark .typography-table .opacity-30 {
-  color: rgba(255,255,255,0.3);
 }
 .jumbotron {
   padding: 30px 15px;

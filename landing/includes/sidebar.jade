@@ -1,0 +1,36 @@
+aside.aside-styleguide(role='complementary')
+
+  header.header
+    h1
+      a(href='#', title='Go to Auth0!')
+        img(src='https://cdn.auth0.com/styleguide/1.0.0/img/badge.png', alt='Auth0 badge', width='30', height='')
+
+  nav.nav-styleguide
+    ul.nav-styleguide-list
+      li
+        a(href='#getting-started') 
+          span.icon.icon-budicon-464(aria-hidden='true')
+          | Getting started
+      li 
+        a(href='#design')
+          span.icon.icon-budicon-258(aria-hidden='true')
+          | Design
+        .in
+          ul.nav-styleguide-in-list
+            li: a(href='#') Typography
+            li: a(href='#') Colors
+            li: a(href='#') Grid system
+            li: a(href='#') Something
+            li: a(href='#') Colors
+      li
+        a(href='#components') 
+          span.icon.icon-budicon-690(aria-hidden='true')
+          | Components
+      li
+        a(href='#resources')
+          span.icon.icon-budicon-845(aria-hidden='true')
+          | Resources
+
+  footer.footer
+    span#styleguide-version
+      | Version #{version}

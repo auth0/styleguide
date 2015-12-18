@@ -24,7 +24,7 @@ module.exports = function (grunt) {
     },
     watch: {
       dev: {
-        files: ['*', 'lib/**/*', 'bin/**/*', 'landing/*'],
+        files: ['*', 'lib/**/*', 'bin/**/*', 'landing/**/*'],
         tasks: ["build"]
       }
     },
@@ -42,7 +42,7 @@ module.exports = function (grunt) {
         command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ index.styl'
       },
       generate_demo_css: {
-        command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ landing/landing.styl'
+        command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ landing/styles/landing.styl'
       }
     },
     copy: {

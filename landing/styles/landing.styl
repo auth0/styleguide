@@ -1,67 +1,32 @@
 @import 'lib/vars/index.styl';
 
+aside_width = 250px;
+
+[data-group]
+  padding-bottom: 100px;
+
 // container styleguide
 .container-styleguide {
   width: 100vw;
   height: 100vh;
-  min-width: 768px;
-  
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-
-  -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  min-width: 1024px;
 }
 
 // aside styleguide
 .aside-styleguide {
   background-color: #e3e5e7;
-  min-width: 180px;
-  max-width: 300px;
-  
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-
-  -webkit-flex-flow: column nowrap;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-
-  -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  width: aside_width;
+  position: fixed;
+  height: 100vh;
 }
 
 // content styleguide
 .main-content-styleguide {
   background-color: #fff;
-  
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  
   overflow-x: hidden;
   overflow-y: auto;
-  // height: 0;
-  
+  margin-left: aside_width;
+
   &.alt {
     background-color: #fafafa;
   }
@@ -74,35 +39,27 @@
     background-color: #fff;
     overflow: hidden;
     text-align: center;
-    
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    
+
     h1 {
       margin: 15px 0 14px 0;
     }
-    
+
     a, img {
       display: block;
       margin: 0 auto;
       width: 30px;
     }
   }
-  
+
   .footer {
     background-color: rgba(0, 0, 0, .05);
     padding: 5px 0;
     text-align: center;
-    
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    
+
     span {
       color: rgba(0, 0, 0, .4);
       font-size: 11px;
-      font-weight: bold; 
+      font-weight: bold;
       letter-spacing: 1px;
       line-height: normal;
     }
@@ -110,13 +67,8 @@
 }
 
 .nav-styleguide {
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  
   overflow-x: hidden;
   overflow-y: auto;
-  height: 0;
 }
 
 .nav-styleguide-list {
@@ -129,16 +81,16 @@
   margin: 0;
   padding: 0;
   text-transform: uppercase;
-  
+
   > li {
     margin: 0;
-    
+
     > a {
       border-bottom: 1px solid rgba(0, 0, 0, .08);
       color: inherit;
       display: block;
       padding: 20px 20px 20px 20px;
-      
+
       > .icon {
         margin-right: 10px;
       }
@@ -151,15 +103,15 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  
+
   li {
     background-color: rgba(255, 255, 255, .3);
     margin: 1px 0 0 0;
-    
+
     &:first-child {
       margin-top: 0;
     }
-    
+
     a {
       background-color: rgba(255, 255, 255, .3);
       color: inherit;
@@ -173,7 +125,7 @@
 .content-styleguide {
   overflow: hidden;
   padding: 0 120px 0 60px;
-  
+
   .title {
     border-bottom: 1px solid #d0d2d3;
     color: #eb5424;
@@ -182,7 +134,7 @@
     line-height: normal;
     padding: 15px 0;
   }
-  
+
   .box {
     background-color: #e3e5e7;
     margin-bottom: 30px;
@@ -196,6 +148,12 @@
 }
 
 // playground
+.playground
+  iframe
+    width: 100%;
+    border: 0;
+    overflow: hidden;
+
 .playground-options {
   margin-bottom: 20px;
   overflow: hidden;
@@ -210,17 +168,17 @@
     text-align: center
     width: 100px;
     height: 30px;
-    
+
     &.is-active {
       background-color: #44c7f4;
       color: #fff;
     }
   }
-  
+
   .dark-option {
     border-radius: 3px 0 0 3px;
   }
-  
+
   .light-option {
     border-radius: 0 3px 3px 0;
   }
@@ -229,8 +187,8 @@
 .playground-canvas {
   background-color: #fff;
   border-radius: 3px;
+  padding: 20px;
   margin-bottom: 14px;
-  height: 170px;
 }
 
 .playground-actions {
@@ -241,21 +199,116 @@
   margin: 0;
   overflow: hidden;
   padding: 0;
-  
+
   li {
     float: left;
   }
-    
+
   a {
     color: inherit;
     padding: 0 40px 0 40px
   }
-  
+
   li:first-child a {
     padding-left: 0;
   }
-  
+
   li.is-active a {
     color: #31afda;
+  }
+}
+
+// Typography Section
+// -------------------------
+
+.typography-section {
+
+  .font-family {
+    font-size: 60px;
+    font-weight: normal;
+    line-height: 82px;
+    margin: 40px 0;
+  }
+
+  // box
+  .box {
+    padding: 10px 40px !important;
+
+    &.box-table {
+      padding: 20px 40px !important;
+    }
+
+    a {
+      display: block;
+      margin: 20px 0;
+    }
+  }
+
+  // box-dark
+  .box-dark {
+
+    h1, h2, h3, h4, h5,
+    .body-2, .body-1 {
+      color: #fff;
+    }
+
+    p.caption {
+      color: rgba(255, 255, 255, .26);
+    }
+  }
+}
+
+// typography table
+.typography-table {
+  width: 100%;
+
+  td {
+    color: #000;
+    font-size: 13px;
+    padding: 15px 0;
+  }
+
+  .big {
+    font-size: 16px;
+  }
+
+  .opacity-87 {
+    color: rgba(0, 0, 0, .87);
+  }
+
+  .opacity-54 {
+    color: rgba(0, 0, 0, .54);
+  }
+
+  .opacity-26 {
+    color: rgba(0, 0, 0, .26);
+  }
+
+  .rowspan {
+    line-height: 20px;
+    vertical-align: bottom;
+  }
+}
+
+// typography table box black
+.box-dark {
+
+  .typography-table {
+
+    td {
+      color: #fff;
+    }
+
+    .opacity-100 {
+      color: rgba(255, 255, 255, 1);
+    }
+
+    .opacity-70 {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .opacity-30 {
+      color: rgba(255, 255, 255, .3);
+    }
   }
 }

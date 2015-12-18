@@ -11,65 +11,49 @@ html
     script(type='text/javascript', src='//cdn.auth0.com/web-header/latest/standalone.min.js')
 
   body
+    include includes/utils/mixins
 
     .container-styleguide
-        
-      // aside styleguide
-      aside.aside-styleguide(role='complementary')
-
-        header.header
-          h1
-            a(href='#', title='Go to Auth0!')
-              img(src='https://cdn.auth0.com/styleguide/1.0.0/img/badge.png', alt='Auth0 badge', width='30', height='')
-
-        nav.nav-styleguide
-          ul.nav-styleguide-list
-            li
-              a(href='#') 
-                span.icon.icon-budicon-464(aria-hidden='true')
-                | Getting started
-            li 
-              a(href='#')
-                span.icon.icon-budicon-258(aria-hidden='true')
-                | Design
-              .in
-                ul.nav-styleguide-in-list
-                  li: a(href='#') Typography
-                  li: a(href='#') Colors
-                  li: a(href='#') Grid system
-                  li: a(href='#') Something
-                  li: a(href='#') Colors
-            li
-              a(href='#') 
-                span.icon.icon-budicon-690(aria-hidden='true')
-                | Components
-            li
-              a(href='#')
-                span.icon.icon-budicon-845(aria-hidden='true')
-                | Resources
-
-        footer.footer
-          span#styleguide-version
-            | Version #{version}
-
-      // main content styleguide
+      include includes/sidebar
+      
       main.main-content-styleguide(role='main')
-
-        include ../lib/getting-started/getting-started
-
-        include ../lib/design/design
-
-        include ../lib/components/components
-
-        include ../lib/budicon/budicon
-
-        include ../lib/buttons/buttons
-
-        include ../lib/logos/demo
-
-        include ../lib/typography/typography
+        include includes/getting-started
+        include includes/design
+        include includes/components
+        include includes/resources
 
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
-
     script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js")
     script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+    script.
+      function playground() {
+        var $module = $('.js-playground');
+        
+        function setFrame($iframe, content) {
+          $iframe.get(0).src = "data:text/html;charset=utf-8," + escape(content);
+        }
+        
+        function cleanFrames(html) {
+          html.find('iframe').remove();
+          
+          return html;
+        }
+        
+        function convertChars(str) {
+          str = str.replace('©', '&copy;');
+          
+          return str;
+        }
+        
+        $module.each(function() {
+          var $component = $(this);
+          var http = location.protocol;
+          var dom = cleanFrames($('.playground-real-component', $component));
+          var scripts = '<script src\="' + http + '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"><\/script><script src\="' + http + '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"><\/script>';
+          var html = '<html><head><link href="' + location.origin + '/index.css" rel="stylesheet"></head><body>' + convertChars(dom.html()) + scripts + '</body></html>';
+          
+          setFrame($('iframe', $component), html);
+        });
+      };
+      
+      playground();

@@ -1,47 +1,22 @@
+[data-group] {
+  padding-bottom: 100px;
+}
 .container-styleguide {
   width: 100vw;
   height: 100vh;
-  min-width: 768px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  min-width: 1024px;
 }
 .aside-styleguide {
   background-color: #e3e5e7;
-  min-width: 180px;
-  max-width: 300px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column nowrap;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  width: 250px;
+  position: fixed;
+  height: 100vh;
 }
 .main-content-styleguide {
   background-color: #fff;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
   overflow-x: hidden;
   overflow-y: auto;
+  margin-left: 250px;
 }
 .main-content-styleguide.alt {
   background-color: #fafafa;
@@ -50,9 +25,6 @@
   background-color: #fff;
   overflow: hidden;
   text-align: center;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 .aside-styleguide .header h1 {
   margin: 15px 0 14px 0;
@@ -67,9 +39,6 @@
   background-color: rgba(0,0,0,0.05);
   padding: 5px 0;
   text-align: center;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 .aside-styleguide .footer span {
   color: rgba(0,0,0,0.4);
@@ -79,12 +48,8 @@
   line-height: normal;
 }
 .nav-styleguide {
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
   overflow-x: hidden;
   overflow-y: auto;
-  height: 0;
 }
 .nav-styleguide-list {
   color: #5c666f;
@@ -149,6 +114,11 @@
 .content-styleguide .box.box-dark {
   background-color: #222228;
 }
+.playground iframe {
+  width: 100%;
+  border: 0;
+  overflow: hidden;
+}
 .playground-options {
   margin-bottom: 20px;
   overflow: hidden;
@@ -177,8 +147,8 @@
 .playground-canvas {
   background-color: #fff;
   border-radius: 3px;
+  padding: 20px;
   margin-bottom: 14px;
-  height: 170px;
 }
 .playground-actions {
   color: #666;
@@ -201,4 +171,68 @@
 }
 .playground-actions li.is-active a {
   color: #31afda;
+}
+.typography-section .font-family {
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 82px;
+  margin: 40px 0;
+}
+.typography-section .box {
+  padding: 10px 40px !important;
+}
+.typography-section .box.box-table {
+  padding: 20px 40px !important;
+}
+.typography-section .box a {
+  display: block;
+  margin: 20px 0;
+}
+.typography-section .box-dark h1,
+.typography-section .box-dark h2,
+.typography-section .box-dark h3,
+.typography-section .box-dark h4,
+.typography-section .box-dark h5,
+.typography-section .box-dark .body-2,
+.typography-section .box-dark .body-1 {
+  color: #fff;
+}
+.typography-section .box-dark p.caption {
+  color: rgba(255,255,255,0.26);
+}
+.typography-table {
+  width: 100%;
+}
+.typography-table td {
+  color: #000;
+  font-size: 13px;
+  padding: 15px 0;
+}
+.typography-table .big {
+  font-size: 16px;
+}
+.typography-table .opacity-87 {
+  color: rgba(0,0,0,0.87);
+}
+.typography-table .opacity-54 {
+  color: rgba(0,0,0,0.54);
+}
+.typography-table .opacity-26 {
+  color: rgba(0,0,0,0.26);
+}
+.typography-table .rowspan {
+  line-height: 20px;
+  vertical-align: bottom;
+}
+.box-dark .typography-table td {
+  color: #fff;
+}
+.box-dark .typography-table .opacity-100 {
+  color: #fff;
+}
+.box-dark .typography-table .opacity-70 {
+  color: rgba(255,255,255,0.7);
+}
+.box-dark .typography-table .opacity-30 {
+  color: rgba(255,255,255,0.3);
 }

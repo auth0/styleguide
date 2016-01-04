@@ -95,4 +95,5 @@ footer.site-footer
               a(href="https://auth0.com/terms") Terms of Service
 
             li
-              span &copy; 2013-2015 Auth0 Inc. All Rights Reserved.
+              - var currentYear = new Date().getFullYear();
+              span &copy; 2013-#{currentYear} Auth0 Inc. All Rights Reserved.

@@ -1,0 +1,85 @@
+//== Jumbotron
+//
+//##
+
+$font-size-base =          14px;
+
+// Small screen / tablet
+$screen-sm-min =           768px;
+
+$jumbotron-padding =       30px;
+$jumbotron-color =         inherit;
+// $jumbotron-bg =         @gray-lighter;
+$jumbotron-bg =            #111118;
+$jumbotron-heading-color = #fff;
+$jumbotron-font-size =     ceil(($font-size-base * 1.5));
+
+//
+// Jumbotron
+// --------------------------------------------------
+
+.jumbotron {
+  padding: $jumbotron-padding ($jumbotron-padding / 2);
+  margin-bottom: $jumbotron-padding;
+  color: $jumbotron-color;
+  background-color: $jumbotron-bg;
+  text-align: center;
+
+  h1,
+  .h1 {
+    color: $jumbotron-heading-color;
+  }
+  
+  h2,
+  .h2 {
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    
+    img {
+      display: block;
+      margin: 25px 0 0 24px;
+    }
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: ($jumbotron-padding / 2);
+    font-weight: 200;
+  }
+
+  > hr {
+    border-top-color: darken($jumbotron-bg, 10%);
+  }
+
+  .container &,
+  .container-fluid & {
+    border-radius: 0; // Round corners to zero
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding: ($jumbotron-padding * 1.6) 0;
+
+    .container &,
+    .container-fluid & {
+      // padding-left:  ($jumbotron-padding * 2);
+      // padding-right: ($jumbotron-padding * 2);
+      padding: ($jumbotron-padding * 2);
+    }
+
+    h1,
+    .h1 {
+      font-size: ($font-size-base * 4.5);
+    }
+  }
+}

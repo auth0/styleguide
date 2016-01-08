@@ -9,8 +9,12 @@
     "url": "git://github.com/auth0/lock"
   },
   "author": "Auth0 <support@auth0.com> (http://auth0.com)",
-  "scripts": {},
-  "dependencies": {},
+  "scripts": {
+    "start": "serve --port ${PORT:-3000} ./build"
+  },
+  "dependencies": {
+    "serve": "^1.4.0"
+  },
   "devDependencies": {
     "bump-version": "^0.5.0",
     "grunt": "^0.4.5",

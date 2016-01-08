@@ -1,0 +1,204 @@
+.container-styleguide {
+  width: 100vw;
+  height: 100vh;
+  min-width: 768px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.aside-styleguide {
+  background-color: #e3e5e7;
+  min-width: 180px;
+  max-width: 300px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.main-content-styleguide {
+  background-color: #fff;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.main-content-styleguide.alt {
+  background-color: #fafafa;
+}
+.aside-styleguide .header {
+  background-color: #fff;
+  overflow: hidden;
+  text-align: center;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.aside-styleguide .header h1 {
+  margin: 15px 0 14px 0;
+}
+.aside-styleguide .header a,
+.aside-styleguide .header img {
+  display: block;
+  margin: 0 auto;
+  width: 30px;
+}
+.aside-styleguide .footer {
+  background-color: rgba(0,0,0,0.05);
+  padding: 5px 0;
+  text-align: center;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.aside-styleguide .footer span {
+  color: rgba(0,0,0,0.4);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+.nav-styleguide {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 0;
+}
+.nav-styleguide-list {
+  color: #5c666f;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  list-style: none;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+.nav-styleguide-list > li {
+  margin: 0;
+}
+.nav-styleguide-list > li > a {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  color: inherit;
+  display: block;
+  padding: 20px 20px 20px 20px;
+}
+.nav-styleguide-list > li > a > .icon {
+  margin-right: 10px;
+}
+.nav-styleguide-in-list {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-styleguide-in-list li {
+  background-color: rgba(255,255,255,0.3);
+  margin: 1px 0 0 0;
+}
+.nav-styleguide-in-list li:first-child {
+  margin-top: 0;
+}
+.nav-styleguide-in-list li a {
+  background-color: rgba(255,255,255,0.3);
+  color: inherit;
+  display: block;
+  padding: 10px 0 10px 40px;
+}
+.content-styleguide {
+  overflow: hidden;
+  padding: 0 120px 0 60px;
+}
+.content-styleguide .title {
+  border-bottom: 1px solid #d0d2d3;
+  color: #eb5424;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  padding: 15px 0;
+}
+.content-styleguide .box {
+  background-color: #e3e5e7;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding: 0 40px;
+}
+.content-styleguide .box.box-dark {
+  background-color: #222228;
+}
+.playground-options {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.playground-options button {
+  background-color: #fff;
+  border: 0;
+  color: #9b9b9b;
+  font-size: 12px;
+  float: left;
+  line-height: normal;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+}
+.playground-options button.is-active {
+  background-color: #44c7f4;
+  color: #fff;
+}
+.playground-options .dark-option {
+  border-radius: 3px 0 0 3px;
+}
+.playground-options .light-option {
+  border-radius: 0 3px 3px 0;
+}
+.playground-canvas {
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 14px;
+  height: 170px;
+}
+.playground-actions {
+  color: #666;
+  font-size: 12px;
+  line-height: normal;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+.playground-actions li {
+  float: left;
+}
+.playground-actions a {
+  color: inherit;
+  padding: 0 40px 0 40px;
+}
+.playground-actions li:first-child a {
+  padding-left: 0;
+}
+.playground-actions li.is-active a {
+  color: #31afda;
+}

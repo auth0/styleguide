@@ -1,0 +1,11 @@
+{
+  "name": "styleguide",
+  "scripts": {
+  },
+  "env": {
+  },
+  "addons": [
+    "pointdns",
+    "codeship"
+  ]
+}

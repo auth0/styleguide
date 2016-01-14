@@ -1,6 +1,8 @@
 function navigation() {
   $(window).on('hashchange', setSelected);
 
+  // build 
+
   function buildNav() {
     var $nav = $('.nav-styleguide ul');
 

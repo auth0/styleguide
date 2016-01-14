@@ -1,4 +1,5 @@
 @import 'lib/vars/index.styl';
+@import 'lib/mixins/index.styl';
 
 aside_width = 250px;
 
@@ -14,11 +15,14 @@ aside_width = 250px;
 // container styleguide
 .container-styleguide
   width 100%
+  min-width 320px
 
 // content styleguide
 .main-content-styleguide
   background-color: #fff;
-  margin-left: aside_width;
+
+  +breakpoint("desktop")
+    margin-left: aside_width;
 
   &.alt
     background-color: #fafafa;
@@ -27,14 +31,24 @@ aside_width = 250px;
 .aside-styleguide
   overflow-y: auto;
   background-color: #e3e5e7;
-  width: aside_width;
-  position: fixed;
-  height: 100%
+
+  +breakpoint("desktop")
+    width: aside_width;
+    position: fixed;
+    height:100vh;
 
   .header
     background-color: #fff;
     overflow: hidden;
     text-align: center;
+    position: relative;
+
+    .navbar-toggle
+      position: absolute;
+      top: 5px;
+      right: -5px;
+      .icon-bar
+        background: #5c666f;
 
     h1
       margin: 15px 0 14px 0;
@@ -43,6 +57,8 @@ aside_width = 250px;
     a, img
       display: block;
       margin: 0 auto;
+
+    img
       width: 30px;
 
 
@@ -51,6 +67,12 @@ aside_width = 250px;
     padding: 5px 0;
     text-align: center;
 
+    +breakpoint('desktop')
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+
     span
       color: rgba(0, 0, 0, .4);
       font-size: 11px;
@@ -58,9 +80,14 @@ aside_width = 250px;
       letter-spacing: 1px;
       line-height: normal;
 
+#menu.collapse
+  +breakpoint("desktop")
+    display: block !important;
+    height: auto !important;
 
 .nav-styleguide
   overflow-y: auto
+
 
 .nav-styleguide > ul
   color: #5c666f;
@@ -72,6 +99,9 @@ aside_width = 250px;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
+  z-index: 200;
+  position: relative;
+  background: #e3e5e7;
 
   .is-current
     color: #333 !important;
@@ -94,6 +124,10 @@ aside_width = 250px;
   list-style: none;
   margin: 0;
   padding: 0;
+  display: none;
+
+  +breakpoint("desktop")
+    display: inherit;
 
   .is-current
     background: rgba(255,255,255,0.05);

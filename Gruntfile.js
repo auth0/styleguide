@@ -48,7 +48,7 @@ module.exports = function (grunt) {
     copy: {
       main: {
         files: [
-          { expand: true, src: ['lib/**/*', '!**/*.styl', '!**/*.jade'], dest: 'build', filter: 'isFile'}
+          { expand: true, src: ['lib/**/*', '!**/*.styl', '!**/*.jade', 'landing/index.js'], dest: 'build', filter: 'isFile'}
         ]
       }
     },

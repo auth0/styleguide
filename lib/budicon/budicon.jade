@@ -10,7 +10,8 @@
     mixin budicon(cssClass, name)
       li
         i(class!=cssClass + " icon", aria-hidden='true')
-        span.name= name || cssClass
+        strong.name= name || ''
+        span.css-class= cssClass
 
     section
 
@@ -19,16 +20,16 @@
       section
         ul.glyphs.css-mapping
           +budicon('icon-budicon', 'chicken')
-          +budicon('icon-budicon-1')
-          +budicon('icon-budicon-2')
-          +budicon('icon-budicon-3')
-          +budicon('icon-budicon-4')
-          +budicon('icon-budicon-5')
-          +budicon('icon-budicon-6')
-          +budicon('icon-budicon-7')
-          +budicon('icon-budicon-8')
-          +budicon('icon-budicon-9')
-          +budicon('icon-budicon-10')
+          +budicon('icon-budicon-1', 'flipper')
+          +budicon('icon-budicon-2', 'bread')
+          +budicon('icon-budicon-3', 'egg')
+          +budicon('icon-budicon-4', 'cup')
+          +budicon('icon-budicon-5', 'shake')
+          +budicon('icon-budicon-6', 'cylinder')
+          +budicon('icon-budicon-7', 'cup')
+          +budicon('icon-budicon-8', 'filled cup')
+          +budicon('icon-budicon-9', 'cup')
+          +budicon('icon-budicon-10', 'filled cup')
           +budicon('icon-budicon-11')
           +budicon('icon-budicon-12')
           +budicon('icon-budicon-13')

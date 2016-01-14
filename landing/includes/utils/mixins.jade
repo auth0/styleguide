@@ -8,8 +8,9 @@ mixin header(title, img, description)
 mixin playground(height)
   .playground
     .playground-options
-      button.dark-option.is-active(name='', type='') Dark
-      button.light-option(name='', type='') Light
+      button.light-option.is-active(name='', type='') Light
+      button.dark-option(name='', type='') Dark
+      
     .playground-canvas
       if block
         block

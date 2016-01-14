@@ -10,7 +10,8 @@
   },
   "author": "Auth0 <support@auth0.com> (http://auth0.com)",
   "scripts": {
-    "start": "serve --port ${PORT:-3000} ./build"
+    "start": "serve --port ${PORT:-3000} ./build",
+    "postinstall": "grunt build"
   },
   "dependencies": {
     "serve": "^1.4.0"

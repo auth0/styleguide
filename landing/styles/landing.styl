@@ -6,7 +6,7 @@ aside_width = 250px;
 [data-group]
   background-color: #fafafa;
   padding-bottom: 100px;
-  min-height: 250vh;
+  min-height: 100vh;
   display: none;
 
   &.is-current
@@ -21,7 +21,7 @@ aside_width = 250px;
 .main-content-styleguide
   background-color: #fff;
 
-  +breakpoint("desktop")
+  +breakpoint("tablet")
     margin-left: aside_width;
 
   &.alt
@@ -32,7 +32,7 @@ aside_width = 250px;
   overflow-y: auto;
   background-color: #e3e5e7;
 
-  +breakpoint("desktop")
+  +breakpoint("tablet")
     width: aside_width;
     position: fixed;
     height:100vh;
@@ -67,7 +67,7 @@ aside_width = 250px;
     padding: 5px 0;
     text-align: center;
 
-    +breakpoint('desktop')
+    +breakpoint('tablet')
       position: absolute;
       bottom: 0;
       width: 100%;
@@ -81,7 +81,7 @@ aside_width = 250px;
       line-height: normal;
 
 #menu.collapse
-  +breakpoint("desktop")
+  +breakpoint("tablet")
     display: block !important;
     height: auto !important;
 
@@ -126,7 +126,7 @@ aside_width = 250px;
   padding: 0;
   display: none;
 
-  +breakpoint("desktop")
+  +breakpoint("tablet")
     display: inherit;
 
   .is-current

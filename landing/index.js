@@ -1,6 +1,5 @@
 function navigation() {
   $(window).on('hashchange', setSelected);
-  $('#menu .collapse').on('hidden.bs.collapse', setSelected)
 
   function buildNav() {
     var $nav = $('.nav-styleguide ul');
@@ -53,6 +52,8 @@ function navigation() {
 
     if($section.length) {
       $section.addClass(activeClass);
+
+      $(window).scrollTop(0);
     } else if ($subSection.length) {
       $subSection.addClass(activeClass);
     }

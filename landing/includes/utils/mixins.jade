@@ -6,15 +6,14 @@ mixin header(title, img, description)
 
 
 mixin playground(height)
-  .playground.js-playground
+  .playground
     .playground-options
       button.dark-option.is-active(name='', type='') Dark
       button.light-option(name='', type='') Light
-    .playground-real-component.hide
+    .playground-canvas
       if block
         block
-    .playground-canvas
-      iframe(scrolling='no', style!='height:' + (height || '200px') + ';').playground-showcase
+        
     ul.playground-actions
       li.is-active: a(href='#') Show code
       li: a(href='#') Copy HTML

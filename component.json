@@ -1,6 +1,6 @@
 {
   "name": "auth0-styleguide",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "dependencies": {},
   "fonts": [
     "lib/budicon/fonts/*",

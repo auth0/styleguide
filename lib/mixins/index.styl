@@ -1,3 +1,5 @@
+@import '../vars/index.styl';
+
 clearfix()
   &:after
     clear: both
@@ -8,32 +10,32 @@ clearfix()
 
   *zoom: 1
 
-breakpoint(point, value = 0)
+breakpoint(point, orientation = "min")
   if point == "mobile"
-    @media (min-width: 320px)
+    @media ({orientation}-width: breakpoint-mobile)
       {block}
 
   else if point == "mobile-landscape"
-    @media (min-width: 568px)
+    @media ({orientation}-width: breakpoint-mobile-landscape)
       {block}
 
   else if point == "tablet"
-    @media (min-width: 768px)
+    @media ({orientation}-width: breakpoint-tablet)
       {block}
 
   else if point == "desktop"
-    @media (min-width: 992px)
+    @media ({orientation}-width: breakpoint-desktop)
+      {block}
+
+  else if point == "desktop-hd"
+    @media ({orientation}-width: breakpoint-desktop-hd)
       {block}
 
   else if point == "retina-only"
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
       {block}
 
-  else
-    @media (point: value)
-      {block}
-
-grid(cols = 1, gutter = 0, childs = ".item", orientation="right")
+grid(cols = 1, gutter = 0, childs = ".item", orientation= "right")
   clearfix()
   width: auto
   margin-right: -(gutter)

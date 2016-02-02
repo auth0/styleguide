@@ -82,8 +82,8 @@ Or perhaps you want to extend just parts of it by:
 // use only colors
 @include 'bower_components/auth0-styleguide/lib/vars'
 
-// and override color_red
-color_red = '#ff0000';
+// and override color-red
+color-red = '#ff0000';
 ```
 
 ### Component(1)
@@ -172,8 +172,8 @@ Or perhaps you want to extend just parts of it by:
 // use only colors
 @include 'auth0/styleguide/2.0.0/lib/vars'
 
-// and override color_red
-color_red = '#ff0000';
+// and override color-red
+color-red = '#ff0000';
 ```
 
 ## Releasing a new version

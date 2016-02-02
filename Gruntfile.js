@@ -36,19 +36,19 @@ module.exports = function (grunt) {
         command: './bin/fix-utf8-problem lib/budicon/budicon.css lib/budicon/budicon.fixed.css'
       },
       generate_index: {
-        command: './node_modules/.bin/jade landing/index.jade -O package.json --out build/'
+        command: './node_modules/.bin/jade landing/index.jade -P --out build/'
       },
       generate_css: {
         command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ index.styl'
       },
       generate_demo_css: {
-        command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ landing/styles/landing.styl'
+        command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ landing/styles/main.styl'
       }
     },
     copy: {
       main: {
         files: [
-          { expand: true, src: ['lib/**/*', '!**/*.styl', '!**/*.jade', 'landing/index.js'], dest: 'build', filter: 'isFile'}
+          { expand: true, src: ['lib/**/*', '!**/*.styl', 'landing/js/*.js', 'landing/index.js'], dest: 'build'}
         ]
       }
     },

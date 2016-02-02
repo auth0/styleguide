@@ -1,0 +1,47 @@
+h1, h2, h3, h4, h5, h6
+.h1, .h2, .h3, .h4, .h5, .h6
+  color: color-text-black
+  font-family: font-sans-serif
+  font-weight: font-weight-normal
+  line-height: line-height-titles
+  margin: padding-vertical 0
+
+  a
+    color: color-text-black
+
+h1, .h1
+  font-size: font-size-h1
+h2, .h2
+  font-size: font-size-h2
+h3, .h3
+  font-size: font-size-h3
+h4, .h4
+  font-size: font-size-h4
+h5, .h5, h6, .h6
+  font-size: font-size-h5
+
+p
+  margin: padding-vertical 0
+
+  &.caption
+    color: color-text-lighter
+    letter-spacing: .5px
+    font-size: font-size-base
+
+  &.body-1
+    color: color-text
+
+a, .link
+  color: color-blue-medium
+
+  &:hover,
+  &:focus
+    color: color-text-black
+
+.theme-dark
+  a, .link
+    color: color-blue-light
+
+    &:hover,
+    &:focus
+      color: rgba(color-blue-light, .86)

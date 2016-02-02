@@ -1,5 +1,7 @@
-@import 'lib/vars/index.styl';
-@import 'lib/mixins/index.styl';
+@import 'lib/vars/index';
+@import 'lib/mixins/index';
+
+@import 'inc/playground';
 
 aside_width = 250px;
 
@@ -158,107 +160,42 @@ aside_width = 250px;
     line-height: normal;
     padding: 15px 0;
 
-  .box
+  .type-box
     background-color: #e3e5e7;
     margin-bottom: 30px;
     overflow: hidden;
     padding: 0 40px;
 
-    &.box-dark
-      background-color: #222228;
-
-// playground
-.playground
-  iframe
-    width: 100%;
-    border 0
-
-.playground-options
-  margin-bottom: 20px;
-  overflow: hidden;
-
-  button
-    background-color: #fff;
-    border: 0;
-    color: #9b9b9b;
-    font-size: 12px;
-    float: left;
-    line-height: normal;
-    text-align: center
-    width: 100px;
-    height: 30px;
-
-    &.is-active
-      background-color: #44c7f4;
-      color: #fff;
-
-
-  .dark-option
-    border-radius: 3px 0 0 3px;
-
-  .light-option
-    border-radius: 0 3px 3px 0;
-
-.playground-canvas
-  background-color: #fff;
-  border-radius: 3px;
-  padding 10px 20px
-  overflow hidden;
-  margin-bottom: 14px
-
-.playground-actions
-  color: #666666;
-  font-size: 12px;
-  line-height: normal;
-  list-style: none;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-
-  li
-    float: left;
-
-  a
-    color: inherit;
-    padding: 0 40px 0 40px
-
-  li:first-child a
-    padding-left: 0;
-
-  li.is-active a
-    color: #31afda;
 
 // Typography Section
 // -------------------------
 
 .typography-section
-
   .font-family
     font-size: 60px;
     font-weight: normal;
     line-height: 82px;
     margin: 40px 0;
 
-  // box
-  .box
-    padding: 10px 40px !important;
+// box
+.type-box
+  padding: 10px 40px !important;
 
-    &.box-table
-      padding: 20px 40px !important;
-
-
-    a
-      display: block;
-      margin: 20px 0;
+  &.box-table
+    padding: 20px 40px !important;
 
 
-  // box-dark
-  .box-dark
+  a
+    display: block;
+    margin: 20px 0;
+
+
+  .theme-dark &
+    background-color: #222228;
 
     h1, h2, h3, h4, h5,
     .body-2, .body-1
       color: #fff;
-
 
     p.caption
       color: rgba(255, 255, 255, .26);
@@ -276,29 +213,29 @@ aside_width = 250px;
     font-size: 16px;
 
   .opacity-87
-    color: rgba(0, 0, 0, .87);
+    color: color-text;
 
   .opacity-54
-    color: rgba(0, 0, 0, .54);
+    color: color-text-light;
 
   .opacity-26
-    color: rgba(0, 0, 0, .26);
+    color: color-text-lighter;
 
   .rowspan
     line-height: 20px;
     vertical-align: bottom;
 
 // typography table box black
-.box-dark
+.theme-dark
   .typography-table
     td
-      color: #fff;
+      color: color-text-contrast
 
     .opacity-100
-      color: rgba(255, 255, 255, 1);
+      color: color-text-contrast
 
     .opacity-70
-      color: rgba(255, 255, 255, .7);
+      color: color-text-contrast-light
 
     .opacity-30
-      color: rgba(255, 255, 255, .3);
+      color: color-text-contrast-lighter

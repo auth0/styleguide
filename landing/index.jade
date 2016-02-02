@@ -5,25 +5,23 @@ html
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title Styleguide
+    link(href='//cdnjs.cloudflare.com/ajax/libs/codemirror/5.11.0/codemirror.css', rel='stylesheet')
+    link(href='//fonts.googleapis.com/css?family=Roboto+Mono', rel='stylesheet')
     link(href='index.css', rel='stylesheet')
-    link(href='landing.css', rel='stylesheet')
+    link(href='main.css', rel='stylesheet')
     link(rel="shortcut icon", href="img/favicon.png")
     script(type='text/javascript', src='//cdn.auth0.com/web-header/latest/standalone.min.js')
-    script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js")
+    
+  include sections/utils/mixins
 
   body
-    include includes/utils/mixins
-
     .container-styleguide
-      include includes/sidebar
+      include sections/sidebar
       
       div.main-content-styleguide(role='main')
-        include includes/getting-started
-        include includes/design
-        include includes/components
-        include includes/resources
-
-    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
-    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
-    script(src="//cdn.rawgit.com/vctrfrnndz/jquery-accordion/master/js/jquery.accordion.js")
-    script(src="landing/index.js")
+        include sections/getting-started
+        include sections/design
+        include sections/components
+        include sections/resources
+        
+    include sections/utils/scripts

@@ -4,13 +4,13 @@
 
     h2#typography.title Typography
 
-    h2.font-family Avenir Next
+    h1 Avenir Next
 
     .row
 
       .col-md-6
         
-        .box
+        .type-box
 
           h1 Headline 1
           h2 Headline 2
@@ -22,10 +22,9 @@
           p.caption Caption
           a(href='#') Link
 
-      .col-md-6
+      .col-md-6.theme-dark
 
-        .box.box-dark
-
+        .type-box
           h1 Headline 1
           h2 Headline 2
           h3 Headline 3
@@ -36,7 +35,7 @@
           p.caption Caption
           a(href='#') Link
 
-    .box.box-table
+    .type-box.box-table
 
       table.typography-table
 
@@ -59,30 +58,29 @@
           td.big.opacity-26 Disabled
           td.big.opacity-26 #ffffff
           td.big.opacity-26 26%
+    .theme-dark
+      .type-box.box-table
+        table.typography-table
 
-    .box.box-table.box-dark
+          tr
+            td Light theme default type color
+            td.big.opacity-100 Primary
+            td.big.opacity-100 #ffffff
+            td.big.opacity-100 100%
 
-      table.typography-table
+          tr
+            td.rowspan.opacity-70(rowspan='2') 
+              | Default light bg:
+              br
+              | Auth0 Grey, #e3e5e7
+            td.big.opacity-70 Secondary
+            td.big.opacity-70 #ffffff
+            td.big.opacity-70 70%
 
-        tr
-          td Light theme default type color
-          td.big.opacity-100 Primary
-          td.big.opacity-100 #ffffff
-          td.big.opacity-100 100%
-
-        tr
-          td.rowspan.opacity-70(rowspan='2') 
-            | Default light bg:
-            br
-            | Auth0 Grey, #e3e5e7
-          td.big.opacity-70 Secondary
-          td.big.opacity-70 #ffffff
-          td.big.opacity-70 70%
-
-        tr
-          td.big.opacity-30 Disabled
-          td.big.opacity-30 #ffffff
-          td.big.opacity-30 30%
+          tr
+            td.big.opacity-30 Disabled
+            td.big.opacity-30 #ffffff
+            td.big.opacity-30 30%
 
     br 
 

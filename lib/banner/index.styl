@@ -9,7 +9,7 @@
   position: relative;
   overflow: hidden
   background-color: #14204d;
-  background: linear-gradient(180deg, color_blue 0%, color_blue_light 200%); /* W3C */
+  background: linear-gradient(180deg, color-blue 0%, color-blue-light 200%); /* W3C */
   padding:80px 0;
 
   h1
@@ -30,8 +30,8 @@
     -webkit-animation: icon_banner 1s;
     position: relative;
 
-  a 
-    color: color_blue_light;
+  a
+    color: color-blue-light;
     font-weight: bold
   .btn
     margin-top: 10px;
@@ -52,45 +52,21 @@
     font-size: 36px;
     display: inline-block
 
-
   .banner-container
     position: relative;
 
-
-
-.banner-container {
+.banner-container
   display: block;
-  -webkit-animation-name: appear;
-  -webkit-animation-duration: .5s;
-  -webkit-animation-iteration-count: once;
-  -webkit-animation-timing-function: ease-in;
-}
 
-@-webkit-keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
++breakpoint("desktop")
+  .header-dark,
+  .theme-dark
+    .banner
+      padding-top: 160px;
 
-
-@keyframes icon_banner
-  from
-    top: -100px;
-    opacity: 0;
-  to
-    opacity: 1;
-    top: 0;
-
-
-@media screen and (min-width: 992px)
-  .header-dark .banner
-    padding-top:160px;
-
-@media screen and (max-width: 660px)
++breakpoint("mobile-landscape")
   .banner
-    padding: 20px 0;
+    padding: 20px 0
+    
     h1
       font-size: 36px

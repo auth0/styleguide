@@ -44,14 +44,14 @@ rel_width = 8em;
 
   .title
     color: #333;
-    font-weight: bold;
+    font-weight: font-weight-bold;
     margin: 10px 0;
     min-height: 3em;
 
   &[data-name]
     .logo
       &:after
-        background-image: url('img/generic.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/generic.svg');
 
   &[data-name="how-to"]
     .logo:before
@@ -63,7 +63,7 @@ rel_width = 8em;
       background: linear-gradient(to bottom right, #008BFF 40%, #2C6FAD 140%);
 
       &:after
-        background-image: url('img/angular2.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/angular2.svg');
 
   &[data-name="angular"],
   &[data-name="angularjs"]
@@ -72,7 +72,7 @@ rel_width = 8em;
       background: linear-gradient(to bottom right, #2c2c2c 40%, #737373 140%);
 
       &:after
-        background-image: url('img/angular.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/angular.svg');
 
   &[data-name^="nginx"]
     .logo
@@ -80,7 +80,7 @@ rel_width = 8em;
       background: linear-gradient(to bottom right, #defbda 40%, #97bcd2 140%);
 
       &:after
-        background-image: url('img/nginx.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/nginx.svg');
 
   &[data-name^="relay"]
     .logo
@@ -88,7 +88,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #3B3738 23%, #4B5357 100%);
 
       &:after
-        background-image: url('img/relay.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/relay.svg');
 
 
   &[data-name^="php"],
@@ -99,18 +99,18 @@ rel_width = 8em;
       background: linear-gradient(to bottom right, #6D7BCE 40%, #3B2862 140%);
 
       &:after
-        background-image: url('img/php.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/php.svg');
         width: 55%;
         height: 55%;
 
-  &[data-name="ember"],
+  &[data-name^="ember"],
   &[data-name="emberjs"]
     .logo
       background: -webkit-linear-gradient(top left, #F46642 40%, #9C2202 140%);
       background: linear-gradient(to bottom right, #F46642 40%, #9C2202 140%);
 
       &:after
-        background-image: url('img/ember.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/ember.svg');
         width: 80%;
         height: 80%;
 
@@ -121,7 +121,7 @@ rel_width = 8em;
       background: linear-gradient(to bottom right, #78B743 40%, #9FE861 140%);
 
       &:after
-        background-image: url('img/nodejs.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/nodejs.svg');
         width: 50%;
         height: 50%;
 
@@ -133,9 +133,39 @@ rel_width = 8em;
       &:after
         top: 50%;
         left: 48%;
-        background-image: url('img/ruby.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/ruby.svg');
         width: 40%;
         height: 40%;
+
+  &[data-name="aurelia"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #ECC6D4 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #ECC6D4 100%);
+
+      &:after
+        top: 50%;
+        left: 50%;
+        background-image: url('../lib/circle-logo/img/aurelia.svg');
+
+  &[data-name="vuejs"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #C4DCD2 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #C4DCD2 100%);
+
+      &:after
+        top: 55%;
+        left: 50%;
+        background-image: url('../lib/circle-logo/img/vue.svg');
+
+  &[data-name="electron"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #C4DCD2 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #C4DCD2 100%);
+
+      &:after
+        top: 50%;
+        left: 50%;
+        background-image: url('../lib/circle-logo/img/electron.svg');
 
   &[data-name="apple"],
   &[data-name="osx"],
@@ -146,7 +176,7 @@ rel_width = 8em;
 
       &:after
         top: 48%;
-        background-image: url('img/apple.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/apple.svg');
         width: 45%;
         height: 45%;
 
@@ -157,7 +187,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #93AFC2 23%, #778093 100%);
 
       &:after
-        background-image: url('img/cordova.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/cordova.svg');
 
 
   &[data-name="ionic"]
@@ -166,7 +196,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #4B7ED1 23%, #4B8BF4 100%);
 
       &:after
-        background-image: url('img/ionic.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/ionic.svg');
         opacity: 0.8;
 
   &[data-name="java"]
@@ -175,7 +205,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #F83F3F 23%, #A11818 100%);
 
       &:after
-        background-image: url('img/java.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/java.svg');
 
   &[data-name="socket-io"],
   &[data-name="socketio"]
@@ -184,7 +214,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #2D2E5D 23%, #7B5380 100%);
 
       &:after
-        background-image: url('img/socketio.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/socketio.svg');
 
   &[data-name="vanillajs"]
     .logo
@@ -192,7 +222,7 @@ rel_width = 8em;
       background: linear-gradient(-180deg, #F0DB4F 0%, #EDD223 100%);
 
       &:after
-        background-image: url('img/vanillajs.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/vanillajs.svg');
         width: 38%;
         height: 38%;
 
@@ -203,7 +233,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #5DCDD5 23%, #1ABBE5 100%);
 
       &:after
-        background-image: url('img/go.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/go.svg');
 
   &[data-name="xamarin"]
     .logo
@@ -211,7 +241,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #578BD3 23%, #3F6E97 100%);
 
       &:after
-        background-image: url('img/xamarin.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/xamarin.svg');
 
   &[data-name="python"]
     .logo
@@ -219,7 +249,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #cbeaff 23%, #91adff 100%);
 
       &:after
-        background-image: url('img/python.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/python.svg');
 
   &[data-name^="react"]
     .logo
@@ -227,7 +257,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #2d2d2d 23%, #6D6D6D 100%);
 
       &:after
-        background-image: url('img/react.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/react.svg');
 
 
   &[data-name^="react-native"]
@@ -236,7 +266,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #05A5D1 23%, #338bbc 100%);
 
       &:after
-        background-image: url('img/react-native.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/react-native.svg');
 
   &[data-name="phonegap"]
     .logo
@@ -244,7 +274,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #738386 23%, #4E575B 100%);
 
       &:after
-        background-image: url('img/phonegap.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/phonegap.svg');
 
 
   &[data-name="nancyfx"]
@@ -253,7 +283,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #000000 23%, #4B5357 100%);
 
       &:after
-        background-image: url('img/nancyfx.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/nancyfx.svg');
 
   &[data-name="android"]
     .logo
@@ -261,7 +291,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #B0D949 23%, #83B830 100%);
 
       &:after
-        background-image: url('img/android.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/android.svg');
 
   &[data-name^="windows"],
   &[data-name^="azure"],
@@ -271,7 +301,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #68217a 23%, #9b62a9 100%);
 
       &:after
-        background-image: url('img/windows.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/windows.svg');
         width: 45%;
         height: 45%;
         left: 49%;
@@ -282,7 +312,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #D1D1D1 23%, #89969D 100%);
 
       &:after
-        background-image: url('img/servicestack.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/servicestack.svg');
 
   &[data-name="jquery"]
     .logo
@@ -290,7 +320,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #323DAE 23%, #338bbc 100%);
 
       &:after
-        background-image: url('img/jquery.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/jquery.svg');
         width: 60%;
         height: 60%;
 
@@ -300,7 +330,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #FF0046 23%, #951A3C 100%);
 
       &:after
-        background-image: url('img/rails.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/rails.svg');
 
   &[data-name="apache"]
     .logo
@@ -308,7 +338,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
 
       &:after
-        background-image: url('img/apache.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/apache.svg');
         width: 55%;
         height: 55%;
 
@@ -318,7 +348,15 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #595155 23%, #1C1C1C 100%);
 
       &:after
-        background-image: url('img/amazon.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/amazon.svg');
+
+  &[data-name="meteor"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #595155 23%, #1C1C1C 100%);
+      background: linear-gradient(-220deg, #595155 23%, #1C1C1C 100%);
+
+      &:after
+        background-image: url('../lib/circle-logo/img/meteor.svg');
 
   &[data-name^="salesforce"]
     .logo
@@ -326,7 +364,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #2990E5 23%, #1A5095 100%);
 
       &:after
-        background-image: url('img/salesforce.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/salesforce.svg');
         width: 60%;
         height: 60%;
 
@@ -336,7 +374,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #B6DBE9 23%, #F1B9F3 100%);
 
       &:after
-        background-image: url('img/falcor.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/falcor.svg');
         width: 60%;
         height: 60%;
 
@@ -346,7 +384,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
 
       &:after
-        background-image: url('img/firebase.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/firebase.svg');
 
   &[data-name="sap"],
   &[data-name="sap-odata"]
@@ -355,7 +393,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #98AABD 23%, #547F88 100%);
 
       &:after
-        background-image: url('img/sap.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/sap.svg');
 
   &[data-name="spring"],
   &[data-name="java-spring-security"]
@@ -364,7 +402,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #57A343 23%, #757149 100%);
 
       &:after
-        background-image: url('img/spring.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/spring.svg');
 
   &[data-name="play"],
   &[data-name="scala"]
@@ -373,7 +411,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #32AE4C 23%, #338bbc 100%);
 
       &:after
-        background-image: url('img/play.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/play.svg');
         left: 54%;
         top: 51%;
 
@@ -386,7 +424,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #68217A 23%, #9B62A9 100%);
 
       &:after
-        background-image: url('img/net.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/net.svg');
 
   &[data-name="netclassic"],
   &[data-name="asp-classic"]
@@ -395,7 +433,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #f3f3f3 23%, #CCBBCE 100%);
 
       &:after
-        background-image: url('img/netold.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/netold.svg');
 
   &[data-name="auth0"],
   &[data-name="lock"]
@@ -404,7 +442,7 @@ rel_width = 8em;
       background: linear-gradient(-220deg, #CC461B, 23%, #EB5424 100%);
 
       &:after
-        background-image: url('img/auth0.svg');
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/auth0.svg');
         top: 53%;
         width: 40%;
         height: 40%;

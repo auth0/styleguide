@@ -7,8 +7,15 @@ function playground() {
 
   $elems.find('[data-toggle="tab"]').on('shown.bs.tab', refreshCodeMirrorInTab);
 
-  function setMode() {
+  function setMode(e) {
+    e.preventDefault();
 
+    var $pill = $(this);
+    var isDark = ($pill.attr('data-set-mode') === 'dark');
+
+    $(this).closest('ul').find('li').removeClass('active');
+    $(this).closest('li').addClass('active');
+    $(this).closest('.js-playground').toggleClass('theme-dark', isDark);
   }
 
   function refreshCodeMirrorInTab(e) {
@@ -50,6 +57,9 @@ function playground() {
     var $html = $component.find('[data-lang="html"] textarea');
 
     $html.val(stripIndent($canvas.html()));
+
+
+    $component.on('click', '.nav-pills a', setMode);
 
     $.get(path + '.jade', function(contents) {
       var $jade = $component.find('[data-lang="jade"] textarea');

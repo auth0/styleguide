@@ -26,6 +26,6 @@ mixin playground(name)
         textarea.hide
 
     ul.playground-actions
-      li: a(data-toggle='tab', href='#' + name + '-component') Component
+      li.active: a(data-toggle='tab', href='#' + name + '-component') Component
       li: a(data-toggle='tab', href='#' + name + '-html') HTML
       li: a(data-toggle='tab', href='#' + name + '-jade') Jade

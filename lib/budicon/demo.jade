@@ -1,21 +1,17 @@
 //- Budicon
 
 .budicon-section
-
-  br
-  br
-  
   section.content-styleguide
-
     mixin budicon(cssClass, name)
       li
         i(class!=cssClass + " icon", aria-hidden='true')
-        strong.name= name || ''
-        span.css-class= cssClass
+        div
+          strong.name= name || ''
+        div.css-class= cssClass
 
     section
 
-      h1 Budicon
+      h2#icons.title Icons
 
       section
         ul.glyphs.css-mapping

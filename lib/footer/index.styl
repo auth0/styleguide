@@ -88,7 +88,7 @@ footer.site-footer
       .item
         a
           border: 0;
-          
+
         &.item-phone-label
           font-size: 12px;
           text-transform: uppercase;
@@ -96,7 +96,7 @@ footer.site-footer
           opacity: .5;
           padding-bottom: 5px;
           margin-bottom: 0;
-          
+
         &.item-text
           opacity: 0.7;
 
@@ -105,14 +105,14 @@ footer.site-footer
       position: absolute;
       right: 0;
       top: 18px;
-      
+
       +breakpoint("desktop")
         position: static;
         padding-top: 7px;
-      
+
       .item
         font-size: 12px;
-        
+
         a
           padding: 0;
           padding-bottom: 5px;
@@ -151,8 +151,24 @@ footer.site-footer
 
       +breakpoint("desktop")
         margin-left: 10px;
-  
+
   [class^='skype_pnh_container']
     display: none !important;
   [class^='skype_pnh_print_container']
     display: inline !important;
+
+.theme-dark
+  .site-footer
+    background-color bg-color-blue-dark
+    border-top 0
+
+    h6
+      color color-text-contrast
+    .item
+      color color-text-contrast
+      a
+        color color-text-contrast
+        border-color color-line-contrast
+    .colophon
+      border-color color-line-contrast
+      color color-text-contrast

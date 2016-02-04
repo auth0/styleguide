@@ -1,10 +1,8 @@
 .playground
-  iframe
-    width: 100%;
-    border 0
+  margin-bottom: padding-vertical-large
 
 .playground-options
-  margin-bottom: 20px;
+  margin-bottom: ceil(padding-vertical / 2);
   overflow: hidden;
 
   button
@@ -34,7 +32,12 @@
   border-radius: 3px;
   padding 10px 20px
   overflow hidden;
-  margin-bottom: 14px
+  margin-bottom: 14px;
+
+  .theme-dark &
+    min-height: 100px;
+    background: bg-color-blue-dark;
+    position: relative;
 
 .playground-code
   overflow: hidden;
@@ -53,8 +56,12 @@
   li
     float: left;
 
+    &.active a
+      color: color-text-black;
+      font-weight: font-weight-bold;
+
   a
-    color: inherit;
+    color: color-text-light;
     padding: 0 40px 0 40px
 
   li:first-child a

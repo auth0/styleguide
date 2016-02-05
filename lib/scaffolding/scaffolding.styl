@@ -1,37 +1,25 @@
-//
-// Scaffolding
-// --------------------------------------------------
+html
+  font-size: font-size
 
-$font-family-base = "avenir-next-web", Avenir, "Helvetica Neue", Hevetica, sans-serif;
-$font-family-code = "Roboto Mono", Menlo, Monaco, monospace;
-$font-size-base = 14px;
-$line-height-base = 1.5;
+body
+  font-family: font-sans-serif
+  font-weight: font-weight-normal
+  font-size: inherit
+  line-height: line-height
+  color: #000
 
-// Body reset
-
-html {
-  font-size: $font-size-base;
-}
-
-body {
-  font-family: $font-family-base;
-  font-size: inherit;
-  line-height: $line-height-base;
-  color: #000;
-}
+strong, b
+  font-weight: font-weight-bold
 
 // Links
 
-a {
-  color: #333;
+a
+  color: #333
 
-  &:hover {
-    color: lighten(#333333, 5%);
-    text-decoration: none;
-  }
+  &:hover
+    color: lighten(#333333, 5%)
+    text-decoration: none
 
-  &:focus {
-    outline: none;
-    text-decoration: none;
-  }
-}
+  &:focus
+    outline: none
+    text-decoration: none

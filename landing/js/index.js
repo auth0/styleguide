@@ -167,3 +167,18 @@ function accordions() {
 }
 
 accordions();
+
+function snippets() {
+  hljs.configure({
+    tabReplace: '  ', // 4 spaces
+    classPrefix: ''     // don't append class prefix
+                        // … other options aren't changed
+  });
+  hljs.initHighlighting();
+
+  $('pre.hl code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+}
+
+snippets();

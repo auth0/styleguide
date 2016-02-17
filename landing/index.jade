@@ -13,16 +13,16 @@ html
     script(type='text/javascript', src='//cdn.auth0.com/web-header/latest/standalone.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js')
     
-  include sections/utils/mixins
+  include templates/utils/mixins
 
   body
     .container-styleguide
-      include sections/sidebar
+      include templates/sidebar
       
       div.main-content-styleguide(role='main')
-        include sections/getting-started
-        include sections/design
-        include sections/components
-        include sections/resources
+        include templates/getting-started
+        include templates/design
+        include templates/components
+        include templates/resources
         
-    include sections/utils/scripts
+    include templates/utils/scripts

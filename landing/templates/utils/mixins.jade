@@ -1,0 +1,31 @@
+mixin header(title, img, description)
+  section.jumbotron
+    h2: img(src!=img || '/lib/logos/img/icon-styleguide.svg', alt!=title, width='48', height='')
+    h1= title
+    p= description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit quis risus eget urna mollis.'
+
+
+mixin playground(name)
+  - var path = 'lib/' + name + '/demo'
+  
+  .playground.js-playground(data-src!=path)
+    .playground-options
+      ul.nav.nav-pills
+        li.active
+          a(href="#", data-set-mode="light") Light
+        li
+          a(href="#", data-set-mode="dark") Dark
+    
+    .tab-content
+      .tab-pane.playground-canvas.active(id!=name + '-component')
+        if block
+          block
+      .tab-pane.playground-code(data-lang="jade", id!=name + '-jade')
+        textarea.hide
+      .tab-pane.playground-code(data-lang="html", id!=name + '-html')
+        textarea.hide
+
+    ul.playground-actions
+      li.active: a(data-toggle='tab', href='#' + name + '-component') Component
+      li: a(data-toggle='tab', href='#' + name + '-html') HTML
+      li: a(data-toggle='tab', href='#' + name + '-jade') Jade

@@ -1,0 +1,19 @@
+div.aside-styleguide(role='complementary')
+  header.header
+    h1
+      a(href='#', title='Go to Auth0!')
+        img(src='https://cdn.auth0.com/styleguide/1.0.0/img/badge.png', alt='Auth0 badge', width='30', height='')
+        
+    button.navbar-toggle(data-toggle="collapse", data-target="#menu")
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+      
+  #menu.collapse
+    nav.nav-styleguide
+      ul(data-accordion-group)
+
+    footer.footer
+      span#styleguide-version
+        | Version #{version}

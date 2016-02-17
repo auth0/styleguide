@@ -154,7 +154,12 @@ function navigation() {
 
   build();
 
-  setSelected(location.hash);
+  if(location.hash) {
+    return setSelected(location.hash);
+  }
+
+  return setSelected('#' + $('[data-group]').first().attr('id'));
+
 }
 
 navigation();

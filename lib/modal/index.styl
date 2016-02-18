@@ -23,6 +23,8 @@
 
   .modal-dialog
     max-width: 640px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
     -webkit-transform: translateY(80%) scale(.8);
     transform: translateY(80%) scale(.8);
     transition-timing-function: cubic-bezier(.3, 0, 0, 1.3);
@@ -45,6 +47,7 @@
       padding-left: 0;
       padding-right: 0;
       position: relative;
+      border-bottom: 1px solid #E5E5E5;
 
       .nav-tabs
         margin-bottom: 0;
@@ -94,3 +97,9 @@
       background: none;
       font-size: 34px;
       font-weight: normal
+
+  .form-horizontal .control-label
+    +breakpoint("tablet")
+      padding-top: 7px;
+      margin-bottom: 0;
+      text-align: right;

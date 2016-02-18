@@ -98,8 +98,10 @@ function navigation() {
       var $group = $(this);
       var name = $group.attr('data-group');
       var id = $group.attr('id');
+      var budicon = $group.attr('data-budicon') || 22;
       var tpl = [
         '<li data-accordion class="'+ ((i === 0) ? 'open' : '') +'"><a class="'+ ((i === 0) ? 'is-current' : '') +'" href="#'+ id +'">',
+        '<span class="icon icon-budicon-' + budicon + '"></span>',
         name,
         '</a></li>'
       ].join('');
@@ -142,7 +144,6 @@ function navigation() {
 
     if($section.length) {
       $section.addClass(activeClass);
-
       $(window).scrollTop(0);
     } else if ($subSection.length) {
       $subSection.addClass(activeClass);

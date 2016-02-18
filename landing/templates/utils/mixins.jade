@@ -5,9 +5,9 @@ mixin header(title, img, description)
     p= description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit quis risus eget urna mollis.'
 
 
-mixin playground(name, noAlternate)
+mixin playground(name, height, noAlternate)
   - var path = 'lib/' + name + '/demo'
-  - var darkVersion = (!darkVersion) ? true : false
+  - var css = (height) ? 'height: ' + height : ''
   
   .playground.js-playground(data-src!=path)
     if !noAlternate
@@ -19,7 +19,7 @@ mixin playground(name, noAlternate)
             a(href="#", data-set-mode="dark") Dark
     
     .tab-content
-      .tab-pane.playground-canvas.active(id!=name + '-component')
+      .tab-pane.playground-canvas.active(id!=name + '-component', style!=css)
         if block
           block
       .tab-pane.playground-code(data-lang="jade", id!=name + '-jade')

@@ -14,7 +14,17 @@
             span.sr-only Close
           h4#myModalLabel.modal-title Modal title
         .modal-body
-          | ...
+          .row
+            .col-xs-12.form-group
+              label.control-label.col-xs-3 Sample Field
+              .col-xs-9
+                input.input-block-level.form-control(type='text', name='name', placeholder='Awesome-Database', required='', autofocus='')
+                p.help-block This is a logical identifier of the connection.
+            .col-xs-12.form-group    
+              label.control-label.col-xs-3 Sample Field
+              .col-xs-9
+                input.input-block-level.form-control(type='text', name='name', placeholder='Aed724smjeY', required='', autofocus='')
+                p.help-block This is a logical identifier of the connection.
+
         .modal-footer
-          //- button.btn.btn-default(type='button', data-dismiss='modal') Close
           button.btn.btn-primary(type='button') Save changes

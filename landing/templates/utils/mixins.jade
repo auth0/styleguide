@@ -5,16 +5,18 @@ mixin header(title, img, description)
     p= description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit quis risus eget urna mollis.'
 
 
-mixin playground(name)
+mixin playground(name, noAlternate)
   - var path = 'lib/' + name + '/demo'
+  - var darkVersion = (!darkVersion) ? true : false
   
   .playground.js-playground(data-src!=path)
-    .playground-options
-      ul.nav.nav-pills
-        li.active
-          a(href="#", data-set-mode="light") Light
-        li
-          a(href="#", data-set-mode="dark") Dark
+    if !noAlternate
+      .playground-options
+        ul.nav.nav-pills
+          li.active
+            a(href="#", data-set-mode="light") Light
+          li
+            a(href="#", data-set-mode="dark") Dark
     
     .tab-content
       .tab-pane.playground-canvas.active(id!=name + '-component')

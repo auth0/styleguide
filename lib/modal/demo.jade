@@ -1,10 +1,11 @@
 
 .modal-container
-  button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+  button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#modal-sample')
     | Launch demo modal
     Modal
 
-  #myModal.modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+  #modal-sample.modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-backdrop
     .modal-dialog
       .modal-content
         .modal-header

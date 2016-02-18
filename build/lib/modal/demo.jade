@@ -1,0 +1,20 @@
+
+.modal-container
+  button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#modal-sample')
+    | Launch demo modal
+    Modal
+
+  #modal-sample.modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-backdrop
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal')
+            span(aria-hidden='true') ×
+            span.sr-only Close
+          h4#myModalLabel.modal-title Modal title
+        .modal-body
+          | ...
+        .modal-footer
+          //- button.btn.btn-default(type='button', data-dismiss='modal') Close
+          button.btn.btn-primary(type='button') Save changes

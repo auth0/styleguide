@@ -17,10 +17,10 @@ module.exports = function (grunt) {
           hostname: '*',
           port: 8888,
           middleware: function (connect, options) {
-            return [connect.static(join(__dirname, 'build')) ];
+            return [connect.static(join(__dirname, 'build/')) ];
           }
         }
-      },
+      }
     },
     watch: {
       dev: {
@@ -39,16 +39,16 @@ module.exports = function (grunt) {
         command: './node_modules/.bin/jade landing/index.jade -P --out build/'
       },
       generate_css: {
-        command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ index.styl'
+        command: './node_modules/.bin/stylus -u autoprefixer-stylus --sourcemap --sourcemap-root ../lib/  --include-css --include . --resolve-url --out build/ index.styl'
       },
       generate_demo_css: {
-        command: './node_modules/.bin/stylus --include-css --include . --resolve-url --out build/ landing/styles/main.styl'
+        command: './node_modules/.bin/stylus -u autoprefixer-stylus --sourcemap --sourcemap-root ../landing/ --include-css --include . --resolve-url --out build/ landing/styles/main.styl'
       }
     },
     copy: {
       main: {
         files: [
-          { expand: true, src: ['lib/**/*', '!**/*.styl', 'landing/js/*.js', 'landing/index.js'], dest: 'build'}
+          { expand: true, src: ['lib/**/*', 'landing/js/*.js', 'landing/index.js'], dest: 'build'}
         ]
       }
     },
@@ -123,7 +123,7 @@ module.exports = function (grunt) {
     'shell:generate_css',
     'shell:generate_demo_css',
     'cssmin:main',
-    'copy:main',
+    'copy:main'
   ]);
 
   grunt.registerTask('dev', ['build', 'connect', 'watch']);

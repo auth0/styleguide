@@ -26,6 +26,13 @@ For example, if you want to retrieve our logo:
 <img src="https://cdn.auth0.com/styleguide/latest/lib/logos/img/badge.png">
 ```
 
+### Run locally
+
+```bash
+  npm i
+  grunt dev
+```
+
 ### Bower
 
 Bower usage is only recomended when you plan to extend the styleguide from build. If that's not the case just use our CDN as described [above][cdn-hash].

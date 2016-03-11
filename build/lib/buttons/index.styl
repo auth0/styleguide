@@ -1,0 +1,118 @@
+button.btn
+  outline: none !important;
+
+.btn, a.btn
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase
+  letter-spacing: 2px;
+  border: 0;
+  font-weight: font-weight-bold
+  border: 1px solid color-gray;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 3px;
+
+  &:hover
+    // background-color: color-gray;
+
+  &.btn-none
+    border: 0;
+    text-transform: none
+    letter-spacing: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+
+
+  &.btn-xs
+    font-size: 11px;
+    line-height: 12px;
+    padding: 6px 15px;
+
+  &.btn-sm
+    font-size: 12px;
+    line-height: 12px;
+    padding: 10px 15px;
+
+  &.btn-lg
+    line-height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+
+  &.btn-success
+    background-color: color-red;
+    color: #fff;
+    border-color: transparent;
+    &:hover
+      background-color: darken(color-red, 30%);
+      color: #fff
+
+  &.btn-default
+    background: white;
+    border-color: color-gray;
+    &:hover
+      background: color-gray;
+
+  &.btn-danger
+    border-color: transparent;
+
+  &.btn-primary
+    background-color: color-blue-light;
+    border-color: transparent;
+    &:hover
+      background-color: darken(color-blue-light, 30%);
+
+  &:active
+    box-shadow: none;
+
+.bg-primary, .bg-success, .bg-danger, .bg-info, .bg-warning
+  font-weight: font-weight-bold
+  color: white;
+  border-radius: 3px;
+  padding: 10px 14px;
+  a
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 1px;
+
+.bg-primary
+  background: color-blue;
+
+.bg-success
+  background: color-green;
+
+.bg-warning
+  background: color-yellow;
+
+.bg-info
+  background-color: color-blue-light;
+
+.bg-danger
+  background: color-red_alt;
+
+fieldset[disabled]
+  .btn
+    background-color: gray !important;
+    border-color: gray !important;
+
+.help-circle
+  max-height: 14px;
+  max-width: 14px;
+  opacity: .2;
+  margin-left: 4px;
+  position: relative;
+  top: -2px;
+
+  &:hover
+      opacity: 1;
+
+.glyphs.css-mapping{color:rgba(0,0,0,0.5); padding: 0; margin: 0;}
+.glyphs.css-mapping li{margin:0 20px 20px 0;padding:0;display:inline-block;overflow:hidden}
+.glyphs.css-mapping .icon{margin:0;margin-right:10px;padding:13px;height:50px;width:50px;color:#162a36 !important;overflow:hidden;float:left;font-size:24px}
+.glyphs.css-mapping input{margin:0;margin-top:5px;padding:8px;line-height:16px;font-size:16px;display:block;width:100px;height:40px;border:1px solid #d8e0e5;-webkit-border-radius:5px;border-radius:5px;background:#fff;outline:0;float:right;}
+.glyphs.css-mapping input:focus{border:1px solid #fbde4a;-webkit-box-shadow:inset 0 0 3px #fbde4a;box-shadow:inset 0 0 3px #fbde4a}
+.glyphs.css-mapping input:hover{-webkit-box-shadow:inset 0 0 3px #fbde4a;box-shadow:inset 0 0 3px #fbde4a}

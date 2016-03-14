@@ -22,6 +22,7 @@ else
     git commit -am "$TAG_NAME"
     git tag "$TAG_NAME" -m "$LAST_COMMIT"
     git checkout master
+    git pull --rebase origin master
     git push origin $TAG_NAME
     git branch -D dist
 fi

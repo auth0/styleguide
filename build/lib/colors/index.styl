@@ -1,0 +1,134 @@
+.color
+  border-radius: border-radius
+  padding: padding-horizontal
+  margin-bottom: padding-vertical
+  padding-top: 80%
+  position: relative
+
+  .color-info
+    background-color: rgba(black, .1)
+    border-bottom-right-radius: border-radius
+    border-bottom-left-radius: border-radius
+    color: color-text-white
+    display: block
+    font-size: font-size-small
+    line-height: 22px
+    margin: 0 -20px -20px -20px
+    padding: (padding-vertical / 2) padding-horizontal
+
+    strong
+      display: block
+
+  &.color-red
+    background-color: color-red
+
+  &.color-blue
+    background-color: color-blue
+
+  &.color-blue-light
+    background-color: color-blue-light
+
+  &.color-yellow
+    background-color: color-yellow
+
+  &.color-orange
+    background-color: color-orange
+
+  &.color-oil
+    background-color: color-oil
+
+  &.color-green
+    background-color: color-green
+
+  &.color-gray
+    background-color: color-gray
+
+  &.color-pink
+    background-color: color-pink
+
+  &.bg-color-blue-dark
+    background-color: bg-color-blue-dark
+
+  &.bg-color-oil
+    background-color: color-oil
+
+  &.bg-color-gray
+    background-color: bg-color-gray
+
+    .color-info
+      color: color-text-black
+
+  &.bg-color-gray-light
+    background-color: bg-color-gray-light
+
+    .color-info
+      color: color-text-black
+
+// Hue Palette
+.hue-palette
+  border-radius: border-radius
+  color: #fff
+  font-size: font-size-small
+  line-height: padding-vertical
+  list-style: none
+  margin: 0 0 padding-vertical 0
+  padding: 0
+  overflow: hidden
+
+  li
+    display: block
+    overflow: hidden
+    margin: 0
+    padding: (padding-vertical / 2)
+
+    strong
+      float: right
+
+  .hex
+    float: left
+
+  &.color-red
+    background-color: color-red
+
+  &.color-blue-light
+    background-color: color-blue-light
+
+  &.color-blue
+    background-color: color-blue
+
+  li:nth-child(1)
+    background-color: rgba(white, .3)
+
+  li:nth-child(2)
+    background-color: rgba(white, .2)
+
+  li:nth-child(3)
+    background-color: rgba(white, .1)
+
+  li:nth-child(5)
+    background-color: rgba(black, .1)
+
+  li:nth-child(6)
+    background-color: rgba(black, .2)
+
+  li:nth-child(7)
+    background-color: rgba(black, .3)
+
+  &.color-blue-light
+    li:nth-child(1)
+      background-color: lighten(color-blue-light, 30%)
+
+    li:nth-child(2)
+      background-color: lighten(color-blue-light, 20%)
+
+    li:nth-child(3)
+      background-color: lighten(color-blue-light, 10%)
+
+    li:nth-child(5)
+      background-color: darken(color-blue-light, 10%)
+
+    li:nth-child(6)
+      background-color: darken(color-blue-light, 20%)
+
+    li:nth-child(7)
+      background-color: darken(color-blue-light, 30%)

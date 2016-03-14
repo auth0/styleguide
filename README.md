@@ -4,7 +4,6 @@ Auth0 Styleguide
 Auth0 Product Style Guide. **This is for internal use by Auth0 only.**
 
 
-
 <img src="https://i.cloudup.com/xJ2BeIkuhR.png" />
 
 ## Usage

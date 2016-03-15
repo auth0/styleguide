@@ -11,23 +11,6 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
-    connect: {
-      dev: {
-        options: {
-          hostname: '*',
-          port: 8888,
-          middleware: function (connect, options) {
-            return [connect.static(join(__dirname, 'build/')) ];
-          }
-        }
-      }
-    },
-    watch: {
-      dev: {
-        files: ['*', 'lib/**/*', 'bin/**/*', 'landing/**/*'],
-        tasks: ["build"]
-      }
-    },
     clean: [
       'build/'
     ],
@@ -35,28 +18,11 @@ module.exports = function (grunt) {
       fix_utf8: {
         command: './bin/fix-utf8-problem lib/budicon/budicon.css lib/budicon/budicon.fixed.css'
       },
-      generate_index: {
-        command: './node_modules/.bin/jade landing/index.jade -P --out build/'
+      gulp: {
+        command: './node_modules/.bin/gulp build'
       },
-      generate_css: {
-        command: './node_modules/.bin/stylus -u autoprefixer-stylus --sourcemap --sourcemap-root ../lib/  --include-css --include . --resolve-url --out build/ index.styl'
-      },
-      generate_demo_css: {
-        command: './node_modules/.bin/stylus -u autoprefixer-stylus --sourcemap --sourcemap-root ../landing/ --include-css --include . --resolve-url --out build/ landing/styles/main.styl'
-      }
-    },
-    copy: {
-      main: {
-        files: [
-          { expand: true, src: ['lib/**/*', 'landing/js/*.js', 'landing/index.js'], dest: 'build'}
-        ]
-      }
-    },
-    cssmin: {
-      main: {
-        files: {
-          'build/index.min.css': ['build/index.css']
-        }
+      gulp_dev: {
+        command: './node_modules/.bin/gulp'
       }
     },
     aws_s3: {
@@ -119,14 +85,14 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean',
     'shell:fix_utf8',
-    'shell:generate_index',
-    'shell:generate_css',
-    'shell:generate_demo_css',
-    'cssmin:main',
-    'copy:main'
+    'shell:gulp'
   ]);
 
-  grunt.registerTask('dev', ['build', 'connect', 'watch']);
+  grunt.registerTask('dev', [
+    'clean',
+    'shell:fix_utf8',
+    'shell:gulp_dev'
+  ]);
 
   grunt.registerTask('cdn', [
     'build',

@@ -61,6 +61,12 @@ module.exports = function (grunt) {
       }
     },
     http: {
+      purge_styleguide: {
+        options: {
+          url: process.env.STYLEGUIDE_ROOT,
+          method: 'DELETE'
+        }
+      },
       purge_cdn_latest: {
         options: {
           url: process.env.CDN_ROOT + '/styleguide/latest',
@@ -97,6 +103,7 @@ module.exports = function (grunt) {
   grunt.registerTask('cdn', [
     'build',
     'aws_s3',
+    'http:purge_styleguide',
     'http:purge_cdn_latest',
     'http:purge_cdn_major',
     'http:purge_cdn_minor'

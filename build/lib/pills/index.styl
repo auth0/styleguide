@@ -1,0 +1,40 @@
+.nav-pills
+  border: 1px solid color-oil;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  font-weight: font-weight-bold
+
+  li
+    margin: 0;
+
+  > li.active > a,
+  > li.active > a:hover,
+  > li.active > a:focus
+    color: color-text-contrast
+    background-color: color-oil
+    cursor: default
+
+
+  > li
+    &:first-child > a
+      border-radius: border-radius 0 0 border-radius
+
+    &:last-child > a
+      border-radius: 0 border-radius border-radius 0
+
+    & + li
+      margin-left: 0
+
+    > a
+      border-radius: 0;
+      background-color: white
+      color: color-text-black
+      padding: ceil(padding-vertical-small / 3) padding-horizontal-large
+
+      &:hover,
+      &:focus
+        color: color-text-black
+        background-color: white;

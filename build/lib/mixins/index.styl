@@ -1,0 +1,47 @@
+@import '../vars/index.styl';
+
+clearfix()
+  &:after
+    clear: both
+
+  &:after, &:before
+    content: ""
+    display: table
+
+  *zoom: 1
+
+breakpoint(point, orientation = "min")
+  if point == "mobile"
+    @media ({orientation}-width: breakpoint-mobile)
+      {block}
+
+  else if point == "mobile-landscape"
+    @media ({orientation}-width: breakpoint-mobile-landscape)
+      {block}
+
+  else if point == "tablet"
+    @media ({orientation}-width: breakpoint-tablet)
+      {block}
+
+  else if point == "desktop"
+    @media ({orientation}-width: breakpoint-desktop)
+      {block}
+
+  else if point == "desktop-hd"
+    @media ({orientation}-width: breakpoint-desktop-hd)
+      {block}
+
+  else if point == "retina-only"
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+      {block}
+
+grid(cols = 1, gutter = 0, childs = ".item", orientation= "right")
+  clearfix()
+  width: auto
+  margin-right: -(gutter)
+
+  {childs}
+    float: left
+    width: (100% / cols)
+    padding-{orientation}: gutter
+    background-clip: content-box

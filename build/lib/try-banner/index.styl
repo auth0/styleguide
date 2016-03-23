@@ -1,0 +1,38 @@
+/*==========  Try Banner  ==========*/
+.try-banner
+  text-align: center
+  background: #f9f9f9;
+  padding: 50px 20px 35px 20px;
+  border-radius: 3px;
+
+  span
+    font-size: 16px;
+    font-weight: 100;
+    display: inline-block
+    position: relative;
+    top: -0.5em;
+
+  .btn
+    margin-left: 20px;
+    margin-top: -20px;
+
+  .copy
+    color: #666;
+    margin-top: 30px;
+
++breakpoint("tablet", "max")
+  .try-banner
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    span
+      display: block
+      margin-bottom: 20px;
+      top: auto;
+    .btn
+      display: inline-block
+      width: 100%;
+      display: block
+      white-space: normal;
+      margin: 0;

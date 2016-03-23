@@ -8,6 +8,9 @@
   background-color: bg-color-dark
   text-align: center
 
+  &.has-header
+    padding-top: 150px;
+
   +breakpoint("desktop")
     margin-bottom: padding-vertical
 
@@ -36,10 +39,10 @@
 
   p
     color: color-text-contrast-light
-    margin-bottom: (padding-vertical / 2)
+    margin 0 auto
+    margin-bottom: (padding-vertical / 1.5)
     font-weight: font-weight-normal
     max-width 600px
-    margin 0 auto
     font-size 16px
     padding: 0 20px
 

@@ -5,74 +5,80 @@ dropdown-list-width = 180px
 
 header.site-header .dropdown-menu
   &.dropdown-menu-alt
-    min-width: dropdown-width
-    min-height: dropdown-height
+    +breakpoint("desktop")
+      min-width: dropdown-width
+      min-height: dropdown-height
 
     li
-      max-width: dropdown-list-width
+      +breakpoint("desktop")
+        max-width: dropdown-list-width
 
     li.featured-content
-      position: absolute;
-      right: 0;
-      background: none;
-      top: 0;
-      border-radius: 0 3px 0 0
-      width: dropdown-width - dropdown-list-width
-      max-width: none
-      box-shadow: -1px 0 0 0 bg-color-gray;
-      height: 100%;
+      display: none;
 
-      *:after,
-      &:after
-        display: none
+      +breakpoint("desktop")
+        display: block;
+        position: absolute;
+        right: 0;
+        background: none;
+        top: 0;
+        border-radius: 0 3px 0 0
+        width: dropdown-width - dropdown-list-width
+        max-width: none
+        box-shadow: -1px 0 0 0 bg-color-gray;
+        height: 100%;
 
-      .title
-        position: relative;
-        top: 1px;
-        padding: 10px 20px
-        border-bottom: 1px solid bg-color-gray;
+        *:after,
+        &:after
+          display: none
 
-      h2
-        background: bg-color-gray
-        border-radius: 50%
-        margin 0 auto
-        width: 65px
-        height: 65px
-        position: relative
-        margin-top: 1rem
+        .title
+          position: relative;
+          top: 1px;
+          padding: 10px 20px
+          border-bottom: 1px solid bg-color-gray;
 
-        img
-          position: absolute
-          display: block
-          top: 50%
-          left: 50%
-          transform: translate(-50%, -50%)
-
-      article
-        text-align: center;
-
-        p
-          color: color-text-light
-          margin-top 0
-          font-size: 12px
-          padding: 0 20px
-
-        h1
-          font-size: 15px
-          padding: 0 20px
-          font-weight: font-weight-bold
-          margin: 0.8rem 0
+        h2
+          background: bg-color-gray
+          border-radius: 50%
+          margin 0 auto
+          width: 65px
+          height: 65px
+          position: relative
           margin-top: 1rem
-        a
-          display: block
 
-      a,
-      a:hover,
-      a:active
-        margin: 0;
-        padding: 0;
-        background: 0;
-        color: currentColor;
+          img
+            position: absolute
+            display: block
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+        article
+          text-align: center;
+
+          p
+            color: color-text-light
+            margin-top 0
+            font-size: 12px
+            padding: 0 20px
+
+          h1
+            font-size: 15px
+            padding: 0 20px
+            font-weight: font-weight-bold
+            margin: 0.8rem 0
+            margin-top: 1rem
+          a
+            display: block
+
+        a,
+        a:hover,
+        a:active
+          margin: 0;
+          padding: 0;
+          background: 0;
+          color: currentColor;
 
 
 
@@ -432,10 +438,8 @@ a.hiring
       padding: 0;
       opacity: 1;
       overflow: hidden
-
-      .btn-dro
-        display: none
-
+      .btn-dro i
+        display: none;
       .divider
         display: none
 

@@ -63,7 +63,7 @@ module.exports = function (grunt) {
     http: {
       purge_styleguide: {
         options: {
-          url: process.env.STYLEGUIDE_ROOT,
+          url: process.env.STYLEGUIDE_ROOT + '/build',
           method: 'DELETE'
         }
       },

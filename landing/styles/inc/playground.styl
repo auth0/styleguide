@@ -30,7 +30,7 @@
 .playground-canvas
   background-color: #fff;
   border-radius: 3px;
-  padding 10px 20px
+  padding 20px
   overflow hidden;
   margin-bottom: 14px;
 
@@ -53,6 +53,11 @@
   overflow: hidden;
   padding: 0;
 
+  [class*="icon-budicon"]
+    position: relative;
+    margin-right: 10px;
+    top: 2px;
+
   li
     float: left;
 
@@ -69,6 +74,15 @@
 
   li.is-active a
     color: #31afda;
+
+.glyphs.css-mapping li
+  background: lighten(color-gray, 40%)
+  width: 200px
+  border-radius: 3px
+  padding: 10px
+
+  .name
+    color: color-text-black
 
 #modal-component,
 #ui-switch-component

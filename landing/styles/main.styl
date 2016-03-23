@@ -13,7 +13,7 @@ aside_width = 250px;
   min-height: 100vh;
   display: none;
 
-  &.is-current
+  &.active
     display: block;
 
 // container styleguide
@@ -107,7 +107,7 @@ aside_width = 250px;
   position: relative;
   background: #e3e5e7;
 
-  .is-current
+  .active
     color: #333 !important;
     background: darken(#e3e5e7, 4%);
 
@@ -133,7 +133,7 @@ aside_width = 250px;
   +breakpoint("tablet")
     display: inherit;
 
-  .is-current
+  .active
     background: rgba(255,255,255,0.05);
 
   li
@@ -214,8 +214,28 @@ aside_width = 250px;
       color: rgba(255, 255, 255, .26);
 
 // typography table
+.box-table
+  overflow-x: scroll;
+  max-width: 100%;
+
 .typography-table
+  min-width: 600px;
   width: 100%;
+  overflow: scroll;
+
+  +breakpoint("desktop")
+    min-width: none;
+
+  .variable
+    width: 35%;
+
+  .opacity
+    width: 5%;
+    text-align: right;
+
+  .color
+    width: 8%;
+
 
   td
     color: #000;

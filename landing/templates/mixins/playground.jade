@@ -22,7 +22,20 @@ mixin playground(name, height, noAlternate)
         textarea.hide
 
     ul.playground-actions
-      li.active: a(data-toggle='tab', href='#' + name + '-component') Component
-      li: a(data-toggle='tab', href='#' + name + '-html') HTML
-      li: a(data-toggle='tab', href='#' + name + '-jade') Jade
-      li: a(href='/stage/#' + name) Open in stage
+      li.active
+        a(data-toggle='tab', href='#' + name + '-component')
+          span.icon-budicon-399
+          | Component
+        
+      li
+       a(data-toggle='tab', href='#' + name + '-html')  
+         span.icon-budicon-342
+         | HTML
+      li
+        a(data-toggle='tab', href='#' + name + '-jade')
+          span.icon-budicon-342
+          | Jade
+      li
+        a(href='/stage/#' + name)
+          span.icon-budicon-522
+          | Open in stage

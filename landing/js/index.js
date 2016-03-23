@@ -15,7 +15,7 @@ function playground() {
 
     $(this).closest('ul').find('li').removeClass('active');
     $(this).closest('li').addClass('active');
-    $(this).closest('.js-playground').toggleClass('theme-dark', isDark);
+    $(this).closest('.js-playground').find('.tab-content').toggleClass('theme-dark', isDark);
   }
 
   function refreshCodeMirrorInTab(e) {
@@ -109,7 +109,7 @@ function navigation() {
       var $item = $(tpl);
 
       if($group.find('h2[id]').length) {
-        var $list = $('<ul></ul>');
+        var $list = $('<ul class="nav"></ul>');
 
         $group.find('h2[id]').each(function(i) {
           var name = $(this).text();
@@ -127,13 +127,13 @@ function navigation() {
 
   function setSelected(hash) {
     var hash = location.hash || hash;
-    var activeClass = 'is-current';
+    var activeClass = 'active';
     var $section = $(hash + '[data-group]');
     var $subSection = $(hash).closest('[data-group]');
     var $navItem = $('.nav-styleguide a[href="' + hash + '"]');
 
-    if($('[data-group], .nav-styleguide a').length) {
-      $('[data-group], .nav-styleguide a').removeClass(activeClass);
+    if($('[data-group], .nav-styleguide li').length) {
+      $('[data-group], .nav-styleguide li').removeClass(activeClass);
     }
 
     $('#menu').collapse('hide');
@@ -149,7 +149,7 @@ function navigation() {
       $subSection.addClass(activeClass);
     }
 
-    $navItem.addClass(activeClass);
+    $navItem.closest('li').addClass(activeClass);
     $navItem.closest('[data-accordion]').addClass('open');
   }
 
@@ -188,3 +188,27 @@ function snippets() {
 }
 
 snippets();
+
+
+function colors() {
+  $('.color [data-hex]').each(function() {
+    var color = $(this).closest('.color').css('background-color');
+
+    function toHex(int) {
+      var hex = int.toString(16);
+      return hex.length == 1 ? "0" + hex : hex;
+    }
+
+    function parseColor(color) {
+      var arr=[]; color.replace(/[\d+\.]+/g, function(v) { arr.push(parseFloat(v)); });
+      return {
+        hex: "#" + arr.slice(0, 3).map(toHex).join(""),
+        opacity: arr.length == 4 ? arr[3] : 1
+      };
+    }
+
+    $(this).text(parseColor(color).hex);
+  });
+}
+
+colors();

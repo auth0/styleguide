@@ -8,20 +8,13 @@ header.site-header
               span.icon-bar
               span.icon-bar
             h1.navbar-brand
-              a(href='/')
+              a.logo(href='/')
                 span Auth0
-            a.no-basic.hiring.animated.bounce.hidden-sm.hidden-xs.hidden-md(href='/jobs') We&apos;re hiring!
+              a.no-basic.hiring.animated.bounce.hidden-sm.hidden-xs.hidden-md(href='/jobs') We&apos;re hiring!
           #navbar-collapse.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-left.no-basic
-              li.li-why
-                a(href='/why-auth0') Why Auth0
-              li.li-how
-                a(href='/how-it-works') How It Works
-              li.li-pricing
-                a(href='/pricing') Pricing
-              li.dropdown
-                span.btn-dro(role='button', data-toggle='dropdown')
-                  | More
+              li.dropdown.li-products
+                span.btn-dro(data-toggle='dropdown') Products
                   i.icon-budicon-460
                 ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
                   li
@@ -30,29 +23,47 @@ header.site-header
                     a(href='/passwordless') Passwordless
                   li
                     a(href='/wordpress') WordPress
-                  li.divider
+                  
+              li.dropdown.li-solutions
+                span.btn-dro(data-toggle='dropdown') Solutions
+                  i.icon-budicon-460
+                ul.dropdown-menu.dropdown-menu-alt(role='menu', aria-labelledby='dLabel')
                   li
-                    a(href='/about') About
+                    a(href='/lock') Lock
                   li
-                    a(href='/blog') Blog
+                    a(href='/passwordless') Passwordless
+                  li.featured-content
+                    .title Latest on blog
+                    article 
+                      a(href="#link")
+                        h2
+                          img(src="/lib/logos/img/icon-styleguide.svg" width="35")
+                        h1 Powering User Analytics With Identity
+                        p Learn how Auth0 helps with your decision-making process, and makes it easy to gather data about your users. Explore a specific example of User Analytics, including code snippets.
+              li.li-pricing
+                a(href='/pricing') Pricing
+              li.li-customers
+                a(href='/pricing') Customers
+              li.li-docs
+                a(href='/documentation') Documentation
+              li.li-resources.dropdown
+                span.btn-dro(data-toggle='dropdown') Resources
+                  i.icon-budicon-460
+                ul.dropdown-menu.dropdown-menu-right.dropdown-menu-alt(role='menu', aria-labelledby='dLabel')
                   li
-                    a(href='/customers') Customers
+                    a(href='/lock') Lock
                   li
-                    a(href='/resources') Resources
-                  li
-                    a(href='/video-tutorials') Video Tutorials
-                  li
-                    a(href='/partners') Partners
-                  li
-                    a(href='/opensource') Open Source
-                  li
-                    a(href='/jobs') Jobs
-                  li
-                    a(href='/press') Press
+                    a(href='/passwordless') Passwordless
+                  li.featured-content
+                    .title Latest on blog
+                    article 
+                      a(href="#link")
+                        h2
+                          img(src="/lib/logos/img/icon-styleguide.svg" width="35")
+                        h1 Powering User Analytics With Identity
+                        p Learn how Auth0 helps with your decision-making process, and makes it easy to gather data about your users. Explore a specific example of User Analytics.
             ul.nav.navbar-nav.navbar-right
               li.li-docs.no-basic
-                a(href='/support') Help &amp; Support
-              li.li-docs.no-basic
-                a(href='/docs') Documentation
+                a(href='/docs') Talk to sales
               li
                 a.signin-button.login(href='https://manage.auth0.com') Open Dashboard

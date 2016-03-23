@@ -80,7 +80,7 @@ gulp.task('watch', function() {
   gulp.watch(['./lib/**/*.jade'], ['templates', 'copy']);
   gulp.watch(['./landing/**/*.jade', './landing/**/*.js'], ['jade-landing', 'copy']);
   gulp.watch(['./lib/**/*.styl'], ['css']);
-  gulp.watch(['./landing/**/*.styl'], ['stylus-landing']);
+  gulp.watch(['./landing/**/*.styl'], ['css']);
 });
 
 gulp.task('templates', ['jade-landing', 'jade-lib']);

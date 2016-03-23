@@ -8,13 +8,29 @@ button.btn
   -o-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
   text-transform: uppercase
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   border: 0;
   font-weight: font-weight-bold
   border: 1px solid color-gray;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 9px 22px;
   border-radius: 3px;
+  position: relative;
+
+  &:before
+    position: relative;
+    top: 0.15rem;
+    left: -0.7rem;
+    margin-right: 10px;
+
+  &[class*="icon-"]:after
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background: currentColor;
+    top: 0;
+    left: 2.6rem;
+    opacity: 0.15;
 
   &:hover
     // background-color: color-gray;
@@ -46,23 +62,31 @@ button.btn
   &.btn-success
     background-color: color-red;
     color: #fff;
-    border-color: transparent;
+    border: 0;
     &:hover
       background-color: darken(color-red, 30%);
       color: #fff
 
   &.btn-default
     background: white;
+    color: color-text-black;
     border-color: color-gray;
+    &[class*="icon-"]:after
+      opacity: 0.05;
+
     &:hover
       background: color-gray;
 
   &.btn-danger
-    border-color: transparent;
+    border: 0;
+    background-color: bg-color-error;
+
+    &:hover
+      background-color: darken(bg-color-error, 30%);
 
   &.btn-primary
     background-color: color-blue-light;
-    border-color: transparent;
+    border: 0;
     &:hover
       background-color: darken(color-blue-light, 30%);
 
@@ -92,12 +116,15 @@ button.btn
   background-color: color-blue-light;
 
 .bg-danger
-  background: color-red_alt;
+  background: bg-color-error;
 
-fieldset[disabled]
-  .btn
-    background-color: gray !important;
-    border-color: gray !important;
+fieldset[disabled] .btn,
+.btn[disabled],
+.btn.disabled
+    border: 0;
+    background-color: bg-color-gray;
+    border-color: gray;
+    color: color-text-lighter;
 
 .help-circle
   max-height: 14px;

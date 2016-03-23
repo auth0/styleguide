@@ -1,0 +1,51 @@
+.ui-switch
+  display: inline-block;
+  width: 50px;
+  height: 31px;
+  position: relative;
+
+  input[type="checkbox"]
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    opacity: 0;
+    outline: none;
+    margin: 0;
+
+    &:disabled + .status
+      opacity: 0.3;
+
+    &:checked + .status:before
+      transform: translate(70%, -5%);
+
+    &:checked + .status
+      background: #4cd964;
+
+  .status
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 27px;
+    background: #d0d2d3;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+
+    &:before
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      height: 25px;
+      width: 25px;
+      background: #fff;
+      box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25), 0px 4px 11px 0px rgba(0,0,0,0.08), -1px 3px 3px 0px rgba(0,0,0,0.14);
+      transition: transform 100ms ease;
+      border-radius: 50%;
+      transform: translate(-5%, -5%);

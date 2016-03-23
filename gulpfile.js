@@ -7,7 +7,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 
-gulp.task('server', ['jade-landing', 'stylus-landing'], function() {
+gulp.task('server', ['build'], function() {
   return gulp.src('./build/')
     .pipe(server({
       livereload: true,
@@ -77,9 +77,9 @@ gulp.task('cssmin', ['stylus-lib', 'stylus-landing'], function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['./lib/**/*.jade'], ['jade-lib']);
-  gulp.watch(['./landing/**/*.jade'], ['jade-landing']);
-  gulp.watch(['./lib/**/*.styl'], ['stylus-lib']);
+  gulp.watch(['./lib/**/*.jade'], ['templates', 'copy']);
+  gulp.watch(['./landing/**/*.jade', './landing/**/*.js'], ['jade-landing', 'copy']);
+  gulp.watch(['./lib/**/*.styl'], ['css']);
   gulp.watch(['./landing/**/*.styl'], ['stylus-landing']);
 });
 

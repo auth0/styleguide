@@ -17,6 +17,11 @@ html
   include templates/mixins/playground
 
   body
+    script.
+      if(_lrscript) {
+        document.body.appendChild(_lrscript);
+      }
+      
     .container-styleguide
       include templates/utils/sidebar
       

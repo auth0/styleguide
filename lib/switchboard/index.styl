@@ -7,8 +7,8 @@ inner-padding = 30px
 
 .switchboard-item
   flex: 1;
-  border-right: 1px  color-gray solid;
-  border-bottom: 1px  color-gray solid;
+  border-right: 1px $color-gray solid;
+  border-bottom: 1px $color-gray solid;
   position: relative;
   min-height: 100px;
   background: white
@@ -16,7 +16,7 @@ inner-padding = 30px
   will-change: transform;
 
   &.disabled
-    background: lighten(color-gray, 80%);
+    background: lighten($color-gray, 80%);
 
     .test
       visibility: hidden;
@@ -70,6 +70,6 @@ for num in 2 3 4
       max-width: (100% / num);
 
       &:nth-child(-n+{num})
-        border-top: 1px color-gray solid;
+        border-top: 1px $color-gray solid;
       &:nth-child({num}n+1)
-        border-left: 1px color-gray solid;
+        border-left: 1px $color-gray solid;

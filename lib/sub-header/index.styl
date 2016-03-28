@@ -2,19 +2,19 @@
 .sub-header
   border-radius: 3px;
   margin-bottom: 40px;
-  background-color: color-blue;
-  background: linear-gradient(120deg, darken(color-red, 40%) 0%, color-blue 100%); /* W3C */
-  font-weight: font-weight-bold
+  background-color: $color-blue;
+  background: linear-gradient(120deg, darken($color-red, 40%) 0%, $color-blue 100%); /* W3C */
+  font-weight: $font-weight-bold
   font-size: 12px;
   color: white;
-  a 
+  a
     color: white;
 
   span.sub-header-text, .external-links a
     padding: 14px 20px;
     display: inline-block
 
-  .btn 
+  .btn
     line-height: 32px
     font-size: 12px;
     background: none;
@@ -34,32 +34,32 @@
     letter-spacing: 0.5px;
     display: inline-block
 
-    span 
+    span
       position: absolute;
       right: 20px;
       top: 20px;
 
-    &:hover 
+    &:hover
       background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.8) 100%); /* W3C */
       color: white;
 
 
-    &.dropdown-toggle 
-      color: white; 
+    &.dropdown-toggle
+      color: white;
 
     &:focus
       outline: none;
 
-  .dropdown 
+  .dropdown
     display: inline-block
   .dropdown-menu
-    
-    li 
+
+    li
       margin: 0;
 
-    .divider 
+    .divider
       margin: 10px 0;
-      font-size: 14px;  
+      font-size: 14px;
 
   ul.external-links
     display: inline-block

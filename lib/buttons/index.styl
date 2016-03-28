@@ -159,7 +159,7 @@ button.btn
   letter-spacing: 1px;
   border: 0;
   font-weight: font-weight-bold
-  border: 1px solid color-gray;
+  border: 1px solid $color-gray;
   padding: 9px 22px;
   border-radius: 3px;
   position: relative;
@@ -181,7 +181,7 @@ button.btn
     opacity: 0.15;
 
   &:hover
-    // background-color: color-gray;
+    // background-color: $color-gray;
 
   &.btn-none
     border: 0;
@@ -208,41 +208,41 @@ button.btn
     font-size: 15px;
 
   &.btn-success
-    background-color: color-red;
+    background-color: $color-red;
     color: #fff;
     border: 0;
     &:hover
-      background-color: darken(color-red, 30%);
+      background-color: darken($color-red, 30%);
       color: #fff
 
   &.btn-default
     background: white;
-    color: color-text-black;
-    border-color: color-gray;
+    color: $color-text-black;
+    border-color: $color-gray;
     &[class*="icon-"]:after
       opacity: 0.05;
 
     &:hover
-      background: color-gray;
+      background: $color-gray;
 
   &.btn-danger
     border: 0;
-    background-color: bg-color-error;
+    background-color: $bg-color-error;
 
     &:hover
-      background-color: darken(bg-color-error, 30%);
+      background-color: darken($bg-color-error, 30%);
 
   &.btn-primary
-    background-color: color-blue-light;
+    background-color: $color-blue-light;
     border: 0;
     &:hover
-      background-color: darken(color-blue-light, 30%);
+      background-color: darken($color-blue-light, 30%);
 
   &:active
     box-shadow: none;
 
 .bg-primary, .bg-success, .bg-danger, .bg-info, .bg-warning
-  font-weight: font-weight-bold
+  font-weight: $font-weight-bold
   color: white;
   border-radius: 3px;
   padding: 10px 14px;
@@ -252,27 +252,27 @@ button.btn
     padding-bottom: 1px;
 
 .bg-primary
-  background: color-blue;
+  background: $color-blue;
 
 .bg-success
-  background: color-green;
+  background: $color-green;
 
 .bg-warning
-  background: color-yellow;
+  background: $color-yellow;
 
 .bg-info
-  background-color: color-blue-light;
+  background-color: $color-blue-light;
 
 .bg-danger
-  background: bg-color-error;
+  background: $bg-color-error;
 
 fieldset[disabled] .btn,
 .btn[disabled],
 .btn.disabled
     border: 0;
-    background-color: bg-color-gray;
+    background-color: $bg-color-gray;
     border-color: gray;
-    color: color-text-lighter;
+    color: $color-text-lighter;
 
 .help-circle
   max-height: 14px;

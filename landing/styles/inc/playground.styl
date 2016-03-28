@@ -35,7 +35,7 @@
   margin-bottom: 14px;
 
   .theme-dark &
-    background: bg-color-blue-dark;
+    background: $bg-color-dark;
     position: relative;
 
 .playground-code
@@ -45,8 +45,8 @@
 
 .playground-actions
   color: #666666;
-  font-size: font-size-small;
-  font-weight: font-weight-bold
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold
   line-height: normal;
   list-style: none;
   margin: 0;
@@ -62,8 +62,8 @@
     float: left;
 
     &.active a
-      color: color-text-black;
-      font-weight: font-weight-bold;
+      color: $color-text-black;
+      font-weight: $font-weight-bold;
 
   a
     color: color-text-light;
@@ -76,13 +76,13 @@
     color: #31afda;
 
 .glyphs.css-mapping li
-  background: lighten(color-gray, 40%)
+  background: lighten($color-gray, 40%)
   width: 200px
   border-radius: 3px
   padding: 10px
 
   .name
-    color: color-text-black
+    color: $color-text-black
 
 #modal-component,
 #ui-switch-component

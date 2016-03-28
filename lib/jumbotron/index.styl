@@ -1,11 +1,20 @@
 @include '../mixins/index'
 @include '../vars/index'
 
+//== Jumbotron
+
+$jumbotron-padding ?=            30px
+$jumbotron-color ?=              inherit
+$jumbotron-bg ?=                 $gray-lighter
+$jumbotron-heading-color ?=      inherit
+$jumbotron-font-size ?=          ceil($font-size-base * 1.5)
+$jumbotron-heading-font-size ?=  ceil($font-size-base * 4.5)
+
 .jumbotron
   padding: padding-vertical-large padding-horizontal-small
   margin-bottom: padding-vertical-small
-  color: color-text-contrast
-  background-color: bg-color-dark
+  color: $color-text-contrast
+  background-color: $bg-color-dark
   text-align: center
 
   &.has-header
@@ -21,7 +30,7 @@
 
   h2,
   .h2
-    background-color: color-text-contrast
+    background-color: $color-text-contrast
     border-radius: 50%
     display: block
     margin: 0 auto
@@ -38,10 +47,10 @@
       transform: translate(-50%, -50%)
 
   > p
-    color: color-text-contrast-light
+    color: $color-text-contrast-light
     margin 0 auto
     margin-bottom: (padding-vertical / 1.5)
-    font-weight: font-weight-normal
+    font-weight: $font-weight-normal
     max-width 600px
     font-size 16px
     padding: 0 20px

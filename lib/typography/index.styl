@@ -77,6 +77,9 @@ p
 // Emphasis & misc
 // -------------------------
 
+strong
+  font-weight 500
+
 // Ex: (12px small font / 14px base font) * 100% = about 85%
 small,
 .small
@@ -328,22 +331,6 @@ h5, .h5, h6, .h6
 li
   margin: 1rem 0
 
-pre
-  margin: 1.5rem 0
-
-code, kbd, pre, samp
-  font-family: font-monospace
-
-code
-  font-weight: 400;
-  padding: 2px 6px;
-  padding-top: 0;
-  color: #62626B;
-  border-radius: 3px;
-  box-shadow: 0 0 0 1px #DDD;
-  -webkit-font-smoothing: subpixel-antialiased;
-  background: transparent;
-
 ol, p, ul
   code
     margin-right: 3px;
@@ -351,27 +338,27 @@ ol, p, ul
 
 p
   margin: 1.5rem 0
-  line-height: line-height
+  line-height: $line-height
 
   &.caption
-    color: color-text-lighter
+    color: $color-text-lighter
     letter-spacing: .5px
-    font-size: font-size-base
+    font-size: $font-size-base
 
   &.body-1
-    color: color-text
+    color: $color-text
 
 a, .link
-  color: color-blue-medium
+  color: $color-blue-medium
 
   &:hover,
   &:focus
-    color: color-text-black
+    color: $color-text-black
 
 .theme-dark
   a, .link
-    color: color-blue-light
+    color: $color-blue-light
 
     &:hover,
     &:focus
-      color: rgba(color-blue-light, .86)
+      color: rgba($color-blue-light, .86)

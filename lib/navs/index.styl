@@ -117,13 +117,13 @@
 
 
 .nav-pills
-  border: 1px solid color-oil;
+  border: 1px solid $color-oil;
   border-radius: 4px;
   display: inline-block;
   font-size: 11px;
   letter-spacing: .3px;
   text-transform: uppercase;
-  font-weight: font-weight-bold
+  font-weight: $font-weight-bold
 
   li
     margin: 0;
@@ -131,8 +131,8 @@
   > li.active > a,
   > li.active > a:hover,
   > li.active > a:focus
-    color: color-text-contrast
-    background-color: color-oil
+    color: $color-text-contrast
+    background-color: $color-oil
     cursor: default
 
 
@@ -149,14 +149,13 @@
     > a
       border-radius: 0;
       background-color: white
-      color: color-text-black
+      color: $color-oil
       padding: ceil(padding-vertical-small / 3) padding-horizontal-large
 
       &:hover,
       &:focus
-        color: color-text-black
+        color: $color-oil
         background-color: white;
-
 
 
 // Stacked pills
@@ -248,10 +247,6 @@
   margin-top -1px
   // Remove the top rounded corners here since there is a hard edge above the menu
   border-top-radius(0)
-
-
-
-
 
 
 /*==========  Navtabs  ==========*/

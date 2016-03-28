@@ -20,6 +20,7 @@
 html
   font-size 10px
   -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+  text-rendering: geometricPrecision
 
 body
   font-family $font-family-base
@@ -140,15 +141,3 @@ hr
 
 [role="button"]
   cursor pointer
-
-// Links
-a
-  color: #333
-
-  &:hover
-    color: lighten(#333333, 5%)
-    text-decoration: none
-
-  &:focus
-    outline: none
-    text-decoration: none

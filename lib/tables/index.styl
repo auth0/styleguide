@@ -2,6 +2,14 @@
 // Tables
 // --------------------------------------------------
 
+//** Padding for `<th>`s and `<td>`s.
+$table-cell-padding ?=           8px
+$table-condensed-cell-padding ?= 5px
+$table-bg ?=                     transparent
+$table-bg-accent ?=              #f9f9f9
+$table-bg-hover ?=               #f5f5f5
+$table-bg-active ?=              $table-bg-hover
+$table-border-color ?=           #ddd
 
 table
   background-color $table-bg
@@ -195,4 +203,3 @@ table-row-variant(danger, $state-danger-bg)
           > th,
           > td
             border-bottom 0
-

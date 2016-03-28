@@ -2,6 +2,11 @@
 // Variables
 // --------------------------------------------------
 
+$body-bg ?=               #fff
+$text-color ?=            $color-text-black
+$link-color ?=            #333
+$link-hover-color ?=      darken($link-color, 15)
+$link-hover-decoration ?= none
 
 //== Colors
 //
@@ -69,21 +74,8 @@ $bg-color-success = #7ED321
 $bg-color-alert = #F0CC00
 $bg-color-info = $color-blue-light
 
-//== Scaffolding
-//
-//## Settings for some of the most global styles.
 
-//** Background color for `<body>`.
-$body-bg ?=               #fff
-//** Global text color on `<body>`.
-$text-color ?=            $color-text-black
 
-//** Global textual link color.
-$link-color ?=            $brand-primary
-//** Link hover color set via `darken()` function.
-$link-hover-color ?=      darken($link-color, 15)
-//** Link hover decoration.
-$link-hover-decoration ?= underline
 
 
 //== Typography
@@ -150,7 +142,7 @@ $padding-xs-horizontal ?=    5px
 $line-height-large ?=        1.3333333 // extra decimals for Win 8.1 Chrome
 $line-height-small ?=        1.5
 
-$border-radius-base ?=       4px
+$border-radius-base ?=       3px
 $border-radius-large ?=      6px
 $border-radius-small ?=      3px
 
@@ -165,25 +157,7 @@ $caret-width-base ?=         4px
 $caret-width-large ?=        5px
 
 
-//== Tables
-//
-//## Customizes the `.table` component with basic values, each used across all table variations.
 
-//** Padding for `<th>`s and `<td>`s.
-$table-cell-padding ?=           8px
-//** Padding for cells in `.table-condensed`.
-$table-condensed-cell-padding ?= 5px
-
-//** Default background color used for all tables.
-$table-bg ?=                     transparent
-//** Background color used for `.table-striped`.
-$table-bg-accent ?=              #f9f9f9
-//** Background color used for `.table-hover`.
-$table-bg-hover ?=               #f5f5f5
-$table-bg-active ?=              $table-bg-hover
-
-//** Border color for table and cell borders.
-$table-border-color ?=           #ddd
 
 
 //== Buttons

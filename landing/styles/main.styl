@@ -270,12 +270,28 @@
     padding-left: 100px;
     .splash-intro
       // display: none;
+      h1
+        font-size: 40px;
+        margin: 30px 0;
       p
         font-size: 16px;
         color: $color-text-contrast-light;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
       .btn
         margin-right: 30px;
+
+      span
+        height: 4px;
+        background: $color-red;
+        display: inline-block;
+        width: 46px;
+        margin-right: 2px;
+        &.blue
+          background-color: $color-blue;
+        &.blue-light
+          background-color: $color-blue-light;
+        &.gray
+          background-color: $color-gray
 
     // typography table box black
     .theme-dark
@@ -291,3 +307,6 @@
 
         .opacity-30
           color: $color-text-contrast-lighter
+
+  #buttons-component
+    background-color: $bg-color-dark

@@ -1,5 +1,5 @@
 .theme-dark
-  background: #15181D;
+  background: $bg-color-dark;
   color: $color-text-contrast
 
   h1, h2, h3, h4, h5
@@ -10,21 +10,7 @@
     author
       color $color-text-contrast
 
-  .btn.btn-default, a.btn.btn-default
-    border-color: $color-text-contrast-lighter
-    transition-property all
-    color: #fff
-    &:hover
-      // color: #333;
-      border-color white
-      background none
-
 .theme-light
   color: $color-text
   h1,h2,h3,h4,h5,blockquote
     color: $color-text
-
-.btn.btn-lg, a.btn.btn-lg
-  padding-left: 30px;
-  padding-right: 30px;
-  font-size: 13px;

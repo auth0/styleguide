@@ -20,7 +20,7 @@ $gray-light ?=          lighten($gray-base, 46.7) // #777
 $gray-lighter ?=        lighten($gray-base, 93.5) // #eee
 
 $brand-primary ?=       darken(#428bca, 6.5) // #337ab7
-$brand-success ?=       #5cb85c
+$brand-success ?=       #eb5424
 $brand-info ?=          #5bc0de
 $brand-warning ?=       #f0ad4e
 $brand-danger ?=        #d9534f
@@ -73,9 +73,6 @@ $bg-color-error = #FF3E00
 $bg-color-success = #7ED321
 $bg-color-alert = #F0CC00
 $bg-color-info = $color-blue-light
-
-
-
 
 
 //== Typography
@@ -214,39 +211,6 @@ $input-group-addon-border-color ?= $input-border
 $cursor-disabled ?=                not-allowed
 
 
-//== Dropdowns
-//
-//## Dropdown menu container and contents.
-
-//** Background for the dropdown menu.
-$dropdown-bg ?=                  #fff
-//** Dropdown menu `border-color`.
-$dropdown-border ?=              rgba(0, 0, 0, .15)
-//** Dropdown menu `border-color` **for IE8**.
-$dropdown-fallback-border ?=     #ccc
-//** Divider color for between dropdown items.
-$dropdown-divider-bg ?=          #e5e5e5
-
-//** Dropdown link text color.
-$dropdown-link-color ?=          $gray-dark
-//** Hover color for dropdown links.
-$dropdown-link-hover-color ?=    darken($gray-dark, 5)
-//** Hover background for dropdown links.
-$dropdown-link-hover-bg ?=       #f5f5f5
-
-//** Active dropdown menu item text color.
-$dropdown-link-active-color ?=   $component-active-color
-//** Active dropdown menu item background color.
-$dropdown-link-active-bg ?=      $component-active-bg
-
-//** Disabled dropdown menu item background color.
-$dropdown-link-disabled-color ?= $gray-light
-
-//** Text color for headers within dropdown menus.
-$dropdown-header-color ?=        $gray-light
-
-//** Deprecated `$dropdown-caret-color` as of v3.1.0
-$dropdown-caret-color ?=         #000
 
 
 //-- Z-index master list
@@ -344,32 +308,6 @@ $container-lg ?=               $container-large-desktop
 
 //== Navs
 
-//=== Shared nav styles
-$nav-link-padding ?=                        10px 15px
-$nav-link-hover-bg ?=                       $gray-lighter
-
-$nav-disabled-link-color ?=                $gray-light
-$nav-disabled-link-hover-color ?=           $gray-light
-
-//== Tabs
-$nav-tabs-border-color ?=                   #ddd
-
-$nav-tabs-link-hover-border-color ?=        $gray-lighter
-
-$nav-tabs-active-link-hover-bg ?=           $body-bg
-$nav-tabs-active-link-hover-color ?=        gray
-$nav-tabs-active-link-hover-border-color ?= #ddd
-
-$nav-tabs-justified-link-border-color ?=          #ddd
-$nav-tabs-justified-active-link-border-color ?=   $body-bg
-
-//== Pills
-$nav-pills-border-radius ?=                 $border-radius-base
-$nav-pills-active-link-hover-bg ?=          $component-active-bg
-$nav-pills-active-link-hover-color ?=       $component-active-color
-
-
-
 //== Form states and alerts
 //
 //## Define colors for form feedback states and, by default, alerts.
@@ -390,206 +328,6 @@ $state-danger-text ?=            #a94442
 $state-danger-bg ?=              #f2dede
 $state-danger-border ?=          darken(spin($state-danger-bg, -10), 5)
 
-
-//== Tooltips
-
-//** Tooltip max width
-$tooltip-max-width ?=         200px
-//** Tooltip text color
-$tooltip-color ?=             #fff
-//** Tooltip background color
-$tooltip-bg ?=                #000
-$tooltip-opacity ?=           .9
-
-//** Tooltip arrow width
-$tooltip-arrow-width ?=       5px
-//** Tooltip arrow color
-$tooltip-arrow-color ?=       $tooltip-bg
-
-
-
-
-
-//== Labels
-//
-//##
-
-//** Default label background color
-$label-default-bg ?=          $gray-light
-//** Primary label background color
-$label-primary-bg ?=          $brand-primary
-//** Success label background color
-$label-success-bg ?=          $brand-success
-//** Info label background color
-$label-info-bg ?=             $brand-info
-//** Warning label background color
-$label-warning-bg ?=          $brand-warning
-//** Danger label background color
-$label-danger-bg ?=           $brand-danger
-
-//** Default label text color
-$label-color ?=               #fff
-//** Default text color of a linked label
-$label-link-hover-color ?=    #fff
-
-
-//== Modals
-//
-//##
-
-//** Padding applied to the modal body
-$modal-inner-padding ?=       15px
-
-//** Padding applied to the modal title
-$modal-title-padding ?=       15px
-//** Modal title line-height
-$modal-title-line-height ?=   $line-height-base
-
-//** Background color of modal content area
-$modal-content-bg ?=                           #fff
-//** Modal content border color
-$modal-content-border-color ?=                 rgba(0, 0, 0, .2)
-//** Modal content border color **for IE8**
-$modal-content-fallback-border-color ?=        #999
-
-//** Modal backdrop background color
-$modal-backdrop-bg ?=         #000
-//** Modal backdrop opacity
-$modal-backdrop-opacity ?=    .5
-//** Modal header border color
-$modal-header-border-color ?= #e5e5e5
-//** Modal footer border color
-$modal-footer-border-color ?= $modal-header-border-color
-
-$modal-lg ?=                  900px
-$modal-md ?=                  600px
-$modal-sm ?=                  300px
-
-
-//== Alerts
-//
-//## Define alert colors, border radius, and padding.
-
-$alert-padding ?=             15px
-$alert-border-radius ?=       $border-radius-base
-$alert-link-font-weight ?=    bold
-
-$alert-success-bg ?=          $state-success-bg
-$alert-success-text ?=        $state-success-text
-$alert-success-border ?=      $state-success-border
-
-$alert-info-bg ?=             $state-info-bg
-$alert-info-text ?=           $state-info-text
-$alert-info-border ?=         $state-info-border
-
-$alert-warning-bg ?=          $state-warning-bg
-$alert-warning-text ?=        $state-warning-text
-$alert-warning-border ?=      $state-warning-border
-
-$alert-danger-bg ?=           $state-danger-bg
-$alert-danger-text ?=         $state-danger-text
-$alert-danger-border ?=       $state-danger-border
-
-
-//== Progress bars
-//
-//##
-
-//** Background color of the whole progress component
-$progress-bg ?=               #f5f5f5
-//** Progress bar text color
-$progress-bar-color ?=        #fff
-//** Variable for setting rounded corners on progress bar.
-$progress-border-radius ?=    $border-radius-base
-
-//** Default progress bar color
-$progress-bar-bg ?=           $brand-primary
-//** Success progress bar color
-$progress-bar-success-bg ?=   $brand-success
-//** Warning progress bar color
-$progress-bar-warning-bg ?=   $brand-warning
-//** Danger progress bar color
-$progress-bar-danger-bg ?=    $brand-danger
-//** Info progress bar color
-$progress-bar-info-bg ?=      $brand-info
-
-
-
-//== Thumbnails
-
-//** Padding around the thumbnail image
-$thumbnail-padding ?=         4px
-//** Thumbnail background color
-$thumbnail-bg ?=              $body-bg
-//** Thumbnail border color
-$thumbnail-border ?=          #ddd
-//** Thumbnail border radius
-$thumbnail-border-radius ?=   $border-radius-base
-
-//** Custom text color for thumbnail captions
-$thumbnail-caption-color ?=   $text-color
-//** Padding around the thumbnail caption
-$thumbnail-caption-padding ?= 9px
-
-
-//== Wells
-
-$well-bg ?=                   #f5f5f5
-$well-border ?=               darken($well-bg, 7)
-
-
-//== Badges
-
-$badge-color ?=               #fff
-//** Linked badge text color on hover
-$badge-link-hover-color ?=    #fff
-$badge-bg ?=                  $gray-light
-
-//** Badge text color in active nav link
-$badge-active-color ?=        $link-color
-//** Badge background color in active nav link
-$badge-active-bg ?=           #fff
-
-$badge-font-weight ?=         bold
-$badge-line-height ?=         1
-$badge-border-radius ?=       10px
-
-
-//== Breadcrumbs
-
-$breadcrumb-padding-vertical ?= 8px
-$breadcrumb-padding-horizontal ?= 15px
-//** Breadcrumb background color
-$breadcrumb-bg ?=               #f5f5f5
-//** Breadcrumb text color
-$breadcrumb-color ?=            #ccc
-//** Text color of current page in the breadcrumb
-$breadcrumb-active-color ?=     $gray-light
-//** Textual separator for between breadcrumb elements
-$breadcrumb-separator ?=        "/"
-
-
-//== Carousel
-
-$carousel-text-shadow ?=                      0 1px 2px rgba(0, 0, 0, .6)
-
-$carousel-control-color ?=                    #fff
-$carousel-control-width ?=                    15%
-$carousel-control-opacity ?=                  .5
-$carousel-control-font-size ?=                20px
-
-$carousel-indicator-active-bg ?=              #fff
-$carousel-indicator-border-color ?=           #fff
-
-$carousel-caption-color ?=                    #fff
-
-
-
-
-
-
-
-//== Type
 
 //** Horizontal offset for forms and lists.
 $component-offset-horizontal ?= 180px
@@ -619,9 +357,9 @@ $hr-border ?=                 $gray-lighter
 //
 // Typography
 //
-$font-sans-serif = "Avenir Next", "avenir-next-web", "Helvetica Neue", Hevetica, sans-serif
-$font-serif = "ff-tisa-web-pro", Georgia, 'Times New Roman', Times, serif // Must be included via Typekit
-$font-monospace = "Roboto Mono", Menlo, Monaco, Consolas, 'Courier New', monospace // Must be included via Google Fonts
+// $font-sans-serif = "Avenir Next", "avenir-next-web", "Helvetica Neue", Hevetica, sans-serif
+// $font-serif = "ff-tisa-web-pro", Georgia, 'Times New Roman', Times, serif // Must be included via Typekit
+// $font-monospace = "Roboto Mono", Menlo, Monaco, Consolas, 'Courier New', monospace // Must be included via Google Fonts
 
 font-size-base = 14px
 font-size = font-size-base

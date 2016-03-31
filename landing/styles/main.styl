@@ -2,7 +2,9 @@
 @import '../../lib/mixins/index'
 @import 'inc/playground'
 
-aside_width = 250px;
+
+
+$aside_width = 250px;
 
 [data-group]
   background-color: #fafafa;
@@ -23,7 +25,7 @@ aside_width = 250px;
   background-color: #fff;
 
   +breakpoint("tablet")
-    margin-left: aside_width;
+    margin-left: $aside_width;
 
   &.alt
     background-color: #fafafa;
@@ -34,7 +36,7 @@ aside_width = 250px;
   background-color: #e3e5e7;
 
   +breakpoint("tablet")
-    width: aside_width;
+    width: $aside_width;
     position: fixed;
     height:100vh;
 
@@ -162,8 +164,8 @@ aside_width = 250px;
     padding: 0 padding-horizontal-large;
 
   h2.title
-    border-bottom: 1px solid color-line-gray;
-    color: color-text-black;
+    border-bottom: 1px solid $color-line-gray;
+    color: $color-text-black;
     font-size: $font-size-small;
     font-weight: $font-weight-bold;
     line-height: normal;
@@ -257,17 +259,39 @@ aside_width = 250px;
     line-height: 20px;
     vertical-align: bottom;
 
-// typography table box black
-.theme-dark
-  .typography-table
-    td
-      color: $color-text-contrast
 
-    .opacity-100
-      color: $color-text-contrast
 
-    .opacity-70
-      color: $color-text-contrast-light
+#splash
+  background: $bg-color-black
+  padding: 0;
 
-    .opacity-30
-      color: $color-text-contrast-lighter
+.splash
+  background: $bg-color-black
+  height:100vh;
+  display: flex;
+  align-items: center;
+  flex:1;
+  padding-left: 100px;
+  .splash-intro
+    // display: none;
+    p
+      font-size: 16px;
+      color: $color-text-contrast-light;
+      margin-bottom: 30px;
+    .btn
+      margin-right: 30px;
+
+  // typography table box black
+  .theme-dark
+    .typography-table
+      td
+        color: $color-text-contrast
+
+      .opacity-100
+        color: $color-text-contrast
+
+      .opacity-70
+        color: $color-text-contrast-light
+
+      .opacity-30
+        color: $color-text-contrast-lighter

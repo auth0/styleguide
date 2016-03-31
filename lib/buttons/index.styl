@@ -1,7 +1,7 @@
 // Base styles
 // --------------------------------------------------
 
-$btn-font-weight ?=              600
+$btn-font-weight ?=              500
 
 $btn-default-color ?=            #333
 $btn-default-bg ?=               #fff
@@ -55,6 +55,7 @@ $btn-border-radius-small ?=      $border-radius-small
   transition: background-color 0.2s ease;
   text-transform: uppercase
   letter-spacing: 1px;
+  border: 0;
 
 
   &,
@@ -64,7 +65,7 @@ $btn-border-radius-small ?=      $border-radius-small
     &.focus
       // tab-focus()
       outline: none;
-      
+
   &:hover,
   &:focus,
   &.focus
@@ -158,7 +159,7 @@ $btn-border-radius-small ?=      $border-radius-small
 
 .btn-lg
   // line-height ensure even-numbered height of button next to large input
-  button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large)
+  button-size($padding-large-vertical, $padding-large-horizontal, $font-size-base-1px, $line-height-large, $btn-border-radius-large)
 
 .btn-sm
   // line-height ensure proper height of button next to small input

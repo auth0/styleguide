@@ -1,297 +1,293 @@
-@import '../../lib/vars/index'
-@import '../../lib/mixins/index'
-@import 'inc/playground'
+.auth0-styleguide
+
+  @import '../../lib/vars/index'
+  @import '../../lib/mixins/index'
+  @import 'inc/playground'
 
 
+  $aside_width = 250px;
 
-$aside_width = 250px;
-
-[data-group]
-  background-color: #fafafa;
-  padding-bottom: 100px;
-  min-height: 100vh;
-  display: none;
-
-  &.active
-    display: block;
-
-// container styleguide
-.container-styleguide
-  width 100%
-  min-width 320px
-
-// content styleguide
-.main-content-styleguide
-  background-color: #fff;
-
-  +breakpoint("tablet")
-    margin-left: $aside_width;
-
-  &.alt
+  [data-group]
     background-color: #fafafa;
+    padding-bottom: 100px;
+    min-height: 100vh;
+    display: none;
 
-// aside styleguide
-.aside-styleguide
-  overflow-y: auto;
-  background-color: #e3e5e7;
+    &.active
+      display: block;
 
-  +breakpoint("tablet")
-    width: $aside_width;
-    position: fixed;
-    height:100vh;
+  // container styleguide
+  .container-styleguide
+    width 100%
+    min-width 320px
 
-  .header
+  // content styleguide
+  .main-content-styleguide
     background-color: #fff;
-    overflow: hidden;
-    text-align: center;
-    position: relative;
 
-    .navbar-toggle
-      position: absolute;
-      top: 5px;
-      right: -5px;
-      .icon-bar
-        background: #5c666f;
+    +breakpoint("tablet")
+      margin-left: $aside_width;
 
-    h1
-      margin: 15px 0 14px 0;
+    &.alt
+      background-color: #fafafa;
 
+  // aside styleguide
+  .aside-styleguide
+    overflow-y: auto;
+    background-color: #e3e5e7;
 
-    a, img
-      display: block;
-      margin: 0 auto;
+    +breakpoint("tablet")
+      width: $aside_width;
+      position: fixed;
+      height:100vh;
 
-    img
-      width: 30px;
+    .header
+      background-color: #fff;
+      overflow: hidden;
+      text-align: center;
+      position: relative;
 
+      .navbar-toggle
+        position: absolute;
+        top: 5px;
+        right: -5px;
+        .icon-bar
+          background: #5c666f;
 
-  .footer
-    background-color: rgba(0, 0, 0, .05);
-    padding: 5px 0;
-    text-align: center;
-
-    +breakpoint('tablet')
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      left: 0;
-
-    span
-      color: rgba(0, 0, 0, .4);
-      font-size: 11px;
-      font-weight: $font-weight-bold;
-      letter-spacing: 1px;
-      line-height: normal;
-
-#menu.collapse
-  +breakpoint("tablet")
-    display: block !important;
-    height: auto !important;
-
-.nav-styleguide
-  overflow-y: auto
+      h1
+        margin: 15px 0 14px 0;
 
 
-.nav-styleguide > ul
-  color: #5c666f;
-  font-size: 11px;
-  font-weight: $font-weight-bold;
-  letter-spacing: 1px;
-  list-style: none;
-  line-height: normal;
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  z-index: 200;
-  position: relative;
-  background: #e3e5e7;
+      a, img
+        display: block;
+        margin: 0 auto;
 
-  .active
-    color: #333 !important;
-    background: darken(#e3e5e7, 4%);
+      img
+        width: 30px;
 
-  > li
+
+    .footer
+      background-color: rgba(0, 0, 0, .05);
+      padding: 5px 0;
+      text-align: center;
+
+      +breakpoint('tablet')
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+
+      span
+        color: rgba(0, 0, 0, .4);
+        font-size: 11px;
+        font-weight: $font-weight-bold;
+        letter-spacing: 1px;
+        line-height: normal;
+
+  #menu.collapse
+    +breakpoint("tablet")
+      display: block !important;
+      height: auto !important;
+
+  .nav-styleguide
+    overflow-y: auto
+
+
+  .nav-styleguide > ul
+    color: #5c666f;
+    font-size: 11px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 1px;
+    list-style: none;
+    line-height: normal;
     margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    z-index: 200;
+    position: relative;
+    background: #e3e5e7;
 
-    > a
-      border-bottom: 1px solid rgba(0, 0, 0, .08);
-      color: inherit;
-      display: block;
-      padding: 20px 20px 20px 20px;
+    .active
+      color: #333 !important;
+      background: darken(#e3e5e7, 4%);
 
-      > .icon
-        margin-right: 10px;
+    > li
+      margin: 0;
+
+      > a
+        border-bottom: 1px solid rgba(0, 0, 0, .08);
+        color: inherit;
+        display: block;
+        padding: 20px 20px 20px 20px;
+
+        > .icon
+          margin-right: 10px;
 
 
-.nav-styleguide > ul > li > ul
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: none;
+  .nav-styleguide > ul > li > ul
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
 
-  +breakpoint("tablet")
-    display: inherit;
+    +breakpoint("tablet")
+      display: inherit;
 
-  .active
-    background: rgba(255,255,255,0.05);
+    .active
+      background: rgba(255,255,255,0.05);
 
-  li
-    background-color: rgba(255, 255, 255, .3);
-    margin: 1px 0 0 0;
+    li
+      background-color: rgba(255, 255, 255, .3);
+      margin: 1px 0 0 0;
 
-    &:first-child
-      margin-top: 0;
+      &:first-child
+        margin-top: 0;
 
+
+      a
+        background-color: rgba(255, 255, 255, .3);
+        color: inherit;
+        display: block;
+        padding: 10px 0 10px 40px;
+        text-transform: none;
+        letter-spacing: 0;
+
+        .icon
+          margin-right: 5px;
+          position: relative;
+          top: 2px;
+
+  // content styleguide
+  .content-styleguide
+    padding: 0 padding-horizontal-small;
+
+    +breakpoint("tablet")
+      padding: 0 padding-horizontal-large;
+
+    h2.title
+      border-bottom: 1px solid $color-line-gray;
+      color: $color-text-black;
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      line-height: normal;
+      padding: ceil(padding-vertical-small / 1.5) 0;
+      margin: 0;
+
+    .type-box
+      background-color: #e3e5e7;
+      margin-bottom: 30px;
+      overflow: hidden;
+      padding: 0 40px;
+
+  // Typography Section
+  // -------------------------
+
+  .typography-section
+    .font-family
+      font-size: 60px;
+      font-weight: normal;
+      line-height: 82px;
+      margin: 40px 0;
+
+  // box
+  .type-box
+    padding: 10px 40px !important;
+
+    &.box-table
+      padding: 20px 40px !important;
 
     a
-      background-color: rgba(255, 255, 255, .3);
-      color: inherit;
       display: block;
-      padding: 10px 0 10px 40px;
-      text-transform: none;
-      letter-spacing: 0;
+      margin: 20px 0;
 
-      .icon
-        margin-right: 5px;
-        position: relative;
-        top: 2px;
+    .theme-dark &
+      background-color: #222228;
 
-// content styleguide
-.content-styleguide
-  padding: 0 padding-horizontal-small;
+      h1, h2, h3, h4, h5,
+      .body-2, .body-1
+        color: #fff;
 
-  +breakpoint("tablet")
-    padding: 0 padding-horizontal-large;
+      p.caption
+        color: $color-text-lighter;
 
-  h2.title
-    border-bottom: 1px solid $color-line-gray;
-    color: $color-text-black;
-    font-size: $font-size-small;
-    font-weight: $font-weight-bold;
-    line-height: normal;
-    padding: ceil(padding-vertical-small / 1.5) 0;
-    margin: 0;
+  // typography table
+  .box-table
+    overflow-x: scroll;
+    max-width: 100%;
 
-  .type-box
-    background-color: #e3e5e7;
-    margin-bottom: 30px;
-    overflow: hidden;
-    padding: 0 40px;
+  .typography-table
+    min-width: 600px;
+    width: 100%;
+    overflow: scroll;
 
+    +breakpoint("desktop")
+      min-width: none;
 
+    .variable
+      width: 35%;
 
+    .opacity
+      width: 5%;
+      text-align: right;
 
-// Typography Section
-// -------------------------
-
-.typography-section
-  .font-family
-    font-size: 60px;
-    font-weight: normal;
-    line-height: 82px;
-    margin: 40px 0;
-
-// box
-.type-box
-  padding: 10px 40px !important;
-
-  &.box-table
-    padding: 20px 40px !important;
+    .color
+      width: 8%;
 
 
-  a
-    display: block;
-    margin: 20px 0;
+    td
+      color: $color-text;
+      font-size: 13px;
+      padding: 15px 0;
 
+    .big
+      font-size: 16px;
 
-  .theme-dark &
-    background-color: #222228;
+    .opacity-87
+      color: $color-text;
 
-    h1, h2, h3, h4, h5,
-    .body-2, .body-1
-      color: #fff;
+    .opacity-54
+      color: $color-text-light;
 
-    p.caption
+    .opacity-26
       color: $color-text-lighter;
 
-// typography table
-.box-table
-  overflow-x: scroll;
-  max-width: 100%;
-
-.typography-table
-  min-width: 600px;
-  width: 100%;
-  overflow: scroll;
-
-  +breakpoint("desktop")
-    min-width: none;
-
-  .variable
-    width: 35%;
-
-  .opacity
-    width: 5%;
-    text-align: right;
-
-  .color
-    width: 8%;
-
-
-  td
-    color: $color-text;
-    font-size: 13px;
-    padding: 15px 0;
-
-  .big
-    font-size: 16px;
-
-  .opacity-87
-    color: $color-text;
-
-  .opacity-54
-    color: $color-text-light;
-
-  .opacity-26
-    color: $color-text-lighter;
-
-  .rowspan
-    line-height: 20px;
-    vertical-align: bottom;
+    .rowspan
+      line-height: 20px;
+      vertical-align: bottom;
 
 
 
-#splash
-  background: $bg-color-black
-  padding: 0;
+  #splash
+    background: $bg-color-black
+    padding: 0;
 
-.splash
-  background: $bg-color-black
-  height:100vh;
-  display: flex;
-  align-items: center;
-  flex:1;
-  padding-left: 100px;
-  .splash-intro
-    // display: none;
-    p
-      font-size: 16px;
-      color: $color-text-contrast-light;
-      margin-bottom: 30px;
-    .btn
-      margin-right: 30px;
+  .splash
+    background: $bg-color-black
+    height:100vh;
+    display: flex;
+    align-items: center;
+    flex:1;
+    padding-left: 100px;
+    .splash-intro
+      // display: none;
+      p
+        font-size: 16px;
+        color: $color-text-contrast-light;
+        margin-bottom: 30px;
+      .btn
+        margin-right: 30px;
 
-  // typography table box black
-  .theme-dark
-    .typography-table
-      td
-        color: $color-text-contrast
+    // typography table box black
+    .theme-dark
+      .typography-table
+        td
+          color: $color-text-contrast
 
-      .opacity-100
-        color: $color-text-contrast
+        .opacity-100
+          color: $color-text-contrast
 
-      .opacity-70
-        color: $color-text-contrast-light
+        .opacity-70
+          color: $color-text-contrast-light
 
-      .opacity-30
-        color: $color-text-contrast-lighter
+        .opacity-30
+          color: $color-text-contrast-lighter

@@ -284,7 +284,7 @@
         height: 4px;
         background: $color-red;
         display: inline-block;
-        width: 46px;
+        width: 47px;
         margin-right: 2px;
         &.blue
           background-color: $color-blue;
@@ -293,20 +293,23 @@
         &.gray
           background-color: $color-gray
 
-    // typography table box black
-    .theme-dark
-      .typography-table
-        td
-          color: $color-text-contrast
+  // typography table box black
+  .theme-dark
+    .type-box
+      background-color: $bg-color-dark;
 
-        .opacity-100
-          color: $color-text-contrast
+    .typography-table
+      td
+        color: $color-text-contrast
 
-        .opacity-70
-          color: $color-text-contrast-light
+      .opacity-100
+        color: $color-text-contrast
 
-        .opacity-30
-          color: $color-text-contrast-lighter
+      .opacity-70
+        color: $color-text-contrast-light
+
+      .opacity-30
+        color: $color-text-contrast-lighter
 
   #buttons-component
     background-color: $bg-color-dark

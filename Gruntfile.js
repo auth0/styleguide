@@ -22,7 +22,12 @@ module.exports = function (grunt) {
         command: './node_modules/.bin/gulp build'
       },
       gulp_dev: {
-        command: './node_modules/.bin/gulp'
+        command: './node_modules/.bin/gulp',
+        options: {
+          execOptions: {
+              maxBuffer: Infinity
+          }
+        }
       }
     },
     aws_s3: {

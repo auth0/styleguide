@@ -1,0 +1,129 @@
+//
+// Alerts
+// --------------------------------------------------
+
+$alert-padding ?=             15px
+$alert-border-radius ?=       $border-radius-base
+$alert-link-font-weight ?=    bold
+
+$alert-success-bg ?=          $state-success-bg
+$alert-success-text ?=        $state-success-text
+$alert-success-border ?=      $state-success-border
+
+$alert-info-bg ?=             $state-info-bg
+$alert-info-text ?=           $state-info-text
+$alert-info-border ?=         $state-info-border
+
+$alert-warning-bg ?=          $state-warning-bg
+$alert-warning-text ?=        $state-warning-text
+$alert-warning-border ?=      $state-warning-border
+
+$alert-danger-bg ?=           $state-danger-bg
+$alert-danger-text ?=         $state-danger-text
+$alert-danger-border ?=       $state-danger-border
+
+// Base styles
+// -------------------------
+.alert
+  padding $alert-padding
+  margin-bottom $line-height-computed
+  border 1px solid transparent
+  border-radius $alert-border-radius
+
+  // Headings for larger alerts
+  h4
+    margin-top 0
+    // Specified for the h4 to prevent conflicts of changing $headings-color
+    color inherit
+
+  // Provide class for links that match alerts
+  .alert-link
+    font-weight $alert-link-font-weight
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul
+    margin-bottom 0
+
+  > p + p
+    margin-top 5px
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
+.alert-dismissible
+  padding-right ($alert-padding + 20)
+
+  // Adjust close link position
+  .close
+    position relative
+    top -2px
+    right -21px
+    color inherit
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert-success
+  alert-variant($alert-success-bg, $alert-success-border, $alert-success-text)
+
+.alert-info
+  alert-variant($alert-info-bg, $alert-info-border, $alert-info-text)
+
+.alert-warning
+  alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text)
+
+.alert-danger
+  alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text)
+
+
+.alert
+  border: 0;
+
+  .close
+    color: currentColor;
+    outline: none;
+
+  .btn
+    border: 0;
+    // margin: -4px;
+    margin-left: 10px;
+
+  a
+    color: currentColor;
+    border-bottom: 1px solid currentColor;
+
+    &:hover
+      opacity: 0.7;
+
+.alert-success
+  background-color: lighten($bg-color-success, 80%)
+  color: darken($bg-color-success, 50%)
+
+  a
+    border-color: rgba(darken($bg-color-success, 50%), 0.4)
+
+
+.alert-info
+  background-color: lighten($bg-color-info, 80%)
+  color: darken($bg-color-info, 50%)
+
+  a
+    border-color: rgba(darken($bg-color-info, 50%), 0.4)
+
+.alert-warning
+  background-color: lighten($bg-color-alert, 80%)
+  color: darken($bg-color-alert, 50%)
+
+  a
+    border-color: rgba(darken($bg-color-alert, 50%), 0.4)
+
+.alert-danger
+  background-color: lighten($bg-color-error, 80%)
+  color: darken($bg-color-error, 50%)
+
+  a
+    border-color: rgba(darken($bg-color-error, 50%), 0.4)

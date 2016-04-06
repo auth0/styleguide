@@ -8,7 +8,6 @@
   $aside_width = 250px;
 
   [data-group]
-    background-color: #fafafa;
     padding-bottom: 100px;
     min-height: 100vh;
     display: none;
@@ -107,12 +106,17 @@
     position: relative;
     background: #e3e5e7;
 
+
+
     .active
       color: #333 !important;
       background: darken(#e3e5e7, 4%);
 
     > li
       margin: 0;
+
+      &:first-child
+        display: none;
 
       > a
         border-bottom: 1px solid rgba(0, 0, 0, .08);
@@ -159,10 +163,6 @@
 
   // content styleguide
   .content-styleguide
-    padding: 0 padding-horizontal-small;
-
-    +breakpoint("tablet")
-      padding: 0 padding-horizontal-large;
 
     h2.title
       border-bottom: 1px solid $color-line-gray;
@@ -179,6 +179,9 @@
       overflow: hidden;
       padding: 0 40px;
 
+    > section
+      padding: $padding-large-vertical*4 $padding-large-horizontal*2;
+      border-bottom: 1px solid white;
   // Typography Section
   // -------------------------
 
@@ -306,6 +309,9 @@
           &.gray
             background-color: $color-gray
 
+  .jumbotron
+    margin-bottom: 0;
+    
   // typography table box black
   .theme-dark
     .type-box

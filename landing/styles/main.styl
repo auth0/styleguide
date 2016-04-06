@@ -280,7 +280,19 @@
       .btn
         margin-right: 30px;
 
+        .btn-icon
+          svg, img
+            width: 20px;
+            position: absolute
+            top: 13px;
+            left: 16px;
+            z-index: 10000;
+          &::before
+            color: transparent;
+          img
+            top: 14px;
       .lines
+        margin-bottom: $padding-large-horizontal;
         span
           height: 4px;
           background: $color-red;

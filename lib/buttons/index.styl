@@ -246,16 +246,19 @@ fieldset[disabled] .btn,
   overflow: hidden;
   position: relative;
   span.btn-icon
-    margin-right: 46px;
+    margin-right: $padding-base-horizontal;
     display: inline-block
+    width: 28px;
+    background: red;
+    margin-left: -$padding-base-horizontal;
     &::before
       border-right: 1px solid rgba(255,255,255,.15);
       display: inline-block
       position: absolute;
-      width: 20px;
+      padding-right: 13px;
+      line-height: 44px;
+      left: 15px;
       top: 0;
-      padding-right: 29px;
-      line-height: 40px;
 
   &.btn-default
     span
@@ -266,5 +269,5 @@ fieldset[disabled] .btn,
     span.btn-icon
       &::before
         line-height: 51px;
-        width: 10px;
-        margin-left: -10px;
+        width: 30px;
+        padding-right: 20px;

@@ -7,6 +7,9 @@
 
   $aside_width = 250px;
 
+  body
+    color: $color-text-light
+
   [data-group]
     padding-bottom: 100px;
     min-height: 100vh;
@@ -147,7 +150,6 @@
       &:first-child
         margin-top: 0;
 
-
       a
         background-color: rgba(255, 255, 255, .3);
         color: inherit;
@@ -180,8 +182,8 @@
       padding: 0 40px;
 
     > section
-      padding: $padding-large-vertical*4 $padding-large-horizontal*2;
-      border-bottom: 1px solid white;
+      padding: $padding-large-vertical*4 $padding-large-horizontal*3;
+      border-bottom: 1px solid $bg-color-gray;
   // Typography Section
   // -------------------------
 
@@ -311,7 +313,7 @@
 
   .jumbotron
     margin-bottom: 0;
-    
+
   // typography table box black
   .theme-dark
     .type-box

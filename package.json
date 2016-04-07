@@ -1,6 +1,6 @@
 {
   "name": "auth0-styleguide",
-  "version": "4.1.3",
+  "version": "4.2.0",
   "engines": {
     "node": "0.10.x"
   },

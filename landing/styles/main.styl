@@ -174,7 +174,7 @@
       font-size: $font-size-small;
       font-weight: $font-weight-bold;
       line-height: normal;
-      padding: ceil(padding-vertical-small / 1.5) 0;
+      padding: ceil($padding-base-vertical / 1.5) 0;
       margin: 0;
 
     .type-box
@@ -302,7 +302,7 @@
           img
             top: 15px;
       .lines
-        margin-bottom: $padding-large-horizontal;
+        margin-bottom: $padding-base-horizontal * 2;
         span
           height: 4px;
           background: $color-red;
@@ -339,3 +339,19 @@
 
   #buttons-component
     background-color: $bg-color-dark
+
+  #header-component
+    padding: 0;
+
+  .css-mapping.glyphs
+    li
+      background: $bg-color-gray
+      padding: 10px;
+      min-width: 220px;
+      border-radius: $border-radius-base;
+      i
+        float: left;
+
+      strong
+        display: block;
+        height: 20px;

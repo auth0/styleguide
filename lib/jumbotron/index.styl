@@ -11,7 +11,7 @@ $jumbotron-font-size ?=          ceil($font-size-base * 1.5)
 $jumbotron-heading-font-size ?=  ceil($font-size-base * 4.5)
 
 .jumbotron
-  padding: padding-vertical-large padding-horizontal-small
+  padding: $padding-base-vertical*2 $padding-base-horizontal*2
   margin-bottom: padding-vertical-small
   color: $color-text-contrast
   background-color: $bg-color-dark
@@ -21,7 +21,7 @@ $jumbotron-heading-font-size ?=  ceil($font-size-base * 4.5)
     padding-top: 150px;
 
   +breakpoint("desktop")
-    margin-bottom: padding-vertical
+    margin-bottom: $padding-large-vertical
 
   h1,
   .h1
@@ -56,8 +56,8 @@ $jumbotron-heading-font-size ?=  ceil($font-size-base * 4.5)
     padding: 0 20px
 
   +breakpoint("tablet")
-    padding: ceil(padding-vertical * 1.6) 0
+    padding: ceil($padding-large-vertical * 3) $padding-large-horizontal
 
     h1,
     .h1
-      font-size: (font-size * 2.5)
+      font-size: ($font-size-base * 2.5)

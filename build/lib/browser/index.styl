@@ -1,0 +1,266 @@
+/*==========  Browser  ==========*/
+
+.browser-window
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  width: 800px;
+  margin:auto;
+  margin-top:20px;
+  overflow:hidden;
+  border:1px solid #C1C2C2;
+
+  .browser-inside {
+    overflow:hidden;
+    padding:10px;
+    background-position: top center;
+    height: 400px;
+    background-size: cover;
+  }
+
+  .browser-top {
+    padding:7px 0;
+    position:relative;
+    background: #f1f1f1;
+    background: -moz-linear-gradient(top, #E9E9E9 3%, #d8d8d8 100%);
+    background: -webkit-gradient(left top, left bottom,color-stop(3%, #E9E9E9), color-stop(100%, #d8d8d8));
+    background: -webkit-linear-gradient(top, #E9E9E9 3%, #d8d8d8 100%);
+    background: -o-linear-gradient(top, #E9E9E9 3%, #d8d8d8 100%);
+    background: -ms-linear-gradient(top, #E9E9E9 3%, #d8d8d8 100%);
+    background: linear-gradient(to bottom, #E9E9E9 3%, #d8d8d8 100%);
+    -webkit-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.76);
+    -moz-box-shadow:    inset 0px 1px 1px 0px rgba(255, 255, 255, 0.76);
+    box-shadow:         inset 0px 1px 1px 0px rgba(255, 255, 255, 0.76);
+
+    overflow:hidden;
+    border-bottom:2px solid #BDBCC1;
+  }
+
+  .browser-top > div {
+    float:left;
+  }
+
+
+  .browser-toolbar {
+    padding-left:12px;
+    padding-top:6px;
+  }
+
+  .browser-toolbar > span {
+    display:inline-block;
+    float:left;
+    width:12px;
+    height:12px;
+    margin-right:7px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    cursor:pointer;
+
+  }
+
+  .browser-toolbar span.first {
+    background:#FF5F4F;
+  }
+
+  .browser-toolbar span.second {
+    background:#F9C206;
+  }
+
+  .browser-toolbar span.third {
+    background:#19CC32;
+  }
+
+
+  .browser-nav {
+    overflow:hidden;
+  }
+
+  .browser-nav > span {
+    display:inline-block;
+    float:left;
+    background:#FBFBFB;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height:23px;
+    padding:0 8px;
+    cursor:pointer;
+    color:#B4B4B4;
+    border-bottom:1px solid #CECECE;
+  }
+  .browser-nav > span:hover {
+    background:#f2f2f2;
+    color:#666;
+  }
+  .browser-nav > span i {
+      font-size:14px;
+      line-height: 30px;
+      display: inline-block
+      position: relative;
+      top: 5px
+      text-align: center;
+  }
+
+  .browser-nav span.active {
+    color:#707070;
+  }
+
+  .browser-nav span.prev {
+    margin-right:1px;
+    margin-left:7px;
+  }
+
+  .browser-nav span.next {
+    margin-right:7px;
+  }
+
+  .browser-nav span.address {
+    width:400px;
+    margin-left:75px;
+    display:inline-block;
+    background:#fff;
+    line-height:23px;
+    text-align:center;
+    position:relative;
+    padding-top: 3px;
+  }
+
+  .browser-nav span.address > input {
+    font-size:12px;
+    color:#505050;
+    border:none;
+    background:none;
+    text-align:center;
+    position:relative;
+    width:300px;
+  }
+
+  .browser-nav span.address > input:focus {
+    outline:none;
+  }
+
+  .browser-nav span.address > input.class {
+    text-align:left;
+  }
+
+  .browser-nav span.address > i {
+    position:absolute;
+    right:5px;
+    top:7px;
+    font-size:11px;
+    color:#010101;
+  }
+
+  .browser-nav.right {
+    float:right !important;
+    margin-right:35px;
+  }
+
+  .browser-nav span.share {
+    margin-right:7px;
+  }
+
+  .browser-nav span.tabs {
+    position:relative;
+    width:26px;
+    padding-left: 6px;
+  }
+
+  .browser-nav span.tabs span {
+    height:7px;
+    width:7px;
+    border:1px solid #B4B4B4;
+    display:inline-block;
+    position:absolute;
+    background:#FBFBFB;
+  }
+
+  .browser-nav span.tabs span.front {
+    top:8px;
+    left:6px;
+    z-index:6;
+  }
+
+  .browser-nav span.tabs span.behind {
+    top:6px;
+    left:8px;
+    z-index:5;
+  }
+
+  .browser-nav span.tabs:hover span {
+    border:1px solid #666;
+  }
+
+  span.new {
+    cursor:pointer;
+    position:absolute;
+    right:0;
+    bottom:0;
+    background:#CACACA;
+    width:23px;
+    height:23px;
+    text-align:center;
+    line-height:23px;
+    border-top:1px solid #C1C2C2;
+    border-left:1px solid #C1C2C2;
+  }
+
+  span.new:hover {
+    -webkit-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow:    inset 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+    box-shadow:         inset 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  }
+  span.new .plus {
+    position:absolute;
+    background:#b0b0b0;
+    display:inline-block;
+  }
+
+
+
+
+/*==========  Browser lite  ==========*/
+.browser-lite
+  border: 1px solid lighten($color-gray, 50%);
+  border-radius: 3px;
+  overflow: hidden
+  .browser-toolbar
+    border-bottom: 1px solid lighten($color-gray, 50%);
+    overflow: hidden
+    padding: 14px;
+    i
+      background: lighten($color-gray, 50%);
+      border-radius: 100px;
+      float: left
+      display: inline-block
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+      margin-top: 4px;
+
+      &.r
+        background: #FC625C;
+      &.y
+        background: #FDBC40;
+      &.g
+        background: #34C849;
+
+    .input
+      width: 70%;
+      height: 20px;
+      border-radius: 3px;
+      margin: auto;
+      background: lighten($color-gray, 50%);
+      margin-top: 0px;
+      font-size: 10px;
+      color: #999;
+      line-height: 20px;
+
+    .button
+      background: lighten($color-gray, 50%);
+      border-radius: 3px;
+      height: 20px;
+      width: 20px;
+      margin-left: 6px;
+      float: right
+      display: block

@@ -1,0 +1,58 @@
+header.site-header
+    nav.navbar.navbar-default(role='navigation')
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            h1.navbar-brand
+              a(href='/')
+                span Auth0
+            a.no-basic.hiring.animated.bounce.hidden-sm.hidden-xs.hidden-md(href='/jobs') We&apos;re hiring!
+          #navbar-collapse.collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-left.no-basic
+              li.li-why
+                a(href='/why-auth0') Why Auth0
+              li.li-how
+                a(href='/how-it-works') How It Works
+              li.li-pricing
+                a(href='/pricing') Pricing
+              li.dropdown
+                span.btn-dro(role='button', data-toggle='dropdown')
+                  | More
+                  i.icon-budicon-460
+                ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                  li
+                    a(href='/lock') Lock
+                  li
+                    a(href='/passwordless') Passwordless
+                  li
+                    a(href='/wordpress') WordPress
+                  li.divider
+                  li
+                    a(href='/about') About
+                  li
+                    a(href='/blog') Blog
+                  li
+                    a(href='/customers') Customers
+                  li
+                    a(href='/resources') Resources
+                  li
+                    a(href='/video-tutorials') Video Tutorials
+                  li
+                    a(href='/partners') Partners
+                  li
+                    a(href='/opensource') Open Source
+                  li
+                    a(href='/jobs') Jobs
+                  li
+                    a(href='/press') Press
+            ul.nav.navbar-nav.navbar-right
+              li.li-docs.no-basic
+                a(href='/support') Help &amp; Support
+              li.li-docs.no-basic
+                a(href='/docs') Documentation
+              li
+                a.signin-button.login(href='https://manage.auth0.com') Open Dashboard

@@ -55,8 +55,11 @@ $jumbotron-heading-font-size ?=  ceil($font-size-base * 4.5)
     font-size 16px
     padding: 0 20px
 
+    &:last-child
+      margin-bottom: 0;
+
   +breakpoint("tablet")
-    padding: ceil($padding-large-vertical * 3) $padding-large-horizontal
+    padding: ceil($padding-large-vertical * 4) $padding-large-horizontal
 
     h1,
     .h1

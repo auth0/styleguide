@@ -1,18 +1,23 @@
 #resources(data-group="Resources", data-budicon="733")
-  +header('Resources')
+  +header('Resources', null, "Logo, Icons and badges.")
   
   .content-styleguide
     section 
-      h3#technologies Technologies
+      h2#logos Logos
+      p The available file formats include JPG, PNG, SVG and AI.
       p
-        include ../../lib/circle-logo/demo
+        include ../../lib/logos/demo
+
+    section 
+      h2#technologies Badges
+      p Tipically used to reference SDKs or programming languages. 
+      include ../../lib/circle-logo/demo
     
     section 
-      h3#Icons Icons
+      h2#Icons Icons
+      p 
+        | Iconography is another language to communicate visually. Built by 
+        a(href="http://budicon.buditanrim.co/preview") Budi
       p
         include ../../lib/budicon/demo
     
-    section 
-      h3#logos Logos
-      p
-        include ../../lib/logos/demo

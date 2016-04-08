@@ -187,8 +187,10 @@
       padding: 0 40px;
 
     > section
-      padding: $padding-large-vertical*4 $padding-large-horizontal*3;
+      padding: $padding-base-vertical*4 $padding-base-horizontal*2
       border-bottom: 1px solid $bg-color-gray;
+      +breakpoint("tablet")
+        padding: $padding-large-vertical*4 $padding-large-horizontal*3;
 
     hr
       margin: ($padding-base-vertical * 10) 0;
@@ -280,9 +282,11 @@
     display: flex;
     align-items: center;
     flex:1;
-    padding-left: 100px;
+    padding: 20px;
+    +breakpoint("tablet")
+      padding-left: 100px;
+
     .splash-intro
-      // display: none;
       h1
         font-size: 40px;
         margin: 30px 0;
@@ -292,6 +296,10 @@
         margin-bottom: 50px;
       .btn
         margin-right: 30px;
+        margin-bottom: $padding-large-horizontal;
+        display: block;
+        +breakpoint('tablet')
+          display: inline-block;
 
         .btn-icon
           svg, img

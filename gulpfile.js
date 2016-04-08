@@ -16,6 +16,8 @@ gulp.task('server', ['build'], function() {
 });
 
 gulp.task('copy', function() {
+    gulp.src('./package.json')
+      .pipe(gulp.dest('./build/landing/'));
     gulp.src('./landing/**/*.js')
       .pipe(gulp.dest('./build/landing/'));
     return gulp.src('./lib/**/*.*')

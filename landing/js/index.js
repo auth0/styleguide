@@ -212,3 +212,9 @@ function colors() {
 }
 
 colors();
+
+
+$.getJSON("/landing/package.json", function(data){
+  // alert(data.version);
+  $("#version").html(data.version)
+});

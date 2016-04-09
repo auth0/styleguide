@@ -1,9 +1,14 @@
 /*==========  Try Banner  ==========*/
+
+
 .try-banner
   text-align: center
-  background: #f9f9f9;
+  background: $bg-color-gray-light;
   padding: 90px 20px 70px 20px;
   border-radius: 3px;
+
+  .theme-dark &
+    background: darken($bg-color-dark, 20%);
 
   span
     font-size: 14px;

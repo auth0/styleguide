@@ -170,14 +170,13 @@ $nav-pills-active-link-hover-color ?=       $component-active-color
 
     > a
       border-radius: 0;
-      background-color: white
       color: $color-oil
       padding: ceil(padding-vertical-small / 3) padding-horizontal-large
 
       &:hover,
       &:focus
         color: $color-oil
-        background-color: white;
+        background: transparent;
 
 
 // Stacked pills
@@ -273,12 +272,22 @@ $nav-pills-active-link-hover-color ?=       $component-active-color
 
 /*==========  Navtabs  ==========*/
 .nav.nav-tabs
-  border-bottom: 1px solid #f1f1f1
+  border-bottom: 1px solid rgba(0,0,0,.1)
   margin-bottom: 20px;
+
+  .theme-dark &
+    border-bottom: 1px solid rgba(255,255,255,.1)
+
   li.active
     border: 0;
     a
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid rgba(0,0,0,.4);
+      background: none;
+      color: $text-color;
+
+      .theme-dark &
+        border-bottom: 1px solid rgba(255,255,255,1)
+        color: $color-text-contrast;
 
   li
     margin-left: 14px;

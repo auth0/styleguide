@@ -4,7 +4,7 @@
 $btn-font-weight ?=              500
 
 $btn-default-color ?=            #333
-$btn-default-bg ?=               #fff
+$btn-default-bg ?=               #f1f1f1
 $btn-default-border ?=           #ccc
 
 $btn-primary-color ?=            #fff
@@ -56,8 +56,8 @@ $btn-border-radius-small ?=      $border-radius-small
   text-transform: uppercase
   letter-spacing: 1px;
   border: 0;
-  background: white;
-
+  background: $btn-default-bg;
+  color: $color-text;
 
   &,
   &:active,
@@ -95,26 +95,26 @@ $btn-border-radius-small ?=      $border-radius-small
 // Alternate buttons
 // --------------------------------------------------
 
-.btn-default
+.btn-default, .theme-dark .btn-default
   button-variant($btn-default-color, $btn-default-bg, $btn-default-border)
 
-.btn-primary
+.btn-primary, .theme-dark .btn-primary
   button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border)
 
 // Success appears as green
-.btn-success
+.btn-success, .theme-dark .btn-success
   button-variant($btn-success-color, $btn-success-bg, $btn-success-border)
 
 // Info appears as blue-green
-.btn-info
+.btn-info, .theme-dark .btn-info
   button-variant($btn-info-color, $btn-info-bg, $btn-info-border)
 
 // Warning appears as orange
-.btn-warning
+.btn-warning, .theme-dark .btn-warning
   button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border)
 
 // Danger and error appear as red
-.btn-danger
+.btn-danger, .theme-dark .btn-danger
   button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border)
 
 

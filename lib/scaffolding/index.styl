@@ -45,13 +45,25 @@ a
   color $link-color
   text-decoration none
 
+
+  .theme-dark &
+    color lighten($link-color, 30%)
+
   &:hover,
   &:focus
     color $link-hover-color
     text-decoration $link-hover-decoration
 
+  .theme-dark &
+    &:hover,
+    &:focus
+      color lighten($link-hover-color, 30%)
+
   &:focus
     tab-focus()
+
+
+
 
 
 // Figures

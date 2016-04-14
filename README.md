@@ -190,7 +190,7 @@ Run the command `bin/version <patch|minor|major|version-no>` inside the root of 
 
 Example
 ```
-bin/version minor
+bin/version patch
 ```
 
 

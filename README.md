@@ -194,7 +194,7 @@ bin/version minor
 ```
 
 
-## Licence
+## License
 
 All the logos and branding are copyright Auth0 and may not be used or reproduced without explicit permission from Auth0 Inc.
 

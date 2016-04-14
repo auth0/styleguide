@@ -1,0 +1,243 @@
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base ?=           #000
+$gray-darker ?=         lighten($gray-base, 13.5) // #222
+$gray-dark ?=           lighten($gray-base, 20)   // #333
+$gray ?=                lighten($gray-base, 33.5) // #555
+$gray-light ?=          lighten($gray-base, 46.7) // #777
+$gray-lighter ?=        lighten($gray-base, 93.5) // #eee
+
+$brand-primary ?=       #44c7f4
+$brand-success ?=       #eb5424
+$brand-info ?=          #5bc0de
+$brand-warning ?=       #f0ad4e
+$brand-danger ?=        #d9534f
+
+//
+// Text colors
+//
+$color-text-black = rgba(#000, .86)
+$color-text-white = white
+
+$color-text = $color-text-black
+$color-text-light = rgba(#000, .54)
+$color-text-lighter = rgba(#000, .26)
+
+$color-text-contrast = $color-text-white
+$color-text-contrast-light = rgba(white, .70)
+$color-text-contrast-lighter = rgba(white, .30)
+
+$color-line-gray = #d0d2d3
+$color-line-contrast = rgba(white, .20)
+
+//
+// Primary Brand Colors
+//
+$color-blue = #16214d
+$color-red = #eb5424
+$color-gray = #d0d2d3
+$color-blue = #16214d
+$color-blue-light = #44c7f4
+$color-blue-medium = #0A86B1
+
+//
+// Secondary Colors
+//
+$color-orange = #ff9a57
+$color-yellow = #eaca2c
+$color-oil = #5c666f
+$color-green = #01b48f
+$color-pink = #c879b2
+$color-green = #01b48f
+
+//
+// Background Colors
+//
+$bg-color-black = #15181D
+$bg-color-dark = #222228
+$bg-color-gray = #e3e5e7
+$bg-color-gray-light = #f5f7f9
+$bg-color-error = #FF3E00
+$bg-color-success = #7ED321
+$bg-color-alert = #F0CC00
+$bg-color-info = $color-blue-light
+
+
+//
+// Variables
+// --------------------------------------------------
+
+$body-bg ?=               #fff
+$text-color ?=            $color-text-black
+$link-color ?=            darken($color-blue-light, 25)
+$link-hover-color ?=      darken($color-blue-light, 45)
+$link-hover-decoration ?= none
+
+//== Typography
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif ?= "Avenir Next", "avenir-next-web", "Helvetica Neue", Hevetica, sans-serif
+$font-family-serif ?=      "ff-tisa-web-pro", Georgia, 'Times New Roman', Times, serif // Must be included via Typekit
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace ?=  "Roboto Mono", Menlo, Monaco, Consolas, 'Courier New', monospace // Must be included via Google Fonts
+$font-family-base ?=       $font-family-sans-serif
+
+$font-size-base ?=         14px
+$font-size-large ?=        14px // ~18px
+$font-size-small ?=        ceil($font-size-base * 0.85) // ~12px
+
+$font-size-h1 ?=           floor($font-size-base * 2.6) // ~36px
+$font-size-h2 ?=           floor($font-size-base * 2.15) // ~30px
+$font-size-h3 ?=           ceil($font-size-base * 1.7) // ~24px
+$font-size-h4 ?=           ceil($font-size-base * 1.25) // ~18px
+$font-size-h5 ?=           $font-size-base
+$font-size-h6 ?=           ceil($font-size-base * 0.85) // ~12px
+
+$font-weight-bold = 500;
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base ?=       2 // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed ?=   floor($font-size-base * $line-height-base) // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family ?=   inherit
+$headings-font-weight ?=   400
+$headings-line-height ?=   1.1
+$headings-color ?=         $color-text
+
+
+//== Iconography
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+//** Load fonts from this directory.
+$icon-font-path ?=         "../fonts/"
+//** File name for all font files.
+$icon-font-name ?=         "glyphicons-halflings-regular"
+//** Element ID within SVG icon file.
+$icon-font-svg-id ?=       "glyphicons_halflingsregular"
+
+
+//== Components
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical ?=    8px
+$padding-base-horizontal ?=  16px
+
+$padding-large-vertical ?=   16px
+$padding-large-horizontal ?= 30px
+
+$padding-small-vertical ?=   5px
+$padding-small-horizontal ?= 10px
+
+$padding-xs-vertical ?=      1px
+$padding-xs-horizontal ?=    5px
+
+$line-height-large ?=        1.3333333 // extra decimals for Win 8.1 Chrome
+$line-height-small ?=        1.5
+
+$border-radius-base ?=       3px
+$border-radius-large ?=      3px
+$border-radius-small ?=      3px
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color ?=   #fff
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg ?=      $brand-primary
+
+//** Width of the `border` for generating carets that indicator dropdowns.
+$caret-width-base ?=         4px
+//** Carets increase slightly in size for larger components.
+$caret-width-large ?=        5px
+
+
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+$zindex-navbar ?=           1000
+$zindex-dropdown ?=         1000
+$zindex-popover ?=          1060
+$zindex-tooltip ?=          1070
+$zindex-navbar-fixed ?=     1030
+$zindex-modal-background ?= 1040
+$zindex-modal ?=            1050
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text ?=           #3c763d
+$state-success-bg ?=             #dff0d8
+$state-success-border ?=         darken(spin($state-success-bg, -10), 5)
+
+$state-info-text ?=              #31708f
+$state-info-bg ?=                #d9edf7
+$state-info-border ?=            darken(spin($state-info-bg, -10), 7)
+
+$state-warning-text ?=           #8a6d3b
+$state-warning-bg ?=             #fcf8e3
+$state-warning-border ?=         darken(spin($state-warning-bg, -10), 5)
+
+$state-danger-text ?=            #a94442
+$state-danger-bg ?=              #f2dede
+$state-danger-border ?=          darken(spin($state-danger-bg, -10), 5)
+
+
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal ?= 180px
+//** Text muted color
+$text-muted ?=                $gray-light
+//** Abbreviations and acronyms border color
+$abbr-border-color ?=         $gray-light
+//** Headings small color
+$headings-small-color ?=      $gray-light
+//** Blockquote small color
+$blockquote-small-color ?=    $gray-light
+//** Blockquote font size
+$blockquote-font-size ?=      ($font-size-base * 1.25)
+//** Blockquote border color
+$blockquote-border-color ?=   $gray-lighter
+//** Page header border color
+$page-header-border-color ?=  $gray-lighter
+//** Width of horizontal description list titles
+$dl-horizontal-offset ?=      $component-offset-horizontal
+//** Point at which .dl-horizontal becomes horizontal
+$dl-horizontal-breakpoint ?=  $grid-float-breakpoint
+//** Horizontal line color.
+$hr-border ?=                 $gray-lighter
+
+
+
+
+//
+// Spacing
+//
+padding-vertical = 40px
+padding-horizontal = 20px
+
+padding-vertical-large = padding-vertical * 2
+padding-horizontal-large = padding-horizontal * 2
+
+padding-vertical-small = padding-vertical / 2
+padding-horizontal-small = padding-horizontal
+
+
+
+//
+// Responsive
+//
+breakpoint-mobile = 320px
+breakpoint-mobile-landscape = 568px
+breakpoint-tablet = 768px
+breakpoint-desktop = 992px
+breakpoint-desktop-hd = 1200px

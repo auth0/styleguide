@@ -1,20 +1,20 @@
-table.table.data-table.dataTable(style='table-layout:fixed')
+table.table
   thead
     tr
       th(width='6%', data-column='picture')
-      th.pointer.sortable(width='22%', data-column='name')
+      th(width='20%', data-column='name')
         | Name
         
-      th.pointer.sortable(width='22%', data-column='email')
+      th(width='20%', data-column='email')
         | Email
         
-      th.pointer.sortable(width='15%', data-column='lastLogin')
+      th(width='15%', data-column='lastLogin')
         | Latest Login
         
-      th.pointer.sortable(width='15%', data-column='loginsCount')
+      th(width='15%', data-column='loginsCount')
         | # of Logins
         
-      th.pointer.sortable(width='17%', data-column='connections')
+      th(width='30%', data-column='connections')
         | Connection
         
   tbody

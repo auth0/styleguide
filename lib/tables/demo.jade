@@ -1,0 +1,44 @@
+table.table.data-table.dataTable(style='table-layout:fixed')
+  thead
+    tr
+      th(width='6%', data-column='picture')
+      th.pointer.sortable(width='22%', data-column='name')
+        | Name
+        
+      th.pointer.sortable(width='22%', data-column='email')
+        | Email
+        
+      th.pointer.sortable(width='15%', data-column='lastLogin')
+        | Latest Login
+        
+      th.pointer.sortable(width='15%', data-column='loginsCount')
+        | # of Logins
+        
+      th.pointer.sortable(width='17%', data-column='connections')
+        | Connection
+        
+  tbody
+    tr
+      td
+        a(href='/#/users/YXV0aDB8NTcxMTJlYWZiZTI1ZDgxZDUyMzEzNzIx')
+          img.img-circle(src='https://auth0.com/lib/about/img/jon.png', width='32')
+      td.text-truncate(title='')
+        | Jon Gelsey
+      td.text-truncate(title='jon@auth0.com')
+        | jon@auth0.com
+      td 2 days ago
+      td 0
+      td.text-truncate Username-Password-Authentication
+      
+    tr
+      td
+        a(href='/#/users/YXV0aDB8NTcxMTJmOWViZTI1ZDgxZDUyMzEzNzIz')
+          img.img-circle(src='https://www.gravatar.com/avatar/1329d9e3f4bc1d233788c89c04410bfe.png?size=200', width='32')
+      td.text-truncate(title='')
+        | Victor Fernandez
+      td.text-truncate(title='victor@auth0.com')
+        | victor@auth0.com
+      td never
+      td 0
+      td.text-truncate Username-Password-Authentication
+      

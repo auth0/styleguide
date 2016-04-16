@@ -94,7 +94,6 @@
   .nav-styleguide
     overflow-y: auto
 
-
   .nav-styleguide > ul
     color: #5c666f;
     font-size: 11px;
@@ -108,8 +107,6 @@
     z-index: 200;
     position: relative;
     background: #e3e5e7;
-
-
 
     .active
       color: #333 !important;
@@ -171,15 +168,6 @@
     h2
       margin-top: 0;
 
-    // h2.title
-    //   border-bottom: 1px solid $color-line-gray;
-    //   color: $color-text-black;
-    //   font-size: $font-size-small;
-    //   font-weight: $font-weight-bold;
-    //   line-height: normal;
-    //   padding: ceil($padding-base-vertical / 1.5) 0;
-    //   margin: 0;
-
     .type-box
       background-color: #e3e5e7;
       margin-bottom: 30px;
@@ -194,6 +182,7 @@
 
     hr
       margin: ($padding-base-vertical * 10) 0;
+
   // Typography Section
   // -------------------------
 
@@ -294,24 +283,30 @@
         font-size: 16px;
         color: $color-text-contrast-light;
         margin-bottom: 50px;
+
       .btn
         margin-right: 30px;
         margin-bottom: $padding-large-horizontal;
-        display: block;
+        display: block
+        &.btn-default
+          background: white;
         +breakpoint('tablet')
           display: inline-block;
 
         .btn-icon
+
           svg, img
             width: 18px;
             position: absolute
             top: 15px;
-            left: 14px;
+            left: 16px;
             z-index: 10000;
           &::before
             color: transparent;
           img
-            top: 15px;
+            top: 14px;
+            width: 24px;
+            left: 13px
       .lines
         margin-bottom: $padding-base-horizontal * 2;
         span

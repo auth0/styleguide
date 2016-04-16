@@ -279,11 +279,6 @@
     +breakpoint("tablet")
       padding-left: 100px;
 
-
-    for i in (1..100)
-      span:nth-child({i})
-        animation-delay: .02s * i
-
     .splash-intro
       display: none;
 
@@ -296,10 +291,8 @@
         color: $color-text-contrast-light;
         margin-bottom: 50px;
 
-
       .lettering-js
         span
-          animation-duration: .5s
           animation-fill-mode: forwards;
           opacity: 0;
           display: inline-block;
@@ -307,22 +300,33 @@
       h1.lettering-js
         span
           animation-name: title
-          min-width: 10px;
+          animation-duration: .4s
+
+        for i in (1..100)
+          span:nth-child({i})
+            animation-delay: .1s * i
 
       p.lettering-js
         span
           animation-name: tagline
           min-width: 3px;
-          animation-duration: .3s
+          animation-duration: .2s
 
+        span:nth-child(1)
+          animation-delay: 1.2s
+
+        for i in (2..100)
+          span:nth-child({i})
+            animation-delay: 1.2s + (i * 0.025)
 
       @keyframes title
         0%
-          -webkit-filter: blur(10px);
+          -webkit-filter: blur(30px);
+          -webkit-transform: scale(2);
           opacity: 0
-
         100%
           opacity: 1
+          -webkit-transform: scale(1);
           -webkit-filter: blur(0);
 
       @keyframes tagline
@@ -330,8 +334,7 @@
           -webkit-filter: blur(10px);
           opacity: 0
           transform: translate(0,0);
-        90%
-          opacity: .8
+
         100%
           transform: scale(1);
           opacity: 1
@@ -343,14 +346,14 @@
         display: block
         animation-name: btns
         animation-duration: .4s
-        animation-delay: 1s
+        animation-delay: 3.5s
         animation-play-state: running;
         animation-fill-mode: forwards;
         opacity: 0;
 
         &.btn-default
           background: white;
-          animation-delay: 1.5s
+          animation-delay: 3.6s
 
         +breakpoint('tablet')
           display: inline-block;

@@ -275,21 +275,57 @@
     +breakpoint("tablet")
       padding-left: 100px;
 
+
+
+
+
     .splash-intro
       h1
         font-size: 40px;
         margin: 30px 0;
+        animation-name: tagline
+        animation-duration: .8s
+        animation-delay: .4s
+        animation-fill-mode: forwards;
+        opacity: 0;
+
       p
         font-size: 16px;
         color: $color-text-contrast-light;
         margin-bottom: 50px;
+        animation-name: tagline
+        animation-duration: .6s
+        animation-delay: 1.2s
+        animation-fill-mode: forwards;
+        opacity: 0;
+
+      @keyframes tagline
+        0%
+          -webkit-filter: blur(10px);
+          opacity: 0
+          transform: translate(0,40px);
+        90%
+          opacity: .8
+        100%
+          transform: scale(1);
+          opacity: 1
+          -webkit-filter: blur(0);
 
       .btn
         margin-right: 30px;
         margin-bottom: $padding-large-horizontal;
         display: block
+        animation-name: btns
+        animation-duration: .4s
+        animation-delay: 1.2s
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+        opacity: 0;
+
         &.btn-default
           background: white;
+          animation-delay: 1.5s
+
         +breakpoint('tablet')
           display: inline-block;
 
@@ -301,26 +337,57 @@
             top: 15px;
             left: 16px;
             z-index: 10000;
+
           &::before
             color: transparent;
           img
             top: 14px;
             width: 24px;
             left: 13px
+
+      @keyframes btns
+        from
+          transform: scale(.8)
+          // -webkit-filter: blur(10px);
+          opacity: 0
+        to
+          transform: scale(1);
+          opacity: 1
+          -webkit-filter: blur(0);
+
       .lines
         margin-bottom: $padding-base-horizontal * 2;
+
         span
           height: 4px;
           background: $color-red;
           display: inline-block;
           width: 47px;
           margin-right: 2px;
+          animation-name: lines
+          animation-duration: 1s
+          animation-play-state: running;
+          animation-fill-mode: forwards;
+          opacity: 0;
           &.blue
             background-color: $color-blue;
+            animation-delay .25s
           &.blue-light
             background-color: $color-blue-light;
+            animation-delay .5s
           &.gray
             background-color: $color-gray
+            animation-delay .75s
+
+        @keyframes lines
+          from
+            transform: scale(4)
+            -webkit-filter: blur(10px);
+            opacity: 0
+          to
+            transform: scale(1);
+            opacity: 1
+            -webkit-filter: blur(0);
 
   .jumbotron
     margin-bottom: 0;

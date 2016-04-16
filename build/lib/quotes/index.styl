@@ -1,0 +1,54 @@
+
+/*==========  Quotes  ==========*/
+.quotes
+  text-align: center
+  padding: 20px 0;
+  blockquote
+    border: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    display: none
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 0;
+
+    p
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 140%;
+      font-style: italic
+      color: #333;
+
+    author
+      font-weight: $font-weight-bold
+      font-size: 13px;
+      margin-bottom: 10px;
+      display: inline-block
+
+    &.active
+      opacity: 1;
+      display: block
+  img
+    border-radius: 100px;
+    width: 48px;
+    margin: 0 10px;
+    opacity: .4;
+    cursor: pointer;
+
+    &.active
+      opacity: 1;
+
+
+
+@media screen and (max-width: 992px)
+
+  .quotes blockquote
+    min-height: 10px;
+    position: static;

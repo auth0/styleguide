@@ -283,11 +283,23 @@
       h1
         font-size: 40px;
         margin: 30px 0;
-        animation-name: tagline
+        animation-name: title
         animation-duration: .8s
         animation-delay: .4s
         animation-fill-mode: forwards;
         opacity: 0;
+
+      @keyframes title
+        0%
+          -webkit-filter: blur(10px);
+          opacity: 0
+          transform: translate(0,40px);
+        90%
+          opacity: .8
+        100%
+          transform: scale(1);
+          opacity: 1
+          -webkit-filter: blur(0);
 
       p
         font-size: 16px;
@@ -303,7 +315,7 @@
         0%
           -webkit-filter: blur(10px);
           opacity: 0
-          transform: translate(0,40px);
+          transform: translate(0,0);
         90%
           opacity: .8
         100%

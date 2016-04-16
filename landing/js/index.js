@@ -1,6 +1,3 @@
-
-
-
 function playground() {
   var $elems = $('.js-playground');
   var count = $elems.length;
@@ -213,6 +210,14 @@ function colors() {
 
 colors();
 
+
+$(document).ready(function() {
+  $(".lettering-js").lettering();
+});
+
+$(window).load(function() {
+  $("html").addClass('loaded');
+});
 
 $.getJSON("/landing/package.json", function(data){
   // alert(data.version);

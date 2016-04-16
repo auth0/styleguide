@@ -1,5 +1,9 @@
 .auth0-styleguide
 
+  &.loaded
+    .splash .splash-intro
+      display: block
+
   @import '../../lib/vars/index'
   @import '../../lib/mixins/index'
   @import 'inc/playground'
@@ -276,40 +280,50 @@
       padding-left: 100px;
 
 
-
-
+    for i in (1..100)
+      span:nth-child({i})
+        animation-delay: .02s * i
 
     .splash-intro
+      display: none;
+
       h1
         font-size: 40px;
         margin: 30px 0;
-        animation-name: title
-        animation-duration: .8s
-        animation-delay: .3s
-        animation-fill-mode: forwards;
-        opacity: 0;
-
-      @keyframes title
-        0%
-          -webkit-filter: blur(10px);
-          opacity: 0
-          transform: translate(0,40px);
-        90%
-          opacity: .8
-        100%
-          transform: scale(1);
-          opacity: 1
-          -webkit-filter: blur(0);
 
       p
         font-size: 16px;
         color: $color-text-contrast-light;
         margin-bottom: 50px;
-        animation-name: tagline
-        animation-duration: .8s
-        animation-delay: .6s
-        animation-fill-mode: forwards;
-        opacity: 0;
+
+
+      .lettering-js
+        span
+          animation-duration: .5s
+          animation-fill-mode: forwards;
+          opacity: 0;
+          display: inline-block;
+
+      h1.lettering-js
+        span
+          animation-name: title
+          min-width: 10px;
+
+      p.lettering-js
+        span
+          animation-name: tagline
+          min-width: 3px;
+          animation-duration: .3s
+
+
+      @keyframes title
+        0%
+          -webkit-filter: blur(10px);
+          opacity: 0
+
+        100%
+          opacity: 1
+          -webkit-filter: blur(0);
 
       @keyframes tagline
         0%
@@ -356,6 +370,7 @@
             top: 14px;
             width: 24px;
             left: 13px
+
 
       @keyframes btns
         from

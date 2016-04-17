@@ -1,8 +1,7 @@
 .auth0-styleguide
-
+  display: none
   &.loaded
-    .splash .splash-intro
-      display: block
+    display: block
 
   @import '../../lib/vars/index'
   @import '../../lib/mixins/index'
@@ -132,6 +131,8 @@
           margin-right: 10px;
           top: 1px;
           position: relative;
+          min-width: 14px;
+          display: inline-block
 
 
   .nav-styleguide > ul > li > ul
@@ -280,7 +281,6 @@
       padding-left: 100px;
 
     .splash-intro
-      display: none;
 
       h1
         font-size: 40px;

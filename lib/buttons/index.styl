@@ -85,11 +85,16 @@ $btn-border-radius-small ?=      $border-radius-small
     cursor $cursor-disabled
     opacity-ie(.65)
     box-shadow none
+    pointer-events: none
+    border: 0
+    background-color: $bg-color-gray
+    border-color: gray
+    color: $color-text-lighter
 
   a&
     &.disabled,
     fieldset[disabled] &
-      pointer-events none // Future-proof disabling of clicks on `<a>` elements
+      pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
 
 
 // Alternate buttons
@@ -213,14 +218,6 @@ input[type="button"]
 
 .bg-danger
   background: $bg-color-error;
-
-fieldset[disabled] .btn,
-.btn[disabled],
-.btn.disabled
-    border: 0;
-    background-color: $bg-color-gray;
-    border-color: gray;
-    color: $color-text-lighter;
 
 .help-circle
   max-height: 14px;

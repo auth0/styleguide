@@ -211,15 +211,22 @@ function colors() {
 colors();
 
 
-$(document).ready(function() {
-  $(".lettering-js").lettering();
-});
+function splash() {
+  if(!location.hash) {
+    return $(".lettering-js").lettering();
+  }
+}
+
+splash();
+
+function version() {
+  $.getJSON("/landing/package.json", function(data){
+    $("#version").html(data.version)
+  });
+}
+
+version();
 
 $(window).load(function() {
   $("html").addClass('loaded');
-});
-
-$.getJSON("/landing/package.json", function(data){
-  // alert(data.version);
-  $("#version").html(data.version)
 });

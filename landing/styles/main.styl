@@ -13,6 +13,11 @@
   body
     color: $color-text-light
 
+  p,
+  h1, h2, h3, h4, h5, h6
+    code
+      display: inline-block;
+
   [data-group]
     // padding-bottom: 100px;
     min-height: 100vh;
@@ -170,14 +175,13 @@
   // content styleguide
   .content-styleguide
 
-    h2
+    section > h2
       margin-top: 0;
 
     .type-box
       background-color: #e3e5e7;
       margin-bottom: 30px;
       overflow: hidden;
-      padding: 0 40px;
 
     > section
       padding: $padding-base-vertical*4 $padding-base-horizontal*2
@@ -199,15 +203,36 @@
       margin: 40px 0;
 
   // box
+  .type-box-container
+    display: flex;
+    flex-wrap: wrap;
+
+    +breakpoint("desktop")
+      flex-wrap: nowrap;
+
+    .column
+      flex-basis: 100%
+      margin: 0 15px;
+      display: flex;
+
+      .type-box
+        flex-basis: 100%;
+
+      +breakpoint("desktop")
+        flex-basis: 50%;
+
   .type-box
-    padding: 10px 40px !important;
+    padding: 10px 40px;
 
     &.box-table
-      padding: 20px 40px !important;
+      padding: 20px 40px;
 
     a
       display: block;
       margin: 20px 0;
+
+    h5
+      line-height: 1.8
 
     .theme-dark &
       background-color: #222228;

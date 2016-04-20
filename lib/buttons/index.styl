@@ -187,6 +187,12 @@ $btn-border-radius-small ?=      $border-radius-small
   margin-top 5px
 
 // Specificity overrides
+.btn
+  &[type="button"],
+  &[type="reset"],
+  &[type="submit"]
+    -webkit-appearance none
+
 input[type="submit"],
 input[type="reset"],
 input[type="button"]

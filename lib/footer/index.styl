@@ -128,7 +128,7 @@ footer.site-footer
     clearfix();
     padding-top: 10px;
     text-align: left;
-    height: 50px;
+    min-height: 50px;
     overflow: hidden;
     > div
       height: 20px;
@@ -148,7 +148,11 @@ footer.site-footer
       border-top: 1px solid lighten($color-gray, 60%);
 
     ul
-      margin-top: 5px;
+      +breakpoint("mobile-landscape")
+        margin-top: 15px;
+
+      +breakpoint("desktop")
+        margin-top: 5px;
 
     li
       margin:  5px 0;

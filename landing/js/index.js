@@ -160,7 +160,6 @@ function navigation() {
 
 }
 
-navigation();
 
 function accordions() {
   $('.nav-styleguide [data-accordion]').accordion({
@@ -168,8 +167,6 @@ function accordions() {
     contentElement: 'ul'
   });
 }
-
-accordions();
 
 function snippets() {
   hljs.configure({
@@ -228,5 +225,11 @@ function version() {
 version();
 
 $(window).load(function() {
+  
   $("html").addClass('loaded');
+
+  navigation();
+
+  accordions();
+
 });

@@ -13,7 +13,8 @@
       h2#from-cdn From CDN
       p Using our CDN is the simplest solution. Just add the following line in your project's HTML head and you are done.
       pre.hl
-        code.html &lt;link href=&quot;https://cdn.auth0.com/styleguide/latest/index.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        - var code = '<link href="https://cdn.auth0.com/styleguide/' + version + '/index.css" rel="stylesheet" />';
+        code.html=code
 
     section
 

@@ -61,9 +61,14 @@ gulp.task('jade-lib', function() {
 });
 
 gulp.task('jade-landing', function() {
+  var styleguideVersion = require('./package.json').version;
+
   gulp.src('./landing/index.jade')
     .pipe(jade({
-      pretty: true
+      pretty: true,
+      locals: {
+        version: styleguideVersion
+      }
     }))
     .pipe(gulp.dest('./build/'))
   return gulp.src('./landing/stage/index.jade')

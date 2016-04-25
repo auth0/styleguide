@@ -216,16 +216,8 @@ function splash() {
 
 splash();
 
-function version() {
-  $.getJSON("/landing/package.json", function(data){
-    $("#version").html(data.version)
-  });
-}
-
-version();
-
 $(window).load(function() {
-  
+
   $("html").addClass('loaded');
 
   navigation();

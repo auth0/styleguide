@@ -1,0 +1,74 @@
+/*==========  THIS IS DEPRECATED  ==========*/
+
+
+
+/*==========  Banner  ==========*/
+.banner
+  color: white;
+  text-align: center
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden
+  background-color: #14204d;
+  background: linear-gradient(180deg, color-blue 0%, color-blue-light 200%); /* W3C */
+  padding:80px 0;
+
+  h1
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+
+  p
+    max-width: 580px;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 10px;
+    color: rgba(255,255,255,.8);
+
+  i
+    font-size: 50px;
+    -webkit-animation: icon_banner 1s;
+    position: relative;
+
+  a
+    color: $color-blue-light;
+    font-weight: $font-weight-bold
+  .btn
+    margin-top: 10px;
+
+  em
+    display: block
+    font-size: 12px;
+    margin-top: 4px;
+    letter-spacing: 1px;
+
+
+  .icon-banner
+    border: 2px solid white;
+    border-radius: 100px;
+    line-height: 90px;
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
+    display: inline-block
+
+  .banner-container
+    position: relative;
+
+.banner-container
+  display: block;
+
++breakpoint("desktop")
+  .header-dark,
+  .theme-dark
+    .banner
+      padding-top: 160px;
+
++breakpoint("mobile-landscape")
+  .banner
+    padding: 20px 0
+
+    h1
+      font-size: 36px

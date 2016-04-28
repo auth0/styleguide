@@ -1,0 +1,31 @@
+.code-picker
+  pre code
+    border-radius: 0 0 3px 3px
+
+  .js-copy
+    display: none;
+
+    +breakpoint("desktop")
+      display: inherit;
+
+  .bar
+    background: $bg-color-dark
+    border-radius: 3px 3px 0 0
+
+    > ul
+      margin-bottom: 0;
+      padding: 8px 15px;
+      padding-right: 3px;
+
+      > li
+        padding: 0 10px
+
+      .active > a
+        color: white;
+
+  .more-dots
+    font-size: 45px;
+    line-height: 0;
+    letter-spacing: -0.2rem;
+    top: -3px;
+    position: relative;

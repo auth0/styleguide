@@ -1,0 +1,31 @@
+
+.code-picker
+  .bar.theme-dark
+    ul.list-inline.clearfix
+      li.active: a(href="#sample-javascript" data-toggle="tab") Javascript
+      li: a(href="#sample-ruby" data-toggle="tab") Ruby
+      li: a(href="#sample-python" data-toggle="tab") Python
+      li.dropdown
+        a.more-dots(href="#", data-toggle="dropdown") ...
+        ul.dropdown-menu
+          li: a(href="#sample-java" data-toggle="tab") Java
+          li: a(href="#sample-scala" data-toggle="tab") Scala
+      li.pull-right: .btn.btn-sm.btn-default.js-copy
+        span.btn-icon.icon-budicon-450
+        | Copy
+  .tab-content
+    .tab-pane.active#sample-javascript
+      pre.hl
+        code.
+          // Cross-browser xml parsing
+          function thisIsAnExample() {
+            return 'sample';
+          }
+
+    .tab-pane#sample-scala
+      pre.hl
+        code.
+          // Cross-browser xml parsing
+          function Scala() {
+            return 'sample';
+          }

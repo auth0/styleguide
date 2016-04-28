@@ -177,6 +177,10 @@
 
     section > h2
       margin-top: 0;
+      padding-top: $padding-large-vertical;
+
+      +breakpoint("tablet")
+        padding-top: $padding-large-vertical*2;
 
     .type-box
       background-color: #e3e5e7;
@@ -187,7 +191,7 @@
       padding: $padding-base-vertical*4 $padding-base-horizontal*2
       border-bottom: 1px solid $bg-color-gray;
       +breakpoint("tablet")
-        padding: $padding-large-vertical*4 $padding-large-horizontal*3;
+        padding: $padding-large-vertical*2 $padding-large-horizontal*3 $padding-large-vertical*4;
 
     hr
       margin: ($padding-base-vertical * 10) 0;

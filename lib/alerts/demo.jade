@@ -15,8 +15,20 @@
 .alert.alert-warning
   strong Warning!
   |  Better check yourself, you're not <a href="https://auth0.com/">alert link</a> looking too good.
-  button.btn.btn-sm.btn-warning.pull-right Action
+  .actions.pull-right
+    button.btn.btn-sm.btn-warning Action
   
 .alert.alert-danger
   strong Oh snap!
   |  Change a few things up and try submitting again. <a href="https://auth0.com/">alert link</a>.
+
+.alert.alert-warning
+  button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+    span(aria-hidden="true") &times;
+  strong Multiline!
+  |  Use this type of alert if you want to display a large text with button/s at the end.
+  |  You can even add a close button.
+  .actions
+    button.btn.btn-sm.btn-warning Add
+    button.btn.btn-sm.btn-warning Edit
+    button.btn.btn-sm.btn-warning Delete

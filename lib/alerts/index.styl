@@ -47,6 +47,29 @@ $alert-danger-border ?=       $state-danger-border
   > p + p
     margin-top 5px
 
+  // Button section
+  .actions
+    margin-top 10px
+
+    &.pull-right,
+    &.pull-left
+      margin-top 0
+
+    .btn + .btn
+      margin-left 10px
+
+    +breakpoint("mobile-landscape", "max")
+      margin-top 10px !important
+      float: none !important
+
+      .btn
+        display block
+        width 100%
+        margin-left 0 !important
+
+        & + .btn
+          margin-top 10px
+
 // Dismissible alerts
 //
 // Expand the right padding and account for the close button's positioning.
@@ -86,11 +109,6 @@ $alert-danger-border ?=       $state-danger-border
     color: currentColor;
     outline: none;
     margin-top: 4px;
-
-  .btn
-    border: 0;
-    // margin: -4px;
-    margin-left: 10px;
 
   a
     color: currentColor;

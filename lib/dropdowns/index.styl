@@ -226,3 +226,67 @@ $dropdown-caret-color ?=         #000
     .dropdown-menu-left
       right auto
       left 0
+
+//  Add caret to dropdown down
+.dropdown.dropdown-caret
+  .dropdown-menu
+    margin-top 20px
+
+    &:before
+      content ''
+      display inline-block
+      position absolute
+      top -20px
+      left 25px
+      width 0
+      height 0
+      border-bottom 10px solid white
+      border-left 10px solid transparent
+      border-top 10px solid transparent
+      border-right 10px solid transparent
+
+// Remove all styles at mobile
+.dropdown.dropdown-unstyle-mobile
+  +breakpoint("mobile-landscape", "max")
+    display inline
+    padding-left 0 !important
+    padding-right 0 !important
+
+    .dropdown-menu
+      display inline
+      position static
+      margin 0
+      padding 0
+      float none
+      border none
+      box-shadow none
+      background-color transparent
+
+      // Remove caret
+      &:before
+        content none
+
+      > li
+        display inline-block
+        padding 0 20px
+
+      > li.active a
+        color white
+        background-color transparent
+
+        &:hover,
+        &:focus,
+        &:active
+          color white
+
+      // Make the list inline
+      > li > a
+        display inline-block
+        padding 0
+        color lighten($link-color, 30%)
+
+        &:hover,
+        &:focus,
+        &:active
+          background-color transparent
+          color $link-color

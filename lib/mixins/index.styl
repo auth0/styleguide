@@ -63,24 +63,45 @@ clearfix()
 
 breakpoint(point, orientation = "min")
   if point == "mobile"
-    @media ({orientation}-width: breakpoint-mobile)
-      {block}
+    if orientation == "max"
+      @media ({orientation}-width: (breakpoint-mobile - 1) )
+        {block}
+    else
+      @media ({orientation}-width: breakpoint-mobile)
+        {block}
 
   else if point == "mobile-landscape"
-    @media ({orientation}-width: breakpoint-mobile-landscape)
-      {block}
+    if orientation == "max"
+      @media ({orientation}-width: (breakpoint-mobile-landscape - 1) )
+        {block}
+    else
+      @media ({orientation}-width: breakpoint-mobile-landscape)
+        {block}
+
 
   else if point == "tablet"
-    @media ({orientation}-width: breakpoint-tablet)
-      {block}
+    if orientation == "max"
+      @media ({orientation}-width: (breakpoint-tablet - 1) )
+        {block}
+    else
+      @media ({orientation}-width: breakpoint-tablet)
+        {block}
 
   else if point == "desktop"
-    @media ({orientation}-width: breakpoint-desktop)
-      {block}
+    if orientation == "max"
+      @media ({orientation}-width: (breakpoint-desktop - 1) )
+        {block}
+    else
+      @media ({orientation}-width: breakpoint-desktop)
+        {block}
 
   else if point == "desktop-hd"
-    @media ({orientation}-width: breakpoint-desktop-hd)
-      {block}
+    if orientation == "max"
+      @media ({orientation}-width: (breakpoint-desktop-hd - 1) )
+        {block}
+    else
+      @media ({orientation}-width: breakpoint-desktop-hd)
+        {block}
 
   else if point == "retina-only"
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)

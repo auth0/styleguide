@@ -16,13 +16,13 @@ module.exports = function (grunt) {
     ],
     shell: {
       fix_utf8: {
-        command: './bin/fix-utf8-problem lib/budicon/budicon.css lib/budicon/budicon.fixed.css'
+        command:  __dirname + '/bin/fix-utf8-problem lib/budicon/budicon.css lib/budicon/budicon.fixed.css'
       },
       gulp: {
-        command: './node_modules/.bin/gulp build'
+        command: __dirname + '/node_modules/.bin/gulp build'
       },
       gulp_dev: {
-        command: './node_modules/.bin/gulp',
+        command:  __dirname + '/node_modules/.bin/gulp',
         options: {
           execOptions: {
               maxBuffer: Infinity

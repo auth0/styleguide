@@ -49,3 +49,24 @@
       transition: transform 100ms ease;
       border-radius: 50%;
       transform: translate(-5%, -5%);
+
+.ui-switch.ui-switch-labeled
+  width 120px
+  
+  input[type="checkbox"]
+    &:checked + .status:before
+      transform: translate(88px, -5%);
+    &:checked + .status:after
+      content attr(data-label-true)
+      left 42%
+  .status
+    &:before
+      z-index 10
+    &:after
+      content attr(data-label-false)
+      font-size 12px
+      position absolute
+      left 58%
+      top 50%
+      transform translateX(-50%) translateY(-50%)
+      z-index 0

@@ -2,7 +2,7 @@
   "name": "auth0-styleguide",
   "version": "4.4.28",
   "engines": {
-    "node": "0.10.x"
+    "node": "4.3.2"
   },
   "repository": {
     "type": "git",

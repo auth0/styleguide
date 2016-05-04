@@ -59,7 +59,7 @@
       content attr(data-label-false)
       font-size 12px
       position absolute
-      left 58%
+      left calc(50% + 11px)
       top 50%
       transform: translate(-50%, -50%);
       z-index 0
@@ -68,7 +68,7 @@
   input[type="checkbox"]
     &:checked + .status:after
       content attr(data-label-true)
-      left 42%
+      left calc(50% - 11px)
   
   &.ui-switch-sm
     width 90px

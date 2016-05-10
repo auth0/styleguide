@@ -1,0 +1,51 @@
+.scope-toggle
+  position relative
+  display inline-block
+  margin-right 10px
+  transition background-color 0.2s ease-in-out
+  
+  &:hover
+    background-color #F1F1F1
+  
+  .scope-input
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    z-index 100
+    opacity 0
+    outline none
+    margin 0
+    
+    &:checked + .status
+      &:before
+        content ''
+        top 2px
+        width 11px
+        font-size 12px
+        
+    &:disabled + .status
+      opacity 0.5
+      background-color #F1F1F1
+      
+  .status
+    margin 0
+    padding 10px 15px
+    border 1px solid #DDDDDD
+    border-radius 3px
+    &:before
+      content ''
+      display inline-block
+      font-family "budicon-font" !important
+      font-style normal !important
+      font-weight normal !important
+      font-variant normal !important
+      text-transform none !important
+      speak none
+      line-height 1
+      -webkit-font-smoothing antialiased
+      margin-right 5px
+      position relative
+      top 1px
+      font-size 11px

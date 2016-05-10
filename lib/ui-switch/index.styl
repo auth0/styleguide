@@ -49,3 +49,51 @@
       transition: transform 100ms ease;
       border-radius: 50%;
       transform: translate(-5%, -5%);
+
+// Labeled switches
+.ui-switch.ui-switch-labeled
+  .status
+    &:before
+      z-index 10
+    &:after
+      content attr(data-label-false)
+      font-size 12px
+      position absolute
+      left calc(50% + 11px)
+      top 50%
+      transform: translate(-50%, -50%);
+      z-index 0
+      white-space nowrap
+  
+  input[type="checkbox"]
+    &:checked + .status:after
+      content attr(data-label-true)
+      left calc(50% - 11px)
+  
+  &.ui-switch-sm
+    width 90px
+    
+    input[type="checkbox"]
+      &:checked + .status:before
+        transform: translate(58px, -5%);
+      
+  &.ui-switch-md
+    width 120px
+  
+    input[type="checkbox"]
+      &:checked + .status:before
+        transform: translate(88px, -5%);
+  
+  &.ui-switch-lg
+    width 160px
+  
+    input[type="checkbox"]
+      &:checked + .status:before
+        transform: translate(128px, -5%);
+  
+  &.ui-switch-xl
+    width 200px
+  
+    input[type="checkbox"]
+      &:checked + .status:before
+        transform: translate(168px, -5%);

@@ -4,9 +4,6 @@
   margin-right 10px
   transition background-color 0.2s ease-in-out
   
-  &:hover
-    background-color #F1F1F1
-  
   .scope-input
     position absolute
     top 0
@@ -19,14 +16,16 @@
     margin 0
     
     &:checked + .status
+      background-color #F1F1F1
       &:before
         content ''
         top 2px
+        border none
         width 11px
         font-size 12px
         
     &:disabled + .status
-      opacity 0.5
+      opacity 0.3
       background-color #F1F1F1
       
   .status
@@ -34,8 +33,9 @@
     padding 10px 15px
     border 1px solid #DDDDDD
     border-radius 3px
+    transition background-color 0.2s ease-in-out
     &:before
-      content ''
+      content ''
       display inline-block
       font-family "budicon-font" !important
       font-style normal !important
@@ -47,5 +47,9 @@
       -webkit-font-smoothing antialiased
       margin-right 5px
       position relative
-      top 1px
+      top 2px
       font-size 11px
+      border 1px solid #aaa
+      width 11px
+      height 11px
+      border-radius 3px

@@ -1,0 +1,99 @@
+.ui-switch
+  display: inline-block;
+  width: 50px;
+  height: 31px;
+  position: relative;
+
+  input[type="checkbox"]
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    opacity: 0;
+    outline: none;
+    margin: 0;
+
+    &:disabled + .status
+      opacity: 0.3;
+
+    &:checked + .status:before
+      transform: translate(70%, -5%);
+
+    &:checked + .status
+      background: #4cd964;
+
+  .status
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 27px;
+    background: #d0d2d3;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+
+    &:before
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      height: 25px;
+      width: 25px;
+      background: #fff;
+      box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25), 0px 4px 11px 0px rgba(0,0,0,0.08), -1px 3px 3px 0px rgba(0,0,0,0.14);
+      transition: transform 100ms ease;
+      border-radius: 50%;
+      transform: translate(-5%, -5%);
+
+// Labeled switches
+.ui-switch.ui-switch-labeled
+  .status
+    &:before
+      z-index 10
+    &:after
+      content attr(data-label-false)
+      font-size 12px
+      position absolute
+      left calc(50% + 11px)
+      top 50%
+      transform: translate(-50%, -50%);
+      z-index 0
+      white-space nowrap
+  
+  input[type="checkbox"]
+    &:checked + .status:after
+      content attr(data-label-true)
+      left calc(50% - 11px)
+  
+  &.ui-switch-sm
+    width 90px
+    
+    input[type="checkbox"]
+      &:checked + .status:before
+        transform: translate(58px, -5%);
+      
+  &.ui-switch-md
+    width 120px
+  
+    input[type="checkbox"]
+      &:checked + .status:before
+        transform: translate(88px, -5%);
+  
+  &.ui-switch-lg
+    width 160px
+  
+    input[type="checkbox"]
+      &:checked + .status:before
+        transform: translate(128px, -5%);
+  
+  &.ui-switch-xl
+    width 200px
+  
+    input[type="checkbox"]
+      &:checked + .status:before
+        transform: translate(168px, -5%);

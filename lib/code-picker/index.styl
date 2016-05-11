@@ -10,18 +10,21 @@
         top 0
         right 0
         height 100%
-        width 50px
-        background linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.25) 200%)
+        width 75px
+        background linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 200%)
         pointer-events: none
 
     > ul
       width 100%
       list-style-type none
       white-space nowrap
-      background $bg-color-dark
+      background-color white
       border-radius 3px 3px 0 0
       margin 0
       padding 15px 3px 15px 25px
+
+      .theme-dark &
+        background-color #3A424A
 
       > li
         display inline-block
@@ -32,7 +35,10 @@
           padding-left 0
 
         &.active > a
-          color white
+          color $gray-darker
+
+          .theme-dark &
+            color white
 
       .more-dots
         font-size: 45px;
@@ -76,18 +82,27 @@
             padding 0 20px
 
           > li.active a
-            color white
+            color $gray-darker
             background-color transparent
+
+            .theme-dark &
+              color white
 
             &:hover,
             &:focus,
             &:active
-              color white
+              color $gray-darker
+
+              .theme-dark &
+                color white
 
           // Make the list inline
           > li > a
             padding 0
-            color lighten($link-color, 30%)
+            color $link-color
+
+            .theme-dark &
+              color lighten($link-color, 30%)
 
             &:hover,
             &:focus,
@@ -100,7 +115,7 @@
           margin-top 20px
 
           // Add dropdown top caret
-          &:before
+          &:after
             content ''
             display inline-block
             position absolute
@@ -109,6 +124,20 @@
             width 0
             height 0
             border-bottom 10px solid white
+            border-left 10px solid transparent
+            border-top 10px solid transparent
+            border-right 10px solid transparent
+
+          // Add caret border
+          &:before
+            content ''
+            display inline-block
+            position absolute
+            top -21px
+            left 25px
+            width 0
+            height 0
+            border-bottom 10px solid rgba(0,0,0,0.15)
             border-left 10px solid transparent
             border-top 10px solid transparent
             border-right 10px solid transparent

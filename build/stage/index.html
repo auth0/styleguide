@@ -1,0 +1,27 @@
+<!DOCTYPE html5><html><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Styleguide</title><link href="//fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"/><link href="../index.css" rel="stylesheet"/><link rel="shortcut icon" href="img/favicon.png"/></head><body><div id="stage"><div class="text-center"><section class="jumbotron"><h2><img src="/lib/logos/img/icon-styleguide.svg" alt="Stage" width="48" height=""/></h2><h1>Stage</h1><p>Change the hash to load a new Component from /lib</p></section><a href="#header" class="btn btn-lg btn-default">eg. Load "header"</a></div></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>$(window).on('hashchange', setStageContent);
+
+function setStageContent(e, component) {
+  var component = component || window.location.hash.substring(1) || 'header';
+  
+  $.get('../landing/html/' + component + '/demo.html', function(contents) {
+    $('#stage').html(contents);
+    snippets();
+  });
+}
+
+if(window.location.hash) {
+  setStageContent();
+}
+
+function snippets() {
+  hljs.configure({
+    tabReplace: '  ', // 4 spaces
+    classPrefix: ''     // don't append class prefix
+                        // … other options aren't changed
+  });
+  hljs.initHighlighting();
+
+  $('pre.hl code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+}</script></body></html>

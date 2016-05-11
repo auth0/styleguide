@@ -1,75 +1,51 @@
-
-.code-picker
-  .bar.theme-dark
-    ul.list-inline.clearfix
-      li.active: a(href="#sample-javascript" data-toggle="tab") Javascript
-      li: a(href="#sample-ruby" data-toggle="tab") Ruby
-      li: a(href="#sample-python" data-toggle="tab") Python
-      li.dropdown.dropdown-caret.dropdown-unstyle-mobile
-        a.more-dots(href="#", data-toggle="dropdown") ...
-        ul.dropdown-menu
-          li: a(href="#sample-java" data-toggle="tab") Java
-          li: a(href="#sample-scala" data-toggle="tab") Scala
-          li: a(href="#sample-php" data-toggle="tab") PHP
-          li: a(href="#sample-rust" data-toggle="tab") Rust
-          li: a(href="#sample-csharp" data-toggle="tab") C#
-      li.pull-right: .btn.btn-sm.btn-transparent.js-copy.btn-copy
-        span.btn-icon.icon-budicon-450
-        | Copy
-  .tab-content
-    .tab-pane.active#sample-javascript
-      pre.hl
-        code.
-          // Cross-browser xml parsing
-          function Javascript() {
-            return 'sample';
-          }
-    .tab-pane#sample-ruby
-      pre.hl
-        code.
-          // Cross-browser xml parsing
-          function Ruby() {
-            return 'sample';
-          }
-    .tab-pane#sample-python
-      pre.hl
-        code.
-          // Cross-browser xml parsing
-          function Python() {
-            return 'sample';
-          }
-    .tab-pane#sample-java
-      pre.hl
-        code.
-          // Cross-browser xml parsing
-          function Java() {
-            return 'sample';
-          }
-    .tab-pane#sample-scala
-      pre.hl
-        code.
-          // Cross-browser xml parsing
-          function Scala() {
-            return 'sample';
-          }
-    .tab-pane#sample-php
-      pre.hl
-        code.
-          // Cross-browser xml parsing
-          function Php() {
-            return 'sample';
-          }
-    .tab-pane#sample-rust
-      pre.hl
-        code.
-          // Cross-browser xml parsing
-          function Rust() {
-            return 'sample';
-          }
-    .tab-pane#sample-csharp
-      pre.hl
-        code.
-          // Cross-browser xml parsing
-          function C#() {
-            return 'sample';
-          }  
+.theme-dark
+  .code-picker
+    .languages-bar
+      ul
+        li.active: a(href="#sample-javascript" data-toggle="tab") Javascript
+        li: a(href="#sample-ruby" data-toggle="tab") Ruby
+        li: a(href="#sample-python" data-toggle="tab") Python
+        li.dropdown
+          a.more-dots(href="#", data-toggle="dropdown") ...
+          ul.dropdown-menu
+            li: a(href="#sample-java" data-toggle="tab") Java
+            li: a(href="#sample-scala" data-toggle="tab") Scala
+        li.pull-right: .btn.btn-sm.btn-transparent.btn-copy
+          span.btn-icon.icon-budicon-450
+          | Copy
+    .tab-content
+      .tab-pane.active#sample-javascript
+        pre.hl
+          code.
+            // Cross-browser xml parsing
+            function Javascript() {
+              return 'sample';
+            }
+      .tab-pane#sample-ruby
+        pre.hl
+          code.
+            // Cross-browser xml parsing
+            function Ruby() {
+              return 'sample';
+            }
+      .tab-pane#sample-python
+        pre.hl
+          code.
+            // Cross-browser xml parsing
+            function Python() {
+              return 'sample';
+            }
+      .tab-pane#sample-java
+        pre.hl
+          code.
+            // Cross-browser xml parsing
+            function Java() {
+              return 'sample';
+            }
+      .tab-pane#sample-scala
+        pre.hl
+          code.
+            // Cross-browser xml parsing
+            function Scala() {
+              return 'sample';
+            }

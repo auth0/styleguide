@@ -1,61 +1,119 @@
 .code-picker
-  pre code
-    border-radius: 0 0 3px 3px
+  .languages-bar
+    position relative
 
-  .js-copy
-    display: inherit;
-
-    +breakpoint("mobile-landscape", "max")
-      display: none;
-
-  .bar
-    background: $bg-color-dark
-    border-radius: 3px 3px 0 0
-
-    +breakpoint("mobile-landscape", "max")
-      overflow-x scroll
-      position relative
-
-      &:after
+    // Gradient at the end of the language bar (only in mobile)
+    &:after
+      +breakpoint("mobile-landscape", "max")
         content ''
         position absolute
         top 0
         right 0
         height 100%
         width 50px
-        background linear-gradient(to right, transparent 0%, black 100%)
+        background linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.25) 200%)
         pointer-events: none
 
-    .list-inline
-      +breakpoint("mobile-landscape", "max")
-        white-space nowrap
-        overflow-x scroll
-
     > ul
-      margin: 0;
-      padding: 15px 3px 15px 25px;
+      width 100%
+      list-style-type none
+      white-space nowrap
+      background $bg-color-dark
+      border-radius 3px 3px 0 0
+      margin 0
+      padding 15px 3px 15px 25px
 
       > li
-        padding: 0 20px
+        display inline-block
+        padding 0 20px
         font-size 13px
 
         &:first-child
           padding-left 0
 
-      .active > a
-        color: white;
+        &.active > a
+          color white
 
+      .more-dots
+        font-size: 45px;
+        line-height: 0;
+        letter-spacing: -0.2rem;
+        top: -3px;
+        position: relative;
 
-  .dropdown-menu > li > a
-    +breakpoint("mobile-landscape", "max")
-      padding 0 20px
+        +breakpoint("mobile-landscape", "max")
+          display none
 
-  .more-dots
-    font-size: 45px;
-    line-height: 0;
-    letter-spacing: -0.2rem;
-    top: -3px;
-    position: relative;
+      // Only active scroll functionality in mobile view
+      +breakpoint("mobile-landscape", "max")
+        overflow-x auto
+        position relative
 
-    +breakpoint("mobile-landscape", "max")
-      display none
+    // Remove copy button in mobile view
+    .btn-copy
+      +breakpoint("mobile-landscape", "max")
+        display none
+
+    .dropdown
+      // Remove all dropdown styles in mobile view
+      +breakpoint("mobile-landscape", "max")
+        display inline
+        padding-left 0
+        padding-right 0
+
+        .dropdown-menu
+          display inline
+          position static
+          margin 0
+          padding 0
+          float none
+          border none
+          box-shadow none
+          background-color transparent
+
+          > li
+            display inline-block
+            padding 0 20px
+
+          > li.active a
+            color white
+            background-color transparent
+
+            &:hover,
+            &:focus,
+            &:active
+              color white
+
+          // Make the list inline
+          > li > a
+            padding 0
+            color lighten($link-color, 30%)
+
+            &:hover,
+            &:focus,
+            &:active
+              background-color transparent
+              color $link-color
+
+      +breakpoint("mobile-landscape")
+        .dropdown-menu
+          margin-top 20px
+
+          // Add dropdown top caret
+          &:before
+            content ''
+            display inline-block
+            position absolute
+            top -20px
+            left 25px
+            width 0
+            height 0
+            border-bottom 10px solid white
+            border-left 10px solid transparent
+            border-top 10px solid transparent
+            border-right 10px solid transparent
+
+  .tab-content
+    pre code
+      width 100%
+      border-radius: 0 0 3px 3px

@@ -35,6 +35,9 @@
     "grunt-maxcdn": "https://github.com/siacomuzzi/grunt-maxcdn/tarball/0.0.1",
     "grunt-s3": "~0.2.0-alpha.3",
     "grunt-shell": "^0.7.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-load-plugins": "^1.2.2",
     "jade": "^1.7.0",
     "matchdep": "^0.3.0",
     "stylus": "~0.54.0"

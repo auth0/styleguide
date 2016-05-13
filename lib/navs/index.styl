@@ -86,34 +86,47 @@ $nav-pills-active-link-hover-color ?=       $component-active-color
 // -------------------------
 
 // Give the tabs something to sit on
-.nav-tabs
-  border-bottom 1px solid $nav-tabs-border-color
+.nav.nav-tabs
+  border-bottom: 1px solid rgba(0,0,0,.1)
+  margin-bottom: 20px;
+
+  &.nav-center
+    text-align center
+
+  .theme-dark &
+    border-bottom: 1px solid rgba(255,255,255,.1)
 
   > li
-    float left
-    // Make the list-items overlay the bottom border
-    margin-bottom -1px
+    display inline-block
+    margin-left 14px
+    margin-right 14px
+    margin-bottom -1px // Make the list-items overlay the bottom border
+
+    &:first-child
+      margin-left 0
 
     // Actual tabs (as links)
     > a
-      margin-right 2px
-      line-height $line-height-base
-      border 1px solid transparent
-      border-radius $border-radius-base $border-radius-base 0 0
+      padding-left 0
+      padding-right 0
+      background-color transparent
 
-      &:hover
-        border-color $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color
+      .theme-dark &
+        color white
+
+        &:hover
+          color rgba(white, 0.8)
 
     // Active state, and its :hover to override normal :hover
     &.active > a
-      &,
-      &:hover,
-      &:focus
-        color $nav-tabs-active-link-hover-color
-        background-color $nav-tabs-active-link-hover-bg
-        border 1px solid $nav-tabs-active-link-hover-border-color
-        border-bottom-color transparent
-        cursor default
+      cursor default
+      color $text-color
+      border-bottom 1px solid rgba(0,0,0,.4)
+
+      .theme-dark &
+        opacity 1
+        color $color-blue-light
+        border-bottom 1px solid $color-blue-light
 
 
 // Pills
@@ -268,39 +281,3 @@ $nav-pills-active-link-hover-color ?=       $component-active-color
   margin-top -1px
   // Remove the top rounded corners here since there is a hard edge above the menu
   border-top-radius(0)
-
-
-/*==========  Navtabs  ==========*/
-.nav.nav-tabs
-  border-bottom: 1px solid rgba(0,0,0,.1)
-  margin-bottom: 20px;
-
-  .theme-dark &
-    border-bottom: 1px solid rgba(255,255,255,.1)
-
-  li.active
-    border: 0;
-    a
-      border-bottom: 1px solid rgba(0,0,0,.4);
-      background: none;
-      color: $text-color;
-
-      .theme-dark &
-        border-bottom: 1px solid rgba(255,255,255,1)
-        color: $color-text-contrast;
-
-  li
-    margin-left: 14px;
-    margin-right: 14px;
-    &:first-child
-      margin-left: 0;
-
-    a
-      border: 0;
-      padding-left: 0;
-      padding-right: 0;
-      &:hover
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        background: none;

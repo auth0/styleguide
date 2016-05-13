@@ -90,7 +90,7 @@ $nav-pills-active-link-hover-color ?=       $component-active-color
   border-bottom 1px solid $nav-tabs-border-color
 
   > li
-    float left
+    display inline-block
     // Make the list-items overlay the bottom border
     margin-bottom -1px
 
@@ -286,12 +286,13 @@ $nav-pills-active-link-hover-color ?=       $component-active-color
       color: $text-color;
 
       .theme-dark &
-        border-bottom: 1px solid rgba(255,255,255,1)
-        color: $color-text-contrast;
+        border-bottom 1px solid $color-blue-light
+        color $color-blue-light
 
   li
     margin-left: 14px;
     margin-right: 14px;
+
     &:first-child
       margin-left: 0;
 
@@ -299,8 +300,12 @@ $nav-pills-active-link-hover-color ?=       $component-active-color
       border: 0;
       padding-left: 0;
       padding-right: 0;
+
       &:hover
         border-top: 0;
         border-left: 0;
         border-right: 0;
         background: none;
+
+      .theme-dark &
+        color currentColor

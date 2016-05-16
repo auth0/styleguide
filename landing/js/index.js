@@ -216,12 +216,10 @@ function splash() {
 
 splash();
 
-$(window).load(function() {
+$(function() {
+ $("html").addClass('loaded');
 
-  $("html").addClass('loaded');
-
-  navigation();
-
-  accordions();
-
+ navigation();
+ 
+ accordions();
 });

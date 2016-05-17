@@ -3,6 +3,7 @@
 // --------------------------------------------------
 
 $alert-padding ?=             15px
+$alert-wide-padding ?=        10px
 $alert-border-radius ?=       $border-radius-base
 $alert-link-font-weight ?=    bold
 
@@ -145,3 +146,8 @@ $alert-danger-border ?=       $state-danger-border
 
   a
     border-color: rgba(darken($bg-color-error, 50%), 0.4)
+
+.alert-global
+  border-radius 0
+  padding $alert-wide-padding
+  text-align center

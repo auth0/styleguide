@@ -1,0 +1,35 @@
+.phone-mockup
+  display block
+  position relative
+  margin 40px auto
+  width 300px
+  border 1px solid #999
+  border-radius 1.2em
+  background-color white
+
+  &:before
+    content ''
+    position absolute
+    width 70px
+    height 8px
+    border 1px solid #999
+    border-radius 0.8em
+    top 16px
+    left 50%
+    transform translateX(-50%);
+
+  &:after
+    content ''
+    width 44px
+    height 44px
+    border 1px solid #999
+    border-radius 50%
+    position absolute
+    bottom 14px
+    left 50%
+    transform translateX(-50%)
+
+  > img
+    max-width calc(100% - 20px)
+    margin 45px 10px 70px 10px
+    border 1px solid #999

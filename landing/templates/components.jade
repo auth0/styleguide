@@ -22,8 +22,7 @@
         | element.
     
       +playground('buttons', '')
-        include ../../lib/buttons/demo
-                
+        include ../../lib/buttons/demo         
         
     section 
       h2#try-banner Try Banner
@@ -96,6 +95,13 @@
         | . After that we show the spinner. 
       +playground('spinner')
         include ../../lib/spinner/demo
+        
+    section
+      h2#breadcrumb Breadcrumb
+      p We use this for showing where is the user inside the application.
+      p Use the <code>.has-homepage</code> modifier to show the home icon before the first element.
+      +playground('breadcrumb', '')
+        include ../../lib/breadcrumb/demo 
         
     section
       h2#code-picker Code picker

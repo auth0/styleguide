@@ -25,13 +25,13 @@ inner-padding = 30px
     outline: none;
 
   &:hover
-    transform: scale(1.05) translateZ(0);
-    backface-visibility: hidden;
-    filter: blur(0px);
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
-    transition: transform 0.2s ease;
-
-    z-index: 1000;
+    +breakpoint("desktop")
+      transform: scale(1.05) translateZ(0);
+      backface-visibility: hidden;
+      filter: blur(0px);
+      box-shadow: 0 0 10px rgba(0,0,0,.2);
+      transition: transform 0.2s ease;
+      z-index: 1000;
 
   .name
     margin-top: 0;
@@ -61,10 +61,31 @@ inner-padding = 30px
       top: inner-padding;
       left: inner-padding;
 
-for num in 2 3 4
+.switchboard-responsive
+  .switchboard-item
+    flex-basis: 100%;
+    max-width: 100%;
+
+    +breakpoint("tablet", "max")
+      &:nth-child(-n+1)
+        border-top: 1px $color-gray solid;
+      &:nth-child(1n+1)
+        border-left: 1px $color-gray solid;
+
+    +breakpoint("tablet")
+      +breakpoint("desktop", "max")
+        flex-basis: (100% / 2);
+        max-width: (100% / 2);
+
+        &:nth-child(-n+2)
+          border-top: 1px $color-gray solid;
+        &:nth-child(2n+1)
+          border-left: 1px $color-gray solid;
+
+for num in 2 3 4 5
   num_quoted = '"' + num + '"'
 
-  [data-columns={num_quoted}]
+  :not(.switchboard-responsive)[data-columns={num_quoted}]
     .switchboard-item
       flex-basis: (100% / num);
       max-width: (100% / num);
@@ -73,3 +94,14 @@ for num in 2 3 4
         border-top: 1px $color-gray solid;
       &:nth-child({num}n+1)
         border-left: 1px $color-gray solid;
+
+  .switchboard-responsive[data-columns={num_quoted}]
+    +breakpoint("desktop")
+      .switchboard-item
+        flex-basis: (100% / num);
+        max-width: (100% / num);
+
+        &:nth-child(-n+{num})
+          border-top: 1px $color-gray solid;
+        &:nth-child({num}n+1)
+          border-left: 1px $color-gray solid;

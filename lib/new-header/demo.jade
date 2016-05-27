@@ -1,5 +1,5 @@
 header.site-header
-  nav.navbar.navbar-default(role='navigation')
+  nav.navbar(role='navigation')
     .container
       .navbar-header
         button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
@@ -14,27 +14,28 @@ header.site-header
       #navbar-collapse.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-left
           li.navbar-item.dropdown
-            a(href="/", class="dropdown-toggle", data-toggle="dropdown", aria-expanded="false", id="dropdown1")
+            a(href="/", class="dropdown-toggle", data-toggle="dropdown", aria-expanded="false")
               | Products
               i.icon-budicon-460.toggle-icon
               
-            ul.dropdown-menu(aria-labelledby="dropdown1")
-              li
-                a(href="/") Enterprise
-              li
-                a(href="/") Lock
-              li
-                a(href="/") Passwordless
-              li
-                a(href="/") Wordpress
+            .dropdown-menu
+              ul.options
+                li
+                  a(href="/") Enterprise
+                li
+                  a(href="/") Lock
+                li
+                  a(href="/") Passwordless
+                li
+                  a(href="/") Wordpress
           li.navbar-item 
             a(href="/") Learn
           li.navbar-item 
             a(href="/") Pricing
           li.navbar-item.dropdown
-            a(href="/", class="dropdown-toggle", data-toggle="dropdown", aria-expanded="false", id="dropdown2") 
+            a(href="/", class="dropdown-toggle", data-toggle="dropdown", aria-expanded="false") 
               | Customers
-              i.icon-budicon-460
+              i.icon-budicon-460.toggle-icon
               
             .dropdown-menu.with-highlight
               ul.options

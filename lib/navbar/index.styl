@@ -6,8 +6,6 @@
 $navbar-mobile-height ?=                  75px
 $navbar-desktop-height ?=                  110px
 $navbar-padding-horizontal ?=      floor($grid-gutter-width / 2)
-$navbar-padding-vertical ?=        (($navbar-desktop-height - $line-height-computed) / 2)
-$navbar-default-bg ?=              white
 
 // Navbar links
 $navbar-default-link-color ?=              $color-text-black
@@ -18,23 +16,21 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
 
 .navbar
   position relative
-  height $navbar-mobile-height // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+  height $navbar-mobile-height
+  border-bottom 1px solid rgba(0, 0, 0, 0.15)
   clearfix()
 
   +breakpoint("desktop")
     height $navbar-desktop-height
 
-  // Reset links color
   a
     color currentColor
-
 
 .navbar-header
   clearfix()
 
   +breakpoint("desktop")
     float left
-
 
 // Navbar collapse (body)
 //
@@ -114,7 +110,7 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
   a.hiring
     display block
     position absolute
-    top 6px //Vertical center
+    top 6px
     left calc(100% + 10px)
     white-space nowrap
     background $color-blue-light
@@ -148,8 +144,6 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
         border-right: 0;
         border-left: 5px solid #44C7F4;
 
-
-
 // Navbar toggle
 
 .navbar-toggle
@@ -173,6 +167,7 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
     width 22px
     height 2px
     border-radius 1px
+    background-color $navbar-default-toggle-icon-bar-bg
 
   .icon-bar + .icon-bar
     margin-top 6px
@@ -188,21 +183,48 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
 
 .navbar-nav
 
+  +breakpoint("desktop")
+    navbar-vertical-align(61px, $navbar-desktop-height)
+    border 0
+    margin-left 0
+    margin-right 0
+    float left
+
+    > li
+      float left
+
+  > li
+    +breakpoint("desktop", "max")
+      border-bottom 1px solid rgba(0, 0, 0, 0.05)
+      background-color white
+
+    &.open > a
+      &,
+      &:hover,
+      &:focus
+        background-color transparent
+        border 0
+
   > li > a
     position relative
     padding-top 20px
     padding-bottom 20px
     line-height 1.5
 
-    +breakpoint("desktop", "max")
-      .toggle-icon
+    &:hover,
+    &:focus
+      color $navbar-default-link-hover-color
+      background-color transparent
+
+      // .toggle-icon
+
+    .toggle-icon
+      +breakpoint("desktop", "max")
         position absolute
         top 50%
         transform translateY(-50%)
         right $navbar-padding-horizontal
-
-    +breakpoint("desktop")
-      .toggle-icon
+      +breakpoint("desktop")
         font-size 10px
         margin-left 5px
 
@@ -258,36 +280,99 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
       > li:last-child a
           border-bottom 0
 
-  // Uncollapse the nav
-  +breakpoint("desktop")
-    float left
-    margin 0
+  .dropdown-menu
+    color $color-text
+    position absolute
+    background-color white
+    padding 0
+    width 226px
+    border-radius 3px
+    top 50px
+    left 15px //Restore margin of the nav item
+    margin-top 0
+    border 1px solid $bg-color-gray
+    box-shadow 0 2px 7px rgba(0,0,0,0.2)
+    transition visibility 0s 0.2s, opacity 0.2s, margin-top 0.2s
 
-    > li
+    &.right-side
+      left auto
+      right 15px
+
+    &.with-highlight
+      height 344px
+      width 627px
+
+    .options,
+    .highlight
+      height 100%
       float left
-      > a
-        // padding-top $navbar-padding-vertical
-        // padding-bottom $navbar-padding-vertical
 
+    .options
+      list-style-type none
+      width 225px
+      padding 0
 
-  // Undo 100% width for pull classes
-  +breakpoint("desktop")
-    width auto
-    border 0
-    margin-left 0
-    margin-right 0
-    padding-top 0
-    padding-bottom 0
-    box-shadow none
+      +breakpoint("desktop", "max")
+        width 100%
+        height auto
+        float none
 
+      li a
+        color currentColor
+        padding 10px 15px
+        display block
+        border-bottom 1px solid rgba(0, 0, 0, 0.10)
 
-// Dropdown menus
+        &:hover
+          background-color $bg-color-gray
 
-// Menu position and menu carets
-.navbar-nav > li > .dropdown-menu
-  margin-top 0
-  border-top-radius(0)
+    .highlight
+      width 400px
+      position relative
+      border-left 1px solid $bg-color-gray
 
+      +breakpoint("desktop", "max")
+        display none
+
+      .section-title
+        font-size 14px
+        margin 0
+        padding 10px 15px
+        line-height 2
+        color rgba(black, 0.7)
+        border-bottom 1px solid $bg-color-gray
+
+      .main-content
+        text-align center
+        margin 0 20px
+        position absolute
+        top calc(50% + 25px)
+        transform translateY(-50%)
+
+        .article-title,
+        .article-content
+          color $color-text
+
+        img
+          max-width 90px
+          max-height 90px
+          border-radius 50%
+
+        .article-content
+          margin-bottom 0
+
+      .footer-content
+        margin 0 20px
+        position absolute
+        bottom 20px
+        left 0
+        right 0
+
+        .author
+          float left
+
+        .date
+          float right
 
 // Component alignment
 //
@@ -307,51 +392,3 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
 
     ~ .navbar-right
       margin-right 0
-
-
-
-// Default navbar
-.navbar-default
-  border-bottom 1px solid rgba(0, 0, 0, 0.15)
-
-  .navbar-nav
-
-    > li > a
-      &:hover,
-      &:focus
-        color $navbar-default-link-hover-color
-        background-color transparent
-
-    +breakpoint("desktop", "max")
-      > li
-        border-bottom 1px solid rgba(0, 0, 0, 0.05)
-        background-color white
-
-      > .active > a
-        &,
-        &:hover,
-        &:focus
-          color $navbar-default-link-active-color
-
-    +breakpoint("desktop")
-      navbar-vertical-align(61px, $navbar-desktop-height)
-
-  .navbar-toggle .icon-bar
-    background-color $navbar-default-toggle-icon-bar-bg
-
-  // Dropdown menu items
-  .navbar-nav
-    // Remove background color from open dropdown
-    > .open > a
-      &,
-      &:hover,
-      &:focus
-        color $navbar-default-link-active-color
-        background-color transparent
-
-    +breakpoint("desktop", "max")
-      // Dropdowns get custom display when collapsed
-      .open .dropdown-menu
-        > li > a
-          color $navbar-default-link-color
-          background-color transparent

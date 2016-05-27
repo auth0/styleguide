@@ -1,53 +1,77 @@
-header.new-header
-  nav.navbar(role='navigation')
+header.site-header
+  nav.navbar.navbar-default(role='navigation')
     .container
-      h1.navbar-logo
-        a(href="/")
-          span Auth0
-      //- a.no-basic.hiring.animated.bounce.hidden-sm.hidden-xs.hidden-md(href='/jobs') We&apos;re hiring!
-      ul.navbar-bar.navbar-left
-        li.navbar-item
-          a(href="/")
-            | Products
-            i.icon-budicon-460
-          .navbar-dropdown
-            ul.options
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        h1.navbar-brand
+          a.logo(href="/")
+            span Auth0
+          a.hiring.animated.bounce(href='/jobs') We&apos;re hiring!
+      #navbar-collapse.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-left
+          li.navbar-item.dropdown
+            a(href="/", class="dropdown-toggle", data-toggle="dropdown", aria-expanded="false", id="dropdown1")
+              | Products
+              i.icon-budicon-460.toggle-icon
+              
+            ul.dropdown-menu(aria-labelledby="dropdown1")
               li
-                a(href="/") Case studies
+                a(href="/") Enterprise
               li
-                a(href="/") Use studies
-        li.navbar-item 
-          a(href="/") Learn
-        li.navbar-item 
-          a(href="/") Pricing
-        li.navbar-item 
-          a(href="/")
-            | Customers
-            i.icon-budicon-460
-          .navbar-dropdown.with-highlight
-            .options
-              a(href="/") Support
-              a(href="/") Partners
-              a(href="/") Blog
-              a(href="/") Videos
-              a(href="/") Jobs
-              a(href="/") Open Source
-              a(href="/") About us
-            .highlight
-              h4.section-title Latest on Blog
-              .highlight-content
-                img(src="http://lorempixel.com/400/400/")
-                h5.article-title Powering User Analytics With Identity
-                p.article-content
-                  | Learn how Auth0 helps with your decision-making process, and makes it
-                  | easy to gather data about your users. Explore a specific example of User Analytics, including code snippets.
-        li.navbar-item 
-          a(href="/") Documentation
-        li.navbar-item 
-          a(href="/") Resources
-      ul.navbar-bar.navbar-right
-        li.navbar-item
-          a(href="/") Talk to sales
-        li.navbar-item
-          button.btn.btn-transparent.btn-sm Signup
+                a(href="/") Lock
+              li
+                a(href="/") Passwordless
+              li
+                a(href="/") Wordpress
+          li.navbar-item 
+            a(href="/") Learn
+          li.navbar-item 
+            a(href="/") Pricing
+          li.navbar-item.dropdown
+            a(href="/", class="dropdown-toggle", data-toggle="dropdown", aria-expanded="false", id="dropdown2") 
+              | Customers
+              i.icon-budicon-460
+              
+            .dropdown-menu.with-highlight
+              ul.options
+                li
+                  a(href="/") Support
+                li
+                  a(href="/") Partners
+                li
+                  a(href="/") Blog
+                li
+                  a(href="/") Videos
+                li
+                  a(href="/") Jobs
+                li
+                  a(href="/") Open Source
+                li
+                  a(href="/") About us
+              .highlight
+                h4.section-title Latest on Blog
+                .main-content
+                  img(src="http://lorempixel.com/400/400/")
+                  h5.article-title Powering User Analytics With Identity
+                  p.article-content
+                    | Learn how Auth0 helps with your decision-making process, and makes it
+                    | easy to gather data about your users. 
+                .footer-content
+                  .pull-left
+                    span Sebastián Peyrott
+                  .pull-right
+                    span February 08, 2016
+          li.navbar-item 
+            a(href="/") Documentation
+          li.navbar-item 
+            a(href="/") Resources
+        ul.nav.navbar-nav.navbar-right
+          li.navbar-item
+            a(href="/") Talk to sales
+          li.navbar-item
+            button.btn.btn-transparent.btn-sm Signup
           

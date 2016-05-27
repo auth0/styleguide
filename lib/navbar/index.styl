@@ -1,94 +1,38 @@
 //
 // Navbars
 // --------------------------------------------------
-//== Navbar
-//
-//##
 
 // Basics of a navbar
-$navbar-height ?=                  50px
-$navbar-margin-bottom ?=           $line-height-computed
-$navbar-border-radius ?=           $border-radius-base
+$navbar-mobile-height ?=                  75px
+$navbar-desktop-height ?=                  110px
 $navbar-padding-horizontal ?=      floor($grid-gutter-width / 2)
-$navbar-padding-vertical ?=        (($navbar-height - $line-height-computed) / 2)
-$navbar-collapse-max-height ?=     340px
-
-$navbar-default-color ?=           #777
-$navbar-default-bg ?=              #f8f8f8
-$navbar-default-border ?=          darken($navbar-default-bg, 6.5)
+$navbar-padding-vertical ?=        (($navbar-desktop-height - $line-height-computed) / 2)
+$navbar-default-bg ?=              white
 
 // Navbar links
-$navbar-default-link-color ?=              #777
-$navbar-default-link-hover-color ?=        #333
-$navbar-default-link-hover-bg ?=           transparent
-$navbar-default-link-active-color ?=       #555
-$navbar-default-link-active-bg ?=          darken($navbar-default-bg, 6.5)
-$navbar-default-link-disabled-color ?=     #ccc
-$navbar-default-link-disabled-bg ?=        transparent
-
-// Navbar brand label
-$navbar-default-brand-color ?=             $navbar-default-link-color
-$navbar-default-brand-hover-color ?=       darken($navbar-default-brand-color, 10)
-$navbar-default-brand-hover-bg ?=          transparent
+$navbar-default-link-color ?=              $color-text-black
+$navbar-default-link-hover-color ?=        black
 
 // Navbar toggle
-$navbar-default-toggle-hover-bg ?=         #ddd
-$navbar-default-toggle-icon-bar-bg ?=      #888
-$navbar-default-toggle-border-color ?=     #ddd
-
-
-//=== Inverted navb$code-bgar
-// Reset inverted navbar basics
-$navbar-inverse-color ?=                    lighten($gray-light, 15)
-$navbar-inverse-bg ?=                       #222
-$navbar-inverse-border ?=                   darken($navbar-inverse-bg, 10)
-
-// Inverted navbar links
-$navbar-inverse-link-color ?=               lighten($gray-light, 15)
-$navbar-inverse-link-hover-color ?=         #fff
-$navbar-inverse-link-hover-bg ?=            transparent
-$navbar-inverse-link-active-color ?=        $navbar-inverse-link-hover-color
-$navbar-inverse-link-active-bg ?=           darken($navbar-inverse-bg, 10)
-$navbar-inverse-link-disabled-color ?=      #444
-$navbar-inverse-link-disabled-bg ?=         transparent
-
-// Inverted navbar brand label
-$navbar-inverse-brand-color ?=              $navbar-inverse-link-color
-$navbar-inverse-brand-hover-color ?=        #fff
-$navbar-inverse-brand-hover-bg ?=           transparent
-
-// Inverted navbar toggle
-$navbar-inverse-toggle-hover-bg ?=          #333
-$navbar-inverse-toggle-icon-bar-bg ?=       #fff
-$navbar-inverse-toggle-border-color ?=      #333
-
-// Wrapper and base class
-//
-// Provide a static navbar from which we expand to create full-width, fixed, and
-// other navbar variations.
+$navbar-default-toggle-icon-bar-bg ?=      $color-gray
 
 .navbar
   position relative
-  min-height $navbar-height // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-  margin-bottom $navbar-margin-bottom
-  border 1px solid transparent
-
-  // Prevent floats from breaking the navbar
+  height $navbar-mobile-height // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   clearfix()
 
-  @media (min-width $grid-float-breakpoint)
-    border-radius $navbar-border-radius
+  +breakpoint("desktop")
+    height $navbar-desktop-height
 
+  // Reset links color
+  a
+    color currentColor
 
-// Navbar heading
-//
-// Groups `.navbar-brand` and `.navbar-toggle` into a single component for easy
-// styling of responsive aspects.
 
 .navbar-header
   clearfix()
 
-  @media (min-width $grid-float-breakpoint)
+  +breakpoint("desktop")
     float left
 
 
@@ -104,20 +48,14 @@ $navbar-inverse-toggle-border-color ?=      #333
 
 .navbar-collapse
   overflow-x visible
-  padding-right $navbar-padding-horizontal
-  padding-left $navbar-padding-horizontal
-  border-top 1px solid transparent
-  box-shadow inset 0 1px 0 rgba(255, 255, 255, .1)
-  clearfix()
   -webkit-overflow-scrolling touch
+  clearfix()
 
   &.in
     overflow-y auto
 
-  @media (min-width $grid-float-breakpoint)
+  +breakpoint("desktop")
     width auto
-    border-top 0
-    box-shadow none
 
     &.collapse
       display block !important
@@ -127,23 +65,6 @@ $navbar-inverse-toggle-border-color ?=      #333
 
     &.in
       overflow-y visible
-
-    // Undo the collapse side padding for navbars with containers to ensure
-    // alignment of right-aligned contents.
-    .navbar-fixed-top &,
-    .navbar-static-top &,
-    .navbar-fixed-bottom &
-      padding-left 0
-      padding-right 0
-
-.navbar-fixed-top,
-.navbar-fixed-bottom
-  .navbar-collapse
-    max-height $navbar-collapse-max-height
-
-    @media (max-device-width $screen-xs-min) and (orientation landscape)
-      max-height 200px
-
 
 // Both navbar header and collapse
 //
@@ -156,84 +77,90 @@ $navbar-inverse-toggle-border-color ?=      #333
     margin-right (-($navbar-padding-horizontal))
     margin-left (-($navbar-padding-horizontal))
 
-    @media (min-width $grid-float-breakpoint)
+    +breakpoint("desktop")
       margin-right 0
       margin-left 0
 
 
-//
-// Navbar alignment options
-//
-// Display the navbar across the entirety of the page or fixed it to the top or
-// bottom of the page.
-
-// Static top (unfixed, but 100% wide) navbar
-.navbar-static-top
-  z-index $zindex-navbar
-  border-width 0 0 1px
-
-  @media (min-width $grid-float-breakpoint)
-    border-radius 0
-
-// Fix the top/bottom navbars when screen real estate supports it
-.navbar-fixed-top,
-.navbar-fixed-bottom
-  position fixed
-  right 0
-  left 0
-  z-index $zindex-navbar-fixed
-
-  // Undo the rounded corners
-  @media (min-width $grid-float-breakpoint)
-    border-radius 0
-
-.navbar-fixed-top
-  top 0
-  border-width 0 0 1px
-
-.navbar-fixed-bottom
-  bottom 0
-  margin-bottom 0 // override .navbar defaults
-  border-width 1px 0 0
-
-
 // Brand/project name
+//
+// Includes Auth0 logo and hiring alert
 
 .navbar-brand
   float left
-  padding $navbar-padding-vertical $navbar-padding-horizontal
-  font-size $font-size-large
-  line-height $line-height-computed
-  height $navbar-height
+  position relative
+  width 100px
+  height 36px
+  navbar-vertical-align(36px, $navbar-mobile-height)
+  margin-left $navbar-padding-horizontal
 
-  &:hover,
-  &:focus
-    text-decoration none
+  +breakpoint("desktop")
+    navbar-vertical-align(36px, $navbar-desktop-height)
 
-  > img
-    display block
-
-  @media (min-width $grid-float-breakpoint)
     .navbar > .container &,
     .navbar > .container-fluid &
       margin-left (-($navbar-padding-horizontal))
 
+  .logo
+    display block
+    width 100%
+    height 100%
+    background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQ2MnB4IiBoZWlnaHQ9IjE2OHB4IiB2aWV3Qm94PSIwIDAgNDYyIDE2OCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDMuMC4zICg3ODkxKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5VbnRpdGxlZDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHNrZXRjaDp0eXBlPSJNU1BhZ2UiPgogICAgICAgIDxnIGlkPSJsb2dvLWJsdWUtaG9yaXpvbnRhbCIgc2tldGNoOnR5cGU9Ik1TTGF5ZXJHcm91cCI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+CiAgICAgICAgICAgICAgICA8ZyBpZD0iQ2xpcHBlZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTg4LjAwMDAwMCwgNDQuMDAwMDAwKSIgZmlsbD0iIzE2MjE0RCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTI0Ni41MTcsMC4xMSBDMjM4LjQzOSwwLjExIDIzMS42MDcsMy45MTYgMjI2Ljc1OSwxMS4xMTUgQzIyMS45NCwxOC4yNzEgMjE5LjM5MywyOC4yNiAyMTkuMzkzLDQwIEMyMTkuMzkzLDUxLjc0IDIyMS45NCw2MS43MjkgMjI2Ljc1OSw2OC44ODQgQzIzMS42MDcsNzYuMDg0IDIzOC40MzksNzkuODg5IDI0Ni41MTcsNzkuODg5IEMyNTQuNTk1LDc5Ljg4OSAyNjEuNDI3LDc2LjA4NCAyNjYuMjc1LDY4Ljg4NCBDMjcxLjA5Myw2MS43MjkgMjczLjY0LDUxLjc0IDI3My42NCw0MCBDMjczLjY0LDI4LjI2IDI3MS4wOTMsMTguMjcxIDI2Ni4yNzUsMTEuMTE1IEMyNjEuNDI3LDMuOTE2IDI1NC41OTUsMC4xMSAyNDYuNTE3LDAuMTEgTDI0Ni41MTcsMC4xMSBaIE0yNDYuNTE3LDcwLjAwNSBDMjQyLjY1NSw3MC4wMDUgMjM5LjYwNCw2Ny44MiAyMzcuMTg3LDYzLjMyNCBDMjM0LjI2OCw1Ny44OTMgMjMyLjY2LDQ5LjYxIDIzMi42Niw0MCBDMjMyLjY2LDMwLjM5IDIzNC4yNjgsMjIuMTA2IDIzNy4xODcsMTYuNjc2IEMyMzkuNjA0LDEyLjE4IDI0Mi42NTUsOS45OTQgMjQ2LjUxNyw5Ljk5NCBDMjUwLjM3OCw5Ljk5NCAyNTMuNDMsMTIuMTggMjU1Ljg0NywxNi42NzYgQzI1OC43NjYsMjIuMTA2IDI2MC4zNzMsMzAuMzg5IDI2MC4zNzMsNDAgQzI2MC4zNzMsNDkuNjExIDI1OC43NjYsNTcuODk1IDI1NS44NDcsNjMuMzI0IEMyNTMuNDMsNjcuODIgMjUwLjM3OCw3MC4wMDUgMjQ2LjUxNyw3MC4wMDUgTDI0Ni41MTcsNzAuMDA1IFogTTcxLjQ1LDI5LjE3MiBMNzEuNDUsNjMuNDg0IEM3MS40NSw3Mi41MyA3OC44MSw3OS44ODkgODcuODU2LDc5Ljg4OSBDOTUuNzQ2LDc5Ljg4OSAxMDEuNzA3LDc1Ljk3NSAxMDMuOTAyLDc0LjI5MSBDMTA0LjAyNCw3NC4xOTcgMTA0LjE4NCw3NC4xNjkgMTA0LjMzMSw3NC4yMTYgQzEwNC40NzgsNzQuMjYzIDEwNC41OTIsNzQuMzc5IDEwNC42MzcsNzQuNTI3IEwxMDUuOTYxLDc4Ljg2IEwxMTUuNzM3LDc4Ljg2IEwxMTUuNzM3LDI5LjE3MiBMMTAzLjE3NSwyOS4xNzIgTDEwMy4xNzUsNjYuMzI2IEMxMDMuMTc1LDY2LjUwMSAxMDMuMDc2LDY2LjY2MiAxMDIuOTIxLDY2Ljc0MyBDMTAwLjU1OSw2Ny45NjEgOTUuODk5LDcwLjAwNiA5MS4yMzEsNzAuMDA2IEM4Ny4yNTIsNzAuMDA2IDg0LjAxMiw2Ni43NjggODQuMDEyLDYyLjc4NyBMODQuMDEyLDI5LjE3MiBMNzEuNDUsMjkuMTcyIEw3MS40NSwyOS4xNzIgWiBNMTk3LjIzNyw3OC44NTkgTDIwOS44LDc4Ljg1OSBMMjA5LjgsNDQuNTQ3IEMyMDkuOCwzNS41MDEgMjAyLjQ0LDI4LjE0MSAxOTMuMzk0LDI4LjE0MSBDMTg2LjczNSwyOC4xNDEgMTgxLjM5MywzMS4wMDQgMTc4LjgwMiwzMi43MSBDMTc4LjY1NywzMi44MDUgMTc4LjQ3MywzMi44MTMgMTc4LjMyMiwzMi43MzEgQzE3OC4xNzEsMzIuNjQ5IDE3OC4wNzUsMzIuNDkxIDE3OC4wNzUsMzIuMzE4IEwxNzguMDc1LDEuMTQxIEwxNjUuNTEzLDEuMTQxIEwxNjUuNTEzLDc4Ljg1OSBMMTc4LjA3NSw3OC44NTkgTDE3OC4wNzUsNDEuNzA0IEMxNzguMDc1LDQxLjUyOSAxNzguMTc0LDQxLjM2OCAxNzguMzMsNDEuMjg4IEMxODAuNjkxLDQwLjA2OSAxODUuMzUyLDM4LjAyNSAxOTAuMDE5LDM4LjAyNSBDMTkxLjk0NywzOC4wMjUgMTkzLjc2LDM4Ljc3NiAxOTUuMTIzLDQwLjEzOSBDMTk2LjQ4Niw0MS41MDIgMTk3LjIzNiw0My4zMTYgMTk3LjIzNiw0NS4yNDMgTDE5Ny4yMzYsNzguODU5IEwxOTcuMjM3LDc4Ljg1OSBaIE0xMjQuNzkyLDM5LjA1NSBMMTMyLjQzOCwzOS4wNTUgQzEzMi42OTcsMzkuMDU1IDEzMi45MDcsMzkuMjY1IDEzMi45MDcsMzkuNTI0IEwxMzIuOTA3LDY2Ljg1OCBDMTMyLjkwNyw3NC4wNDMgMTM4Ljc1Myw3OS44ODggMTQ1LjkzOCw3OS44ODggQzE0OC41NDMsNzkuODg4IDE1MS4xMTMsNzkuNTEyIDE1My41ODUsNzguNzcgTDE1My41ODUsNjkuNzk2IEMxNTIuMTQzLDY5LjkyMyAxNTAuNDg1LDcwLjAwNSAxNDkuMzEzLDcwLjAwNSBDMTQ3LjE5Myw3MC4wMDUgMTQ1LjQ2OSw2OC4yOCAxNDUuNDY5LDY2LjE2MSBMMTQ1LjQ2OSwzOS41MjMgQzE0NS40NjksMzkuMjY0IDE0NS42NzksMzkuMDU0IDE0NS45MzgsMzkuMDU0IEwxNTMuNTg1LDM5LjA1NCBMMTUzLjU4NSwyOS4xNzEgTDE0NS45MzgsMjkuMTcxIEMxNDUuNjc5LDI5LjE3MSAxNDUuNDY5LDI4Ljk2MSAxNDUuNDY5LDI4LjcwMiBMMTQ1LjQ2OSwxMi4yOTUgTDEzMi45MDcsMTIuMjk1IEwxMzIuOTA3LDI4LjcwMiBDMTMyLjkwNywyOC45NjEgMTMyLjY5NywyOS4xNzEgMTMyLjQzOCwyOS4xNzEgTDEyNC43OTIsMjkuMTcxIEwxMjQuNzkyLDM5LjA1NSBMMTI0Ljc5MiwzOS4wNTUgWiBNNTEuMzYxLDc4Ljg1OSBMNjQuNDI5LDc4Ljg1OSBMNDQuNTU1LDkuNTUgQzQyLjk2MiwzLjk5MiAzNy44MTEsMC4xMSAzMi4wMjksMC4xMSBDMjYuMjQ3LDAuMTEgMjEuMDk2LDMuOTkyIDE5LjUwMiw5LjU1IEwtMC4zNzIsNzguODU5IEwxMi42OTcsNzguODU5IEwxOC40NDksNTguNzk4IEMxOC41MDcsNTguNTk3IDE4LjY5MSw1OC40NTkgMTguOSw1OC40NTkgTDQ1LjE1OCw1OC40NTkgQzQ1LjM2Nyw1OC40NTkgNDUuNTUyLDU4LjU5NyA0NS42MDksNTguNzk4IEw1MS4zNjEsNzguODU5IEw1MS4zNjEsNzguODU5IFogTTQyLjA1Niw0OC41NzYgTDIyLjAwNCw0OC41NzYgQzIxLjg1Nyw0OC41NzYgMjEuNzE4LDQ4LjUwNyAyMS42MjksNDguMzg4IEMyMS41NDEsNDguMjcyIDIxLjUxMyw0OC4xMTkgMjEuNTUzLDQ3Ljk3OCBMMzEuNTc5LDEzLjAxMiBDMzEuNjM3LDEyLjgxMSAzMS44MjEsMTIuNjczIDMyLjAzLDEyLjY3MyBDMzIuMjM5LDEyLjY3MyAzMi40MjMsMTIuODExIDMyLjQ4LDEzLjAxMiBMNDIuNTA3LDQ3Ljk3OCBDNDIuNTQ3LDQ4LjEyIDQyLjUxOSw0OC4yNzIgNDIuNDMsNDguMzg4IEM0Mi4zNDIsNDguNTA3IDQyLjIwMyw0OC41NzYgNDIuMDU2LDQ4LjU3NiBMNDIuMDU2LDQ4LjU3NiBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDxnIGlkPSJDbGlwcGVkIiBmaWxsPSIjRUI1NDI0Ij4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTE5LjU1NSwxMzUuODYxIEwxMDIuNzA1LDgzLjk5NyBMMTQ2LjgxMyw1MS45NTIgTDkyLjI5MSw1MS45NTIgTDc1LjQ0LDAuMDkgTDc1LjQzNSwwLjA3NiBMMTI5Ljk2NSwwLjA3NiBMMTQ2LjgyLDUxLjk0NyBMMTQ2LjgyMSw1MS45NDYgTDE0Ni44MzUsNTEuOTM4IEMxNTYuNjIzLDgyLjAzIDE0Ni41NDIsMTE2LjI1NiAxMTkuNTU1LDEzNS44NjEgTDExOS41NTUsMTM1Ljg2MSBaIE0zMS4zMjEsMTM1Ljg2MSBMMzEuMzA3LDEzNS44NzEgTDc1LjQyNiwxNjcuOTI0IEwxMTkuNTU1LDEzNS44NjIgTDc1LjQ0LDEwMy44MDggTDMxLjMyMSwxMzUuODYxIEwzMS4zMjEsMTM1Ljg2MSBaIE00LjA1Miw1MS45MzkgTDQuMDUyLDUxLjkzOSBDLTYuMjUyLDgzLjY2IDUuNzA5LDExNy4yNzIgMzEuMzEyLDEzNS44NjcgTDMxLjMxNiwxMzUuODUxIEw0OC4xNjgsODMuOTkgTDQuMDcsNTEuOTUxIEw1OC41NzksNTEuOTUxIEw3NS40MzEsMC4wODkgTDc1LjQzNSwwLjA3NSBMMjAuOTAyLDAuMDc1IEw0LjA1Miw1MS45MzkgTDQuMDUyLDUxLjkzOSBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+')
+    background-size contain
+    background-repeat no-repeat
+    font-size 0
+    color rgba(0, 0, 0, 0)
+
+  a.hiring
+    display block
+    position absolute
+    top 6px //Vertical center
+    left calc(100% + 10px)
+    white-space nowrap
+    background $color-blue-light
+    text-transform uppercase
+    font-weight 500
+    padding 2px 8px 0 8px
+    border-radius 3px
+    color white
+    font-size 11px
+    line-height 22px
+
+    +breakpoint("desktop")
+      left: calc(-100% - 10px);
+
+    &::after
+      position: absolute;
+      content: "";
+      top: 6px;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+
+      +breakpoint("desktop", "max")
+        left: -4px;
+        border-right: 5px solid #44C7F4;
+        border-left: 0;
+
+      +breakpoint("desktop")
+        right: -4px;
+        border-right: 0;
+        border-left: 5px solid #44C7F4;
+
+
 
 // Navbar toggle
-//
-// Custom button for toggling the `.navbar-collapse`, powered by the collapse
-// JavaScript plugin.
 
 .navbar-toggle
   position relative
   float right
-  margin-right $navbar-padding-horizontal
-  padding 9px 10px
-  navbar-vertical-align(34px)
+  margin-right ($navbar-padding-horizontal - 10px)
+  padding 10px
+  navbar-vertical-align(38px, $navbar-mobile-height)
   background-color transparent
   background-image none // Reset unusual Firefox-on-Android default style see https://github.com/necolas/normalize.css/issues/214
-  border 1px solid transparent
-  border-radius $border-radius-base
+  border 0
 
   // We remove the `outline` here, but later compensate by attaching `:hover`
   // styles to `:focus`.
@@ -246,10 +173,11 @@ $navbar-inverse-toggle-border-color ?=      #333
     width 22px
     height 2px
     border-radius 1px
-  .icon-bar + .icon-bar
-    margin-top 4px
 
-  @media (min-width $grid-float-breakpoint)
+  .icon-bar + .icon-bar
+    margin-top 6px
+
+  +breakpoint("desktop")
     display none
 
 
@@ -259,72 +187,91 @@ $navbar-inverse-toggle-border-color ?=      #333
 // the nav the full height of the horizontal nav (above 768px).
 
 .navbar-nav
-  margin ($navbar-padding-vertical / 2) (-($navbar-padding-horizontal))
 
   > li > a
-    padding-top 10px
-    padding-bottom 10px
-    line-height $line-height-computed
+    position relative
+    padding-top 20px
+    padding-bottom 20px
+    line-height 1.5
 
-  @media (max-width $grid-float-breakpoint-max)
+    +breakpoint("desktop", "max")
+      .toggle-icon
+        position absolute
+        top 50%
+        transform translateY(-50%)
+        right $navbar-padding-horizontal
+
+    +breakpoint("desktop")
+      .toggle-icon
+        font-size 10px
+        margin-left 5px
+
+  &.navbar-left
+    +breakpoint("desktop")
+      padding-left 30px
+
+  &.navbar-right
+    +breakpoint("desktop", "max")
+      text-transform uppercase
+      text-align center
+      font-weight 500
+
+      // Reset buttons styles
+      .btn
+        width 100%
+        color inherit
+        border 0
+        box-shadow none
+        font-size inherit
+        line-height 1.5
+        padding-top 20px
+        padding-bottom 20px
+
+    +breakpoint("desktop")
+      .btn
+        margin-top 16.5px
+        margin-left 15px
+
+
+  +breakpoint("desktop", "max")
     // Dropdowns get custom display when collapsed
+
     .open .dropdown-menu
+      background-color $bg-color-gray
       position static
       float none
       width auto
-      margin-top 0
-      background-color transparent
+      margin 0
+      padding 0
       border 0
       box-shadow none
-      > li > a,
-      .dropdown-header
-        padding 5px 15px 5px 25px
+      border-radius 0
+
       > li > a
         line-height $line-height-computed
-        &:hover,
-        &:focus
-          background-image none
+        padding 20px 15px
+        border-bottom 1px solid rgba(0, 0, 0, 0.10)
+
+        &:hover
+          background-color transparent
+
+      > li:last-child a
+          border-bottom 0
 
   // Uncollapse the nav
-  @media (min-width $grid-float-breakpoint)
+  +breakpoint("desktop")
     float left
     margin 0
 
     > li
       float left
       > a
-        padding-top $navbar-padding-vertical
-        padding-bottom $navbar-padding-vertical
+        // padding-top $navbar-padding-vertical
+        // padding-bottom $navbar-padding-vertical
 
-
-// Navbar form
-//
-// Extension of the `.form-inline` with some extra flavor for optimum display in
-// our navbars.
-
-.navbar-form
-  margin-left (-($navbar-padding-horizontal))
-  margin-right (-($navbar-padding-horizontal))
-  padding 10px $navbar-padding-horizontal
-  border-top 1px solid transparent
-  border-bottom 1px solid transparent
-  box-shadow inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1)
-
-  // Mixin behavior for optimum display
-  @extend .form-inline
-
-  .form-group
-    @media (max-width $grid-float-breakpoint-max)
-      margin-bottom 5px
-
-      &:last-child
-        margin-bottom 0
-
-  // Vertically center in expanded, horizontal navbar
-  navbar-vertical-align($input-height-base)
 
   // Undo 100% width for pull classes
-  @media (min-width $grid-float-breakpoint)
+  +breakpoint("desktop")
     width auto
     border 0
     margin-left 0
@@ -340,37 +287,6 @@ $navbar-inverse-toggle-border-color ?=      #333
 .navbar-nav > li > .dropdown-menu
   margin-top 0
   border-top-radius(0)
-// Menu position and menu caret support for dropups via extra dropup class
-.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu
-  margin-bottom 0
-  border-top-radius($navbar-border-radius)
-  border-bottom-radius(0)
-
-
-// Buttons in navbars
-//
-// Vertically center a button within a navbar (when *not* in a form).
-
-.navbar-btn
-  navbar-vertical-align($input-height-base)
-
-  &.btn-sm
-    navbar-vertical-align($input-height-small)
-  &.btn-xs
-    navbar-vertical-align(22)
-
-
-// Text in navbars
-//
-// Add a class to make any element properly align itself vertically within the navbars.
-
-.navbar-text
-  navbar-vertical-align($line-height-computed)
-
-  @media (min-width $grid-float-breakpoint)
-    float left
-    margin-left $navbar-padding-horizontal
-    margin-right $navbar-padding-horizontal
 
 
 // Component alignment
@@ -381,7 +297,7 @@ $navbar-inverse-toggle-border-color ?=      #333
 //
 // Declared after the navbar components to ensure more specificity on the margins.
 
-@media (min-width $grid-float-breakpoint)
++breakpoint("desktop")
   .navbar-left
     float left !important
 
@@ -393,60 +309,35 @@ $navbar-inverse-toggle-border-color ?=      #333
       margin-right 0
 
 
-// Alternate navbars
-// --------------------------------------------------
 
 // Default navbar
 .navbar-default
-  background-color $navbar-default-bg
-  border-color $navbar-default-border
-
-  .navbar-brand
-    color $navbar-default-brand-color
-
-    &:hover,
-    &:focus
-      color $navbar-default-brand-hover-color
-      background-color $navbar-default-brand-hover-bg
-
-  .navbar-text
-    color $navbar-default-color
+  border-bottom 1px solid rgba(0, 0, 0, 0.15)
 
   .navbar-nav
-    > li > a
-      color $navbar-default-link-color
 
+    > li > a
       &:hover,
       &:focus
         color $navbar-default-link-hover-color
-        background-color $navbar-default-link-hover-bg
+        background-color transparent
 
-    > .active > a
-      &,
-      &:hover,
-      &:focus
-        color $navbar-default-link-active-color
-        background-color $navbar-default-link-active-bg
+    +breakpoint("desktop", "max")
+      > li
+        border-bottom 1px solid rgba(0, 0, 0, 0.05)
+        background-color white
 
-    > .disabled > a
-      &,
-      &:hover,
-      &:focus
-        color $navbar-default-link-disabled-color
-        background-color $navbar-default-link-disabled-bg
+      > .active > a
+        &,
+        &:hover,
+        &:focus
+          color $navbar-default-link-active-color
 
-  .navbar-toggle
-    border-color $navbar-default-toggle-border-color
+    +breakpoint("desktop")
+      navbar-vertical-align(61px, $navbar-desktop-height)
 
-    &:hover,
-    &:focus
-      background-color $navbar-default-toggle-hover-bg
-    .icon-bar
-      background-color $navbar-default-toggle-icon-bar-bg
-
-  .navbar-collapse,
-  .navbar-form
-    border-color $navbar-default-border
+  .navbar-toggle .icon-bar
+    background-color $navbar-default-toggle-icon-bar-bg
 
   // Dropdown menu items
   .navbar-nav
@@ -455,162 +346,12 @@ $navbar-inverse-toggle-border-color ?=      #333
       &,
       &:hover,
       &:focus
-        background-color $navbar-default-link-active-bg
         color $navbar-default-link-active-color
+        background-color transparent
 
-    @media (max-width $grid-float-breakpoint-max)
+    +breakpoint("desktop", "max")
       // Dropdowns get custom display when collapsed
       .open .dropdown-menu
         > li > a
           color $navbar-default-link-color
-          &:hover,
-          &:focus
-            color $navbar-default-link-hover-color
-            background-color $navbar-default-link-hover-bg
-        > .active > a
-          &,
-          &:hover,
-          &:focus
-            color $navbar-default-link-active-color
-            background-color $navbar-default-link-active-bg
-        > .disabled > a
-          &,
-          &:hover,
-          &:focus
-            color $navbar-default-link-disabled-color
-            background-color $navbar-default-link-disabled-bg
-
-
-  // Links in navbars
-  //
-  // Add a class to ensure links outside the navbar nav are colored correctly.
-
-  .navbar-link
-    color $navbar-default-link-color
-
-    &:hover
-      color $navbar-default-link-hover-color
-
-  .btn-link
-    color $navbar-default-link-color
-
-    &:hover,
-    &:focus
-      color $navbar-default-link-hover-color
-
-    &[disabled],
-    fieldset[disabled] &
-      &:hover,
-      &:focus
-        color $navbar-default-link-disabled-color
-
-// Inverse navbar
-
-.navbar-inverse
-  background-color $navbar-inverse-bg
-  border-color $navbar-inverse-border
-
-  .navbar-brand
-    color $navbar-inverse-brand-color
-    &:hover,
-    &:focus
-      color $navbar-inverse-brand-hover-color
-      background-color $navbar-inverse-brand-hover-bg
-
-  .navbar-text
-    color $navbar-inverse-color
-
-  .navbar-nav
-    > li > a
-      color $navbar-inverse-link-color
-
-      &:hover,
-      &:focus
-        color $navbar-inverse-link-hover-color
-        background-color $navbar-inverse-link-hover-bg
-
-    > .active > a
-      &,
-      &:hover,
-      &:focus
-        color $navbar-inverse-link-active-color
-        background-color $navbar-inverse-link-active-bg
-
-    > .disabled > a
-      &,
-      &:hover,
-      &:focus
-        color $navbar-inverse-link-disabled-color
-        background-color $navbar-inverse-link-disabled-bg
-
-  // Darken the responsive nav toggle
-  .navbar-toggle
-    border-color $navbar-inverse-toggle-border-color
-
-    &:hover,
-    &:focus
-      background-color $navbar-inverse-toggle-hover-bg
-    .icon-bar
-      background-color $navbar-inverse-toggle-icon-bar-bg
-
-  .navbar-collapse,
-  .navbar-form
-    border-color darken($navbar-inverse-bg, 7)
-
-  // Dropdowns
-  .navbar-nav
-    > .open > a
-      &,
-      &:hover,
-      &:focus
-        background-color $navbar-inverse-link-active-bg
-        color $navbar-inverse-link-active-color
-
-    @media (max-width $grid-float-breakpoint-max)
-      // Dropdowns get custom display
-      .open .dropdown-menu
-        > .dropdown-header
-          border-color $navbar-inverse-border
-
-        .divider
-          background-color $navbar-inverse-border
-
-        > li > a
-          color $navbar-inverse-link-color
-          &:hover,
-          &:focus
-            color $navbar-inverse-link-hover-color
-            background-color $navbar-inverse-link-hover-bg
-
-        > .active > a
-          &,
-          &:hover,
-          &:focus
-            color $navbar-inverse-link-active-color
-            background-color $navbar-inverse-link-active-bg
-
-        > .disabled > a
-          &,
-          &:hover,
-          &:focus
-            color $navbar-inverse-link-disabled-color
-            background-color $navbar-inverse-link-disabled-bg
-
-  .navbar-link
-    color $navbar-inverse-link-color
-
-    &:hover
-      color $navbar-inverse-link-hover-color
-
-  .btn-link
-    color $navbar-inverse-link-color
-
-    &:hover,
-    &:focus
-      color $navbar-inverse-link-hover-color
-
-    &[disabled],
-    fieldset[disabled] &
-      &:hover,
-      &:focus
-        color $navbar-inverse-link-disabled-color
+          background-color transparent

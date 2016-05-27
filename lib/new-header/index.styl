@@ -1,36 +1,35 @@
 /* Header */
 
-header.new-header
-  padding 20px 0
-  background-color transparent
-  border-bottom 1px solid $bg-color-gray
+header.site-header
 
   .theme-dark &
     color rgba(255, 255, 255, 0.7)
     border-bottom 1px solid rgba(255, 255, 255, 0.1)
 
-  a
-    color currentColor
+  // a
+  //   color currentColor
 
-  .navbar
-    margin-bottom 0 //Reset navbar default styles
+  // .navbar
+  //   margin-bottom 0 //Reset navbar default styles
+  //   background-color transparent
+  //   border 0
 
-  .navbar-logo
-    float left
-    margin 0
-    position absolute
-    top 50%
-    transform translateY(-50%)
-
-    > a
-      display block
-      background-image: url('//cdn.auth0.com/styleguide/latest/lib/logos/img/logo-grey.png')
-      background-size contain
-      background-repeat no-repeat
-      width 100px
-      height 36px
-      color rgba(0, 0, 0, 0)
-      font-size 0
+  // .navbar-logo
+  //   float left
+  //   margin 0
+  //   position absolute
+  //   top 50%
+  //   transform translateY(-50%)
+  //
+  //   > a
+  //     display block
+  //     background-image: url('//cdn.auth0.com/styleguide/latest/lib/logos/img/logo-grey.png')
+  //     background-size contain
+  //     background-repeat no-repeat
+  //     width 100px
+  //     height 36px
+  //     color rgba(0, 0, 0, 0)
+  //     font-size 0
 
   .navbar-bar
     float left
@@ -41,36 +40,7 @@ header.new-header
     &.navbar-left
       padding-left 120px
 
-    .navbar-item
-      float left
-      position relative
-
-      &:hover
-        .navbar-dropdown
-          opacity 1
-          margin-top 5px
-          visibility visible
-          transition-delay 0s
-
-        > a
-          color black
-
-          .theme-dark &
-            color white
-
-      [class^='icon']
-        font-size 10px
-        margin-left 5px
-
-      > a
-        float left
-        padding 15px
-
-      > button
-        margin 15px
-        margin-right 0
-
-  .navbar-dropdown
+  .dropdown-menu
     visibility hidden
     color $color-text
     opacity 0
@@ -93,17 +63,17 @@ header.new-header
       height 344px
       width 627px
 
-    > .options,
-    > .highlight
+    .options,
+    .highlight
       height 100%
       float left
 
-    > .options
+    .options
       list-style-type none
       width 225px
       padding 0
 
-      a
+      li a
         color currentColor
         padding 10px 15px
         display block
@@ -112,8 +82,15 @@ header.new-header
         &:hover
           background-color $bg-color-gray
 
-    > .highlight
+      .option-icon
+        margin-right 12px
+
+      svg
+        fill currentColor
+
+    .highlight
       width 400px
+      position relative
       border-left 1px solid $bg-color-gray
 
       .section-title
@@ -124,8 +101,9 @@ header.new-header
         color rgba(black, 0.7)
         border-bottom 1px solid $bg-color-gray
 
-      .highlight-content
+      .main-content
         text-align center
+        margin 0 20px
         position absolute
         top calc(50% + 25px)
         transform translateY(-50%)
@@ -140,5 +118,17 @@ header.new-header
           border-radius 50%
 
         .article-content
-          padding 0 25px
           margin-bottom 0
+
+      .footer-content
+        margin 0 20px
+        position absolute
+        bottom 20px
+        left 0
+        right 0
+
+        .author
+          float left
+
+        .date
+          float right

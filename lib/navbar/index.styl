@@ -17,17 +17,33 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
 .navbar
   position relative
   height $navbar-mobile-height
-  border-bottom 1px solid rgba(0, 0, 0, 0.15)
+  color $color-text-black
+  border-bottom 1px solid rgba(black, 0.15)
   clearfix()
 
   +breakpoint("desktop")
     height $navbar-desktop-height
 
-  a
-    color currentColor
+    a
+      color currentColor
+
+  &.dark-version
+    +breakpoint("desktop")
+      border-bottom 1px solid rgba(white, 0.15)
+      color rgba(white, 0.7)
+
+  .container
+    +breakpoint("desktop", "max")
+      width 100%
+      max-width 100%
+
 
 .navbar-header
   clearfix()
+
+  +breakpoint("desktop", "max")
+    background-color white
+    border-bottom 1px solid rgba(black, 0.15)
 
   +breakpoint("desktop")
     float left
@@ -210,13 +226,17 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
     padding-top 20px
     padding-bottom 20px
     line-height 1.5
+    color currentColor
 
     &:hover,
     &:focus
       color $navbar-default-link-hover-color
       background-color transparent
 
-      // .toggle-icon
+      .navbar.dark-version &
+        +breakpoint("desktop")
+          color white
+
 
     .toggle-icon
       +breakpoint("desktop", "max")
@@ -323,8 +343,17 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
         display block
         border-bottom 1px solid rgba(0, 0, 0, 0.10)
 
+        +breakpoint("desktop", "max")
+          line-height 1.5
+          padding-top 20px
+          padding-bottom 20px
+
         &:hover
           background-color $bg-color-gray
+
+      li:last-child a
+        +breakpoint("desktop", "max")
+          border-bottom 0
 
     .highlight
       width 400px

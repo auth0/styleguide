@@ -13,12 +13,12 @@ header.site-header
           a.hiring.animated.bounce(href='/jobs') We&apos;re hiring!
       #navbar-collapse.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-left
-          li.navbar-item.dropdown
-            a(href="/", class="dropdown-toggle", data-toggle="dropdown", aria-expanded="false")
+          li.navbar-item
+            a(href="/")
               | Products
               i.icon-budicon-460.toggle-icon
               
-            .dropdown-menu
+            .dropdown-section
               ul.options
                 li
                   a(href="/") Enterprise
@@ -32,12 +32,12 @@ header.site-header
             a(href="/") Learn
           li.navbar-item 
             a(href="/") Pricing
-          li.navbar-item.dropdown
-            a(href="/", class="dropdown-toggle", data-toggle="dropdown", aria-expanded="false") 
+          li.navbar-item
+            a(href="/") 
               | Customers
               i.icon-budicon-460.toggle-icon
               
-            .dropdown-menu.with-highlight
+            .dropdown-section.with-highlight
               ul.options
                 li
                   a(href="/") Support
@@ -55,17 +55,19 @@ header.site-header
                   a(href="/") About us
               .highlight
                 h4.section-title Latest on Blog
-                .main-content
-                  img(src="http://lorempixel.com/400/400/")
-                  h5.article-title Powering User Analytics With Identity
-                  p.article-content
-                    | Learn how Auth0 helps with your decision-making process, and makes it
-                    | easy to gather data about your users. 
-                .footer-content
-                  .pull-left
-                    span Sebastián Peyrott
-                  .pull-right
-                    span February 08, 2016
+                .section-content
+                  .post-content
+                    img(src="http://lorempixel.com/400/400/")
+                    h5.article-title Powering User Analytics With Identity
+                    p.article-content
+                      | Learn how Auth0 helps with your decision-making process, and makes it
+                      | easy to gather data about your.
+                      
+                    .footer-content 
+                      .pull-left
+                        span Sebastián Peyrott
+                      .pull-right
+                        span February 08, 2016
           li.navbar-item 
             a(href="/") Documentation
           li.navbar-item 

@@ -98,6 +98,10 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
 //
 // Includes Auth0 logo and hiring alert
 
+.dropdown-section
+  opacity 0
+  visibility hidden
+
 .navbar-brand
   float left
   position relative
@@ -206,6 +210,11 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
     margin-right 0
     float left
 
+    > li:hover a + .dropdown-section
+      display block
+      visibility visible
+      opacity 1
+
     > li
       float left
 
@@ -239,14 +248,17 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
 
 
     .toggle-icon
+
       +breakpoint("desktop", "max")
         position absolute
         top 50%
         transform translateY(-50%)
         right $navbar-padding-horizontal
+
       +breakpoint("desktop")
         font-size 10px
         margin-left 5px
+
 
   &.navbar-left
     +breakpoint("desktop")
@@ -278,7 +290,7 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
   +breakpoint("desktop", "max")
     // Dropdowns get custom display when collapsed
 
-    .open .dropdown-menu
+    .open .dropdown-section
       background-color $bg-color-gray
       position static
       float none
@@ -300,7 +312,7 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
       > li:last-child a
           border-bottom 0
 
-  .dropdown-menu
+  .dropdown-section
     color $color-text
     position absolute
     background-color white
@@ -371,11 +383,15 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
         color rgba(black, 0.7)
         border-bottom 1px solid $bg-color-gray
 
-      .main-content
+      .section-content
+        position relative
+        height calc(100% - 49px)
+
+      .post-content
         text-align center
         margin 0 20px
         position absolute
-        top calc(50% + 25px)
+        top calc(50%)
         transform translateY(-50%)
 
         .article-title,
@@ -390,18 +406,9 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
         .article-content
           margin-bottom 0
 
-      .footer-content
-        margin 0 20px
-        position absolute
-        bottom 20px
-        left 0
-        right 0
-
-        .author
-          float left
-
-        .date
-          float right
+        .footer-content
+          overflow hidden
+          margin-top 25px
 
 // Component alignment
 //

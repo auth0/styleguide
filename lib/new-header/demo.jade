@@ -11,70 +11,63 @@ header.site-header
           a.logo(href="/")
             span Auth0
           a.hiring.animated.bounce(href='/jobs') We&apos;re hiring!
-      #navbar-collapse.collapse.navbar-collapse
+          
+      .navbar-collapse
         ul.nav.navbar-nav.navbar-left
           li.navbar-item
-            a(href="/")
-              | Products
-              i.icon-budicon-460.toggle-icon
-              
-            .dropdown-section
-              ul.options
-                li
-                  a(href="/") Enterprise
-                li
-                  a(href="/") Lock
-                li
-                  a(href="/") Passwordless
-                li
-                  a(href="/") Wordpress
-          li.navbar-item 
-            a(href="/") Learn
-          li.navbar-item 
-            a(href="/") Pricing
+            a(href="", class="navbar-item-link")
+              | Learn
+              i.toggle-icon.icon-budicon-460
+            .navbar-dropdown.with-highlight
+              ul.navbar-dropdown-list
+                li.navbar-dropdown-item
+                  a(href="") Entreprise
+                li.navbar-dropdown-item
+                  a(href="") Lock
+                li.navbar-dropdown-item
+                  a(href="") Passwordless
+              .navbar-dropdown-highlight
+                h4.highlight-section-title Latest on Blog
+                .highlight-content
+                  img(src="http://lorempixel.com/400/400/")
+                  h5.highlight-title Powering User Analytics With Identity
+                  p.highlight-text
+                    | Learn how Auth0 helps with your decision-making process, and makes it
+                    | easy to gather data about your.
+                    
+                  .highlight-footer 
+                    .highlight-avatar
+                      span Sebastián Peyrott
+                    .highlight-date
+                      span February 08, 2016
           li.navbar-item
-            a(href="/") 
-              | Customers
-              i.icon-budicon-460.toggle-icon
-              
-            .dropdown-section.with-highlight
-              ul.options
-                li
-                  a(href="/") Support
-                li
-                  a(href="/") Partners
-                li
-                  a(href="/") Blog
-                li
-                  a(href="/") Videos
-                li
-                  a(href="/") Jobs
-                li
-                  a(href="/") Open Source
-                li
-                  a(href="/") About us
-              .highlight
-                h4.section-title Latest on Blog
-                .section-content
-                  .post-content
-                    img(src="http://lorempixel.com/400/400/")
-                    h5.article-title Powering User Analytics With Identity
-                    p.article-content
-                      | Learn how Auth0 helps with your decision-making process, and makes it
-                      | easy to gather data about your.
-                      
-                    .footer-content 
-                      .pull-left
-                        span Sebastián Peyrott
-                      .pull-right
-                        span February 08, 2016
-          li.navbar-item 
-            a(href="/") Documentation
-          li.navbar-item 
-            a(href="/") Resources
+            a(href="", class="navbar-item-link")
+              | Pricing
+              i.toggle-icon.icon-budicon-460
+            .navbar-dropdown
+              ul.navbar-dropdown-list
+                li.navbar-dropdown-item
+                  a(href="") Entreprise
+                li.navbar-dropdown-item
+                  a(href="") Lock
+                li.navbar-dropdown-item
+                  a(href="") Passwordless
+          li.navbar-item
+            a(href="", class="navbar-item-link") Customers
+          li.navbar-item
+            a(href="", class="navbar-item-link") Documentation
+            
         ul.nav.navbar-nav.navbar-right
           li.navbar-item
-            a(href="/") Talk to sales
+            a(href="/", class="navbar-item-link") Talk to sales
           li.navbar-item
             button.btn.btn-transparent.btn-sm Signup
+            
+section.other-section
+  .container
+    .row
+      .col-xs-6
+        h1 Hi
+      .col-xs-6
+        h1 testing
           

@@ -3,16 +3,19 @@
 // --------------------------------------------------
 
 // Basics of a navbar
-$navbar-mobile-height ?=                  75px
+$navbar-mobile-height ?=                   75px
 $navbar-desktop-height ?=                  110px
-$navbar-padding-horizontal ?=      floor($grid-gutter-width / 2)
+$navbar-padding-horizontal ?=              floor($grid-gutter-width / 2)
 
 // Navbar links
 $navbar-default-link-color ?=              $color-text-black
 $navbar-default-link-hover-color ?=        black
+$navbar-dark-link-color ?=                 $color-text-contrast-light
+$navbar-dark-link-hover-color ?=           white
 
 // Navbar toggle
-$navbar-default-toggle-icon-bar-bg ?=      $color-gray
+$navbar-toggle-background-color ?=         $color-gray
+$navbar-toggle-background-hover-color ?=   black
 
 .navbar
   position relative
@@ -21,12 +24,14 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
   border-bottom 1px solid rgba(black, 0.15)
   clearfix()
 
+
   +breakpoint("desktop")
     height $navbar-desktop-height
 
+    // Dark version styles only apply for desktop view
     &.dark-version
       border-bottom 1px solid rgba(white, 0.15)
-      color $color-text-contrast-light
+      color $navbar-dark-link-color
 
   a
     color currentColor
@@ -38,60 +43,31 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
       max-width 100%
 
 
-.navbar-header
-  clearfix()
+  .navbar-header
+    clearfix()
 
-  +breakpoint("desktop", "max")
-    background-color white
-    border-bottom 1px solid rgba(black, 0.15)
-
-  +breakpoint("desktop")
-    float left
-
-// Navbar collapse (body)
-//
-// Group your navbar content into this for easy collapsing and expanding across
-// various device sizes. By default, this content is collapsed when <768px, but
-// will expand past that for a horizontal display.
-//
-// To start (on mobile devices) the navbar links, forms, and buttons are stacked
-// vertically and include a `max-height` to overflow in case you have too much
-// content for the user's viewport.
-
-.navbar-collapse
-  overflow-x visible
-  -webkit-overflow-scrolling touch
-  clearfix()
-
-  &.in
-    overflow-y auto
-
-  +breakpoint("desktop")
-    width auto
-
-    &.collapse
-      display block !important
-      height auto !important
-      padding-bottom 0 // Override default setting
-      overflow visible !important
-
-    &.in
-      overflow-y visible
-
-// Both navbar header and collapse
-//
-// When a container is present, change the behavior of the header and collapse.
-
-.container,
-.container-fluid
-  > .navbar-header,
-  > .navbar-collapse
-    margin-right (-($navbar-padding-horizontal))
-    margin-left (-($navbar-padding-horizontal))
+    +breakpoint("desktop", "max")
+      background-color white
+      border-bottom 1px solid rgba(black, 0.15)
 
     +breakpoint("desktop")
-      margin-right 0
-      margin-left 0
+      float left
+
+
+  // Both navbar header and collapse
+  //
+  // When a container is present, change the behavior of the header and collapse.
+
+  .container,
+  .container-fluid
+    > .navbar-header,
+    > .navbar-collapse
+      margin-right (-($navbar-padding-horizontal))
+      margin-left (-($navbar-padding-horizontal))
+
+      +breakpoint("desktop")
+        margin-right 0
+        margin-left 0
 
 
 // Brand/project name
@@ -101,8 +77,8 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
 .navbar-brand
   float left
   position relative
-  navbar-vertical-align(36px, $navbar-mobile-height)
   margin-left $navbar-padding-horizontal
+  navbar-vertical-align(36px, $navbar-mobile-height)
 
   // Set logo size
   width 100px
@@ -126,7 +102,7 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
     font-size 0
     color rgba(0, 0, 0, 0)
 
-  a.hiring
+  .hiring
     display block
     position absolute
     top 6px
@@ -144,6 +120,7 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
     +breakpoint("desktop")
       left: calc(-100% - 10px);
 
+    // Caret
     &::after
       position: absolute;
       content: "";
@@ -170,15 +147,17 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
   float right
   margin-right ($navbar-padding-horizontal - 10px)
   padding 10px
-  navbar-vertical-align(38px, $navbar-mobile-height)
   background-color transparent
   background-image none // Reset unusual Firefox-on-Android default style see https://github.com/necolas/normalize.css/issues/214
   border 0
+  navbar-vertical-align(38px, $navbar-mobile-height)
 
-  // We remove the `outline` here, but later compensate by attaching `:hover`
-  // styles to `:focus`.
+  &:hover,
   &:focus
     outline 0
+
+    .icon-bar
+      background-color $navbar-toggle-background-hover-color
 
   // Bars
   .icon-bar
@@ -186,7 +165,7 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
     width 22px
     height 2px
     border-radius 1px
-    background-color $navbar-default-toggle-icon-bar-bg
+    background-color $navbar-toggle-background-color
 
   .icon-bar + .icon-bar
     margin-top 6px
@@ -204,73 +183,73 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
 .navbar-nav
 
   +breakpoint("desktop")
-    navbar-vertical-align(61px, $navbar-desktop-height)
+    navbar-vertical-align(48px, $navbar-desktop-height)
     float left
 
-    > li
-      float left
+  .navbar-item
 
-      //Show dropdown when hovering list item
-      &:hover > a + .dropdown-section
-        visibility visible
-        opacity 1
-        transition-delay 0s
-        margin-top 5px
-
-      &:hover > a
-        color $navbar-default-link-hover-color
-
-        .dark-version &
-          color white
-
-
-  > li
     +breakpoint("desktop", "max")
-      border-bottom 1px solid rgba(0, 0, 0, 0.05)
+      border-bottom 1px solid rgba(black, 0.05)
       background-color white
 
-    &.open > a
-      &,
+      .navbar-item-link
+        position relative
+        padding-top 20px
+        padding-bottom 20px
+        line-height 1.5
+
+
+    +breakpoint("desktop")
+      float left
+
       &:hover,
       &:focus
-        background-color transparent
-        border 0
 
-  > li > a
-    position relative
-    padding-top 20px
-    padding-bottom 20px
-    line-height 1.5
+        .navbar-item-link
+          color $navbar-default-link-hover-color
 
-    &:hover,
-    &:focus
-      background-color transparent
+          .dark-version &
+            color $navbar-dark-link-hover-color
+
+        //Show dropdown when hovering list item
+        .navbar-dropdown
+          opacity 1
+          visibility visible
+          margin-top 5px
+          transition-delay 0s
 
     .toggle-icon
 
       +breakpoint("desktop", "max")
-        position absolute
-        top 50%
-        transform translateY(-50%)
-        right $navbar-padding-horizontal
+        // position absolute
+        // top 50%
+        // transform translateY(-50%)
+        // right $navbar-padding-horizontal
+        display none
 
       +breakpoint("desktop")
         font-size 10px
         margin-left 5px
+
+  //Remove unwanted background-color
+  .navbar-item-link
+    &:hover,
+    &:focus
+      background-color transparent
 
   // Set main navbar padding in desktop view
   &.navbar-left
     +breakpoint("desktop")
       padding-left 30px
 
-  // Transform navbar right elements in mobile view/
+  // Transform navbar right elements in mobile view
   &.navbar-right
     +breakpoint("desktop", "max")
       text-transform uppercase
       text-align center
       font-weight 500
 
-      // Reset buttons styles
+      // Reset button styles
       .btn
         width 100%
         color inherit
@@ -281,16 +260,16 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
         padding-top 20px
         padding-bottom 20px
 
-    // Center button vertically
     +breakpoint("desktop")
       .btn
-        margin-top 16.5px
+        // Center button vertically
+        margin-top 10px
         margin-left 15px
 
 
-  .dropdown-section
+  .navbar-dropdown
+    z-index 1000
 
-    // Mobile version
     +breakpoint("desktop", "max")
       background-color $bg-color-gray
 
@@ -301,104 +280,102 @@ $navbar-default-toggle-icon-bar-bg ?=      $color-gray
       width 226px
       border-radius 3px
       top 50px
-      left 15px //Restore margin of the nav item
+      left 15px
       border 1px solid $bg-color-gray
-      box-shadow 0 2px 7px rgba(0,0,0,0.2)
-
-      //Transition styles
+      box-shadow 0 2px 7px rgba(black, 0.2)
       transition visibility 0s 0.2s, opacity 0.2s, margin-top 0.2s
       opacity 0
       visibility hidden
       margin-top 0
 
-    // Set fixed size for dropdowns with highlight
     &.with-highlight
       +breakpoint("desktop")
         height 344px
         width 627px
 
-    .options,
-    .highlight
-      height 100%
-      float left
+  .navbar-dropdown-list
+    float left
+    width 225px
+    height 100%
+    list-style-type none
+    padding 0
 
-    .options
-      list-style-type none
-      width 225px
-      padding 0 //Reset default list padding
+    +breakpoint("desktop", "max")
+      float none
+      width 100%
+      height auto
+
+    .navbar-dropdown-item > a
+      display block
+      padding 10px 15px
+      border-bottom 1px solid rgba(black, 0.10)
 
       +breakpoint("desktop", "max")
-        width 100%
-        height auto
-        float none
+        line-height 1.5
+        padding-top 20px
+        padding-bottom 20px
 
-      > li > a
-        display block
-        color currentColor
-        padding 10px 15px
-        border-bottom 1px solid rgba(0, 0, 0, 0.10)
+      &:hover
+        background-color $bg-color-gray
 
-        +breakpoint("desktop", "max")
-          line-height 1.5
-          padding-top 20px
-          padding-bottom 20px
+        +breakpoint("desktop")
+          border-bottom 1px solid transparent
 
-        &:hover
-          background-color $bg-color-gray
-          
-          +breakpoint("desktop")
-            border-bottom 1px solid transparent
 
-      li:last-child a
+    .navbar-dropdown-item:last-child a
+      +breakpoint("desktop", "max")
         border-bottom 0
 
-    .highlight
-      width 400px
-      position relative
-      border-left 1px solid $bg-color-gray
+  // Highlight section
 
-      // Hide highlight in mobile view
-      +breakpoint("desktop", "max")
-        display none
+  .navbar-dropdown-highlight
+    float left
+    width 400px
+    height 100%
+    position relative
+    border-left 1px solid $bg-color-gray
 
-      .section-title
-        //Reset defaul title styles
-        font-size 14px
-        margin 0
-        padding 10px 15px
-        line-height 2
+    +breakpoint("desktop", "max")
+      display none
+
+    .highlight-section-title
+      font-size 14px
+      margin 0
+      padding 10px 15px
+      line-height 2
+      color $color-text
+      border-bottom 1px solid $bg-color-gray
+
+    .highlight-content
+      text-align center
+      margin 0 20px
+      position absolute
+      margin-top (49px / 2)
+      top calc(50%)
+      transform translateY(-50%)
+
+      img
+        width 90px
+        height 90px
+        background-color $bg-color-gray
+        border-radius 50%
+
+      .highlight-text
+        margin-bottom 0
+
+      .highlight-title,
+      .highlight-text
         color $color-text
-        border-bottom 1px solid $bg-color-gray
 
-      .section-content
-        position relative
-        height calc(100% - 49px) //Full height minus the title section height
+      .highlight-footer
+        overflow hidden
+        margin-top 25px
 
-      .post-content
-        text-align center
-        margin 0 20px
-        // Center vertically the content
-        position absolute
-        top calc(50%)
-        transform translateY(-50%)
+      .highlight-avatar
+        float left
 
-        img
-          width 90px
-          height 90px
-          background-color $bg-color-gray
-          border-radius 50%
-
-        // Reset default p styles
-        .article-content
-          margin-bottom 0
-
-        .article-content,
-        .article-title
-          color $color-text
-
-        .footer-content
-          overflow hidden
-          margin-top 25px
+      .highlight-date
+        float right
 
 // Component alignment
 //

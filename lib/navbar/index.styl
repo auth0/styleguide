@@ -351,8 +351,11 @@ $navbar-toggle-background-hover-color ?=   black
       margin 0 20px
       position absolute
       margin-top (49px / 2)
-      top calc(50%)
-      transform translateY(-50%)
+      top 50%
+      left 50%
+      padding-left 25px
+      padding-right 25px
+      transform translate(-50%, -50%)
 
       > img
         width 90px
@@ -378,6 +381,7 @@ $navbar-toggle-background-hover-color ?=   black
           width 27px
           height 27px
           margin-right 8px
+          border-radius 50%
 
       .highlight-date
         float right

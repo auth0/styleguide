@@ -262,11 +262,27 @@ input[type="button"]
 .btn
   overflow: hidden;
   position: relative;
+
+  .btn-icon-custom
+    img, svg
+      position: absolute;
+      width: $padding-base-horizontal;
+      height: auto;
+      display: block;
+      top: 1em;
+      left: 1em;
+
+    &:before
+      content: "";
+      width: 2.8rem;
+      height: 100%;
+
+
   .btn-icon
     margin-right: $padding-base-horizontal;
     display: inline-block
     width: 28px;
-    &::before
+    &:before
       border-right: 1px solid rgba(255,255,255,.15);
       display: inline-block
       position: absolute;
@@ -281,10 +297,21 @@ input[type="button"]
         border-right: 1px solid rgba(0,0,0,.15);
 
   &.btn-sm
+    .btn-icon-custom
+      img, svg
+        width: 15px;
+        position: relative;
+        top: 2px;
+        left: 3px;
+
     .btn-icon::before
       line-height 30px
 
   &.btn-lg
+    .btn-icon-custom
+      img, svg
+        width: ($padding-base-horizontal * 1.4)
+
     .btn-icon
       &::before
         line-height: 51px;

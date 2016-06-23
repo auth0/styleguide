@@ -164,12 +164,33 @@ function navigation() {
 
   build();
 
+  setTimeout(function() {
+    createIframes();
+  }, 20);
+
   if(location.hash && $(location.hash).length) {
     return setSelected(location.hash);
   }
 
   return setSelected('#' + $('[data-group]').first().attr('id'));
 
+}
+
+function createIframes() {
+  $('.js-make-iframe').each(function() {
+    var $canvas = $(this);
+
+    if($canvas.hasClass('no-iframe')) {
+      return;
+    }
+
+    var iframe = iframify($canvas.get(0), {
+      metaViewport: '<meta name="viewport" content="width=device-width">'
+    });
+
+    $(iframe).addClass('tab-pane active iframe-canvas');
+    $(iframe).attr('id', $canvas.attr('id'));
+  });
 }
 
 

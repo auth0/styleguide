@@ -5,12 +5,13 @@ mixin playground(opts)
   - opts[height] = opts.height || null;
   - opts[darkMode] = opts.darkMode || "true";
   
-  - var path = 'lib/' + opts.name + '/demo'
-  - var css = (opts.height) ? 'height: ' + opts.height : ''
+  - var path = 'lib/' + opts.name + '/demo';
+  - var css = (opts.height) ? 'height: ' + opts.height : '';
   - var componentTabLabel = (opts.isEmail === "true") ? 'Email' : 'Component';
+  - var convertToIframe = (opts.isEmail === "true" || opts.iframe === "true") ? 'js-make-iframe' : '';
   
   .playground.js-playground(data-src!=path)
-    if opts.darkMode === "true" && opts.isEmail != "true"
+    if opts.darkMode != "false" && opts.isEmail != "true"
       .playground-options
         ul.nav.nav-pills
           li.active
@@ -40,7 +41,7 @@ mixin playground(opts)
             | Open email
     
     .tab-content
-      .tab-pane.playground-canvas.active(id!=opts.name + '-component', style!=css)
+      .tab-pane.playground-canvas.active(id!=opts.name + '-component', style!=css, class!=convertToIframe)
         if block
           block
       if opts.isEmail != "true"

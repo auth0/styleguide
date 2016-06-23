@@ -88,8 +88,6 @@ function playground() {
   });
 }
 
-playground();
-
 
 function navigation() {
   $(window).on('hashchange', setSelected);
@@ -104,6 +102,7 @@ function navigation() {
       var name = $group.attr('data-group');
       var id = $group.attr('id');
       var budicon = $group.attr('data-budicon') || 22;
+
       var tpl = [
         '<li data-accordion class="'+ ((i === 0) ? 'open' : '') +'"><a class="'+ ((i === 0) ? 'is-current' : '') +'" href="#'+ id +'">',
         '<span class="icon icon-budicon-' + budicon + '"></span>',
@@ -154,7 +153,11 @@ function navigation() {
     if($section.length) {
       $section.addClass(activeClass);
       $(window).scrollTop(0);
+
+      createIframes($section);
     } else if ($subSection.length) {
+      createIframes($subSection);
+
       $subSection.addClass(activeClass);
     }
 
@@ -164,25 +167,25 @@ function navigation() {
 
   build();
 
-  setTimeout(function() {
-    createIframes();
-  }, 20);
 
   if(location.hash && $(location.hash).length) {
     return setSelected(location.hash);
   }
 
-  return setSelected('#' + $('[data-group]').first().attr('id'));
+  setSelected('#' + $('[data-group]').first().attr('id'))
 
+  return splash();
 }
 
-function createIframes() {
-  $('.js-make-iframe').each(function() {
-    var $canvas = $(this);
+function splash() {
+  if(!location.hash) {
+    $(".lettering-js").lettering();
+  }
+}
 
-    if($canvas.hasClass('no-iframe')) {
-      return;
-    }
+function createIframes($section) {
+  $section.find('.js-make-iframe').each(function() {
+    var $canvas = $(this);
 
     var iframe = iframify($canvas.get(0), {
       metaViewport: '<meta name="viewport" content="width=device-width">'
@@ -192,7 +195,6 @@ function createIframes() {
     $(iframe).attr('id', $canvas.attr('id'));
   });
 }
-
 
 function accordions() {
   $('.nav-styleguide [data-accordion]').accordion({
@@ -213,9 +215,6 @@ function snippets() {
     hljs.highlightBlock(block);
   });
 }
-
-snippets();
-
 
 function colors() {
   $('.color [data-hex]').each(function() {
@@ -238,21 +237,10 @@ function colors() {
   });
 }
 
-colors();
-
-
-function splash() {
-  if(!location.hash) {
-    return $(".lettering-js").lettering();
-  }
-}
-
-splash();
-
 $(function() {
- $("html").addClass('loaded');
-
  navigation();
-
  accordions();
+ playground();
+ colors();
+ snippets();
 });

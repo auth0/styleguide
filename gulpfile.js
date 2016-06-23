@@ -6,6 +6,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
+const mjmlCompile = require('gulp-mjml');
+const mjml = require('mjml');
 const $ = require('gulp-load-plugins')();
 
 gulp.task('server', ['build'], function() {
@@ -82,7 +84,7 @@ gulp.task('jade-lib', function() {
     .pipe(gulp.dest('./build/landing/html/'))
 });
 
-gulp.task('jade-landing', function() {
+gulp.task('jade-landing', ['mjml'], function() {
   var styleguideVersion = require('./package.json').version;
 
   gulp.src('./landing/index.jade')
@@ -105,14 +107,21 @@ gulp.task('cssmin', ['stylus-lib', 'stylus-landing'], function() {
     .pipe(gulp.dest('build'))
 });
 
+gulp.task('mjml', function () {
+  return gulp.src('lib/emails/**/*.mjml')
+    .pipe(mjmlCompile(mjml))
+    .pipe(gulp.dest('build/lib/emails/'))
+});
+
 gulp.task('watch', function() {
+  gulp.watch(['./lib/**/*.mjml'], ['mjml', 'jade-landing']);
   gulp.watch(['./lib/**/*.jade'], ['templates', 'copy']);
   gulp.watch(['./landing/**/*.jade', './landing/**/*.js'], ['jade-landing', 'copy']);
   gulp.watch(['./lib/**/*.styl'], ['css']);
   gulp.watch(['./landing/**/*.styl'], ['css']);
 });
 
-gulp.task('templates', ['jade-landing', 'jade-lib']);
+gulp.task('templates', ['jade-landing', 'jade-lib', 'mjml']);
 gulp.task('stylus', ['stylus-landing', 'stylus-lib']);
 gulp.task('css', ['stylus', 'cssmin']);
 

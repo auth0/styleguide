@@ -28,14 +28,16 @@
   .playground-canvas
     border-radius: 3px;
     overflow hidden;
-    margin: 30px 0 14px 0;
     padding: 30px;
+
+
+  > .tab-content
+    margin: 30px 0 14px 0;
     box-shadow: 0 0 20px rgba(0,0,0,.1)
 
-
-  .tab-content.theme-dark
-    background: $bg-color-dark;
-    position: relative;
+    &.theme-dark
+      background: $bg-color-dark;
+      position: relative;
 
   .playground-code
     overflow: hidden;
@@ -49,7 +51,7 @@
     font-weight: $font-weight-bold
     line-height: normal;
     list-style: none;
-    margin: 0;
+    margin: 30px 0 0 0;
     overflow: hidden;
     padding: 0;
 

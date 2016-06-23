@@ -7,10 +7,10 @@
     section 
       h2#alert Alert
       p Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
-      +playground('alerts', '')
+      +playground({name: "alerts"})
         include ../../lib/alerts/demo
         
-    section 
+    section
       h2#buttons Buttons
       p 
         | Use the button classes on an
@@ -21,19 +21,19 @@
         code &lt;input&gt;
         | element.
     
-      +playground('buttons', '')
+      +playground({name: "buttons"})
         include ../../lib/buttons/demo         
         
     section 
       h2#try-banner Try Banner
       p The main call to action to signup.
-      +playground('try-banner', '')
+      +playground({name: "try-banner"})
         include ../../lib/try-banner/demo
     
     section 
       h2#jumbotron Jumbotron
       p Use the <code>.has-header</code> modifier when used with the transparent header over it. 
-      +playground('jumbotron', '', true)
+      +playground({name: "jumbotron", darkMode: "false"})
         include ../../lib/jumbotron/demo
   
     section
@@ -41,7 +41,7 @@
       h2#header Header
       p We try to keep the header in all apps and websites that we do.
 
-      +playground('header', 110)
+      +playground({name: "header", height: "110px"})
         include ../../lib/header/demo
 
     section
@@ -49,7 +49,7 @@
       h2#footer Footer
       p We try to keep the footer in all apps and websites that we do.
 
-      +playground('footer')
+      +playground({name: "footer"})
         include ../../lib/footer/demo
 
 
@@ -59,13 +59,13 @@
       h2#modals Modals
       p Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.
       
-      +playground('modals', '', true)
+      +playground({name: "modals", darkMode: "false"})
         include ../../lib/modals/demo
         
     section 
       h2#tables Tables
       p Use tables to represent tabulated data 
-      +playground('tables', '', true)
+      +playground({name: "tables", darkMode: "false"})
         include ../../lib/tables/demo
         
     section
@@ -74,7 +74,7 @@
       p Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.
       p Use the <code>.nav-center</code> modifier to center the elements in the list. 
       
-      +playground('navs')
+      +playground({name: "navs"})
         include ../../lib/navs/demo
         
     section
@@ -82,7 +82,7 @@
       h2#tabs Showcase tabs
       p Used mostly on landing pages to showcase products or features.
       
-      +playground('showcase-tabs')
+      +playground({name: "showcase-tabs"})
         include ../../lib/showcase-tabs/demo
       
     section 
@@ -93,21 +93,21 @@
         |  and
         strong .7s
         | . After that we show the spinner. 
-      +playground('spinner')
+      +playground({name: "spinner"})
         include ../../lib/spinner/demo
         
     section
       h2#breadcrumb Breadcrumb
       p We use this for showing where is the user inside the application.
       p Use the <code>.has-homepage</code> modifier to show the home icon before the first element.
-      +playground('breadcrumb', '')
+      +playground({name: "breadcrumb"})
         include ../../lib/breadcrumb/demo 
         
     section
       h2#code-picker Code picker
       p
         | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, mollitia.
-      +playground('code-picker')
+      +playground({name: "code-picker"})
         include ../../lib/code-picker/demo
               
     section
@@ -115,7 +115,7 @@
       h2#ui-switch UI Switch
       p We designed it to quickly turn in/off features on Dashboard. 
 
-      +playground('ui-switch', '', true)
+      +playground({name: "ui-switch", darkMode: "false"})
         include ../../lib/ui-switch/demo
 
     section
@@ -123,7 +123,7 @@
       h2#inputs Inputs
       p We designed them to show clearly the form state through the user flow.
 
-      +playground('inputs', '', true)
+      +playground({name: "forms", darkMode: "false"})
         include ../../lib/forms/demo
   
     section
@@ -131,7 +131,7 @@
       h2#scope Scope
       p We designed it to easily show scope toggling.
 
-      +playground('scope', '', true)
+      +playground({name: "scope", darkMode: "false"})
         include ../../lib/scope/demo
 
     section
@@ -140,7 +140,7 @@
       p In order to enable and disable feature we suggest to use swichboard.
       p Use the <code>.switchboard-responsive</code> modifier for the responsive version.
 
-      +playground('switchboard', '', true)
+      +playground({name: "switchboard", darkMode: "false"})
         include ../../lib/switchboard/demo
         
     section 
@@ -148,5 +148,5 @@
       h2#phone-mockup Phone mockup
       p We use this mockup for wrapping mobile screenshots.
       
-      +playground('phone-mockup', '', true)
+      +playground({name: "phone-mockup", darkMode: "false"})
         include ../../lib/phone-mockup/demo

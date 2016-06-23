@@ -1,36 +1,50 @@
 
-mixin playground(name, height, noAlternate)
-  - var path = 'lib/' + name + '/demo'
-  - var css = (height) ? 'height: ' + height : ''
+mixin playground(opts)
+  // Defaults
+  - opts[name] = opts.name || '';
+  - opts[height] = opts.height || null;
+  - opts[darkMode] = opts.darkMode || "true";
+  
+  - var path = 'lib/' + opts.name + '/demo'
+  - var css = (opts.height) ? 'height: ' + opts.height : ''
+  - var componentTabLabel = (opts.isEmail === "true") ? 'Email' : 'Component';
   
   .playground.js-playground(data-src!=path)
-    if !noAlternate
+    if opts.darkMode === "true" && opts.isEmail != "true"
       .playground-options
         ul.nav.nav-pills
           li.active
             a(href="#", data-set-mode="light") Light
           li
             a(href="#", data-set-mode="dark") Dark
-    
-    .tab-content
-      .tab-pane.playground-canvas.active(id!=name + '-component', style!=css)
-        if block
-          block
-      .tab-pane.playground-code(data-lang="jade", id!=name + '-jade')
-        textarea.hide
-      .tab-pane.playground-code(data-lang="html", id!=name + '-html')
-        textarea.hide
-
+            
+            
     ul.playground-actions
       li.active
-        a(data-toggle='tab', href='#' + name + '-component')
-          | Component
+        a(data-toggle='tab', href='#' + opts.name + '-component')=componentTabLabel
+        
+      if opts.isEmail != "true"
+        li
+          a(data-toggle='tab', href='#' + opts.name + '-jade')
+            | Jade
       li
-       a(data-toggle='tab', href='#' + name + '-html')  
-         | HTML
-      li
-        a(data-toggle='tab', href='#' + name + '-jade')
-          | Jade
-      li
-        a(href='/stage/#' + name)
-          | Open in stage
+        a(data-toggle='tab', href='#' + opts.name + '-html')  
+          | HTML
+      if opts.isEmail != "true"
+        li
+          a(href='/stage/#' + opts.name)
+            | Open in stage
+      else
+        li
+          a(href!='/lib/emails/' + opts.name + '/demo.html')
+            | Open email
+    
+    .tab-content
+      .tab-pane.playground-canvas.active(id!=opts.name + '-component', style!=css)
+        if block
+          block
+      if opts.isEmail != "true"
+        .tab-pane.playground-code(data-lang="jade", id!=opts.name + '-jade')
+          textarea.hide
+      .tab-pane.playground-code(data-lang="html", id!=opts.name + '-html')
+        textarea.hide

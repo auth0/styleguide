@@ -38,8 +38,10 @@
     "grunt-maxcdn": "https://github.com/siacomuzzi/grunt-maxcdn/tarball/0.0.1",
     "grunt-s3": "~0.2.0-alpha.3",
     "grunt-shell": "^0.7.0",
+    "gulp-mjml": "^1.0.1",
     "jade": "^1.7.0",
     "matchdep": "^0.3.0",
+    "mjml": "^2.2.0",
     "stylus": "~0.54.0"
   }
 }

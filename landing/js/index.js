@@ -55,8 +55,16 @@ function playground() {
 
     $html.val(stripIndent($canvas.html()));
 
-
     $component.on('click', '.nav-pills a', setMode);
+
+    if(!$component.find('[data-lang="jade"]').length) {
+      return CodeMirror.fromTextArea($html.get(0), {
+        lineNumbers: true,
+        readOnly: true,
+        theme: 'auth0',
+        mode: 'text/html'
+      });
+    }
 
     $.get(path + '.jade', function(contents) {
       var $jade = $component.find('[data-lang="jade"] textarea');
@@ -129,6 +137,10 @@ function navigation() {
     var $subSection = $(hash).closest('[data-group]');
     var $navItem = $('.nav-styleguide a[href="' + hash + '"]');
 
+    if(!$(hash).length) {
+      return;
+    }
+
     if($('[data-group], .nav-styleguide li').length) {
       $('[data-group], .nav-styleguide li').removeClass(activeClass);
     }
@@ -152,7 +164,7 @@ function navigation() {
 
   build();
 
-  if(location.hash) {
+  if(location.hash && $(location.hash).length) {
     return setSelected(location.hash);
   }
 
@@ -220,6 +232,6 @@ $(function() {
  $("html").addClass('loaded');
 
  navigation();
- 
+
  accordions();
 });

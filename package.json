@@ -27,6 +27,8 @@
     "gulp-server-livereload": "^1.7.3",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-stylus": "^2.3.1",
+    "gulp-ejs": "^2.1.2",
+    "gulp-mjml": "^1.0.1",
     "mjml": "^2.2.0",
     "serve": "^1.4.0"
   },

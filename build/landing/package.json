@@ -1,0 +1,48 @@
+{
+  "name": "auth0-styleguide",
+  "version": "4.7.4",
+  "engines": {
+    "node": "4.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/auth0/lock"
+  },
+  "author": "Auth0 <support@auth0.com> (http://auth0.com)",
+  "scripts": {
+    "start": "serve --port ${PORT:-3000} ./build",
+    "postinstall": "gulp build"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-filter": "^4.0.0",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-mjml": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-server-livereload": "^1.7.3",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.3.1",
+    "gulp-ejs": "^2.1.2",
+    "mjml": "^2.2.0",
+    "serve": "^1.4.0"
+  },
+  "devDependencies": {
+    "bump-version": "^0.5.0",
+    "grunt": "^0.4.5",
+    "grunt-aws-s3": "^0.14.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-http": "^1.5.0",
+    "grunt-maxcdn": "https://github.com/siacomuzzi/grunt-maxcdn/tarball/0.0.1",
+    "grunt-s3": "~0.2.0-alpha.3",
+    "grunt-shell": "^0.7.0",
+    "jade": "^1.7.0",
+    "matchdep": "^0.3.0",
+    "stylus": "~0.54.0"
+  }
+}

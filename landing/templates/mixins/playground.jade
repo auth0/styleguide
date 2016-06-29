@@ -22,7 +22,7 @@ mixin playground(opts)
             
     ul.playground-actions
       li.active
-        a(data-toggle='tab', href='#' + opts.name + '-component')=componentTabLabel
+        a(data-toggle='tab', href='#' + opts.name.replace('/', '-') + '-component')=componentTabLabel
         
       if opts.isEmail != "true"
         li
@@ -41,7 +41,7 @@ mixin playground(opts)
             | Open email
     
     .tab-content
-      .tab-pane.playground-canvas.active(id!=opts.name + '-component', style!=css, class!=convertToIframe)
+      .tab-pane.playground-canvas.active(id!=opts.name.replace('/', '-') + '-component', style!=css, class!=convertToIframe)
         if block
           block
       if opts.isEmail != "true"

@@ -184,16 +184,27 @@ function splash() {
 }
 
 function createIframes($section) {
-  $section.find('.js-make-iframe').each(function() {
-    var $canvas = $(this);
+  function init() {
+    $section.find('.js-make-iframe').each(function() {
+      var $canvas = $(this);
 
-    var iframe = iframify($canvas.get(0), {
-      metaViewport: '<meta name="viewport" content="width=device-width">'
+      var iframe = iframify($canvas.get(0), {
+        metaViewport: '<meta name="viewport" content="width=device-width">'
+      });
+
+      $(iframe).addClass('tab-pane active iframe-canvas');
+      $(iframe).attr('id', $canvas.attr('id'));
     });
+  }
 
-    $(iframe).addClass('tab-pane active iframe-canvas');
-    $(iframe).attr('id', $canvas.attr('id'));
-  });
+  if(!$('body').hasClass('page-loaded')) {
+    $(window).on('load', init);
+  } else {
+    init();
+  }
+
+
+
 }
 
 function accordions() {
@@ -243,4 +254,8 @@ $(function() {
  playground();
  colors();
  snippets();
+
+ $(window).on('load', function(){
+   $('body').addClass('page-loaded');
+ })
 });

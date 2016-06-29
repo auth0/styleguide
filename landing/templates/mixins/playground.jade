@@ -26,10 +26,10 @@ mixin playground(opts)
         
       if opts.isEmail != "true"
         li
-          a(data-toggle='tab', href='#' + opts.name + '-jade')
+          a(data-toggle='tab', href='#' + opts.name.replace('/', '-') + '-jade')
             | Jade
       li
-        a(data-toggle='tab', href='#' + opts.name + '-html')  
+        a(data-toggle='tab', href='#' + opts.name.replace('/', '-') + '-html')  
           | HTML
       if opts.isEmail != "true"
         li
@@ -45,7 +45,7 @@ mixin playground(opts)
         if block
           block
       if opts.isEmail != "true"
-        .tab-pane.playground-code(data-lang="jade", id!=opts.name + '-jade')
+        .tab-pane.playground-code(data-lang="jade", id!=opts.name.replace('/', '-') + '-jade')
           textarea.hide
-      .tab-pane.playground-code(data-lang="html", id!=opts.name + '-html')
+      .tab-pane.playground-code(data-lang="html", id!=opts.name.replace('/', '-') + '-html')
         textarea.hide

@@ -10,10 +10,7 @@ const ejs = require('gulp-ejs');
 const mjmlCompile = require('gulp-mjml');
 const mjml = require('mjml');
 const $ = require('gulp-load-plugins')();
-const browserify =  require('browserify');
-const babelify = require('babelify');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
+const webpack = require('webpack-stream');
 
 gulp.task('server', ['build'], function() {
   return gulp.src('./build/')
@@ -21,6 +18,12 @@ gulp.task('server', ['build'], function() {
       livereload: true,
       open: true
     }));
+});
+
+gulp.task('webpack', function() {
+  return gulp.src('./index.js')
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest('build/'));
 });
 
 /**
@@ -126,24 +129,13 @@ gulp.task('mjml', ['ejs'], function () {
     .pipe(gulp.dest('build/lib/emails/'))
 });
 
-gulp.task('browserify', function() {
-  browserify('./index.js', { debug: true })
-  .transform(babelify)
-  .bundle()
-  .pipe(source('styleguide.js'))
-  .pipe(buffer())
-  .pipe(sourcemaps.init({ loadMaps: true }))
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest('./build/'));
-})
-
 gulp.task('watch', function() {
   gulp.watch(['./lib/**/*.ejs'], ['emails', 'jade-landing']);
   gulp.watch(['./lib/**/*.jade'], ['templates', 'copy']);
   gulp.watch(['./landing/**/*.jade', './landing/**/*.js'], ['jade-landing', 'copy']);
   gulp.watch(['./lib/**/*.styl'], ['css']);
   gulp.watch(['./landing/**/*.styl'], ['css']);
-  gulp.watch(['./index.js', './lib/**/*.js'], ['browserify']);
+  gulp.watch(['./lib/**/*.styl', './lib/**/*.js', './index.js'], ['webpack']);
 });
 
 gulp.task('emails', ['ejs', 'mjml']);
@@ -151,5 +143,5 @@ gulp.task('templates', ['jade-landing', 'jade-lib', 'emails']);
 gulp.task('stylus', ['stylus-landing', 'stylus-lib']);
 gulp.task('css', ['stylus', 'cssmin']);
 
-gulp.task('build', ['browserify', 'css', 'templates', 'copy']);
+gulp.task('build', ['webpack', 'css', 'templates', 'copy']);
 gulp.task('default', ['server', 'build', 'watch']);

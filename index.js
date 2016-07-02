@@ -14,6 +14,8 @@ window.Styleguide.create = (opts, elem) => {
     return;
   }
 
+  opts.originElementContent = [].slice.call(elem.children);
+
   render(window.React.createElement(Styleguide[opts.component], opts), elem);
 
   return elem.parentNode.replaceChild(elem.firstChild, elem);

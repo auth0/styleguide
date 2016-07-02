@@ -12,18 +12,12 @@ html
   include ../templates/mixins/header
   
   body
-    #allOptions(styleguide="select", options="[Fire, And, Blood]", label="Filter by")
     
-    #someOptions(
-      styleguide="select",  
-      options="[Fire, And, Blood]"
-    )
-    
-    #myElement
+    #hola
     
     script(src="../styleguide.js")
     script.
-      var node = document.getElementById("myElement");
+      var node = document.getElementById("hola");
       
       Styleguide.create({
         component: "select",

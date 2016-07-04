@@ -31,14 +31,14 @@ mixin playground(opts)
       li
         a(data-toggle='tab', href='#' + opts.name.replace('/', '-') + '-html')  
           | HTML
-      if opts.isEmail != "true"
+      if opts.isEmail != "true" && opts.isBoilerplate != "true"
         li
           a(href='/stage/#' + opts.name)
             | Open in stage
       else
         li
-          a(href!='/lib/emails/' + opts.name + '/demo.html')
-            | Open email
+          a(href!='/lib/' + opts.name + '/demo.html', target="_blank")
+            | Open in new tab
     
     .tab-content
       .tab-pane.playground-canvas.active(id!=opts.name.replace('/', '-') + '-component', style!=css, class!=convertToIframe)

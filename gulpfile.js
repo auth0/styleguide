@@ -88,6 +88,15 @@ gulp.task('jade-lib', function() {
 gulp.task('jade-landing', ['emails'], function() {
   var styleguideVersion = require('./package.json').version;
 
+  gulp.src('./lib/**/*.jade')
+    .pipe(jade({
+      pretty: true,
+      locals: {
+        version: styleguideVersion
+      }
+    }))
+    .pipe(gulp.dest('./build/lib/'))
+
   gulp.src('./landing/index.jade')
     .pipe(jade({
       pretty: true,

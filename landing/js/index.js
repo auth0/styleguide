@@ -25,20 +25,24 @@ function playground() {
     $elem.get(0).CodeMirror.refresh();
   }
 
-  function stripIndent(str) {
-  	var match = str.match(/^[ \t]*(?=\S)/gm);
+  function setCodeMirrors($jade, $html) {
+    if($jade.length) {
+      CodeMirror.fromTextArea($jade.get(0), {
+        lineNumbers: true,
+        readOnly: true,
+        theme: 'auth0',
+        mode: 'jade'
+      });
+    }
 
-  	if (!match) {
-  		return str;
-  	}
-
-  	var indent = Math.min.apply(Math, match.map(function (el) {
-  		return el.length;
-  	}));
-
-  	var re = new RegExp('^[ \\t]{' + indent + '}', 'gm');
-
-  	return indent > 0 ? str.replace(re, '') : str;
+    if($html.length) {
+      CodeMirror.fromTextArea($html.get(0), {
+        lineNumbers: true,
+        readOnly: true,
+        theme: 'auth0',
+        mode: 'text/html'
+      });
+    }
   }
 
   $elems.each(function(i) {
@@ -52,39 +56,21 @@ function playground() {
 
     var $canvas = $component.find('.playground-canvas');
     var $html = $component.find('[data-lang="html"] textarea');
-
-    $html.val(stripIndent($canvas.html()));
+    var $jade = $component.find('[data-lang="jade"] textarea');
 
     $component.on('click', '.nav-pills a', setMode);
 
-    if(!$component.find('[data-lang="jade"]').length) {
-      return CodeMirror.fromTextArea($html.get(0), {
-        lineNumbers: true,
-        readOnly: true,
-        theme: 'auth0',
-        mode: 'text/html'
-      });
-    }
-
-    $.get(path + '.jade', function(contents) {
-      var $jade = $component.find('[data-lang="jade"] textarea');
-
-      $jade.val(contents);
-
-      CodeMirror.fromTextArea($jade.get(0), {
-        lineNumbers: true,
-        readOnly: true,
-        theme: 'auth0',
-        mode: 'jade'
-      });
-
-      CodeMirror.fromTextArea($html.get(0), {
-        lineNumbers: true,
-        readOnly: true,
-        theme: 'auth0',
-        mode: 'text/html'
-      });
+    $.when(
+      $.get(path + '.jade', function(contents) {
+        return $jade.val(contents);
+      }),
+      $.get(path + '.html', function(contents) {
+        return $html.val(contents);
+      })
+    ).always(function() {
+      return setCodeMirrors($jade, $html)
     });
+
   });
 }
 

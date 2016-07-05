@@ -1,0 +1,283 @@
+//
+// Navs
+// --------------------------------------------------
+
+$nav-link-padding ?=                        10px 15px
+$nav-link-hover-bg ?=                       $gray-lighter
+
+$nav-disabled-link-color ?=                $gray-light
+$nav-disabled-link-hover-color ?=           $gray-light
+
+//== Tabs
+$nav-tabs-border-color ?=                   #ddd
+
+$nav-tabs-link-hover-border-color ?=        $gray-lighter
+
+$nav-tabs-active-link-hover-bg ?=           $body-bg
+$nav-tabs-active-link-hover-color ?=        gray
+$nav-tabs-active-link-hover-border-color ?= #ddd
+
+$nav-tabs-justified-link-border-color ?=          #ddd
+$nav-tabs-justified-active-link-border-color ?=   $body-bg
+
+//== Pills
+$nav-pills-border-radius ?=                 $border-radius-base
+$nav-pills-active-link-hover-bg ?=          $component-active-bg
+$nav-pills-active-link-hover-color ?=       $component-active-color
+
+// Base class
+// --------------------------------------------------
+
+.nav
+  margin-bottom 0
+  padding-left 0 // Override default ul/ol
+  list-style none
+  clearfix()
+
+  > li
+    position relative
+    display block
+
+    > a
+      position relative
+      display block
+      padding $nav-link-padding
+
+      &:hover,
+      &:focus
+        text-decoration none
+        background-color $nav-link-hover-bg
+
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.disabled > a
+      color $nav-disabled-link-color
+
+      &:hover,
+      &:focus
+        color $nav-disabled-link-hover-color
+        text-decoration none
+        background-color transparent
+        cursor $cursor-disabled
+
+  // Open dropdowns
+  .open > a
+    &,
+    &:hover,
+    &:focus
+      background-color $nav-link-hover-bg
+      border-color $link-color
+
+  // Nav dividers (deprecated with v3.0.1)
+  //
+  // This should have been removed in v3 with the dropping of `.nav-list`, but
+  // we missed it. We don't currently support this anywhere, but in the interest
+  // of maintaining backward compatibility in case you use it, it's deprecated.
+  .nav-divider
+    nav-divider()
+
+  // Prevent IE8 from misplacing imgs
+  //
+  // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+  > li > a > img
+    max-width none
+
+
+// Tabs
+// -------------------------
+
+// Give the tabs something to sit on
+.nav.nav-tabs
+  border-bottom: 1px solid rgba(0,0,0,.1)
+  margin-bottom: 20px;
+
+  &.nav-center
+    text-align center
+
+  .theme-dark &
+    border-bottom: 1px solid rgba(255,255,255,.1)
+
+  > li
+    display inline-block
+    margin-left 14px
+    margin-right 14px
+    margin-bottom -1px // Make the list-items overlay the bottom border
+
+    &:first-child
+      margin-left 0
+
+    // Actual tabs (as links)
+    > a
+      padding-left 0
+      padding-right 0
+      background-color transparent
+
+      .theme-dark &
+        color white
+
+        &:hover
+          color rgba(white, 0.8)
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a
+      cursor default
+      color $text-color
+      border-bottom 1px solid rgba(0,0,0,.4)
+
+      .theme-dark &
+        opacity 1
+        color $color-blue-light
+        border-bottom 1px solid $color-blue-light
+
+
+// Pills
+// -------------------------
+.nav-pills
+  > li
+    float left
+
+    // Links rendered as pills
+    > a
+      border-radius $nav-pills-border-radius
+
+    + li
+      margin-left 2px
+
+    // Active state
+    &.active > a
+      &,
+      &:hover,
+      &:focus
+        color $nav-pills-active-link-hover-color
+        background-color $nav-pills-active-link-hover-bg
+
+
+.nav-pills
+  border: 1px solid $color-oil;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold
+
+  li
+    margin: 0;
+
+  > li.active > a,
+  > li.active > a:hover,
+  > li.active > a:focus
+    color: $color-text-contrast
+    background-color: $color-oil
+    cursor: default
+
+
+  > li
+    &:first-child > a
+      border-radius: border-radius 0 0 border-radius
+
+    &:last-child > a
+      border-radius: 0 border-radius border-radius 0
+
+    & + li
+      margin-left: 0
+
+    > a
+      border-radius: 0;
+      color: $color-oil
+      padding: ceil(padding-vertical-small / 3) padding-horizontal-large
+
+      &:hover,
+      &:focus
+        color: $color-oil
+        background: transparent;
+
+
+// Stacked pills
+.nav-stacked
+  > li
+    float none
+
+    + li
+      margin-top 2px
+      margin-left 0 // no need for this gap between nav items
+
+
+// Nav variations
+// --------------------------------------------------
+
+// Justified nav links
+// -------------------------
+
+.nav-justified
+  width 100%
+
+  > li
+    float none
+
+    > a
+      text-align center
+      margin-bottom 5px
+
+  > .dropdown .dropdown-menu
+    top auto
+    left auto
+
+  @media (min-width $screen-sm-min)
+    > li
+      display table-cell
+      width 1%
+
+      > a
+        margin-bottom 0
+
+// Move borders to anchors instead of bottom of list
+//
+// Mixin for adding on top the shared `.nav-justified` styles for our tabs
+.nav-tabs-justified
+  border-bottom 0
+
+  > li > a
+    // Override margin from .nav-tabs
+    margin-right 0
+    border-radius $border-radius-base
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus
+    border 1px solid $nav-tabs-justified-link-border-color
+
+  @media (min-width $screen-sm-min)
+    > li > a
+      border-bottom 1px solid $nav-tabs-justified-link-border-color
+      border-radius $border-radius-base $border-radius-base 0 0
+
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus
+      border-bottom-color $nav-tabs-justified-active-link-border-color
+
+.nav-tabs.nav-justified
+  @extend .nav-justified
+  @extend .nav-tabs-justified
+
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content
+  > .tab-pane
+    display none
+
+  > .active
+    display block
+
+
+// Dropdowns
+// -------------------------
+
+// Specific dropdowns
+.nav-tabs .dropdown-menu
+  // make dropdown border overlap tab border
+  margin-top -1px
+  // Remove the top rounded corners here since there is a hard edge above the menu
+  border-top-radius(0)

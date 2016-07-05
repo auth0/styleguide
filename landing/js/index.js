@@ -70,7 +70,6 @@ function playground() {
     ).always(function() {
       return setCodeMirrors($jade, $html)
     });
-
   });
 }
 

@@ -8,7 +8,8 @@ mixin playground(opts)
   - var path = 'lib/' + opts.name + '/demo';
   - var css = (opts.height) ? 'height: ' + opts.height : '';
   - var componentTabLabel = (opts.isEmail === "true") ? 'Email' : 'Component';
-  - var convertToIframe = (opts.isEmail === "true" || opts.iframe === "true") ? 'js-make-iframe' : '';
+  - function setClass(condition, cssClass) { return (condition === "true") ? cssClass : ''; }
+  - function pathToSlug(path) { return path.replace('/', '-'); } 
   
   .playground.js-playground(data-src!=path)
     if opts.darkMode != "false" && opts.isEmail != "true"
@@ -18,18 +19,17 @@ mixin playground(opts)
             a(href="#", data-set-mode="light") Light
           li
             a(href="#", data-set-mode="dark") Dark
-            
-            
+
     ul.playground-actions
       li.active
-        a(data-toggle='tab', href='#' + opts.name.replace('/', '-') + '-component')=componentTabLabel
+        a(data-toggle='tab', href='#' + pathToSlug(opts.name) + '-component')=componentTabLabel
         
       if opts.isEmail != "true"
         li
-          a(data-toggle='tab', href='#' + opts.name.replace('/', '-') + '-jade')
+          a(data-toggle='tab', href='#' + pathToSlug(opts.name) + '-jade')
             | Jade
       li
-        a(data-toggle='tab', href='#' + opts.name.replace('/', '-') + '-html')  
+        a(data-toggle='tab', href='#' + pathToSlug(opts.name) + '-html')  
           | HTML
       if opts.isEmail != "true" && opts.isBoilerplate != "true"
         li
@@ -41,11 +41,11 @@ mixin playground(opts)
             | Open in new tab
     
     .tab-content
-      .tab-pane.playground-canvas.active(id!=opts.name.replace('/', '-') + '-component', style!=css, class!=convertToIframe)
+      .tab-pane.playground-canvas.active(id!=pathToSlug(opts.name) + '-component', style!=css, class!=setClass(opts.iframe, 'js-make-iframe') + ' ' + setClass(opts.isBoilerplate, 'js-render-boilerplate'))
         if block
           block
       if opts.isEmail != "true"
-        .tab-pane.playground-code(data-lang="jade", id!=opts.name.replace('/', '-') + '-jade')
+        .tab-pane.playground-code(data-lang="jade", id!=pathToSlug(opts.name) + '-jade')
           textarea.hide
-      .tab-pane.playground-code(data-lang="html", id!=opts.name.replace('/', '-') + '-html')
+      .tab-pane.playground-code(data-lang="html", id!=pathToSlug(opts.name) + '-html')
         textarea.hide

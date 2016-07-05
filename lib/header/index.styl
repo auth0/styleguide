@@ -3,7 +3,7 @@
 header.site-header
   z-index: 1000;
   background: transparent;
-  font-size: 14px;
+  font-size: $font-size-base;
   position:static;
   padding: 20px 0 20px 0;
 
@@ -30,8 +30,9 @@ header.site-header
     border: 0;
     margin: 0;
 
-    li a
-      padding: 15px 15px;
+    li a,
+    .btn-dro
+      padding: 10px;
 
     li.active a
       background: none;
@@ -130,8 +131,6 @@ header.site-header
 
 
   .btn-dro
-    padding: 20px 15px;
-    line-height: 20px;
     background: none;
     display: inline-block
     color: #777;
@@ -218,7 +217,7 @@ header.site-header
     padding-left: 15px;
     padding-right: 14px;
     margin-top: 12px;
-    font-size: 12px;
+    font-size: $font-size-small;
 
     &:hover
       background: #f1f1f1;
@@ -293,23 +292,23 @@ a.hiring
   text-transform: uppercase;
   position: absolute;
   font-weight: $font-weight-bold;
-  padding: 2px 8px 0 8px;
+  padding: 0 8px 0 8px;
   border-radius: 3px;
   color: white !important;
   display: block !important;
-  font-size: 11px;
+  font-size: $font-size-small;
   display: block;
   left: 120px;
-  top: 17px;
+  top: 15px;
 
   +breakpoint("desktop")
-    left: -104px;
+    left: -110px;
 
   &::after
     position: absolute;
     content: "";
     left: -4px;
-    top: 6px;
+    top: 9px;
     width: 0;
     height: 0;
     border-top: 5px solid transparent;
@@ -379,7 +378,7 @@ a.hiring
 
       a.login
         margin-bottom: 20px;
-        font-size: 14px;
+        font-size: $font-size-base;
         padding: 10px;
         display: block
         text-align: center

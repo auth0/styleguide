@@ -88,7 +88,7 @@
 
       span
         color: rgba(0, 0, 0, .4);
-        font-size: 11px;
+        font-size: $font-size-small;
         font-weight: $font-weight-bold;
         letter-spacing: 1px;
         line-height: normal;
@@ -103,7 +103,7 @@
 
   .nav-styleguide > ul
     color: #5c666f;
-    font-size: 11px;
+    font-size: $font-size-base;
     font-weight: $font-weight-bold;
     letter-spacing: 1px;
     list-style: none;
@@ -114,6 +114,7 @@
     z-index: 200;
     position: relative;
     background: #e3e5e7;
+    font-size: $font-size-small;
 
     .active
       color: #333 !important;
@@ -133,7 +134,7 @@
 
         > .icon
           margin-right: 10px;
-          top: 1px;
+          top: 3px;
           position: relative;
           min-width: 14px;
           display: inline-block
@@ -273,11 +274,11 @@
 
     td
       color: $color-text;
-      font-size: 13px;
+      font-size: $font-size-small;
       padding: 15px 0;
 
     .big
-      font-size: 16px;
+      font-size: $font-size-base;
 
     .opacity-87
       color: $color-text;
@@ -315,7 +316,7 @@
         margin: 30px 0;
 
       p
-        font-size: 16px;
+        font-size: $font-size-base;
         color: $color-text-contrast-light;
         margin-bottom: 50px;
 
@@ -472,7 +473,3 @@
   #inputs-component
     .form-control
       margin-bottom 15px
-
-  #boilerplates
-    .playground iframe
-      padding 0

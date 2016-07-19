@@ -31,7 +31,7 @@ For example, if you want to retrieve our logo:
 
 ```bash
   npm i
-  grunt dev
+  npm run dev
 ```
 
 ### Bower

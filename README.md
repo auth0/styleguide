@@ -29,6 +29,8 @@ For example, if you want to retrieve our logo:
 
 ### Run locally
 
+To run locally
+
 ```bash
   npm i
   npm run dev

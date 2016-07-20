@@ -102,6 +102,11 @@ $alert-danger-border ?=       $state-danger-border
 .alert-danger
   alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text)
 
+// Fixes alignment for close button in modal's alerts
+.modal
+  .alert
+    .close
+      margin-top: 0;
 
 .alert
   border: 0;

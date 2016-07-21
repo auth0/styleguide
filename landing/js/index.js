@@ -34,7 +34,7 @@ function playground() {
     $elem.get(0).CodeMirror.refresh();
   }
 
-  function setCodeMirrors($jade, $html) {
+  function setCodeMirrors($jade, $html, $mjml) {
     if($jade.length) {
       CodeMirror.fromTextArea($jade.get(0), {
         lineNumbers: true,
@@ -46,6 +46,15 @@ function playground() {
 
     if($html.length) {
       CodeMirror.fromTextArea($html.get(0), {
+        lineNumbers: true,
+        readOnly: true,
+        theme: 'auth0',
+        mode: 'text/html'
+      });
+    }
+
+    if($mjml.length) {
+      CodeMirror.fromTextArea($mjml.get(0), {
         lineNumbers: true,
         readOnly: true,
         theme: 'auth0',
@@ -66,18 +75,41 @@ function playground() {
     var $canvas = $component.find('.playground-canvas');
     var $html = $component.find('[data-lang="html"] textarea');
     var $jade = $component.find('[data-lang="jade"] textarea');
+    var $mjml = $component.find('[data-lang="mjml"] textarea');
 
     $component.on('click', '.nav-pills a', setMode);
 
-    $.when(
-      $.get(path + '.jade', function(contents) {
+
+    function getJade() {
+      if(!$jade.length) return;
+
+      return $.get(path + '.jade', function(contents) {
         return $jade.val(contents);
-      }),
-      $.get(path + '.html', function(contents) {
+      })
+    }
+
+    function getHTML() {
+      if(!$html.length) return;
+
+      return $.get(path + '.html', function(contents) {
         return $html.val(contents);
       })
+    }
+
+    function getMJML() {
+      if(!$mjml.length) return;
+
+      return $.get(path + '.ejs', function(contents) {
+        return $mjml.val(contents);
+      })
+    }
+
+    $.when(
+      getJade(),
+      getHTML(),
+      getMJML()
     ).always(function() {
-      return setCodeMirrors($jade, $html)
+      return setCodeMirrors($jade, $html, $mjml)
     });
   });
 }

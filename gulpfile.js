@@ -9,6 +9,7 @@ const rename = require('gulp-rename');
 const ejs = require('gulp-ejs');
 const mjmlCompile = require('gulp-mjml');
 const mjml = require('mjml');
+const prettify = require('gulp-html-prettify');
 const $ = require('gulp-load-plugins')();
 
 gulp.task('server', ['build'], function() {
@@ -85,7 +86,7 @@ gulp.task('jade-lib', function() {
     .pipe(gulp.dest('./build/landing/html/'))
 });
 
-gulp.task('jade-landing', ['emails'], function() {
+gulp.task('jade-landing', ['emails', 'jade-lib'], function() {
   var styleguideVersion = require('./package.json').version;
 
   gulp.src('./lib/**/*.jade')
@@ -117,10 +118,12 @@ gulp.task('cssmin', ['stylus-lib', 'stylus-landing'], function() {
     .pipe(gulp.dest('build'))
 });
 
-gulp.task('ejs', function () {
+gulp.task('ejs', ['copy:lib'], function () {
   return gulp.src(['lib/emails/**/*.ejs'])
-    .pipe(ejs({
-      msg: "ejs + mjml rocks"
+    .pipe(ejs())
+    .pipe(prettify({
+      indent_char: ' ',
+      indent_size: 2
     }))
     .pipe(gulp.dest('build/lib/emails/'))
 });

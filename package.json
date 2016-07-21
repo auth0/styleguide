@@ -24,13 +24,12 @@
     "grunt-maxcdn": "https://github.com/siacomuzzi/grunt-maxcdn/tarball/0.0.1",
     "grunt-s3": "~0.2.0-alpha.3",
     "grunt-shell": "^0.7.0",
-    "jade": "^1.7.0",
-    "matchdep": "^0.3.0",
-    "stylus": "~0.54.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cssmin": "^0.1.7",
+    "gulp-ejs": "^2.1.2",
     "gulp-filter": "^4.0.0",
+    "gulp-html-prettify": "0.0.1",
     "gulp-imagemin": "^3.0.1",
     "gulp-jade": "^1.1.0",
     "gulp-livereload": "^3.8.1",
@@ -40,8 +39,10 @@
     "gulp-server-livereload": "^1.7.3",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-stylus": "^2.3.1",
-    "gulp-ejs": "^2.1.2",
+    "jade": "^1.7.0",
+    "matchdep": "^0.3.0",
     "mjml": "^2.2.0",
-    "serve": "^1.4.0"
+    "serve": "^1.4.0",
+    "stylus": "~0.54.0"
   }
 }

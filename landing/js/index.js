@@ -1,3 +1,12 @@
+Function.prototype.debounce = function(delay) {
+  var fn = this
+  return function() {
+    fn.args = arguments
+    fn.timeout_id && clearTimeout(fn.timeout_id)
+    fn.timeout_id = setTimeout(function() { return fn.apply(fn, fn.args) }, delay)
+  }
+}
+
 function playground() {
   var $elems = $('.js-playground');
   var count = $elems.length;
@@ -231,6 +240,24 @@ function colors() {
 
     $(this).text(parseColor(color).hex);
   });
+
+  var copyColor = new Clipboard('.js-color', {
+    text: function(btn) {
+      return $(btn).find('[data-hex]').text();
+    }
+  });
+
+  copyColor.on('success', function(e) {
+    var btn = e.trigger;
+    var $label = $('.color-info strong', btn);
+    var oValue = $label.text();
+
+    $label.text('Copied to clipboard!');
+
+    setTimeout(function() {
+      $label.text(oValue);
+    }, 600);
+  }.debounce(200));
 }
 
 $(function() {

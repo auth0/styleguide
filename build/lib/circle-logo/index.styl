@@ -1,0 +1,464 @@
+rel_width = 8em;
+
+.circle-logo
+  display: inline-block;
+  text-align: center;
+  font-size: $font-size-base;
+  width: rel_width;
+  -webkit-transition: transform 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: transform 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  &:hover
+    text-decoration: none;
+    transform: scale(1.05);
+
+    .logo
+      opacity: 0.9;
+
+  .logo
+    position: relative;
+    height: rel_width;
+    width: rel_width;
+    background: #EAEEF3;
+    color: #333;
+    border-radius: 50%;
+
+    &:before,
+    &:after
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      font-size: 3em;
+
+    &:after
+      content: "";
+      display: block;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 50%;
+      height: 50%;
+
+  .title
+    color: #333;
+    font-weight: $font-weight-bold;
+    margin: 10px 0;
+    min-height: 3em;
+
+  &[data-name]
+    .logo
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/generic.svg');
+
+  &[data-name="how-to"]
+    .logo:before
+      top: 55%;
+
+  &[data-name="angular2"]
+    .logo
+      background: -webkit-linear-gradient(top left, #008BFF 40%, #2C6FAD 140%);
+      background: linear-gradient(to bottom right, #008BFF 40%, #2C6FAD 140%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/angular2.svg');
+
+  &[data-name="angular"],
+  &[data-name="angularjs"]
+    .logo
+      background: -webkit-linear-gradient(top left, #2c2c2c 40%, #737373 140%);
+      background: linear-gradient(to bottom right, #2c2c2c 40%, #737373 140%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/angular.svg');
+
+  &[data-name^="nginx"]
+    .logo
+      background: -webkit-linear-gradient(top left, #defbda 40%, #97bcd2 140%);
+      background: linear-gradient(to bottom right, #defbda 40%, #97bcd2 140%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/nginx.svg');
+
+  &[data-name^="relay"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #3B3738 23%, #4B5357 100%);
+      background: linear-gradient(-220deg, #3B3738 23%, #4B5357 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/relay.svg');
+
+
+  &[data-name^="php"],
+  &[data-name="laravel"],
+  &[data-name="symfony"]
+    .logo
+      background: -webkit-linear-gradient(top left, #6D7BCE 40%, #3B2862 140%);
+      background: linear-gradient(to bottom right, #6D7BCE 40%, #3B2862 140%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/php.svg');
+        width: 55%;
+        height: 55%;
+
+  &[data-name^="ember"],
+  &[data-name="emberjs"]
+    .logo
+      background: -webkit-linear-gradient(top left, #F46642 40%, #9C2202 140%);
+      background: linear-gradient(to bottom right, #F46642 40%, #9C2202 140%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/ember.svg');
+        width: 80%;
+        height: 80%;
+
+  &[data-name="node"],
+  &[data-name="nodejs"]
+    .logo
+      background: -webkit-linear-gradient(top left, #78B743 40%, #9FE861 140%);
+      background: linear-gradient(to bottom right, #78B743 40%, #9FE861 140%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/nodejs.svg');
+        width: 50%;
+        height: 50%;
+
+  &[data-name="ruby"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #cebbbb 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #cebbbb 100%);
+
+      &:after
+        top: 50%;
+        left: 48%;
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/ruby.svg');
+        width: 40%;
+        height: 40%;
+
+  &[data-name="aurelia"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #ECC6D4 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #ECC6D4 100%);
+
+      &:after
+        top: 50%;
+        left: 50%;
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/aurelia.svg');
+
+  &[data-name="vuejs"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #C4DCD2 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #C4DCD2 100%);
+
+      &:after
+        top: 55%;
+        left: 50%;
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/vue.svg');
+
+  &[data-name="electron"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #C4DCD2 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #C4DCD2 100%);
+
+      &:after
+        top: 50%;
+        left: 50%;
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/electron.svg');
+
+  &[data-name="apple"],
+  &[data-name="osx"],
+  &[data-name^="ios"]
+    .logo
+      background: -webkit-linear-gradient(-56deg, #5C666F 0%, #648AAC 100%);
+      background: linear-gradient(-56deg, #5C666F 0%, #648AAC 100%);
+
+      &:after
+        top: 48%;
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/apple.svg');
+        width: 45%;
+        height: 45%;
+
+  &[data-name="cordova"],
+  &[data-name="apache-cordova"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #93AFC2 23%, #778093 100%);
+      background: linear-gradient(-220deg, #93AFC2 23%, #778093 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/cordova.svg');
+
+
+  &[data-name^="ionic"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #4B7ED1 23%, #4B8BF4 100%);
+      background: linear-gradient(-220deg, #4B7ED1 23%, #4B8BF4 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/ionic.svg');
+        opacity: 0.8;
+
+  &[data-name="java"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #F83F3F 23%, #A11818 100%);
+      background: linear-gradient(-220deg, #F83F3F 23%, #A11818 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/java.svg');
+
+  &[data-name="socket-io"],
+  &[data-name="socketio"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #2D2E5D 23%, #7B5380 100%);
+      background: linear-gradient(-220deg, #2D2E5D 23%, #7B5380 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/socketio.svg');
+
+  &[data-name="vanillajs"]
+    .logo
+      background: -webkit-linear-gradient(-180deg, #F0DB4F 0%, #EDD223 100%);
+      background: linear-gradient(-180deg, #F0DB4F 0%, #EDD223 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/vanillajs.svg');
+        width: 38%;
+        height: 38%;
+
+  &[data-name="go"],
+  &[data-name="golang"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #5DCDD5 23%, #1ABBE5 100%);
+      background: linear-gradient(-220deg, #5DCDD5 23%, #1ABBE5 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/go.svg');
+
+  &[data-name="xamarin"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #578BD3 23%, #3F6E97 100%);
+      background: linear-gradient(-220deg, #578BD3 23%, #3F6E97 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/xamarin.svg');
+
+  &[data-name="python"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #cbeaff 23%, #91adff 100%);
+      background: linear-gradient(-220deg, #cbeaff 23%, #91adff 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/python.svg');
+
+  &[data-name^="react"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #2d2d2d 23%, #6D6D6D 100%);
+      background: linear-gradient(-220deg, #2d2d2d 23%, #6D6D6D 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/react.svg');
+
+
+  &[data-name^="react-native"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #05A5D1 23%, #338bbc 100%);
+      background: linear-gradient(-220deg, #05A5D1 23%, #338bbc 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/react-native.svg');
+
+  &[data-name="phonegap"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #738386 23%, #4E575B 100%);
+      background: linear-gradient(-220deg, #738386 23%, #4E575B 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/phonegap.svg');
+
+
+  &[data-name="nancyfx"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #000000 23%, #4B5357 100%);
+      background: linear-gradient(-220deg, #000000 23%, #4B5357 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/nancyfx.svg');
+
+  &[data-name="android"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #B0D949 23%, #83B830 100%);
+      background: linear-gradient(-220deg, #B0D949 23%, #83B830 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/android.svg');
+
+  &[data-name^="windows"],
+  &[data-name^="azure"],
+  &[data-name^="wpf"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #68217a 23%, #9b62a9 100%);
+      background: linear-gradient(-220deg, #68217a 23%, #9b62a9 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/windows.svg');
+        width: 45%;
+        height: 45%;
+        left: 49%;
+
+  &[data-name="servicestack"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #D1D1D1 23%, #89969D 100%);
+      background: linear-gradient(-220deg, #D1D1D1 23%, #89969D 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/servicestack.svg');
+
+  &[data-name="jquery"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #323DAE 23%, #338bbc 100%);
+      background: linear-gradient(-220deg, #323DAE 23%, #338bbc 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/jquery.svg');
+        width: 60%;
+        height: 60%;
+
+  &[data-name="rails"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #FF0046 23%, #951A3C 100%);
+      background: linear-gradient(-220deg, #FF0046 23%, #951A3C 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/rails.svg');
+
+  &[data-name="apache"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/apache.svg');
+        width: 55%;
+        height: 55%;
+
+  &[data-name="aws"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #595155 23%, #1C1C1C 100%);
+      background: linear-gradient(-220deg, #595155 23%, #1C1C1C 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/amazon.svg');
+
+  &[data-name="meteor"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #595155 23%, #1C1C1C 100%);
+      background: linear-gradient(-220deg, #595155 23%, #1C1C1C 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/meteor.svg');
+
+  &[data-name^="salesforce"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #2990E5 23%, #1A5095 100%);
+      background: linear-gradient(-220deg, #2990E5 23%, #1A5095 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/salesforce.svg');
+        width: 60%;
+        height: 60%;
+
+  &[data-name^="falcor"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #B6DBE9 23%, #F1B9F3 100%);
+      background: linear-gradient(-220deg, #B6DBE9 23%, #F1B9F3 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/falcor.svg');
+        width: 60%;
+        height: 60%;
+
+  &[data-name="firebase"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/firebase.svg');
+
+  &[data-name="sap"],
+  &[data-name="sap-odata"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #98AABD 23%, #547F88 100%);
+      background: linear-gradient(-220deg, #98AABD 23%, #547F88 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/sap.svg');
+
+  &[data-name^="spring"],
+  &[data-name^="java-spring"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #57A343 23%, #757149 100%);
+      background: linear-gradient(-220deg, #57A343 23%, #757149 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/spring.svg');
+
+  &[data-name="play"],
+  &[data-name="scala"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #32AE4C 23%, #338bbc 100%);
+      background: linear-gradient(-220deg, #32AE4C 23%, #338bbc 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/play.svg');
+        left: 54%;
+        top: 51%;
+
+  &[data-name="net"],
+  &[data-name^="wcf"],
+  &[data-name^="aspnet"],
+  &[data-name="webapi-owin"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #68217A 23%, #9B62A9 100%);
+      background: linear-gradient(-220deg, #68217A 23%, #9B62A9 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/net.svg');
+
+  &[data-name="netclassic"],
+  &[data-name="asp-classic"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #CCBBCE 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #CCBBCE 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/netold.svg');
+
+  &[data-name="auth0"],
+  &[data-name="lock"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #CC461B, 23%, #EB5424 100%);
+      background: linear-gradient(-220deg, #CC461B, 23%, #EB5424 100%);
+
+      &:after
+        background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/auth0.svg');
+        top: 53%;
+        width: 40%;
+        height: 40%;
+
+  &[data-name^="hapi"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
+      background: linear-gradient(-220deg, #f3f3f3 23%, #CECCBB 100%);
+
+      &:after
+        background-image url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/hapi.svg')
+
+  &[data-name^="cyclejs"]
+    .logo
+      background: -webkit-linear-gradient(-220deg, #2d2d2d 23%, #6D6D6D 100%);
+      background: linear-gradient(-220deg, #2d2d2d 23%, #6D6D6D 100%);
+
+      &:after
+        background-image url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/cyclejs.svg')

@@ -109,6 +109,10 @@ function playground() {
       getHTML(),
       getMJML()
     ).always(function() {
+      if($component.find('[data-styleguide]').length) {
+        Styleguide.initElement($component.find('[styleguide]').get(0));
+      }
+      
       return setCodeMirrors($jade, $html, $mjml)
     });
   });

@@ -10,7 +10,7 @@ window.Styleguide = {
 }
 
 window.Styleguide.create = (opts, elem) => {
-  if(!Styleguide[opts.component]) {
+  if(!window.Styleguide[opts.component]) {
     return;
   }
 
@@ -23,7 +23,9 @@ window.Styleguide.create = (opts, elem) => {
 
 const domIdentifier = 'styleguide';
 
-const domElements = document.querySelectorAll('['+ domIdentifier +'], [data-'+ domIdentifier +']');
+const domElements = () => {
+  return document.querySelectorAll('['+ domIdentifier +']')
+};
 
 const getElementOptions = (elem) => {
   var attrs = {};
@@ -57,8 +59,22 @@ const getElementOptions = (elem) => {
   return attrs;
 };
 
-domElements.forEach((elem) => {
+window.Styleguide.init = () => {
+  return domElements().forEach((elem) => {
+    var opts = getElementOptions(elem);
+
+    return Styleguide.create(opts, elem);
+  });
+}
+
+window.Styleguide.initElement = (elem) => {
   var opts = getElementOptions(elem);
 
-  return Styleguide.create(opts, elem);
-});
+  return window.Styleguide.create(opts, elem);
+};
+
+window.Styleguide.init();
+
+
+
+

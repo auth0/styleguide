@@ -11,7 +11,7 @@ html
     
   include ../templates/mixins/header
   
-  body
+  body    
     #stage
       .text-center
         +header('Stage', false, 'Change the hash to load a new Component from /lib')
@@ -20,6 +20,7 @@ html
     
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
     script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+    script(src="../styleguide.js")
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js')
     script.
       $(window).on('hashchange', setStageContent);
@@ -30,6 +31,7 @@ html
         $.get('../landing/html/' + component + '/demo.html', function(contents) {
           $('#stage').html(contents);
           snippets();
+          Styleguide.init();
         });
       }
       
@@ -43,12 +45,12 @@ html
           classPrefix: ''   // don't append class prefix
         });
         hljs.initHighlighting();
-
+    
         $('pre.hl code').each(function(i, block) {
           hljs.highlightBlock(block);
         });
       }
       
-      
-      
-      
+    //-   
+    //-   
+    //-   

@@ -11,6 +11,7 @@ const mjmlCompile = require('gulp-mjml');
 const mjml = require('mjml');
 const prettify = require('gulp-html-prettify');
 const $ = require('gulp-load-plugins')();
+const webpack = require('webpack-stream');
 
 gulp.task('server', ['build'], function() {
   return gulp.src('./build/')
@@ -18,6 +19,12 @@ gulp.task('server', ['build'], function() {
       livereload: true,
       open: true
     }));
+});
+
+gulp.task('webpack', function() {
+  return gulp.src('./index.js')
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest('build/'));
 });
 
 /**
@@ -140,6 +147,7 @@ gulp.task('watch', function() {
   gulp.watch(['./landing/**/*.jade', './landing/**/*.js'], ['jade-landing', 'copy']);
   gulp.watch(['./lib/**/*.styl'], ['css']);
   gulp.watch(['./landing/**/*.styl'], ['css']);
+  gulp.watch(['./lib/**/*.styl', './lib/**/*.js', './index.js'], ['webpack']);
 });
 
 gulp.task('emails', ['ejs', 'mjml']);
@@ -147,5 +155,5 @@ gulp.task('templates', ['jade-landing', 'jade-lib', 'emails']);
 gulp.task('stylus', ['stylus-landing', 'stylus-lib']);
 gulp.task('css', ['stylus', 'cssmin']);
 
-gulp.task('build', ['css', 'templates', 'copy']);
+gulp.task('build', ['webpack', 'css', 'templates', 'copy']);
 gulp.task('default', ['server', 'build', 'watch']);

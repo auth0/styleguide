@@ -4,12 +4,13 @@ mixin playground(opts)
   - opts[name] = opts.name || '';
   - opts[height] = opts.height || null;
   - opts[darkMode] = opts.darkMode || "true";
-  
+
   - var path = 'lib/' + opts.name + '/demo';
   - var css = (opts.height) ? 'height: ' + opts.height : '';
   - var componentTabLabel = (opts.isEmail === "true") ? 'Email' : 'Component';
-  - var convertToIframe = (opts.isEmail === "true" || opts.iframe === "true") ? 'js-make-iframe' : '';
-  
+  - function setClass(condition, cssClass) { return (condition === "true") ? cssClass : ''; }
+  - function pathToSlug(path) { return path.replace('/', '-'); }
+
   .playground.js-playground(data-src!=path)
     if opts.darkMode != "false" && opts.isEmail != "true"
       .playground-options
@@ -18,34 +19,41 @@ mixin playground(opts)
             a(href="#", data-set-mode="light") Light
           li
             a(href="#", data-set-mode="dark") Dark
-            
-            
+
     ul.playground-actions
       li.active
-        a(data-toggle='tab', href='#' + opts.name + '-component')=componentTabLabel
-        
+        a(data-toggle='tab', href='#' + pathToSlug(opts.name) + '-component')=componentTabLabel
+
       if opts.isEmail != "true"
         li
-          a(data-toggle='tab', href='#' + opts.name + '-jade')
+          a(data-toggle='tab', href='#' + pathToSlug(opts.name) + '-jade')
             | Jade
+      else
+        li
+          a(data-toggle='tab', href='#' + pathToSlug(opts.name) + '-mjml')
+            | MJML
       li
-        a(data-toggle='tab', href='#' + opts.name + '-html')  
+        a(data-toggle='tab', href='#' + pathToSlug(opts.name) + '-html')
           | HTML
-      if opts.isEmail != "true"
+      if opts.isEmail != "true" && opts.isBoilerplate != "true"
         li
           a(href='/stage/#' + opts.name)
             | Open in stage
       else
         li
-          a(href!='/lib/emails/' + opts.name + '/demo.html')
-            | Open email
-    
+          a(href!='/lib/' + opts.name + '/demo.html', target="_blank")
+            | Open in new tab
+
     .tab-content
-      .tab-pane.playground-canvas.active(id!=opts.name + '-component', style!=css, class!=convertToIframe)
+      .tab-pane.playground-canvas.active(id!=pathToSlug(opts.name) + '-component', style!=css, class!=setClass(opts.iframe, 'js-make-iframe') + ' ' + setClass(opts.isBoilerplate, 'js-render-boilerplate'))
         if block
           block
       if opts.isEmail != "true"
-        .tab-pane.playground-code(data-lang="jade", id!=opts.name + '-jade')
+        .tab-pane.playground-code(data-lang="jade", id!=pathToSlug(opts.name) + '-jade')
           textarea.hide
-      .tab-pane.playground-code(data-lang="html", id!=opts.name + '-html')
+      else
+        .tab-pane.playground-code(data-lang="mjml", id!=pathToSlug(opts.name) + '-mjml')
+          textarea.hide
+
+      .tab-pane.playground-code(data-lang="html", id!=pathToSlug(opts.name) + '-html')
         textarea.hide

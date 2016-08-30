@@ -1,3 +1,12 @@
+Function.prototype.debounce = function(delay) {
+  var fn = this
+  return function() {
+    fn.args = arguments
+    fn.timeout_id && clearTimeout(fn.timeout_id)
+    fn.timeout_id = setTimeout(function() { return fn.apply(fn, fn.args) }, delay)
+  }
+}
+
 function playground() {
   var $elems = $('.js-playground');
   var count = $elems.length;
@@ -25,20 +34,33 @@ function playground() {
     $elem.get(0).CodeMirror.refresh();
   }
 
-  function stripIndent(str) {
-  	var match = str.match(/^[ \t]*(?=\S)/gm);
+  function setCodeMirrors($jade, $html, $mjml) {
+    if($jade.length) {
+      CodeMirror.fromTextArea($jade.get(0), {
+        lineNumbers: true,
+        readOnly: true,
+        theme: 'auth0',
+        mode: 'jade'
+      });
+    }
 
-  	if (!match) {
-  		return str;
-  	}
+    if($html.length) {
+      CodeMirror.fromTextArea($html.get(0), {
+        lineNumbers: true,
+        readOnly: true,
+        theme: 'auth0',
+        mode: 'text/html'
+      });
+    }
 
-  	var indent = Math.min.apply(Math, match.map(function (el) {
-  		return el.length;
-  	}));
-
-  	var re = new RegExp('^[ \\t]{' + indent + '}', 'gm');
-
-  	return indent > 0 ? str.replace(re, '') : str;
+    if($mjml.length) {
+      CodeMirror.fromTextArea($mjml.get(0), {
+        lineNumbers: true,
+        readOnly: true,
+        theme: 'auth0',
+        mode: 'text/html'
+      });
+    }
   }
 
   $elems.each(function(i) {
@@ -52,38 +74,42 @@ function playground() {
 
     var $canvas = $component.find('.playground-canvas');
     var $html = $component.find('[data-lang="html"] textarea');
-
-    $html.val(stripIndent($canvas.html()));
+    var $jade = $component.find('[data-lang="jade"] textarea');
+    var $mjml = $component.find('[data-lang="mjml"] textarea');
 
     $component.on('click', '.nav-pills a', setMode);
 
-    if(!$component.find('[data-lang="jade"]').length) {
-      return CodeMirror.fromTextArea($html.get(0), {
-        lineNumbers: true,
-        readOnly: true,
-        theme: 'auth0',
-        mode: 'text/html'
-      });
+
+    function getJade() {
+      if(!$jade.length) return;
+
+      return $.get(path + '.jade', function(contents) {
+        return $jade.val(contents);
+      })
     }
 
-    $.get(path + '.jade', function(contents) {
-      var $jade = $component.find('[data-lang="jade"] textarea');
+    function getHTML() {
+      if(!$html.length) return;
 
-      $jade.val(contents);
+      return $.get(path + '.html', function(contents) {
+        return $html.val(contents);
+      })
+    }
 
-      CodeMirror.fromTextArea($jade.get(0), {
-        lineNumbers: true,
-        readOnly: true,
-        theme: 'auth0',
-        mode: 'jade'
-      });
+    function getMJML() {
+      if(!$mjml.length) return;
 
-      CodeMirror.fromTextArea($html.get(0), {
-        lineNumbers: true,
-        readOnly: true,
-        theme: 'auth0',
-        mode: 'text/html'
-      });
+      return $.get(path + '.ejs', function(contents) {
+        return $mjml.val(contents);
+      })
+    }
+
+    $.when(
+      getJade(),
+      getHTML(),
+      getMJML()
+    ).always(function() {
+      return setCodeMirrors($jade, $html, $mjml)
     });
   });
 }
@@ -184,16 +210,27 @@ function splash() {
 }
 
 function createIframes($section) {
-  $section.find('.js-make-iframe').each(function() {
-    var $canvas = $(this);
+  function init() {
+    $section.find('.js-make-iframe').each(function() {
+      var $canvas = $(this);
 
-    var iframe = iframify($canvas.get(0), {
-      metaViewport: '<meta name="viewport" content="width=device-width">'
+      var iframe = iframify($canvas.get(0), {
+        metaViewport: '<meta name="viewport" content="width=device-width">'
+      });
+
+      $(iframe).addClass('tab-pane active iframe-canvas');
+      $(iframe).attr('id', $canvas.attr('id'));
     });
+  }
 
-    $(iframe).addClass('tab-pane active iframe-canvas');
-    $(iframe).attr('id', $canvas.attr('id'));
-  });
+  if(!$('body').hasClass('page-loaded')) {
+    $(window).on('load', init);
+  } else {
+    init();
+  }
+
+
+
 }
 
 function accordions() {
@@ -235,6 +272,24 @@ function colors() {
 
     $(this).text(parseColor(color).hex);
   });
+
+  var copyColor = new Clipboard('.js-color', {
+    text: function(btn) {
+      return $(btn).find('[data-hex]').text();
+    }
+  });
+
+  copyColor.on('success', function(e) {
+    var btn = e.trigger;
+    var $label = $('.color-info strong', btn);
+    var oValue = $label.text();
+
+    $label.text('Copied to clipboard!');
+
+    setTimeout(function() {
+      $label.text(oValue);
+    }, 600);
+  }.debounce(200));
 }
 
 $(function() {
@@ -243,4 +298,8 @@ $(function() {
  playground();
  colors();
  snippets();
+
+ $(window).on('load', function(){
+   $('body').addClass('page-loaded');
+ })
 });

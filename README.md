@@ -29,9 +29,11 @@ For example, if you want to retrieve our logo:
 
 ### Run locally
 
+To run locally
+
 ```bash
   npm i
-  grunt dev
+  npm run dev
 ```
 
 ### Bower

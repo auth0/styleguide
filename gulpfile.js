@@ -9,7 +9,6 @@ const rename = require('gulp-rename');
 const ejs = require('gulp-ejs');
 const mjmlCompile = require('gulp-mjml');
 const mjml = require('mjml');
-const prettify = require('gulp-html-prettify');
 const $ = require('gulp-load-plugins')();
 const webpack = require('webpack-stream');
 
@@ -30,10 +29,10 @@ gulp.task('webpack', function() {
 /**
  * Copy necessary files
  */
-gulp.task('copy', ['copy:landing-js', 'copy:landing-package']);
+gulp.task('copy', ['copy:landing-js', 'copy:landing-package', 'copy:lib']);
 
 // Copy lib files and make lossless compression of images
-gulp.task('compress:images', () => {
+gulp.task('copy:lib', () => {
   const onlyImages = $.filter('**/*.+(png|jpg|jpeg|gif)', { restore: true });
 
   return gulp.src('./lib/**/*.*')
@@ -93,17 +92,8 @@ gulp.task('jade-lib', function() {
     .pipe(gulp.dest('./build/landing/html/'))
 });
 
-gulp.task('jade-landing', ['emails', 'jade-lib'], function() {
+gulp.task('jade-landing', ['emails'], function() {
   var styleguideVersion = require('./package.json').version;
-
-  gulp.src('./lib/**/*.jade')
-    .pipe(jade({
-      pretty: true,
-      locals: {
-        version: styleguideVersion
-      }
-    }))
-    .pipe(gulp.dest('./build/lib/'))
 
   gulp.src('./landing/index.jade')
     .pipe(jade({
@@ -125,12 +115,10 @@ gulp.task('cssmin', ['stylus-lib', 'stylus-landing'], function() {
     .pipe(gulp.dest('build'))
 });
 
-gulp.task('ejs', ['copy'], function () {
+gulp.task('ejs', function () {
   return gulp.src(['lib/emails/**/*.ejs'])
-    .pipe(ejs())
-    .pipe(prettify({
-      indent_char: ' ',
-      indent_size: 2
+    .pipe(ejs({
+      msg: "ejs + mjml rocks"
     }))
     .pipe(gulp.dest('build/lib/emails/'))
 });
@@ -156,5 +144,4 @@ gulp.task('stylus', ['stylus-landing', 'stylus-lib']);
 gulp.task('css', ['stylus', 'cssmin']);
 
 gulp.task('build', ['webpack', 'css', 'templates', 'copy']);
-gulp.task('build:prod', ['webpack', 'css', 'templates', 'copy', 'compress:images']);
 gulp.task('default', ['server', 'build', 'watch']);

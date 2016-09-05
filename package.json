@@ -10,7 +10,7 @@
   },
   "author": "Auth0 <support@auth0.com> (http://auth0.com)",
   "scripts": {
-    "start": "gulp build && serve --port ${PORT:-3000} ./build",
+    "start": "grunt build && serve --port ${PORT:-3000} ./build",
     "dev": "gulp"
   },
   "dependencies": {},
@@ -47,7 +47,7 @@
     "gulp-stylus": "^2.3.1",
     "jade": "^1.7.0",
     "matchdep": "^0.3.0",
-    "mjml": "^2.3.0",
+    "mjml": "^2.3.1",
     "serve": "^1.4.0",
     "style-loader": "^0.13.1",
     "stylus": "~0.54.0",

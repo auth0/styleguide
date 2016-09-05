@@ -19,7 +19,7 @@ module.exports = function (grunt) {
         command:  __dirname + '/bin/fix-utf8-problem lib/budicon/budicon.css lib/budicon/budicon.fixed.css'
       },
       gulp: {
-        command: __dirname + '/node_modules/.bin/gulp build'
+        command: __dirname + '/node_modules/.bin/gulp build:prod'
       },
       gulp_dev: {
         command:  __dirname + '/node_modules/.bin/gulp',

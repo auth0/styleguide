@@ -30,10 +30,10 @@ gulp.task('webpack', function() {
 /**
  * Copy necessary files
  */
-gulp.task('copy', ['copy:landing-js', 'copy:landing-package', 'copy:lib']);
+gulp.task('copy', ['copy:landing-js', 'copy:landing-package']);
 
 // Copy lib files and make lossless compression of images
-gulp.task('copy:lib', () => {
+gulp.task('compress:images', () => {
   const onlyImages = $.filter('**/*.+(png|jpg|jpeg|gif)', { restore: true });
 
   return gulp.src('./lib/**/*.*')
@@ -125,7 +125,7 @@ gulp.task('cssmin', ['stylus-lib', 'stylus-landing'], function() {
     .pipe(gulp.dest('build'))
 });
 
-gulp.task('ejs', ['copy:lib'], function () {
+gulp.task('ejs', ['copy'], function () {
   return gulp.src(['lib/emails/**/*.ejs'])
     .pipe(ejs())
     .pipe(prettify({
@@ -156,4 +156,5 @@ gulp.task('stylus', ['stylus-landing', 'stylus-lib']);
 gulp.task('css', ['stylus', 'cssmin']);
 
 gulp.task('build', ['webpack', 'css', 'templates', 'copy']);
+gulp.task('build:prod', ['webpack', 'css', 'templates', 'copy', 'compress:images']);
 gulp.task('default', ['server', 'build', 'watch']);

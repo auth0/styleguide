@@ -1,12 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import select from './lib/select/index';
+import select from './lib/react/select/index';
+import emptyState from './lib/react/empty-state/index';
 
 window.React = React;
 
 window.Styleguide = {
-  "select": select
+  "select": select,
+  "emptyState": emptyState
 }
 
 window.Styleguide.create = (opts, elem) => {
@@ -74,7 +76,3 @@ window.Styleguide.initElement = (elem) => {
 };
 
 window.Styleguide.init();
-
-
-
-

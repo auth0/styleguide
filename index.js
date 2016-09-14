@@ -3,12 +3,14 @@ import { render } from 'react-dom';
 
 import select from './lib/react/select/index';
 import emptyState from './lib/react/empty-state/index';
+import extensionHeader from './lib/react/extension-header/index';
 
 window.React = React;
 
 window.Styleguide = {
   "select": select,
-  "emptyState": emptyState
+  "emptyState": emptyState,
+  "extensionHeader": extensionHeader
 }
 
 window.Styleguide.create = (opts, elem) => {

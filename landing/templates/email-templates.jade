@@ -2,6 +2,12 @@
   +header('Email Templates', "/lib/logos/img/email-templates.svg", "Build and send emails with style")
 
   .content-styleguide
+    section
+      h2#newsletter Newsletter
+      p Standard company newsletter
+
+      +playground({name: "emails/auth0-newsletter", isEmail: "true", iframe: "true"})
+        include ../../build/lib/emails/auth0-newsletter/demo.html
 
     section
       h2#email-notifications Notifications

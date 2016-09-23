@@ -1,11 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+import ComponentPlayground from 'component-playground';
 import Playground from './lib/react/playground/index';
+
 import Select from './lib/react/select/index';
 import EmptyState from './lib/react/empty-state/index';
 import LoadingPanel from './lib/react/loading-panel/index';
 
+const componentExample = require("raw!./lib/react/select/example");
 
 class ReactComponents extends React.Component {
   render() {
@@ -15,9 +18,7 @@ class ReactComponents extends React.Component {
           title="Select"
           description="Select component description text."
         >
-          <Select
-            options={[ 'Location', 'Position', 'Name' ]}
-          />
+          <ComponentPlayground codeText={componentExample} scope={{ React }} />
         </Playground>
         <Playground
           title="Loading panel"

@@ -18,15 +18,27 @@ class ReactComponents extends React.Component {
       <section className="section content-styleguide">
 
         <Playground title="Select" description="Select component description text.">
-          <ComponentPlayground codeText={SelectExample} scope={{ React, Select }} theme="material" />
+          <ComponentPlayground
+            codeText={SelectExample}
+            scope={{ React, Select }}
+            theme="auth0"
+          />
         </Playground>
 
         <Playground title="Loading panel" description="Loading panel component description text.">
-          <ComponentPlayground codeText={LoadingPanelExample} scope={{ React, LoadingPanel }} theme="material" />
+          <ComponentPlayground
+            codeText={LoadingPanelExample}
+            scope={{ React, LoadingPanel }}
+            theme="auth0"
+          />
         </Playground>
 
         <Playground title="Empty State" description="Empty state component description text.">
-          <ComponentPlayground codeText={EmptyStateExample} scope={{ React, EmptyState }} theme="material" />
+          <ComponentPlayground
+            codeText={EmptyStateExample}
+            scope={{ React, EmptyState }}
+            theme="auth0"
+          />
         </Playground>
 
       </section>

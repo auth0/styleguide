@@ -44,7 +44,7 @@ class ReactComponents extends React.Component {
         playground: {
           codeText: EmptyStateExample,
           scope: { React, EmptyState },
-          docClass: EmptyStateExample
+          docClass: EmptyState
         }
       }
     ];

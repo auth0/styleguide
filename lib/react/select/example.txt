@@ -1,1 +1,6 @@
-<Select options={[ 'Location', 'Position', 'Name' ]} />
+<Select
+  options={[ 'Name', 'Company', 'Location' ]}
+  label="Search users by"
+  color="#000"
+  afterSelect={(selected) => { console.log(selected); }}
+/>

@@ -5,42 +5,58 @@ import ComponentPlayground from 'component-playground';
 import Playground from './lib/react/playground/index';
 
 import Select from './lib/react/select/index';
-import EmptyState from './lib/react/empty-state/index';
-import LoadingPanel from './lib/react/loading-panel/index';
+import SelectExample from './lib/react/select/example.txt';
 
-const SelectExample = require('raw!./lib/react/select/example.txt');
-const LoadingPanelExample = require('raw!./lib/react/loading-panel/example.txt');
-const EmptyStateExample = require('raw!./lib/react/empty-state/example.txt');
+import EmptyState from './lib/react/empty-state/index';
+import EmptyStateExample from './lib/react/empty-state/example.txt';
+
+import LoadingPanel from './lib/react/loading-panel/index';
+import LoadingPanelExample from './lib/react/loading-panel/example.txt';
+
 
 class ReactComponents extends React.Component {
   render() {
+    const playgroundList = [
+      {
+        title: 'Select',
+        description: 'Select component description text.',
+        playground: {
+          codeText: SelectExample,
+          scope: { React, Select },
+          docClass: Select,
+          propDescriptionMap: {
+            options: 'Array of select options.'
+          }
+        }
+      },
+      {
+        title: 'Loading panel',
+        description: 'Loading panel component description text.',
+        playground: {
+          codeText: LoadingPanelExample,
+          scope: { React, LoadingPanel },
+          docClass: LoadingPanel
+        }
+      },
+      {
+        title: 'Empty state',
+        description: 'Empty state component description text.',
+        playground: {
+          codeText: EmptyStateExample,
+          scope: { React, EmptyState },
+          docClass: EmptyStateExample
+        }
+      }
+    ];
     return (
       <section className="section content-styleguide">
-
-        <Playground title="Select" description="Select component description text.">
-          <ComponentPlayground
-            codeText={SelectExample}
-            scope={{ React, Select }}
-            theme="auth0"
-          />
-        </Playground>
-
-        <Playground title="Loading panel" description="Loading panel component description text.">
-          <ComponentPlayground
-            codeText={LoadingPanelExample}
-            scope={{ React, LoadingPanel }}
-            theme="auth0"
-          />
-        </Playground>
-
-        <Playground title="Empty State" description="Empty state component description text.">
-          <ComponentPlayground
-            codeText={EmptyStateExample}
-            scope={{ React, EmptyState }}
-            theme="auth0"
-          />
-        </Playground>
-
+        { playgroundList.map((component) => {
+          return (
+            <Playground {...component} key={component.title}>
+              <ComponentPlayground theme="auth0" {...component.playground} />
+            </Playground>
+          );
+        }) }
       </section>
     );
   }

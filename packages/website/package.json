@@ -8,7 +8,6 @@
     "start": "webpack-dev-server --hot --inline --port 9000 --open --config ./tools/webpack/webpack.browser.config.babel.js",
     "lint:js": "eslint .",
     "lint": "npm run lint:js",
-    "prepublish": "echo 'You cant publish this package on npm' && exit 1",
     "release": "bash tools/scripts/release.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +16,6 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.16.0",
-    "babel-preset-latest": "^6.16.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^4.0.0-alpha.4"
@@ -28,6 +26,7 @@
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "conventional-changelog-cli": "^1.2.0",

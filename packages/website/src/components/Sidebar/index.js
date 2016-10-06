@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './index.styl';
 
-const Sidebar = ({ items }) =>
+const Sidebar = ({ items, version }) =>
   <div className="sidebar">
     <img src="https://cdn.auth0.com/styleguide/1.0.0/img/badge.svg" alt="Auth0 Logo" className="sidebar-badge"/>
     <h1 className="sidebar-title">React components</h1>
@@ -10,10 +10,12 @@ const Sidebar = ({ items }) =>
         <li className="sidebar-item" key={title}><a className="sidebar-item-link" href={url}>{title}</a></li>)
       }
     </ul>
+    <div className="sidebar-version">Version {version}</div>
   </div>;
 
 Sidebar.propTypes = {
-  items: React.PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
+  version: PropTypes.string.isRequired
 };
 
 export default Sidebar;

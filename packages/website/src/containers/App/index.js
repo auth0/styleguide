@@ -7,7 +7,7 @@ import styles from './index.styl';
 const App = () => (
 <BrowserRouter>
   <div>
-    <Sidebar items={[
+    <Sidebar version="2.0" items={[
       {
         title: 'Alert',
         url: '/alert'

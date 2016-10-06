@@ -1,1 +1,1 @@
-export default from './Header';
+export Sidebar from './Sidebar';

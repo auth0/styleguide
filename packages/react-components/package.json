@@ -1,12 +1,11 @@
 {
-  "name": "auth0-react-components",
+  "name": "auth0-styleguide-react-components",
   "version": "0.0.0",
   "description": "",
   "main": "build/react-components.js",
   "scripts": {
     "build": "webpack --config tools/webpack/webpack.module.config.babel.js",
     "start": "webpack-dev-server --hot --inline --port 9000 --open --config ./tools/webpack/webpack.playground.config.babel.js",
-    "prepublish": "echo 'You cant publish this package on npm' && exit 1",
     "lint:js": "eslint .",
     "lint": "npm run lint:js",
     "test": "echo \"Error: no test specified\" && exit 1"

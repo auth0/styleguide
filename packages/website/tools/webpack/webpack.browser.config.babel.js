@@ -7,7 +7,13 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 const DEBUG = process.env.NODE_ENV !== 'production';
 
 const config = {
-  entry: path.join(__dirname, '../../src/client.js'),
+  entry: [
+    ...DEBUG ? [
+      'react-hot-loader/patch'
+    ] : [],
+
+    path.join(__dirname, '../../src/client.js')
+  ],
 
   output: {
     path: path.join(__dirname, '../../build'),
@@ -43,13 +49,16 @@ const config = {
     }, {
       test: /\.svg/,
       loader: 'raw'
+    }, {
+      test: /auth0-styleguide-react-components\/src/,
+      loader: 'raw'
     }]
   },
 
   plugins: [
     // Name of the CSS bundle
     // https://github.com/webpack/extract-text-webpack-plugin/blob/webpack-1/README.md
-    new ExtractTextPlugin('react-components.css'),
+    new ExtractTextPlugin('bundle.css'),
     // Define free variables
     // https://webpack.github.io/docs/list-of-plugins.html#defineplugin
     new webpack.DefinePlugin({
@@ -100,7 +109,7 @@ const config = {
     colors: true
   },
 
-  devtool: 'eval-source-map'
+  devtool: DEBUG ? 'eval-source-map' : false
 };
 
 export default config;

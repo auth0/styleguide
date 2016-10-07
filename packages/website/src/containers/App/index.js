@@ -39,10 +39,12 @@ export default App;
 function generateComponentsCollection(listOfComponents) {
   return Object.keys(listOfComponents).map(component => {
     const doc = StyleguideComponentsDocs[component];
-    const [title] = doc.description.split(':');
+    let [title, description] = doc.description.split(':');
+    description = description.slice(1);
 
     return {
       title,
+      description,
       url: toURL(title),
       component: listOfComponents[component],
       doc

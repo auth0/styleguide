@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './index.styl';
-// import { parse } from 'react-docgen';
+import { Playground } from '../../components';
 
 const ComponentPage = ({ component }) => {
-  // const codeOfComponent = require(`raw!auth0-styleguide-react-components/src/${component.component.name}/index.js`);
-  // const parsedComments = parse(codeOfComponent);
 
   return (
     <section className="react-component-page">
@@ -12,6 +10,9 @@ const ComponentPage = ({ component }) => {
       <p className="component-description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, quos.
       </p>
+      <Playground>
+        <component.component />
+      </Playground>
       <table className="component-properties-table table table-fixed">
         <thead>
           <tr>
@@ -44,6 +45,10 @@ const ComponentPage = ({ component }) => {
       </table>
     </section>
   );
+};
+
+ComponentPage.propTypes = {
+  component: PropTypes.object.isRequired
 };
 
 export default ComponentPage;

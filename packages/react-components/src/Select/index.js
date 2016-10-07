@@ -25,6 +25,9 @@ Select.defaultProps = {
 };
 
 Select.propTypes = {
+  /**
+   * List of options
+   */
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
   /**
    * Index of default selected value

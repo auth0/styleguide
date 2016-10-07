@@ -15,7 +15,7 @@ const Sidebar = ({ items, version }) =>
     <ul className="sidebar-items-list">
       {items.map(({ url, title }) =>
         <li className="sidebar-item" key={title}>
-          <Link className="sidebar-item-link" to={url}>{title}</Link>
+          <Link className="sidebar-item-link" to={url} activeClassName="active">{title}</Link>
         </li>
       )}
     </ul>

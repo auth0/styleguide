@@ -55,5 +55,7 @@ function toURL(text) {
 }
 
 function toDashCase(text) {
-  return text.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
+  const phase1 = text.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
+  const phase2 = phase1.replace(' ', '-');
+  return phase2;
 }

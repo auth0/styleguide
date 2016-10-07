@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import styles from './index.styl';
 
 /**
@@ -18,7 +18,7 @@ const Select = ({ options, selected, label, color, handleChange }) => (
 );
 
 Select.defaultProps = {
-  options: [ 'Default' ],
+  options: ['Default'],
   selected: 0,
   label: '',
   handleChange: () => {}

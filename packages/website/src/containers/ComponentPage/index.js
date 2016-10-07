@@ -24,7 +24,7 @@ ComponentPage.propTypes = {
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     component: PropTypes.any.isRequired,
-    props: PropTypes.object.isRequired
+    props: PropTypes.object
   }).isRequired
 };
 

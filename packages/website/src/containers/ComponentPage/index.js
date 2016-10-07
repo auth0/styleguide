@@ -3,7 +3,6 @@ import styles from './index.styl';
 import { Playground } from '../../components';
 
 const ComponentPage = ({ component }) => {
-
   return (
     <section className="react-component-page">
       <h1 className="component-title">{component.title}</h1>
@@ -48,7 +47,12 @@ const ComponentPage = ({ component }) => {
 };
 
 ComponentPage.propTypes = {
-  component: PropTypes.object.isRequired
+  component: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    component: PropTypes.any.isRequired,
+    doc: PropTypes.object.isRequired
+  }).isRequired
 };
 
 export default ComponentPage;

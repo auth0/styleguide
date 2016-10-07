@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import styles from './index.styl';
+import './index.styl';
 
 const Sidebar = ({ items, version }) =>
   <div className="sidebar">

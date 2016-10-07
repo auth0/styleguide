@@ -49,9 +49,6 @@ const config = {
     }, {
       test: /\.svg/,
       loader: 'raw'
-    }, {
-      test: /auth0-styleguide-react-components\/src/,
-      loader: 'raw'
     }]
   },
 

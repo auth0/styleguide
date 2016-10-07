@@ -3,6 +3,7 @@ import { HashRouter, Match, Miss } from 'react-router';
 import { ComponentPage, Splash, NotFound } from 'containers';
 import { Sidebar } from 'components';
 import * as StyleguideComponents from 'auth0-styleguide-react-components';
+import StyleguideComponentsDocs from 'auth0-styleguide-react-components/build/docs.json';
 import './index.styl';
 
 const componentsCollection = generateComponentsCollection(StyleguideComponents);
@@ -36,11 +37,17 @@ const App = () => (
 export default App;
 
 function generateComponentsCollection(listOfComponents) {
-  return Object.keys(listOfComponents).map(component => ({
-    title: listOfComponents[component].name,
-    url: toURL(listOfComponents[component].name),
-    component: listOfComponents[component]
-  }));
+  return Object.keys(listOfComponents).map(component => {
+    const doc = StyleguideComponentsDocs[component];
+    const [title] = doc.description.split(':');
+
+    return {
+      title,
+      url: toURL(title),
+      component: listOfComponents[component],
+      doc
+    };
+  });
 }
 
 function toURL(text) {

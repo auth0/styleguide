@@ -96,6 +96,11 @@ const config = {
     })
   ],
 
+  resolve: {
+    root: path.join(__dirname, '../../src'),
+    modulesDirectories: ['node_modules']
+  },
+
   stylus: {
     use: [
       poststylus(['autoprefixer'])

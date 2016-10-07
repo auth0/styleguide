@@ -1,9 +1,9 @@
 import React from 'react';
-import { HashRouter, Match, Miss, Link } from 'react-router';
-import { ComponentPage, Splash, NotFound } from '../';
-import { Sidebar } from '../../components';
-import styles from './index.styl';
+import { HashRouter, Match, Miss } from 'react-router';
+import { ComponentPage, Splash, NotFound } from 'containers';
+import { Sidebar } from 'components';
 import * as StyleguideComponents from 'auth0-styleguide-react-components';
+import './index.styl';
 
 const componentsCollection = generateComponentsCollection(StyleguideComponents);
 

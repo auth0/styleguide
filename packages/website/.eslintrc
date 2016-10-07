@@ -4,5 +4,15 @@
   "rules": {
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src"
+        ]
+      }
+    }
   }
 }

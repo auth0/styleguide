@@ -4,6 +4,7 @@ import { ComponentPage, Splash, NotFound } from 'containers';
 import { Sidebar } from 'components';
 import * as StyleguideComponents from 'auth0-styleguide-react-components';
 import StyleguideComponentsDocs from 'auth0-styleguide-react-components/build/docs.json';
+import 'auth0-styleguide-react-components/build/react-components.css';
 import './index.styl';
 import { version } from '../../../package.json';
 

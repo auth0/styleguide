@@ -44,7 +44,7 @@ const config = {
           minimize: !DEBUG
         })}`)
     }, {
-      test: /\.jade/,
+      test: /\.(pug|jade)/,
       loader: 'pug'
     }, {
       test: /\.svg/,
@@ -91,7 +91,7 @@ const config = {
     //
     new HtmlWebpackPlugin({
       title: 'Auth0 React Styleguide',
-      template: 'pug!./src/views/index.pug',
+      template: './src/views/index.pug',
       inject: 'body'
     })
   ],

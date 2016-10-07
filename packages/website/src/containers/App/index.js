@@ -5,13 +5,14 @@ import { Sidebar } from 'components';
 import * as StyleguideComponents from 'auth0-styleguide-react-components';
 import StyleguideComponentsDocs from 'auth0-styleguide-react-components/build/docs.json';
 import './index.styl';
+import { version } from '../../../package.json';
 
 const componentsCollection = generateComponentsCollection(StyleguideComponents);
 
 const App = () => (
   <HashRouter>
     <div>
-      <Sidebar version="2.0" items={componentsCollection} />
+      <Sidebar version={version} items={componentsCollection} />
       <main className="styleguide-content">
         <Match
           pattern="/"

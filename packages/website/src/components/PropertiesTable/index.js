@@ -7,7 +7,8 @@ const PropertiesTable = ({ props }) => {
         <tr>
           <th width="15%">Property</th>
           <th width="15%">Type</th>
-          <th width="60%">Description</th>
+          <th width="40%">Description</th>
+          <th width="20%">Default value</th>
           <th width="10%" className="text-center">Required</th>
         </tr>
       </thead>
@@ -22,6 +23,7 @@ const PropertiesTable = ({ props }) => {
                   {props[prop].type.name === 'arrayOf' && ` ${props[prop].type.value.name}`}
                 </td>
                 <td>{props[prop].description}</td>
+                <td>{props[prop].defaultValue ? props[prop].defaultValue.value : '' }</td>
                 <td className="text-center">{props[prop].required && 'True'}</td>
               </tr>
             );

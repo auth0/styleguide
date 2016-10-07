@@ -5,9 +5,9 @@ import styles from './index.styl';
  * Select: drop-down list.
  */
 const Select = ({ options, selected, label, color, handleChange }) => (
-  <div className={styles.select}>
+  <div className="select">
     { label && <span>{label}</span> }
-    <span className={`${styles.value} text-truncate`} style={{ color }}>{options[selected]}</span>
+    <span className="value text-truncate" style={{ color }}>{options[selected]}</span>
     <i className="icon-budicon-460" />
     <select onChange={handleChange}>
       {options.map((name, index) =>

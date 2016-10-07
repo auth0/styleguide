@@ -6,9 +6,7 @@ const ComponentPage = ({ component }) => {
   return (
     <section className="react-component-page">
       <h1 className="component-title">{component.title}</h1>
-      <p className="component-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, quos.
-      </p>
+      <p className="component-description">{component.description}</p>
       <Playground>
         <component.component />
       </Playground>

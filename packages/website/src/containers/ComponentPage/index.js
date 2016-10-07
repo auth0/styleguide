@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import styles from './index.styl';
-import { Playground } from '../../components';
+import { Playground, PropertiesTable } from '../../components';
 
 const ComponentPage = ({ component }) => {
   return (
@@ -10,36 +10,11 @@ const ComponentPage = ({ component }) => {
       <Playground>
         <component.component />
       </Playground>
-      <table className="component-properties-table table table-fixed">
-        <thead>
-          <tr>
-            <th width="15%">Property</th>
-            <th width="15%">Type</th>
-            <th width="60%">Description</th>
-            <th width="10%">Required</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Name</td>
-            <td>array</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, non?</td>
-            <td>true</td>
-          </tr>
-          <tr>
-            <td>Property</td>
-            <td>string</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, non?</td>
-            <td>false</td>
-          </tr>
-          <tr>
-            <td>Options</td>
-            <td>array</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, non?</td>
-            <td>false</td>
-          </tr>
-        </tbody>
-      </table>
+      { component.props ? (
+        <PropertiesTable props={component.props} />
+      ) : (
+        <h4>No component propTypes defined.</h4>
+      )}
     </section>
   );
 };
@@ -49,7 +24,7 @@ ComponentPage.propTypes = {
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     component: PropTypes.any.isRequired,
-    doc: PropTypes.object.isRequired
+    props: PropTypes.object.isRequired
   }).isRequired
 };
 

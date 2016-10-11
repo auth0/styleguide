@@ -15,18 +15,21 @@ const SelectExample = `<Select
   label="Select user"
 />`;
 
-const Playground = ({ component, example }) => (
+const EmptyStateExample = '<EmptyState />';
+
+const Playground = ({ component, example, name }) => (
   <div className="react-component-playground">
     <ComponentPlayground
-      codeText={example || SelectExample}
-      scope={{ React, [component.name]: component }}
+      codeText={name === 'Select' ? SelectExample : EmptyStateExample}
+      scope={{ React, [name]: component }}
     />
   </div>
 );
 
 Playground.propTypes = {
   component: PropTypes.any.isRequired,
-  example: PropTypes.string
+  example: PropTypes.string,
+  name: PropTypes.string
 };
 
 export default Playground;

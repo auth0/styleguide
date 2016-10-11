@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react';
 import { Playground, PropertiesTable } from 'components';
 import './index.styl';
 
-const ComponentPage = ({ title, description, component, props }) => (
+const ComponentPage = ({ title, description, component, props, name }) => (
   <section className="react-component-page">
     <h1 className="component-title">{title}</h1>
     <p className="component-description">{description}</p>
-    <Playground component={component} />
+    <Playground component={component} name={name} />
     { props ? (
       <PropertiesTable props={props} />
     ) : (
@@ -17,6 +17,7 @@ const ComponentPage = ({ title, description, component, props }) => (
 
 ComponentPage.propTypes = {
   title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   component: PropTypes.any.isRequired,

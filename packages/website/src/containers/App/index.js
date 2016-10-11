@@ -49,7 +49,8 @@ function generateComponentsCollection(listOfComponents) {
       description,
       url: toURL(title),
       component: listOfComponents[component],
-      props: doc.props
+      props: doc.props,
+      name: component
     };
   });
 }

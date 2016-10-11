@@ -19,6 +19,8 @@ getComponentsDirectories(srcPath)
     finalJSON[name] = componentInfo;
   });
 
+if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
+
 const content = JSON.stringify(finalJSON, null, 2);
 fs.writeFileSync(path.join(buildPath, 'docs.json'), content, 'utf8');
 

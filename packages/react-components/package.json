@@ -14,8 +14,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "author": "Auth0 (https://auth0.com)",
+  "license": "UNLICENSED",
+  "private": true,
   "peerDependencies": {
     "react": "^15.0.0"
   },

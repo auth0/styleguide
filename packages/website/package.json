@@ -12,7 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Auth0",
+  "author": "Auth0 (https://auth0.com)",
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "auth0-styleguide-react-components": "*",

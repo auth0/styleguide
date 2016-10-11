@@ -1,6 +1,6 @@
 {
   "name": "auth0-styleguide",
-  "version": "4.8.21",
+  "version": "5.0.0",
   "engines": {
     "node": "^4.4.7"
   },
@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git://github.com/auth0/lock"
   },
-  "author": "Auth0 <support@auth0.com> (http://auth0.com)",
+  "author": "Auth0 (https://auth0.com)",
   "scripts": {
     "start": "grunt build && serve --port ${PORT:-3000} ./build",
     "dev": "gulp"
@@ -75,5 +75,7 @@
     "stylus-loader": "^2.3.1",
     "webpack": "^1.13.2",
     "webpack-stream": "^3.2.0"
-  }
+  },
+  "license": "UNLICENSED",
+  "private": true
 }

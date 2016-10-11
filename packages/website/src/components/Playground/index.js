@@ -1,21 +1,10 @@
 import React, { PropTypes } from 'react';
-import styles from './index.styl';
+import ComponentPlayground from 'component-playground';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/monokai.css';
+import './index.styl';
 
-class Playground extends React.Component {
-  componentDidMount() {
-    hljs.configure({
-      classPrefix: ''
-    })
-    hljs.initHighlighting();
-  }
-  render() {
-    return (
-      <div className="react-component-playground">
-        { this.props.children }
-        <div className="react-component-playground-code">
-          <pre>
-            <code className="javascript">
-{`<Select
+const SelectExample = `<Select
   options={[
     'Zoey Andrews',
     'Jerry Woods',
@@ -24,17 +13,20 @@ class Playground extends React.Component {
   selected={2}
   handleChange={(e) => { console.log(e.target.value); }}
   label="Select user"
-/>`}
-            </code>
-          </pre>
-        </div>
-      </div>
-    );
-  }
-}
+/>`;
+
+const Playground = ({ component, example }) => (
+  <div className="react-component-playground">
+    <ComponentPlayground
+      codeText={example || SelectExample}
+      scope={{ React, [component.name]: component }}
+    />
+  </div>
+);
 
 Playground.propTypes = {
-  children: PropTypes.node.isRequired
+  component: PropTypes.any.isRequired,
+  example: PropTypes.string
 };
 
 export default Playground;

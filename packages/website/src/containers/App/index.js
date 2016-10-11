@@ -23,7 +23,7 @@ const App = () => (
               {componentsCollection.map((component, index) =>
                 <Match
                   pattern={component.url}
-                  render={() => (<ComponentPage component={component} />)}
+                  render={() => (<ComponentPage {...component} />)}
                   key={index}
                 />
               )}

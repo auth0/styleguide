@@ -1,31 +1,26 @@
 import React, { PropTypes } from 'react';
-import styles from './index.styl';
-import { Playground, PropertiesTable } from '../../components';
+import { Playground, PropertiesTable } from 'components';
+import './index.styl';
 
-const ComponentPage = ({ component }) => {
-  return (
-    <section className="react-component-page">
-      <h1 className="component-title">{component.title}</h1>
-      <p className="component-description">{component.description}</p>
-      <Playground>
-        <component.component />
-      </Playground>
-      { component.props ? (
-        <PropertiesTable props={component.props} />
-      ) : (
-        <h4>No component propTypes defined.</h4>
-      )}
-    </section>
-  );
-};
+const ComponentPage = ({ title, description, component, props }) => (
+  <section className="react-component-page">
+    <h1 className="component-title">{title}</h1>
+    <p className="component-description">{description}</p>
+    <Playground component={component} />
+    { props ? (
+      <PropertiesTable props={props} />
+    ) : (
+      <h4>No component propTypes defined.</h4>
+    )}
+  </section>
+);
 
 ComponentPage.propTypes = {
-  component: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    component: PropTypes.any.isRequired,
-    props: PropTypes.object
-  }).isRequired
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  component: PropTypes.any.isRequired,
+  props: PropTypes.object
 };
 
 export default ComponentPage;

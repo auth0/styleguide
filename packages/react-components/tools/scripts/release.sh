@@ -13,11 +13,11 @@ fi
 
 LAST_COMMIT=$(git log -1 --pretty=%B)                  # Save last commit name
 ORIGIN_DEST="origin"                                   # git origin of destination
-PACKAGE_NAME=$(node -p "require('./package').name")    # Package name
+PACKAGE_NAME="react-components"                        # Package name
 NEXT_VERSION=$(node -p "require('./package').version") # Get new version
 
 # Publish git tag
-TAG_NAME="$PACKAGE_NAME@$NEXT_VERSION"
+TAG_NAME="$PACKAGE_NAME-$NEXT_VERSION"
 TAG_EXISTS=$(git tag -l "$TAG_NAME")
 
 if [ ! -z "$TAG_EXISTS" ]; then
@@ -26,7 +26,7 @@ else
   echo "Deploying $NEXT_VERSION to git"
 
   TEMP_TAG_BRANCH="$PACKAGE_NAME-temp"   # Name of the temporary branch for the package
-  TAG_NAME_LATEST="$PACKAGE_NAME@latest" # Name of latest git tag
+  TAG_NAME_LATEST="$PACKAGE_NAME-latest" # Name of latest git tag
 
   ## Change to the temporary branch
   git branch -D "$TEMP_TAG_BRANCH"

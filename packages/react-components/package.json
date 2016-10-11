@@ -10,6 +10,7 @@
     "start": "webpack-dev-server --hot --inline --port 9000 --open --config ./tools/webpack/webpack.playground.config.babel.js",
     "lint:js": "eslint .",
     "lint": "npm run lint:js",
+    "release": "bash tools/scripts/release.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,21 +1,23 @@
 {
   "name": "auth0-styleguide",
   "version": "5.0.0",
-  "engines": {
-    "node": "^4.4.7"
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "start": "cd packages/website && bash tools/scripts/start.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/auth0/lock"
+    "url": "git://github.com/auth0/styleguide"
   },
+  "license": "UNLICENSED",
   "author": "Auth0 (https://auth0.com)",
-  "scripts": {
-    "start": "grunt build && serve --port ${PORT:-3000} ./build",
-    "dev": "gulp"
+  "engines": {
+    "node": "^4.4.7"
   },
   "dependencies": {
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "lerna": "^2.0.0-beta.30"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
@@ -76,6 +78,5 @@
     "webpack": "^1.13.2",
     "webpack-stream": "^3.2.0"
   },
-  "license": "UNLICENSED",
   "private": true
 }

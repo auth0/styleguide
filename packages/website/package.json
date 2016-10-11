@@ -22,7 +22,7 @@
     "react-docgen": "^2.11.0",
     "react-dom": "^15.3.2",
     "react-router": "^4.0.0-alpha.4",
-    "website-404-error-page": "auth0/website-page-error-404#1.0.0"
+    "serve": "^1.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.0",

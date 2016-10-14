@@ -2,30 +2,27 @@ import React, { PropTypes } from 'react';
 import { Playground, PropertiesTable } from 'components';
 import './index.styl';
 
-const ComponentPage = ({ title, description, props, examples }) => {
-  return (
-    <section className="react-component-page">
-      <h1 className="component-title">{title}</h1>
-      <p className="component-description">{description}</p>
+const ComponentPage = ({ title, description, props, examples }) =>
+  <section className="react-component-page">
+    <h1 className="component-title">{title}</h1>
+    <p className="component-description">{description}</p>
 
-      {examples.map((example, index) =>
-        <Playground
-          key={index}
-          component={example.component}
-          code={example.code}
-          title={example.title}
-        />
-      )}
+    {examples.map((example, index) =>
+      <Playground
+        key={index}
+        component={example.component}
+        code={example.code}
+        title={example.title}
+      />
+    )}
 
-      { props ? (
-        <PropertiesTable props={props} />
-      ) : (
-        <h4>No component propTypes defined.</h4>
-      )}
+    { props ? (
+      <PropertiesTable props={props} />
+    ) : (
+      <h4>No component propTypes defined.</h4>
+    )}
 
-    </section>
-  );
-};
+  </section>;
 
 ComponentPage.propTypes = {
   title: PropTypes.string.isRequired,

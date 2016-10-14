@@ -3,7 +3,6 @@ import EmptyState from './';
 
 // Showcase component differents usecases
 const examples = [
-  <EmptyState />,
   <EmptyState />
 ];
 

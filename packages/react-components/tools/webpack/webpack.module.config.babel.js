@@ -5,10 +5,13 @@ import commonConfig from './webpack.common.config.babel.js';
 const DEBUG = process.env.NODE_ENV !== 'production';
 
 const config = merge({}, commonConfig, {
-  entry: path.join(__dirname, '../../src'),
+  entry: {
+    'react-components': [path.join(__dirname, '../../src')],
+    examples: [path.join(__dirname, '../../src/examples')]
+  },
 
   output: {
-    filename: 'react-components.js',
+    filename: '[name].js',
     library: 'Auth0ReactComponents',
     libraryTarget: 'umd'
   },

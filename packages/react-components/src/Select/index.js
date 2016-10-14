@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import styles from './index.styl';
 
 /**
- * Select: drop-down list.
+ * Select: Drop-down list.
  */
 const Select = ({ options, selected, label, color, handleChange }) => (
   <div className="select">

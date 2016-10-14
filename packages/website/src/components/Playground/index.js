@@ -3,9 +3,11 @@ import './index.styl';
 
 class Playground extends React.Component {
   componentDidMount() {
+    hljs.configure({ classPrefix: '' });
     hljs.highlightBlock(this.codeBlock);
   }
   componentDidUpdate() {
+    hljs.configure({ classPrefix: '' });
     hljs.initHighlighting.called = false;
     hljs.highlightBlock(this.codeBlock);
   }

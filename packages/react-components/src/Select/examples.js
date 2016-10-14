@@ -16,18 +16,18 @@ const examples = [
       />
     ),
     code: (
-      `
-      <Select
-        options={[
-          'Zoey Andrews',
-          'Jerry Woods',
-          'Marion Garza'
-        ]}
-        selected={2}
-        handleChange={(e) => { console.log(e.target.value); }}
-        label="Select user"
-      />
-      `
+`
+<Select
+  options={[
+    'Zoey Andrews',
+    'Jerry Woods',
+    'Marion Garza'
+  ]}
+  selected={2}
+  handleChange={(e) => { console.log(e.target.value); }}
+  label="Select user"
+/>
+`
     )
   }
 ];

@@ -13,10 +13,6 @@ render(
   rootEl
 );
 
-// Highlight.js global configuration
-// https://highlightjs.readthedocs.io/en/latest/api.html#configure-options
-hljs.configure({ classPrefix: '' }); // eslint-disable-line no-undef
-
 if (module.hot) {
   module.hot.accept('./containers', () => {
     const NextApp = require('./containers').App; // eslint-disable-line global-require

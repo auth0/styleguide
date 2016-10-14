@@ -1,3 +1,4 @@
+/* global hljs */
 import React, { PropTypes } from 'react';
 import './index.styl';
 
@@ -14,14 +15,22 @@ class Playground extends React.Component {
   render() {
     const { component, code, title } = this.props;
     return (
-      <div className="react-component-playground">
-        {title}
-        {component}
-        <pre>
-          <code className="javascript" ref={node => this.codeBlock = node}>
-            {code}
-          </code>
-        </pre>
+      <div className="react-playground">
+        { title && <h3 className="react-playground-title">{title}</h3> }
+        <div className="react-playground-component">
+          <div className="component-links">
+            <a href="#">Open in stage</a>
+          </div>
+          {component}
+        </div>
+        <div className="react-playground-code">
+          <button className="copy-code-btn btn btn-sm btn-success">Copy code</button>
+          <pre>
+            <code className="javascript" ref={node => this.codeBlock = node}>
+              {code}
+            </code>
+          </pre>
+        </div>
       </div>
     );
   }

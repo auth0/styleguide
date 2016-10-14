@@ -4,9 +4,10 @@ import './index.styl';
 
 const ComponentPage = ({ title, description, props, examples }) =>
   <section className="react-component-page">
-    <h1 className="component-title">{title}</h1>
-    <p className="component-description">{description}</p>
-
+    <div className="component-information">
+      <h1 className="component-title">{title}</h1>
+      <p className="component-description">{description}</p>
+    </div>
     {examples.map((example, index) =>
       <Playground
         key={index}
@@ -15,13 +16,7 @@ const ComponentPage = ({ title, description, props, examples }) =>
         title={example.title}
       />
     )}
-
-    { props ? (
-      <PropertiesTable props={props} />
-    ) : (
-      <h4>No component propTypes defined.</h4>
-    )}
-
+    { props && <PropertiesTable props={props} />}
   </section>;
 
 ComponentPage.propTypes = {

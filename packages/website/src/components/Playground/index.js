@@ -1,5 +1,6 @@
 /* global hljs */
 import React, { PropTypes } from 'react';
+import CopyToClipboard from 'react-copy-to-clipboard';
 import './index.styl';
 
 class Playground extends React.Component {
@@ -24,7 +25,9 @@ class Playground extends React.Component {
           {component}
         </div>
         <div className="react-playground-code">
-          <button className="copy-code-btn btn btn-sm btn-success">Copy code</button>
+          <CopyToClipboard text={code}>
+            <button className="copy-code-btn btn btn-sm btn-success">Copy code</button>
+          </CopyToClipboard>
           <pre>
             <code className="javascript" ref={node => this.codeBlock = node}>
               {code}

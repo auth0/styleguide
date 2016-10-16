@@ -1,18 +1,20 @@
-/* global hljs */
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import hljs from 'highlight.js'
 import './index.styl';
 
-class Playground extends React.Component {
+class Playground extends Component {
   componentDidMount() {
     hljs.configure({ classPrefix: '' });
     hljs.highlightBlock(this.codeBlock);
   }
+
   componentDidUpdate() {
     hljs.configure({ classPrefix: '' });
     hljs.initHighlighting.called = false;
     hljs.highlightBlock(this.codeBlock);
   }
+
   render() {
     const { component, code, title } = this.props;
     return (
@@ -25,12 +27,12 @@ class Playground extends React.Component {
           {component}
         </div>
         <div className="react-playground-code">
-          <CopyToClipboard text={code}>
+          <CopyToClipboard text={code.trim()}>
             <button className="copy-code-btn btn btn-sm btn-success">Copy code</button>
           </CopyToClipboard>
           <pre>
-            <code className="javascript" ref={node => this.codeBlock = node}>
-              {code}
+            <code className="javascript" ref={node => { this.codeBlock = node; }}>
+              {code.trim()}
             </code>
           </pre>
         </div>

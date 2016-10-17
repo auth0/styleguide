@@ -3,7 +3,6 @@ import TryBanner from './';
 
 const examples = [
   {
-    title: 'Try banner',
     component: <TryBanner />,
     code: '<TryBanner />'
   }

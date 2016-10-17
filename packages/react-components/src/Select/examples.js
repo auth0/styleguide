@@ -22,7 +22,8 @@ const examples = [
   handleChange={(e) => { console.log(e.target.value); }}
   label="Select user"
 />`
-    )
+    ),
+    center: true
   }
 ];
 

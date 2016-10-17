@@ -15,6 +15,7 @@ const ComponentPage = ({ title, description, props, url, examples }) =>
         code={example.code}
         title={example.title}
         url={url}
+        center={example.center}
       />
     )}
     { props && <PropertiesTable props={props} />}

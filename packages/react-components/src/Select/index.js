@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import styles from './index.styl';
+import './index.styl';
 
 /**
  * Select: Drop-down list.

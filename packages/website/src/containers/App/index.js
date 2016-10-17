@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter, Match, Miss } from 'react-router';
-import { ComponentPage, Splash, NotFound } from 'containers';
+import { ComponentPage, ComponentEditor, Splash, NotFound } from 'containers';
 import { Sidebar } from 'components';
 import * as StyleguideComponents from 'auth0-styleguide-react-components';
 import * as StyleguideComponentsExamples from 'auth0-styleguide-react-components/build/examples';
@@ -22,11 +22,16 @@ const App = () => (
             <div>
               <Match pattern="/" exactly component={Splash} />
               {componentsCollection.map((component, index) =>
-                <Match
-                  pattern={component.url}
-                  render={() => (<ComponentPage {...component} />)}
-                  key={index}
-                />
+                <div key={index}>
+                  <Match
+                    pattern={component.url}
+                    render={() => (<ComponentPage {...component} />)}
+                  />
+                  <Match
+                    pattern={`${component.url}/stage`}
+                    render={() => (<ComponentEditor {...component} />)}
+                  />
+                </div>
               )}
               <Miss component={NotFound} />
             </div>

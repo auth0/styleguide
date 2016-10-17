@@ -46,7 +46,7 @@ Playground.propTypes = {
   component: PropTypes.any.isRequired,
   code: PropTypes.string.isRequired,
   title: PropTypes.string,
-  center: PropTypes.boolean
+  center: PropTypes.bool
 };
 
 export default Playground;

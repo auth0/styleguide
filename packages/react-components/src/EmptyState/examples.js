@@ -4,7 +4,6 @@ import EmptyState from './';
 // Showcase component differents usecases
 const examples = [
   {
-    title: 'Example title',
     component: (
       <EmptyState />
     ),

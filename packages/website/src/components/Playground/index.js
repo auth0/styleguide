@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import hljs from 'highlight.js'
 import './index.styl';
@@ -16,13 +17,13 @@ class Playground extends Component {
   }
 
   render() {
-    const { component, code, title } = this.props;
+    const { component, url, code, title } = this.props;
     return (
       <div className="react-playground">
         { title && <h3 className="react-playground-title">{title}</h3> }
         <div className="react-playground-component">
           <div className="component-links">
-            <a href="#">Open in stage</a>
+            <Link to={`${url}/stage`}>Open in stage</Link>
           </div>
           {component}
         </div>

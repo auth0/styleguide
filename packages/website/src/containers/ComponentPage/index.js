@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Playground, PropertiesTable } from 'components';
 import './index.styl';
 
-const ComponentPage = ({ title, description, props, examples }) =>
+const ComponentPage = ({ title, description, props, url, examples }) =>
   <section className="react-component-page">
     <div className="component-information">
       <h1 className="component-title">{title}</h1>
@@ -14,6 +14,7 @@ const ComponentPage = ({ title, description, props, examples }) =>
         component={example.component}
         code={example.code}
         title={example.title}
+        url={url}
       />
     )}
     { props && <PropertiesTable props={props} />}

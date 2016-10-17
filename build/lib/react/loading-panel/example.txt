@@ -1,0 +1,6 @@
+<LoadingPanel show={true}>
+  <div className="text-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', padding: '40px' }}>
+    <h1>Example content.</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div>
+</LoadingPanel>

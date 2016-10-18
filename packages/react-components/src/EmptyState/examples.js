@@ -11,7 +11,9 @@ const examples = [
 `
 <EmptyState />
 `
-    )
+    ),
+    title: 'Default',
+    url: 'default'
   }
 ];
 

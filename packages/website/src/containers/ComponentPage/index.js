@@ -15,6 +15,7 @@ const ComponentPage = ({ title, description, props, url, examples }) =>
         code={example.code}
         title={example.title}
         url={url}
+        exampleUrl={example.url}
         center={example.center}
       />
     )}

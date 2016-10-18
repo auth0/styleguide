@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import Playground from 'component-playground';
 import './index.styl';
@@ -9,7 +9,7 @@ const ComponentEditor = ({ component, title, name, examples, url, params }) => {
 
   return (
     <div className="component-editor">
-      <div className="component-editor-content">
+      <div className={`component-editor-content ${selectedExample.center ? 'center' : ''}`}>
 
         <header className="component-editor-header">
           <h2 className="component-editor-title">
@@ -30,6 +30,15 @@ const ComponentEditor = ({ component, title, name, examples, url, params }) => {
       </div>
     </div>
   );
+};
+
+ComponentEditor.propTypes = {
+  component: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired, // component title
+  name: PropTypes.string.isRequired, // component react name
+  examples: PropTypes.array.isRequired,
+  url: PropTypes.string.isRequired,
+  params: PropTypes.any
 };
 
 export default ComponentEditor;

@@ -17,6 +17,11 @@
     height calc(100% - 80px)
     box-shadow 0 0 50px 0px rgba(0, 0, 0, 0.2)
 
+    &.center .playgroundPreview
+      display flex
+      align-items center
+      justify-content center
+
   .component-editor-header
     position relative
     width 100%
@@ -25,14 +30,18 @@
     height 50px
 
   .playground
+    display flex
+    flex-direction column
+    justify-content space-between
     height calc(100% - 50px)
     position relative
 
     > .playgroundCode
-      position absolute
-      bottom 0
-      left 0
-      right 0
+      order 1
+
+    > .playgroundPreview
+      order 0
+      min-height 400px
 
 
   .component-editor-title

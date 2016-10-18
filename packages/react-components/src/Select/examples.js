@@ -23,7 +23,9 @@ const examples = [
   label="Select user"
 />`
     ),
-    center: true
+    center: true,
+    title: 'Default',
+    url: 'default'
   }
 ];
 

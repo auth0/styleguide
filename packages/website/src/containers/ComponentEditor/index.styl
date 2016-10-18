@@ -15,10 +15,36 @@
     margin-top 40px
     width calc(100% - 80px)
     height calc(100% - 80px)
+    box-shadow 0 0 50px 0px rgba(0, 0, 0, 0.2)
 
-  .close-editor-btn
-    position absolute
-    top 30px
-    right 30px
-    font-size 20px
-    color rgba(black, 0.8)
+  .component-editor-header
+    position relative
+    width 100%
+    background-color rgba(black, 0.1)
+    color white
+    height 50px
+
+  .playground
+    height calc(100% - 50px)
+    position relative
+
+    > .playgroundCode
+      position absolute
+      bottom 0
+      left 0
+      right 0
+
+
+  .component-editor-title
+    display inline-block
+    font-size 16px
+    margin 0
+    line-height 50px
+    padding 0 30px
+
+  .close-btn
+    float right
+    height 50px
+    width 50px
+    background-color rgba(black, 0.1)
+    border 0

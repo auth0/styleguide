@@ -28,8 +28,8 @@ const App = () => (
                     render={() => (<ComponentPage {...component} />)}
                   />
                   <Match
-                    pattern={`${component.url}/stage`}
-                    render={() => (<ComponentEditor {...component} />)}
+                    pattern={`${component.url}/stage/:example`}
+                    render={({ params }) => (<ComponentEditor params={params} {...component} />)}
                   />
                 </div>
               )}

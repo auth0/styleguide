@@ -11,10 +11,10 @@ const ComponentPage = ({ title, description, props, url, examples }) =>
     {examples.map((example, index) =>
       <Playground
         key={index}
+        url={url}
         component={example.component}
         code={example.code}
         title={example.title}
-        url={url}
         exampleUrl={example.url}
         center={example.center}
       />

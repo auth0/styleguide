@@ -45,6 +45,8 @@ class Playground extends Component {
 Playground.propTypes = {
   component: PropTypes.any.isRequired,
   code: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired, // component base url
+  exampleUrl: PropTypes.string.isRequired, // specific example url
   title: PropTypes.string,
   center: PropTypes.bool
 };

@@ -9,9 +9,15 @@ const Select = ({ options, selected, label, color, handleChange }) => (
     { label && <span>{label}</span> }
     <span className="value text-truncate" style={{ color }}>{options[selected]}</span>
     <i className="icon-budicon-460" />
-    <select onChange={handleChange}>
+    <select
+      onChange={handleChange}
+      value={options.reduce((prev, current, index) => {
+        if (index === selected) return index;
+        return prev;
+      })}
+    >
       {options.map((name, index) =>
-        <option key={index} value={index} defaultValue={index === selected}>{name}</option>
+        <option key={index} value={index}>{name}</option>
       )}
     </select>
   </div>

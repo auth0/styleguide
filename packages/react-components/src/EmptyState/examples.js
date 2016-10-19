@@ -13,9 +13,7 @@ const examples = [
           for your applications which can then be added to groups."
         iconCode="291"
       >
-        <a href="https://auth0.com/docs/extensions/authorization-extension" target="_blank" rel="noopener noreferrer" className="btn btn-transparent btn-md">
-          Read more
-        </a>
+        <a href="#" className="btn btn-transparent"> Read more </a>
         <button className="btn btn-success">
           <i className="icon icon-budicon-473" /> Create your first role
         </button>
@@ -30,9 +28,7 @@ const examples = [
     for your applications which can then be added to groups."
   iconCode="291"
 >
-  <a href="https://auth0.com/docs/extensions/authorization-extension" target="_blank" rel="noopener noreferrer" className="btn btn-transparent btn-md">
-    Read more
-  </a>
+  <a href="#" className="btn btn-transparent"> Read more </a>
   <button className="btn btn-success">
     <i className="icon icon-budicon-473" /> Create your first role
   </button>

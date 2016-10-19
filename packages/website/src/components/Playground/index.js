@@ -17,10 +17,10 @@ class Playground extends Component {
   }
 
   render() {
-    const { component, url, exampleUrl, code, title, center } = this.props;
+    const { component, url, exampleUrl, code, title, showTitle, center } = this.props;
     return (
       <div className="react-playground">
-        { title && <h3 className="react-playground-title">{title}</h3> }
+        { (title && showTitle) && <h3 className="react-playground-title">{title}</h3> }
         <div className={`react-playground-component ${center ? 'center' : ''}`}>
           <div className="component-links">
             <Link to={`${url}/stage/${exampleUrl}`}>Open in stage</Link>
@@ -47,8 +47,14 @@ Playground.propTypes = {
   code: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired, // component base url
   exampleUrl: PropTypes.string.isRequired, // specific example url
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  showTitle: PropTypes.bool,
   center: PropTypes.bool
+};
+
+Playground.defaultProps = {
+  showTitle: true,
+  center: false
 };
 
 export default Playground;

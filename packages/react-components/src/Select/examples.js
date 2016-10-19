@@ -25,6 +25,7 @@ const examples = [
     ),
     center: true,
     title: 'Default',
+    showTitle: false,
     url: 'default'
   }
 ];

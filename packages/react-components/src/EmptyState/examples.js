@@ -39,6 +39,7 @@ const examples = [
 </EmptyState>`
     ),
     title: 'Default',
+    showTitle: false,
     url: 'default'
   }
 ];

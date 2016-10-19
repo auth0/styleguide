@@ -15,6 +15,7 @@ const ComponentPage = ({ title, description, props, url, examples }) =>
         component={example.component}
         code={example.code}
         title={example.title}
+        showTitle={example.showTitle}
         exampleUrl={example.url}
         center={example.center}
       />

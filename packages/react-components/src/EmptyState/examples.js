@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import EmptyState from './';
 
 // Showcase component differents usecases

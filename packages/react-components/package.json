@@ -4,7 +4,7 @@
   "description": "",
   "main": "build/react-components.js",
   "scripts": {
-    "prepublish": "in-publish && exit 1 || not-in-publish && npm run build",
+    "prepublish": "(in-publish && exit 1) || (not-in-publish && NODE_ENV=production npm run build -- --bail)",
     "build": "npm run build:docs && webpack --config tools/webpack/webpack.module.config.babel.js",
     "build:docs": "node ./tools/tasks/generate-docs.js",
     "start": "webpack-dev-server --hot --inline --port 9000 --open --config ./tools/webpack/webpack.playground.config.babel.js",

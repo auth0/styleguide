@@ -1,0 +1,15 @@
+{
+  "name": "auth0-styleguide-core",
+  "version": "0.0.0",
+  "description": "Includes stylus variables, mixins and class utilities common to all Auth0 projects.",
+  "main": "index.js",
+  "scripts": {
+    "build": "stylus src/main.styl -o build/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Auth0 (https://auth0.com)",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "stylus": "^0.54.5"
+  }
+}

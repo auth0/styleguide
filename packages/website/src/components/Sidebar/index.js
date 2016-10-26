@@ -13,6 +13,11 @@ const Sidebar = ({ items, version }) =>
       <h1 className="sidebar-title">React components</h1>
     </Link>
     <ul className="sidebar-items-list">
+      <li className="sidebar-item" key={'Home'}>
+        <Link className="sidebar-item-link" to="/" activeOnlyWhenExact activeClassName="active">
+          Getting Started
+        </Link>
+      </li>
       {items.map(({ url, title }) =>
         <li className="sidebar-item" key={title}>
           <Link className="sidebar-item-link" to={url} activeClassName="active">{title}</Link>

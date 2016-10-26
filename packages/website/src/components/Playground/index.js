@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import hljs from 'highlight.js'
+import hljs from 'highlight.js';
 import './index.styl';
 
 class Playground extends Component {

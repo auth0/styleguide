@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import hljs from 'highlight.js';
 import './index.styl';
 
@@ -31,7 +31,7 @@ class Splash extends React.Component {
             <p>To install the latest version:</p>
             <pre>
               <code className="bash">
-                {`npm i --save auth0/styleguide#react-components-1.0.0`}
+                {`npm i --save auth0/styleguide#react-components-${this.props.version}`}
               </code>
             </pre>
           </div>
@@ -57,8 +57,8 @@ export default App;`}
             <p>To install the latest version:</p>
             <pre>
               <code className="bash">
-{`<link rel="stylesheet" href="https://cdn.auth0.com/styleguide-react-components/1.0.0/react-components.css" />
-<script src="https://cdn.auth0.com/styleguide-react-components/1.0.0/react-components.js"></script>`}
+{`<link rel="stylesheet" href="https://cdn.auth0.com/styleguide-react-components/${this.props.version}/react-components.css" />
+<script src="https://cdn.auth0.com/styleguide-react-components/${this.props.version}/react-components.js"></script>`}
               </code>
             </pre>
           </div>
@@ -67,6 +67,10 @@ export default App;`}
       </section>
     );
   }
+}
+
+Splash.propTypes = {
+  version: PropTypes.string.isRequired
 };
 
 export default Splash;

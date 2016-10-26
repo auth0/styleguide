@@ -20,7 +20,7 @@ const App = () => (
           pattern="/"
           render={() => (
             <div>
-              <Match pattern="/" exactly component={Splash} />
+              <Match pattern="/" exactly render={() => <Splash version={version} />} />
               {componentsCollection.map((component, index) =>
                 <div key={index}>
                   <Match

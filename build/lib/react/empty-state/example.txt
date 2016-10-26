@@ -1,0 +1,5 @@
+<EmptyState
+  title='Users'
+  description='Empty state example text.'
+>
+</EmptyState>

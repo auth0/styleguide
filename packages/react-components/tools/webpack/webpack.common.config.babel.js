@@ -35,9 +35,6 @@ const config = {
           minimize: !DEBUG
         })}`)
     }, {
-      test: /\.jade/,
-      loader: 'pug'
-    }, {
       test: /\.svg/,
       loader: 'raw'
     }]

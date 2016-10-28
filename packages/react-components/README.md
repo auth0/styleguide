@@ -68,7 +68,7 @@ export default ExampleComponent;
 
 This file will generate the following page in the React Styleguide website:
 
-<img src="https://raw.githubusercontent.com/auth0/styleguide/master/packages/react-components/src/images/example-component-page.png" alt="Example component page"/>
+<img src="https://cloud.githubusercontent.com/assets/6318057/19816973/efb35be8-9d1f-11e6-9aea-ba589a2ec111.png" alt="Example component page"/>
 
 The comment on top of the component definition will match with the page title and description, while the comments on top of the propTypes definitions will match with the definitions of the properties table.
 

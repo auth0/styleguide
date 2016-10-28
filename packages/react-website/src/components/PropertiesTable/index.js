@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const PropertiesTable = ({ props }) =>
   <div className="table-responsive">
-    <table className="component-properties-table table table-fixed">
+    <table className="component-properties-table table">
       <thead>
         <tr>
           <th>Property</th>

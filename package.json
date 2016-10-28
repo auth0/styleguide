@@ -4,7 +4,7 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "start": "npm run build:website && serve --port ${PORT:-3000} ./build",
-    "build:website": "grunt build && mv packages/website/build build/react",
+    "build:website": "grunt build && mv packages/react-website/build build/react",
     "dev": "gulp"
   },
   "repository": {

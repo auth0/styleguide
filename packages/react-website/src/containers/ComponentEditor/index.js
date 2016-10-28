@@ -33,7 +33,7 @@ const ComponentEditor = ({ component, title, name, examples, url, params }) => {
 };
 
 ComponentEditor.propTypes = {
-  component: PropTypes.node.isRequired,
+  component: PropTypes.any.isRequired,
   title: PropTypes.string.isRequired, // component title
   name: PropTypes.string.isRequired, // component react name
   examples: PropTypes.array.isRequired,

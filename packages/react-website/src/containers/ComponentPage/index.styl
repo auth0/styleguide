@@ -1,7 +1,11 @@
 @import '../../../../core/src/vars/'
+@import "../../../../core/src/mixins/"
 
 .react-component-page
-  padding 60px
+  padding 20px
+
+  +breakpoint("desktop")
+    padding 60px
 
   .component-information
     margin-bottom 30px

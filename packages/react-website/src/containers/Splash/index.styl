@@ -1,7 +1,11 @@
 @import '../../../../core/src/vars/'
+@import "../../../../core/src/mixins/"
 
 .splash-page
-  padding 60px
+  padding 20px
+
+  +breakpoint("desktop")
+    padding 60px
 
   .splash-title
     font-size 28px

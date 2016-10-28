@@ -12,13 +12,13 @@ This will let you consume the components as a collection of ES modules using a m
 
 You can import the components doing:
 
-```
+```javascript
 import { Select, TryBanner, EmptyState } from 'auth0-styleguide-react-components';
 ```
 
 Also you can download the files from our CDN:
 
-```
+```html
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide-react-components/0.0.0/react-components.css" />
 <script src="https://cdn.auth0.com/styleguide-react-components/0.0.0/react-components.js"></script>
 ```
@@ -68,7 +68,7 @@ export default ExampleComponent;
 
 This file will generate the following page in the React Styleguide website:
 
-**insert example image**
+<img src="https://github.com/auth0/styleguide/tree/experimental/packages/react-components/src/images/example-component-page.png?raw=true" alt="Example component page"/>
 
 The comment on top of the component definition will match with the page title and description, while the comments on top of the propTypes definitions will match with the definitions of the properties table.
 
@@ -90,7 +90,7 @@ Each object of the array can have the following properties:
 
 Example file:
 
-```
+```javascript
 import React from 'react';
 import ExampleComponent from './';
 

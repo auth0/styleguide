@@ -1,38 +1,35 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-const PropertiesTable = ({ props }) => {
-  return (
+const PropertiesTable = ({ props }) =>
+  <div className="table-responsive">
     <table className="component-properties-table table table-fixed">
       <thead>
         <tr>
-          <th width="15%">Property</th>
-          <th width="15%">Type</th>
-          <th width="40%">Description</th>
-          <th width="20%">Default value</th>
-          <th width="10%" className="text-center">Required</th>
+          <th>Property</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default value</th>
+          <th className="text-center">Required</th>
         </tr>
       </thead>
       <tbody>
         {
-          Object.keys(props).map((prop) => {
-            return (
-              <tr key={prop}>
-                <td>{prop}</td>
-                <td>
-                  {props[prop].type.name}
-                  {props[prop].type.name === 'arrayOf' && ` ${props[prop].type.value.name}`}
-                </td>
-                <td>{props[prop].description}</td>
-                <td>{props[prop].defaultValue ? props[prop].defaultValue.value : '' }</td>
-                <td className="text-center">{props[prop].required && 'True'}</td>
-              </tr>
-            );
-          })
+          Object.keys(props).map((prop) =>
+            <tr key={prop}>
+              <td>{prop}</td>
+              <td>
+                {props[prop].type.name}
+                {props[prop].type.name === 'arrayOf' && ` ${props[prop].type.value.name}`}
+              </td>
+              <td>{props[prop].description}</td>
+              <td>{props[prop].defaultValue ? props[prop].defaultValue.value : '' }</td>
+              <td className="text-center">{props[prop].required && 'True'}</td>
+            </tr>
+          )
         }
       </tbody>
     </table>
-  );
-};
+  </div>;
 
 PropertiesTable.propTypes = {
   props: PropTypes.object.isRequired

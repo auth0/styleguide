@@ -13,7 +13,7 @@ fi
 
 LAST_COMMIT=$(git log -1 --pretty=%B)                  # Save last commit name
 ORIGIN_DEST="origin"                                   # git origin of destination
-PACKAGE_NAME="react-components"                        # Package name
+PACKAGE_NAME="core"                                    # Package name
 NEXT_VERSION=$(node -p "require('./package').version") # Get new version
 
 # Publish to CDN
@@ -43,7 +43,7 @@ else
   git checkout -b "$TEMP_TAG_BRANCH"
 
   ## Build module
-  NODE_ENV=production npm run build -- --bail
+  NODE_ENV=production npm run build
 
   ## Remove non related files
   rm -rf ../../bin ../../landing ../../lib ../../vendor
@@ -54,7 +54,7 @@ else
   mv .gitignore2 .gitignore
 
   ## Move actual package to root
-  mv .gitignore package.json build ../../
+  mv .gitignore package.json src build ../../
 
   cd ../../
 

@@ -48,8 +48,8 @@ function generateComponentsCollection(listOfComponents) {
   return Object.keys(listOfComponents).map(component => {
     const doc = StyleguideComponentsDocs[component];
     const examples = StyleguideComponentsExamples[component];
-    let [title, description] = doc.description.split(':');
-    description = description.slice(1);
+    const [title, descriptionRaw] = doc.description.split(':');
+    const description = descriptionRaw.slice(1);
 
     return {
       title,

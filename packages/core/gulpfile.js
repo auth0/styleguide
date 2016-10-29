@@ -1,23 +1,39 @@
-var gulp = require('gulp');
-var stylus = require('gulp-stylus');
-var cssnano = require('gulp-cssnano');
-var autoprefixer = require('gulp-autoprefixer');
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
 
-var styleFiles = ['./src/main.styl'];
-
-gulp.task('styles', function() {
-  return gulp.src(styleFiles)
-    .pipe(stylus())
-    .pipe(autoprefixer({
+/**
+ * CSS bundle task
+ */
+gulp.task('styles', () =>
+  gulp.src('./src/main.styl')
+    .pipe($.stylus())
+    .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(cssnano())
-    .pipe(gulp.dest('./build/'));
-});
+    // Unminified CSS bundle
+    .pipe($.rename('core.css'))
+    .pipe(gulp.dest('./build/'))
+    // Minified CSS bundle
+    .pipe($.cssnano())
+    .pipe($.rename('core.min.css'))
+    .pipe(gulp.dest('./build/'))
+);
 
-gulp.task('watch', function() {
-  gulp.watch(styleFiles, ['styles']);
-});
+/**
+ * Build task
+ */
+gulp.task('build', gulp.series('styles'));
 
-gulp.task('default', ['watch']);
+/**
+ * Watch task
+ */
+gulp.task('watch', gulp.series(done => {
+  gulp.watch('./**/*.styl', gulp.series('build'));
+  done();
+}));
+
+/**
+ * Default task
+ */
+gulp.task('default', gulp.series('watch'));

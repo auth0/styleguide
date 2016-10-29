@@ -3,25 +3,35 @@
   "version": "0.0.0",
   "description": "",
   "main": "build/react-components.js",
+  "style": "build/react-components.css",
   "scripts": {
     "prepublish": "(in-publish && exit 1) || (not-in-publish && NODE_ENV=production npm run build -- --bail)",
     "build": "npm run build:docs && webpack --config tools/webpack/webpack.module.config.babel.js",
     "build:docs": "node ./tools/tasks/generate-docs.js",
     "start": "start-storybook -p 9001 -c .storybook",
+    "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
-    "lint": "npm run lint:js",
-    "release": "bash tools/scripts/release.sh",
-    "test": "mocha \"src/**/*.test.js\" -w --require test/setup.js --compilers js:babel-register"
+    "lint:css": "stylelint build/*.css",
+    "test": "npm run lint && mocha \"src/**/*.test.js\" --require test/setup.js --compilers js:babel-register"
   },
   "keywords": [],
   "author": "Auth0 (https://auth0.com)",
   "license": "UNLICENSED",
   "private": true,
+  "files": [
+    "build"
+  ],
+  "engines": {
+    "node": "^6.9.1",
+    "npm": "^3.10.8"
+  },
   "peerDependencies": {
+    "auth0-styleguide-core": "github:auth0/styleguide#core-latest",
     "react": "^15.0.0"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.27.0",
+    "auth0-styleguide-core": "*",
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
@@ -54,11 +64,10 @@
     "react-docgen": "^2.11.0",
     "react-dom": "^15.3.2",
     "style-loader": "^0.13.1",
+    "stylelint": "^7.5.0",
+    "stylelint-config-standard": "^14.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",
     "webpack": "^1.13.2"
-  },
-  "dependencies": {
-    "react-dom": "^15.3.2"
   }
 }

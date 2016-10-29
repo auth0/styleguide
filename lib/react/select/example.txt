@@ -1,6 +1,0 @@
-<Select
-  options={[ 'Name', 'Company', 'Location' ]}
-  selected={0}
-  handleChange={(e) => {console.log('Selected value: ' + e.target.value);}}
-  label="Search users by"
-/>

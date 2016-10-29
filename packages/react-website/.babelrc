@@ -1,8 +1,0 @@
-{
-  "presets": ["latest", "react"],
-  "env": {
-    "development": {
-      "plugins": ["react-hot-loader/babel"]
-    }
-  }
-}

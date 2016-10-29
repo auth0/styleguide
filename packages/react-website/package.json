@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "(in-publish && exit 1) || (not-in-publish && NODE_ENV=production npm run build -- --bail)",
     "build": "webpack --config tools/webpack/webpack.browser.config.babel.js",
-    "start": "webpack-dev-server --hot --inline --port 9000 --open --config ./tools/webpack/webpack.browser.config.babel.js",
+    "start": "NODE_ENV=development webpack-dev-server --hot --inline --port 9000 --open --config ./tools/webpack/webpack.browser.config.babel.js",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint build/*.css",

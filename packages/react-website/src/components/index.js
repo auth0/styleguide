@@ -1,3 +1,5 @@
-export Sidebar from './Sidebar';
-export Playground from './Playground';
-export PropertiesTable from './PropertiesTable';
+import Sidebar from './Sidebar';
+import Playground from './Playground';
+import PropertiesTable from './PropertiesTable';
+
+export { Sidebar, Playground, PropertiesTable };

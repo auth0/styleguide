@@ -1,5 +1,7 @@
-export App from 'containers/App';
-export NotFound from 'containers/NotFound';
-export ComponentPage from 'containers/ComponentPage';
-export ComponentEditor from 'containers/ComponentEditor';
-export Splash from 'containers/Splash';
+import App from 'containers/App';
+import NotFound from 'containers/NotFound';
+import ComponentEditor from 'containers/ComponentEditor';
+import ComponentPage from 'containers/ComponentPage';
+import Splash from 'containers/Splash';
+
+export { App, NotFound, ComponentEditor, ComponentPage, Splash };

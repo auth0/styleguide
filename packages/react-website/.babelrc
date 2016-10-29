@@ -1,4 +1,8 @@
 {
-  "presets": ["latest", "stage-0", "react"],
-  "plugins": ["react-hot-loader/babel"]
+  "presets": ["latest", "react"],
+  "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    }
+  }
 }

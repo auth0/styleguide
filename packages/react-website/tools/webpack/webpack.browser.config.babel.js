@@ -4,7 +4,11 @@ import poststylus from 'poststylus';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-const DEBUG = process.env.NODE_ENV !== 'production';
+if (!process.env.NODE_ENV) {
+  throw new Error('Define a NODE_ENV env var, it can be development or production.');
+}
+
+const DEBUG = process.env.NODE_ENV === 'development';
 
 const config = {
   entry: [

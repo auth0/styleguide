@@ -49,7 +49,7 @@ else
   rm -rf ../../bin ../../landing ../../lib ../../vendor
   rm ../../.babelrc ../../.eslintrc ../../.gitignore ../../Gruntfile.js ../../gulpfile.js ../../README.md ../../app.json ../../bower.json ../../component.json ../../index.js ../../index.styl ../../lerna.json ../../package.json ../../webpack.config.js
 
-  ## Add build dir to git and remove packages folder
+  ## Add build dir to git (remove build from .gitignore)
   grep -v '^build$' .gitignore > .gitignore2
   mv .gitignore2 .gitignore
 
@@ -60,10 +60,9 @@ else
 
   echo packages >> .gitignore
 
-  ## Commit changes
+  ## Commit changes and update git stage with changes on the .gitignore file
   git rm -r --cached .
   git add .
-  git add --force build/*
   git commit -am "$NEXT_VERSION build"
 
   ## Create git tags

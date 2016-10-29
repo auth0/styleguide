@@ -6,7 +6,7 @@ Library of Auth0 React components. This is for internal use by Auth0 only.
 
 If you are using npm you can do:
 ```
-npm i --save auth0/styleguide#react-components-1.0.0
+npm i --save react@15 auth0/styleguide#react-components-1.0.0 auth0/styleguide#core-1.0.0
 ```
 This will let you consume the components as a collection of ES modules using a module bundler like Webpack or Browserify.
 
@@ -16,9 +16,16 @@ You can import the components doing:
 import { Select, TryBanner, EmptyState } from 'auth0-styleguide-react-components';
 ```
 
+And to load the CSS via stylus (but we encourage you to load via our CDN with a link rel stylesheet tag):
+```stylus
+@import '../node_modules/build/core.css'
+@import '../node_modules/build/react-components.css'
+```
+
 Also you can download the files from our CDN:
 
 ```html
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide-core/0.0.0/core.css" />
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide-react-components/0.0.0/react-components.css" />
 <script src="https://cdn.auth0.com/styleguide-react-components/0.0.0/react-components.js"></script>
 ```

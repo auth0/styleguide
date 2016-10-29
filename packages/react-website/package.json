@@ -1,5 +1,5 @@
 {
-  "name": "auth0-styleguide-website",
+  "name": "auth0-styleguide-react-website",
   "version": "0.0.0",
   "description": "",
   "main": "build/server.js",
@@ -7,9 +7,10 @@
     "prepublish": "(in-publish && exit 1) || (not-in-publish && NODE_ENV=production npm run build -- --bail)",
     "build": "webpack --config tools/webpack/webpack.browser.config.babel.js",
     "start": "webpack-dev-server --hot --inline --port 9000 --open --config ./tools/webpack/webpack.browser.config.babel.js",
+    "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
-    "lint": "npm run lint:js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:css": "stylelint build/*.css",
+    "test": "npm run lint"
   },
   "keywords": [],
   "author": "Auth0 (https://auth0.com)",
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "auth0-styleguide-react-components": "*",
+    "auth0-styleguide-core": "*",
     "babel-polyfill": "^6.16.0",
     "codemirror": "^5.19.0",
     "component-playground": "^1.3.1",
@@ -62,6 +64,8 @@
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.0.0-beta.5",
     "style-loader": "^0.13.1",
+    "stylelint": "^7.5.0",
+    "stylelint-config-standard": "^14.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",
     "webpack": "^1.13.2",

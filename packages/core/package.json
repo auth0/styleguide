@@ -32,6 +32,10 @@
     "eslint": "^3.9.0",
     "eslint-config-auth0-base": "^6.0.0",
     "eslint-plugin-import": "^1.16.0",
+    "grunt": "^1.0.1",
+    "grunt-aws-s3": "^0.14.5",
+    "grunt-cli": "^1.2.0",
+    "grunt-shell": "^2.0.0",
     "gulp": "github:gulpjs/gulp#c120a94",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-cssnano": "^2.1.2",
@@ -39,6 +43,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.5.0",
     "in-publish": "^2.0.0",
+    "matchdep": "^1.0.1",
     "stylelint": "^7.5.0",
     "stylelint-config-standard": "^14.0.0"
   }

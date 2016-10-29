@@ -23,7 +23,7 @@ if [ ! -z "$CDN_EXISTS" ]; then
   echo "There is already a version $NEXT_VERSION in the CDN. Skiping cdn publish."
 else
   echo "Deploying $NEXT_VERSION to cdn"
-  #$(npm bin)/grunt cdn
+  $(npm bin)/grunt cdn
 fi
 
 # Publish git tag

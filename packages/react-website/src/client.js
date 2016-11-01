@@ -8,7 +8,7 @@ const rootEl = document.getElementById('app');
 if (process.env.NODE_ENV === 'production') {
   render(<App />, rootEl);
 } else {
-  const { AppContainer } = require('react-hot-loader').default;
+  const { AppContainer } = require('react-hot-loader');
 
   render(
     <AppContainer>

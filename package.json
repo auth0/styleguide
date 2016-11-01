@@ -58,7 +58,6 @@
     "jade": "^1.7.0",
     "matchdep": "^0.3.0",
     "mjml": "^3.0.1",
-    "raw-loader": "^0.5.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-loader-advanced": "^1.4.1",

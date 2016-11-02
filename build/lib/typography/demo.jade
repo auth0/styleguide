@@ -1,0 +1,178 @@
+//- Typography
+.content-styleguide
+
+  section.typography-section
+
+    h2#typography Typography
+    p The body font is set to Nitti Grotesk, font size is 16px and line height is 2.
+
+    .row.type-box-container
+
+      .column
+        .type-box
+          h5 Theme Light
+          h1 Headline 1
+          h2 Headline 2
+          h3 Headline 3
+          h4 Title
+          h5 Subheader
+          p.body-2 Body 2 / Menu
+          p.body-1 Body 1
+          p.caption Caption
+          a(href='#') Link
+
+      .column.theme-dark
+        .type-box
+          h5 Theme Dark: add the class 
+            code .theme-dark
+            |  to the parent container.
+          h1 Headline 1
+          h2 Headline 2
+          h3 Headline 3
+          h4 Title
+          h5 Subheader
+          p.body-2 Body 2 / Menu
+          p.body-1 Body 1
+          p.caption Caption
+          a(href='#') Link
+
+    .type-box.box-table
+
+      table.typography-table
+
+        tr
+          td Light theme default type color
+          td.big.opacity-87.variable $color-text
+          td.big.opacity-87.name Primary
+          td.big.opacity-87.color #00000
+          td.big.opacity-87.opacity 87%
+
+        tr
+          td.rowspan.opacity-54(rowspan='2') 
+            | Default light bg:
+            br
+            | Auth0 Grey, #e3e5e7
+          td.big.opacity-54.variable $color-text-light
+          td.big.opacity-54.name Secondary
+          td.big.opacity-54.color #00000
+          td.big.opacity-54.opacity 54%
+
+        tr
+          td.big.opacity-26.variable $color-text-lighter
+          td.big.opacity-26.name Disabled
+          td.big.opacity-26.color #00000
+          td.big.opacity-26.opacity 26%
+    
+    .theme-dark
+      .type-box.box-table
+        table.typography-table
+
+          tr
+            td Light theme default type color
+            td.big.opacity-100.variable $color-text-contrast
+            td.big.opacity-100.name Primary
+            td.big.opacity-100.color #ffffff
+            td.big.opacity-100.opacity 100%
+
+          tr
+            td.rowspan.opacity-70(rowspan='2') 
+              | Default light bg:
+              br
+              | Auth0 Grey, #e3e5e7
+            td.big.opacity-70.variable $color-text-contrast-light
+            td.big.opacity-70.name Secondary
+            td.big.opacity-70.color #ffffff
+            td.big.opacity-70.opacity 70%
+
+          tr
+            td.big.opacity-30.variable $color-text-contrast-lighter
+            td.big.opacity-30.name Disabled
+            td.big.opacity-30.color #ffffff
+            td.big.opacity-30.opacity 30%
+
+    hr
+    
+    h3 Body text 
+      
+    p 
+      strong strong $font-weight-bold
+    p 
+      code $font-size-base = 16px
+    p Is it possible to control man’s mental evolution so as to make him proof against the psychosis of hate and destructiveness? Here I am thinking by no means only of the so-called uncultured masses. Experience proves that it is rather the so-called “intelligentsia” that is most apt to yield to these disastrous collective suggestions, since the intellectual has no direct contact with life in the raw but encounters it in its easiest, synthetic form — upon the printed page. … But … here we have the best occasion of discovering ways and means to render all armed conflicts impossible.
+    p I know that in your writings we may find answers, explicit or implied, to all the issues of this urgent and absorbing problem. But it would be of the greatest service to us all were you to present the problem of world peace in the light of your most recent discoveries, for such a presentation well might blaze the trail for new and fruitful modes of action.
+    
+    p.text-left 
+      code .text-left
+      |  Einstein's Letter to Freud
+
+    p.text-center 
+      code .text-center
+      |  Einstein's Letter to Freud
+      
+    p.text-right 
+      code .text-right
+      |  Einstein's Letter to Freud
+  
+    p.text-justify 
+      code .text-justify
+      |  Einstein's Letter to Freud
+        
+    p.text-nowrap 
+      code .text-nowrap
+      |  Einstein's Letter to Freud
+      
+    p.text-lowercase 
+      code .text-lowercase
+      |  Einstein's Letter to Freud
+
+    p.text-uppercase 
+      code .text-uppercase
+      |  Einstein's Letter to Freud
+
+    p.text-capitalize 
+      code .text-capitalize
+      |  Einstein's Letter to Freud
+    
+    p
+    
+    hr
+    
+    h3 Quote
+    blockquote 
+      p “Intrigued by that enigma, he dug so deeply into her sentiments that in search of interest he found love, because by trying to make her love him he ended up falling in love with her.” 
+      footer Gabriel Garcí­a Márquez, One Hundred Years of Solitude
+    
+    hr 
+    
+    h3 Lists
+    .row 
+      .col-sm-3
+        code ol
+        ol
+          li Ricky Rauch
+          li Cristian Douce 
+          li Victor Fernandez
+          li Gabriel Andretta 
+          li Benjamin Flores 
+          li Santiago Escalante
+
+      .col-sm-3
+        code ul
+        ul
+          li Ricky Rauch
+          li Cristian Douce 
+          li Victor Fernandez
+          li Gabriel Andretta 
+          li Benjamin Flores 
+          li Santiago Escalante            
+    
+      .col-sm-3
+        code .list-inline
+        ul.list-inline
+          li Ricky Rauch
+          li Cristian Douce 
+          li Victor Fernandez
+          li Gabriel Andretta 
+          li Benjamin Flores 
+          li Santiago Escalante          
+    

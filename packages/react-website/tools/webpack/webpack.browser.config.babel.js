@@ -13,64 +13,92 @@ const DEBUG = process.env.NODE_ENV === 'development';
 const config = {
   entry: [
     ...DEBUG ? [
-      'react-hot-loader/patch'
+      'react-hot-loader/patch',
+      'webpack-hot-middleware/client'
     ] : [],
-
     path.join(__dirname, '../../src/client.js')
   ],
 
   output: {
     path: path.join(__dirname, '../../build'),
-    filename: 'index.js',
+    filename: 'react-website.js',
     publicPath: ''
   },
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      use: 'babel',
       include: [path.join(__dirname, '../../src')]
     }, {
       test: /\.json$/,
-      loader: 'json'
+      use: 'json'
     }, {
       test: /\.styl/,
-      loader: ExtractTextPlugin.extract('style-loader',
-        `css-loader?${JSON.stringify({
-          sourceMap: DEBUG,
-          minimize: !DEBUG
-        })}!stylus-loader`)
+      loader: ExtractTextPlugin.extract({
+        fallbackLoader: 'style',
+        loader: [{
+          loader: 'css',
+          query: {
+            sourceMap: DEBUG,
+            minimize: !DEBUG
+          }
+        }, {
+          loader: 'stylus',
+          query: {
+            'include css': true
+          }
+        }]
+      })
     }, {
       test: /\.css/,
-      loader: ExtractTextPlugin.extract('style-loader',
-        `css-loader?${JSON.stringify({
-          sourceMap: DEBUG,
-          minimize: !DEBUG
-        })}`)
+      loader: ExtractTextPlugin.extract({
+        fallbackLoader: 'style',
+        loader: {
+          loader: 'css',
+          query: {
+            sourceMap: DEBUG,
+            minimize: !DEBUG
+          }
+        }
+      })
     }, {
       test: /\.(pug|jade)/,
-      loader: 'pug'
+      use: 'pug'
     }, {
       test: /\.svg/,
-      loader: 'raw'
+      use: 'raw'
     }]
   },
 
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      debug: DEBUG,
+      minimize: true,
+      options: {
+        context: __dirname,
+        stylus: {
+          use: [
+            poststylus(['autoprefixer'])
+          ]
+        }
+      }
+    }),
     // Name of the CSS bundle
     // https://github.com/webpack/extract-text-webpack-plugin/blob/webpack-1/README.md
-    new ExtractTextPlugin('bundle.css'),
+    new ExtractTextPlugin({
+      filename: 'react-website.css',
+      disable: DEBUG
+    }),
     // Define free variables
     // https://webpack.github.io/docs/list-of-plugins.html#defineplugin
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"'
     }),
-    // Assign the module and chunk ids by occurrence count
-    // Consistent ordering of modules required if using any hashing ([hash] or [chunkhash])
-    // https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
-    new webpack.optimize.OccurenceOrderPlugin(true),
 
-    ...DEBUG ? [] : [
+    ...DEBUG ? [
+      new webpack.HotModuleReplacementPlugin()
+    ] : [
       // Search for equal or similar files and deduplicate them in the output
       // https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
       new webpack.optimize.DedupePlugin(),
@@ -79,6 +107,14 @@ const config = {
       // https://github.com/mishoo/UglifyJS2#compressor-options
       new webpack.optimize.UglifyJsPlugin({
         compress: {
+          screw_ie8: true, // React doesn't support IE8
+          warnings: false
+        },
+        mangle: {
+          screw_ie8: true
+        },
+        output: {
+          comments: false,
           screw_ie8: true
         }
       }),
@@ -98,21 +134,14 @@ const config = {
   ],
 
   resolve: {
-    root: path.join(__dirname, '../../src'),
-    modulesDirectories: ['node_modules']
-  },
-
-  stylus: {
-    use: [
-      poststylus(['autoprefixer'])
-    ]
+    modules: [path.join(__dirname, '../../src'), 'node_modules']
   },
 
   cache: DEBUG,
-  debug: DEBUG,
 
   stats: {
-    colors: true
+    colors: true,
+    timings: true
   },
 
   devtool: DEBUG ? 'eval-source-map' : false

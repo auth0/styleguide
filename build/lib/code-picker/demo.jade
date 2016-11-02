@@ -1,0 +1,50 @@
+.code-picker
+  .languages-bar
+    ul
+      li.active: a(href="#sample-javascript" data-toggle="tab") Javascript
+      li: a(href="#sample-ruby" data-toggle="tab") Ruby
+      li: a(href="#sample-python" data-toggle="tab") Python
+      li.dropdown
+        a.more-dots(href="#", data-toggle="dropdown") ...
+        ul.dropdown-menu
+          li: a(href="#sample-java" data-toggle="tab") Java
+          li: a(href="#sample-scala" data-toggle="tab") Scala
+      li.pull-right: .btn.btn-sm.btn-transparent.btn-copy
+        span.btn-icon.icon-budicon-450
+        | Copy
+  .tab-content
+    .tab-pane.active#sample-javascript
+      pre.hl
+        code.
+          // Cross-browser xml parsing
+          function Javascript() {
+            return 'sample';
+          }
+    .tab-pane#sample-ruby
+      pre.hl
+        code.
+          // Cross-browser xml parsing
+          function Ruby() {
+            return 'sample';
+          }
+    .tab-pane#sample-python
+      pre.hl
+        code.
+          // Cross-browser xml parsing
+          function Python() {
+            return 'sample';
+          }
+    .tab-pane#sample-java
+      pre.hl
+        code.
+          // Cross-browser xml parsing
+          function Java() {
+            return 'sample';
+          }
+    .tab-pane#sample-scala
+      pre.hl
+        code.
+          // Cross-browser xml parsing
+          function Scala() {
+            return 'sample';
+          }

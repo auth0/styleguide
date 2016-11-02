@@ -1,5 +1,4 @@
-import Sidebar from './Sidebar';
-import Playground from './Playground';
-import PropertiesTable from './PropertiesTable';
-
-export { Sidebar, Playground, PropertiesTable };
+export MatchAsync from 'components/MatchAsync';
+export Playground from 'components/Playground';
+export PropertiesTable from 'components/PropertiesTable';
+export Sidebar from 'components/Sidebar';

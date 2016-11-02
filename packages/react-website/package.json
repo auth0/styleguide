@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "(in-publish && exit 1) || (not-in-publish && NODE_ENV=production npm run build -- --bail)",
     "build": "webpack --config tools/webpack/webpack.browser.config.babel.js",
-    "start": "NODE_ENV=development webpack-dev-server --hot --inline --port 9000 --open --config ./tools/webpack/webpack.browser.config.babel.js",
+    "start": "NODE_ENV=development babel-node tools/tasks/start.js",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint build/*.css",
@@ -36,10 +36,12 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.5.0",
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-react-jsx-self": "^6.11.0",
+    "babel-plugin-transform-react-jsx-source": "^6.9.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
@@ -53,7 +55,8 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "html-webpack-plugin": "^2.22.0",
     "in-publish": "^2.0.0",
     "json-loader": "^0.5.4",
@@ -68,7 +71,8 @@
     "stylelint-config-standard": "^14.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.1"
   }
 }

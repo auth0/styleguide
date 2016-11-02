@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Match, Miss } from 'react-router';
-import { ComponentPage, ComponentEditor, Splash, NotFound } from 'containers';
-import { Sidebar } from 'components';
+import { ComponentPage, Splash, NotFound } from 'containers';
+import { MatchAsync, Sidebar } from 'components';
 import * as StyleguideComponents from 'auth0-styleguide-react-components';
 import * as StyleguideComponentsExamples from 'auth0-styleguide-react-components/build/examples';
 import StyleguideComponentsDocs from 'auth0-styleguide-react-components/build/docs.json';
@@ -16,27 +16,21 @@ const App = () => (
     <div>
       <Sidebar version={version} items={componentsCollection} />
       <main className="styleguide-content">
-        <Match
-          pattern="/"
-          render={() => (
-            <div>
-              <Match pattern="/" exactly render={() => <Splash version={version} />} />
-              {componentsCollection.map((component, index) =>
-                <div key={index}>
-                  <Match
-                    pattern={component.url}
-                    render={() => (<ComponentPage {...component} />)}
-                  />
-                  <Match
-                    pattern={`${component.url}/stage/:example`}
-                    render={({ params }) => (<ComponentEditor params={params} {...component} />)}
-                  />
-                </div>
-              )}
-              <Miss component={NotFound} />
-            </div>
-          )}
-        />
+        <Match pattern="/" exactly render={() => <Splash version={version} />} />
+        {componentsCollection.map((component, index) =>
+          <div key={index}>
+            <Match
+              pattern={component.url}
+              render={() => (<ComponentPage {...component} />)}
+            />
+            <MatchAsync
+              pattern={`${component.url}/stage/:example`}
+              getComponent={() => System.import('containers/ComponentEditor')}
+              componentProps={{ ...component }}
+            />
+          </div>
+        )}
+        <Miss component={NotFound} />
       </main>
     </div>
   </HashRouter>

@@ -4,7 +4,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import hljs from 'highlight.js';
 import './index.styl';
 
-class Playground extends Component {
+class Example extends Component {
   componentDidMount() {
     hljs.configure({ classPrefix: '' });
     hljs.highlightBlock(this.codeBlock);
@@ -42,7 +42,7 @@ class Playground extends Component {
   }
 }
 
-Playground.propTypes = {
+Example.propTypes = {
   component: PropTypes.any.isRequired,
   code: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired, // component base url
@@ -52,9 +52,9 @@ Playground.propTypes = {
   center: PropTypes.bool
 };
 
-Playground.defaultProps = {
+Example.defaultProps = {
   showTitle: true,
   center: false
 };
 
-export default Playground;
+export default Example;

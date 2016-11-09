@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Playground, PropertiesTable } from 'components';
+import { Example, PropertiesTable } from 'components';
 import './index.styl';
 
 const ComponentPage = ({ title, description, props, url, examples }) =>
@@ -9,7 +9,7 @@ const ComponentPage = ({ title, description, props, url, examples }) =>
       <p className="component-description">{description}</p>
     </div>
     {examples.map((example, index) =>
-      <Playground
+      <Example
         key={index}
         url={url}
         component={example.component}

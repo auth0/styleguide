@@ -44,7 +44,9 @@
     "gulp-stylus": "^2.5.0",
     "in-publish": "^2.0.0",
     "matchdep": "^1.0.1",
+    "normalize-css": "^2.3.1",
     "stylelint": "^7.5.0",
     "stylelint-config-standard": "^14.0.0"
-  }
+  },
+  "dependencies": {}
 }

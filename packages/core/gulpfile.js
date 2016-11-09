@@ -6,7 +6,9 @@ const $ = require('gulp-load-plugins')();
  */
 gulp.task('styles', () =>
   gulp.src('./src/main.styl')
-    .pipe($.stylus())
+    .pipe($.stylus({
+      'include css': true
+    }))
     .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false

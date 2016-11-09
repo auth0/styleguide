@@ -1,6 +1,4 @@
 node_modules
-bower_components
-npm-debug.log
-lerna-debug.log
-build
 .DS_Store
+npm-debug.log
+packages

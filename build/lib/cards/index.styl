@@ -1,0 +1,88 @@
+.card-docs
+  clearfix()
+  background-color white
+  text-align center
+  padding 0 45px
+  box-shadow 0 1px 4px 0 #DDD
+
+  +breakpoint("desktop", "max")
+    margin-bottom 30px
+
+  .theme-dark &
+    box-shadow 0 1px 4px 0 black
+
+  .card-docs-icon
+    font-size 24px
+    display inline-block
+    margin-top 24px
+
+    &.red
+      color: $color-red
+    &.blue-light
+      color: $color-blue-light
+    &.blue
+      color: $color-blue
+    &.yellow
+      color: $color-yellow
+    &.orange
+      color: $color-orange
+    &.oil
+      color: $color-oil
+    &.green
+      color: $color-green
+    &.gray
+      color: $color-gray
+    &.pink
+      color: $color-pink
+
+  .card-docs-title
+    font-size 18px
+    color $color-text-black
+    margin-top 15px
+    margin-bottom 16px
+
+  .card-docs-description
+    font-size $font-size-small
+    color $color-text-light
+    line-height 1.5em
+    height 4.5em
+    margin 0
+
+  .card-docs-links
+    text-align left
+    margin-bottom 18px
+
+    .card-docs-link
+      display block
+      font-size $font-size-small
+      color $color-text
+      padding 10px 0
+      border-bottom 1px solid #DDD
+
+  .card-docs-more
+    float right
+    margin-bottom 18px
+    position relative
+    left 4px
+
+    &:after
+      content ''
+      display inline-block
+      width 0
+      height 0
+      margin-left 10px
+      border-top 4px solid transparent
+      border-right 4px solid transparent
+      border-bottom 4px solid transparent
+      border-left 8px solid $link-color
+
+      .theme-dark &
+        border-left-color lighten($link-color, 30%)
+
+    &:hover,
+    &:focus
+      &:after
+        border-left-color $link-hover-color
+
+        .theme-dark &
+          border-left-color lighten($link-hover-color, 30%)

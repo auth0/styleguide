@@ -1,0 +1,48 @@
+<mj-section background-color="#FAFAFA">
+  <mj-column width="80%">
+    
+    <% if (locals.mainText) { %>
+    <mj-text font-size="18px" font-weight="500" line-height="27px" color="#212121" padding="30px 30px 0 30px" margin="0">
+      <%- locals.mainText %>
+    </mj-text>
+    <% } %>
+    
+    <% if (locals.ctaText) { %>
+    <mj-button href="<%- locals.ctaHref %>">
+      <span style="text-transform: uppercase; letter-spacing: 1px;"><%- locals.ctaText %></span>
+    </mj-button>
+    <% } %>
+    
+    <% if (locals.fromGreeting) { %>
+    <mj-text>
+      Happy Authenticating,<br/>
+      The Auth0 Team
+    </mj-text>
+    <% } %>
+    
+  </mj-column>
+</mj-section>
+<mj-section background-color="#FAFAFA" padding="0 0 30px 0">
+  <mj-column width="100%">
+    <mj-text font-size="13px" color="#777" align="center" padding="0">
+      <a style="padding: 0 8px; color: #777777; text-decoration: none;" href="https://auth0.com/terms">Terms of service</a>
+    
+      <a style="padding: 0 8px; color: #777777; text-decoration: none;" href="https://auth0.com/privacy">Privacy</a>
+    
+      <a style="padding: 0 8px; color: #777777; text-decoration: none;" href="mailto:info@auth0.co">Contact Us</a>
+      
+      <a style="padding: 0 8px;" href="https://twitter.com/auth0/"><img style="display: inline-block" src="http://cdn.auth0.com/blog/newsletter/twitter.png" alt="auth0" width="15px"></a>
+    </mj-text>
+  </mj-column>
+</mj-section>
+
+<mj-section background-color="white">
+  <mj-column width="100%" vertical-align="top">
+    <mj-text font-size="13px" padding="0 20px 0 20px" line-height="20px">
+      You’re receiving this email because you have and Auth0 account. If you’d rather not see us in your inbox in the future, please <a href="{{unsubscribe_url}}" style="color:#0a84ae;text-decoration:none">unsubscribe</a>.
+      <br/><br/>
+      <span style="color: #777777">Auth0 Inc. · 10777 Main Street · Suite 204 · Bellevue, WA 98004 · USA</span>
+    </mj-text>
+
+  </mj-column>
+</mj-section>

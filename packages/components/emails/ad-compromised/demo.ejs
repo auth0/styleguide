@@ -1,0 +1,46 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <%- include('../_modules/defaults') %>
+      <mj-class name="body-text" padding="0 20px 15px 20px" align="left" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+    <mj-container background-color="#E3E5E7">
+      <mj-section background-color="white">
+        <mj-column width="100%" vertical-align="top">
+          <mj-image width="80" src="http://cdn.auth0.com/styleguide/latest/lib/logos/img/logo-blue.png" href="https://auth0.com/" alt="auth0"></mj-image>
+        </mj-column>
+      </mj-section>
+
+      <%- include('../_modules/hero', {
+        smallTitle: "Your account could have been hacked, compromised or stolen.",
+        image: "https://cdn.auth0.com/email/anomaly-detection/ninja.png"
+      }) %>
+
+      <mj-section background-color="white" padding="40px 0">
+        <mj-column width="80%" vertical-align="top">
+          <mj-text mj-class="body-text">
+            There was a security incident on another website unrelated to <strong style="font-weight: 500;">mdocs</strong>. Your account is at risk because you were using the same password in both places.
+          </mj-text>
+          <mj-text mj-class="body-text">
+            Please <strong style="font-weight: 500;">change your password immediately</strong>, all login attempts will be blocked until you finish.
+          </mj-text>
+
+          <mj-button href="#change-password">
+            <span style="text-transform: uppercase; letter-spacing: 1px;">Change password</span>
+          </mj-button>
+        </mj-column>
+      </mj-section>
+
+
+      <mj-section background-color="#F5F7F9">
+        <mj-column width="100%" vertical-align="top">
+          <mj-text font-size="13px" padding="0 20px 0 20px" line-height="20px">
+            You’re receiving this email because you have an Auth0 account. If you are not sure why you’re receiving this, please contact us through our <a href="//support.auth0.com/" style="color:#0a84ae;text-decoration:none">Support Center</a>.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    <mj-container>
+  </mj-body>
+</mjml>

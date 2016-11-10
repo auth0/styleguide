@@ -80,7 +80,12 @@ footer.site-footer
         .column
           .social
             .twitter
-              iframe.twitter(allowtransparency="true", frameborder="0", scrolling="no", src="//platform.twitter.com/widgets/follow_button.html?screen_name=auth0")
+              iframe.twitter(
+                allowtransparency="true",
+                frameborder="0",
+                scrolling="no",
+                src="//platform.twitter.com/widgets/follow_button.html?screen_name=auth0",
+                data-show-screen-name="true")
             .facebook
               iframe.facebook(src='//www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fgetauth0&width&layout=button_count&action=like&show_faces=false&show_count=false&share=false&height=21&appId=507756515938786', scrolling='no', frameborder='0', allowtransparency='true')
             .linkendin

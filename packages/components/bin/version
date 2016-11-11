@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+const path = require('path');
+const bump = require('bump-version');
+const exec = require('child_process').exec;
+
+function run(cmd, done) {
+  const proc = exec(cmd, done);
+  proc.stdout.pipe(process.stdout);
+  proc.stderr.pipe(process.stderr);
+}
+
+try {
+  const res = bump(path.resolve(__dirname, '..'), process.argv.pop());
+
+  run(`git commit -am "[core] Release: ${res.version}"`, (err1) => {
+    if (!err1) return process.exit(0);
+
+    // restore original status
+    console.error(err1.message); // eslint-disable-line no-console
+    return run('git checkout .', (err) => {
+      if (err) console.error(err.message); // eslint-disable-line no-console
+      process.exit(1);
+    });
+  });
+} catch (err) {
+  console.error(err.message); // eslint-disable-line no-console
+  process.exit(1);
+}

@@ -1,74 +1,84 @@
 @charset "UTF-8";
 
+// Core package
+@import '../node_modules/auth0-styleguide-core/src/vars/';
+@import '../node_modules/auth0-styleguide-core/src/mixins/';
+
+// Quick fix for error with @extend .img-responsive in carousel and thumbnails
+// without importing whole scaffolding/index.styl file
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive
+  img-responsive()
+
 // Vendor
 @import '../node_modules/animate.css/animate.min.css';
-@import 'lib/budicon/budicon.fixed.css';
+@import './budicon/budicon.fixed.css';
 
 // Core CSS
-@import "lib/code/index"
-@import "lib/tables/index"
-@import "lib/forms/index"
-@import "lib/buttons/index"
-@import 'lib/themes/index';
+@import "./code/index"
+@import "./tables/index"
+@import "./forms/index"
+@import "./buttons/index"
+@import './themes/index';
 
 // Components
-@import 'lib/alerts/index';
-@import 'lib/buttons/index';
-@import 'lib/cards/index';
-@import 'lib/breadcrumb/index';
-@import 'lib/codemirror/index';
-@import 'lib/spinner/index';
-@import 'lib/code-picker/index';
-@import 'lib/navs/index';
-@import 'lib/showcase-tabs/index';
-@import "lib/component-animations/index"
-@import "lib/dropdowns/index"
-@import "lib/button-groups/index"
-@import "lib/input-groups/index"
-@import "lib/navbar/index"
-@import "lib/pagination/index"
-@import "lib/pager/index"
-@import "lib/labels/index"
-@import "lib/badges/index"
-@import "lib/jumbotron/index"
-@import "lib/thumbnails/index"
-@import "lib/progress-bars/index"
-@import "lib/media/index"
-@import "lib/list-group/index"
-@import "lib/panels/index"
-@import "lib/wells/index"
-@import "lib/close/index"
-@import "lib/scope/index"
+@import './alerts/index';
+@import './buttons/index';
+@import './cards/index';
+@import './breadcrumb/index';
+@import './codemirror/index';
+@import './spinner/index';
+@import './code-picker/index';
+@import './navs/index';
+@import './showcase-tabs/index';
+@import "./component-animations/index"
+@import "./dropdowns/index"
+@import "./button-groups/index"
+@import "./input-groups/index"
+@import "./navbar/index"
+@import "./pagination/index"
+@import "./pager/index"
+@import "./labels/index"
+@import "./badges/index"
+@import "./jumbotron/index"
+@import "./thumbnails/index"
+@import "./progress-bars/index"
+@import "./media/index"
+@import "./list-group/index"
+@import "./panels/index"
+@import "./wells/index"
+@import "./close/index"
+@import "./scope/index"
 
 // Components w/ JavaScript
-@import "lib/modals/index"
-@import "lib/tooltip/index"
-@import "lib/popovers/index"
-@import "lib/carousel/index"
+@import "./modals/index"
+@import "./tooltip/index"
+@import "./popovers/index"
+@import "./carousel/index"
 
 // Helpers
-@import "lib/helpers/index"
+@import "./helpers/index"
 
 // Auth0 Custom Components
-@import 'lib/header/index';
-@import 'lib/sidebar-box/index';
-@import 'lib/banner/index';
-@import 'lib/big-tabs/index';
-@import 'lib/ui-switch/index';
-@import 'lib/switchboard/index';
-@import 'lib/phone-mockup/index';
-@import 'lib/pills/index';
-@import 'lib/browser/index';
-@import 'lib/center-title-block/index';
-@import 'lib/footer/index';
-@import 'lib/sidebar-box/index';
-@import 'lib/sub-header/index';
-@import 'lib/prettify/index';
-@import 'lib/quotes/index';
-@import 'lib/try-banner/index';
-@import 'lib/circle-logo/index';
-@import 'lib/extension/index';
-@import 'lib/colors/index';
-@import 'lib/budicon/budicon';
-@import 'lib/logos/index';
-@import 'lib/highlight/index';
+@import './header/index';
+@import './sidebar-box/index';
+@import './banner/index';
+@import './big-tabs/index';
+@import './ui-switch/index';
+@import './switchboard/index';
+@import './phone-mockup/index';
+@import './pills/index';
+@import './browser/index';
+@import './center-title-block/index';
+@import './footer/index';
+@import './sidebar-box/index';
+@import './sub-header/index';
+@import './prettify/index';
+@import './quotes/index';
+@import './try-banner/index';
+@import './circle-logo/index';
+@import './extension/index';
+@import './colors/index';
+@import './budicon/budicon';
+@import './logos/index';
+@import './highlight/index';

@@ -45,10 +45,8 @@
     "in-publish": "^2.0.0",
     "matchdep": "^1.0.1",
     "stylelint": "^7.5.0",
-    "stylelint-config-standard": "^14.0.0"
-  },
-  "dependencies": {
+    "stylelint-config-standard": "^14.0.0",
     "animate.css": "^3.5.2",
-    "auth0-styleguide-core": "github:auth0/styleguide#core-latest"
+    "auth0-styleguide-core": "*"
   }
 }

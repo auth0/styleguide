@@ -28,23 +28,23 @@ const config = {
   module: {
     rules: [{
       test: /\.js$/,
-      use: 'babel',
+      use: 'babel-loader',
       include: [path.join(__dirname, '../../src')]
     }, {
       test: /\.json$/,
-      use: 'json'
+      use: 'json-loader'
     }, {
       test: /\.styl/,
       loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style',
+        fallbackLoader: 'style-loader',
         loader: [{
-          loader: 'css',
+          loader: 'css-loader',
           query: {
             sourceMap: DEBUG,
             minimize: !DEBUG
           }
         }, {
-          loader: 'stylus',
+          loader: 'stylus-loader',
           query: {
             'include css': true
           }
@@ -55,7 +55,7 @@ const config = {
       loader: ExtractTextPlugin.extract({
         fallbackLoader: 'style',
         loader: {
-          loader: 'css',
+          loader: 'css-loader',
           query: {
             sourceMap: DEBUG,
             minimize: !DEBUG
@@ -64,10 +64,10 @@ const config = {
       })
     }, {
       test: /\.(pug|jade)/,
-      use: 'pug'
+      use: 'pug-loader'
     }, {
       test: /\.svg/,
-      use: 'raw'
+      use: 'raw-loader'
     }]
   },
 

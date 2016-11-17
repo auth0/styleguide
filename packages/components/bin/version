@@ -12,7 +12,7 @@ function run(cmd, done) {
 try {
   const res = bump(path.resolve(__dirname, '..'), process.argv.pop());
 
-  run(`git commit -am "[core] Release: ${res.version}"`, (err1) => {
+  run(`git commit -am "[components] Release: ${res.version}"`, (err1) => {
     if (!err1) return process.exit(0);
 
     // restore original status

@@ -38,22 +38,24 @@ const App = () => (
 export default App;
 
 function generateComponentsCollection(listOfComponents) {
-  return Object.keys(listOfComponents).map(component => {
-    const doc = StyleguideComponentsDocs[component];
-    const examples = StyleguideComponentsExamples[component];
-    const [title, descriptionRaw] = doc.description.split(':');
-    const description = descriptionRaw.slice(1);
+  return Object.keys(listOfComponents)
+    .filter(component => component !== 'default')
+    .map(component => {
+      const doc = StyleguideComponentsDocs[component];
+      const examples = StyleguideComponentsExamples[component];
+      const [title, descriptionRaw] = doc.description.split(':');
+      const description = descriptionRaw.slice(1);
 
-    return {
-      title,
-      description,
-      url: toURL(title),
-      component: listOfComponents[component],
-      props: doc.props,
-      name: component,
-      examples
-    };
-  });
+      return {
+        title,
+        description,
+        url: toURL(title),
+        component: listOfComponents[component],
+        props: doc.props,
+        name: component,
+        examples
+      };
+    });
 }
 
 function toURL(text) {

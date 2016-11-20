@@ -28,6 +28,8 @@
     "npm": "^3.10.8"
   },
   "devDependencies": {
+    "animate.css": "^3.5.2",
+    "auth0-styleguide-core": "*",
     "bump-version": "^0.5.0",
     "component-cdn-uploader": "auth0/component-cdn-uploader#1.0.0",
     "eslint": "^3.9.0",
@@ -40,10 +42,9 @@
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.5.0",
     "in-publish": "^2.0.0",
+    "semver": "^5.3.0",
     "stylelint": "^7.5.0",
-    "stylelint-config-standard": "^14.0.0",
-    "animate.css": "^3.5.2",
-    "auth0-styleguide-core": "*"
+    "stylelint-config-standard": "^14.0.0"
   },
   "cdn-component": {
     "name": "components",

@@ -11,10 +11,20 @@ if ! [ -e tools/scripts/release.sh ]; then
   exit 1
 fi
 
-LAST_COMMIT=$(git log -1 --pretty=%B)                  # Save last commit name
-ORIGIN_DEST="origin"                                   # git origin of destination
-PACKAGE_NAME="react-components"                        # Package name
-NEXT_VERSION=$(node -p "require('./package').version") # Get new version
+# Save last commit name
+LAST_COMMIT=$(git log -1 --pretty=%B)
+# git origin of destination
+ORIGIN_DEST="origin"
+# Package name
+PACKAGE_NAME="react-components"
+# Get new version
+NEXT_VERSION=$(node -p "require('./package').version")
+# Get new version major
+NEXT_VERSION_MAJOR=$(node -p "require('semver').parse('$NEXT_VERSION').major")
+# Get new version minor
+NEXT_VERSION_MINOR=$(node -p "require('semver').parse('$NEXT_VERSION').minor")
+# Get new version major and minor
+NEXT_VERSION_MAJORMINOR="$NEXT_VERSION_MAJOR.$NEXT_VERSION_MINOR"
 
 # Publish to CDN
 $(npm bin)/ccu
@@ -28,8 +38,12 @@ if [ ! -z "$TAG_EXISTS" ]; then
 else
   echo "Deploying $NEXT_VERSION to git"
 
-  TEMP_TAG_BRANCH="$PACKAGE_NAME-temp"   # Name of the temporary branch for the package
-  TAG_NAME_LATEST="$PACKAGE_NAME-latest" # Name of latest git tag
+  # Name of the temporary branch for the package build process
+  TEMP_TAG_BRANCH="$PACKAGE_NAME-temp"
+  # Name of latest, major and major and minor git tags
+  TAG_NAME_MAJORMINOR="$PACKAGE_NAME-$NEXT_VERSION_MAJORMINOR"
+  TAG_NAME_MAJOR="$PACKAGE_NAME-$NEXT_VERSION_MAJOR"
+  TAG_NAME_LATEST="$PACKAGE_NAME-latest"
 
   ## Change to the temporary branch
   git branch -D "$TEMP_TAG_BRANCH"
@@ -43,11 +57,11 @@ else
   rm ../../.babelrc ../../.eslintrc ../../.gitignore ../../Gruntfile.js ../../gulpfile.js ../../README.md ../../app.json ../../bower.json ../../component.json ../../index.js ../../index.styl ../../lerna.json ../../package.json ../../webpack.config.js
 
   ## Add build dir to git (remove build from .gitignore)
-  grep -v '^build$' .gitignore > .gitignore2
+  grep -v -e '^build$' -e '^lib$' .gitignore > .gitignore2
   mv .gitignore2 .gitignore
 
   ## Move actual package to root
-  mv .gitignore package.json build ../../
+  mv .gitignore package.json build lib ../../
 
   cd ../../
 
@@ -60,10 +74,14 @@ else
 
   ## Create git tags
   git tag $TAG_NAME
+  git tag $TAG_NAME_MAJORMINOR -f
+  git tag $TAG_NAME_MAJOR -f
   git tag $TAG_NAME_LATEST -f
 
   ## Publish git tags
   git push $ORIGIN_DEST $TAG_NAME
+  git push $ORIGIN_DEST $TAG_NAME_MAJORMINOR -f
+  git push $ORIGIN_DEST $TAG_NAME_MAJOR -f
   git push $ORIGIN_DEST $TAG_NAME_LATEST -f
 
   ## Remove temporary branch and switch to previous branch

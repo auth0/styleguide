@@ -26,7 +26,6 @@
   "private": true,
   "files": [
     "build",
-    "es",
     "lib"
   ],
   "engines": {
@@ -34,7 +33,6 @@
     "npm": "^3.10.8"
   },
   "peerDependencies": {
-    "auth0-styleguide-core": "github:auth0/styleguide#core-latest",
     "react": "^15.0.0"
   },
   "devDependencies": {

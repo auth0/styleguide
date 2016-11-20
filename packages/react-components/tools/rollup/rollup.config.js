@@ -21,9 +21,11 @@ const targets = prod ?
 
 const plugins = [
   nodeResolve(),
-  commonjs(),
+  commonjs({
+    exclude: ['./node_modules/core-js/library/fn/array/from.js']
+  }),
   replace({
-    'process.env.NODE_ENV': JSON.stringify(prod ? 'production' : 'development'),
+    'process.env.NODE_ENV': JSON.stringify(prod ? 'production' : 'development')
   }),
   babel({
     babelrc: false,
@@ -31,7 +33,9 @@ const plugins = [
       ['es2015', { modules: false }],
       'stage-0',
       'react'
-    ]
+    ],
+    plugins: ['external-helpers'],
+    externalHelpers: true
   }),
   json()
 ];
@@ -42,9 +46,9 @@ export default {
   entry: 'src/index.js',
   moduleId: 'auth0-styleguide-react-components',
   moduleName: 'auth0StyleguideReactComponents',
-  external: ['react'],
+  external: ['react', 'react-bootstrap'],
   exports: 'named',
   targets,
   plugins,
-  globals: { react: 'React' }
+  globals: { react: 'React', 'react-bootstrap': 'ReactBootstrap' }
 };

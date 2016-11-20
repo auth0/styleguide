@@ -3,19 +3,18 @@ const path = require('path');
 const reactDocs = require('react-docgen');
 
 const srcPath = path.resolve(__dirname, '../../src');
-const buildPath = path.resolve(__dirname, '../../build');
+const buildPath = path.resolve(__dirname, '../../lib');
 const finalJSON = {};
 
 getComponentsDirectories(srcPath)
   .map(filePath => ({
     name: filePath,
-    fileComponentPath: path.join(srcPath, filePath, 'index.js')
+    fileComponentPath: path.join(srcPath, filePath)
   }))
   .forEach(item => {
     const name = item.name;
     const fileComponentPath = item.fileComponentPath;
-    const componentSrc = fs.readFileSync(fileComponentPath, 'utf8');
-    const componentInfo = reactDocs.parse(componentSrc);
+    const componentInfo = getComponentDoc(fileComponentPath);
     finalJSON[name] = componentInfo;
   });
 
@@ -28,4 +27,21 @@ function getComponentsDirectories(srcpath) {
   return fs.readdirSync(srcpath).filter(file =>
     fs.statSync(path.join(srcpath, file)).isDirectory()
   );
+}
+
+function getComponentDoc(componentPath) {
+  const auth0ComponentPath = path.join(componentPath, 'index.js');
+  const reactBootstrapComponentPath = path.join(componentPath, 'doc.json');
+
+  if (fs.existsSync(auth0ComponentPath)) {
+    const componentSrc = fs.readFileSync(auth0ComponentPath, 'utf8');
+    const componentInfo = reactDocs.parse(componentSrc);
+
+    return componentInfo;
+  }
+
+  const componentSrc = fs.readFileSync(reactBootstrapComponentPath, 'utf8');
+  const componentInfo = JSON.parse(componentSrc);
+
+  return componentInfo;
 }

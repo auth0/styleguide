@@ -17,14 +17,7 @@ PACKAGE_NAME="react-components"                        # Package name
 NEXT_VERSION=$(node -p "require('./package').version") # Get new version
 
 # Publish to CDN
-CDN_EXISTS=$(curl -s -o /dev/null -w "%{http_code}" https://cdn.auth0.com/styleguide-$PACKAGE_NAME/$NEXT_VERSION/$PACKAGE_NAME.css | grep 200 || true)
-
-if [ ! -z "$CDN_EXISTS" ]; then
-  echo "There is already a version $NEXT_VERSION in the CDN. Skiping cdn publish."
-else
-  echo "Deploying $NEXT_VERSION to cdn"
-  $(npm bin)/grunt cdn
-fi
+$(npm bin)/ccu
 
 # Publish git tag
 TAG_NAME="$PACKAGE_NAME-$NEXT_VERSION"

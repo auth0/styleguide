@@ -50,6 +50,7 @@
     "babel-register": "^6.16.3",
     "bump-version": "^0.5.0",
     "chai": "^3.5.0",
+    "component-cdn-uploader": "auth0/component-cdn-uploader#1.0.0",
     "conventional-changelog-cli": "^1.2.0",
     "css-loader": "^0.25.0",
     "enzyme": "^2.5.1",
@@ -61,10 +62,6 @@
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "grunt": "^1.0.1",
-    "grunt-aws-s3": "^0.14.5",
-    "grunt-cli": "^1.2.0",
-    "grunt-shell": "^2.0.0",
     "gulp": "github:gulpjs/gulp#c120a94",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-cssnano": "^2.1.2",
@@ -73,7 +70,6 @@
     "gulp-stylus": "^2.5.0",
     "in-publish": "^2.0.0",
     "lodash": "^4.16.4",
-    "matchdep": "^1.0.1",
     "mocha": "^3.1.2",
     "poststylus": "^0.2.3",
     "react": "^15.3.2",
@@ -92,5 +88,13 @@
     "stylelint-config-standard": "^14.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1"
+  },
+  "cdn-component": {
+    "name": "react-components",
+    "cdn": "https://cdn.auth0.com",
+    "mainBundleFile": "react-components.js",
+    "remoteBasePath": "styleguide",
+    "bucket": "assets.us.auth0.com",
+    "localPath": "build"
   }
 }

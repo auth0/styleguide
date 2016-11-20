@@ -4,7 +4,7 @@ import { ComponentPage, Splash, NotFound } from 'containers';
 import { MatchAsync, Sidebar } from 'components';
 import * as StyleguideComponents from 'auth0-styleguide-react-components';
 import * as StyleguideComponentsExamples from 'auth0-styleguide-react-components/lib/examples';
-import StyleguideComponentsDocs from 'auth0-styleguide-react-components/build/docs.json';
+import StyleguideComponentsDocs from 'auth0-styleguide-react-components/lib/docs.json';
 import './index.styl';
 import { version } from '../../../package.json';
 
@@ -39,10 +39,10 @@ export default App;
 
 function generateComponentsCollection(listOfComponents) {
   return Object.keys(listOfComponents)
-    .filter(component => component !== 'default')
     .map(component => {
       const doc = StyleguideComponentsDocs[component];
       const examples = StyleguideComponentsExamples[component];
+      if (!doc || !examples) return null;
       const [title, descriptionRaw] = doc.description.split(':');
       const description = descriptionRaw.slice(1);
 
@@ -55,7 +55,8 @@ function generateComponentsCollection(listOfComponents) {
         name: component,
         examples
       };
-    });
+    })
+    .filter(component => !!component);
 }
 
 function toURL(text) {

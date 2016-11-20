@@ -53,7 +53,8 @@ function generateComponentsCollection(listOfComponents) {
         component: listOfComponents[component],
         props: doc.props,
         name: component,
-        examples
+        examples,
+        reactBootstrap: doc['react-bootstrap']
       };
     })
     .filter(component => !!component);

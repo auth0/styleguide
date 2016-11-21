@@ -3,6 +3,7 @@ export EmptyState from './EmptyState';
 export Footer from './Footer';
 export Select from './Select';
 export TryBanner from './TryBanner';
+export Sidebar from './Sidebar';
 
 // react-bootstrap components
 export {

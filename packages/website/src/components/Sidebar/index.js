@@ -22,7 +22,7 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar">
         <div className="sidebar-header">
-          <Link to="/">
+          <Link to="/react">
             <img
               src="https://cdn.auth0.com/styleguide/1.0.0/img/badge.svg"
               alt="Auth0 Logo"
@@ -46,7 +46,7 @@ class Sidebar extends React.Component {
         </div>
         <ul className={`sidebar-items-list ${this.state.openSidebar ? 'open' : ''}`}>
           <li className="sidebar-item" key={'Home'}>
-            <Link className="sidebar-item-link" to="/" activeOnlyWhenExact activeClassName="active">
+            <Link className="sidebar-item-link" to="/react" activeOnlyWhenExact activeClassName="active">
               Getting Started
             </Link>
           </li>

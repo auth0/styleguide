@@ -21,7 +21,7 @@ const config = {
 
   output: {
     path: path.join(__dirname, '../../build'),
-    filename: 'react-website.js',
+    filename: 'website.js',
     publicPath: ''
   },
 
@@ -87,7 +87,7 @@ const config = {
     // Name of the CSS bundle
     // https://github.com/webpack/extract-text-webpack-plugin/blob/webpack-1/README.md
     new ExtractTextPlugin({
-      filename: 'react-website.css',
+      filename: 'website.css',
       disable: DEBUG
     }),
     // Define free variables
@@ -127,7 +127,7 @@ const config = {
 
     //
     new HtmlWebpackPlugin({
-      title: 'Auth0 React Styleguide',
+      title: 'Auth0 Styleguide',
       template: './src/views/index.pug',
       inject: 'body'
     })

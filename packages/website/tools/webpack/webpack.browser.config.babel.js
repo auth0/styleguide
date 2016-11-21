@@ -14,7 +14,10 @@ const config = {
   entry: [
     ...DEBUG ? [
       'react-hot-loader/patch',
-      'webpack-hot-middleware/client'
+      'webpack-hot-middleware/client',
+      'auth0-styleguide-core/src/main.styl',
+      'auth0-styleguide-components/src/main.styl',
+      'auth0-styleguide-react-components/src/index.styl'
     ] : [],
     path.join(__dirname, '../../src/client.js')
   ],
@@ -46,7 +49,8 @@ const config = {
         }, {
           loader: 'stylus-loader',
           query: {
-            'include css': true
+            'include css': true,
+            paths: [path.resolve(__dirname, '../../node_modules')]
           }
         }]
       })
@@ -128,7 +132,7 @@ const config = {
     //
     new HtmlWebpackPlugin({
       title: 'Auth0 Styleguide',
-      template: './src/views/index.pug',
+      template: DEBUG ? './tools/webpack/development-view.pug' : './src/views/index.pug',
       inject: 'body'
     })
   ],

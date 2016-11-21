@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "auth0-styleguide-core": "*",
+    "auth0-styleguide-components": "*",
     "auth0-styleguide-react-components": "*",
     "babel-polyfill": "^6.16.0",
     "codemirror": "^5.19.0",

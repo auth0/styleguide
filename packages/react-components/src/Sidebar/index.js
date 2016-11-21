@@ -11,14 +11,14 @@ const toSpinalTapCase = str =>
 const renderMenu = items =>
   <ul className="menu-list">
     { items.map(item =>
-      <li className="menu-item">
+      <li className="menu-item" key={item.text}>
         <a className="menu-item-link" href={item.url || toSpinalTapCase(item.text)}>
           {item.iconCode && <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
           <span className="text">{item.text}</span>
         </a>
         <ul className="menu-sublist">
           { item.children && item.children.map(subitem =>
-            <li className="menu-subitem">
+            <li className="menu-subitem" key={subitem.text}>
               <a
                 className="menu-subitem-link"
                 href={subitem.url || toSpinalTapCase(subitem.text)}
@@ -47,12 +47,13 @@ const Sidebar = ({ header, items }) =>
       }
     </header>
     <nav className="a0r-sidebar-menu">{renderMenu(items)}</nav>
-    <footer></footer>
+    <footer className="a0r-sidebar-footer"></footer>
   </div>;
+
 
 Sidebar.propTypes = {
   /**
-   * DOM element to replace default header content.
+   * Element to replace default header content.
    */
   header: PropTypes.element,
   /**
@@ -62,10 +63,11 @@ Sidebar.propTypes = {
     text: PropTypes.string.isRequired,
     url: PropTypes.string,
     iconCode: PropTypes.number,
-    children: PropTypes.arrayOf({
+    open: PropTypes.bool,
+    children: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string.isRequired,
       url: PropTypes.string
-    }).isRequired
+    })).isRequired
   })).isRequired
 };
 

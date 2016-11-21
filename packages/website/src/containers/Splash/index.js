@@ -7,7 +7,9 @@ const usageBundler = `import { Select } from 'auth0-styleguide-react-components'
 const App = () => <Select options={['Zoey Andrews', 'Jerry Woods', 'Marion Garza']} />;
 
 export default App;`;
-const usageCDN = (version) => `<link rel="stylesheet" href="https://cdn.auth0.com/styleguide-react-components/${version}/react-components.css" />
+
+const usageCDN = (version) =>
+`<link rel="stylesheet" href="https://cdn.auth0.com/styleguide-react-components/${version}/react-components.css" />
 <script src="https://cdn.auth0.com/styleguide-react-components/${version}/react-components.js"></script>`;
 
 class Splash extends React.Component {

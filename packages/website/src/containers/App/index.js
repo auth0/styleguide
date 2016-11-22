@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter, Match, Miss } from 'react-router';
-import { HtmlStyleguide, ReactStyleguide } from 'containers';
+import { App as HtmlStyleguide } from 'html/containers';
+import { App as ReactStyleguide } from 'react/containers';
 
 const App = () => (
   <HashRouter>

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Example, PropertiesTable } from 'components';
+import { Example, PropertiesTable } from 'react/components';
 import './index.styl';
 
 const ComponentPage = ({ title, description, props, url, examples, reactBootstrap }) =>

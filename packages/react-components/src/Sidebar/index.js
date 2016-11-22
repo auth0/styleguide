@@ -8,14 +8,20 @@ const toSpinalTapCase = str =>
     .replace(/[_\s]+(?=[a-zA-Z])/g, '-')
     .toLowerCase();
 
-const renderMenu = items =>
+const renderMenu = (items, linkComponent, linkProps) =>
   <ul className="menu-list">
     { items.map(item =>
       <li className="menu-item" key={item.text}>
-        <a className="menu-item-link" href={item.url || toSpinalTapCase(item.text)}>
-          {item.iconCode && <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
-          <span className="text">{item.text}</span>
-        </a>
+        {
+          React.createElement(
+            linkComponent,
+            ...linkProps(item.text, item.url),
+            <span className="menu-item-link" href={item.url || toSpinalTapCase(item.text)}>
+              {item.iconCode && <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
+              <span className="text">{item.text}</span>
+            </span>
+          )
+        }
         <ul className="menu-sublist">
           { item.children && item.children.map(subitem =>
             <li className="menu-subitem" key={subitem.text}>
@@ -35,7 +41,7 @@ const renderMenu = items =>
 /**
  * Sidebar: Styleguide sidebar with drop drown sections.
  */
-const Sidebar = ({ header, items }) =>
+const Sidebar = ({ header, items, linkComponent, linkProps }) =>
   <div className="a0r-sidebar">
     <header className="a0r-sidebar-header">
       { header ||
@@ -46,8 +52,8 @@ const Sidebar = ({ header, items }) =>
         </h1>
       }
     </header>
-    <nav className="a0r-sidebar-menu">{renderMenu(items)}</nav>
-    <footer className="a0r-sidebar-footer"></footer>
+    <nav className="a0r-sidebar-menu">{renderMenu(items, linkComponent, linkProps)}</nav>
+    <footer className="a0r-sidebar-footer" />
   </div>;
 
 
@@ -68,7 +74,15 @@ Sidebar.propTypes = {
       text: PropTypes.string.isRequired,
       url: PropTypes.string
     })).isRequired
-  })).isRequired
+  })).isRequired,
+  /**
+   * React component for the Link (use any router you want).
+   */
+  linkComponent: PropTypes.object.isRequired,
+  /**
+   * Function with item text and url as parameters that should return link props object.
+   */
+  linkProps: PropTypes.func.isRequired
 };
 
 export default Sidebar;

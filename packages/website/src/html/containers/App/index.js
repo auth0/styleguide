@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Match, Miss } from 'react-router';
 import { Sidebar } from 'auth0-styleguide-react-components';
-import { GettingStarted, Design, Components, Email, Resources } from 'html/containers';
+import { Home, GettingStarted, Design, Components, Email, Resources } from 'html/containers';
 import { NotFound } from 'containers';
 import sidebarConfig from './sidebar-config.json';
 
@@ -14,6 +14,7 @@ const App = () =>
       linkProps={url => ({ to: `/${url}` })}
     />
     <div className="styleguide-content">
+      <Match pattern="/" exactly component={Home} />
       <Match pattern="/getting-started" exactly component={GettingStarted} />
       <Match pattern="/design" exactly component={Design} />
       <Match pattern="/components" exactly component={Components} />

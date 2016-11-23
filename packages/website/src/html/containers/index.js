@@ -1,3 +1,4 @@
+export Home from 'html/containers/Home';
 export App from 'html/containers/App';
 export GettingStarted from 'html/containers/GettingStarted';
 export Design from 'html/containers/Design';

@@ -2,15 +2,20 @@ import React, { PropTypes } from 'react';
 import hljs from 'highlight.js';
 import './index.styl';
 
-const usageBundler = `import { Select } from 'auth0-styleguide-react-components';
+const usageBundler = `import React from 'react';
+import { Select } from 'auth0-styleguide-react-components';
 
 const App = () => <Select options={['Zoey Andrews', 'Jerry Woods', 'Marion Garza']} />;
 
 export default App;`;
 
 const usageCDN = (version) =>
-`<link rel="stylesheet" href="https://cdn.auth0.com/styleguide-react-components/${version}/react-components.css" />
-<script src="https://cdn.auth0.com/styleguide-react-components/${version}/react-components.js"></script>`;
+`<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/0.0.3/core.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/0.0.1/react-components.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.6/react-bootstrap.min.js"></script>
+<script src="https://cdn.auth0.com/styleguide/react-components/0.0.1/react-components.min.js"></script>`;
 
 class Splash extends React.Component {
   componentDidMount() {

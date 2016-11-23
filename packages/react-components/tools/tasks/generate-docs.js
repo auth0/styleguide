@@ -34,14 +34,14 @@ function getComponentDoc(componentPath) {
   const reactBootstrapComponentPath = path.join(componentPath, 'doc.json');
 
   if (fs.existsSync(auth0ComponentPath)) {
-    const componentSrc = fs.readFileSync(auth0ComponentPath, 'utf8');
-    const componentInfo = reactDocs.parse(componentSrc);
+    const componentSrcA = fs.readFileSync(auth0ComponentPath, 'utf8');
+    const componentInfoA = reactDocs.parse(componentSrcA);
 
-    return componentInfo;
+    return componentInfoA;
   }
 
-  const componentSrc = fs.readFileSync(reactBootstrapComponentPath, 'utf8');
-  const componentInfo = JSON.parse(componentSrc);
+  const componentSrcB = fs.readFileSync(reactBootstrapComponentPath, 'utf8');
+  const componentInfoB = JSON.parse(componentSrcB);
 
-  return componentInfo;
+  return componentInfoB;
 }

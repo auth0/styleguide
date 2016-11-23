@@ -6,7 +6,7 @@ Library of Auth0 React components. This is for internal use by Auth0 only.
 
 If you are using npm you can do:
 ```
-npm i --save react@15 react-bootstrap@0.30 auth0/styleguide#react-components-1.0.0
+npm i --save react@15 react-bootstrap@0.30 auth0/styleguide#react-components-0.0.1
 ```
 This will let you consume the components as a collection of ES modules using a module bundler like Webpack or Browserify.
 
@@ -25,12 +25,12 @@ And to load the CSS via stylus (but we encourage you to load via our CDN with a 
 Also you can use it from our CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/0.0.0/core.css" />
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/0.0.0/react-components.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/0.0.3/core.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/0.0.1/react-components.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react-dom.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.6/react-bootstrap.min.js"></script>
-<script src="https://cdn.auth0.com/styleguide/react-components/0.0.0/react-components.min.js"></script>
+<script src="https://cdn.auth0.com/styleguide/react-components/0.0.1/react-components.min.js"></script>
 ```
 
 This will include an UMD version that make the components available as a `window.Auth0ReactComponents` global variable.

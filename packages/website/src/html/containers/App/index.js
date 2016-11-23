@@ -9,8 +9,9 @@ const App = () =>
   <div className="auth0-html-styleguide">
     <Sidebar
       items={sidebarConfig}
+      customLink
       linkComponent={Link}
-      linkProps={(text, url) => ({ to: `/${url}` })}
+      linkProps={url => ({ to: `/${url}` })}
     />
     <div className="styleguide-content">
       <Match pattern="/getting-started" exactly component={GettingStarted} />

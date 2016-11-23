@@ -4,5 +4,5 @@
     "stage-0",
     "react"
   ],
-  "plugins": ["inline-json"]
+  "plugins": ["inline-json-import"]
 }

@@ -1,6 +1,0 @@
-{
-  "extends": "auth0-base",
-  "rules": {
-    "import/no-extraneous-dependencies": "off"
-  }
-}

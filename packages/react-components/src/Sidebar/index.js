@@ -8,20 +8,25 @@ const toSpinalTapCase = str =>
     .replace(/[_\s]+(?=[a-zA-Z])/g, '-')
     .toLowerCase();
 
-const renderMenu = (items, linkComponent, linkProps) =>
+const renderMenu = (items, customLink, linkComponent, linkProps) =>
   <ul className="menu-list">
     { items.map(item =>
       <li className="menu-item" key={item.text}>
-        {
+        { customLink ? (
           React.createElement(
             linkComponent,
-            ...linkProps(item.text, item.url),
-            <span className="menu-item-link" href={item.url || toSpinalTapCase(item.text)}>
+            linkProps(item.url || toSpinalTapCase(item.text), item.text),
+            <span className="menu-item-link">
               {item.iconCode && <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
               <span className="text">{item.text}</span>
             </span>
           )
-        }
+        ) : (
+          <a className="menu-item-link" href={item.url || toSpinalTapCase(item.text)}>
+            {item.iconCode && <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
+            <span className="text">{item.text}</span>
+          </a>
+        ) }
         <ul className="menu-sublist">
           { item.children && item.children.map(subitem =>
             <li className="menu-subitem" key={subitem.text}>
@@ -41,7 +46,7 @@ const renderMenu = (items, linkComponent, linkProps) =>
 /**
  * Sidebar: Styleguide sidebar with drop drown sections.
  */
-const Sidebar = ({ header, items, linkComponent, linkProps }) =>
+const Sidebar = ({ header, items, customLink, linkComponent, linkProps }) =>
   <div className="a0r-sidebar">
     <header className="a0r-sidebar-header">
       { header ||
@@ -52,10 +57,15 @@ const Sidebar = ({ header, items, linkComponent, linkProps }) =>
         </h1>
       }
     </header>
-    <nav className="a0r-sidebar-menu">{renderMenu(items, linkComponent, linkProps)}</nav>
+    <nav className="a0r-sidebar-menu">
+      {renderMenu(items, customLink, linkComponent, linkProps)}
+    </nav>
     <footer className="a0r-sidebar-footer" />
   </div>;
 
+Sidebar.defaultProps = {
+  customLink: false
+};
 
 Sidebar.propTypes = {
   /**
@@ -76,13 +86,17 @@ Sidebar.propTypes = {
     })).isRequired
   })).isRequired,
   /**
+   * Replace items anchor for custom React element (useful when using SPA router).
+   */
+  customLink: PropTypes.bool,
+  /**
    * React component for the Link (use any router you want).
    */
-  linkComponent: PropTypes.object.isRequired,
+  linkComponent: PropTypes.func,
   /**
    * Function with item text and url as parameters that should return link props object.
    */
-  linkProps: PropTypes.func.isRequired
+  linkProps: PropTypes.func
 };
 
 export default Sidebar;

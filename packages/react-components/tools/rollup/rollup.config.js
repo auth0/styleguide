@@ -34,8 +34,7 @@ const plugins = [
       'stage-0',
       'react'
     ],
-    plugins: ['external-helpers'],
-    externalHelpers: true
+    plugins: ['external-helpers']
   }),
   json()
 ];

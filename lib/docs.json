@@ -1,0 +1,263 @@
+{
+  "Button": {
+    "description": "Button: ",
+    "react-bootstrap": "https://react-bootstrap.github.io/components.html#buttons"
+  },
+  "EmptyState": {
+    "description": "Empty state: Simple component for onboarding users to sections with no data.",
+    "methods": [],
+    "props": {
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "description": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "iconCode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "image": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "Footer": {
+    "description": "Footer: Auth0's footer component.",
+    "methods": []
+  },
+  "Select": {
+    "description": "Select: Drop-down list.",
+    "methods": [],
+    "props": {
+      "options": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": true,
+        "description": "List of options",
+        "defaultValue": {
+          "value": "['Default']",
+          "computed": false
+        }
+      },
+      "selected": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "Index of default selected value",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "handleChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "Sidebar": {
+    "description": "Sidebar: Styleguide sidebar with drop drown sections.",
+    "methods": [],
+    "props": {
+      "header": {
+        "type": {
+          "name": "element"
+        },
+        "required": false,
+        "description": "Element to replace default header content."
+      },
+      "items": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "text": {
+                "name": "string",
+                "required": true
+              },
+              "url": {
+                "name": "string",
+                "required": false
+              },
+              "iconCode": {
+                "name": "number",
+                "required": false
+              },
+              "open": {
+                "name": "bool",
+                "required": false
+              },
+              "children": {
+                "name": "arrayOf",
+                "value": {
+                  "name": "shape",
+                  "value": {
+                    "text": {
+                      "name": "string",
+                      "required": true
+                    },
+                    "url": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                },
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "List of objects representing the sidebar items"
+      },
+      "customLink": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Replace items anchor for custom React element (useful when using SPA router).",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "linkComponent": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "React component for the Link (use any router you want)."
+      },
+      "linkProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Function with item text and url as parameters that should return link props object."
+      }
+    }
+  },
+  "TryBanner": {
+    "description": "Try Banner: The main call to action to signup.",
+    "methods": [],
+    "props": {
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Try Banner title.",
+        "defaultValue": {
+          "value": "'Don\\'t have an account yet?'",
+          "computed": false
+        }
+      },
+      "button": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Text for the button.",
+        "defaultValue": {
+          "value": "'Try Auth0 for Free'",
+          "computed": false
+        }
+      },
+      "buttonAction": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "func"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Action of the button when pressed, this can be a URL (the button will be an anchor tag) or a function (the button will be a button tag).",
+        "defaultValue": {
+          "value": "'#'",
+          "computed": false
+        }
+      },
+      "dark": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Display in dark mode if true.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Add CSS class selectors to the root element.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      }
+    }
+  }
+}

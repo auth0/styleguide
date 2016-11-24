@@ -2,10 +2,13 @@ $sidebar-width = 250px
 $sidebar-background-color = rgba(black, 0.1)
 
 .a0r-sidebar
-	width: $sidebar-width;
+	width: 100%;
 	background-color: $sidebar-background-color;
-	height: 100vh;
 	overflow-y: auto;
+
+	+breakpoint("tablet")
+		width: $sidebar-width;
+		height: 100vh;
 
 	> .a0r-sidebar-header
 		background-color: white;
@@ -15,8 +18,36 @@ $sidebar-background-color = rgba(black, 0.1)
 
 		h1
 			margin: 15px 0;
+
+		.menu-toggle
+			position: absolute;
+			border: 0;
+			background-color: transparent;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+			padding: 10px;
+
+			.icon-bar
+				background: #5c666f;
+				display: block;
+				width: 22px;
+				height: 2px;
+				border-radius: 1px;
+
+				+ .icon-bar
+					margin-top: 4px;
+
+			+breakpoint("tablet")
+				display: none;
 	
 	> .a0r-sidebar-menu
+		display: none;
+
+		//Overwrite slideToggle styles
+		+breakpoint("tablet")
+			display: block !important;
+			height: auto !important;
 
 		.menu-list
 			list-style: none;

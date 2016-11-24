@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import $ from 'jquery';
 
 // Convert string to spinal tap case
 // http://codereview.stackexchange.com/questions/109899/convert-string-to-spinal-case
@@ -43,25 +44,47 @@ const renderMenu = (items, customLink, linkComponent, linkProps) =>
     )}
   </ul>;
 
+
+
 /**
  * Sidebar: Styleguide sidebar with drop drown sections.
  */
-const Sidebar = ({ header, items, customLink, linkComponent, linkProps }) =>
-  <div className="a0r-sidebar">
-    <header className="a0r-sidebar-header">
-      { header ||
-        <h1>
-          <a href="/">
-            <img src="https://cdn.auth0.com/styleguide/1.0.0/img/badge.svg" alt="Auth0 badge" width="30" height="" />
-          </a>
-        </h1>
-      }
-    </header>
-    <nav className="a0r-sidebar-menu">
-      {renderMenu(items, customLink, linkComponent, linkProps)}
-    </nav>
-    <footer className="a0r-sidebar-footer" />
-  </div>;
+
+class Sidebar extends React.Component {
+  constructor() {
+    super();
+
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+  toggleMenu() {
+    $(this.sidebarMenu).slideToggle();
+  }
+  render() {
+    const { header, items, customLink, linkComponent, linkProps } = this.props;
+    return (
+      <div className="a0r-sidebar">
+        <header className="a0r-sidebar-header">
+          { header ||
+            <h1>
+              <a href="/">
+                <img src="https://cdn.auth0.com/styleguide/1.0.0/img/badge.svg" alt="Auth0 badge" width="30" height="" />
+              </a>
+            </h1>
+          }
+          <button className="menu-toggle" onClick={this.toggleMenu}>
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+          </button>
+        </header>
+        <nav className="a0r-sidebar-menu" ref={elem => (this.sidebarMenu = elem)}>
+          {renderMenu(items, customLink, linkComponent, linkProps)}
+        </nav>
+        <footer className="a0r-sidebar-footer" />
+      </div>
+    );
+  }
+}
 
 Sidebar.defaultProps = {
   customLink: false

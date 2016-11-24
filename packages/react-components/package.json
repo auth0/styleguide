@@ -98,5 +98,8 @@
     "remoteBasePath": "styleguide",
     "bucket": "assets.us.auth0.com",
     "localPath": "build"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
   }
 }

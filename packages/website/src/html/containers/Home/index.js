@@ -10,8 +10,8 @@ const Home = () =>
         <span className="blue-light" />
         <span className="gray" />
       </div>
-      <h1 className="lettering-js">Styleguide</h1>
-      <p className="lettering-js">
+      <h1 className="section-title">Styleguide</h1>
+      <p className="section-description">
         Conjunction of design patterns, components and resources used across our products.
       </p>
       <a href="http://github.com/auth0/styleguide" target="_blank" className="btn btn-success btn-lg">

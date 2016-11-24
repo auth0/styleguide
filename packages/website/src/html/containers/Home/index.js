@@ -2,7 +2,7 @@ import React from 'react';
 import './index.styl';
 
 const Home = () =>
-  <div className="html-styleguide-section home-section theme-dark">
+  <div className="styleguide-section home-section theme-dark">
     <div className="splash-intro">
       <div className="lines">
         <span className="red" />

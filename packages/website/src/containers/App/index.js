@@ -10,8 +10,8 @@ const App = () => (
     <div>
       <Match
         pattern=""
+        // eslint-disable-next-line arrow-body-style
         render={({ location }) => {
-          console.log(location);
           return reactRegex.test(location.pathname) ? <ReactStyleguide /> : <HtmlStyleguide />;
         }}
       />

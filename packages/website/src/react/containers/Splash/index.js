@@ -59,7 +59,7 @@ class Splash extends React.Component {
             <p>Stylesheets:</p>
             <div className="example-box">
               <pre>
-                <code className="bash">{installationStylesheet(this.props.version)}</code>
+                <code className="html">{installationStylesheet(this.props.version)}</code>
               </pre>
             </div>
           </div>

@@ -13,7 +13,7 @@ import './index.styl';
 const componentsCollection = generateComponentsCollection(StyleguideComponents);
 
 const App = () =>
-  <div>
+  <div className="auth0-react-styleguide">
     <Sidebar version={version} items={componentsCollection} />
     <main className="styleguide-content">
       <Match pattern="/react" exactly render={() => <Splash version={version} />} />

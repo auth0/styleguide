@@ -4,6 +4,7 @@ import { Sidebar } from 'auth0-styleguide-react-components';
 import { Home, GettingStarted, Design, Components, Email, Resources } from 'html/containers';
 import { NotFound } from 'containers';
 import sidebarConfig from './sidebar-config.json';
+import './index.styl';
 
 const App = () =>
   <div className="auth0-html-styleguide">

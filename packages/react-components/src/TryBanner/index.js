@@ -7,18 +7,18 @@ import React, { PropTypes } from 'react';
 function TryBanner({ title, button, buttonAction, dark, className, ...rest }) {
   return (
     <div
-      className={`a0src-try-banner ${className} ${dark ? 'a0src-try-banner--dark' : ''}`}
+      className={`a0r-try-banner ${className} ${dark ? 'a0r-try-banner--dark' : ''}`}
       {...rest}
     >
-      <span className="a0src-try-banner__title">{title}</span>
+      <span className="a0r-try-banner__title">{title}</span>
       {toString.call(buttonAction) === '[object String]' ?
         <a
-          className="a0src-try-banner__button btn btn-success btn-lg"
+          className="a0r-try-banner__button btn btn-success btn-lg"
           href={buttonAction}
         >{button}</a>
       :
         <button
-          className="a0src-try-banner__button btn btn-success btn-lg"
+          className="a0r-try-banner__button btn btn-success btn-lg"
           onClick={buttonAction}
         >{button}</button>
       }

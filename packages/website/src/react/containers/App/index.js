@@ -7,7 +7,7 @@ import { MatchAsync } from 'react/components';
 import * as StyleguideComponents from 'auth0-styleguide-react-components';
 import * as StyleguideComponentsExamples from 'auth0-styleguide-react-components/lib/examples';
 import StyleguideComponentsDocs from 'auth0-styleguide-react-components/lib/docs.json';
-import { version } from '../../../../package.json';
+import { version } from 'auth0-styleguide-react-components/package.json';
 import './index.styl';
 
 const componentsCollection = generateComponentsCollection(StyleguideComponents);

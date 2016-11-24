@@ -25,7 +25,7 @@ class Example extends Component {
           <div className="component-links">
             <Link to={`${url}/stage/${exampleUrl}`}>Open in stage</Link>
           </div>
-          {component}
+          <div className="react-playground-component-iframe">{component}</div>
         </div>
         <div className="react-playground-code">
           <CopyToClipboard text={code.trim()}>

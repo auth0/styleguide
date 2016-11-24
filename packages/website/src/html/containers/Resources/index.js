@@ -1,9 +1,10 @@
 import React from 'react';
+import resourcesIcon from '../../img/resources-icon.svg';
 
 const Resources = () =>
   <div className="styleguide-section">
     <section className="jumbotron">
-      <h2><img src="/lib/logos/img/icon-styleguide.svg" role="presentation" /></h2>
+      <h2 dangerouslySetInnerHTML={{ __html: resourcesIcon }} />
       <h1>Resources</h1>
       <p>Logo, Icons and badges.</p>
     </section>

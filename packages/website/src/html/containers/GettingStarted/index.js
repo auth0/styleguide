@@ -1,4 +1,5 @@
 import React from 'react';
+import gettingStartedIcon from '../../img/getting-started-icon.svg';
 
 const cdnExample = '<link href="https://cdn.auth0.com/styleguide/0.0.1/index.min.css" rel="stylesheet" />';
 const githubExample = (
@@ -10,7 +11,7 @@ grunt dev`
 const GettingStarted = () =>
   <div className="styleguide-section getting-started-section">
     <section className="jumbotron">
-      <h2><img src="/lib/logos/img/icon-styleguide.svg" role="presentation" /></h2>
+      <h2 dangerouslySetInnerHTML={{ __html: gettingStartedIcon }} />
       <h1>Getting started</h1>
       <p>There are few ways to initialize depending on the use case.</p>
     </section>

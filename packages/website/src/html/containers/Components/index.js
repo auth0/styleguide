@@ -1,9 +1,10 @@
 import React from 'react';
+import componentsIcon from '../../img/components-icon.svg';
 
 const Components = () =>
   <div className="styleguide-section">
     <section className="jumbotron">
-      <h2><img src="/lib/logos/img/icon-styleguide.svg" role="presentation" /></h2>
+      <h2 dangerouslySetInnerHTML={{ __html: componentsIcon }} />
       <h1>Components</h1>
       <p>Set of components used across our website and apps.</p>
     </section>

@@ -15,9 +15,7 @@ $sidebar-background-color = rgba(black, 0.1)
 		overflow: hidden;
 		text-align: center;
 		position: relative;
-
-		h1
-			margin: 15px 0;
+		height: 70px;
 
 		.menu-toggle
 			position: absolute;
@@ -40,11 +38,28 @@ $sidebar-background-color = rgba(black, 0.1)
 
 			+breakpoint("tablet")
 				display: none;
+
+		// Default header component
+		
+		.default-title
+			display: inline-block
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			line-height: 0;
+
+		.default-link
+			display: inline-block;
+
+			img
+				display: block;
 	
 	> .a0r-sidebar-menu
 		display: none;
 
-		//Overwrite slideToggle styles
+		//Overwrite jquery slideToggle styles
 		+breakpoint("tablet")
 			display: block !important;
 			height: auto !important;

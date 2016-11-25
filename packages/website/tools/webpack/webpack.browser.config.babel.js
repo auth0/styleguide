@@ -137,6 +137,10 @@ const config = {
     })
   ],
 
+  externals: {
+    jquery: 'jQuery'
+  },
+
   resolve: {
     modules: [path.join(__dirname, '../../src'), 'node_modules']
   },

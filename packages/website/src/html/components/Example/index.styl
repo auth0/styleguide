@@ -1,0 +1,33 @@
+@import '../../../../../core/src/vars'
+@import '../../../../../core/src/mixins'
+
+.html-example
+  
+  .html-example-actions
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    li
+      display: inline-block;
+      padding: 10px 10px;
+      cursor: pointer;
+      margin-right: 10px;
+
+      &:first-child
+        padding-left: 0;
+
+  .html-example-playground
+
+    .example-component
+      margin-top: 20px;
+      padding: 30px;
+      overflow: hidden;
+      border-radius: 3px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+
+      &.theme-dark
+        background-color: $bg-color-black;

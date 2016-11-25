@@ -1,5 +1,5 @@
 {
   "title": "Buttons",
-  "description": "<p>Use the button classes on an <code><a></code>, <code><button></code>, or <code><input></code> element.</p>",
+  "description": "<p>Use the button classes on an <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, or <code>&lt;input&gt;</code> element.</p>",
   "darkMode": true
 }

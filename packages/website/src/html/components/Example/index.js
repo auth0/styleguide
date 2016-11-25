@@ -6,9 +6,28 @@ class Example extends Component {
     return (
       <section className="html-example">
         <h2>{title}</h2>
-        <p>{description}</p>
+        <div dangerouslySetInnerHTML={{ __html: description }} />
         <div className="html-example-playground">
-          Jade content: {pug}
+          <div>
+            Component:
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </div>
+          <div>
+            PUG:
+            <pre className="hl">
+              <code className="html">
+                {pug}
+              </code>
+            </pre>
+          </div>
+          <div>
+            HTML:
+            <pre className="hl">
+              <code className="html">
+                {html}
+              </code>
+            </pre>
+          </div>
         </div>
       </section>
     );

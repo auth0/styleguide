@@ -1,5 +1,20 @@
 import React from 'react';
+import { Example } from '../../components/';
 import componentsIcon from '../../img/components-icon.svg';
+
+const componentsList = [
+  'alerts'
+];
+
+const componentsExamples = componentsList.reduce((acc, componentName) => {
+  return acc.concat({
+    title: 'Example title',
+    description: 'Example description',
+    darkMode: false,
+    pug: '.pug-file',
+    html: '<html-file>'
+  });
+}, []);
 
 const Components = () =>
   <div className="styleguide-section">
@@ -9,15 +24,7 @@ const Components = () =>
       <p>Set of components used across our website and apps.</p>
     </section>
     <section className="section-content">
-      <section>
-        <h2>Alert</h2>
-      </section>
-      <section>
-        <h2>Buttons</h2>
-      </section>
-      <section>
-        <h2>Try Banner</h2>
-      </section>
+      {componentsExamples.map(example => <Example key={example.title} {...example} />)}
     </section>
   </div>;
 

@@ -91,9 +91,7 @@ rel_width = 8em;
         background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/relay.svg');
 
 
-  &[data-name^="php"],
-  &[data-name="laravel"],
-  &[data-name="symfony"]
+  &[data-name^="php"]
     .logo
       background: -webkit-linear-gradient(top left, #6D7BCE 40%, #3B2862 140%);
       background: linear-gradient(to bottom right, #6D7BCE 40%, #3B2862 140%);
@@ -102,6 +100,24 @@ rel_width = 8em;
         background-image: url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/php.svg');
         width: 55%;
         height: 55%;
+
+  &[data-name^="laravel"]
+    .logo
+      background: linear-gradient(-220deg, lighten(#F0543F, 5%) 23%, darken(#F0543F, 10%) 100%);
+
+      &:after
+        width: 60%;
+        height: 60%;
+        background-image url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/laravel.svg')
+
+  &[data-name^="symfony"]
+    .logo
+      background: linear-gradient(-220deg, lighten(#000, 20%) 23%, #000 100%);
+
+      &:after
+        width: 60%;
+        height: 60%;
+        background-image url('https://cdn.auth0.com/styleguide/latest/lib/circle-logo/img/symfony.svg')
 
   &[data-name^="ember"],
   &[data-name="emberjs"]

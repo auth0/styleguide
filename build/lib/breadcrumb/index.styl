@@ -1,0 +1,68 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+// Light theme
+
+//** Breadcrumb text color
+$breadcrumb-color ?=            rgba(0, 0, 0, 0.56)
+//** Hover color for links
+$breadcrumb-link-color ?=       $link-hover-color
+
+// Dark theme
+
+//** Breadcrumb text color
+$breadcrumb-dark-color ?=       rgba(255, 255, 255, 0.7)
+//** Hover color for links
+$breadcrumb-dark-link-color ?=  lighten($link-hover-color, 30%)
+
+.breadcrumb
+  list-style none
+  font-size $font-size-small
+  font-weight $font-weight-bold
+  margin 0
+  padding 0
+  color $breadcrumb-color
+
+  .theme-dark &
+    color $breadcrumb-dark-color
+
+  &.has-homepage:before
+    content ''
+    display inline-block
+    background-image url('https://cdn.auth0.com/styleguide/latest/lib/breadcrumb/img/home-icon-dark.svg')
+    background-size contain
+    width 12px
+    height 10px
+    margin-right 7px
+
+    .theme-dark &
+      background-image url('https://cdn.auth0.com/styleguide/latest/lib/breadcrumb/img/home-icon-light.svg')
+
+  > li
+    display inline-block
+    margin 0
+
+    + li:before
+      content ''
+      display inline-block
+      border-style solid
+      border-width 2px 2px 0 0
+      transform rotate(45deg)
+      width 7px
+      height 7px
+      vertical-align baseline
+      padding 0
+      margin 0 14px
+      // Center vertically the arrow with the text
+      position relative
+      bottom 1px
+
+    &:hover a
+      color $breadcrumb-link-color
+
+      .theme-dark &
+        color $breadcrumb-dark-link-color
+
+  > li > a
+    color currentColor

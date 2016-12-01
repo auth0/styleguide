@@ -68,11 +68,13 @@
     "pug-loader": "^2.3.0",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.0.0-beta.5",
+    "react-svg-loader": "^1.1.1",
     "style-loader": "^0.13.1",
     "stylelint": "^7.5.0",
     "stylelint-config-standard": "^14.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",
+    "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.1"

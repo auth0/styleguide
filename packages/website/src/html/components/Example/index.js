@@ -1,50 +1,62 @@
 import React, { PropTypes, Component } from 'react';
+import CodeMirror from 'codemirror';
 import './index.styl';
 
 class Example extends Component {
-  constructor(props) {
+  constructor() {
     super();
-    this.state = {
-      darkMode: props.darkMode,
-      activeSection: 'component'
-    };
+    this.state = { activeSection: 'component' };
+
+    this.highlightCode = this.highlightCode.bind(this);
     this.renderActions = this.renderActions.bind(this);
-    this.toggleDarkMode = this.toggleDarkMode.bind(this);
+    this.renderSectionButton = this.renderSectionButton.bind(this);
   }
-  toggleDarkMode(event) {
-    this.setState({ darkMode: event.target.checked });
+  componentDidMount() {
+    this.highlightCode();
+  }
+  highlightCode() {
+    CodeMirror.fromTextArea(this.pugCode, {
+      lineNumbers: true,
+      readOnly: true,
+      theme: 'auth0',
+      mode: 'pug'
+    });
+
+    CodeMirror.fromTextArea(this.htmlCode, {
+      lineNumbers: true,
+      readOnly: true,
+      theme: 'auth0',
+      mode: 'html'
+    });
+  }
+  renderSectionButton(sectionID, sectionText) {
+    return (
+      <button
+        onClick={() => { this.setState({ activeSection: sectionID }); }}
+        className={`btn btn-link ${this.state.activeSection === sectionID ? 'active' : ''}`}
+      >
+        {sectionText}
+      </button>
+    );
   }
   renderActions() {
-    const { title } = this.props;
     return (
       <ul className="html-example-actions">
-        <div>
-          <li onClick={() => { this.setState({ activeSection: 'component' }); }}>Component</li>
-          <li onClick={() => { this.setState({ activeSection: 'pug' }); }}>Pug</li>
-          <li onClick={() => { this.setState({ activeSection: 'html' }); }}>HTML</li>
-        </div>
-        <div>
-          <li>
-            <span>Dark mode</span>
-            <div className="ui-switch">
-              <input
-                id={`${title.toLowerCase()}-dark-mode-input`}
-                type="checkbox" checked={this.state.darkMode}
-                onChange={this.toggleDarkMode}
-              />
-              <label htmlFor={`${title.toLowerCase()}-dark-mode-input`} className="status" />
-            </div>
-          </li>
-          <li>
-            <button className="btn btn-transparent btn-sm">Open in stage</button>
-          </li>
-        </div>
+        <li>{this.renderSectionButton('component', 'Component')}</li>
+        <li>{this.renderSectionButton('pug', 'Pug')}</li>
+        <li>{this.renderSectionButton('html', 'HTML')}</li>
+        <li>
+          <button className="btn btn-link open-in-stage-btn">
+            Open in stage
+            <i className="icon-budicon-519" />
+          </button>
+        </li>
       </ul>
     );
   }
   render() {
     const { title, description, pug, html } = this.props;
-    const { activeSection, darkMode } = this.state;
+    const { activeSection } = this.state;
 
     return (
       <section className="html-example">
@@ -52,30 +64,17 @@ class Example extends Component {
         <div dangerouslySetInnerHTML={{ __html: description }} />
         { this.renderActions() }
         <div className="html-example-playground">
-          { activeSection === 'component' && (
-            <div
-              className={`example-component ${darkMode ? 'theme-dark' : ''}`}
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          )}
-          { activeSection === 'pug' && (
-            <div className="example-pug">
-              <pre className="hl">
-                <code className="html">
-                  {pug}
-                </code>
-              </pre>
-            </div>
-          )}
-          { activeSection === 'html' && (
-            <div className="example-html">
-              <pre className="hl">
-                <code className="html">
-                  {html}
-                </code>
-              </pre>
-            </div>
-          )}
+          <div
+            style={activeSection !== 'component' ? { display: 'none' } : {}}
+            className="example-component"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+          <div style={activeSection !== 'pug' ? { display: 'none' } : {}} className="example-pug">
+            <textarea ref={e => (this.pugCode = e)} value={pug} />
+          </div>
+          <div style={activeSection !== 'html' ? { display: 'none' } : {}} className="example-html">
+            <textarea ref={e => (this.htmlCode = e)} value={html} />
+          </div>
         </div>
       </section>
     );
@@ -85,7 +84,6 @@ class Example extends Component {
 Example.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  darkMode: PropTypes.bool,
   pug: PropTypes.string.isRequired,
   html: PropTypes.string.isRequired
 };

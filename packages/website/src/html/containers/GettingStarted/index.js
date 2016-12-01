@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import hljs from 'highlight.js';
 import $ from 'jquery';
-import gettingStartedIcon from '../../img/getting-started-icon.svg';
+import GettingStartedIcon from '../../img/getting-started-icon.svg';
 
 const cdnExample = '<link href="https://cdn.auth0.com/styleguide/0.0.1/index.min.css" rel="stylesheet" />';
 const githubExample = (
@@ -17,13 +17,12 @@ class GettingStarted extends Component {
     this.highlightSnippets = this.highlightSnippets.bind(this);
   }
   componentDidMount() {
-    console.log('h');
     this.highlightSnippets();
   }
   highlightSnippets() {
     hljs.configure({
       tabReplace: '  ', // 4 spaces
-      classPrefix: ''     // don't append class prefix
+      classPrefix: ''   // don't append class prefix
     });
 
     hljs.initHighlighting();
@@ -34,7 +33,7 @@ class GettingStarted extends Component {
     return (
       <div className="styleguide-section getting-started-section">
         <section className="jumbotron">
-          <h2 dangerouslySetInnerHTML={{ __html: gettingStartedIcon }} />
+          <h2><GettingStartedIcon /></h2>
           <h1>Getting Started</h1>
           <p>There are few ways to initialize depending on the use case.</p>
         </section>

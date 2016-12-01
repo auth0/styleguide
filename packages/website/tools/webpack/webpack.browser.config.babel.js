@@ -37,6 +37,9 @@ const config = {
       test: /\.json$/,
       use: 'json-loader'
     }, {
+      test: /\.(jpg|png)$/,
+      use: 'url-loader?limit=25000'
+    }, {
       test: /\.styl/,
       loader: ExtractTextPlugin.extract({
         fallbackLoader: 'style-loader',
@@ -70,8 +73,18 @@ const config = {
       test: /\.(pug|jade)/,
       use: 'pug-loader'
     }, {
-      test: /\.svg/,
-      use: 'raw-loader'
+      test: /\.svg$/,
+      loaders: ['babel-loader',
+        {
+          loader: 'react-svg-loader',
+          query: {
+            svgo: {
+              plugins: [{ removeTitle: false }],
+              floatPrecision: 2
+            }
+          }
+        }
+      ]
     }]
   },
 

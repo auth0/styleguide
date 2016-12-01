@@ -1,6 +1,6 @@
 import React from 'react';
 import { Example } from '../../components/';
-import componentsIcon from '../../img/components-icon.svg';
+import ComponentsIcon from '../../img/components-icon.svg';
 
 const componentsList = [
   'alerts',
@@ -27,7 +27,7 @@ const componentsExamples = componentsList.reduce((acc, componentName) => {
 const Components = () =>
   <div className="styleguide-section">
     <section className="jumbotron">
-      <h2 dangerouslySetInnerHTML={{ __html: componentsIcon }} />
+      <h2><ComponentsIcon /></h2>
       <h1>Components</h1>
       <p>Set of components used across our website and apps.</p>
     </section>

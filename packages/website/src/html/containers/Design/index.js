@@ -1,10 +1,10 @@
 import React from 'react';
-import designIcon from '../../img/design-icon.svg';
+import DesignIcon from '../../img/design-icon.svg';
 
 const Design = () =>
   <div className="styleguide-section">
     <section className="jumbotron">
-      <h2 dangerouslySetInnerHTML={{ __html: designIcon }} />
+      <h2><DesignIcon /></h2>
       <h1>Design</h1>
       <p>“The only important thing about design is how it relates to people.”</p>
     </section>

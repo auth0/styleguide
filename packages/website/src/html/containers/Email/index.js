@@ -1,10 +1,10 @@
 import React from 'react';
-import emailTemplatesIcon from '../../img/email-templates-icon.svg';
+import EmailTemplatesIcon from '../../img/email-templates-icon.svg';
 
 const Email = () =>
   <div className="styleguide-section">
     <section className="jumbotron">
-      <h2 dangerouslySetInnerHTML={{ __html: emailTemplatesIcon }} />
+      <h2><EmailTemplatesIcon /></h2>
       <h1>Email Templates</h1>
       <p>Build and send emails with style.</p>
     </section>

@@ -67,7 +67,7 @@ class Sidebar extends React.Component {
           { header ||
             <h1 className="default-title">
               <a className="default-link" href="/">
-                <img src="" alt="Auth0 badge" width="30" height="" />
+                <img src="https://cdn.auth0.com/styleguide/1.0.0/img/badge.svg" alt="Auth0 badge" width="30" height="" />
               </a>
             </h1>
           }

@@ -1,6 +1,6 @@
 {
   "name": "auth0-styleguide-react-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "build/react-components.js",
   "jsnext:main": "build/react-components.es.js",

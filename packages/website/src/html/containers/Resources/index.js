@@ -1,8 +1,9 @@
 import React from 'react';
+import { Badge, Icon, LogoBox } from 'html/components';
+import ResourcesIcon from 'html/img/resources-icon.svg';
+import LogoBlue from 'auth0-styleguide-components/src/logos/img/logo-blue.svg';
 import badgesConfiguration from './badges.json';
 import iconsConfiguration from './icons.json';
-import ResourcesIcon from '../../img/resources-icon.svg';
-import { Badge, Icon } from '../../components';
 import './index.styl';
 
 const Resources = () =>
@@ -17,7 +18,9 @@ const Resources = () =>
         <h2>Logos</h2>
         <p>The available file formats include JPG, PNG, SVG and AI.</p>
         <div className="row">
-          {/* Add LogoBox logos */}
+          <LogoBox title="asdas" logoClass="asdqwe0asd-asdsad" downloadLink="asdasdaswqqwzxc">
+            <LogoBlue />
+          </LogoBox>
         </div>
       </section>
       <section>

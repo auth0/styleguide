@@ -12,7 +12,10 @@ const App = () =>
       items={sidebarConfig}
       customLink
       linkComponent={Link}
-      linkProps={url => ({ to: `/${url}` })}
+      linkProps={url => ({
+        to: `/${url}`,
+        activeClassName: 'active'
+      })}
     />
     <div className="styleguide-content">
       <Match pattern="/" exactly component={Home} />

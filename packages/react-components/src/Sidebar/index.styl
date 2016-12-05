@@ -98,11 +98,17 @@ $sidebar-background-color = rgba(black, 0.1)
 			display: inline-block;
 			top: 0.2em;
 
+		.active + .menu-sublist
+			height: auto;
+
 		.menu-sublist
 			list-style: none;
 			margin: 0;
 			padding: 0;
 			display: none;
+			overflow: hidden;
+			height: 0;
+			transition: height 0.2s ease-in-out;
 
 			+breakpoint("tablet")
 				display: inherit;

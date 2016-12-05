@@ -66,7 +66,7 @@ const Resources = () =>
             <h4 className="icon-category-title">{category.name}</h4>
             <ul className="icon-category-list row">
               { category.icons.map(icon =>
-                <li className="col-xs-6 col-md-4 col-lg-3" key={icon.code}>
+                <li className="col-xs-12 col-sm-6 col-md-4 col-lg-3" key={icon.code}>
                   <Icon
                     cssClass={icon.code ? `icon-budicon-${icon.code}` : 'icon-budicon'}
                     name={icon.name || ''}

@@ -27,8 +27,11 @@
 
     .section-content
       > section
-        padding: 32px 90px 64px;
+        padding: 32px;
         border-bottom: 1px solid #e3e5e7;
+
+        +breakpoint("tablet")
+          padding: 32px 90px 64px;
 
       h2
         margin-top: 0;

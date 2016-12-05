@@ -1,7 +1,9 @@
 import React from 'react';
 import { Badge, Icon, LogoBox } from 'html/components';
 import ResourcesIcon from 'html/img/resources-icon.svg';
-import LogoBlue from 'auth0-styleguide-components/src/logos/img/logo-blue.svg';
+import Auth0LogoBlue from 'auth0-styleguide-components/src/logos/img/logo-blue.svg';
+import Auth0LogoGrey from 'auth0-styleguide-components/src/logos/img/logo-grey.svg';
+import Auth0Badge from 'auth0-styleguide-components/src/logos/img/badge.svg';
 import badgesConfiguration from './badges.json';
 import iconsConfiguration from './icons.json';
 import './index.styl';
@@ -18,8 +20,18 @@ const Resources = () =>
         <h2>Logos</h2>
         <p>The available file formats include JPG, PNG, SVG and AI.</p>
         <div className="row">
-          <LogoBox title="asdas" logoClass="asdqwe0asd-asdsad" downloadLink="asdasdaswqqwzxc">
-            <LogoBlue />
+          <LogoBox title="Blue version" downloadLink="https://cloudup.com/cmshMvKt2bD">
+            <Auth0LogoBlue />
+          </LogoBox>
+          <LogoBox
+            title="Grey version"
+            logoClass="logo-dark"
+            downloadLink="https://cloudup.com/cfievfeiyjb"
+          >
+            <Auth0LogoGrey />
+          </LogoBox>
+          <LogoBox title="Badge" downloadLink="https://cloudup.com/cHfNwqCZae0">
+            <Auth0Badge />
           </LogoBox>
         </div>
       </section>

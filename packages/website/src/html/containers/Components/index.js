@@ -1,5 +1,5 @@
 import React from 'react';
-import { Example } from '../../components/';
+import { Example } from 'html/components';
 import ComponentsIcon from '../../img/components-icon.svg';
 
 const componentsList = [
@@ -20,7 +20,8 @@ const componentsExamples = componentsList.reduce((acc, componentName) => {
     description: configFile.description,
     darkMode: configFile.darkMode,
     pug: pugFile,
-    html: htmlFile
+    html: htmlFile,
+    id: componentName
   });
 }, []);
 

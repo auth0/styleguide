@@ -2,12 +2,16 @@
   {
     "text": "Getting started",
     "iconCode": 464,
-    "children": [{ "text": "From CDN" }, { "text": "Installing from Github" }]
+    "children": [
+      { "text": "From CDN" },
+      { "text": "Installing from Github" }
+    ]
   },
   {
     "text": "Design",
     "iconCode": 258,
-    "children": [{ "text": "Typography" },
+    "children": [
+      { "text": "Typography" },
       { "text": "Primary Colors" },
       { "text": "Secondary Colors" },
       { "text": "Background Colors" },
@@ -18,7 +22,7 @@
     "text": "Components",
     "iconCode": 690,
     "children": [
-      { "text": "Alert" },
+      { "text": "Alerts" },
       { "text": "Buttons" },
       { "text": "Try Banner" }
     ]

@@ -11,9 +11,11 @@ class Example extends Component {
     this.renderActions = this.renderActions.bind(this);
     this.renderSectionButton = this.renderSectionButton.bind(this);
   }
+
   componentDidMount() {
     this.highlightCode();
   }
+
   highlightCode() {
     CodeMirror.fromTextArea(this.pugCode, {
       lineNumbers: true,
@@ -29,6 +31,7 @@ class Example extends Component {
       mode: 'html'
     });
   }
+
   renderSectionButton(sectionID, sectionText) {
     return (
       <button
@@ -39,6 +42,7 @@ class Example extends Component {
       </button>
     );
   }
+
   renderActions() {
     return (
       <ul className="html-example-actions">
@@ -54,12 +58,13 @@ class Example extends Component {
       </ul>
     );
   }
+
   render() {
-    const { title, description, pug, html } = this.props;
+    const { title, description, pug, html, id } = this.props;
     const { activeSection } = this.state;
 
     return (
-      <section className="html-example">
+      <section className="html-example" id={id}>
         <h2>{title}</h2>
         <div dangerouslySetInnerHTML={{ __html: description }} />
         { this.renderActions() }
@@ -85,7 +90,8 @@ Example.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   pug: PropTypes.string.isRequired,
-  html: PropTypes.string.isRequired
+  html: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired
 };
 
 export default Example;

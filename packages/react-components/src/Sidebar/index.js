@@ -9,19 +9,17 @@ const toSpinalTapCase = str =>
     .replace(/[_\s]+(?=[a-zA-Z])/g, '-')
     .toLowerCase();
 
-const renderMenu = (items, customLink, linkComponent, linkProps) =>
+const renderMenu = (items, LinkComponent, linkProps) =>
   <ul className="menu-list">
     { items.map(item =>
       <li className="menu-item" key={item.text}>
-        { customLink ? (
-          React.createElement(
-            linkComponent,
-            linkProps(item.url || toSpinalTapCase(item.text), item.text),
+        {LinkComponent ? (
+          <LinkComponent {...linkProps(item.url || toSpinalTapCase(item.text), item.text)}>
             <span className="menu-item-link">
               {item.iconCode && <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
               <span className="text">{item.text}</span>
             </span>
-          )
+          </LinkComponent>
         ) : (
           <a className="menu-item-link" href={item.url || toSpinalTapCase(item.text)}>
             {item.iconCode && <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
@@ -29,22 +27,32 @@ const renderMenu = (items, customLink, linkComponent, linkProps) =>
           </a>
         ) }
         <ul className="menu-sublist">
-          { item.children && item.children.map(subitem =>
-            <li className="menu-subitem" key={subitem.text}>
-              <a
-                className="menu-subitem-link"
-                href={subitem.url || toSpinalTapCase(subitem.text)}
-              >
-                {subitem.text}
-              </a>
-            </li>
-          )}
+          {item.children && item.children.map(subitem => {
+            const completeSubUrl = `${toSpinalTapCase(item.text)}/${toSpinalTapCase(subitem.text)}`;
+            return LinkComponent ? (
+              <li className="menu-subitem" key={subitem.text}>
+                <LinkComponent
+                  className="menu-subitem-link"
+                  {...linkProps(item.url || completeSubUrl, subitem.text)}
+                >
+                  {subitem.text}
+                </LinkComponent>
+              </li>
+            ) : (
+              <li className="menu-subitem" key={subitem.text}>
+                <a
+                  className="menu-subitem-link"
+                  href={subitem.url || toSpinalTapCase(subitem.text)}
+                >
+                  {subitem.text}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </li>
     )}
   </ul>;
-
-
 
 /**
  * Sidebar: Styleguide sidebar with drop drown sections.
@@ -56,11 +64,13 @@ class Sidebar extends React.Component {
 
     this.toggleMenu = this.toggleMenu.bind(this);
   }
+
   toggleMenu() {
     $(this.sidebarMenu).slideToggle();
   }
+
   render() {
-    const { header, items, customLink, linkComponent, linkProps } = this.props;
+    const { header, items, LinkComponent, linkProps } = this.props;
     return (
       <div className="a0r-sidebar">
         <header className="a0r-sidebar-header">
@@ -78,17 +88,13 @@ class Sidebar extends React.Component {
           </button>
         </header>
         <nav className="a0r-sidebar-menu" ref={elem => (this.sidebarMenu = elem)}>
-          {renderMenu(items, customLink, linkComponent, linkProps)}
+          {renderMenu(items, LinkComponent, linkProps)}
         </nav>
         <footer className="a0r-sidebar-footer" />
       </div>
     );
   }
 }
-
-Sidebar.defaultProps = {
-  customLink: false
-};
 
 Sidebar.propTypes = {
   /**
@@ -109,13 +115,9 @@ Sidebar.propTypes = {
     })).isRequired
   })).isRequired,
   /**
-   * Replace items anchor for custom React element (useful when using SPA router).
-   */
-  customLink: PropTypes.bool,
-  /**
    * React component for the Link (use any router you want).
    */
-  linkComponent: PropTypes.func,
+  LinkComponent: PropTypes.func,
   /**
    * Function with item text and url as parameters that should return link props object.
    */

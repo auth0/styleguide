@@ -3,8 +3,8 @@
     "text": "Getting started",
     "iconCode": 464,
     "children": [
-      { "text": "From CDN" },
-      { "text": "Installing from Github" }
+      { "text": "Installing from CDN", "url": "installing-from-cdn" },
+      { "text": "Installing from Github", "url": "installing-from-github" }
     ]
   },
   {

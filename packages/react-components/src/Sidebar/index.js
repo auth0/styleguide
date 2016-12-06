@@ -72,7 +72,7 @@ class Sidebar extends React.Component {
   render() {
     const { header, items, LinkComponent, linkProps } = this.props;
     return (
-      <div className="a0r-sidebar">
+      <div className="a0r-sidebar" ref={elem => (this.sidebar = elem)}>
         <header className="a0r-sidebar-header">
           { header ||
             <h1 className="default-title">

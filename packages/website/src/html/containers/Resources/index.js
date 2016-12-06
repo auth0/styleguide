@@ -17,7 +17,7 @@ const Resources = () =>
     </section>
     <section className="section-content">
       <section>
-        <h2>Logos</h2>
+        <h2 id="logos">Logos</h2>
         <p>The available file formats include JPG, PNG, SVG and AI.</p>
         <div className="row">
           <LogoBox title="Blue version" downloadLink="https://cloudup.com/cmshMvKt2bD">
@@ -36,7 +36,7 @@ const Resources = () =>
         </div>
       </section>
       <section>
-        <h2>Badges</h2>
+        <h2 id="badges">Badges</h2>
         <p>Tipically used to reference SDKs or programming languages.</p>
         <div className="row">
           <div className="col-xs-6 col-sm-4 col-md-3 col-lg-2 text-center">
@@ -56,7 +56,7 @@ const Resources = () =>
         </div>
       </section>
       <section>
-        <h2>Icons</h2>
+        <h2 id="icons">Icons</h2>
         <p>
           Iconography is another language to communicate visually. Built by &nbsp;
           <a href="http://budicon.buditanrim.co/preview">Budi</a>.

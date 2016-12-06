@@ -7,8 +7,8 @@ import jump from 'jump.js';
 import sidebarConfig from './sidebar-config.json';
 import './index.styl';
 
-const ScrollToElement = ({ params }) => {
-  scrollTo(params.component);
+const ScrollToSection = ({ params }) => {
+  scrollTo(params.section);
 
   return null;
 };
@@ -40,13 +40,23 @@ const App = () =>
     />
     <div className="styleguide-content">
       <Match pattern="/" exactly component={Home} />
-      <Match pattern="/getting-started" exactly component={GettingStarted} />
+
+      <Match pattern="/getting-started" exactly component={ScrollToTop} />
+      <Match pattern="/getting-started" component={GettingStarted} />
+      <Match pattern="/getting-started/:section" component={ScrollToSection} />
+
       <Match pattern="/design" exactly component={Design} />
+
       <Match pattern="/components" exactly component={ScrollToTop} />
       <Match pattern="/components" component={Components} />
-      <Match pattern="/components/:component" component={ScrollToElement} />
+      <Match pattern="/components/:section" component={ScrollToSection} />
+
       <Match pattern="/email-templates" exactly component={Email} />
-      <Match pattern="/resources" exactly component={Resources} />
+
+      <Match pattern="/resources" exactly component={ScrollToTop} />
+      <Match pattern="/resources" component={Resources} />
+      <Match pattern="/resources/:section" component={ScrollToSection} />
+
       <Miss component={NotFound} />
     </div>
   </div>;

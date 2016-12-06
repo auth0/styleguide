@@ -39,7 +39,7 @@ class GettingStarted extends Component {
         </section>
         <div className="section-content">
           <section>
-            <h2 id="from-cdn">From CDN</h2>
+            <h2 id="installing-from-cdn">Installing from CDN</h2>
             <p>
               Using our CDN is the simplest solution.
               Just add the following lines in your projects HTML head and you are done.
@@ -49,7 +49,7 @@ class GettingStarted extends Component {
             </pre>
           </section>
           <section>
-            <h2 id="from-gh">Installing from Github</h2>
+            <h2 id="installing-from-github">Installing from Github</h2>
             <p>
               Clone the repository to your computer. If you want more information
               <a

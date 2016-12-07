@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import CodeMirror from 'codemirror';
+import hljs from 'highlight.js';
 import './index.styl';
 
 class Example extends Component {
@@ -7,29 +7,16 @@ class Example extends Component {
     super();
     this.state = { activeSection: 'component' };
 
-    this.highlightCode = this.highlightCode.bind(this);
     this.renderActions = this.renderActions.bind(this);
     this.renderSectionButton = this.renderSectionButton.bind(this);
   }
 
   componentDidMount() {
-    this.highlightCode();
-  }
-
-  highlightCode() {
-    CodeMirror.fromTextArea(this.pugCode, {
-      lineNumbers: true,
-      readOnly: true,
-      theme: 'auth0',
-      mode: 'pug'
-    });
-
-    CodeMirror.fromTextArea(this.htmlCode, {
-      lineNumbers: true,
-      readOnly: true,
-      theme: 'auth0',
-      mode: 'html'
-    });
+    // Highlight code snippets
+    hljs.configure({ classPrefix: '' });
+    hljs.initHighlighting.called = false;
+    hljs.highlightBlock(this.pugCode);
+    hljs.highlightBlock(this.htmlCode);
   }
 
   renderSectionButton(sectionID, sectionText) {
@@ -75,10 +62,14 @@ class Example extends Component {
             dangerouslySetInnerHTML={{ __html: html }}
           />
           <div style={activeSection !== 'pug' ? { display: 'none' } : {}} className="example-pug">
-            <textarea ref={e => (this.pugCode = e)} value={pug} />
+            <pre>
+              <code ref={e => (this.pugCode = e)} className="pug">{pug}</code>
+            </pre>
           </div>
           <div style={activeSection !== 'html' ? { display: 'none' } : {}} className="example-html">
-            <textarea ref={e => (this.htmlCode = e)} value={html} />
+            <pre>
+              <code ref={e => (this.htmlCode = e)} className="html">{html}</code>
+            </pre>
           </div>
         </div>
       </section>

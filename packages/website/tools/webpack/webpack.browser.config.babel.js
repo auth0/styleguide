@@ -71,7 +71,12 @@ const config = {
       })
     }, {
       test: /\.(pug|jade)/,
-      use: 'pug-loader'
+      loaders: [{
+        loader: 'pug-loader',
+        options: {
+          pretty: true
+        }
+      }]
     }, {
       test: /\.svg$/,
       loaders: [{

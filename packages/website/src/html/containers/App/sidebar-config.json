@@ -24,7 +24,22 @@
     "children": [
       { "text": "Alerts" },
       { "text": "Buttons" },
-      { "text": "Try Banner" }
+      { "text": "Try Banner" },
+      { "text": "Jumbotron" },
+      { "text": "Header" },
+      { "text": "Footer" },
+      { "text": "Modals" },
+      { "text": "Tables" },
+      { "text": "Navs" },
+      { "text": "Showcase tabs" },
+      { "text": "Spinner" },
+      { "text": "Breadcrumb" },
+      { "text": "Cards" },
+      { "text": "Code picker" },
+      { "text": "UI Switch", "url": "ui-switch" },
+      { "text": "Scope" },
+      { "text": "Switchboard" },
+      { "text": "Phone mockup" }
     ]
   },
   {

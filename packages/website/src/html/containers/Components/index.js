@@ -5,7 +5,22 @@ import ComponentsIcon from '../../img/components-icon.svg';
 const componentsList = [
   'alerts',
   'buttons',
-  'try-banner'
+  'try-banner',
+  'jumbotron',
+  'header',
+  'footer',
+  'modals',
+  'tables',
+  'navs',
+  'showcase-tabs',
+  'spinner',
+  'breadcrumb',
+  'cards',
+  'code-picker',
+  'ui-switch',
+  'scope',
+  'switchboard',
+  'phone-mockup'
 ];
 
 const componentsExamples = componentsList.reduce((acc, componentName) => {
@@ -18,7 +33,6 @@ const componentsExamples = componentsList.reduce((acc, componentName) => {
   return acc.concat({
     title: configFile.title,
     description: configFile.description,
-    darkMode: configFile.darkMode,
     pug: pugFile,
     html: htmlFile,
     id: componentName

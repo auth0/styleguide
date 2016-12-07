@@ -57,13 +57,13 @@ class Sidebar extends React.Component {
             <ul className="menu-sublist" style={{ height: `${item.children.length * 45}px` }}>
               {item.children && item.children.map(subitem => {
                 // eslint-disable-next-line max-len
-                const completeSubUrl = `${toSpinalTapCase(item.text)}/${toSpinalTapCase(subitem.text)}`;
+                const completeSubUrl = `${item.url || toSpinalTapCase(item.text)}/${subitem.url || toSpinalTapCase(subitem.text)}`;
                 return LinkComponent ? (
                   <li className="menu-subitem" key={subitem.text}>
                     <LinkComponent
                       className="menu-subitem-link"
                       activeClassName="active"
-                      {...linkProps(item.url || completeSubUrl, subitem.text)}
+                      {...linkProps(completeSubUrl, subitem.text)}
                     >
                       {subitem.text}
                     </LinkComponent>

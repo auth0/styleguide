@@ -11,11 +11,10 @@ const toSpinalTapCase = str =>
 
 const renderMenu = (items, LinkComponent, linkProps) =>
   <ul className="menu-list">
-    { items.map((item, index) =>
+    { items.map(item =>
       <li className="menu-item" key={item.text}>
         {LinkComponent ? (
           <LinkComponent
-            ref={node => (this[`item-${index}`] = node)}
             activeClassName="active"
             {...linkProps(item.url || toSpinalTapCase(item.text), item.text)}
           >
@@ -30,7 +29,7 @@ const renderMenu = (items, LinkComponent, linkProps) =>
             <span className="text">{item.text}</span>
           </a>
         ) }
-        <ul className="menu-sublist">
+        <ul className="menu-sublist" style={{ height: `${item.children.length * 45}` }}>
           {item.children && item.children.map(subitem => {
             const completeSubUrl = `${toSpinalTapCase(item.text)}/${toSpinalTapCase(subitem.text)}`;
             return LinkComponent ? (

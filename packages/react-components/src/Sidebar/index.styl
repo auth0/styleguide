@@ -103,8 +103,9 @@ $sidebar-background-color = rgba(black, 0.1)
 			display: inline-block;
 			top: 0.2em;
 
-		.active + .menu-sublist
-			height: auto;
+		// If link is not active, set height to 0
+		a:not(.active) + .menu-sublist
+			height: 0 !important;
 
 		.menu-sublist
 			list-style: none;

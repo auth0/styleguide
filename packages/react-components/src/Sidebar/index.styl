@@ -4,19 +4,24 @@ $sidebar-background-color = rgba(black, 0.1)
 .a0r-sidebar
 	width: 100%;
 	background-color: $sidebar-background-color;
-	overflow-y: auto;
 	z-index: 1;
 
 	+breakpoint("tablet")
+		overflow-y: auto;
 		width: $sidebar-width;
 		height: 100vh;
 
 	> .a0r-sidebar-header
 		background-color: white;
-		overflow: hidden;
 		text-align: center;
 		position: relative;
 		height: 70px;
+
+		+breakpoint("tablet", "max")
+			box-shadow: 0 2px 6px rgba(black, 0.1);
+
+		+breakpoint("tablet")
+			overflow: hidden;
 
 		.menu-toggle
 			position: absolute;

@@ -6,6 +6,9 @@
   .a0r-sidebar
     position: fixed;
 
+    +breakpoint("tablet", "max")
+      top: 0;
+
   .styleguide-content
     overflow-y: auto;
     margin-top: 70px;
@@ -16,6 +19,10 @@
 
     .jumbotron
       margin-bottom 0
+
+      +breakpoint("tablet", "max")
+        padding-top: 40px;
+        padding-bottom: 40px;
 
       h2 svg
         max-width: 48px;

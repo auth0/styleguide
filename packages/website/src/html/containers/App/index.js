@@ -34,8 +34,7 @@ const App = () =>
       items={sidebarConfig}
       LinkComponent={Link}
       linkProps={url => ({
-        to: `/${url}`,
-        activeClassName: 'active'
+        to: `/${url}`
       })}
     />
     <div className="styleguide-content">

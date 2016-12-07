@@ -11,10 +11,14 @@ const toSpinalTapCase = str =>
 
 const renderMenu = (items, LinkComponent, linkProps) =>
   <ul className="menu-list">
-    { items.map(item =>
+    { items.map((item, index) =>
       <li className="menu-item" key={item.text}>
         {LinkComponent ? (
-          <LinkComponent {...linkProps(item.url || toSpinalTapCase(item.text), item.text)}>
+          <LinkComponent
+            ref={node => (this[`item-${index}`] = node)}
+            activeClassName="active"
+            {...linkProps(item.url || toSpinalTapCase(item.text), item.text)}
+          >
             <span className="menu-item-link">
               {item.iconCode && <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
               <span className="text">{item.text}</span>
@@ -33,6 +37,7 @@ const renderMenu = (items, LinkComponent, linkProps) =>
               <li className="menu-subitem" key={subitem.text}>
                 <LinkComponent
                   className="menu-subitem-link"
+                  activeClassName="active"
                   {...linkProps(item.url || completeSubUrl, subitem.text)}
                 >
                   {subitem.text}

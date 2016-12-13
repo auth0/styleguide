@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react';
+import { Link } from 'react-router';
 import hljs from 'highlight.js';
 import './index.styl';
 
@@ -37,10 +38,12 @@ class Example extends Component {
         <li>{this.renderSectionButton('pug', 'Pug')}</li>
         <li>{this.renderSectionButton('html', 'HTML')}</li>
         <li>
-          <button className="btn btn-link open-in-stage-btn">
-            Open in stage
-            <i className="icon-budicon-519" />
-          </button>
+          <Link to={`/stage/${this.props.id}`} target="_blank" rel="noopener noreferrer">
+            <button className="btn btn-link open-in-stage-btn">
+              Open in stage
+              <i className="icon-budicon-519" />
+            </button>
+          </Link>
         </li>
       </ul>
     );

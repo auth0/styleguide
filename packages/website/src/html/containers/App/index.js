@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Match, Miss } from 'react-router';
 import { Sidebar } from 'auth0-styleguide-react-components';
-import { Home, GettingStarted, Design, Components, Email, Resources } from 'html/containers';
+import { Home, GettingStarted, Design, Components, Stage, Email, Resources } from 'html/containers';
 import { NotFound } from 'containers';
 import jump from 'jump.js';
 import sidebarConfig from './sidebar-config.json';
@@ -30,12 +30,20 @@ function scrollTo(element) {
 
 const App = () =>
   <div className="auth0-html-styleguide">
-    <Sidebar
-      items={sidebarConfig}
-      LinkComponent={Link}
-      linkProps={url => ({
-        to: `/${url}`
-      })}
+    <Match
+      pattern="/"
+      render={({ location }) => {
+        if (location.pathname.includes('stage')) return null;
+        return (
+          <Sidebar
+            items={sidebarConfig}
+            LinkComponent={Link}
+            linkProps={url => ({
+              to: `/${url}`
+            })}
+          />
+        );
+      }}
     />
     <div className="styleguide-content">
       <Match pattern="/" exactly component={Home} />
@@ -58,6 +66,8 @@ const App = () =>
 
       <Miss component={NotFound} />
     </div>
+
+    <Match pattern="/stage/:section" exactly component={Stage} />
   </div>;
 
 export default App;

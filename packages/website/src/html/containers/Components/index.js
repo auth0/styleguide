@@ -5,6 +5,7 @@ import ComponentsIcon from '../../img/components-icon.svg';
 const componentsList = [
   'alerts',
   'buttons',
+  'forms',
   'try-banner',
   'jumbotron',
   'header',

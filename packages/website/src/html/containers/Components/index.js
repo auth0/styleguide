@@ -34,7 +34,7 @@ const componentsExamples = componentsList.reduce((acc, componentName) => {
     title: configFile.title,
     description: configFile.description,
     pug: pugFile,
-    html: htmlFile,
+    html: htmlFile.split('\n').slice(1).join('\n'), // Remove first empty line
     id: componentName
   });
 }, []);

@@ -1,8 +1,10 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import centered from '@kadira/react-storybook-decorator-centered';
 import { Select } from '../../src';
 
 storiesOf('Select', module)
+  .addDecorator(centered)
   .add('with text', () => (
     <Select
       options={[

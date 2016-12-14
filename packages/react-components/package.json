@@ -37,6 +37,7 @@
     "react-bootstrap": "^0.30.6"
   },
   "devDependencies": {
+    "@kadira/react-storybook-decorator-centered": "^1.0.0",
     "@kadira/storybook": "^2.27.0",
     "auth0-styleguide-core": "*",
     "autoprefixer": "^6.5.0",

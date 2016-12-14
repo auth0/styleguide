@@ -1,4 +1,0 @@
-{
-  "title": "Breadcrumb",
-  "description": "<p>We use this for showing where is the user inside the application.</p> <p>Use the <code>.has-homepage</code> modifier to show the home icon before the first element.</p>"
-}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Badge, Icon, LogoBox } from 'html/components';
+import { Badge, Icon, LogoBox, SVG } from 'html/components';
 import ResourcesIcon from 'html/img/resources-icon.svg';
 import Auth0LogoBlue from 'auth0-styleguide-components/src/logos/img/logo-blue.svg';
 import Auth0LogoGrey from 'auth0-styleguide-components/src/logos/img/logo-grey.svg';
@@ -71,7 +71,7 @@ class Resources extends Component {
     return (
       <div className="styleguide-section resources-section">
         <section className="jumbotron">
-          <h2><ResourcesIcon /></h2>
+          <h2><SVG content={ResourcesIcon} /></h2>
           <h1>Resources</h1>
           <p>Logo, Icons and badges.</p>
         </section>
@@ -81,17 +81,17 @@ class Resources extends Component {
             <p>The available file formats include JPG, PNG, SVG and AI.</p>
             <div className="row">
               <LogoBox title="Blue version" downloadLink="https://cloudup.com/cmshMvKt2bD">
-                <Auth0LogoBlue />
+                <SVG content={Auth0LogoBlue} />
               </LogoBox>
               <LogoBox
                 title="Grey version"
                 logoClass="logo-dark"
                 downloadLink="https://cloudup.com/cfievfeiyjb"
               >
-                <Auth0LogoGrey />
+                <SVG content={Auth0LogoGrey} />
               </LogoBox>
               <LogoBox title="Badge" downloadLink="https://cloudup.com/cHfNwqCZae0">
-                <Auth0Badge />
+                <SVG content={Auth0Badge} />
               </LogoBox>
             </div>
           </section>

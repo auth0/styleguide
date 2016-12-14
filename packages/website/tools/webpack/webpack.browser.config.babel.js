@@ -79,24 +79,7 @@ const config = {
       }]
     }, {
       test: /\.svg$/,
-      loaders: [{
-        loader: 'babel-loader',
-        query: {
-          presets: [
-            require.resolve('babel-preset-latest'),
-            require.resolve('babel-preset-stage-0'),
-            require.resolve('babel-preset-react')
-          ]
-        }
-      }, {
-        loader: 'react-svg-loader',
-        query: {
-          svgo: {
-            plugins: [{ removeTitle: false }],
-            floatPrecision: 2
-          }
-        }
-      }]
+      use: 'raw-loader'
     }]
   },
 

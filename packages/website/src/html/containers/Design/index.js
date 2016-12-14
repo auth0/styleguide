@@ -1,10 +1,11 @@
 import React from 'react';
 import DesignIcon from '../../img/design-icon.svg';
+import { SVG } from '../../components';
 
 const Design = () =>
   <div className="styleguide-section">
     <section className="jumbotron">
-      <h2><DesignIcon /></h2>
+      <h2><SVG content={DesignIcon} /></h2>
       <h1>Design</h1>
       <p>“The only important thing about design is how it relates to people.”</p>
     </section>

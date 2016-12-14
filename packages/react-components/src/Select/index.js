@@ -4,9 +4,9 @@ import React, { PropTypes } from 'react';
  * Select: Drop-down list.
  */
 const Select = ({ options, selected, label, color, handleChange }) => (
-  <div className="select">
+  <div className="a0r-select">
     { label && <span>{label}</span> }
-    <span className="value text-truncate" style={{ color }}>{options[selected]}</span>
+    <span className="a0r-value text-truncate" style={{ color }}>{options[selected]}</span>
     <i className="icon-budicon-460" />
     <select
       onChange={handleChange}

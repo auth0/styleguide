@@ -1,8 +1,7 @@
 import React from 'react';
 
-
 /**
- * Footer: Auth0's footer component.
+ * Footer: Auth0's footer component. Styles are inherited from components CSS bundle.
  */
 const Footer = () =>
   <footer className="site-footer">

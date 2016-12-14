@@ -4,15 +4,15 @@ import React, { PropTypes } from 'react';
  * Empty state: Simple component for onboarding users to sections with no data.
  */
 const EmptyState = ({ title, description, iconCode, image, children }) =>
-  <div className="empty-state">
-    <h2 className="empty-state-title">{title}</h2>
+  <div className="a0r-empty-state">
+    <h2 className="a0r-empty-state-title">{title}</h2>
     { image ||
-      <div className="empty-state-icon">
+      <div className="a0r-empty-state-icon">
         <i className={`icon-budicon-${iconCode}`} />
       </div>
     }
-    { description && <p className="empty-state-description">{description}</p> }
-    <div className="empty-state-children"> {children} </div>
+    { description && <p className="a0r-empty-state-description">{description}</p> }
+    <div className="a0r-empty-state-children"> {children} </div>
   </div>;
 
 EmptyState.propTypes = {

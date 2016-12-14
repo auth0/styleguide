@@ -8,9 +8,7 @@ const examples = [
     component: (
       <EmptyState
         title="Roles"
-        description="
-          Create and manage Roles (collection of permissions)
-          for your applications which can then be added to groups."
+        description=" Create and manage Roles (collection of permissions) for your applications which can then be added to groups."
         iconCode="291"
       >
         <a href="#" className="btn btn-transparent"> Read more </a>

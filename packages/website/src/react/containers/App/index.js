@@ -12,24 +12,19 @@ import './index.styl';
 
 const componentsCollection = generateComponentsCollection(StyleguideComponents);
 
+function generateSidebarItems() {
+  const configRC = sidebarConfig.find(item => item.id === 'react-components');
+  Object.assign(configRC, {
+    url: 'react',
+    children: componentsCollection.map(subitem => ({ text: subitem.title }))
+  });
+  return sidebarConfig;
+}
+
 const App = () =>
   <div className="auth0-react-styleguide">
     <StyleguideComponents.Sidebar
-      // Add components collection dinamically to sidebar configuration
-      items={sidebarConfig.map(item => {
-        if (item.id === 'react-components') {
-          return Object.assign({}, item, {
-            url: componentsCollection[0].url,
-            children: componentsCollection.map(subitem =>
-              // Add text property to children components
-              Object.assign({}, subitem, {
-                text: subitem.title
-              })
-            )
-          });
-        }
-        return item;
-      })}
+      items={generateSidebarItems()}
       LinkComponent={Link}
       linkProps={url => ({
         to: `/${url}`

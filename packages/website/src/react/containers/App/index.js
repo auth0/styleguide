@@ -25,7 +25,7 @@ const App = () =>
           />
           <MatchAsync
             pattern={`${component.url}/stage/:example`}
-            getComponent={() => System.import('react/containers/ComponentEditor')}
+            getComponent={() => import('react/containers/ComponentEditor')}
             componentProps={{ ...component }}
           />
         </div>

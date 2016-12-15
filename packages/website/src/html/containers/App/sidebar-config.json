@@ -60,5 +60,11 @@
       { "text": "Badges" },
       { "text": "Icons" }
     ]
+  },
+  {
+    "text": "React Components",
+    "url": "react",
+    "iconCode": 450,
+    "arrow": true
   }
 ]

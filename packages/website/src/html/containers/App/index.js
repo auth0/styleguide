@@ -33,7 +33,9 @@ const App = () =>
     <Match
       pattern="/"
       render={({ location }) => {
-        if (location.pathname.includes('stage')) return null;
+        // Don't render Sidebar when matchs "/components/:section/stage".
+        if (location.pathname.endsWith('/stage')) return null;
+
         return (
           <Sidebar
             items={sidebarConfig}
@@ -55,8 +57,15 @@ const App = () =>
       <Match pattern="/design" exactly component={Design} />
 
       <Match pattern="/components" exactly component={ScrollToTop} />
-      <Match pattern="/components" component={Components} />
-      <Match pattern="/components/:section" component={ScrollToSection} />
+      <Match
+        pattern="/components"
+        render={({ location }) => {
+          // Don't render Components when matchs "/components/:section/stage".
+          if (location.pathname.endsWith('/stage')) return null;
+          return <Components />;
+        }}
+      />
+      <Match pattern="/components/:section" exactly component={ScrollToSection} />
 
       <Match pattern="/email-templates" exactly component={Email} />
 
@@ -67,7 +76,7 @@ const App = () =>
       <Miss component={NotFound} />
     </div>
 
-    <Match pattern="/stage/:section" exactly component={Stage} />
+    <Match pattern="/components/:section/stage" exactly component={Stage} />
   </div>;
 
 export default App;

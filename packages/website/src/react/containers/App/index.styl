@@ -3,8 +3,16 @@
 
 .auth0-react-styleguide
 
+  > .a0r-sidebar
+    position: fixed;
+
+    +breakpoint("tablet", "max")
+      top: 0;
+
   .styleguide-content
-    background-color rgba(0, 0, 0, 0.03)
-    
-    +breakpoint("desktop")
-      margin-left 280px
+    overflow-y: auto;
+    margin-top: 70px;
+
+    +breakpoint("tablet")
+      margin-top: 0;
+      margin-left: 250px;

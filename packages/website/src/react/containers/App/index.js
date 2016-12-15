@@ -1,6 +1,5 @@
 import React from 'react';
-import { Match, Miss } from 'react-router';
-import { Sidebar } from 'components';
+import { Match, Miss, Link } from 'react-router';
 import { ComponentPage, Splash } from 'react/containers';
 import { NotFound } from 'containers';
 import { MatchAsync } from 'react/components';
@@ -8,13 +7,34 @@ import * as StyleguideComponents from 'auth0-styleguide-react-components';
 import * as StyleguideComponentsExamples from 'auth0-styleguide-react-components/lib/examples';
 import StyleguideComponentsDocs from 'auth0-styleguide-react-components/lib/docs.json';
 import { version } from 'auth0-styleguide-react-components/package.json';
+import sidebarConfig from './sidebar-config.json';
 import './index.styl';
 
 const componentsCollection = generateComponentsCollection(StyleguideComponents);
 
 const App = () =>
   <div className="auth0-react-styleguide">
-    <Sidebar version={version} items={componentsCollection} />
+    <StyleguideComponents.Sidebar
+      // Add components collection dinamically to sidebar configuration
+      items={sidebarConfig.map(item => {
+        if (item.id === 'react-components') {
+          return Object.assign({}, item, {
+            url: componentsCollection[0].url,
+            children: componentsCollection.map(subitem =>
+              // Add text property to children components
+              Object.assign({}, subitem, {
+                text: subitem.title
+              })
+            )
+          });
+        }
+        return item;
+      })}
+      LinkComponent={Link}
+      linkProps={url => ({
+        to: `/${url}`
+      })}
+    />
     <main className="styleguide-content">
       <Match pattern="/react" exactly render={() => <Splash version={version} />} />
       {componentsCollection.map((component, index) =>
@@ -60,7 +80,7 @@ function generateComponentsCollection(listOfComponents) {
 }
 
 function toURL(text) {
-  return `/react/${toDashCase(text)}`;
+  return `react/${toDashCase(text)}`;
 }
 
 function toDashCase(text) {

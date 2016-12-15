@@ -45,6 +45,7 @@ class Sidebar extends React.Component {
                   {item.iconCode &&
                     <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
                   <span className="text">{item.text}</span>
+                  {item.arrow && <i className="icon-budicon-519 pull-right" />}
                 </span>
               </LinkComponent>
             ) : (
@@ -52,34 +53,37 @@ class Sidebar extends React.Component {
                 {item.iconCode &&
                   <span className={`menu-item-icon icon-budicon-${item.iconCode}`} />}
                 <span className="text">{item.text}</span>
+                {item.arrow && <i className="icon-budicon-519 pull-right" />}
               </a>
             ) }
-            <ul className="menu-sublist" style={{ height: `${item.children.length * 45}px` }}>
-              {item.children && item.children.map(subitem => {
-                // eslint-disable-next-line max-len
-                const completeSubUrl = `${item.url || toSpinalTapCase(item.text)}/${subitem.url || toSpinalTapCase(subitem.text)}`;
-                return LinkComponent ? (
-                  <li className="menu-subitem" key={subitem.text}>
-                    <LinkComponent
-                      className="menu-subitem-link"
-                      activeClassName="active"
-                      {...linkProps(completeSubUrl, subitem.text)}
-                    >
-                      {subitem.text}
-                    </LinkComponent>
-                  </li>
-                ) : (
-                  <li className="menu-subitem" key={subitem.text}>
-                    <a
-                      className="menu-subitem-link"
-                      href={subitem.url || toSpinalTapCase(subitem.text)}
-                    >
-                      {subitem.text}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
+            {item.children &&
+              <ul className="menu-sublist" style={{ height: `${item.children.length * 45}px` }}>
+                {item.children.map(subitem => {
+                  // eslint-disable-next-line max-len
+                  const completeSubUrl = `${item.url || toSpinalTapCase(item.text)}/${subitem.url || toSpinalTapCase(subitem.text)}`;
+                  return LinkComponent ? (
+                    <li className="menu-subitem" key={subitem.text}>
+                      <LinkComponent
+                        className="menu-subitem-link"
+                        activeClassName="active"
+                        {...linkProps(completeSubUrl, subitem.text)}
+                      >
+                        {subitem.text}
+                      </LinkComponent>
+                    </li>
+                  ) : (
+                    <li className="menu-subitem" key={subitem.text}>
+                      <a
+                        className="menu-subitem-link"
+                        href={subitem.url || toSpinalTapCase(subitem.text)}
+                      >
+                        {subitem.text}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            }
           </li>
         )}
       </ul>
@@ -107,7 +111,6 @@ class Sidebar extends React.Component {
         <nav className="a0r-sidebar-menu" ref={elem => (this.sidebarMenu = elem)}>
           {this.renderMenu(items, LinkComponent, linkProps)}
         </nav>
-        <footer className="a0r-sidebar-footer" />
       </div>
     );
   }
@@ -128,7 +131,8 @@ Sidebar.propTypes = {
     open: PropTypes.bool,
     children: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string.isRequired,
-      url: PropTypes.string
+      url: PropTypes.string,
+      arrow: PropTypes.bool
     })).isRequired
   })).isRequired,
   /**

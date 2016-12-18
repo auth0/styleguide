@@ -1,142 +1,153 @@
-$sidebar-width = 250px
-$sidebar-background-color = rgba(black, 0.1)
+.a0r-sidebar {
+  width: 100%;
+  background-color: rgba(black, 0.1);
+  z-index: 1;
 
-.a0r-sidebar
-	width: 100%;
-	background-color: $sidebar-background-color;
-	z-index: 1;
+  +breakpoint("tablet") {
+    overflow-y: auto;
+    width: 250px;
+    height: 100vh;
+  }
+}
 
-	+breakpoint("tablet")
-		overflow-y: auto;
-		width: $sidebar-width;
-		height: 100vh;
+// Header
+// ------
+.a0r-sidebar .a0r-sidebar-header {
+  background-color: white;
+  text-align: center;
+  position: relative;
+  height: 70px;
 
-	> .a0r-sidebar-header
-		background-color: white;
-		text-align: center;
-		position: relative;
-		height: 70px;
+  +breakpoint("tablet", "max") {
+    box-shadow: 0 2px 6px rgba(black, 0.1);
+  }
 
-		+breakpoint("tablet", "max")
-			box-shadow: 0 2px 6px rgba(black, 0.1);
+  +breakpoint("tablet") {
+    overflow: hidden;
+  }
+}
 
-		+breakpoint("tablet")
-			overflow: hidden;
+// Default Logo
+// ------------
+.a0r-sidebar .default-title {
+  display: inline-block
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 0;
+}
 
-		.menu-toggle
-			position: absolute;
-			border: 0;
-			background-color: transparent;
-			right: 10px;
-			top: 50%;
-			transform: translateY(-50%);
-			padding: 10px;
+.a0r-sidebar .default-link {
+  display: inline-block;
 
-			.icon-bar
-				background: #5c666f;
-				display: block;
-				width: 22px;
-				height: 2px;
-				border-radius: 1px;
+  img {
+    display: block;
+  }
+}
 
-				+ .icon-bar
-					margin-top: 4px;
+// Containers for the menu
+// -----------------------
+.a0r-sidebar .menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 5;
+  position: relative;
+  background: #e3e5e7;
+  overflow: hidden;
+  transition: all .3s ease;
 
-			+breakpoint("tablet")
-				display: none;
+  +breakpoint("tablet") {
+    height: auto !important;
+  }
 
-		// Default header component
-		
-		.default-title
-			display: inline-block
-			margin: 0;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			line-height: 0;
+  &:not(.is-opened) {
+    height: 0 !important;
 
-		.default-link
-			display: inline-block;
+    +breakpoint("tablet") {
+      height: auto !important;
+    }
+  }
+}
 
-			img
-				display: block;
-	
-	> .a0r-sidebar-menu
-		display: none;
+// Burguer Icon Button
+// -------------------
+.a0r-sidebar .menu-toggle {
+  position: relative;
+  float: right;
+  margin-right: 25px;
+  padding: 7px;
+  width: 22px;
+  background-color: transparent;
+  border: 0;
+  margin-top: 28px;
+  margin-bottom: 28px;
 
-		//Overwrite jquery slideToggle styles
-		+breakpoint("tablet")
-			display: block !important;
-			height: auto !important;
+  // Hide at desktop view
+  +breakpoint("tablet") {
+    display: none;
+  }
 
-		.menu-list
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			z-index: 5;
-			position: relative;
-			background: #e3e5e7;
+  &:hover,
+  &:focus {
+    outline: 0;
+  }
+}
 
-		.menu-item
-			color: #5c666f;
-			font-size: $font-size-micro;
-			font-weight: $font-weight-bold;
-			letter-spacing: 1px;
-			text-transform: uppercase;
+// Burguer Icon Button: Bars
+.a0r-sidebar .menu-toggle .icon-bar {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  right: 0;
+  background-color: #5c666f;
+  transition: .25s ease-in-out;
+  border-radius: 1px;
 
-			&.active
-				color: #333 !important;
-				background: darken(#e3e5e7, 4%);
+  &:nth-of-type(2) {
+    top: 0;
+  }
 
-		.menu-item-link
-			border-bottom: 1px solid rgba(0, 0, 0, .08);
-			color: #5c666f;
-			display: block;
-			padding: 20px 20px 20px 20px;
-			line-height: normal;
+  &:nth-of-type(3) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-    .menu-item-icon
-			margin-right: 10px;
-			position: relative;
-			min-width: 14px;
-			display: inline-block;
-			top: 0.2em;
+  &:nth-of-type(4) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-		// If link is not active, set height to 0
-		a:not(.active) + .menu-sublist
-			height: 0 !important;
+  &:nth-of-type(5) {
+    top: calc(100% - 2px);
+  }
+}
 
-		.menu-sublist
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			display: none;
-			overflow: hidden;
-			height: 0;
-			transition: height 0.2s ease-in-out;
+// Burguer Icon Button: Bars for close state
+.a0r-sidebar .menu-toggle.is-close .icon-bar {
+  &:nth-of-type(2) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+    opacity: 0;
+  }
 
-			+breakpoint("tablet")
-				display: inherit;
+  &:nth-of-type(3) {
+    transform: rotate(45deg);
+  }
 
-		.menu-subitem	
-			background-color: rgba(255, 255, 255, .3);
-			margin: 1px 0 0 0;
+  &:nth-of-type(4) {
+    transform: rotate(-45deg);
+  }
 
-			&:first-child
-				margin-top: 0;
-
-    .menu-subitem-link
-			background-color: rgba(255, 255, 255, .3);
-			color: inherit;
-			display: block;
-			padding: 10px 0 10px 40px;
-			text-transform: none;
-			letter-spacing: 0;
-
-			&:hover,
-			&.active
-				color: $gray-dark;
-
-			&.active
-				background: rgba(black,0.01);
+  &:nth-of-type(5) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+    opacity: 0;
+  }
+}

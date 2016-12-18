@@ -1,0 +1,48 @@
+.a0r-sidebar-menu-item {
+  color: #5c666f;
+  font-size: $font-size-micro;
+  font-weight: $font-weight-bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  list-style: none;
+
+  &.active {
+    color: #333 !important;
+    background: darken(#e3e5e7, 4%);
+  }
+}
+
+.a0r-sidebar-menu-item .menu-item-link {
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+  color: #5c666f;
+  display: block;
+  padding: 20px 20px 20px 20px;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.a0r-sidebar-menu-item .menu-item-icon {
+  margin-right: 10px;
+  position: relative;
+  min-width: 14px;
+  display: inline-block;
+  top: 0.2em;
+}
+
+// If link is not active, set height to 0
+.a0r-sidebar-menu-item .menu-sublist:not(.is-opened) {
+  height: 0 !important;
+}
+
+.a0r-sidebar-menu-item .menu-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  overflow: hidden;
+  transition: all .3s ease;
+
+  +breakpoint("tablet") {
+    display: inherit;
+  }
+}

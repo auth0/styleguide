@@ -4,6 +4,8 @@ export Footer from './Footer';
 export Select from './Select';
 export TryBanner from './TryBanner';
 export Sidebar from './Sidebar';
+export SidebarItem from './SidebarItem';
+export SidebarSubitem from './SidebarSubitem';
 
 // react-bootstrap components
 export {

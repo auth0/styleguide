@@ -1,18 +1,21 @@
-@import '../../../../../core/src/vars'
-@import '../../../../../core/src/mixins'
+@import 'auth0-styleguide-core/src/vars'
+@import 'auth0-styleguide-core/src/mixins'
 
-.auth0-react-styleguide
+.auth0-react-styleguide .a0r-sidebar {
+  position: fixed;
 
-  > .a0r-sidebar
-    position: fixed;
+  +breakpoint("tablet", "max") {
+    top: 0;
+  }
+}
 
-    +breakpoint("tablet", "max")
-      top: 0;
+.auth0-react-styleguide .styleguide-content {
+  overflow-y: auto;
+  margin-top: 70px;
+  background: #fafafa;
 
-  .styleguide-content
-    overflow-y: auto;
-    margin-top: 70px;
-
-    +breakpoint("tablet")
-      margin-top: 0;
-      margin-left: 250px;
+  +breakpoint("tablet") {
+    margin-top: 0;
+    margin-left: 250px;
+  }
+}

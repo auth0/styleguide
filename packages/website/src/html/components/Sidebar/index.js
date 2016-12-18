@@ -46,6 +46,7 @@ class Sidebar extends Component {
               icon={fatherItem.icon}
               wrapper={realWrapper}
               open={this.state[`item-${i}`]}
+              arrow={fatherItem.arrow}
               key={`father-item-${i}`}
             >
               {fatherItem.children && fatherItem.children.map((childItem, j) => {

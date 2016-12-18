@@ -16,9 +16,7 @@
     "npm": "^3.10.8"
   },
   "dependencies": {
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "lerna": "^2.0.0-beta.30"
+    "lerna": "2.0.0-beta.31"
   },
   "devDependencies": {
     "serve": "^1.4.0"

@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link, Match, Miss } from 'react-router';
-import { Sidebar } from 'auth0-styleguide-react-components';
+import { Match, Miss } from 'react-router';
 import { Home, GettingStarted, Design, Components, Stage, Email, Resources } from 'html/containers';
+import { Sidebar } from 'html/components';
 import { NotFound } from 'containers';
 import jump from 'jump.js';
-import sidebarConfig from './sidebar-config.json';
 import './index.styl';
 
 const ScrollToSection = ({ params }) => {
@@ -36,15 +35,7 @@ const App = () =>
         // Don't render Sidebar when matchs "/components/:section/stage".
         if (location.pathname.endsWith('/stage')) return null;
 
-        return (
-          <Sidebar
-            items={sidebarConfig}
-            LinkComponent={Link}
-            linkProps={url => ({
-              to: `/${url}`
-            })}
-          />
-        );
+        return <Sidebar />;
       }}
     />
     <div className="styleguide-content">
@@ -54,7 +45,7 @@ const App = () =>
       <Match pattern="/getting-started" component={GettingStarted} />
       <Match pattern="/getting-started/:section" component={ScrollToSection} />
 
-      <Match pattern="/design" exactly component={Design} />
+      <Match pattern="/design" component={Design} />
 
       <Match pattern="/components" exactly component={ScrollToTop} />
       <Match
@@ -67,9 +58,9 @@ const App = () =>
       />
       <Match pattern="/components/:section" exactly component={ScrollToSection} />
 
-      <Match pattern="/email-templates" exactly component={Email} />
+      <Match pattern="/email-templates" component={Email} />
 
-      <Match pattern="/resources" exactly component={ScrollToTop} />
+      <Match pattern="/resources" component={ScrollToTop} />
       <Match pattern="/resources" component={Resources} />
       <Match pattern="/resources/:section" component={ScrollToSection} />
 

@@ -1,7 +1,8 @@
 [
   {
     "text": "Getting started",
-    "iconCode": 464,
+    "icon": 464,
+    "url": "/getting-started",
     "children": [
       { "text": "Installing from CDN", "url": "installing-from-cdn" },
       { "text": "Installing from Github", "url": "installing-from-github" }
@@ -9,7 +10,8 @@
   },
   {
     "text": "Design",
-    "iconCode": 258,
+    "icon": 258,
+    "url": "/design",
     "children": [
       { "text": "Typography" },
       { "text": "Primary Colors" },
@@ -20,7 +22,8 @@
   },
   {
     "text": "Components",
-    "iconCode": 690,
+    "icon": 690,
+    "url": "/components",
     "children": [
       { "text": "Alerts" },
       { "text": "Buttons" },
@@ -45,7 +48,8 @@
   },
   {
     "text": "Email templates",
-    "iconCode": 778,
+    "icon": 778,
+    "url": "/email-templates",
     "children": [
       { "text": "Newsletter" },
       { "text": "Notifications" },
@@ -54,7 +58,8 @@
   },
   {
     "text": "Resources",
-    "iconCode": 733,
+    "icon": 733,
+    "url": "/resources",
     "children": [
       { "text": "Logos" },
       { "text": "Badges" },
@@ -63,8 +68,8 @@
   },
   {
     "text": "React Components",
-    "url": "react",
-    "iconCode": 450,
+    "url": "/react",
+    "icon": 450,
     "arrow": true
   }
 ]

@@ -100,7 +100,7 @@ const renderPrimaryColors = () =>
 
 const renderSecondaryColors = () =>
   <section>
-    <h2 id="primary-colors">Secondary colors</h2>
+    <h2 id="secondary-colors">Secondary colors</h2>
     <p>These colors are support to accompany the primary colors.</p>
     <div className="row">
       <ColorBox variable="$color-orange" color="#ff9a57" />
@@ -113,7 +113,7 @@ const renderSecondaryColors = () =>
 
 const renderBackgroundColors = () =>
   <section>
-    <h2 id="primary-colors">Background colors</h2>
+    <h2 id="background-colors">Background colors</h2>
     <p>
       We recommend to use this set of background colors in order to
       complement the primary and secondary colors.
@@ -128,7 +128,7 @@ const renderBackgroundColors = () =>
 
 const renderStatusColors = () =>
   <section>
-    <h2 id="primary-colors">Status colors</h2>
+    <h2 id="status-colors">Status colors</h2>
     <p>These colors are used in every alert message: info, error, success and warning.</p>
     <div className="row">
       <ColorBox variable="$bg-color-success" color="#7ed321" />

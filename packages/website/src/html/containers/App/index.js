@@ -45,7 +45,9 @@ const App = () =>
       <Match pattern="/getting-started" component={GettingStarted} />
       <Match pattern="/getting-started/:section" component={ScrollToSection} />
 
+      <Match pattern="/design" exactly component={ScrollToTop} />
       <Match pattern="/design" component={Design} />
+      <Match pattern="/design/:section" component={ScrollToSection} />
 
       <Match pattern="/components" exactly component={ScrollToTop} />
       <Match

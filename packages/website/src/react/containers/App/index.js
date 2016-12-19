@@ -2,7 +2,7 @@ import React from 'react';
 import { Match, Miss } from 'react-router';
 import { ComponentPage, Splash } from 'react/containers';
 import { NotFound } from 'containers';
-import { MatchAsync, Sidebar } from 'react/components';
+import { Sidebar } from 'react/components';
 import * as StyleguideComponents from 'auth0-styleguide-react-components';
 import * as StyleguideComponentsExamples from 'auth0-styleguide-react-components/lib/examples';
 import StyleguideComponentsDocs from 'auth0-styleguide-react-components/lib/docs.json';
@@ -17,17 +17,11 @@ const App = () =>
     <main className="styleguide-content">
       <Match pattern="/react" exactly render={() => <Splash version={version} />} />
       {componentsCollection.map((component, index) =>
-        <div key={index}>
-          <Match
-            pattern={component.url}
-            render={() => (<ComponentPage {...component} />)}
-          />
-          <MatchAsync
-            pattern={`${component.url}/stage/:example`}
-            getComponent={() => import('react/containers/ComponentEditor')}
-            componentProps={{ ...component }}
-          />
-        </div>
+        <Match
+          key={index}
+          pattern={component.url}
+          render={() => (<ComponentPage {...component} />)}
+        />
       )}
       <Miss component={NotFound} />
     </main>

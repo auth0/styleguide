@@ -1,6 +1,6 @@
 {
   "name": "auth0-styleguide-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "HTML and CSS components for Auth0 projects.",
   "main": "build/core.css",
   "style": "build/core.css",

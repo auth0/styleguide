@@ -1,8 +1,10 @@
 // Labels
 label-variant($color)
-  background-color $color
+  color $color
+  border-color $color
 
   &[href]
     &:hover,
     &:focus
-      background-color darken($color, 10)
+      color darken($color, 10)
+      border-color darken($color, 10)

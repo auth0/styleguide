@@ -12,6 +12,7 @@ const componentsList = [
   'footer',
   'modals',
   'tables',
+  'labels',
   'navs',
   'showcase-tabs',
   'spinner',

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import hljs from 'highlight.js';
 import { Example, SVG } from 'html/components';
 import ComponentsIcon from '../../img/components-icon.svg';
 
@@ -41,16 +42,26 @@ const componentsExamples = componentsList.reduce((acc, componentName) => {
   });
 }, []);
 
-const Components = () =>
-  <div className="styleguide-section">
-    <section className="jumbotron">
-      <h2><SVG content={ComponentsIcon} /></h2>
-      <h1>Components</h1>
-      <p>Set of components used across our website and apps.</p>
-    </section>
-    <section className="section-content">
-      {componentsExamples.map(example => <Example key={example.title} {...example} />)}
-    </section>
-  </div>;
+class Components extends Component {
+  componentDidMount() {
+    hljs.configure({ classPrefix: '' });
+    hljs.initHighlighting();
+    document.querySelector('pre.hl code').forEach(block => (hljs.highlightBlock(block)));
+  }
+  render() {
+    return (
+      <div className="styleguide-section">
+        <section className="jumbotron">
+          <h2><SVG content={ComponentsIcon} /></h2>
+          <h1>Components</h1>
+          <p>Set of components used across our website and apps.</p>
+        </section>
+        <section className="section-content">
+          {componentsExamples.map(example => <Example key={example.title} {...example} />)}
+        </section>
+      </div>
+    );
+  }
+}
 
 export default Components;

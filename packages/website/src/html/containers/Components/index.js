@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import hljs from 'highlight.js';
-import { Example, SVG } from 'html/components';
+import { ComponentExample, SVG } from 'html/components';
 import ComponentsIcon from '../../img/components-icon.svg';
 
 const componentsList = [
@@ -57,7 +57,7 @@ class Components extends Component {
           <p>Set of components used across our website and apps.</p>
         </section>
         <section className="section-content">
-          {componentsExamples.map(example => <Example key={example.title} {...example} />)}
+          {componentsExamples.map(example => <ComponentExample key={example.title} {...example} />)}
         </section>
       </div>
     );

@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import hljs from 'highlight.js';
 import './index.styl';
 
-class Example extends Component {
+class ComponentExample extends Component {
   constructor() {
     super();
     this.state = { activeSection: 'component' };
@@ -80,7 +80,7 @@ class Example extends Component {
   }
 }
 
-Example.propTypes = {
+ComponentExample.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   pug: PropTypes.string.isRequired,
@@ -88,4 +88,4 @@ Example.propTypes = {
   id: PropTypes.string.isRequired
 };
 
-export default Example;
+export default ComponentExample;

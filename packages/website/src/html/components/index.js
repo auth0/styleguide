@@ -1,4 +1,5 @@
-export Example from './Example';
+export ComponentExample from './ComponentExample';
+export EmailExample from './EmailExample';
 export LogoBox from './LogoBox';
 export Badge from './Badge';
 export Icon from './Icon';

@@ -1,6 +1,30 @@
 import React from 'react';
 import EmailTemplatesIcon from '../../img/email-templates-icon.svg';
-import { SVG } from '../../components';
+import { EmailExample, SVG } from '../../components';
+
+const emailsList = [
+  { folder: 'ad-compromised', title: 'Ad compromised', description: 'Test' },
+  { folder: 'ad-stolen', title: 'Ad stolen', description: 'Test' },
+  { folder: 'auth0-newsletter', title: 'Newsletter', description: 'Test' },
+  { folder: 'notices', title: 'Notices', description: 'Test' },
+  { folder: 'notifications', title: 'Notifications', description: 'Test' },
+  { folder: 'zero-to-launch', title: 'Zero to launch', description: 'Test' }
+];
+
+const emailsExamples = emailsList.reduce((acc, email) => {
+  /* eslint-disable global-require */
+  const mjmlFile = require(`!raw-loader!auth0-styleguide-components/src/emails/${email.folder}/demo.ejs`);
+  const htmlFile = require(`!mjml-loader!auth0-styleguide-components/src/emails/${email.folder}/demo.ejs`);
+  /* eslint-enable global-require */
+
+  return acc.concat({
+    title: email.title,
+    description: email.description,
+    mjml: mjmlFile,
+    html: htmlFile.split('\n').slice(1).join('\n'), // Remove first empty line
+    id: email.folder
+  });
+}, []);
 
 const Email = () =>
   <div className="styleguide-section">
@@ -10,15 +34,7 @@ const Email = () =>
       <p>Build and send emails with style.</p>
     </section>
     <section className="section-content">
-      <section>
-        <h2>Newsletter</h2>
-      </section>
-      <section>
-        <h2>Notifications</h2>
-      </section>
-      <section>
-        <h2>Notices</h2>
-      </section>
+      {emailsExamples.map(example => <EmailExample key={example.title} {...example} />)}
     </section>
   </div>;
 

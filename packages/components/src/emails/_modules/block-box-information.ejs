@@ -1,0 +1,46 @@
+<mj-section background-color="white" padding="40px 40px 0">
+    <mj-column width="100%" padding="20px" border-left="#E3E5E7 1px solid" border-right="#E3E5E7 1px solid" border-top="#E3E5E7 1px solid" padding-bottom="20px" padding-top="20px">
+
+      <% if (locals.title) { %>
+      <mj-text align="left" font-weight="500" font-size="18px" padding="20px 20px 0 20px">
+        <%- locals.title %>
+      </mj-text>
+      <% } %>
+
+      <mj-table>
+
+        <tr style="text-align:left; font-size: 16px;">
+          <% if (locals.rowTopTitle) { %>
+          <td style="padding: 0 15px 10px 0; vertical-align: text-top;">
+            <strong style="font-weight: 500; white-space: nowrap;"><%- locals.rowTopTitle %></strong>
+          </td>
+          <% } %>
+          <% if (locals.rowTopContent) { %>
+          <td style="padding: 0 0 10px 15px; vertical-align: text-top;"><%- locals.rowTopContent %></td>
+          <% } %>
+        </tr>
+
+        <tr style="text-align:left; font-size: 16px;">
+          <% if (locals.rowBottomTitle) { %>
+          <td style="padding: 0 15px 0 0; vertical-align: text-top;">
+            <strong style="font-weight: 500; white-space: nowrap;"><%- locals.rowBottomTitle %></strong>
+          </td>
+          <% } %>
+          <% if (locals.rowBottomContent) { %>
+          <td style="padding: 0 0 0 15px; vertical-align: text-top;"><%- locals.rowBottomContent %></td>
+          <% } %>
+        </tr>
+
+      </mj-table>
+    </mj-column>
+    
+    <mj-divider border-width="1px" border-color="#E3E5E7" />
+
+    <% if (locals.buttonCopy) { %>
+    <mj-column width="100%" style="padding: 20px 0;" border-left="#E3E5E7 1px solid" border-right="#E3E5E7 1px solid" border-bottom="#E3E5E7 1px solid">
+      <mj-button href="#verify" style="padding: 20px 0;">
+        <%- locals.buttonCopy %>
+      </mj-button>
+    </mj-column>
+    <% } %>
+</mj-section>

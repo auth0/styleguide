@@ -10,6 +10,7 @@ class EmailExample extends Component {
 
     this.renderActions = this.renderActions.bind(this);
     this.renderSectionButton = this.renderSectionButton.bind(this);
+    this.resizeIframe = this.resizeIframe.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +19,10 @@ class EmailExample extends Component {
     hljs.initHighlighting.called = false;
     hljs.highlightBlock(this.mjmlCode);
     hljs.highlightBlock(this.htmlCode);
+  }
+
+  resizeIframe() {
+    this.iframe.style.height = `${this.iframe.contentWindow.document.body.scrollHeight}px`;
   }
 
   renderSectionButton(sectionID, sectionText) {
@@ -62,8 +67,12 @@ class EmailExample extends Component {
           <div
             style={activeSection !== 'email' ? { display: 'none' } : {}}
             className="example-component"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          >
+            <iframe
+              className="email-iframe" srcDoc={html}
+              ref={e => (this.iframe = e)} onLoad={this.resizeIframe}
+            />
+          </div>
           <div style={activeSection !== 'mjml' ? { display: 'none' } : {}} className="example-mjml">
             <pre>
               <code ref={e => (this.mjmlCode = e)} className="mjml">{mjml}</code>

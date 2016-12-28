@@ -1,0 +1,41 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <%- include('../_modules/defaults') %>
+      <mj-class name="body-text" padding="0 20px 15px 20px" align="left" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+
+    <mj-container background-color="#E3E5E7">
+      <mj-section background-color="white">
+        <mj-column width="100%" vertical-align="top">
+          <mj-image width="80" src="http://cdn.auth0.com/styleguide/latest/lib/logos/img/logo-blue.png" href="https://auth0.com/" alt="auth0"></mj-image>
+        </mj-column>
+      </mj-section>
+
+      <%- include('../_modules/hero', {
+        smallTitle: "We have detected suspicious activity on your Auth0 account <strong style='font-weight: 500;'>Foobar<\/strong>.",
+        image: "https://cdn.auth0.com/website/email-templates/product/assets/top-ninja.svg"
+      }) %>
+
+      <mj-section background-color="white">
+        <mj-column width="80%" vertical-align="top">
+          <mj-text>
+            There have been an excessive number of failed login attempts from the following IP addresses:
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <%- include('../_modules/block-diagnose') %>
+
+      <mj-section background-color="#F5F7F9">
+        <mj-column width="100%" vertical-align="top">
+          <mj-text font-size="13px" padding="0 20px 0 20px" line-height="20px">
+            You’re receiving this email because you have an Auth0 account. If you are not sure why you’re receiving this, please contact us through our <a href="//support.auth0.com/" style="color:#0a84ae;text-decoration:none">Support Center</a>.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    <mj-container>
+  </mj-body>
+</mjml>

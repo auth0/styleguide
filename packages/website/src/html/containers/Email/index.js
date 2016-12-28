@@ -1,17 +1,9 @@
 import React from 'react';
 import EmailTemplatesIcon from '../../img/email-templates-icon.svg';
 import { EmailExample, SVG } from '../../components';
+import emailsConfig from './emails-config.json';
 
-const emailsList = [
-  { folder: 'ad-compromised', title: 'Ad compromised', description: 'Test' },
-  { folder: 'ad-stolen', title: 'Ad stolen', description: 'Test' },
-  { folder: 'auth0-newsletter', title: 'Newsletter', description: 'Test' },
-  { folder: 'notices', title: 'Notices', description: 'Test' },
-  { folder: 'notifications', title: 'Notifications', description: 'Test' },
-  { folder: 'zero-to-launch', title: 'Zero to launch', description: 'Test' }
-];
-
-const emailsExamples = emailsList.reduce((acc, email) => {
+const emailsExamples = emailsConfig.reduce((acc, email) => {
   /* eslint-disable global-require */
   const mjmlFile = require(`!raw-loader!auth0-styleguide-components/src/emails/${email.folder}/demo.ejs`);
   const htmlFile = require(`!raw-loader!auth0-styleguide-components/build/emails/${email.folder}/demo.html`);

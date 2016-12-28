@@ -46,7 +46,7 @@ class Components extends Component {
   componentDidMount() {
     hljs.configure({ classPrefix: '' });
     hljs.initHighlighting();
-    document.querySelector('pre.hl code').forEach(block => (hljs.highlightBlock(block)));
+    document.querySelectorAll('pre.hl code').forEach(block => (hljs.highlightBlock(block)));
   }
   render() {
     return (

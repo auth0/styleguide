@@ -23,9 +23,22 @@ gulp.task('styles', () =>
 );
 
 /**
+ * Emails task
+ */
+gulp.task('emails', () =>
+  gulp.src(['./src/emails/**/*.ejs', '!./src/emails/_modules/*.ejs'])
+    .pipe($.ejs())
+    .pipe($.htmlPrettify({
+      indent_char: ' ',
+      indent_size: 2
+    }))
+    .pipe($.mjml())
+    .pipe(gulp.dest('build/emails/')));
+
+/**
  * Build task
  */
-gulp.task('build', gulp.series('styles'));
+gulp.task('build', gulp.series('styles', 'emails'));
 
 /**
  * Watch task

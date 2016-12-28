@@ -14,7 +14,7 @@ const emailsList = [
 const emailsExamples = emailsList.reduce((acc, email) => {
   /* eslint-disable global-require */
   const mjmlFile = require(`!raw-loader!auth0-styleguide-components/src/emails/${email.folder}/demo.ejs`);
-  const htmlFile = require(`!mjml-loader!auth0-styleguide-components/src/emails/${email.folder}/demo.ejs`);
+  const htmlFile = require(`!raw-loader!auth0-styleguide-components/build/emails/${email.folder}/demo.html`);
   /* eslint-enable global-require */
 
   return acc.concat({

@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
 import hljs from 'highlight.js';
+import './index.styl';
 
 class EmailExample extends Component {
   constructor() {
@@ -53,7 +54,7 @@ class EmailExample extends Component {
     const { activeSection } = this.state;
 
     return (
-      <section className="html-example" id={id}>
+      <section className="html-example email-component" id={id}>
         <h2>{title}</h2>
         <div dangerouslySetInnerHTML={{ __html: description }} />
         { this.renderActions() }
@@ -61,9 +62,8 @@ class EmailExample extends Component {
           <div
             style={activeSection !== 'email' ? { display: 'none' } : {}}
             className="example-component"
-          >
-            <iframe srcDoc={html} />
-          </div>
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
           <div style={activeSection !== 'mjml' ? { display: 'none' } : {}} className="example-mjml">
             <pre>
               <code ref={e => (this.mjmlCode = e)} className="mjml">{mjml}</code>

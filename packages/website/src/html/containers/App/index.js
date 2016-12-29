@@ -59,7 +59,7 @@ const App = () =>
       />
       <Match pattern="/components/:section" exactly component={ScrollToSection} />
 
-      <Match pattern="/email-templates" component={ScrollToTop} />
+      <Match pattern="/email-templates" exactly component={ScrollToTop} />
       <Match pattern="/email-templates" component={Email} />
       <Match pattern="/email-templates/:section" component={ScrollToSection} />
 

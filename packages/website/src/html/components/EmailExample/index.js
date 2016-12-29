@@ -91,7 +91,7 @@ class EmailExample extends Component {
 
 EmailExample.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   mjml: PropTypes.string.isRequired,
   html: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired

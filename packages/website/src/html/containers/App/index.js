@@ -32,7 +32,6 @@ const App = () =>
     <Match
       pattern="/"
       render={({ location }) => {
-        // Don't render Sidebar when matchs "/components/:section/stage".
         if (location.pathname.endsWith('/stage')) return null;
 
         return <Sidebar />;
@@ -60,7 +59,9 @@ const App = () =>
       />
       <Match pattern="/components/:section" exactly component={ScrollToSection} />
 
+      <Match pattern="/email-templates" component={ScrollToTop} />
       <Match pattern="/email-templates" component={Email} />
+      <Match pattern="/email-templates/:section" component={ScrollToSection} />
 
       <Match pattern="/resources" component={ScrollToTop} />
       <Match pattern="/resources" component={Resources} />

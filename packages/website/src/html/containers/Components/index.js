@@ -2,43 +2,20 @@ import React, { Component } from 'react';
 import hljs from 'highlight.js';
 import { ComponentExample, SVG } from 'html/components';
 import ComponentsIcon from '../../img/components-icon.svg';
+import componentsConfig from './components-config.json';
 
-const componentsList = [
-  'alerts',
-  'buttons',
-  'forms',
-  'try-banner',
-  'jumbotron',
-  'header',
-  'footer',
-  'modals',
-  'tables',
-  'labels',
-  'navs',
-  'showcase-tabs',
-  'spinner',
-  'breadcrumb',
-  'cards',
-  'code-picker',
-  'ui-switch',
-  'scope',
-  'switchboard',
-  'phone-mockup'
-];
-
-const componentsExamples = componentsList.reduce((acc, componentName) => {
+const componentsExamples = componentsConfig.reduce((acc, component) => {
   /* eslint-disable global-require */
-  const pugFile = require(`!raw-loader!auth0-styleguide-components/src/${componentName}/demo.pug`);
-  const htmlFile = require(`auth0-styleguide-components/src/${componentName}/demo.pug`)();
-  const configFile = require(`auth0-styleguide-components/src/${componentName}/configuration.json`);
+  const pugFile = require(`!raw-loader!auth0-styleguide-components/src/${component.folder}/demo.pug`);
+  const htmlFile = require(`auth0-styleguide-components/src/${component.folder}/demo.pug`)();
   /* eslint-enable global-require */
 
   return acc.concat({
-    title: configFile.title,
-    description: configFile.description,
+    title: component.title,
+    description: component.description,
     pug: pugFile,
     html: htmlFile.split('\n').slice(1).join('\n'), // Remove first empty line
-    id: componentName
+    id: component.folder
   });
 }, []);
 

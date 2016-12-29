@@ -24,38 +24,13 @@
     "text": "Components",
     "icon": 690,
     "url": "/components",
-    "children": [
-      { "text": "Alerts" },
-      { "text": "Buttons" },
-      { "text": "Try Banner" },
-      { "text": "Jumbotron" },
-      { "text": "Header" },
-      { "text": "Footer" },
-      { "text": "Modals" },
-      { "text": "Tables" },
-      { "text": "Labels" },
-      { "text": "Navs" },
-      { "text": "Showcase tabs" },
-      { "text": "Spinner" },
-      { "text": "Breadcrumb" },
-      { "text": "Cards" },
-      { "text": "Code picker" },
-      { "text": "UI Switch", "url": "ui-switch" },
-      { "text": "Forms"},
-      { "text": "Scope" },
-      { "text": "Switchboard" },
-      { "text": "Phone mockup" }
-    ]
+    "children": []
   },
   {
     "text": "Email templates",
     "icon": 778,
     "url": "/email-templates",
-    "children": [
-      { "text": "Newsletter" },
-      { "text": "Notifications" },
-      { "text": "Notices" }
-    ]
+    "children": []
   },
   {
     "text": "Resources",

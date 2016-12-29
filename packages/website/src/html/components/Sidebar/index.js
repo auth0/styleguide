@@ -2,6 +2,32 @@ import React, { Component } from 'react';
 import { Sidebar as SidebarRC, SidebarItem, SidebarSubitem } from 'auth0-styleguide-react-components';
 import { Link } from 'react-router';
 import sidebarConfig from './sidebar-config.json';
+import componentsConfig from '../../containers/Components/components-config.json';
+import emailsConfig from '../../containers/Email/emails-config.json';
+
+// Add components and email items to Sidebar based on config files of those sections
+const completeSidebarConfig = config =>
+  config.reduce((acc, item) => {
+    const newItem = Object.assign({}, item);
+
+    if (item.text === 'Components') {
+      newItem.children = componentsConfig.map(i => ({
+        text: i.title,
+        url: i.folder })
+      );
+    }
+
+    if (item.text === 'Email templates') {
+      newItem.children = emailsConfig.map(i => ({
+        text: i.title,
+        url: i.folder })
+      );
+    }
+
+    return acc.concat(newItem);
+  }, []);
+
+const dinamicSidebarConfig = completeSidebarConfig(sidebarConfig);
 
 class Sidebar extends Component {
   constructor(props) {
@@ -11,14 +37,14 @@ class Sidebar extends Component {
       mobileNavOpen: false
     };
 
-    sidebarConfig.forEach((_, i) => {
+    dinamicSidebarConfig.forEach((_, i) => {
       this.state[`item-${i}`] = false;
     });
   }
 
   toggleState = (stateProp) => {
     // First close all.
-    sidebarConfig.forEach((_, i) => {
+    dinamicSidebarConfig.forEach((_, i) => {
       const nameState = `item-${i}`;
       if (nameState === stateProp) return;
       this.setState({ [nameState]: false });
@@ -35,7 +61,7 @@ class Sidebar extends Component {
         mobileNavOpen={mobileNavOpen}
         toggleNavOnClick={() => this.toggleState('mobileNavOpen')}
       >
-        {sidebarConfig.map((fatherItem, i) => {
+        {dinamicSidebarConfig.map((fatherItem, i) => {
           const realWrapper = fatherItem.url
             ? <Link to={fatherItem.url} onClick={() => this.toggleState(`item-${i}`)} />
             : <div onClick={() => this.toggleState(`item-${i}`)} />;

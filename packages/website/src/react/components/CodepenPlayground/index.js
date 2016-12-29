@@ -10,6 +10,7 @@ const editorCSSFiles = [
 const editorJSFiles = [
   'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.min.js',
   'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.7/react-bootstrap.min.js',
   'https://cdn.auth0.com/styleguide/react-components/development/react-components.min.js'
 ];
 

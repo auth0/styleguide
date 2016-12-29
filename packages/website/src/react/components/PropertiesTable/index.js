@@ -28,7 +28,9 @@ const PropertiesTable = ({ props }) => {
                     {props[prop].type.name === 'arrayOf' && ` ${props[prop].type.value.name}`}
                   </td>
                   <td>{props[prop].description}</td>
-                  <td>{props[prop].defaultValue ? props[prop].defaultValue.value : '' }</td>
+                  <td>
+                    {props[prop].defaultValue ? <code>{props[prop].defaultValue.value}</code> : '' }
+                  </td>
                 </tr>
               );
             })}

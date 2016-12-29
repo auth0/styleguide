@@ -60,6 +60,17 @@ class Sidebar extends Component {
       <SidebarRC
         mobileNavOpen={mobileNavOpen}
         toggleNavOnClick={() => this.toggleState('mobileNavOpen')}
+        header={
+          <h1 className="default-title">
+            <Link className="default-link" to="/">
+              <img
+                src="https://cdn.auth0.com/styleguide/latest/img/badge.svg"
+                alt="Auth0 logo"
+                width="30"
+              />
+            </Link>
+          </h1>
+        }
       >
         {dinamicSidebarConfig.map((fatherItem, i) => {
           const realWrapper = fatherItem.url

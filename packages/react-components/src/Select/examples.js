@@ -6,9 +6,9 @@ const examples = [
     component: (
       <Select
         options={[
-          'Zoey Andrews',
-          'Jerry Woods',
-          'Marion Garza'
+          { label: 'Zoey Andrews', value: 'Zoey Andrews' },
+          { label: 'Jerry Woods', value: 'Jerry Woods' },
+          { label: 'Marion Garza', value: 'Marion Garza' }
         ]}
         selected={2}
         handleChange={(e) => { console.log(e.target.value); }}
@@ -17,7 +17,11 @@ const examples = [
     ),
     code: (
 `<Select
-  options={['Zoey Andrews', 'Jerry Woods', 'Marion Garza']}
+  options={[
+      { label: 'Zoey Andrews', value: 'Zoey Andrews' },
+      { label: 'Jerry Woods', value: 'Jerry Woods' },
+      { label: 'Marion Garza', value: 'Marion Garza' }
+    ]}
   selected={2}
   handleChange={(e) => { console.log(e.target.value); }}
   label="Select user"

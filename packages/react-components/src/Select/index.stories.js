@@ -8,9 +8,9 @@ storiesOf('Select', module)
   .add('with text', () => (
     <Select
       options={[
-        'Zoey Andrews',
-        'Jerry Woods',
-        'Marion Garza'
+        { text: 'Zoey Andrews', value: 'Zoey Andrews' },
+        { text: 'Jerry Woods', value: 'Jerry Woods' },
+        { text: 'Marion Garza', value: 'Marion Garza' }
       ]}
       selected={2}
       handleChange={e => action('selected changed')(e.target.value)}

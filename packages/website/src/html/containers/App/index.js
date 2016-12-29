@@ -60,7 +60,14 @@ const App = () =>
       <Match pattern="/components/:section" exactly component={ScrollToSection} />
 
       <Match pattern="/email-templates" exactly component={ScrollToTop} />
-      <Match pattern="/email-templates" component={Email} />
+      <Match
+        pattern="/email-templates"
+        render={({ location }) => {
+          // Don't render Emails when matchs "/components/:section/stage".
+          if (location.pathname.endsWith('/stage')) return null;
+          return <Email />;
+        }}
+      />
       <Match pattern="/email-templates/:section" component={ScrollToSection} />
 
       <Match pattern="/resources" component={ScrollToTop} />
@@ -71,6 +78,10 @@ const App = () =>
     </div>
 
     <Match pattern="/components/:section/stage" exactly component={Stage} />
+    <Match
+      pattern="/email-templates/:section/stage" exactly
+      render={props => <Stage isEmail {...props} />}
+    />
   </div>;
 
 export default App;

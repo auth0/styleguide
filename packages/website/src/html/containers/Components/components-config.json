@@ -5,6 +5,11 @@
     "description": "<p>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>"
   },
   {
+    "folder": "notifications",
+    "title": "Notifications",
+    "description": ""
+  },
+  {
     "folder": "buttons",
     "title": "Buttons",
     "description": "<p>Use the button classes on an <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, or <code>&lt;input&gt;</code> element.</p>"

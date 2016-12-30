@@ -1,0 +1,55 @@
+.auth0-notification,
+.auth0-notification-global
+	background: white
+	margin-bottom: 25px
+	position: relative
+	overflow: hidden
+	
+	.notification-icon
+		line-height: 1;
+		position: absolute;
+		left: 20px;
+		top: 30px;
+		font-size: 18px;
+	
+	p
+		margin: 0 0
+		float: left
+		width: 80%
+	
+	&.primary .notification-icon
+		color: #44C7F4
+
+	&.danger .notification-icon
+		color: #F8D01C
+		
+	&.warning .notification-icon
+		color: #F5871E
+	
+	.close
+		color: #ddd
+		position: absolute
+		top: 30px
+		right: 15px
+		font-size: 14px;
+		opacity: 1
+		
+	.btn
+		position:absolute
+		right: 15px
+		top: 19px
+		max-width: 20%
+
+.auth0-notification
+	padding: 25px 60px
+	box-shadow 0 2px 4px rgba(0,0,0,.11)
+
+.auth0-notification-global
+	background: transparent
+	border-bottom: 1px solid #E6E7E8
+	padding: 0
+	
+	.container
+		padding: 25px 60px
+		width: 100%
+		position: relative

@@ -10,10 +10,10 @@ const PropertiesTable = ({ props }) => {
         <table className="component-properties-table table">
           <thead>
             <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
+              <th width="20%">Property</th>
+              <th width="20%">Type</th>
+              <th width="40%">Description</th>
+              <th width="20%">Default value</th>
             </tr>
           </thead>
           <tbody>

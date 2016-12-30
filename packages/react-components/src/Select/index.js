@@ -9,11 +9,9 @@ const Select = ({ options, selected, label, color, handleChange }) =>
     <span className="a0r-value text-truncate" style={{ color }}>{options[selected].label}</span>
     <i className="icon-budicon-460" />
     <select
-      onChange={handleChange}
-      value={options.reduce((prev, current, index) => {
-        if (index === selected) return index;
-        return prev;
-      })}
+      // Pass event and selected option object to onChange handler
+      onChange={(e) => handleChange(e, options.filter(opt => opt.value === e.target.value)[0])}
+      value={options[selected].value}
     >
       { options.map((opt, index) => <option key={index} value={opt.value}>{opt.label}</option>) }
     </select>
@@ -39,6 +37,10 @@ Select.propTypes = {
    * Index of default selected value
    */
   selected: PropTypes.number,
+  /**
+   * Handler for option change, it receives two parameters:
+   * the event and the selected option object.
+   */
   handleChange: PropTypes.func.isRequired,
   label: PropTypes.string,
   color: PropTypes.string

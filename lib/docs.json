@@ -1,0 +1,306 @@
+{
+  "Button": {
+    "description": "Button: Styles are inherited from components CSS bundle.",
+    "react-bootstrap": "https://react-bootstrap.github.io/components.html#buttons"
+  },
+  "EmptyState": {
+    "description": "Empty state: Simple component for onboarding users to sections with no data.",
+    "methods": [],
+    "props": {
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "description": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "iconCode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "image": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "Footer": {
+    "description": "Footer: Auth0's footer component. Styles are inherited from components CSS bundle.",
+    "methods": []
+  },
+  "Select": {
+    "description": "Select: Drop-down list.",
+    "methods": [],
+    "props": {
+      "options": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "label": {
+                "name": "string",
+                "required": true
+              },
+              "value": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "List of options"
+      },
+      "selected": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Index of default selected value",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "handleChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Handler for option change, it receives two parameters:\nthe event and the selected option object.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "Sidebar": {
+    "description": "Sidebar: Styleguide sidebar with drop drown sections.",
+    "methods": [],
+    "props": {
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Element to replace the default header content."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The content of the menu. This is usually used to pass SidebarItem and SidebarSubitem elements."
+      },
+      "mobileNavOpen": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Controls whether the navigation is opened or not, only used for mobile."
+      },
+      "toggleNavOnClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when on mobile the Toggle Navigation button is pressed.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "open": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "SidebarItem": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Text of the item."
+      },
+      "wrapper": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Wrapper element around the inner content of the item.",
+        "defaultValue": {
+          "value": "<span />",
+          "computed": false
+        }
+      },
+      "arrow": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enable arrow icon."
+      },
+      "icon": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Show Item with an icon from Budicon."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The content of the menu. This is usually used to pass SidebarSubitem elements."
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Controls whether the subitems are showed or not."
+      }
+    }
+  },
+  "SidebarSubitem": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Text of the item."
+      },
+      "wrapper": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Wrapper element around the inner content of the item.",
+        "defaultValue": {
+          "value": "<span />",
+          "computed": false
+        }
+      }
+    }
+  },
+  "TryBanner": {
+    "description": "Try Banner: The main call to action to signup.",
+    "methods": [],
+    "props": {
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Try Banner title.",
+        "defaultValue": {
+          "value": "'Don\\'t have an account yet?'",
+          "computed": false
+        }
+      },
+      "button": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Text for the button.",
+        "defaultValue": {
+          "value": "'Try Auth0 for Free'",
+          "computed": false
+        }
+      },
+      "buttonAction": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "func"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Action of the button when pressed, this can be a URL (the button will be an anchor tag) or a function (the button will be a button tag).",
+        "defaultValue": {
+          "value": "'#'",
+          "computed": false
+        }
+      },
+      "dark": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Display in dark mode if true.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Add CSS class selectors to the root element.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      }
+    }
+  }
+}

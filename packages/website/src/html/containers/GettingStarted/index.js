@@ -7,7 +7,7 @@ import GettingStartedIcon from '../../img/getting-started-icon.svg';
 const cdnExample = '<link href="https://cdn.auth0.com/styleguide/0.0.1/index.min.css" rel="stylesheet" />';
 const githubExample = (
 `git clone https://github.com/auth0/styleguide.git
-cd styleguide 
+cd styleguide
 grunt dev`
 );
 
@@ -17,9 +17,11 @@ class GettingStarted extends Component {
 
     this.highlightSnippets = this.highlightSnippets.bind(this);
   }
+
   componentDidMount() {
     this.highlightSnippets();
   }
+
   highlightSnippets() {
     hljs.configure({
       tabReplace: '  ', // 4 spaces
@@ -30,6 +32,7 @@ class GettingStarted extends Component {
 
     $('pre.hl code').each((i, block) => (hljs.highlightBlock(block)));
   }
+
   render() {
     return (
       <div className="styleguide-section getting-started-section">

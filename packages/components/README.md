@@ -1,15 +1,39 @@
-# Auth0 Styleguide Components
+# Auth0 Styleguide - Components
 
-HTML and CSS components for Auth0 projects (components inherited from bootstrap with our styles).
+CSS components for Auth0 projects (based on Bootstrap components).
 
-## Install/Implementation
+## Installation
 
-CDN (prefered way):
+### CDN
+
+Using our CDN is the prefered solution. Just add the following line in your project's HTML head and you are done.
+
 ```html
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/0.0.2/components.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css" />
 ```
 
-With npm do:
+### NPM
+
+Download the package from NPM if you want to integrate the components styles to your own build process.
+
 ```bash
-npm install --save auth0/styleguide#components-0.0.2
+npm install --save auth0/styleguide#core-1.0.0
+```
+
+## Development
+
+Run this commands to start developing:
+
+```bash
+npm install
+npm start
+```
+
+## Releasing a new version
+
+Run the command `bin/version <patch|minor|major|version-no>` inside the package directory. This will commit a new version for you.
+
+Example
+```
+bin/version patch
 ```

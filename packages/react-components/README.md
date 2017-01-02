@@ -1,23 +1,24 @@
-# Auth0 React Components
+# Auth0 Styleguide - React Components
 
-Library of Auth0 React components. + all the [react-bootstrap](http://react-bootstrap.github.io/components.html) components are re-exported inside this lib.
+Library of Auth0 React components. All the [react-bootstrap](http://react-bootstrap.github.io/components.html) components are re-exported inside this lib.
 
-You can find the api, see examples, and play with live editing of every component on the [React Components section of our styleguide](https://auth0-styleguide-pr-102.herokuapp.com/#/react/) (on development).
+You can find the API, see examples, and play with live editing of every component on the [React Components section of our styleguide](https://styleguide.auth0.com/#/react).
 
 ## Installation 📦
 
 If you are using npm you can do (react and react-bootstrap are peer dependencies):
 ```
-npm i --save react@15 react-bootstrap@0.30 auth0/styleguide#react-components-0.0.1
+npm i --save react@15 react-bootstrap@0.30 auth0/styleguide#react-components-1.0.0
 ```
 
 And load the CSS from our CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/0.0.1/react-components.css" />
-<!-- It has two CSS peer dependencies, the core & components CSS bundles -->
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/0.0.3/core.min.css" />
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/0.0.2/components.min.css" />
+<!-- Core and Components CSS bundles are peer dependencies of react-components -->
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/1.0.0/core.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css" />
+
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/1.0.0/react-components.css" />
 ```
 
 The CSS bundles are also included on the packages installed via npm, but we encourage you to use it via our CDN so we all benefit from sharing the same url of the package to improve load time. 
@@ -44,8 +45,6 @@ ReactDOM.render(
 ```
 
 ## Development 🛠
-
-**Node version: 6.9.x NPM version: 3.10.x**
 
 ### Add a new component
 

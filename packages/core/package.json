@@ -1,6 +1,6 @@
 {
   "name": "auth0-styleguide-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Includes stylus variables, mixins and class utilities common to all Auth0 projects.",
   "main": "build/core.css",
   "style": "build/core.css",

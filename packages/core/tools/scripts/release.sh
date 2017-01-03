@@ -85,6 +85,6 @@ else
   git push $ORIGIN_DEST $TAG_NAME_LATEST -f
 
   ## Remove temporary branch and switch to previous branch
-  git checkout experimental
+  git checkout master
   git branch -D $TEMP_TAG_BRANCH
 fi

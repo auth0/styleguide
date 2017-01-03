@@ -4,33 +4,30 @@ import $ from 'jquery';
 import { SVG } from '../../components';
 import GettingStartedIcon from '../../img/getting-started-icon.svg';
 
-const cdnExample = '<link href="https://cdn.auth0.com/styleguide/0.0.1/index.min.css" rel="stylesheet" />';
-const githubExample = (
-`git clone https://github.com/auth0/styleguide.git
-cd styleguide
-grunt dev`
+const cdnExample = (
+`<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/1.0.0/core.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css" />`
+);
+const npmExample = (
+`npm install --save auth0/styleguide#core-1.0.0
+npm install --save auth0/styleguide#components-1.0.0`
 );
 
-class GettingStarted extends Component {
-  constructor() {
-    super();
+const highlightSnippets = () => {
+  hljs.configure({
+    tabReplace: '  ', // 4 spaces
+    classPrefix: ''   // don't append class prefix
+  });
 
-    this.highlightSnippets = this.highlightSnippets.bind(this);
-  }
+  hljs.initHighlighting();
+
+  $('pre.hl code').each((i, block) => (hljs.highlightBlock(block)));
+};
+
+class GettingStarted extends Component {
 
   componentDidMount() {
-    this.highlightSnippets();
-  }
-
-  highlightSnippets() {
-    hljs.configure({
-      tabReplace: '  ', // 4 spaces
-      classPrefix: ''   // don't append class prefix
-    });
-
-    hljs.initHighlighting();
-
-    $('pre.hl code').each((i, block) => (hljs.highlightBlock(block)));
+    highlightSnippets();
   }
 
   render() {
@@ -45,7 +42,7 @@ class GettingStarted extends Component {
           <section>
             <h2 id="installing-from-cdn">Installing from CDN</h2>
             <p>
-              Using our CDN is the simplest solution.
+              Using our CDN is the prefered solution.
               Just add the following lines in your projects HTML head and you are done.
             </p>
             <pre className="hl">
@@ -53,19 +50,14 @@ class GettingStarted extends Component {
             </pre>
           </section>
           <section>
-            <h2 id="installing-from-github">Installing from Github</h2>
+            <h2 id="installing-from-npm">Installing from NPM</h2>
             <p>
-              Clone the repository to your computer. If you want more information
-              <a
-                href="https://github.com/auth0/styleguide/blob/master/README.md"
-                target="_blank" rel="noopener noreferrer"
-              >
-                read here.
-              </a>
+              Download the packages from NPM if you need to access to the stylus mixins or variables.
+              You can see more information in the <a href="https://github.com/auth0/styleguide" target="_blank" rel="noopener noreferrer">project README.</a>
             </p>
             <pre className="hl">
-              <code className="html">
-                {githubExample}
+              <code className="bash">
+                {npmExample}
               </code>
             </pre>
           </section>

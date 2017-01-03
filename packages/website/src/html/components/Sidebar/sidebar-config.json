@@ -5,7 +5,7 @@
     "url": "/getting-started",
     "children": [
       { "text": "Installing from CDN", "url": "installing-from-cdn" },
-      { "text": "Installing from Github", "url": "installing-from-github" }
+      { "text": "Installing from NPM", "url": "installing-from-npm" }
     ]
   },
   {

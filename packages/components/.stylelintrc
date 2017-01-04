@@ -7,19 +7,27 @@
     "block-closing-brace-space-before": null,
     "block-opening-brace-space-after": null,
     "block-opening-brace-space-before": null,
+    "declaration-block-no-redundant-longhand-properties": null,
     "declaration-block-semicolon-space-after": null,
     "declaration-block-single-line-max-declarations": null,
     "declaration-block-trailing-semicolon": null,
+    "declaration-colon-newline-after": null,
     "declaration-colon-space-after": null,
     "function-comma-space-after": null,
+    "function-name-case": null,
+    "length-zero-no-unit": null,
     "media-feature-colon-space-after": null,
+    "media-feature-name-no-unknown": null,
     "no-missing-end-of-source-newline": null,
     "number-leading-zero": null,
+    "number-no-trailing-zeros": null,
     "rule-nested-empty-line-before": null,
     "rule-non-nested-empty-line-before": null,
     "selector-combinator-space-after": null,
     "selector-combinator-space-before": null,
     "selector-list-comma-newline-after": null,
-    "selector-pseudo-element-colon-notation": null
+    "selector-pseudo-element-colon-notation": null,
+    "shorthand-property-no-redundant-values": null,
+    "string-no-newline": null
   }
 }

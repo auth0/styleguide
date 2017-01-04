@@ -1,6 +1,8 @@
 {
   "extends": "auth0-base",
   "rules": {
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": ["error", {
+       "devDependencies": ["gulpfile.js"]
+     }]
   }
 }

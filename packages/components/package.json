@@ -10,7 +10,7 @@
     "build": "gulp build",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
-    "lint:css": "stylelint build/*.css",
+    "lint:css": "stylelint build/components.css",
     "test": "npm run lint"
   },
   "keywords": [
@@ -36,20 +36,20 @@
     "auth0-styleguide-core": "^1.0.1",
     "bump-version": "^0.5.0",
     "component-cdn-uploader": "auth0/component-cdn-uploader#1.0.0",
-    "eslint": "^3.9.0",
-    "eslint-config-auth0-base": "^6.0.0",
-    "eslint-plugin-import": "^1.16.0",
+    "eslint": "^3.12.2",
+    "eslint-config-auth0-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0",
     "gulp": "github:gulpjs/gulp#c120a94",
-    "gulp-ejs": "^2.3.0",
-    "gulp-mjml": "^2.0.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-cssnano": "^2.1.2",
+    "gulp-ejs": "^2.3.0",
     "gulp-html-prettify": "0.0.1",
     "gulp-load-plugins": "^1.3.0",
+    "gulp-mjml": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.5.0",
     "stylelint": "^7.5.0",
-    "stylelint-config-standard": "^14.0.0"
+    "stylelint-config-standard": "^15.0.1"
   },
   "cdn-component": {
     "name": "components",

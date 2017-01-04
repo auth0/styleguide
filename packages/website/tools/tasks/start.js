@@ -3,8 +3,8 @@ import express from 'express';
 import webpack from 'webpack';
 import devMiddleware from 'webpack-dev-middleware';
 import hotMiddleware from 'webpack-hot-middleware';
-import config from '../webpack/webpack.browser.config.babel.js';
-import openBrowser from './open-browser.js';
+import config from '../webpack/webpack.browser.config.babel';
+import openBrowser from './open-browser';
 
 console.log('Time to go and get a coffee ☕️.');
 

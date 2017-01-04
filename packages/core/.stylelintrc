@@ -12,6 +12,7 @@
     "declaration-block-trailing-semicolon": null,
     "declaration-colon-space-after": null,
     "function-comma-space-after": null,
+    "indentation": null,
     "media-feature-colon-space-after": null,
     "no-missing-end-of-source-newline": null,
     "number-leading-zero": null,

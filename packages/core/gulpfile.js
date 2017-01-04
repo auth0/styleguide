@@ -30,7 +30,7 @@ gulp.task('build', gulp.series('styles'));
 /**
  * Watch task
  */
-gulp.task('watch', gulp.series(done => {
+gulp.task('watch', gulp.series((done) => {
   gulp.watch('./**/*.styl', gulp.series('build'));
   done();
 }));

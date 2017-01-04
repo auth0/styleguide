@@ -9,8 +9,8 @@ const cdnExample = (
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css" />`
 );
 const npmExample = (
-`npm install --save auth0/styleguide#core-1.0.0
-npm install --save auth0/styleguide#components-1.0.0`
+`npm install --save auth0-styleguide-core
+npm install --save auth0-styleguide-components`
 );
 
 const highlightSnippets = () => {

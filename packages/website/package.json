@@ -21,9 +21,9 @@
     "npm": "^3.10.8"
   },
   "dependencies": {
-    "auth0-styleguide-components": "*",
-    "auth0-styleguide-core": "*",
-    "auth0-styleguide-react-components": "*",
+    "auth0-styleguide-components": "^1.0.1",
+    "auth0-styleguide-core": "^1.0.1",
+    "auth0-styleguide-react-components": "^1.0.0",
     "babel-polyfill": "^6.16.0",
     "charming": "^1.0.1",
     "codemirror": "^5.19.0",

@@ -5,7 +5,7 @@
   "main": "build/core.css",
   "style": "build/core.css",
   "scripts": {
-    "prepublish": "(in-publish && exit 1) || (not-in-publish && NODE_ENV=production npm run build)",
+    "prepublish": "NODE_ENV=production npm run build",
     "start": "gulp",
     "build": "gulp build",
     "lint": "npm run lint:js && npm run lint:css",
@@ -13,12 +13,16 @@
     "lint:css": "stylelint build/*.css",
     "test": "npm run lint"
   },
-  "keywords": [],
+  "keywords": [
+    "auth0",
+    "styleguide",
+    "css",
+    "components"
+  ],
   "author": "Auth0 (https://auth0.com)",
   "homepage": "http://styleguide.auth0.com/",
   "repository": "https://github.com/auth0/styleguide/tree/experimental/packages/components",
   "license": "UNLICENSED",
-  "private": true,
   "files": [
     "build",
     "src"
@@ -29,7 +33,7 @@
   },
   "devDependencies": {
     "animate.css": "^3.5.2",
-    "auth0-styleguide-core": "*",
+    "auth0-styleguide-core": "^1.0.1",
     "bump-version": "^0.5.0",
     "component-cdn-uploader": "auth0/component-cdn-uploader#1.0.0",
     "eslint": "^3.9.0",
@@ -44,8 +48,6 @@
     "gulp-load-plugins": "^1.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.5.0",
-    "in-publish": "^2.0.0",
-    "semver": "^5.3.0",
     "stylelint": "^7.5.0",
     "stylelint-config-standard": "^14.0.0"
   },

@@ -17,7 +17,7 @@ Using our CDN is the prefered solution. Just add the following line in your proj
 Download the package from NPM if you need to access to the stylus mixins or variables.
 
 ```bash
-npm install --save auth0/styleguide#core-1.0.0
+npm install --save auth0-styleguide-core
 ```
 
 ## Development

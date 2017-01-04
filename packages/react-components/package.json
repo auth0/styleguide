@@ -1,13 +1,13 @@
 {
   "name": "auth0-styleguide-react-components",
   "version": "1.0.0",
-  "description": "",
+  "description": "Library of Auth0 React components.",
   "main": "lib/index.js",
   "jsnext:main": "build/react-components.es.js",
   "module": "build/react-components.es.js",
   "style": "build/react-components.css",
   "scripts": {
-    "prepublish": "(in-publish && exit 1) || (not-in-publish && NODE_ENV=production npm run build)",
+    "prepublish": "NODE_ENV=production npm run build",
     "build": "npm run build:docs && npm run build:js && npm run build:css",
     "build:docs": "node ./tools/tasks/generate-docs.js",
     "build:js": "npm run build:js:umd-es && npm run build:js:lib",
@@ -20,10 +20,14 @@
     "lint:css": "stylelint build/*.css",
     "test": "npm run lint && mocha \"src/**/*.test.js\" --require test/setup.js --compilers js:babel-register"
   },
-  "keywords": [],
+  "keywords": [
+    "auth0",
+    "styleguide",
+    "react",
+    "components"
+  ],
   "author": "Auth0 (https://auth0.com)",
   "license": "UNLICENSED",
-  "private": true,
   "files": [
     "build",
     "lib"
@@ -32,6 +36,9 @@
     "node": "^6.9.1",
     "npm": "^3.10.8"
   },
+  "dependencies": {
+    "classnames": "^2.2.5"
+  },
   "peerDependencies": {
     "react": "^15.0.0",
     "react-bootstrap": "^0.30.6"
@@ -39,7 +46,7 @@
   "devDependencies": {
     "@kadira/react-storybook-decorator-centered": "^1.0.0",
     "@kadira/storybook": "^2.27.0",
-    "auth0-styleguide-core": "*",
+    "auth0-styleguide-core": "^1.0.1",
     "autoprefixer": "^6.5.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.17.0",
@@ -70,7 +77,6 @@
     "gulp-load-plugins": "^1.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.5.0",
-    "in-publish": "^2.0.0",
     "lodash": "^4.16.4",
     "mocha": "^3.1.2",
     "poststylus": "^0.2.3",
@@ -99,8 +105,5 @@
     "remoteBasePath": "styleguide",
     "bucket": "assets.us.auth0.com",
     "localPath": "build"
-  },
-  "dependencies": {
-    "classnames": "^2.2.5"
   }
 }

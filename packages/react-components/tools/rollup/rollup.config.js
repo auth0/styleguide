@@ -1,9 +1,11 @@
+/* eslint-disable no-console */
+
 import nodeResolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import json from 'rollup-plugin-json';
-import uglify from 'rollup-plugin-uglify';
+import uglify from 'rollup-plugin-uglify'; // eslint-disable-line import/extensions
 
 const prod = process.env.PRODUCTION;
 const mode = prod ? 'production' : 'development';

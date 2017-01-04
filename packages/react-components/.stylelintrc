@@ -20,6 +20,7 @@
     "selector-combinator-space-after": null,
     "selector-combinator-space-before": null,
     "selector-list-comma-newline-after": null,
-    "selector-pseudo-element-colon-notation": null
+    "selector-pseudo-element-colon-notation": null,
+    "shorthand-property-no-redundant-values": null
   }
 }

@@ -11,7 +11,7 @@ getComponentsDirectories(srcPath)
     name: filePath,
     fileComponentPath: path.join(srcPath, filePath)
   }))
-  .forEach(item => {
+  .forEach((item) => {
     const name = item.name;
     const fileComponentPath = item.fileComponentPath;
     const componentInfo = getComponentDoc(fileComponentPath);

@@ -38,20 +38,24 @@ class SidebarState extends Component {
         <SidebarItem text="Products" icon={12}>
           <SidebarSubitem
             text="Lock"
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
             wrapper={<a href="https://auth0.com/lock" />}
           />
           <SidebarSubitem
             text="Passwordless"
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
             wrapper={<a href="https://auth0.com/passwordless" />}
           />
           <SidebarSubitem
             text="Breached Password"
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
             wrapper={<a href="https://auth0.com/breached-passwords" />}
           />
         </SidebarItem>
         <SidebarItem
           text="Pricing"
           icon={1}
+          // eslint-disable-next-line jsx-a11y/anchor-has-content
           wrapper={<a href="https://auth0.com/pricing" />}
         />
       </Sidebar>

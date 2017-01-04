@@ -2,7 +2,8 @@
   "extends": "auth0",
   "parser": "babel-eslint",
   "rules": {
-    "react/jsx-filename-extension": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": ["error", {
+       "devDependencies": ["gulpfile.js", "tools/**/*.js", "test/**/*.js", "src/**/*.test.js", "src/**/*.stories.js", "src/**/examples.js"]
+     }]
   }
 }

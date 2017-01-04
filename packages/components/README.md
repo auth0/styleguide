@@ -17,7 +17,7 @@ Using our CDN is the prefered solution. Just add the following line in your proj
 Download the package from NPM if you want to integrate the components styles to your own build process.
 
 ```bash
-npm install --save auth0/styleguide#components-1.0.0
+npm install --save auth0-styleguide-components
 ```
 
 ## Development

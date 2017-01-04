@@ -8,7 +8,7 @@ You can find the API, see examples, and play with live editing of every componen
 
 If you are using npm you can do (react and react-bootstrap are peer dependencies):
 ```
-npm i --save react@15 react-bootstrap@0.30 auth0/styleguide#react-components-1.0.0
+npm i --save react@15 react-bootstrap@0.30 auth0-styleguide-react-components
 ```
 
 And load the CSS from our CDN:

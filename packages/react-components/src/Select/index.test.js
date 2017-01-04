@@ -14,7 +14,7 @@ const options = [
 
 describe('<Select />', () => {
   it('it should render a select element', () => {
-    const wrapper = shallow(<Select />);
+    const wrapper = shallow(<Select options={options} />);
     expect(wrapper.find('select')).to.have.length(1);
   });
   it(`should render ${options.length} options`, () => {

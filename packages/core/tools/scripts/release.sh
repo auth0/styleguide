@@ -1,5 +1,7 @@
-#!/bin/bash -e
-#
+#!/bin/bash
+
+set -e
+
 # Release script
 
 # Export RELEASE env var

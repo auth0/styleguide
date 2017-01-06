@@ -17,7 +17,7 @@ gulp.task('styles', () =>
     .pipe($.rename('components.css'))
     .pipe(gulp.dest('./build/'))
     // Minified CSS bundle
-    .pipe($.cssnano())
+    .pipe($.cssnano({ safe: true }))
     .pipe($.rename('components.min.css'))
     .pipe(gulp.dest('./build/'))
 );

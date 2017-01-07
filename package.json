@@ -2,7 +2,7 @@
   "name": "auth0-styleguide",
   "version": "5.0.0",
   "scripts": {
-    "postinstall": "lerna bootstrap",
+    "heroku-postbuild": "lerna bootstrap",
     "start": "serve --port ${PORT:-3000} ./packages/website/build"
   },
   "repository": {

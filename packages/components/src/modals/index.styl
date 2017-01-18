@@ -18,7 +18,7 @@ $modal-content-border-color ?=                 rgba(0, 0, 0, .2)
 $modal-content-fallback-border-color ?=        #999
 
 //** Modal backdrop background color
-$modal-backdrop-bg ?=         #000
+$modal-backdrop-bg ?=         rgba(244, 241, 241, 0.95)
 //** Modal backdrop opacity
 $modal-backdrop-opacity ?=    .5
 //** Modal header border color
@@ -179,7 +179,7 @@ $modal-sm ?=                  300px
   transition: .5s;
 
   .modal-backdrop
-    background: rgba(244, 241, 241, 0.95);
+    background: $modal-backdrop-bg;
     opacity: 1;
     z-index: 0;
 

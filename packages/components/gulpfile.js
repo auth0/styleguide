@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
+const { gifsicle, jpegtran, optipng, svgo } = require('gulp-imagemin');
 
 /**
  * CSS bundle task
@@ -33,7 +34,27 @@ gulp.task('emails', () =>
       indent_size: 2
     }))
     .pipe($.mjml())
-    .pipe(gulp.dest('build/emails/')));
+    .pipe(gulp.dest('./build/emails/'))
+);
+
+/**
+ * CDN task: prepares the cdn folder with all the files to upload.
+ */
+gulp.task('cdn:images', () =>
+  gulp.src('./src/**/*.+(png|jpg|jpeg|gif|svg)')
+    .pipe($.imagemin([
+      gifsicle(), jpegtran(), optipng(),
+      svgo({ plugins: [{ removeUselessDefs: false }] })
+    ]))
+    .pipe(gulp.dest('./cdn/media'))
+);
+
+gulp.task('cdn:others', () =>
+  gulp.src('./build/**/*.*')
+    .pipe(gulp.dest('./cdn'))
+);
+
+gulp.task('cdn', gulp.parallel('cdn:images', 'cdn:others'));
 
 /**
  * Build task

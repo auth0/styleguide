@@ -38,6 +38,19 @@ gulp.task('emails', () =>
 );
 
 /**
+ * Components task: generate html files from each demo.pug component file
+ */
+gulp.task('html', () =>
+  gulp.src('./src/**/demo.pug')
+    .pipe($.pug())
+    .pipe($.htmlPrettify({
+      indent_char: ' ',
+      indent_size: 2
+    }))
+    .pipe(gulp.dest('./build/components/'))
+);
+
+/**
  * CDN task: prepares the cdn folder with all the files to upload.
  */
 gulp.task('cdn:images', () =>
@@ -59,7 +72,7 @@ gulp.task('cdn', gulp.parallel('cdn:images', 'cdn:others'));
 /**
  * Build task
  */
-gulp.task('build', gulp.series('styles', 'emails'));
+gulp.task('build', gulp.series('html', 'styles', 'emails'));
 
 /**
  * Watch task

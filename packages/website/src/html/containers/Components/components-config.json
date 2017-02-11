@@ -61,7 +61,7 @@
   },
   {
     "folder": "showcase-tabs",
-    "title": "Showcase tabs",
+    "title": "Showcase Tabs",
     "description": "<p>Used mostly on landing pages to showcase products or features.</p>"
   },
   {
@@ -81,7 +81,7 @@
   },
   {
     "folder": "code-picker",
-    "title": "Code picker",
+    "title": "Code Picker",
     "description": "<p>Used for showing code examples in different languages.</p>"
   },
   {
@@ -101,7 +101,7 @@
   },
   {
     "folder": "phone-mockup",
-    "title": "Phone mockup",
+    "title": "Phone Mockup",
     "description": "<p>We use this mockup for wrapping mobile screenshots.</p>"
   }
 ]

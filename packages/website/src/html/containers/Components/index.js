@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import hljs from 'highlight.js';
+import { upperFirst, camelCase } from 'lodash';
 import { ComponentExample, SVG } from 'html/components';
+import * as ComponentsFiles from './components';
 import ComponentsIcon from '../../img/components-icon.svg';
 import componentsConfig from './components-config.json';
 
-const componentsExamples = componentsConfig.reduce((acc, component) => {
-  /* eslint-disable global-require */
-  const pugFile = require(`!raw-loader!auth0-styleguide-components/src/${component.folder}/demo.pug`);
-  const htmlFile = require(`auth0-styleguide-components/src/${component.folder}/demo.pug`)();
-  /* eslint-enable global-require */
-
-  return acc.concat({
+const componentsExamples = componentsConfig.reduce((acc, component) =>
+  acc.concat({
     title: component.title,
     description: component.description,
-    pug: pugFile,
-    html: htmlFile.split('\n').slice(1).join('\n'), // Remove first empty line
+    pug: ComponentsFiles[`${upperFirst(camelCase(component.title))}Pug`],
+    html: ComponentsFiles[`${upperFirst(camelCase(component.title))}Html`],
     id: component.folder
-  });
-}, []);
+  }), []);
 
 class Components extends Component {
   componentDidMount() {

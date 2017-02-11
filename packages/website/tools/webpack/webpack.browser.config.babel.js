@@ -70,13 +70,23 @@ const config = {
         }
       })
     }, {
-      test: /\.(pug|jade)/,
-      loaders: [{
-        loader: 'pug-loader',
-        options: {
-          pretty: true
+      test: /\.(html)$/,
+      use: 'raw-loader',
+      issuer: path.join(__dirname, '../../src/html/containers/Components/components.js')
+    }, {
+      test: /\.(pug|jade)$/,
+      oneOf: [
+        {
+          issuer: path.join(__dirname, '../../src/html/containers/Components/components.js'),
+          loader: 'raw-loader'
+        },
+        {
+          loader: 'pug-loader',
+          options: {
+            pretty: true
+          }
         }
-      }]
+      ]
     }, {
       test: /\.svg$/,
       use: 'raw-loader'

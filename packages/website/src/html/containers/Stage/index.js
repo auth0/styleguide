@@ -4,11 +4,11 @@ class Stage extends Component {
   constructor(props) {
     super();
 
-    if (props.isEmail) {
-      this.html = require(`!raw-loader!auth0-styleguide-components/build/emails/${props.params.section}/demo.html`);
-    } else {
-      this.html = require(`auth0-styleguide-components/src/${props.params.section}/demo.pug`)();
-    }
+    this.html = props.isEmail ? (
+      require(`!raw-loader!auth0-styleguide-components/build/emails/${props.params.section}/demo.html`)
+    ) : (
+      require(`auth0-styleguide-components/src/${props.params.section}/demo.pug`)()
+    );
   }
   render() {
     return (
@@ -18,7 +18,7 @@ class Stage extends Component {
 }
 
 Stage.propTypes = {
-  params: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   isEmail: PropTypes.bool
 };
 

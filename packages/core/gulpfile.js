@@ -39,3 +39,19 @@ gulp.task('watch', gulp.series((done) => {
  * Default task
  */
 gulp.task('default', gulp.series('watch'));
+
+
+/**
+ * CDN task
+ */
+gulp.task('cdn:fonts', () =>
+  gulp.src('./src/fonts/**/*.+(eot|svg|ttf|otf|woff|woff2)')
+    .pipe(gulp.dest('./cdn/fonts'))
+);
+
+gulp.task('cdn:build', () =>
+  gulp.src('./build/**/*.*')
+    .pipe(gulp.dest('./cdn'))
+);
+
+gulp.task('cdn', gulp.parallel('cdn:fonts', 'cdn:build'));

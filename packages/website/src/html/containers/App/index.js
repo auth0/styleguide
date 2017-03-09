@@ -22,7 +22,7 @@ function scrollTo(element) {
   if (!document) return false;
   if (element && !document.getElementById(element)) return false;
 
-  jump(`#${element}`, { duration: 500 });
+  jump.default(`#${element}`, { duration: 500 });
 
   return true;
 }

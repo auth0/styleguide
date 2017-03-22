@@ -32,6 +32,7 @@ npm test
 
 echo "Deploying $PACKAGE_VERSION to our CDN"
 
+$(npm bin)/gulp cdn
 $(npm bin)/ccu
 
 # Publish to npm

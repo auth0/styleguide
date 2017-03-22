@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "bump-version": "^0.5.0",
-    "component-cdn-uploader": "auth0/component-cdn-uploader#1.0.0",
+    "component-cdn-uploader": "auth0/component-cdn-uploader#1.1.0",
     "eslint": "^3.12.2",
     "eslint-config-auth0-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
@@ -55,6 +55,6 @@
     "mainBundleFile": "core.css",
     "remoteBasePath": "styleguide",
     "bucket": "assets.us.auth0.com",
-    "localPath": "build"
+    "localPath": "cdn"
   }
 }

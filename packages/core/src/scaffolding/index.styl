@@ -27,8 +27,7 @@ body
   line-height $line-height-base
   color $text-color
   background-color $body-bg
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
+  font-smoothing()
 
 // Reset fonts for relevant elements
 input,
@@ -38,6 +37,7 @@ textarea
   font-family inherit
   font-size inherit
   line-height inherit
+  font-smoothing()
 
 
 // Links
@@ -45,7 +45,7 @@ textarea
 a
   color $link-color
   text-decoration none
-
+  font-smoothing()
 
   .theme-dark &
     color lighten($link-color, 30%)

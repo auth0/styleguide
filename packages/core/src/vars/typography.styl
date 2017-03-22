@@ -25,8 +25,9 @@ $font-size-h4 ?=           ceil($font-size-base * 1.25) // ~18px
 $font-size-h5 ?=           $font-size-base
 $font-size-h6 ?=           ceil($font-size-base * 0.85) // ~12px
 
+$font-weight-light ?=     300
+$font-weight-normal ?= 400
 $font-weight-bold ?=       500
-$font-weight-normal ?=     normal
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base ?=       2 // 20/14
@@ -35,7 +36,7 @@ $line-height-computed ?=   floor($font-size-base * $line-height-base) // ~20px
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family ?=   inherit
-$headings-font-weight ?=   400
+$headings-font-weight ?=   $font-weight-bold
 $headings-line-height ?=   1.1
 $headings-color ?=         $color-text
 

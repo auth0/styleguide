@@ -20,7 +20,7 @@ ReactDOM.render(
 const installationStylesheet = (version) =>
 `<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/0.0.1/react-components.css" />
 <!-- It has two CSS peer dependencies, the core & components CSS bundles -->
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/0.0.3/core.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.0/core.min.css" />
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/0.0.2/components.min.css" />`;
 
 class Splash extends React.Component {

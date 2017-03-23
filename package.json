@@ -16,7 +16,7 @@
     "npm": "^3.10.8"
   },
   "dependencies": {
-    "lerna": "2.0.0-beta.31"
+    "lerna": "2.0.0-beta.38"
   },
   "devDependencies": {
     "serve": "^1.4.0"

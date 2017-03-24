@@ -14,7 +14,7 @@ The Auth0 Styleguide is managed as a [monorepo](https://github.com/babel/babel/b
 
 | Package | Version | Description | Dependencies |
 |---------|---------|-------------|--------------|
-| [`core`](https://github.com/auth0/styleguide/tree/master/packages/core)    | [![npm](https://img.shields.io/npm/v/auth0-styleguide-core.svg?maxAge=86400)](https://www.npmjs.com/package/auth0-styleguide-core)   | Global styles (variables, mixins, colors, css reset, typography) | |
+| [`core`](https://github.com/auth0/styleguide/tree/master/packages/core)    | [![npm](https://img.shields.io/npm/v/@auth0/styleguide-core.svg?maxAge=86400)](https://www.npmjs.com/package/@auth0/styleguide-core)   | Global styles (variables, mixins, colors, css reset, typography) | |
 | [`components`](https://github.com/auth0/styleguide/tree/master/packages/components) | [![npm](https://img.shields.io/npm/v/auth0-styleguide-components.svg?maxAge=86400)](https://www.npmjs.com/package/auth0-styleguide-components) | CSS components like buttons, tables (based on Bootstrap) | [`core`](https://github.com/auth0/styleguide/tree/master/packages/core) |
 | [`react-components`](https://github.com/auth0/styleguide/tree/master/packages/react-components) | [![npm](https://img.shields.io/npm/v/auth0-styleguide-react-components.svg?maxAge=86400)](https://www.npmjs.com/package/auth0-styleguide-react-components)| React components library |  [`core`](https://github.com/auth0/styleguide/tree/master/packages/core) [`components`](https://github.com/auth0/styleguide/tree/master/packages/components) |
 | [`website`](https://github.com/auth0/styleguide/tree/master/packages/website) | - | Styleguide website

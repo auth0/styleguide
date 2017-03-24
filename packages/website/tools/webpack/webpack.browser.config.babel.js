@@ -15,7 +15,7 @@ const config = {
     ...DEBUG ? [
       'react-hot-loader/patch',
       'webpack-hot-middleware/client',
-      'auth0-styleguide-core/src/main.styl',
+      '@auth0/styleguide-core/src/main.styl',
       'auth0-styleguide-components/src/main.styl',
       'auth0-styleguide-react-components/src/index.styl'
     ] : [],

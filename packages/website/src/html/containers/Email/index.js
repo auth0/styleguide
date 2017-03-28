@@ -1,22 +1,18 @@
 import React from 'react';
+import { upperFirst, camelCase } from 'lodash';
 import EmailTemplatesIcon from '../../img/email-templates-icon.svg';
 import { EmailExample, SVG } from '../../components';
+import * as EmailsFiles from './emails';
 import emailsConfig from './emails-config.json';
 
-const emailsExamples = emailsConfig.reduce((acc, email) => {
-  /* eslint-disable global-require */
-  const mjmlFile = require(`!raw-loader!auth0-styleguide-components/src/emails/${email.folder}/demo.ejs`);
-  const htmlFile = require(`!raw-loader!auth0-styleguide-components/build/emails/${email.folder}/demo.html`);
-  /* eslint-enable global-require */
-
-  return acc.concat({
+const emailsExamples = emailsConfig.reduce((acc, email) =>
+  acc.concat({
     title: email.title,
     description: email.description,
-    mjml: mjmlFile,
-    html: htmlFile.split('\n').slice(1).join('\n'), // Remove first empty line
+    mjml: EmailsFiles[`${upperFirst(camelCase(email.title))}Mjml`],
+    html: EmailsFiles[`${upperFirst(camelCase(email.title))}Html`],
     id: email.folder
-  });
-}, []);
+  }), []);
 
 const Email = () =>
   <div className="styleguide-section">

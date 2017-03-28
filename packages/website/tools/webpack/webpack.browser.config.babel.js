@@ -71,8 +71,7 @@ const config = {
       })
     }, {
       test: /\.(html)$/,
-      use: 'raw-loader',
-      issuer: path.join(__dirname, '../../src/html/containers/Components/components.js')
+      use: 'raw-loader'
     }, {
       test: /\.(pug|jade)$/,
       oneOf: [
@@ -89,6 +88,9 @@ const config = {
       ]
     }, {
       test: /\.svg$/,
+      use: 'raw-loader'
+    }, {
+      test: /\.ejs$/,
       use: 'raw-loader'
     }]
   },

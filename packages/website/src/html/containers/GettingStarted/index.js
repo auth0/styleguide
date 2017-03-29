@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import hljs from 'highlight.js';
 import $ from 'jquery';
-import { SVG } from '../../components';
-import GettingStartedIcon from '../../img/getting-started-icon.svg';
 
 const cdnExample = (
 `<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.0/core.min.css" />
@@ -34,7 +32,9 @@ class GettingStarted extends Component {
     return (
       <div className="styleguide-section getting-started-section">
         <section className="jumbotron">
-          <h2><SVG content={GettingStartedIcon} /></h2>
+          <h2>
+            <img src="https://cdn.auth0.com/website/styleguide/getting-started-icon.svg" alt="Getting started icon" />
+          </h2>
           <h1>Getting Started</h1>
           <p>There are few ways to initialize depending on the use case.</p>
         </section>

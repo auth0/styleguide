@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import hljs from 'highlight.js';
 import { upperFirst, camelCase } from 'lodash';
-import { ComponentExample, SVG } from 'html/components';
+import { ComponentExample } from 'html/components';
 import * as ComponentsFiles from './components';
-import ComponentsIcon from '../../img/components-icon.svg';
 import componentsConfig from './components-config.json';
 
 const componentsExamples = componentsConfig.reduce((acc, component) =>
@@ -25,7 +24,9 @@ class Components extends Component {
     return (
       <div className="styleguide-section">
         <section className="jumbotron">
-          <h2><SVG content={ComponentsIcon} /></h2>
+          <h2>
+            <img src="https://cdn.auth0.com/website/styleguide/components-icon.svg" alt="Components"/>
+          </h2>
           <h1>Components</h1>
           <p>Set of components used across our website and apps.</p>
         </section>

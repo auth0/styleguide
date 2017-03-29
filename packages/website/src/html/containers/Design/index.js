@@ -1,6 +1,6 @@
 import React from 'react';
 import DesignIcon from '../../img/design-icon.svg';
-import { SVG, TypeBox, ColorBox } from '../../components';
+import { TypeBox, ColorBox } from '../../components';
 import './index.styl';
 
 const renderTypography = () =>
@@ -141,7 +141,9 @@ const renderStatusColors = () =>
 const Design = () =>
   <div className="styleguide-section design-section">
     <section className="jumbotron">
-      <h2><SVG content={DesignIcon} /></h2>
+      <h2>
+        <img src="https://cdn.auth0.com/website/styleguide/design-icon.svg" alt="Design" />
+      </h2>
       <h1>Design</h1>
       <p>“The only important thing about design is how it relates to people.”</p>
     </section>

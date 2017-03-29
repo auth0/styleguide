@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Badge, Icon, LogoBox, SVG } from 'html/components';
-import ResourcesIcon from 'html/img/resources-icon.svg';
 import Auth0LogoBlue from 'auth0-styleguide-components/src/logos/img/logo-blue.svg';
 import Auth0LogoGrey from 'auth0-styleguide-components/src/logos/img/logo-grey.svg';
 import Auth0Badge from 'auth0-styleguide-components/src/logos/img/badge.svg';
@@ -71,7 +70,9 @@ class Resources extends Component {
     return (
       <div className="styleguide-section resources-section">
         <section className="jumbotron">
-          <h2><SVG content={ResourcesIcon} /></h2>
+          <h2>
+            <img src="https://cdn.auth0.com/website/styleguide/resources-icon.svg" alt="Resources icon" />
+          </h2>
           <h1>Resources</h1>
           <p>Logo, Icons and badges.</p>
         </section>

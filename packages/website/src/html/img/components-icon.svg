@@ -1,15 +1,1 @@
-<svg width="80px" height="68px" viewBox="0 0 80 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
-    <title>Group</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="noun_187061_cc">
-            <g id="Group" transform="translate(0.000000, 0.637820)">
-                <path d="M-2.00000002e-06,46.6955 L39.999995,66.6955 L80.000002,46.6955 L70.000002,41.6955 L39.999995,56.6956 L9.999993,41.6955 L-2.00000002e-06,46.6955 Z" id="Path" fill="#EB5424"></path>
-                <path d="M9.999993,28.36221 L-2.00000002e-06,33.3622 L39.999995,53.3622 L80.000002,33.3622 L70.000002,28.36221 L39.999995,43.3622 L9.999993,28.36221 L9.999993,28.36221 Z" id="Path" fill="#44C7F4"></path>
-                <path d="M39.999995,0.02887 L-2.00000002e-06,20.02888 L39.999995,40.0289 L80.000002,20.02888 L39.999995,0.02887 L39.999995,0.02887 Z" id="Path" fill="#16214D"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="80" height="68" viewBox="0 0 80 68" xmlns="http://www.w3.org/2000/svg"><title>Group</title><g fill="none" fill-rule="evenodd"><path d="M0 47.333l40 20 40-20-10-5-30 15-30-15-10 5z" fill="#EB5424"/><path d="M10 29L0 34l40 20 40-20-10-5-30 15-30-15z" fill="#44C7F4"/><path d="M40 .667l-40 20 40 20 40-20-40-20z" fill="#16214D"/></g></svg>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { upperFirst, camelCase } from 'lodash';
-import EmailTemplatesIcon from '../../img/email-templates-icon.svg';
-import { EmailExample, SVG } from '../../components';
+import { EmailExample } from '../../components';
 import * as EmailsFiles from './emails';
 import emailsConfig from './emails-config.json';
 
@@ -17,7 +16,9 @@ const emailsExamples = emailsConfig.reduce((acc, email) =>
 const Email = () =>
   <div className="styleguide-section">
     <section className="jumbotron">
-      <h2><SVG content={EmailTemplatesIcon} /></h2>
+      <h2>
+        <img src="https://cdn.auth0.com/website/styleguide/email-templates-icon.svg" alt="Email templates icon" />
+      </h2>
       <h1>Email Templates</h1>
       <p>Build and send emails with style.</p>
     </section>

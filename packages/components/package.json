@@ -1,6 +1,6 @@
 {
   "name": "auth0-styleguide-components",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "HTML and CSS components for Auth0 projects.",
   "main": "build/core.css",
   "style": "build/core.css",
@@ -32,8 +32,8 @@
     "npm": "^3.10.8"
   },
   "devDependencies": {
+    "@auth0/styleguide-core": "^2.0.1",
     "animate.css": "^3.5.2",
-    "auth0-styleguide-core": "^1.0.1",
     "bump-version": "^0.5.0",
     "component-cdn-uploader": "auth0/component-cdn-uploader#1.0.0",
     "eslint": "^3.12.2",

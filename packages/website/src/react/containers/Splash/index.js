@@ -46,7 +46,7 @@ class Splash extends React.Component {
         <h1 className="splash-title">Getting started</h1>
 
         <div className="splash-section">
-          <h2 className="title">Installation</h2>
+          <h2 className="splash-subtitle">Installation</h2>
 
           <div className="example-box">
             <p>To install the latest version:</p>
@@ -65,7 +65,7 @@ class Splash extends React.Component {
           </div>
 
           <div className="example-box">
-            <h2 className="title">Example</h2>
+            <h2 className="splash-subtitle">Example</h2>
 
             <p>Here is a quick example to get you started:</p>
             <pre>

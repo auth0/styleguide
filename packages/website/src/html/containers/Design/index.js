@@ -1,12 +1,11 @@
 import React from 'react';
-import DesignIcon from '../../img/design-icon.svg';
 import { TypeBox, ColorBox } from '../../components';
 import './index.styl';
 
 const renderTypography = () =>
   <section>
     <h2 id="typography">Typography</h2>
-    <p>The body font is set to Nitti Grotesk, font size is 16px and line height is 2.</p>
+    <p>The body font is set to Fakt, font size is 14px and line height is 2.</p>
     <div className="row type-box-container">
       <TypeBox />
       <TypeBox themeDark />

@@ -59,7 +59,7 @@
     "babel-register": "^6.16.3",
     "bump-version": "^0.5.0",
     "chai": "^3.5.0",
-    "component-cdn-uploader": "auth0/component-cdn-uploader#1.0.0",
+    "component-cdn-uploader": "auth0/component-cdn-uploader#v1.3.0",
     "conventional-changelog-cli": "^1.2.0",
     "css-loader": "^0.25.0",
     "enzyme": "^2.5.1",

@@ -4,11 +4,11 @@ import $ from 'jquery';
 
 const cdnExample = (
 `<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.0/core.min.css" />
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css" />`
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.7/components.min.css" />`
 );
 const npmExample = (
 `npm install --save @auth0/styleguide-core
-npm install --save auth0-styleguide-components`
+npm install --save @auth0/styleguide-components`
 );
 
 const highlightSnippets = () => {
@@ -68,4 +68,3 @@ class GettingStarted extends Component {
 }
 
 export default GettingStarted;
-

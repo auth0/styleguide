@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Badge, Icon, LogoBox, SVG } from 'html/components';
-import Auth0LogoBlue from 'auth0-styleguide-components/src/logos/img/logo-blue.svg';
-import Auth0LogoGrey from 'auth0-styleguide-components/src/logos/img/logo-grey.svg';
-import Auth0Badge from 'auth0-styleguide-components/src/logos/img/badge.svg';
+import Auth0LogoBlue from '@auth0/styleguide-components/src/logos/img/logo-blue.svg';
+import Auth0LogoGrey from '@auth0/styleguide-components/src/logos/img/logo-grey.svg';
+import Auth0Badge from '@auth0/styleguide-components/src/logos/img/badge.svg';
 import badgesConfiguration from './badges.json';
 import iconsConfiguration from './icons.json';
 import './index.styl';

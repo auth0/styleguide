@@ -1,5 +1,5 @@
 {
-  "name": "auth0-styleguide-components",
+  "name": "@auth0/styleguide-components",
   "version": "1.0.7",
   "description": "HTML and CSS components for Auth0 projects.",
   "main": "build/core.css",
@@ -21,7 +21,7 @@
   ],
   "author": "Auth0 (https://auth0.com)",
   "homepage": "http://styleguide.auth0.com/",
-  "repository": "https://github.com/auth0/styleguide/tree/experimental/packages/components",
+  "repository": "https://github.com/auth0/styleguide/tree/master/packages/components",
   "license": "UNLICENSED",
   "files": [
     "build",

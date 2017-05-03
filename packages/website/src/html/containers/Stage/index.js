@@ -5,9 +5,9 @@ class Stage extends Component {
     super();
 
     this.html = props.isEmail ? (
-      require(`!raw-loader!auth0-styleguide-components/build/emails/${props.params.section}/demo.html`)
+      require(`!raw-loader!@auth0/styleguide-components/build/emails/${props.params.section}/demo.html`)
     ) : (
-      require(`auth0-styleguide-components/src/${props.params.section}/demo.pug`)()
+      require(`@auth0/styleguide-components/src/${props.params.section}/demo.pug`)()
     );
   }
   render() {

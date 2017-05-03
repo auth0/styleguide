@@ -35,7 +35,7 @@
     "@auth0/styleguide-core": "^2.0.1",
     "animate.css": "^3.5.2",
     "bump-version": "^0.5.0",
-    "component-cdn-uploader": "auth0/component-cdn-uploader#1.0.0",
+    "component-cdn-uploader": "auth0/component-cdn-uploader#v1.3.0",
     "eslint": "^3.12.2",
     "eslint-config-auth0-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",

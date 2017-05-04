@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Sidebar as SidebarRC, SidebarItem, SidebarSubitem } from 'auth0-styleguide-react-components';
+import { Sidebar as SidebarRC, SidebarItem, SidebarSubitem } from '@auth0/styleguide-react-components';
 import { Link } from 'react-router';
 import sidebarConfig from './sidebar-config.json';
 import componentsConfig from '../../containers/Components/components-config.json';

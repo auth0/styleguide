@@ -45,7 +45,7 @@ if (prod) plugins.push(uglify());
 
 export default {
   entry: 'src/index.js',
-  moduleId: 'auth0-styleguide-react-components',
+  moduleId: '@auth0/styleguide-react-components',
   moduleName: 'auth0StyleguideReactComponents',
   external: ['react', 'react-bootstrap'],
   exports: 'named',

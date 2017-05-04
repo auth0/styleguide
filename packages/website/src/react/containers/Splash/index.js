@@ -17,7 +17,7 @@ ReactDOM.render(
   document.getElementById('app')
 );`;
 
-const installationStylesheet = (version) =>
+const installationStylesheet = () =>
 `<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/1.0.0/react-components.css" />
 <!-- It has two CSS peer dependencies, the core & components CSS bundles -->
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.2/core.min.css" />
@@ -27,7 +27,7 @@ class Splash extends React.Component {
   componentDidMount() {
     this.codeExamples = [].slice.call(document.querySelectorAll('.splash-page code'));
     hljs.configure({ classPrefix: '' });
-    this.codeExamples.forEach(block => {
+    this.codeExamples.forEach((block) => {
       hljs.highlightBlock(block);
     });
   }
@@ -35,7 +35,7 @@ class Splash extends React.Component {
   componentDidUpdate() {
     hljs.configure({ classPrefix: '' });
     hljs.initHighlighting.called = false;
-    this.codeExamples.forEach(block => {
+    this.codeExamples.forEach((block) => {
       hljs.highlightBlock(block);
     });
   }
@@ -52,7 +52,7 @@ class Splash extends React.Component {
             <p>To install the latest version:</p>
             <pre>
               <code className="bash">
-                {`npm i --save react@15 react-bootstrap@0.30 @auth0/styleguide-react-components`}
+                {'npm i --save react@15 react-bootstrap@0.30 @auth0/styleguide-react-components'}
               </code>
             </pre>
 

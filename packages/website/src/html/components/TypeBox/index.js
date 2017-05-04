@@ -16,7 +16,7 @@ const TypeBox = ({ themeDark }) =>
       <p className="body-2">Body 2 / Menu</p>
       <p className="body-1">Body 1</p>
       <p className="caption">Caption</p>
-      <a href="#">Link</a>
+      <a href="http://styleguide.auth0.com/">Link</a>
     </div>
   </div>;
 

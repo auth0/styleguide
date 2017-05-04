@@ -25,7 +25,7 @@ class Components extends Component {
       <div className="styleguide-section">
         <section className="jumbotron">
           <h2>
-            <img src="https://cdn.auth0.com/website/styleguide/components-icon.svg" alt="Components"/>
+            <img src="https://cdn.auth0.com/website/styleguide/components-icon.svg" alt="Components" />
           </h2>
           <h1>Components</h1>
           <p>Set of components used across our website and apps.</p>

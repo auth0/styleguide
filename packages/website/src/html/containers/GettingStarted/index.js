@@ -52,8 +52,10 @@ class GettingStarted extends Component {
           <section>
             <h2 id="installing-from-npm">Installing from NPM</h2>
             <p>
-              Download the packages from NPM if you need to access to the stylus mixins or variables.
-              You can see more information in the <a href="https://github.com/auth0/styleguide" target="_blank" rel="noopener noreferrer">project README.</a>
+              Download the packages from NPM if you need
+              to access to the stylus mixins or variables.
+              You can see more information in the
+              <a href="https://github.com/auth0/styleguide" target="_blank" rel="noopener noreferrer">project README.</a>
             </p>
             <pre className="hl">
               <code className="bash">

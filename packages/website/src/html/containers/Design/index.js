@@ -66,22 +66,22 @@ const renderTypography = () =>
     </div>
     <hr />
     <h3>Text utilities</h3>
-    <p className="text-left"> <code>.text-left</code> Einstein's Letter to Freud</p>
-    <p className="text-center"> <code>.text-center</code> Einstein's Letter to Freud</p>
-    <p className="text-right"> <code>.text-right</code> Einstein's Letter to Freud</p>
-    <p className="text-justify"> <code>.text-justify</code> Einstein's Letter to Freud</p>
-    <p className="text-nowrap"> <code>.text-nowrap</code> Einstein's Letter to Freud</p>
+    <p className="text-left"> <code>.text-left</code> Einstein&apos;s Letter to Freud</p>
+    <p className="text-center"> <code>.text-center</code> Einstein&apos;s Letter to Freud</p>
+    <p className="text-right"> <code>.text-right</code> Einstein&apos;s Letter to Freud</p>
+    <p className="text-justify"> <code>.text-justify</code> Einstein&apos;s Letter to Freud</p>
+    <p className="text-nowrap"> <code>.text-nowrap</code> Einstein&apos;s Letter to Freud</p>
     <p>
       <code>.text-lowercase</code>
-      <span className="text-lowercase"> Einstein's Letter to Freud</span>
+      <span className="text-lowercase"> Einstein&apos;s Letter to Freud</span>
     </p>
     <p>
       <code>.text-uppercase</code>
-      <span className="text-uppercase"> Einstein's Letter to Freud</span>
+      <span className="text-uppercase"> Einstein&apos;s Letter to Freud</span>
     </p>
     <p>
       <code>.text-capitalize</code>
-      <span className="text-capitalize"> Einstein's Letter to Freud</span>
+      <span className="text-capitalize"> Einstein&apos;s Letter to Freud</span>
     </p>
   </section>;
 

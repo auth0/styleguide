@@ -17,7 +17,7 @@ const Sidebar = ({ children, header, mobileNavOpen, toggleNavOnClick }) => {
           <h1 className="default-title">
             <a className="default-link" href="/">
               <img
-                src="https://cdn.auth0.com/styleguide/latest/img/badge.svg"
+                src="https://cdn.auth0.com/styleguide/components/1.0.7/media/logos/img/badge.svg"
                 alt="Auth0 logo"
                 width="30"
               />

@@ -32,12 +32,12 @@ class Sidebar extends Component {
           <h1 className="default-title">
             <Link className="default-link" to="/react">
               <img
-                src="https://cdn.auth0.com/styleguide/latest/img/badge.svg"
+                src="https://cdn.auth0.com/styleguide/components/1.0.7/media/logos/img/badge.svg"
                 alt="Auth0 logo"
                 width="30"
               />
               <img
-                src="https://cdn.auth0.com/styleguide/4.5.0/lib/circle-logo/img/react.svg"
+                src="https://cdn.auth0.com/styleguide/components/1.0.7/media/circle-logo/img/react.svg"
                 alt="React logo"
                 width="36"
               />

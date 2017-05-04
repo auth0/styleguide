@@ -41,7 +41,7 @@ echo "Deploying $PACKAGE_VERSION to npm"
 NPM_EXISTS=$(npm info $PACKAGE_NAME@$PACKAGE_VERSION)
 
 if [ "$NPM_EXISTS" == "undefined" ]; then
-  npm publish
+  npm publish --access=public
 else
   echo "There is already a version $PACKAGE_VERSION in npm. Skiping npm publish."
 fi

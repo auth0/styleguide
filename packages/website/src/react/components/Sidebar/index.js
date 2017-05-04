@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Sidebar as SidebarRC, SidebarItem, SidebarSubitem } from 'auth0-styleguide-react-components';
+import { Sidebar as SidebarRC, SidebarItem, SidebarSubitem } from '@auth0/styleguide-react-components';
 import { Link } from 'react-router';
 import './index.styl';
 

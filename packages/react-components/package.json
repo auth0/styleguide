@@ -1,5 +1,5 @@
 {
-  "name": "auth0-styleguide-react-components",
+  "name": "@auth0/styleguide-react-components",
   "version": "1.0.0",
   "description": "Library of Auth0 React components.",
   "main": "lib/index.js",
@@ -27,6 +27,8 @@
     "components"
   ],
   "author": "Auth0 (https://auth0.com)",
+  "homepage": "https://styleguide.auth0.com/#/react",
+  "repository": "https://github.com/auth0/styleguide/tree/master/packages/react-components",
   "license": "UNLICENSED",
   "files": [
     "build",
@@ -46,7 +48,7 @@
   "devDependencies": {
     "@kadira/react-storybook-decorator-centered": "^1.0.0",
     "@kadira/storybook": "^2.27.0",
-    "auth0-styleguide-core": "^1.0.1",
+    "@auth0/styleguide-core": "^2.0.2",
     "autoprefixer": "^6.5.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.17.0",

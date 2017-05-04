@@ -8,7 +8,7 @@ const Footer = () =>
     <div className="container">
       <div className="logo">
         <img
-          src="https://cdn.auth0.com/styleguide/components/1.0.7/media/logos/img/badge.png"
+          src="https://cdn.auth0.com/styleguide/components/1.0.8/media/logos/img/badge.png"
           width="30"
           role="presentation"
         />

@@ -33,8 +33,9 @@ ComponentPage.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  props: PropTypes.object,
-  examples: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired,
+  props: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  examples: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
   reactBootstrap: PropTypes.string
 };
 

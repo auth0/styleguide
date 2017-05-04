@@ -54,7 +54,7 @@ class Sidebar extends Component {
           text="React components"
           icon={450}
           open={rCItemOpen}
-          wrapper={<div onClick={() => this.toggleState('rCItemOpen')} />}
+          wrapper={<div onClick={() => this.toggleState('rCItemOpen')} />} // eslint-disable-line jsx-a11y/no-static-element-interactions
         >
           {components.map(({ title, url }) => (
             <SidebarSubitem

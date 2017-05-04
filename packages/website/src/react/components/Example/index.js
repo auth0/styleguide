@@ -43,7 +43,7 @@ class Example extends Component {
 }
 
 Example.propTypes = {
-  component: PropTypes.any.isRequired,
+  component: PropTypes.element.isRequired,
   code: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   componentName: PropTypes.string.isRequired,

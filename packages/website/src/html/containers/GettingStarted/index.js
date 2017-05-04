@@ -29,6 +29,7 @@ class GettingStarted extends Component {
   }
 
   render() {
+    /* eslint-disable max-len */
     return (
       <div className="styleguide-section getting-started-section">
         <section className="jumbotron">

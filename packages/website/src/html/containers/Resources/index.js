@@ -7,6 +7,23 @@ import badgesConfiguration from './badges.json';
 import iconsConfiguration from './icons.json';
 import './index.styl';
 
+const renderIconList = () =>
+  iconsConfiguration.map(category =>
+    <div className="icon-category" key={category.name}>
+      <h4 className="icon-category-title">{category.name}</h4>
+      <ul className="list-unstyled row">
+        { category.icons.map(icon =>
+          <li className="col-xs-12 col-sm-6 col-md-4 col-lg-3" key={icon.code}>
+            <Icon
+              cssClass={icon.code ? `icon-budicon-${icon.code}` : 'icon-budicon'}
+              name={icon.name || ''}
+            />
+          </li>
+      )}
+      </ul>
+    </div>
+  );
+
 class Resources extends Component {
   constructor() {
     super();
@@ -14,31 +31,12 @@ class Resources extends Component {
     this.state = {
       iconSearchValue: ''
     };
-    this.renderIconList = this.renderIconList.bind(this);
+
     this.renderFilteredIcons = this.renderFilteredIcons.bind(this);
     this.handleIconSearchChange = this.handleIconSearchChange.bind(this);
   }
   handleIconSearchChange(e) {
     this.setState({ iconSearchValue: e.target.value });
-  }
-  renderIconList() {
-    return (
-      iconsConfiguration.map(category =>
-        <div className="icon-category" key={category.name}>
-          <h4 className="icon-category-title">{category.name}</h4>
-          <ul className="list-unstyled row">
-            { category.icons.map(icon =>
-              <li className="col-xs-12 col-sm-6 col-md-4 col-lg-3" key={icon.code}>
-                <Icon
-                  cssClass={icon.code ? `icon-budicon-${icon.code}` : 'icon-budicon'}
-                  name={icon.name || ''}
-                />
-              </li>
-          )}
-          </ul>
-        </div>
-      )
-    );
   }
 
   renderFilteredIcons() {
@@ -48,7 +46,7 @@ class Resources extends Component {
       ), []);
 
     if (!filteredIcons.length) {
-      return (<h4 className="icons-not-found">We couldn't find any icon with that name.</h4>);
+      return (<h4 className="icons-not-found">We couldn&apos;t find any icon with that name.</h4>);
     }
 
     return (
@@ -126,7 +124,7 @@ class Resources extends Component {
               className="form-control" type="text" placeholder="Search for icons"
               onChange={this.handleIconSearchChange} value={this.state.iconSearchValue}
             />
-            {this.state.iconSearchValue === '' ? this.renderIconList() : this.renderFilteredIcons()}
+            {this.state.iconSearchValue === '' ? renderIconList() : this.renderFilteredIcons()}
           </section>
         </section>
       </div>

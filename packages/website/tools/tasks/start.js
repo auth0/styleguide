@@ -6,6 +6,7 @@ import hotMiddleware from 'webpack-hot-middleware';
 import config from '../webpack/webpack.browser.config.babel';
 import openBrowser from './open-browser';
 
+// eslint-disable-next-line no-console
 console.log('Time to go and get a coffee ☕️.');
 
 const app = express();
@@ -36,6 +37,7 @@ app.use('*', (req, res, next) => {
 });
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`Listening on ${url}. But awaiting for webpack to finish the first compilation.`);
 });
 

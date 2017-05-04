@@ -43,7 +43,7 @@ const PropertiesTable = ({ props }) => {
 };
 
 PropertiesTable.propTypes = {
-  props: PropTypes.object.isRequired
+  props: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
 };
 
 export default PropertiesTable;

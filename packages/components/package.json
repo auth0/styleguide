@@ -20,7 +20,7 @@
     "components"
   ],
   "author": "Auth0 (https://auth0.com)",
-  "homepage": "http://styleguide.auth0.com/",
+  "homepage": "https://styleguide.auth0.com/",
   "repository": "https://github.com/auth0/styleguide/tree/master/packages/components",
   "license": "UNLICENSED",
   "files": [

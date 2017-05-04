@@ -55,6 +55,7 @@ class EmailExample extends Component {
   }
 
   render() {
+    /* eslint-disable react/no-danger */
     const { title, description, mjml, html, id } = this.props;
     const { activeSection } = this.state;
 

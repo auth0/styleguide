@@ -50,6 +50,7 @@ class ComponentExample extends Component {
   }
 
   render() {
+    /* eslint-disable react/no-danger */
     const { title, description, pug, html, id } = this.props;
     const { activeSection } = this.state;
 

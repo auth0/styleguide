@@ -18,7 +18,7 @@ And load the CSS from our CDN:
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.5/core.min.css" />
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.9/components.min.css" />
 
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/1.0.1/react-components.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/1.0.2/react-components.css" />
 ```
 
 The CSS bundles are also included on the packages installed via npm, but we encourage you to use it via our CDN so we all benefit from sharing the same url of the package to improve load time.

@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 const cdnExample = (
 `<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.4/core.min.css" />
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.8/components.min.css" />`
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.9/components.min.css" />`
 );
 const npmExample = (
 `npm install --save @auth0/styleguide-core

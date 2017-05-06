@@ -22,6 +22,8 @@ npm install --save @auth0/styleguide-components
 
 ## Development
 
+**Node.js v6.9.1 and npm v3.10.8 or newer is required.**
+
 Run this commands to start developing:
 
 ```bash

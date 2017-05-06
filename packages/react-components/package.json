@@ -34,10 +34,6 @@
     "build",
     "lib"
   ],
-  "engines": {
-    "node": "^6.9.1",
-    "npm": "^3.10.8"
-  },
   "dependencies": {
     "classnames": "^2.2.5"
   },

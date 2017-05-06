@@ -27,10 +27,6 @@
     "build",
     "src"
   ],
-  "engines": {
-    "node": "^6.9.1",
-    "npm": "^3.10.8"
-  },
   "dependencies": {
     "normalize-css": "^2.3.1"
   },

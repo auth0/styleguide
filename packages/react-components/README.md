@@ -48,6 +48,8 @@ ReactDOM.render(
 
 ### Add a new component
 
+**Node.js v6.9.1 and npm v3.10.8 or newer is required.**
+
 You can develop new components using [React StoryBook](https://github.com/kadirahq/react-storybook).
 
 The `index.js` and `examples.js` files will be used to generate the React Styleguide page of the component, which will contain all the documentation for it (title, description, examples and table with properties information).

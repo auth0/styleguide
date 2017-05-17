@@ -56,6 +56,9 @@ $alert-danger-border ?=       $state-danger-border
     &:hover
       opacity: 0.7;
 
+  code
+    border: 1px solid #c7ced1;
+
   .close
     color: currentColor;
     outline: none;
@@ -85,6 +88,9 @@ $alert-danger-border ?=       $state-danger-border
           margin-top 10px
 
 // Alternate styles
+
+.alert-default
+  background-color: #F0F0F0;
 
 .alert-success
   background-color: lighten($bg-color-success, 80%)
@@ -119,3 +125,19 @@ $alert-danger-border ?=       $state-danger-border
   border-radius 0
   padding $alert-wide-padding
   text-align center
+
+.alert-with-icon
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    
+    .alert-icon
+      font-size: 20px;
+      margin-right: 0.8rem;
+      line-height: 28px;
+      position: relative;
+      top: 2px;
+
+    // Remove margin of last item to mantain box structure
+    .alert-content *:last-child
+      margin-bottom: 0;

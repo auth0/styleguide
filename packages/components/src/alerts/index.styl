@@ -29,6 +29,7 @@ $alert-danger-border ?=       $state-danger-border
   padding $alert-padding
   margin-bottom $line-height-computed
   border-radius $alert-border-radius
+  border 0
 
   // Headings for larger alerts
   h4
@@ -48,7 +49,19 @@ $alert-danger-border ?=       $state-danger-border
   > p + p
     margin-top 5px
 
-  // Button section
+  a
+    color: currentColor;
+    border-bottom: 1px solid currentColor;
+
+    &:hover
+      opacity: 0.7;
+
+  .close
+    color: currentColor;
+    outline: none;
+    margin-top: 4px;
+
+  // Actions section (buttons)
   .actions
     margin-top 10px
 
@@ -71,52 +84,7 @@ $alert-danger-border ?=       $state-danger-border
         & + .btn
           margin-top 10px
 
-// Dismissible alerts
-//
-// Expand the right padding and account for the close button's positioning.
-
-.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
-.alert-dismissible
-  padding-right ($alert-padding + 20)
-
-  // Adjust close link position
-  .close
-    position relative
-    top -2px
-    right -21px
-    color inherit
-
 // Alternate styles
-//
-// Generate contextual modifier classes for colorizing the alert.
-
-.alert-success
-  alert-variant($alert-success-bg, $alert-success-border, $alert-success-text)
-
-.alert-info
-  alert-variant($alert-info-bg, $alert-info-border, $alert-info-text)
-
-.alert-warning
-  alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text)
-
-.alert-danger
-  alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text)
-
-
-.alert
-  border: 0;
-
-  .close
-    color: currentColor;
-    outline: none;
-    margin-top: 4px;
-
-  a
-    color: currentColor;
-    border-bottom: 1px solid currentColor;
-
-    &:hover
-      opacity: 0.7;
 
 .alert-success
   background-color: lighten($bg-color-success, 80%)

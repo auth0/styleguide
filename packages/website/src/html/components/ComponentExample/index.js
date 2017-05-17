@@ -57,7 +57,10 @@ class ComponentExample extends Component {
     return (
       <section className="html-example" id={id}>
         <h2>{title}</h2>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
+        <div
+          className="html-example-description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
         { this.renderActions() }
         <div className="html-example-playground">
           <div

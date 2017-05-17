@@ -1,26 +1,40 @@
+h5 Styles:
+
+.alert.alert-default
+  strong Well done!
+  |  This alert will show you some <a href="https://auth0.com/">extra information</a>.
+
 .alert.alert-success
   strong Well done!
   |  You successfully read this important <a href="https://auth0.com/">alert link</a> message.
+    
+.alert.alert-info
+  strong Heads up!
+  |  This alert <a href="https://auth0.com/">needs your attention</a>, but it's not super important.
+  
+.alert.alert-warning
+  strong Warning!
+  |  Better <a href="https://auth0.com/">check yourself</a>, you're not looking too good.
+  
+.alert.alert-danger
+  strong Oh snap!
+  |  Change a few things up and try <a href="https://auth0.com/">submitting again</a>.
+
+h5 With close button
 
 .alert.alert-success
   button(type="button" class="close" data-dismiss="alert" aria-label="Close")
     span(aria-hidden="true") &times;
   strong Well done!
   |  You successfully read this important <a href="https://auth0.com/">alert link</a> message.
-    
-.alert.alert-info
-  strong Heads up!
-  |  This alert needs your <a href="https://auth0.com/">alert link</a>, but it's not super important.
-  
+
+h5 With action buttons
+
 .alert.alert-warning
   strong Warning!
   |  Better check yourself, you're not <a href="https://auth0.com/">alert link</a> looking too good.
   .actions.pull-right
     button.btn.btn-sm.btn-warning Action
-  
-.alert.alert-danger
-  strong Oh snap!
-  |  Change a few things up and try submitting again. <a href="https://auth0.com/">alert link</a>.
 
 .alert.alert-warning
   button(type="button" class="close" data-dismiss="alert" aria-label="Close")
@@ -33,18 +47,16 @@
     button.btn.btn-sm.btn-warning Edit
     button.btn.btn-sm.btn-warning Delete
 
+h5 Global alert
+
 .alert.alert-global.alert-success
   strong Well done!
-  |  You successfully read this important <a href="https://auth0.com/">alert link</a> message.
-    
-.alert.alert-global.alert-info
-  strong Heads up!
-  |  This alert needs your <a href="https://auth0.com/">alert link</a>, but it's not super important.
-  
-.alert.alert-global.alert-warning
-  strong Warning!
-  |  Better check yourself, you're not <a href="https://auth0.com/">alert link</a> looking too good.
+  |  You successfully read this <a href="https://auth0.com/">important messge</a>.
 
-.alert.alert-global.alert-danger
-  strong Oh snap!
-  |  Change a few things up and try submitting again. <a href="https://auth0.com/">alert link</a>.
+
+h5 With icon
+
+.alert.alert-default.alert-with-icon
+  i.alert-icon.icon-budicon-724
+  .alert-content
+    p Social connections only support browser-based (passive) authentication because most social providers don't allow a username and password to be entered into applications that they don't own. Therefore, the user will be redirected to the provider's sign in page.

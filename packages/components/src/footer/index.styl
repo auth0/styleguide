@@ -9,7 +9,8 @@ footer.site-footer
   +breakpoint("desktop")
     padding-top: 40px;
 
-  a
+  .footer-bottom-right a
+  .footer-grid a
     color: darken($color-gray, 60%);
 
     &:active
@@ -88,7 +89,7 @@ footer.site-footer
       +breakpoint('desktop', 'max')
         position relative
         width 50%
-        
+
       .item
         a
           border: 0;
@@ -123,30 +124,6 @@ footer.site-footer
 
           +breakpoint("desktop")
             padding: 0;
-
-  .social
-    clearfix();
-    padding-top: 10px;
-    text-align: left;
-    min-height: 60px;
-    overflow: hidden;
-
-    > div
-      height: 20px;
-      margin-right: 6px;
-      margin-bottom: 6px;
-
-      +breakpoint("desktop")
-        float: left;
-
-    .twitter
-      width 197px
-        
-    .facebook
-      width 135px
-    
-    .linkendin
-      width: 120px
 
   .colophon
     clear: both;
@@ -191,3 +168,103 @@ footer.site-footer
     .colophon
       border-color $color-line-contrast
       color $color-text-contrast
+
+.a0s__like-buttons__link {
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  height: 20px;
+  overflow: hidden;
+  padding-left: 6px;
+  padding-right: 6px;
+  transition: background-color .2s ease;
+
+  &:focus,
+  &:active,
+  &:hover {
+    color: #fff;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+}
+
+.a0s__like-buttons__icon-container {
+  display: block;
+  float: left;
+}
+
+.a0s__like-buttons__icon {
+  height: 16px;
+  width: 16px;
+}
+
+.a0s__like-buttons__link--facebook {
+  $facebook = #4267b2;
+
+  background-color: $facebook;
+
+  & .a0s__like-buttons__icon-container {
+    padding-top: 2px;
+  }
+
+
+  &:focus,
+  &:hover {
+    background-color: darken($facebook, 15%);
+  }
+
+  &:active {
+    background-color: lighten($facebook, 5%);
+  }
+}
+
+.a0s__like-buttons__link--linkedin {
+  $linkedin = #0077b5;
+
+  background-color: $linkedin;
+
+  & .a0s__like-buttons__icon-container {
+    padding-top: 3px;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: darken($linkedin, 15%);
+  }
+
+  &:active {
+    background-color: lighten($linkedin, 5%);
+  }
+}
+
+.a0s__like-buttons__link--twitter {
+  $twitter = #00aced;
+
+  background-color: $twitter;
+
+  & .a0s__like-buttons__icon-container {
+    padding-top: 2px;
+  }
+
+
+  &:focus,
+  &:hover {
+    background-color: darken($twitter, 15%);
+  }
+
+  &:active {
+    background-color: lighten($twitter, 5%);
+  }
+}
+
+.a0s__like-buttons__action {
+  display: block;
+  float: left;
+  font-weight: 600;
+  padding-left: 4px;
+  padding-right: 4px;
+}

@@ -1,177 +1,207 @@
-/*==========  Footer  ==========*/
+/*
+ * === Footer ===
+ */
 
-footer.site-footer
+.sc-footer {
   clearfix();
+  background-color: white;
   font-size: $font-size-small;
   padding-top: 30px;
-  background-color: white;
 
-  +breakpoint("desktop")
+  +breakpoint("desktop") {
     padding-top: 40px;
+  }
 
-  .footer-bottom-right a
-  .footer-grid a
-    color: darken($color-gray, 60%);
+  .theme-dark & {
+    background-color: $bg-color-dark;
+    border-top: 0;
+  }
+}
 
-    &:active
-      text-decoration: underline
+/*
+ * — Logo —
+ */
 
-    &:hover
-      color: darken($color-gray, 40%);
+.sc-footer__logo {
+  margin-bottom: 15px;
+  text-align: center;
 
-  .logo
-    margin-bottom: 15px;
-    text-align: center;
-
-    img
-      width: 20px;
-
-    +breakpoint("desktop")
-      float: left;
-      width: 8%;
-      text-align: left;
-      padding-top: 10px;
-
-      img
-        width: 30px;
-
-  h6
-    color: darken($color-gray, 20%);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0;
-    padding: 10px 0;
-
-  .footer-grid
-    grid(1, 0, ".column")
-    text-align: left;
-
-    +breakpoint("desktop")
-      grid(7, 10px, ".column", "right" ,false)
-      float: left;
-      width: 92%;
-      margin-bottom: 25px;
-
-  .column
-    margin-bottom: 10px;
-
-    +breakpoint("desktop")
-      margin-bottom: 15px;
-
-    .item
-      margin-bottom: 4px;
-      a
-        border-bottom: 1px solid lighten($color-gray, 60%);
-        display: block;
-        padding: 10px 0;
-
-        +breakpoint("desktop")
-          padding: 0;
-          border: 0;
-          line-height: 1.8;
-
-  .contact
-    clearfix();
-    padding-top: 10px;
+  +breakpoint("desktop") {
     float: left;
-    width: 100%;
-    position: relative;
+    padding-top: 10px;
+    text-align: left;
+    width: 8%;
+  }
+}
 
-    +breakpoint("desktop")
-      border-bottom: 1px solid lighten($color-gray, 60%);
-      border: 0;
-      float: none;
-      width: auto;
-      padding-top: 0;
-      position: static;
+.sc-footer__logo-image {
+  width: 20px;
 
-    .column
-      +breakpoint('desktop', 'max')
-        position relative
-        width 50%
+  +breakpoint("desktop") {
+    width: 30px;
+  }
+}
 
-      .item
-        a
-          border: 0;
+/*
+ * — Grid —
+ */
 
-        &.item-phone-label
-          font-size: $font-size-small;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          opacity: .5;
-          padding-bottom: 5px;
-          margin-bottom: 0;
+.sc-footer__grid {
+  clearfix();
+  text-align: left;
 
-        &.item-text
-          opacity: 0.7;
+  +breakpoint("desktop") {
+    float: left;
+    margin-bottom: 25px;
+    width: 92%;
+  }
 
-    .no-heading
-      text-align: right;
-      padding-top: 37px;
-      position: absolute;
-      right: 0;
-      top: 18px;
+  grid(1, 0, ".sc-footer__column--grid");
 
-      +breakpoint("desktop")
-        position: static;
+  +breakpoint("desktop") {
+    grid(6, 10px, ".sc-footer__column--grid", "right", false);
+  }
+}
 
-      .item
-        font-size: $font-size-small;
+/*
+ * — Column —
+ */
 
-        a
-          padding: 0;
-          padding-bottom: 5px;
+.sc-footer__column {
+  margin-bottom: 10px;
 
-          +breakpoint("desktop")
-            padding: 0;
+  +breakpoint("desktop") {
+    margin-bottom: 15px;
+  }
+}
 
-  .colophon
-    clear: both;
+/*
+ * — Title —
+ */
 
-    +breakpoint("mobile-landscape")
-      grid(2, 0, ".column")
+.sc-footer__title {
+  color: darken($color-gray, 20%);
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding: 10px 0;
+  text-transform: uppercase;
 
-    +breakpoint("desktop")
-      border-top: 1px solid lighten($color-gray, 60%);
+  .theme-dark & {
+    color: $color-text-contrast;
+  }
+}
 
-    ul
-      +breakpoint("mobile-landscape")
-        margin-top: 15px;
+/*
+ * — Item —
+ */
 
-      +breakpoint("desktop")
-        margin-top: 5px;
+.sc-footer__item {
+  margin-bottom: 4px;
 
-    li
-      margin:  5px 0;
-      padding: 0 5px;
+  .theme-dark & {
+    color: $color-text-contrast;
+  }
+}
 
-      +breakpoint("desktop")
-        margin-left: 10px;
+.sc-footer__item--text {
+  opacity: 0.7;
+}
 
-  [class^='skype_pnh_container']
-    display: none !important;
-  [class^='skype_pnh_print_container']
-    display: inline !important;
+.sc-footer__item--small {
+  font-size: $font-size-small;
+}
 
-.theme-dark
-  .site-footer
-    background-color $bg-color-dark
-    border-top 0
+/*
+ * — Link —
+ */
 
-    h6
-      color $color-text-contrast
-    .item
-      color $color-text-contrast
-      a
-        color $color-text-contrast
-        border-color $color-line-contrast
-    .colophon
-      border-color $color-line-contrast
-      color $color-text-contrast
+.sc-footer__link {
+  color: darken($color-gray, 60%);
 
-.a0s__like-buttons__link {
+  .theme-dark & {
+    border-color: $color-line-contrast;
+    color: $color-text-contrast;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+
+  &:focus,
+  &:hover {
+    color: darken($color-gray, 40%) !important;
+  }
+}
+
+.sc-footer__link--featured {
+  border-bottom: 1px solid lighten($color-gray, 60%);
+  display: block;
+  padding: 10px 0;
+
+  +breakpoint("desktop") {
+    border: 0;
+    line-height: 1.8;
+    padding: 0;
+  }
+}
+
+/*
+ * — Contact —
+ */
+
+.sc-footer__column--contact {
+  clearfix();
+  padding-right: 10px;
+  padding-top: 10px;
+  float: left;
+  width: 100%;
+
+  +breakpoint("desktop") {
+    padding-top: 0;
+    width: 33.33333%;
+  }
+}
+
+.sc-footer__contact-column {
+  float: left;
+}
+
+.sc-footer__contact-column--address {
+  width: 45%;
+}
+
+.sc-footer__contact-column--phone {
+  padding-top: 25px;
+  text-align: right;
+  width: 55%;
+
+  +breakpoint("desktop") {
+    padding-top: 37px;
+  }
+}
+
+/*
+ * — Phone numbers —
+ */
+
+.sc-footer__phone {
+  clearfix();
+  display: block;
+  line-height: 1.8;
+  padding-bottom: 5px;
+
+  +breakpoint("desktop") {
+    padding-bottom: 0;
+  }
+}
+
+/*
+ * — Social buttons —
+ */
+
+.sc-footer__like-buttons__link {
   border-radius: 3px;
-  color: #fff;
+  color: #fff !important;
   display: inline-block;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 11px;
@@ -184,7 +214,7 @@ footer.site-footer
   &:focus,
   &:active,
   &:hover {
-    color: #fff;
+    color: #fff !important;
   }
 
   &:focus {
@@ -192,25 +222,24 @@ footer.site-footer
   }
 }
 
-.a0s__like-buttons__icon-container {
+.sc-footer__like-buttons__icon-container {
   display: block;
   float: left;
 }
 
-.a0s__like-buttons__icon {
+.sc-footer__like-buttons__icon {
   height: 16px;
   width: 16px;
 }
 
-.a0s__like-buttons__link--facebook {
+.sc-footer__like-buttons__link--facebook {
   $facebook = #4267b2;
 
   background-color: $facebook;
 
-  & .a0s__like-buttons__icon-container {
+  & .sc-footer__like-buttons__icon-container {
     padding-top: 2px;
   }
-
 
   &:focus,
   &:hover {
@@ -222,12 +251,12 @@ footer.site-footer
   }
 }
 
-.a0s__like-buttons__link--linkedin {
+.sc-footer__like-buttons__link--linkedin {
   $linkedin = #0077b5;
 
   background-color: $linkedin;
 
-  & .a0s__like-buttons__icon-container {
+  & .sc-footer__like-buttons__icon-container {
     padding-top: 3px;
   }
 
@@ -241,12 +270,12 @@ footer.site-footer
   }
 }
 
-.a0s__like-buttons__link--twitter {
+.sc-footer__like-buttons__link--twitter {
   $twitter = #00aced;
 
   background-color: $twitter;
 
-  & .a0s__like-buttons__icon-container {
+  & .sc-footer__like-buttons__icon-container {
     padding-top: 2px;
   }
 
@@ -261,10 +290,54 @@ footer.site-footer
   }
 }
 
-.a0s__like-buttons__action {
+.sc-footer__like-buttons__action {
   display: block;
   float: left;
   font-weight: 600;
   padding-left: 4px;
   padding-right: 4px;
+}
+
+.sc-footer__like-buttons__counter {
+  float: left;
+  display: block;
+}
+/*
+ * — Colophon —
+ */
+
+.sc-footer__colophon {
+  clear: both;
+
+  +breakpoint("mobile-landscape") {
+    grid(2, 0, ".sc-footer__column");
+  }
+
+  +breakpoint("desktop") {
+    border-top: 1px solid lighten($color-gray, 60%);
+  }
+
+  .theme-dark & {
+    border-color: $color-line-contrast;
+    color: $color-text-contrast;
+  }
+}
+
+.sc-footer__list {
+  +breakpoint("mobile-landscape") {
+    margin-top: 15px;
+  }
+
+  +breakpoint("desktop") {
+    margin-top: 5px;
+  }
+}
+
+.sc-footer__list-item {
+  margin: 5px 0;
+  padding: 0 5px;
+
+  +breakpoint("desktop") {
+    margin-left: 10px;
+  }
 }

@@ -9,16 +9,23 @@ if (!process.env.NODE_ENV) {
 }
 
 const DEBUG = process.env.NODE_ENV === 'development';
+// If `USE_PKGS_CDN` it's true it will use core, components and react-components from the CDN,
+// otherwsie it will use those packages from the repo.
+const USE_PKGS_CDN = process.env.USE_PKGS_CDN === 'true' || process.env.USE_PKGS_CDN === true;
 
 const config = {
   entry: [
     ...DEBUG ? [
       'react-hot-loader/patch',
-      'webpack-hot-middleware/client',
+      'webpack-hot-middleware/client'
+    ] : [],
+
+    ...USE_PKGS_CDN ? [] : [
       '@auth0/styleguide-core/src/main.styl',
       '@auth0/styleguide-components/src/main.styl',
       '@auth0/styleguide-react-components/src/index.styl'
-    ] : [],
+    ],
+
     path.join(__dirname, '../../src/client.js')
   ],
 
@@ -148,7 +155,7 @@ const config = {
     //
     new HtmlWebpackPlugin({
       title: 'Auth0 Styleguide',
-      template: DEBUG ? './tools/webpack/development-view.pug' : './src/views/index.pug',
+      template: USE_PKGS_CDN ? './src/views/index.pug' : './tools/webpack/development-view.pug',
       inject: 'body'
     })
   ],

@@ -21,7 +21,7 @@
     "npm": "^3.10.8"
   },
   "dependencies": {
-    "@auth0/styleguide-components": "^1.0.7",
+    "@auth0/styleguide-components": "^2.0.0",
     "@auth0/styleguide-core": "^2.0.0",
     "@auth0/styleguide-react-components": "^1.0.0",
     "babel-polyfill": "^6.16.0",

@@ -9,7 +9,7 @@ CSS components for Auth0 projects (based on Bootstrap components).
 Using our CDN is the prefered solution. Just add the following line in your project's HTML head and you are done.
 
 ```html
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.9/components.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/2.0.0/components.min.css" />
 ```
 
 ### NPM

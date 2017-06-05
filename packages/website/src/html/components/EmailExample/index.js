@@ -1,12 +1,12 @@
-import React, { PropTypes, Component } from 'react';
-import { Link } from 'react-router';
-import hljs from 'highlight.js';
-import './index.styl';
+import React, { PropTypes, Component } from "react";
+import { Link } from "react-router";
+import hljs from "highlight.js";
+import "./index.styl";
 
 class EmailExample extends Component {
   constructor() {
     super();
-    this.state = { activeSection: 'email' };
+    this.state = { activeSection: "email" };
 
     this.renderActions = this.renderActions.bind(this);
     this.renderSectionButton = this.renderSectionButton.bind(this);
@@ -15,21 +15,26 @@ class EmailExample extends Component {
 
   componentDidMount() {
     // Highlight code snippets
-    hljs.configure({ classPrefix: '' });
+    hljs.configure({ classPrefix: "" });
     hljs.initHighlighting.called = false;
     hljs.highlightBlock(this.mjmlCode);
     hljs.highlightBlock(this.htmlCode);
   }
 
   resizeIframe() {
-    this.iframe.style.height = `${this.iframe.contentWindow.document.body.scrollHeight}px`;
+    this.iframe.style.height = `${this.iframe.contentWindow.document.body
+      .scrollHeight}px`;
   }
 
   renderSectionButton(sectionID, sectionText) {
     return (
       <button
-        onClick={() => { this.setState({ activeSection: sectionID }); }}
-        className={`btn btn-link ${this.state.activeSection === sectionID ? 'active' : ''}`}
+        onClick={() => {
+          this.setState({ activeSection: sectionID });
+        }}
+        className={`btn btn-link ${this.state.activeSection === sectionID
+          ? "active"
+          : ""}`}
       >
         {sectionText}
       </button>
@@ -39,11 +44,15 @@ class EmailExample extends Component {
   renderActions() {
     return (
       <ul className="html-example-actions">
-        <li>{this.renderSectionButton('email', 'Email')}</li>
-        <li>{this.renderSectionButton('mjml', 'MJML')}</li>
-        <li>{this.renderSectionButton('html', 'HTML')}</li>
+        <li>{this.renderSectionButton("email", "Email")}</li>
+        <li>{this.renderSectionButton("mjml", "MJML")}</li>
+        <li>{this.renderSectionButton("html", "HTML")}</li>
         <li>
-          <Link to={`/email-templates/${this.props.id}/stage`} target="_blank" rel="noopener noreferrer">
+          <Link
+            to={`/email-templates/${this.props.id}/stage`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="btn btn-link open-in-stage-btn">
               Open in stage
               <i className="icon-budicon-519" />
@@ -63,25 +72,37 @@ class EmailExample extends Component {
       <section className="html-example email-component" id={id}>
         <h2>{title}</h2>
         <div dangerouslySetInnerHTML={{ __html: description }} />
-        { this.renderActions() }
+        {this.renderActions()}
         <div className="html-example-playground">
           <div
-            style={activeSection !== 'email' ? { display: 'none' } : {}}
+            style={activeSection !== "email" ? { display: "none" } : {}}
             className="example-component"
           >
             <iframe
-              className="email-iframe" srcDoc={html}
-              ref={e => (this.iframe = e)} onLoad={this.resizeIframe}
+              className="email-iframe"
+              srcDoc={html}
+              ref={e => (this.iframe = e)}
+              onLoad={this.resizeIframe}
             />
           </div>
-          <div style={activeSection !== 'mjml' ? { display: 'none' } : {}} className="example-mjml">
+          <div
+            style={activeSection !== "mjml" ? { display: "none" } : {}}
+            className="example-mjml"
+          >
             <pre>
-              <code ref={e => (this.mjmlCode = e)} className="mjml">{mjml}</code>
+              <code ref={e => (this.mjmlCode = e)} className="mjml">
+                {mjml}
+              </code>
             </pre>
           </div>
-          <div style={activeSection !== 'html' ? { display: 'none' } : {}} className="example-html">
+          <div
+            style={activeSection !== "html" ? { display: "none" } : {}}
+            className="example-html"
+          >
             <pre>
-              <code ref={e => (this.htmlCode = e)} className="html">{html}</code>
+              <code ref={e => (this.htmlCode = e)} className="html">
+                {html}
+              </code>
             </pre>
           </div>
         </div>

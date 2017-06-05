@@ -1,5 +1,5 @@
-import React, { Children, PropTypes } from 'react';
-import cx from 'classnames';
+import React, { Children, PropTypes } from "react";
+import cx from "classnames";
 
 /**
  * Sidebar: Styleguide sidebar with drop drown sections.
@@ -13,7 +13,7 @@ const Sidebar = ({ children, header, mobileNavOpen, toggleNavOnClick }) => {
   return (
     <div className="a0r-sidebar">
       <header className="a0r-sidebar-header">
-        {header || (
+        {header ||
           <h1 className="default-title">
             <a className="default-link" href="/">
               <img
@@ -22,11 +22,10 @@ const Sidebar = ({ children, header, mobileNavOpen, toggleNavOnClick }) => {
                 width="30"
               />
             </a>
-          </h1>
-        )}
+          </h1>}
         <button
           type="button"
-          className={cx('menu-toggle', { 'is-close': mobileNavOpen })}
+          className={cx("menu-toggle", { "is-close": mobileNavOpen })}
           onClick={toggleNavOnClick}
         >
           <span className="sr-only">Toggle navigation</span>
@@ -38,9 +37,11 @@ const Sidebar = ({ children, header, mobileNavOpen, toggleNavOnClick }) => {
       </header>
       <nav className="a0r-sidebar-menu">
         <ul
-          className={cx('menu-list', { 'is-opened': mobileNavOpen })}
+          className={cx("menu-list", { "is-opened": mobileNavOpen })}
           style={{ height: `${heightMenu}px` }}
-        >{children}</ul>
+        >
+          {children}
+        </ul>
       </nav>
     </div>
   );

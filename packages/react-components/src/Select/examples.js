@@ -1,24 +1,25 @@
 /* eslint-disable no-console */
 
-import React from 'react';
-import Select from './';
+import React from "react";
+import Select from "./";
 
 const examples = [
   {
     component: (
       <Select
         options={[
-          { label: 'Zoey Andrews', value: 'Zoey Andrews' },
-          { label: 'Jerry Woods', value: 'Jerry Woods' },
-          { label: 'Marion Garza', value: 'Marion Garza' }
+          { label: "Zoey Andrews", value: "Zoey Andrews" },
+          { label: "Jerry Woods", value: "Jerry Woods" },
+          { label: "Marion Garza", value: "Marion Garza" }
         ]}
         selected={2}
-        handleChange={(e) => { console.log(e.target.value); }}
+        handleChange={e => {
+          console.log(e.target.value);
+        }}
         label="Select user"
       />
     ),
-    code: (
-`<Select
+    code: `<Select
   options={[
       { label: 'Zoey Andrews', value: 'Zoey Andrews' },
       { label: 'Jerry Woods', value: 'Jerry Woods' },
@@ -27,12 +28,11 @@ const examples = [
   selected={2}
   handleChange={(e) => { console.log(e.target.value); }}
   label="Select user"
-/>`
-    ),
+/>`,
     center: true,
-    title: 'Default',
+    title: "Default",
     showTitle: false,
-    url: 'default'
+    url: "default"
   }
 ];
 

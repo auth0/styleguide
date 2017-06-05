@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/href-no-hash */
-import React from 'react';
-import EmptyState from './';
+import React from "react";
+import EmptyState from "./";
 
 // Showcase component differents usecases
 const examples = [
@@ -17,8 +17,7 @@ const examples = [
         </button>
       </EmptyState>
     ),
-    code: (
-`
+    code: `
 <EmptyState
   title="Roles"
   description="
@@ -30,11 +29,10 @@ const examples = [
   <button className="btn btn-success">
     <i className="icon icon-budicon-473" /> Create your first role
   </button>
-</EmptyState>`
-    ),
-    title: 'Default',
+</EmptyState>`,
+    title: "Default",
     showTitle: false,
-    url: 'default'
+    url: "default"
   }
 ];
 

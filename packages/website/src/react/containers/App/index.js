@@ -1,13 +1,13 @@
-import React from 'react';
-import { Match, Miss } from 'react-router';
-import { ComponentPage, Splash } from 'react/containers';
-import { NotFound } from 'containers';
-import { Sidebar } from 'react/components';
-import * as StyleguideComponents from '@auth0/styleguide-react-components';
-import * as StyleguideComponentsExamples from '@auth0/styleguide-react-components/lib/examples';
-import StyleguideComponentsDocs from '@auth0/styleguide-react-components/lib/docs.json';
-import { version } from '@auth0/styleguide-react-components/package.json';
-import './index.styl';
+import React from "react";
+import { Match, Miss } from "react-router";
+import { ComponentPage, Splash } from "react/containers";
+import { NotFound } from "containers";
+import { Sidebar } from "react/components";
+import * as StyleguideComponents from "@auth0/styleguide-react-components";
+import * as StyleguideComponentsExamples from "@auth0/styleguide-react-components/lib/examples";
+import StyleguideComponentsDocs from "@auth0/styleguide-react-components/lib/docs.json";
+import { version } from "@auth0/styleguide-react-components/package.json";
+import "./index.styl";
 
 const componentsCollection = generateComponentsCollection(StyleguideComponents);
 
@@ -15,12 +15,16 @@ const App = () =>
   <div className="auth0-react-styleguide">
     <Sidebar components={componentsCollection} />
     <main className="styleguide-content">
-      <Match pattern="/react" exactly render={() => <Splash version={version} />} />
+      <Match
+        pattern="/react"
+        exactly
+        render={() => <Splash version={version} />}
+      />
       {componentsCollection.map((component, index) =>
         <Match
           key={index}
           pattern={component.url}
-          render={() => (<ComponentPage {...component} />)}
+          render={() => <ComponentPage {...component} />}
         />
       )}
       <Miss component={NotFound} />
@@ -31,11 +35,11 @@ export default App;
 
 function generateComponentsCollection(listOfComponents) {
   return Object.keys(listOfComponents)
-    .map((component) => {
+    .map(component => {
       const doc = StyleguideComponentsDocs[component];
       const examples = StyleguideComponentsExamples[component];
       if (!doc || !examples) return null;
-      const [title, descriptionRaw] = doc.description.split(':');
+      const [title, descriptionRaw] = doc.description.split(":");
       const description = descriptionRaw.slice(1);
 
       return {
@@ -46,7 +50,7 @@ function generateComponentsCollection(listOfComponents) {
         props: doc.props,
         name: component,
         examples,
-        reactBootstrap: doc['react-bootstrap']
+        reactBootstrap: doc["react-bootstrap"]
       };
     })
     .filter(component => !!component);
@@ -57,7 +61,7 @@ function toURL(text) {
 }
 
 function toDashCase(text) {
-  const phase1 = text.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
-  const phase2 = phase1.replace(' ', '-');
+  const phase1 = text.replace(/([a-zA-Z])(?=[A-Z])/g, "$1-").toLowerCase();
+  const phase2 = phase1.replace(" ", "-");
   return phase2;
 }

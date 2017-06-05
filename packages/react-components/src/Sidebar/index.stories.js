@@ -1,34 +1,33 @@
-import React, { Component, PropTypes } from 'react';
-import { storiesOf } from '@kadira/storybook';
-import Sidebar from './';
-import { SidebarItem, SidebarSubitem } from '../';
+import React, { Component, PropTypes } from "react";
+import { storiesOf } from "@kadira/storybook";
+import Sidebar from "./";
+import { SidebarItem, SidebarSubitem } from "../";
 
 class SidebarState extends Component {
   static propTypes = {
     webtaskHeader: PropTypes.bool
-  }
+  };
 
   static defaultProps = {
     webtaskHeader: false
-  }
+  };
 
   state = {
     isOpen: false
-  }
+  };
 
   toggleSidebarNav = () => {
     this.setState(prevState => ({ isOpen: !prevState.isOpen }));
-  }
+  };
 
   render() {
-    const WebtaskHeader = () => (
+    const WebtaskHeader = () =>
       <img
         src="https://webtask.io/images/symbol.svg"
         height="40"
         alt="Webtask logo"
-        style={{ marginTop: '15px' }}
-      />
-    );
+        style={{ marginTop: "15px" }}
+      />;
     return (
       <Sidebar
         isOpen={this.state.isOpen}
@@ -63,10 +62,11 @@ class SidebarState extends Component {
   }
 }
 
-storiesOf('Sidebar', module)
-  .add('Sidebar with SidebarItem and SidebarSubitem childrens', () => (
+storiesOf("Sidebar", module)
+  .add("Sidebar with SidebarItem and SidebarSubitem childrens", () =>
     <SidebarState />
-  ))
-  .add('Sidebar with SidebarItem and SidebarSubitem childrens and header prop', () => (
-    <SidebarState webtaskHeader />
-  ));
+  )
+  .add(
+    "Sidebar with SidebarItem and SidebarSubitem childrens and header prop",
+    () => <SidebarState webtaskHeader />
+  );

@@ -1,9 +1,19 @@
 {
-  "extends": "auth0",
+  "extends": "auth0/prettier",
   "parser": "babel-eslint",
   "rules": {
-    "import/no-extraneous-dependencies": ["error", {
-       "devDependencies": ["gulpfile.js", "tools/**/*.js", "test/**/*.js", "src/**/*.test.js", "src/**/*.stories.js", "src/**/examples.js"]
-     }]
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "gulpfile.js",
+          "tools/**/*.js",
+          "test/**/*.js",
+          "src/**/*.test.js",
+          "src/**/*.stories.js",
+          "src/**/examples.js"
+        ]
+      }
+    ]
   }
 }

@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
-import cx from 'classnames';
-import './index.styl';
+import React, { PropTypes } from "react";
+import cx from "classnames";
+import "./index.styl";
 
 const PropertiesTable = ({ props }) => {
   let thereAreIsRequiredProp = false;
@@ -17,7 +17,7 @@ const PropertiesTable = ({ props }) => {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(props).map((prop) => {
+            {Object.keys(props).map(prop => {
               const requiredProp = props[prop].required;
               if (requiredProp) thereAreIsRequiredProp = true;
               return (
@@ -25,11 +25,14 @@ const PropertiesTable = ({ props }) => {
                   <td className={cx({ required: requiredProp })}>{prop}</td>
                   <td>
                     {props[prop].type.name}
-                    {props[prop].type.name === 'arrayOf' && ` ${props[prop].type.value.name}`}
+                    {props[prop].type.name === "arrayOf" &&
+                      ` ${props[prop].type.value.name}`}
                   </td>
                   <td>{props[prop].description}</td>
                   <td>
-                    {props[prop].defaultValue ? <code>{props[prop].defaultValue.value}</code> : '' }
+                    {props[prop].defaultValue
+                      ? <code>{props[prop].defaultValue.value}</code>
+                      : ""}
                   </td>
                 </tr>
               );
@@ -37,7 +40,8 @@ const PropertiesTable = ({ props }) => {
           </tbody>
         </table>
       </div>
-      {thereAreIsRequiredProp && <p className="required-message">Required property</p>}
+      {thereAreIsRequiredProp &&
+        <p className="required-message">Required property</p>}
     </div>
   );
 };

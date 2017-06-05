@@ -1,16 +1,14 @@
-import React from 'react';
-import Footer from './';
+import React from "react";
+import Footer from "./";
 
 const examples = [
   {
-    component: (
-      <Footer />
-    ),
-    code: '<Footer />',
+    component: <Footer />,
+    code: "<Footer />",
     center: false,
-    title: 'Default',
+    title: "Default",
     showTitle: false,
-    url: 'default'
+    url: "default"
   }
 ];
 

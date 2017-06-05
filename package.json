@@ -3,7 +3,8 @@
   "version": "5.0.0",
   "scripts": {
     "heroku-postbuild": "lerna bootstrap",
-    "start": "serve --port ${PORT:-3000} ./packages/website/build"
+    "start": "serve --port ${PORT:-3000} ./packages/website/build",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,16 @@
     "lerna": "2.0.0-beta.38"
   },
   "devDependencies": {
+    "husky": "^0.13.4",
+    "lint-staged": "^3.6.0",
+    "prettier": "^1.4.2",
     "serve": "^5.2.0"
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }

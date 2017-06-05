@@ -28,7 +28,7 @@
   "private": true,
   "lint-staged": {
     "*.js": [
-      "prettier --write",
+      "prettier --write --print-width 100 --single-quote",
       "git add"
     ]
   }

@@ -6,22 +6,15 @@ import React, { PropTypes } from 'react';
  */
 function TryBanner({ title, button, buttonAction, dark, className, ...rest }) {
   return (
-    <div
-      className={`a0r-try-banner ${className} ${dark ? 'a0r-try-banner--dark' : ''}`}
-      {...rest}
-    >
+    <div className={`a0r-try-banner ${className} ${dark ? 'a0r-try-banner--dark' : ''}`} {...rest}>
       <span className="a0r-try-banner__title">{title}</span>
-      {toString.call(buttonAction) === '[object String]' ?
-        <a
-          className="a0r-try-banner__button btn btn-success btn-lg"
-          href={buttonAction}
-        >{button}</a>
-      :
-        <button
-          className="a0r-try-banner__button btn btn-success btn-lg"
-          onClick={buttonAction}
-        >{button}</button>
-      }
+      {toString.call(buttonAction) === '[object String]'
+        ? <a className="a0r-try-banner__button btn btn-success btn-lg" href={buttonAction}>
+            {button}
+          </a>
+        : <button className="a0r-try-banner__button btn btn-success btn-lg" onClick={buttonAction}>
+            {button}
+          </button>}
     </div>
   );
 }
@@ -50,7 +43,7 @@ TryBanner.propTypes = {
 };
 
 TryBanner.defaultProps = {
-  title: 'Don\'t have an account yet?',
+  title: "Don't have an account yet?",
   button: 'Try Auth0 for Free',
   buttonAction: '#',
   dark: false,

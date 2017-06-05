@@ -79,7 +79,8 @@ const App = () =>
 
     <Match pattern="/components/:section/stage" exactly component={Stage} />
     <Match
-      pattern="/email-templates/:section/stage" exactly
+      pattern="/email-templates/:section/stage"
+      exactly
       render={props => <Stage isEmail {...props} />}
     />
   </div>;

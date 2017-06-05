@@ -6,7 +6,7 @@ const DEBUG = process.env.NODE_ENV !== 'production';
 
 module.exports = (config, env) => {
   const newConfig = genDefaultConfig(config, env);
-  newConfig.entry.preview.push(path.resolve(__dirname, '../src/index.styl'))
+  newConfig.entry.preview.push(path.resolve(__dirname, '../src/index.styl'));
   newConfig.module.loaders.push({
     test: /\.styl/,
     loaders: [
@@ -34,9 +34,7 @@ module.exports = (config, env) => {
   });
 
   newConfig.stylus = {
-    use: [
-      poststylus(['autoprefixer'])
-    ]
+    use: [poststylus(['autoprefixer'])]
   };
 
   return newConfig;

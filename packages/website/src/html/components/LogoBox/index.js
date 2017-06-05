@@ -6,7 +6,9 @@ const LogoBox = ({ title, children, logoClass, downloadLink }) =>
     <div className={`logo-branding ${logoClass}`}>
       <h5>{title}</h5>
       {children}
-      <a href={downloadLink} target="_blank" rel="noopener noreferrer">Download</a>
+      <a href={downloadLink} target="_blank" rel="noopener noreferrer">
+        Download
+      </a>
     </div>
   </div>;
 

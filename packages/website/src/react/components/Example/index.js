@@ -20,7 +20,7 @@ class Example extends Component {
     const { component, code, title, componentName, showTitle, center } = this.props;
     return (
       <div className="react-playground">
-        { (title && showTitle) && <h3 className="react-playground-title">{title}</h3> }
+        {title && showTitle && <h3 className="react-playground-title">{title}</h3>}
         <div className={`react-playground-component ${center ? 'center' : ''}`}>
           <div className="component-links">
             <CodepenPlayground componentName={componentName} exampleCode={code} />
@@ -29,10 +29,17 @@ class Example extends Component {
         </div>
         <div className="react-playground-code">
           <CopyToClipboard text={code.trim()}>
-            <button className="copy-code-btn btn btn-sm btn-success">Copy code</button>
+            <button className="copy-code-btn btn btn-sm btn-success">
+              Copy code
+            </button>
           </CopyToClipboard>
           <pre>
-            <code className="javascript" ref={(node) => { this.codeBlock = node; }}>
+            <code
+              className="javascript"
+              ref={node => {
+                this.codeBlock = node;
+              }}
+            >
               {code.trim()}
             </code>
           </pre>

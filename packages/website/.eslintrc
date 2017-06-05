@@ -1,5 +1,5 @@
 {
-  "extends": "auth0",
+  "extends": "auth0/prettier",
   "parser": "babel-eslint",
   "rules": {
     "react/jsx-filename-extension": "off",

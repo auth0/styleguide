@@ -11,7 +11,7 @@ getComponentsDirectories(srcPath)
     name: filePath,
     fileComponentPath: path.join(srcPath, filePath)
   }))
-  .forEach((item) => {
+  .forEach(item => {
     const name = item.name;
     const fileComponentPath = item.fileComponentPath;
     const componentInfo = getComponentDoc(fileComponentPath);
@@ -24,9 +24,9 @@ const content = JSON.stringify(finalJSON, null, 2);
 fs.writeFileSync(path.join(buildPath, 'docs.json'), content, 'utf8');
 
 function getComponentsDirectories(srcpath) {
-  return fs.readdirSync(srcpath).filter(file =>
-    fs.statSync(path.join(srcpath, file)).isDirectory()
-  );
+  return fs
+    .readdirSync(srcpath)
+    .filter(file => fs.statSync(path.join(srcpath, file)).isDirectory());
 }
 
 function getComponentDoc(componentPath) {

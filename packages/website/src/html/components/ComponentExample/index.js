@@ -23,7 +23,9 @@ class ComponentExample extends Component {
   renderSectionButton(sectionID, sectionText) {
     return (
       <button
-        onClick={() => { this.setState({ activeSection: sectionID }); }}
+        onClick={() => {
+          this.setState({ activeSection: sectionID });
+        }}
         className={`btn btn-link ${this.state.activeSection === sectionID ? 'active' : ''}`}
       >
         {sectionText}
@@ -61,7 +63,7 @@ class ComponentExample extends Component {
           className="html-example-description"
           dangerouslySetInnerHTML={{ __html: description }}
         />
-        { this.renderActions() }
+        {this.renderActions()}
         <div className="html-example-playground">
           <div
             style={activeSection !== 'component' ? { display: 'none' } : {}}
@@ -75,7 +77,9 @@ class ComponentExample extends Component {
           </div>
           <div style={activeSection !== 'html' ? { display: 'none' } : {}} className="example-html">
             <pre>
-              <code ref={e => (this.htmlCode = e)} className="html">{html}</code>
+              <code ref={e => (this.htmlCode = e)} className="html">
+                {html}
+              </code>
             </pre>
           </div>
         </div>

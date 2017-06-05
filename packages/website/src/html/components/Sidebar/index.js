@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { Sidebar as SidebarRC, SidebarItem, SidebarSubitem } from '@auth0/styleguide-react-components';
+import {
+  Sidebar as SidebarRC,
+  SidebarItem,
+  SidebarSubitem
+} from '@auth0/styleguide-react-components';
 import { Link } from 'react-router';
 import sidebarConfig from './sidebar-config.json';
 import componentsConfig from '../../containers/Components/components-config.json';
@@ -13,15 +17,15 @@ const completeSidebarConfig = config =>
     if (item.text === 'Components') {
       newItem.children = componentsConfig.map(i => ({
         text: i.title,
-        url: i.folder })
-      );
+        url: i.folder
+      }));
     }
 
     if (item.text === 'Email templates') {
       newItem.children = emailsConfig.map(i => ({
         text: i.title,
-        url: i.folder })
-      );
+        url: i.folder
+      }));
     }
 
     return acc.concat(newItem);
@@ -42,7 +46,7 @@ class Sidebar extends Component {
     });
   }
 
-  toggleState = (stateProp) => {
+  toggleState = stateProp => {
     // First close all.
     dinamicSidebarConfig.forEach((_, i) => {
       const nameState = `item-${i}`;
@@ -51,7 +55,7 @@ class Sidebar extends Component {
     });
     // Then toggle the Item.
     this.setState(prevState => ({ [stateProp]: !prevState[stateProp] }));
-  }
+  };
 
   render() {
     /* eslint-disable jsx-a11y/anchor-has-content, jsx-a11y/no-static-element-interactions */
@@ -86,17 +90,19 @@ class Sidebar extends Component {
               arrow={fatherItem.arrow}
               key={`father-item-${i}`}
             >
-              {fatherItem.children && fatherItem.children.map((childItem, j) => {
-                const subItemURL = `${toURL(fatherItem.text)}/${(childItem.url || toDashCase(childItem.text))}`;
+              {fatherItem.children &&
+                fatherItem.children.map((childItem, j) => {
+                  const subItemURL = `${toURL(fatherItem.text)}/${childItem.url ||
+                    toDashCase(childItem.text)}`;
 
-                return (
-                  <SidebarSubitem
-                    text={childItem.text}
-                    wrapper={<Link to={subItemURL} />}
-                    key={`children-item-${j}`}
-                  />
-                );
-              })}
+                  return (
+                    <SidebarSubitem
+                      text={childItem.text}
+                      wrapper={<Link to={subItemURL} />}
+                      key={`children-item-${j}`}
+                    />
+                  );
+                })}
             </SidebarItem>
           );
         })}

@@ -15,10 +15,12 @@ const url = `http://localhost:${port}/`;
 
 const compiler = webpack(config);
 
-app.use(devMiddleware(compiler, {
-  publicPath: config.output.publicPath,
-  stats: config.stats
-}));
+app.use(
+  devMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+    stats: config.stats
+  })
+);
 
 app.use(hotMiddleware(compiler));
 
@@ -29,10 +31,7 @@ app.use('*', (req, res, next) => {
   compiler.outputFileSystem.readFile(filename, (err, result) => {
     if (err) return next(err);
 
-    return res
-      .set('content-type', 'text/html')
-      .send(result)
-      .end();
+    return res.set('content-type', 'text/html').send(result).end();
   });
 });
 

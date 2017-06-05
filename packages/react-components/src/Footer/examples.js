@@ -3,9 +3,7 @@ import Footer from './';
 
 const examples = [
   {
-    component: (
-      <Footer />
-    ),
+    component: <Footer />,
     code: '<Footer />',
     center: false,
     title: 'Default',

@@ -16,16 +16,15 @@ const editorJSFiles = [
 
 const htmlTemplate = '<div id="app" />';
 
-const jsTemplate = (name, code) => (
-`const ${name} = auth0StyleguideReactComponents.${name};
+const jsTemplate = (name, code) =>
+  `const ${name} = auth0StyleguideReactComponents.${name};
 
 const App = () => ${code};
 
 ReactDOM.render(
   <App />,
   document.getElementById('app')
-)`
-);
+)`;
 
 const codepenConfig = (name, code) => ({
   title: `Auth0 React Components - ${name}`,
@@ -41,7 +40,8 @@ const codepenConfig = (name, code) => ({
 const CodepenPlayground = ({ componentName, exampleCode }) =>
   <form action="http://codepen.io/pen/define" method="POST" target="_blank">
     <input
-      type="hidden" name="data"
+      type="hidden"
+      name="data"
       value={JSON.stringify(codepenConfig(componentName, exampleCode))}
     />
     <input className="open-in-codepen-btn btn btn-link" type="submit" value="Open in Codepen" />

@@ -20,7 +20,7 @@ const App = () =>
         <Match
           key={index}
           pattern={component.url}
-          render={() => (<ComponentPage {...component} />)}
+          render={() => <ComponentPage {...component} />}
         />
       )}
       <Miss component={NotFound} />
@@ -31,7 +31,7 @@ export default App;
 
 function generateComponentsCollection(listOfComponents) {
   return Object.keys(listOfComponents)
-    .map((component) => {
+    .map(component => {
       const doc = StyleguideComponentsDocs[component];
       const examples = StyleguideComponentsExamples[component];
       if (!doc || !examples) return null;

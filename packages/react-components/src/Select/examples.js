@@ -13,12 +13,13 @@ const examples = [
           { label: 'Marion Garza', value: 'Marion Garza' }
         ]}
         selected={2}
-        handleChange={(e) => { console.log(e.target.value); }}
+        handleChange={e => {
+          console.log(e.target.value);
+        }}
         label="Select user"
       />
     ),
-    code: (
-`<Select
+    code: `<Select
   options={[
       { label: 'Zoey Andrews', value: 'Zoey Andrews' },
       { label: 'Jerry Woods', value: 'Jerry Woods' },
@@ -27,8 +28,7 @@ const examples = [
   selected={2}
   handleChange={(e) => { console.log(e.target.value); }}
   label="Select user"
-/>`
-    ),
+/>`,
     center: true,
     title: 'Default',
     showTitle: false,

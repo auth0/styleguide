@@ -50,13 +50,17 @@ const renderTypography = () =>
             <td rowSpan="2" className="rowspan opacity-70">
               Default light bg:<br />Auth0 Grey, #e3e5e7
             </td>
-            <td className="big opacity-70 variable">$color-text-contrast-light</td>
+            <td className="big opacity-70 variable">
+              $color-text-contrast-light
+            </td>
             <td className="big opacity-70 name">Secondary</td>
             <td className="big opacity-70 color">#ffffff</td>
             <td className="big opacity-70 opacity">70%</td>
           </tr>
           <tr>
-            <td className="big opacity-30 variable">$color-text-contrast-lighter</td>
+            <td className="big opacity-30 variable">
+              $color-text-contrast-lighter
+            </td>
             <td className="big opacity-30 name">Disabled</td>
             <td className="big opacity-30 color">#ffffff</td>
             <td className="big opacity-30 opacity">30%</td>
@@ -66,11 +70,21 @@ const renderTypography = () =>
     </div>
     <hr />
     <h3>Text utilities</h3>
-    <p className="text-left"> <code>.text-left</code> Einstein&apos;s Letter to Freud</p>
-    <p className="text-center"> <code>.text-center</code> Einstein&apos;s Letter to Freud</p>
-    <p className="text-right"> <code>.text-right</code> Einstein&apos;s Letter to Freud</p>
-    <p className="text-justify"> <code>.text-justify</code> Einstein&apos;s Letter to Freud</p>
-    <p className="text-nowrap"> <code>.text-nowrap</code> Einstein&apos;s Letter to Freud</p>
+    <p className="text-left">
+      {' '}<code>.text-left</code> Einstein&apos;s Letter to Freud
+    </p>
+    <p className="text-center">
+      {' '}<code>.text-center</code> Einstein&apos;s Letter to Freud
+    </p>
+    <p className="text-right">
+      {' '}<code>.text-right</code> Einstein&apos;s Letter to Freud
+    </p>
+    <p className="text-justify">
+      {' '}<code>.text-justify</code> Einstein&apos;s Letter to Freud
+    </p>
+    <p className="text-nowrap">
+      {' '}<code>.text-nowrap</code> Einstein&apos;s Letter to Freud
+    </p>
     <p>
       <code>.text-lowercase</code>
       <span className="text-lowercase"> Einstein&apos;s Letter to Freud</span>
@@ -128,7 +142,10 @@ const renderBackgroundColors = () =>
 const renderStatusColors = () =>
   <section>
     <h2 id="status-colors">Status colors</h2>
-    <p>These colors are used in every alert message: info, error, success and warning.</p>
+    <p>
+      These colors are used in every alert message: info, error, success and
+      warning.
+    </p>
     <div className="row">
       <ColorBox variable="$bg-color-success" color="#7ed321" />
       <ColorBox variable="$bg-color-error" color="#ff3e00" />
@@ -144,14 +161,16 @@ const Design = () =>
         <img src="https://cdn.auth0.com/website/styleguide/design-icon.svg" alt="Design" />
       </h2>
       <h1>Design</h1>
-      <p>“The only important thing about design is how it relates to people.”</p>
+      <p>
+        “The only important thing about design is how it relates to people.”
+      </p>
     </section>
     <section className="section-content">
-      { renderTypography() }
-      { renderPrimaryColors() }
-      { renderSecondaryColors() }
-      { renderBackgroundColors() }
-      { renderStatusColors() }
+      {renderTypography()}
+      {renderPrimaryColors()}
+      {renderSecondaryColors()}
+      {renderBackgroundColors()}
+      {renderStatusColors()}
     </section>
   </div>;
 

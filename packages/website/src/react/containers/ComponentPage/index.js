@@ -8,11 +8,19 @@ const ComponentPage = ({ title, name, description, props, url, examples, reactBo
       <h1 className="component-title">{title}</h1>
       <p className="component-description">{description}</p>
     </div>
-    {reactBootstrap && (
+    {reactBootstrap &&
       <div>
-        <p>This component is from <a href="https://react-bootstrap.github.io/">React-Bootstrap</a>, find more info about this component <a href={reactBootstrap}>here</a>. License: <a href="https://github.com/react-bootstrap/react-bootstrap/blob/master/LICENSE">MIT</a>.</p>
-      </div>
-    )}
+        <p>
+          This component is from
+          {' '}<a href="https://react-bootstrap.github.io/">React-Bootstrap</a>,
+          find more info about this component <a href={reactBootstrap}>here</a>.
+          License:
+          {' '}
+          <a href="https://github.com/react-bootstrap/react-bootstrap/blob/master/LICENSE">
+            MIT
+          </a>.
+        </p>
+      </div>}
     {examples.map((example, index) =>
       <Example
         key={index}
@@ -26,7 +34,7 @@ const ComponentPage = ({ title, name, description, props, url, examples, reactBo
         center={example.center}
       />
     )}
-    { props && <PropertiesTable props={props} />}
+    {props && <PropertiesTable props={props} />}
   </section>;
 
 ComponentPage.propTypes = {

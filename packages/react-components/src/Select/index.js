@@ -5,15 +5,17 @@ import React, { PropTypes } from 'react';
  */
 const Select = ({ options, selected, label, color, handleChange }) =>
   <div className="a0r-select">
-    { label && <span>{label}</span> }
-    <span className="a0r-value text-truncate" style={{ color }}>{options[selected].label}</span>
+    {label && <span>{label}</span>}
+    <span className="a0r-value text-truncate" style={{ color }}>
+      {options[selected].label}
+    </span>
     <i className="icon-budicon-460" />
     <select
       // Pass event and selected option object to onChange handler
       onChange={e => handleChange(e, options.filter(opt => opt.value === e.target.value)[0])}
       value={options[selected].value}
     >
-      { options.map((opt, index) => <option key={index} value={opt.value}>{opt.label}</option>) }
+      {options.map((opt, index) => <option key={index} value={opt.value}>{opt.label}</option>)}
     </select>
   </div>;
 

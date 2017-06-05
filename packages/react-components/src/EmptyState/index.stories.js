@@ -3,23 +3,19 @@ import { storiesOf } from '@kadira/storybook';
 import { EmptyState } from '../../src';
 
 storiesOf('EmptyState', module)
-  .add('default', () => (
+  .add('default', () =>
     <EmptyState
       title="Roles"
-      description={
-        `Create and manage Roles (collection of permissions)
-        for your applications which can then be added to groups.`
-      }
+      description={`Create and manage Roles (collection of permissions)
+        for your applications which can then be added to groups.`}
       iconCode="300"
     />
-  ))
-  .add('with children', () => (
+  )
+  .add('with children', () =>
     <EmptyState
       title="Roles"
-      description={
-        `Create and manage Roles (collection of permissions)
-        for your applications which can then be added to groups.`
-      }
+      description={`Create and manage Roles (collection of permissions)
+        for your applications which can then be added to groups.`}
       iconCode="291"
     >
       <button href="#" className="btn btn-transparent"> Read more </button>
@@ -27,4 +23,4 @@ storiesOf('EmptyState', module)
         <i className="icon icon-budicon-473" /> Create your first role
       </button>
     </EmptyState>
-  ));
+  );

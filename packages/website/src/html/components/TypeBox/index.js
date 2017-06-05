@@ -3,11 +3,12 @@ import React, { PropTypes } from 'react';
 const TypeBox = ({ themeDark }) =>
   <div className={`column ${themeDark ? 'theme-dark' : ''}`}>
     <div className="type-box">
-      { themeDark ? (
-        <h5>Theme Dark: add the class <code>.theme-dark</code> to the parent container.</h5>
-      ) : (
-        <h5>Theme Light</h5>
-      )}
+      {themeDark
+        ? <h5>
+            Theme Dark: add the class <code>.theme-dark</code> to the parent
+            container.
+          </h5>
+        : <h5>Theme Light</h5>}
       <h1>Headline 1</h1>
       <h2>Headline 2</h2>
       <h3>Headline 3</h3>

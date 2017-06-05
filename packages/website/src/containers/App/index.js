@@ -3,12 +3,12 @@ import { HashRouter, Match } from 'react-router';
 import { App as HtmlStyleguide } from 'html/containers';
 import { App as ReactStyleguide } from 'react/containers';
 
-const App = () => (
+const App = () =>
   <HashRouter>
     <div>
       {
-      // Render ReactStyleguide for routes that starts with '/react',
-      // for everything else render HtmlStyleguide.
+        // Render ReactStyleguide for routes that starts with '/react',
+        // for everything else render HtmlStyleguide.
       }
       <Match
         pattern="/"
@@ -18,7 +18,6 @@ const App = () => (
         }}
       />
     </div>
-  </HashRouter>
-);
+  </HashRouter>;
 
 export default App;

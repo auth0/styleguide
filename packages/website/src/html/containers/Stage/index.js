@@ -4,11 +4,10 @@ class Stage extends Component {
   constructor(props) {
     super();
 
-    this.html = props.isEmail ? (
-      require(`!raw-loader!@auth0/styleguide-components/build/emails/${props.params.section}/demo.html`) // eslint-disable-line
-    ) : (
-      require(`@auth0/styleguide-components/src/${props.params.section}/demo.pug`)() // eslint-disable-line
-    );
+    this.html = props.isEmail
+      ? require(`!raw-loader!@auth0/styleguide-components/build/emails/${props.params
+          .section}/demo.html`) // eslint-disable-line
+      : require(`@auth0/styleguide-components/src/${props.params.section}/demo.pug`)(); // eslint-disable-line
   }
   render() {
     return (

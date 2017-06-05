@@ -5,7 +5,7 @@ import { Select } from '../../src';
 
 storiesOf('Select', module)
   .addDecorator(centered)
-  .add('with text', () => (
+  .add('with text', () =>
     <Select
       options={[
         { label: 'Zoey Andrews', value: 'Zoey Andrews' },
@@ -16,4 +16,4 @@ storiesOf('Select', module)
       handleChange={(e, opt) => action('selected changed')(e.target.value, opt)}
       label="Select user"
     />
-  ));
+  );

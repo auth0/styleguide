@@ -17,7 +17,7 @@ const PropertiesTable = ({ props }) => {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(props).map((prop) => {
+            {Object.keys(props).map(prop => {
               const requiredProp = props[prop].required;
               if (requiredProp) thereAreIsRequiredProp = true;
               return (
@@ -29,7 +29,7 @@ const PropertiesTable = ({ props }) => {
                   </td>
                   <td>{props[prop].description}</td>
                   <td>
-                    {props[prop].defaultValue ? <code>{props[prop].defaultValue.value}</code> : '' }
+                    {props[prop].defaultValue ? <code>{props[prop].defaultValue.value}</code> : ''}
                   </td>
                 </tr>
               );

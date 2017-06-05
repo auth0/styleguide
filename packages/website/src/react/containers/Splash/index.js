@@ -18,7 +18,7 @@ ReactDOM.render(
 );`;
 
 const installationStylesheet = () =>
-`<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/1.0.2/react-components.css" />
+  `<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/1.0.2/react-components.css" />
 <!-- It has two CSS peer dependencies, the core & components CSS bundles -->
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.5/core.min.css" />
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/2.0.0/components.min.css" />`;
@@ -27,7 +27,7 @@ class Splash extends React.Component {
   componentDidMount() {
     this.codeExamples = [].slice.call(document.querySelectorAll('.splash-page code'));
     hljs.configure({ classPrefix: '' });
-    this.codeExamples.forEach((block) => {
+    this.codeExamples.forEach(block => {
       hljs.highlightBlock(block);
     });
   }
@@ -35,7 +35,7 @@ class Splash extends React.Component {
   componentDidUpdate() {
     hljs.configure({ classPrefix: '' });
     hljs.initHighlighting.called = false;
-    this.codeExamples.forEach((block) => {
+    this.codeExamples.forEach(block => {
       hljs.highlightBlock(block);
     });
   }
@@ -59,7 +59,9 @@ class Splash extends React.Component {
             <p>Stylesheets:</p>
             <div className="example-box">
               <pre>
-                <code className="html">{installationStylesheet(this.props.version)}</code>
+                <code className="html">
+                  {installationStylesheet(this.props.version)}
+                </code>
               </pre>
             </div>
           </div>

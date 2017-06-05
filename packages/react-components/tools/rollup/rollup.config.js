@@ -12,14 +12,12 @@ const mode = prod ? 'production' : 'development';
 
 console.log(`Creating ${mode} bundle...`);
 
-const targets = prod ?
-[
-  { dest: 'build/react-components.min.js', format: 'umd' }
-] :
-[
-  { dest: 'build/react-components.js', format: 'umd' },
-  { dest: 'build/react-components.es.js', format: 'es' }
-];
+const targets = prod
+  ? [{ dest: 'build/react-components.min.js', format: 'umd' }]
+  : [
+      { dest: 'build/react-components.js', format: 'umd' },
+      { dest: 'build/react-components.es.js', format: 'es' }
+    ];
 
 const plugins = [
   nodeResolve(),
@@ -31,11 +29,7 @@ const plugins = [
   }),
   babel({
     babelrc: false,
-    presets: [
-      ['es2015', { modules: false }],
-      'stage-0',
-      'react'
-    ],
+    presets: [['es2015', { modules: false }], 'stage-0', 'react'],
     plugins: ['external-helpers']
   }),
   json()

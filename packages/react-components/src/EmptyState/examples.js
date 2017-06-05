@@ -17,8 +17,7 @@ const examples = [
         </button>
       </EmptyState>
     ),
-    code: (
-`
+    code: `
 <EmptyState
   title="Roles"
   description="
@@ -30,8 +29,7 @@ const examples = [
   <button className="btn btn-success">
     <i className="icon icon-budicon-473" /> Create your first role
   </button>
-</EmptyState>`
-    ),
+</EmptyState>`,
     title: 'Default',
     showTitle: false,
     url: 'default'

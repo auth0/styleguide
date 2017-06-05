@@ -1,11 +1,10 @@
 import React, { PropTypes, cloneElement } from 'react';
 
 const SidebarSubitem = ({ text, wrapper }) => {
-  const WrapperSubitemChildren = () => (
+  const WrapperSubitemChildren = () =>
     <span className="menu-subitem-link">
       <span className="text">{text}</span>
-    </span>
-  );
+    </span>;
 
   return (
     <li className="a0r-sidebar-menu-subitem">

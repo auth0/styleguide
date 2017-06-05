@@ -19,7 +19,7 @@
     "lerna": "2.0.0-beta.38"
   },
   "devDependencies": {
-    "serve": "^1.4.0"
+    "serve": "^5.2.0"
   },
   "private": true
 }

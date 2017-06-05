@@ -1,13 +1,13 @@
-import React from "react";
-import TryBanner from "./";
+import React from 'react';
+import TryBanner from './';
 
 const examples = [
   {
     component: <TryBanner />,
-    code: "<TryBanner />",
-    title: "Default",
+    code: '<TryBanner />',
+    title: 'Default',
     showTitle: false,
-    url: "default"
+    url: 'default'
   }
 ];
 

@@ -1,5 +1,5 @@
-import React, { PropTypes } from "react";
-import "./index.styl";
+import React, { PropTypes } from 'react';
+import './index.styl';
 
 const LogoBox = ({ title, children, logoClass, downloadLink }) =>
   <div className="col-xs-12 col-md-6">

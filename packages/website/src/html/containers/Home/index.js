@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import charming from "charming";
-import "./index.styl";
+import React, { Component } from 'react';
+import charming from 'charming';
+import './index.styl';
 
 class Home extends Component {
   componentDidMount() {
-    document.querySelectorAll(".lettering-js").forEach(e => charming(e));
+    document.querySelectorAll('.lettering-js').forEach(e => charming(e));
   }
   render() {
     return (
@@ -34,13 +34,7 @@ class Home extends Component {
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
-                <g
-                  id="Page-1"
-                  stroke="none"
-                  strokeWidth="1"
-                  fill="none"
-                  fillRule="evenodd"
-                >
+                <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                   <g
                     id="GitHub-Mark"
                     transform="translate(-290.000000, -282.000000)"

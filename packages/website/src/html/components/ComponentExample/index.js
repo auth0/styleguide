@@ -1,12 +1,12 @@
-import React, { PropTypes, Component } from "react";
-import { Link } from "react-router";
-import hljs from "highlight.js";
-import "./index.styl";
+import React, { PropTypes, Component } from 'react';
+import { Link } from 'react-router';
+import hljs from 'highlight.js';
+import './index.styl';
 
 class ComponentExample extends Component {
   constructor() {
     super();
-    this.state = { activeSection: "component" };
+    this.state = { activeSection: 'component' };
 
     this.renderActions = this.renderActions.bind(this);
     this.renderSectionButton = this.renderSectionButton.bind(this);
@@ -14,7 +14,7 @@ class ComponentExample extends Component {
 
   componentDidMount() {
     // Highlight code snippets
-    hljs.configure({ classPrefix: "" });
+    hljs.configure({ classPrefix: '' });
     hljs.initHighlighting.called = false;
     hljs.highlightBlock(this.pugCode);
     hljs.highlightBlock(this.htmlCode);
@@ -26,9 +26,7 @@ class ComponentExample extends Component {
         onClick={() => {
           this.setState({ activeSection: sectionID });
         }}
-        className={`btn btn-link ${this.state.activeSection === sectionID
-          ? "active"
-          : ""}`}
+        className={`btn btn-link ${this.state.activeSection === sectionID ? 'active' : ''}`}
       >
         {sectionText}
       </button>
@@ -38,15 +36,11 @@ class ComponentExample extends Component {
   renderActions() {
     return (
       <ul className="html-example-actions">
-        <li>{this.renderSectionButton("component", "Component")}</li>
-        <li>{this.renderSectionButton("pug", "Pug")}</li>
-        <li>{this.renderSectionButton("html", "HTML")}</li>
+        <li>{this.renderSectionButton('component', 'Component')}</li>
+        <li>{this.renderSectionButton('pug', 'Pug')}</li>
+        <li>{this.renderSectionButton('html', 'HTML')}</li>
         <li>
-          <Link
-            to={`/components/${this.props.id}/stage`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link to={`/components/${this.props.id}/stage`} target="_blank" rel="noopener noreferrer">
             <button className="btn btn-link open-in-stage-btn">
               Open in stage
               <i className="icon-budicon-519" />
@@ -72,22 +66,16 @@ class ComponentExample extends Component {
         {this.renderActions()}
         <div className="html-example-playground">
           <div
-            style={activeSection !== "component" ? { display: "none" } : {}}
+            style={activeSection !== 'component' ? { display: 'none' } : {}}
             className="example-component"
             dangerouslySetInnerHTML={{ __html: html }}
           />
-          <div
-            style={activeSection !== "pug" ? { display: "none" } : {}}
-            className="example-pug"
-          >
+          <div style={activeSection !== 'pug' ? { display: 'none' } : {}} className="example-pug">
             <pre>
               <code ref={e => (this.pugCode = e)} className="pug">{pug}</code>
             </pre>
           </div>
-          <div
-            style={activeSection !== "html" ? { display: "none" } : {}}
-            className="example-html"
-          >
+          <div style={activeSection !== 'html' ? { display: 'none' } : {}} className="example-html">
             <pre>
               <code ref={e => (this.htmlCode = e)} className="html">
                 {html}

@@ -1,9 +1,9 @@
-import React from "react";
-import { storiesOf } from "@kadira/storybook";
-import { EmptyState } from "../../src";
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
+import { EmptyState } from '../../src';
 
-storiesOf("EmptyState", module)
-  .add("default", () =>
+storiesOf('EmptyState', module)
+  .add('default', () =>
     <EmptyState
       title="Roles"
       description={`Create and manage Roles (collection of permissions)
@@ -11,7 +11,7 @@ storiesOf("EmptyState", module)
       iconCode="300"
     />
   )
-  .add("with children", () =>
+  .add('with children', () =>
     <EmptyState
       title="Roles"
       description={`Create and manage Roles (collection of permissions)

@@ -1,18 +1,10 @@
-import React from "react";
-import { Match, Miss } from "react-router";
-import {
-  Home,
-  GettingStarted,
-  Design,
-  Components,
-  Stage,
-  Email,
-  Resources
-} from "html/containers";
-import { Sidebar } from "html/components";
-import { NotFound } from "containers";
-import jump from "jump.js";
-import "./index.styl";
+import React from 'react';
+import { Match, Miss } from 'react-router';
+import { Home, GettingStarted, Design, Components, Stage, Email, Resources } from 'html/containers';
+import { Sidebar } from 'html/components';
+import { NotFound } from 'containers';
+import jump from 'jump.js';
+import './index.styl';
 
 const ScrollToSection = ({ params }) => {
   scrollTo(params.section);
@@ -21,7 +13,7 @@ const ScrollToSection = ({ params }) => {
 };
 
 const ScrollToTop = () => {
-  scrollTo("app");
+  scrollTo('app');
 
   return null;
 };
@@ -40,7 +32,7 @@ const App = () =>
     <Match
       pattern="/"
       render={({ location }) => {
-        if (location.pathname.endsWith("/stage")) return null;
+        if (location.pathname.endsWith('/stage')) return null;
 
         return <Sidebar />;
       }}
@@ -61,22 +53,18 @@ const App = () =>
         pattern="/components"
         render={({ location }) => {
           // Don't render Components when matchs "/components/:section/stage".
-          if (location.pathname.endsWith("/stage")) return null;
+          if (location.pathname.endsWith('/stage')) return null;
           return <Components />;
         }}
       />
-      <Match
-        pattern="/components/:section"
-        exactly
-        component={ScrollToSection}
-      />
+      <Match pattern="/components/:section" exactly component={ScrollToSection} />
 
       <Match pattern="/email-templates" exactly component={ScrollToTop} />
       <Match
         pattern="/email-templates"
         render={({ location }) => {
           // Don't render Emails when matchs "/components/:section/stage".
-          if (location.pathname.endsWith("/stage")) return null;
+          if (location.pathname.endsWith('/stage')) return null;
           return <Email />;
         }}
       />

@@ -1,5 +1,5 @@
-import React, { PropTypes } from "react";
-import "./index.styl";
+import React, { PropTypes } from 'react';
+import './index.styl';
 
 const Icon = ({ cssClass, name }) =>
   <div className="icon-showcase">

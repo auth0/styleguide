@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React, { PropTypes } from 'react';
 
 const Badge = ({ title, name }) =>
   <div className="circle-logo" data-name={name}>

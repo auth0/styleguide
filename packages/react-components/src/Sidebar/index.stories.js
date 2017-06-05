@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from "react";
-import { storiesOf } from "@kadira/storybook";
-import Sidebar from "./";
-import { SidebarItem, SidebarSubitem } from "../";
+import React, { Component, PropTypes } from 'react';
+import { storiesOf } from '@kadira/storybook';
+import Sidebar from './';
+import { SidebarItem, SidebarSubitem } from '../';
 
 class SidebarState extends Component {
   static propTypes = {
@@ -26,7 +26,7 @@ class SidebarState extends Component {
         src="https://webtask.io/images/symbol.svg"
         height="40"
         alt="Webtask logo"
-        style={{ marginTop: "15px" }}
+        style={{ marginTop: '15px' }}
       />;
     return (
       <Sidebar
@@ -62,11 +62,8 @@ class SidebarState extends Component {
   }
 }
 
-storiesOf("Sidebar", module)
-  .add("Sidebar with SidebarItem and SidebarSubitem childrens", () =>
-    <SidebarState />
-  )
-  .add(
-    "Sidebar with SidebarItem and SidebarSubitem childrens and header prop",
-    () => <SidebarState webtaskHeader />
+storiesOf('Sidebar', module)
+  .add('Sidebar with SidebarItem and SidebarSubitem childrens', () => <SidebarState />)
+  .add('Sidebar with SidebarItem and SidebarSubitem childrens and header prop', () =>
+    <SidebarState webtaskHeader />
   );

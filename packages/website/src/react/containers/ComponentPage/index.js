@@ -1,16 +1,8 @@
-import React, { PropTypes } from "react";
-import { Example, PropertiesTable } from "react/components";
-import "./index.styl";
+import React, { PropTypes } from 'react';
+import { Example, PropertiesTable } from 'react/components';
+import './index.styl';
 
-const ComponentPage = ({
-  title,
-  name,
-  description,
-  props,
-  url,
-  examples,
-  reactBootstrap
-}) =>
+const ComponentPage = ({ title, name, description, props, url, examples, reactBootstrap }) =>
   <section className="react-component-page">
     <div className="component-information">
       <h1 className="component-title">{title}</h1>
@@ -20,10 +12,10 @@ const ComponentPage = ({
       <div>
         <p>
           This component is from
-          {" "}<a href="https://react-bootstrap.github.io/">React-Bootstrap</a>,
+          {' '}<a href="https://react-bootstrap.github.io/">React-Bootstrap</a>,
           find more info about this component <a href={reactBootstrap}>here</a>.
           License:
-          {" "}
+          {' '}
           <a href="https://github.com/react-bootstrap/react-bootstrap/blob/master/LICENSE">
             MIT
           </a>.

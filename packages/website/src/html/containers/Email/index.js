@@ -1,8 +1,8 @@
-import React from "react";
-import { upperFirst, camelCase } from "lodash";
-import { EmailExample } from "../../components";
-import * as EmailsFiles from "./emails";
-import emailsConfig from "./emails-config.json";
+import React from 'react';
+import { upperFirst, camelCase } from 'lodash';
+import { EmailExample } from '../../components';
+import * as EmailsFiles from './emails';
+import emailsConfig from './emails-config.json';
 
 const emailsExamples = emailsConfig.reduce(
   (acc, email) =>
@@ -29,9 +29,7 @@ const Email = () =>
       <p>Build and send emails with style.</p>
     </section>
     <section className="section-content">
-      {emailsExamples.map(example =>
-        <EmailExample key={example.title} {...example} />
-      )}
+      {emailsExamples.map(example => <EmailExample key={example.title} {...example} />)}
     </section>
   </div>;
 

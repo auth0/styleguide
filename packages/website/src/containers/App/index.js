@@ -1,7 +1,7 @@
-import React from "react";
-import { HashRouter, Match } from "react-router";
-import { App as HtmlStyleguide } from "html/containers";
-import { App as ReactStyleguide } from "react/containers";
+import React from 'react';
+import { HashRouter, Match } from 'react-router';
+import { App as HtmlStyleguide } from 'html/containers';
+import { App as ReactStyleguide } from 'react/containers';
 
 const App = () =>
   <HashRouter>
@@ -13,8 +13,7 @@ const App = () =>
       <Match
         pattern="/"
         render={({ location }) => {
-          if (location.pathname.startsWith("/react"))
-            return <ReactStyleguide />;
+          if (location.pathname.startsWith('/react')) return <ReactStyleguide />;
           return <HtmlStyleguide />;
         }}
       />

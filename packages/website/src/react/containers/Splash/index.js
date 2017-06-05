@@ -1,6 +1,6 @@
-import React, { PropTypes } from "react";
-import hljs from "highlight.js";
-import "./index.styl";
+import React, { PropTypes } from 'react';
+import hljs from 'highlight.js';
+import './index.styl';
 
 const example = `import React from 'react';
 import ReactDOM from 'react-dom';
@@ -25,17 +25,15 @@ const installationStylesheet = () =>
 
 class Splash extends React.Component {
   componentDidMount() {
-    this.codeExamples = [].slice.call(
-      document.querySelectorAll(".splash-page code")
-    );
-    hljs.configure({ classPrefix: "" });
+    this.codeExamples = [].slice.call(document.querySelectorAll('.splash-page code'));
+    hljs.configure({ classPrefix: '' });
     this.codeExamples.forEach(block => {
       hljs.highlightBlock(block);
     });
   }
 
   componentDidUpdate() {
-    hljs.configure({ classPrefix: "" });
+    hljs.configure({ classPrefix: '' });
     hljs.initHighlighting.called = false;
     this.codeExamples.forEach(block => {
       hljs.highlightBlock(block);
@@ -54,9 +52,7 @@ class Splash extends React.Component {
             <p>To install the latest version:</p>
             <pre>
               <code className="bash">
-                {
-                  "npm i --save react@15 react-bootstrap@0.30 @auth0/styleguide-react-components"
-                }
+                {'npm i --save react@15 react-bootstrap@0.30 @auth0/styleguide-react-components'}
               </code>
             </pre>
 

@@ -1,76 +1,71 @@
-import path from "path";
-import webpack from "webpack";
-import poststylus from "poststylus";
-import ExtractTextPlugin from "extract-text-webpack-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from 'path';
+import webpack from 'webpack';
+import poststylus from 'poststylus';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 if (!process.env.NODE_ENV) {
-  throw new Error(
-    "Define a NODE_ENV env var, it can be development or production."
-  );
+  throw new Error('Define a NODE_ENV env var, it can be development or production.');
 }
 
-const DEBUG = process.env.NODE_ENV === "development";
+const DEBUG = process.env.NODE_ENV === 'development';
 // If `USE_PKGS_CDN` it's true it will use core, components and react-components from the CDN,
 // otherwsie it will use those packages from the repo.
-const USE_PKGS_CDN =
-  process.env.USE_PKGS_CDN === "true" || process.env.USE_PKGS_CDN === true;
+const USE_PKGS_CDN = process.env.USE_PKGS_CDN === 'true' || process.env.USE_PKGS_CDN === true;
 
 const config = {
   entry: [
-    ...(DEBUG
-      ? ["react-hot-loader/patch", "webpack-hot-middleware/client"]
-      : []),
+    ...(DEBUG ? ['react-hot-loader/patch', 'webpack-hot-middleware/client'] : []),
 
     ...(USE_PKGS_CDN
       ? []
       : [
-          "@auth0/styleguide-core/src/main.styl",
-          "@auth0/styleguide-components/src/main.styl",
-          "@auth0/styleguide-react-components/src/index.styl"
+          '@auth0/styleguide-core/src/main.styl',
+          '@auth0/styleguide-components/src/main.styl',
+          '@auth0/styleguide-react-components/src/index.styl'
         ]),
 
-    path.join(__dirname, "../../src/client.js")
+    path.join(__dirname, '../../src/client.js')
   ],
 
   output: {
-    path: path.join(__dirname, "../../build"),
-    filename: "website.js",
-    publicPath: ""
+    path: path.join(__dirname, '../../build'),
+    filename: 'website.js',
+    publicPath: ''
   },
 
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: "babel-loader",
-        include: [path.join(__dirname, "../../src")]
+        use: 'babel-loader',
+        include: [path.join(__dirname, '../../src')]
       },
       {
         test: /\.json$/,
-        use: "json-loader"
+        use: 'json-loader'
       },
       {
         test: /\.(jpg|png)$/,
-        use: "url-loader?limit=25000"
+        use: 'url-loader?limit=25000'
       },
       {
         test: /\.styl/,
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
+          fallbackLoader: 'style-loader',
           loader: [
             {
-              loader: "css-loader",
+              loader: 'css-loader',
               query: {
                 sourceMap: DEBUG,
                 minimize: !DEBUG
               }
             },
             {
-              loader: "stylus-loader",
+              loader: 'stylus-loader',
               query: {
-                "include css": true,
-                paths: [path.resolve(__dirname, "../../node_modules")]
+                'include css': true,
+                paths: [path.resolve(__dirname, '../../node_modules')]
               }
             }
           ]
@@ -79,9 +74,9 @@ const config = {
       {
         test: /\.css/,
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style",
+          fallbackLoader: 'style',
           loader: {
-            loader: "css-loader",
+            loader: 'css-loader',
             query: {
               sourceMap: DEBUG,
               minimize: !DEBUG
@@ -91,20 +86,17 @@ const config = {
       },
       {
         test: /\.(html)$/,
-        use: "raw-loader"
+        use: 'raw-loader'
       },
       {
         test: /\.(pug|jade)$/,
         oneOf: [
           {
-            issuer: path.join(
-              __dirname,
-              "../../src/html/containers/Components/components.js"
-            ),
-            loader: "raw-loader"
+            issuer: path.join(__dirname, '../../src/html/containers/Components/components.js'),
+            loader: 'raw-loader'
           },
           {
-            loader: "pug-loader",
+            loader: 'pug-loader',
             options: {
               pretty: true
             }
@@ -113,11 +105,11 @@ const config = {
       },
       {
         test: /\.svg$/,
-        use: "raw-loader"
+        use: 'raw-loader'
       },
       {
         test: /\.ejs$/,
-        use: "raw-loader"
+        use: 'raw-loader'
       }
     ]
   },
@@ -129,20 +121,20 @@ const config = {
       options: {
         context: __dirname,
         stylus: {
-          use: [poststylus(["autoprefixer"])]
+          use: [poststylus(['autoprefixer'])]
         }
       }
     }),
     // Name of the CSS bundle
     // https://github.com/webpack/extract-text-webpack-plugin/blob/webpack-1/README.md
     new ExtractTextPlugin({
-      filename: "website.css",
+      filename: 'website.css',
       disable: DEBUG
     }),
     // Define free variables
     // https://webpack.github.io/docs/list-of-plugins.html#defineplugin
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": DEBUG ? '"development"' : '"production"'
+      'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"'
     }),
 
     ...(DEBUG
@@ -172,20 +164,18 @@ const config = {
 
     //
     new HtmlWebpackPlugin({
-      title: "Auth0 Styleguide",
-      template: USE_PKGS_CDN
-        ? "./src/views/index.pug"
-        : "./tools/webpack/development-view.pug",
-      inject: "body"
+      title: 'Auth0 Styleguide',
+      template: USE_PKGS_CDN ? './src/views/index.pug' : './tools/webpack/development-view.pug',
+      inject: 'body'
     })
   ],
 
   externals: {
-    jquery: "jQuery"
+    jquery: 'jQuery'
   },
 
   resolve: {
-    modules: [path.join(__dirname, "../../src"), "node_modules"]
+    modules: [path.join(__dirname, '../../src'), 'node_modules']
   },
 
   cache: DEBUG,
@@ -195,7 +185,7 @@ const config = {
     timings: true
   },
 
-  devtool: DEBUG ? "eval-source-map" : false
+  devtool: DEBUG ? 'eval-source-map' : false
 };
 
 export default config;

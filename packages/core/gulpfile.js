@@ -1,44 +1,44 @@
-const gulp = require("gulp");
-const $ = require("gulp-load-plugins")();
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
 
 /**
  * CSS bundle task
  */
-gulp.task("styles", () =>
+gulp.task('styles', () =>
   gulp
-    .src("./src/main.styl")
+    .src('./src/main.styl')
     .pipe(
       $.stylus({
-        "include css": true
+        'include css': true
       })
     )
     .pipe(
       $.autoprefixer({
-        browsers: ["last 2 versions"],
+        browsers: ['last 2 versions'],
         cascade: false
       })
     )
     // Unminified CSS bundle
-    .pipe($.rename("core.css"))
-    .pipe(gulp.dest("./build/"))
+    .pipe($.rename('core.css'))
+    .pipe(gulp.dest('./build/'))
     // Minified CSS bundle
     .pipe($.cssnano())
-    .pipe($.rename("core.min.css"))
-    .pipe(gulp.dest("./build/"))
+    .pipe($.rename('core.min.css'))
+    .pipe(gulp.dest('./build/'))
 );
 
 /**
  * Build task
  */
-gulp.task("build", gulp.series("styles"));
+gulp.task('build', gulp.series('styles'));
 
 /**
  * Watch task
  */
 gulp.task(
-  "watch",
+  'watch',
   gulp.series(done => {
-    gulp.watch("./**/*.styl", gulp.series("build"));
+    gulp.watch('./**/*.styl', gulp.series('build'));
     done();
   })
 );
@@ -46,19 +46,15 @@ gulp.task(
 /**
  * Default task
  */
-gulp.task("default", gulp.series("watch"));
+gulp.task('default', gulp.series('watch'));
 
 /**
  * CDN task
  */
-gulp.task("cdn:fonts", () =>
-  gulp
-    .src("./src/fonts/**/*.+(eot|svg|ttf|otf|woff|woff2)")
-    .pipe(gulp.dest("./cdn/fonts"))
+gulp.task('cdn:fonts', () =>
+  gulp.src('./src/fonts/**/*.+(eot|svg|ttf|otf|woff|woff2)').pipe(gulp.dest('./cdn/fonts'))
 );
 
-gulp.task("cdn:build", () =>
-  gulp.src("./build/**/*.*").pipe(gulp.dest("./cdn"))
-);
+gulp.task('cdn:build', () => gulp.src('./build/**/*.*').pipe(gulp.dest('./cdn')));
 
-gulp.task("cdn", gulp.parallel("cdn:fonts", "cdn:build"));
+gulp.task('cdn', gulp.parallel('cdn:fonts', 'cdn:build'));

@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React, { PropTypes } from 'react';
 
 /**
  * Select: Drop-down list.
@@ -12,19 +12,16 @@ const Select = ({ options, selected, label, color, handleChange }) =>
     <i className="icon-budicon-460" />
     <select
       // Pass event and selected option object to onChange handler
-      onChange={e =>
-        handleChange(e, options.filter(opt => opt.value === e.target.value)[0])}
+      onChange={e => handleChange(e, options.filter(opt => opt.value === e.target.value)[0])}
       value={options[selected].value}
     >
-      {options.map((opt, index) =>
-        <option key={index} value={opt.value}>{opt.label}</option>
-      )}
+      {options.map((opt, index) => <option key={index} value={opt.value}>{opt.label}</option>)}
     </select>
   </div>;
 
 Select.defaultProps = {
   selected: 0,
-  label: "",
+  label: '',
   handleChange: () => {}
 };
 

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Badge, Icon, LogoBox, SVG } from "html/components";
-import Auth0LogoBlue from "@auth0/styleguide-components/src/logos/img/logo-blue.svg";
-import Auth0LogoGrey from "@auth0/styleguide-components/src/logos/img/logo-grey.svg";
-import Auth0Badge from "@auth0/styleguide-components/src/logos/img/badge.svg";
-import badgesConfiguration from "./badges.json";
-import iconsConfiguration from "./icons.json";
-import "./index.styl";
+import React, { Component } from 'react';
+import { Badge, Icon, LogoBox, SVG } from 'html/components';
+import Auth0LogoBlue from '@auth0/styleguide-components/src/logos/img/logo-blue.svg';
+import Auth0LogoGrey from '@auth0/styleguide-components/src/logos/img/logo-grey.svg';
+import Auth0Badge from '@auth0/styleguide-components/src/logos/img/badge.svg';
+import badgesConfiguration from './badges.json';
+import iconsConfiguration from './icons.json';
+import './index.styl';
 
 const renderIconList = () =>
   iconsConfiguration.map(category =>
@@ -15,10 +15,8 @@ const renderIconList = () =>
         {category.icons.map(icon =>
           <li className="col-xs-12 col-sm-6 col-md-4 col-lg-3" key={icon.code}>
             <Icon
-              cssClass={
-                icon.code ? `icon-budicon-${icon.code}` : "icon-budicon"
-              }
-              name={icon.name || ""}
+              cssClass={icon.code ? `icon-budicon-${icon.code}` : 'icon-budicon'}
+              name={icon.name || ''}
             />
           </li>
         )}
@@ -31,7 +29,7 @@ class Resources extends Component {
     super();
 
     this.state = {
-      iconSearchValue: ""
+      iconSearchValue: ''
     };
 
     this.renderFilteredIcons = this.renderFilteredIcons.bind(this);
@@ -45,9 +43,7 @@ class Resources extends Component {
     const filteredIcons = iconsConfiguration.reduce(
       (acc, current) =>
         acc.concat(
-          current.icons.filter(
-            icon => icon.name && icon.name.includes(this.state.iconSearchValue)
-          )
+          current.icons.filter(icon => icon.name && icon.name.includes(this.state.iconSearchValue))
         ),
       []
     );
@@ -65,10 +61,8 @@ class Resources extends Component {
         {filteredIcons.map(icon =>
           <li className="col-xs-12 col-sm-6 col-md-4 col-lg-3" key={icon.code}>
             <Icon
-              cssClass={
-                icon.code ? `icon-budicon-${icon.code}` : "icon-budicon"
-              }
-              name={icon.name || ""}
+              cssClass={icon.code ? `icon-budicon-${icon.code}` : 'icon-budicon'}
+              name={icon.name || ''}
             />
           </li>
         )}
@@ -93,10 +87,7 @@ class Resources extends Component {
             <h2 id="logos">Logos</h2>
             <p>The available file formats include JPG, PNG, SVG and AI.</p>
             <div className="row">
-              <LogoBox
-                title="Blue version"
-                downloadLink="https://cloudup.com/cmshMvKt2bD"
-              >
+              <LogoBox title="Blue version" downloadLink="https://cloudup.com/cmshMvKt2bD">
                 <SVG content={Auth0LogoBlue} />
               </LogoBox>
               <LogoBox
@@ -106,10 +97,7 @@ class Resources extends Component {
               >
                 <SVG content={Auth0LogoGrey} />
               </LogoBox>
-              <LogoBox
-                title="Badge"
-                downloadLink="https://cloudup.com/cHfNwqCZae0"
-              >
+              <LogoBox title="Badge" downloadLink="https://cloudup.com/cHfNwqCZae0">
                 <SVG content={Auth0Badge} />
               </LogoBox>
             </div>
@@ -129,10 +117,7 @@ class Resources extends Component {
                     className="col-xs-6 col-sm-4 col-md-3 col-lg-2 text-center"
                     key={badge.name || badge.title.toLowerCase()}
                   >
-                    <Badge
-                      title={badge.title}
-                      name={badge.name || badge.title.toLowerCase()}
-                    />
+                    <Badge title={badge.title} name={badge.name || badge.title.toLowerCase()} />
                   </div>
                 )}
             </div>
@@ -151,9 +136,7 @@ class Resources extends Component {
               onChange={this.handleIconSearchChange}
               value={this.state.iconSearchValue}
             />
-            {this.state.iconSearchValue === ""
-              ? renderIconList()
-              : this.renderFilteredIcons()}
+            {this.state.iconSearchValue === '' ? renderIconList() : this.renderFilteredIcons()}
           </section>
         </section>
       </div>

@@ -1,7 +1,7 @@
-import React, { PropTypes } from "react";
+import React, { PropTypes } from 'react';
 
 const TypeBox = ({ themeDark }) =>
-  <div className={`column ${themeDark ? "theme-dark" : ""}`}>
+  <div className={`column ${themeDark ? 'theme-dark' : ''}`}>
     <div className="type-box">
       {themeDark
         ? <h5>

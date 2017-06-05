@@ -1,5 +1,5 @@
-import React from "react";
-import { Button } from "../";
+import React from 'react';
+import { Button } from '../';
 
 const codeExample1 = `<div>
   {/* Standard button */}
@@ -52,9 +52,9 @@ const examples = [
     ),
     code: codeExample1,
     center: true,
-    title: "Default",
+    title: 'Default',
     showTitle: false,
-    url: "default"
+    url: 'default'
   }
 ];
 

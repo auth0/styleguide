@@ -1,7 +1,7 @@
-import { execSync } from "child_process";
+import { execSync } from 'child_process';
 
 function openBrowser(url) {
-  if (process.platform === "darwin") {
+  if (process.platform === 'darwin') {
     try {
       // http://superuser.com/a/640718
       execSync(`open ${url}`);

@@ -1,6 +1,6 @@
-import React from "react";
-import { TypeBox, ColorBox } from "../../components";
-import "./index.styl";
+import React from 'react';
+import { TypeBox, ColorBox } from '../../components';
+import './index.styl';
 
 const renderTypography = () =>
   <section>
@@ -71,19 +71,19 @@ const renderTypography = () =>
     <hr />
     <h3>Text utilities</h3>
     <p className="text-left">
-      {" "}<code>.text-left</code> Einstein&apos;s Letter to Freud
+      {' '}<code>.text-left</code> Einstein&apos;s Letter to Freud
     </p>
     <p className="text-center">
-      {" "}<code>.text-center</code> Einstein&apos;s Letter to Freud
+      {' '}<code>.text-center</code> Einstein&apos;s Letter to Freud
     </p>
     <p className="text-right">
-      {" "}<code>.text-right</code> Einstein&apos;s Letter to Freud
+      {' '}<code>.text-right</code> Einstein&apos;s Letter to Freud
     </p>
     <p className="text-justify">
-      {" "}<code>.text-justify</code> Einstein&apos;s Letter to Freud
+      {' '}<code>.text-justify</code> Einstein&apos;s Letter to Freud
     </p>
     <p className="text-nowrap">
-      {" "}<code>.text-nowrap</code> Einstein&apos;s Letter to Freud
+      {' '}<code>.text-nowrap</code> Einstein&apos;s Letter to Freud
     </p>
     <p>
       <code>.text-lowercase</code>
@@ -158,10 +158,7 @@ const Design = () =>
   <div className="styleguide-section design-section">
     <section className="jumbotron">
       <h2>
-        <img
-          src="https://cdn.auth0.com/website/styleguide/design-icon.svg"
-          alt="Design"
-        />
+        <img src="https://cdn.auth0.com/website/styleguide/design-icon.svg" alt="Design" />
       </h2>
       <h1>Design</h1>
       <p>

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import hljs from "highlight.js";
-import { upperFirst, camelCase } from "lodash";
-import { ComponentExample } from "html/components";
-import * as ComponentsFiles from "./components";
-import componentsConfig from "./components-config.json";
+import React, { Component } from 'react';
+import hljs from 'highlight.js';
+import { upperFirst, camelCase } from 'lodash';
+import { ComponentExample } from 'html/components';
+import * as ComponentsFiles from './components';
+import componentsConfig from './components-config.json';
 
 const componentsExamples = componentsConfig.reduce(
   (acc, component) =>
@@ -19,11 +19,9 @@ const componentsExamples = componentsConfig.reduce(
 
 class Components extends Component {
   componentDidMount() {
-    hljs.configure({ classPrefix: "" });
+    hljs.configure({ classPrefix: '' });
     hljs.initHighlighting();
-    document
-      .querySelectorAll("pre.hl code")
-      .forEach(block => hljs.highlightBlock(block));
+    document.querySelectorAll('pre.hl code').forEach(block => hljs.highlightBlock(block));
   }
   render() {
     return (
@@ -39,9 +37,7 @@ class Components extends Component {
           <p>Set of components used across our website and apps.</p>
         </section>
         <section className="section-content">
-          {componentsExamples.map(example =>
-            <ComponentExample key={example.title} {...example} />
-          )}
+          {componentsExamples.map(example => <ComponentExample key={example.title} {...example} />)}
         </section>
       </div>
     );

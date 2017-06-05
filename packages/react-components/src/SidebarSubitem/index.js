@@ -1,4 +1,4 @@
-import React, { PropTypes, cloneElement } from "react";
+import React, { PropTypes, cloneElement } from 'react';
 
 const SidebarSubitem = ({ text, wrapper }) => {
   const WrapperSubitemChildren = () =>

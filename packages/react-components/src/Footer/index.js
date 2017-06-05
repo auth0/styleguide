@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 /**
  * Footer: Auth0's footer component. Styles are inherited from components CSS bundle.

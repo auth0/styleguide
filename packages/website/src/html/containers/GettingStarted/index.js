@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import hljs from "highlight.js";
-import $ from "jquery";
+import React, { Component } from 'react';
+import hljs from 'highlight.js';
+import $ from 'jquery';
 
 const cdnExample = `<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.5/core.min.css" />
 <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/2.0.0/components.min.css" />`;
@@ -9,13 +9,13 @@ npm install --save @auth0/styleguide-components`;
 
 const highlightSnippets = () => {
   hljs.configure({
-    tabReplace: "  ", // 4 spaces
-    classPrefix: "" // don't append class prefix
+    tabReplace: '  ', // 4 spaces
+    classPrefix: '' // don't append class prefix
   });
 
   hljs.initHighlighting();
 
-  $("pre.hl code").each((i, block) => hljs.highlightBlock(block));
+  $('pre.hl code').each((i, block) => hljs.highlightBlock(block));
 };
 
 class GettingStarted extends Component {
@@ -55,7 +55,7 @@ class GettingStarted extends Component {
               Download the packages from NPM if you need to access to the stylus
               mixins or variables.
               You can see more information in the
-              {" "}
+              {' '}
               <a
                 href="https://github.com/auth0/styleguide"
                 target="_blank"

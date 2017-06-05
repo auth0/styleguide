@@ -1,5 +1,5 @@
-import React, { cloneElement, Children, PropTypes } from "react";
-import cx from "classnames";
+import React, { cloneElement, Children, PropTypes } from 'react';
+import cx from 'classnames';
 
 const SidebarItem = ({ text, wrapper, arrow, icon, children, open }) => {
   const heightMenu = Children.count(children) * 45 - 1;
@@ -11,11 +11,11 @@ const SidebarItem = ({ text, wrapper, arrow, icon, children, open }) => {
     </span>;
 
   return (
-    <li className={`a0r-sidebar-menu-item ${open ? "active" : ""}`}>
+    <li className={`a0r-sidebar-menu-item ${open ? 'active' : ''}`}>
       {cloneElement(wrapper, { children: <WrapperItemChildren /> })}
       {children
         ? <ul
-            className={cx("menu-sublist", { "is-opened": open })}
+            className={cx('menu-sublist', { 'is-opened': open })}
             style={{ height: `${heightMenu}px` }}
           >
             {children}

@@ -62,7 +62,8 @@ Main component file, it should export the component.
 We use [react-docgen](https://github.com/reactjs/react-docgen) to extract information from this file to generate the documentation of our components. You should use the following structure:
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Example component title: Example component description.

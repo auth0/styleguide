@@ -1,5 +1,6 @@
-import React, { Children, PropTypes } from 'react';
+import React, { Children } from 'react';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 
 /**
  * Sidebar: Styleguide sidebar with drop drown sections.

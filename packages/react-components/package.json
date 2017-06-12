@@ -39,7 +39,7 @@
   },
   "peerDependencies": {
     "react": "^15.0.0",
-    "react-bootstrap": "^0.30.6"
+    "react-bootstrap": "^0.30.6 || ^0.31.0"
   },
   "devDependencies": {
     "@kadira/react-storybook-decorator-centered": "^1.0.0",

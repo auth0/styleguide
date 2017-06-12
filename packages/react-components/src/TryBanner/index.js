@@ -1,5 +1,6 @@
 /* eslint max-len: ["error", 100, { "ignoreComments": true }] */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Try Banner: The main call to action to signup.

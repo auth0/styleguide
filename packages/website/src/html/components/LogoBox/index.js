@@ -12,11 +12,15 @@ const LogoBox = ({ title, children, logoClass, downloadLink }) =>
     </div>
   </div>;
 
+LogoBox.defaultProps = {
+  logoClass: ''
+};
+
 LogoBox.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   logoClass: PropTypes.string,
-  downloadLink: PropTypes.string
+  downloadLink: PropTypes.string.isRequired
 };
 
 export default LogoBox;

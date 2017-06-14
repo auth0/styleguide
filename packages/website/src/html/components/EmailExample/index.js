@@ -68,7 +68,7 @@ class EmailExample extends Component {
     return (
       <section className="html-example email-component" id={id}>
         <h2>{title}</h2>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
+        {description && <div dangerouslySetInnerHTML={{ __html: description }} />}
         {this.renderActions()}
         <div className="html-example-playground">
           <div
@@ -76,6 +76,7 @@ class EmailExample extends Component {
             className="example-component"
           >
             <iframe
+              title="email-frame"
               className="email-iframe"
               srcDoc={html}
               ref={e => (this.iframe = e)}
@@ -101,6 +102,10 @@ class EmailExample extends Component {
     );
   }
 }
+
+EmailExample.defaultProps = {
+  description: undefined
+};
 
 EmailExample.propTypes = {
   title: PropTypes.string.isRequired,

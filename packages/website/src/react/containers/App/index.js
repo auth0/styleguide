@@ -16,9 +16,9 @@ const App = () =>
     <Sidebar components={componentsCollection} />
     <main className="styleguide-content">
       <Match pattern="/react" exactly render={() => <Splash version={version} />} />
-      {componentsCollection.map((component, index) =>
+      {componentsCollection.map(component =>
         <Match
-          key={index}
+          key={component.title}
           pattern={component.url}
           render={() => <ComponentPage {...component} />}
         />

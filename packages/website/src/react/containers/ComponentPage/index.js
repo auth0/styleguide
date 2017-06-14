@@ -38,8 +38,8 @@ const ComponentPage = ({ title, name, description, props, url, examples, reactBo
   </section>;
 
 ComponentPage.defaultProps = {
-  props: false,
-  reactBootstrap: false
+  props: undefined,
+  reactBootstrap: ''
 };
 
 ComponentPage.propTypes = {

@@ -28,8 +28,8 @@ const SidebarItem = ({ text, wrapper, arrow, icon, children, open }) => {
 
 SidebarItem.defaultProps = {
   arrow: false,
-  icon: false,
-  children: false,
+  icon: undefined,
+  children: undefined,
   open: false
 };
 

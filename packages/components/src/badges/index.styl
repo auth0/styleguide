@@ -20,9 +20,9 @@ $badge-border-radius ?=       10px
 .badge
   display inline-block
   min-width 10px
-  padding 3px 7px
+  padding 4px 8px
   font-size $font-size-small
-  font-weight $badge-font-weight
+  font-weight $font-weight-bold
   color $badge-color
   line-height $badge-line-height
   vertical-align middle
@@ -30,6 +30,9 @@ $badge-border-radius ?=       10px
   text-align center
   background-color $badge-bg
   border-radius $badge-border-radius
+
+  & + &
+    margin-left 6px
 
   // Empty badges collapse automatically (not available in IE8)
   &:empty
@@ -67,3 +70,27 @@ $badge-border-radius ?=       10px
 
   .nav-pills > li > a > &
     margin-left 3px
+
+// Colors
+//
+// Contextual variations (linked badges get darker on :hover).
+
+.badge-primary {
+  badge-variant($brand-primary);
+}
+
+.badge-success {
+  badge-variant($bg-color-success);
+}
+
+.badge-info {
+  badge-variant($brand-info);
+}
+
+.badge-warning {
+  badge-variant($brand-warning);
+}
+
+.badge-danger {
+  badge-variant($brand-danger);
+}

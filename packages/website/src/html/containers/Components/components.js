@@ -33,6 +33,9 @@ export TablesHtml from '@auth0/styleguide-components/build/components/tables/dem
 export LabelsPug from '@auth0/styleguide-components/src/labels/demo.pug';
 export LabelsHtml from '@auth0/styleguide-components/build/components/labels/demo.html';
 
+export BadgesPug from '@auth0/styleguide-components/src/badges/demo.pug';
+export BadgesHtml from '@auth0/styleguide-components/build/components/badges/demo.html';
+
 export NavsPug from '@auth0/styleguide-components/src/navs/demo.pug';
 export NavsHtml from '@auth0/styleguide-components/build/components/navs/demo.html';
 

@@ -52,7 +52,7 @@ Sidebar.propTypes = {
   /**
    * Element to replace the default header content.
    */
-  header: PropTypes.node,
+  header: PropTypes.node, // eslint-disable-line react/require-default-props
   /**
    * The content of the menu. This is usually used to pass SidebarItem and SidebarSubitem elements.
    */
@@ -60,7 +60,7 @@ Sidebar.propTypes = {
   /**
    * Controls whether the navigation is opened or not, only used for mobile.
    */
-  mobileNavOpen: PropTypes.bool,
+  mobileNavOpen: PropTypes.bool, // eslint-disable-line react/require-default-props
   /**
    * Callback fired when on mobile the Toggle Navigation button is pressed.
    */

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/* eslint-disable react/require-default-props */
+
 /**
  * Empty state: Simple component for onboarding users to sections with no data.
  */

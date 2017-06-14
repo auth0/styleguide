@@ -15,6 +15,12 @@ const EmptyState = ({ title, description, iconCode, image, children }) =>
     <div className="a0r-empty-state-children"> {children} </div>
   </div>;
 
+EmptyState.defaultProps = {
+  iconCode: '750',
+  image: false,
+  children: undefined
+};
+
 EmptyState.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

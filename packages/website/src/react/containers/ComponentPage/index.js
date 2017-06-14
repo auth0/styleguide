@@ -23,7 +23,7 @@ const ComponentPage = ({ title, name, description, props, url, examples, reactBo
       </div>}
     {examples.map((example, index) =>
       <Example
-        key={index}
+        key={index} // eslint-disable-line react/no-array-index-key
         url={url}
         component={example.component}
         code={example.code}
@@ -36,6 +36,11 @@ const ComponentPage = ({ title, name, description, props, url, examples, reactBo
     )}
     {props && <PropertiesTable props={props} />}
   </section>;
+
+ComponentPage.defaultProps = {
+  props: undefined,
+  reactBootstrap: ''
+};
 
 ComponentPage.propTypes = {
   title: PropTypes.string.isRequired,

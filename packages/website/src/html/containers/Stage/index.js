@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+/* eslint-disable global-require, import/no-dynamic-require */
+
 class Stage extends Component {
   constructor(props) {
     super();
@@ -15,6 +17,10 @@ class Stage extends Component {
     );
   }
 }
+
+Stage.defaultProps = {
+  isEmail: false
+};
 
 Stage.propTypes = {
   params: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types

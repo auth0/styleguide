@@ -11,6 +11,7 @@ const Footer = () =>
           src="https://cdn.auth0.com/styleguide/components/1.0.8/media/logos/img/badge.png"
           width={30}
           className="sc-footer__logo-image"
+          alt=""
         />
       </div>
       <div className="sc-footer__grid">
@@ -179,6 +180,7 @@ const Footer = () =>
               <a
                 href="https://twitter.com/auth0"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="sc-footer__like-buttons__link sc-footer__like-buttons__link--twitter"
               >
                 <span className="sc-footer__like-buttons__icon-container">
@@ -200,6 +202,7 @@ const Footer = () =>
               <a
                 href="https://www.linkedin.com/company/auth0"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="sc-footer__like-buttons__link sc-footer__like-buttons__link--linkedin"
               >
                 <span className="sc-footer__like-buttons__icon-container">
@@ -220,13 +223,14 @@ const Footer = () =>
               <a
                 href="https://www.facebook.com/getauth0"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="sc-footer__like-buttons__link sc-footer__like-buttons__link--facebook"
               >
                 <span className="sc-footer__like-buttons__icon-container">
                   <svg viewBox="0 0 16 16" className="sc-footer__like-buttons__icon">
                     <path
                       fill="#fff"
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M4.55 7c.248 0 .45.234.45.522v5.956c0 .288-.202.522-.45.522h-2.1c-.248 0-.45-.234-.45-.522V7.522C2 7.234 2.202 7 2.45 7h2.1zm1.995 6.2c-.305-.036-.528-.302-.545-.626.017 0 .013-2.906 0-4.43.013-.525.108-1.458.398-1.87.708-1.008 1.205-1.666 1.494-2.048.29-.382.636-.755.646-1.04.013-.384 0-.39 0-.83 0-.44.208-.856.733-.856.257 0 .46.057.65.3.304.356.516.92.516 1.81S9.51 6.173 9.51 6.18h4.037c.618-.004.954.545.954 1.117 0 .536-.364.982-.844 1.057.29.14.5.47.5.852 0 .476-.325.872-.756.94.23.145.375.406.375.702 0 .398-.26.733-.615.813.21.14.346.396.346.685 0 .452-.334.823-.763.857H6.545z"
                     />
                   </svg>

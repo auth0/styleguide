@@ -48,6 +48,11 @@ const Sidebar = ({ children, header, mobileNavOpen, toggleNavOnClick }) => {
   );
 };
 
+Sidebar.defaultProps = {
+  header: undefined,
+  mobileNavOpen: false
+};
+
 Sidebar.propTypes = {
   /**
    * Element to replace the default header content.

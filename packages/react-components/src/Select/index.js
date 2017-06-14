@@ -16,14 +16,15 @@ const Select = ({ options, selected, label, color, handleChange }) =>
       onChange={e => handleChange(e, options.filter(opt => opt.value === e.target.value)[0])}
       value={options[selected].value}
     >
-      {options.map((opt, index) => <option key={index} value={opt.value}>{opt.label}</option>)}
+      {options.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
     </select>
   </div>;
 
 Select.defaultProps = {
   selected: 0,
   label: '',
-  handleChange: () => {}
+  handleChange: () => {},
+  color: undefined
 };
 
 Select.propTypes = {

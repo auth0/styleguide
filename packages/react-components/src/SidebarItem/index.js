@@ -26,6 +26,13 @@ const SidebarItem = ({ text, wrapper, arrow, icon, children, open }) => {
   );
 };
 
+SidebarItem.defaultProps = {
+  arrow: false,
+  icon: undefined,
+  children: undefined,
+  open: false
+};
+
 SidebarItem.propTypes = {
   /**
    * Text of the item.

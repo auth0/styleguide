@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/* eslint-disable react/require-default-props */
-
 /**
  * Empty state: Simple component for onboarding users to sections with no data.
  */
@@ -16,6 +14,12 @@ const EmptyState = ({ title, description, iconCode, image, children }) =>
     {description && <p className="a0r-empty-state-description">{description}</p>}
     <div className="a0r-empty-state-children"> {children} </div>
   </div>;
+
+EmptyState.defaultProps = {
+  iconCode: '750',
+  image: false,
+  children: undefined
+};
 
 EmptyState.propTypes = {
   title: PropTypes.string.isRequired,

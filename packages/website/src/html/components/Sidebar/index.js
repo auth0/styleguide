@@ -5,7 +5,7 @@ import {
   SidebarSubitem
 } from '@auth0/styleguide-react-components';
 import { Link } from 'react-router';
-import _kebabCase from 'lodash/kebabCase';
+import { kebabCase } from 'lodash';
 import sidebarConfig from './sidebar-config.json';
 import componentsConfig from '../../containers/Components/components-config.json';
 import emailsConfig from '../../containers/Email/emails-config.json';
@@ -89,7 +89,7 @@ class Sidebar extends Component {
               wrapper={realWrapper}
               open={this.state[`item-${i}`]}
               arrow={fatherItem.arrow}
-              key={`father-item-${_kebabCase(fatherItem.text)}`}
+              key={`father-item-${kebabCase(fatherItem.text)}`}
             >
               {fatherItem.children &&
                 fatherItem.children.map(childItem => {
@@ -100,7 +100,7 @@ class Sidebar extends Component {
                     <SidebarSubitem
                       text={childItem.text}
                       wrapper={<Link to={subItemURL} />}
-                      key={`children-item-${_kebabCase(childItem.text)}`}
+                      key={`children-item-${kebabCase(childItem.text)}`}
                     />
                   );
                 })}

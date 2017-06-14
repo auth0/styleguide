@@ -1,0 +1,8 @@
+badge-variant($color){
+  background-color: $color;
+
+  &[href]:hover,
+  &[href]:focus {
+    background-color: darken($color, 10%);
+  }
+}

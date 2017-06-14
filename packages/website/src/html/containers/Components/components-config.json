@@ -55,6 +55,11 @@
     "description": "<p>Labels are used to provide additional information about something.</p>"
   },
   {
+    "folder": "badges",
+    "title": "Badges",
+    "description": "<p>Badges are used to provide additional information about something.</p>"
+  },
+  {
     "folder": "navs",
     "title": "Navs",
     "description": "<p>Use the <code>.nav-center</code> modifier to center the elements in the list.</p>"

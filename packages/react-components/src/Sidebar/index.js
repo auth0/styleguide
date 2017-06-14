@@ -48,11 +48,16 @@ const Sidebar = ({ children, header, mobileNavOpen, toggleNavOnClick }) => {
   );
 };
 
+Sidebar.defaultProps = {
+  header: undefined,
+  mobileNavOpen: false
+};
+
 Sidebar.propTypes = {
   /**
    * Element to replace the default header content.
    */
-  header: PropTypes.node, // eslint-disable-line react/require-default-props
+  header: PropTypes.node,
   /**
    * The content of the menu. This is usually used to pass SidebarItem and SidebarSubitem elements.
    */
@@ -60,7 +65,7 @@ Sidebar.propTypes = {
   /**
    * Controls whether the navigation is opened or not, only used for mobile.
    */
-  mobileNavOpen: PropTypes.bool, // eslint-disable-line react/require-default-props
+  mobileNavOpen: PropTypes.bool,
   /**
    * Callback fired when on mobile the Toggle Navigation button is pressed.
    */

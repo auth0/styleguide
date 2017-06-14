@@ -2,8 +2,6 @@ import React, { cloneElement, Children } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-/* eslint-disable react/require-default-props */
-
 const SidebarItem = ({ text, wrapper, arrow, icon, children, open }) => {
   const heightMenu = Children.count(children) * 45 - 1;
   const WrapperItemChildren = () =>
@@ -26,6 +24,13 @@ const SidebarItem = ({ text, wrapper, arrow, icon, children, open }) => {
         : null}
     </li>
   );
+};
+
+SidebarItem.defaultProps = {
+  arrow: false,
+  icon: false,
+  children: false,
+  open: false
 };
 
 SidebarItem.propTypes = {

@@ -23,7 +23,8 @@ const Select = ({ options, selected, label, color, handleChange }) =>
 Select.defaultProps = {
   selected: 0,
   label: '',
-  handleChange: () => {}
+  handleChange: () => {},
+  color: undefined
 };
 
 Select.propTypes = {
@@ -46,7 +47,7 @@ Select.propTypes = {
    */
   handleChange: PropTypes.func.isRequired,
   label: PropTypes.string,
-  color: PropTypes.string // eslint-disable-line react/require-default-props
+  color: PropTypes.string
 };
 
 export default Select;

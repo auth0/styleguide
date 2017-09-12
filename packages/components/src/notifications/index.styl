@@ -2,20 +2,32 @@
 .auth0-notification-global
 	background: white
 	margin-bottom: 25px
-	position: relative
 	overflow: hidden
+	position: relative
 	
 	.notification-icon
-		line-height: 1;
-		position: absolute;
-		left: 20px;
-		top: 30px;
-		font-size: 18px;
+		line-height: 1
+		font-size: 18px
+
+		+breakpoint("tablet", "max")
+			margin-bottom: 14px
+
+		+breakpoint("tablet", "min")
+			margin-right: 25px
+
+	.btn
+		flex-shrink: 0
+
+		+breakpoint("tablet", "min")
+			margin-left: 25px
 	
 	p
-		margin: 0 0
-		float: left
-		width: 80%
+		margin: 0
+		flex-grow: 1
+
+		+breakpoint("tablet", "max")
+			margin-bottom: 14px;
+			text-align: center;
 	
 	&.primary .notification-icon
 		color: #44C7F4
@@ -28,21 +40,24 @@
 	
 	.close
 		color: #ddd
-		position: absolute
-		top: 30px
-		right: 15px
 		font-size: 14px;
 		opacity: 1
-		
-	.btn
-		position:absolute
-		right: 15px
-		top: 19px
-		max-width: 20%
+		margin-left: 25px;
+
+		+breakpoint("tablet", "max")
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			margin-left: 0;
 
 .auth0-notification
-	padding: 25px 60px
+	padding: 25px 20px
 	box-shadow 0 2px 4px rgba(0,0,0,.11)
+	display: flex
+	align-items: center
+
+	+breakpoint("tablet", "max")
+		flex-direction: column;
 
 .auth0-notification-global
 	background: transparent
@@ -50,6 +65,10 @@
 	padding: 0
 	
 	.container
-		padding: 25px 60px
+		padding: 25px 20px
 		width: 100%
-		position: relative
+		display: flex
+		align-items: center
+
+		+breakpoint("tablet", "max")
+			flex-direction: column;

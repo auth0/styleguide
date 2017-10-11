@@ -28,6 +28,7 @@
   { "title": ".NET (legacy)", "name": "netclassic" },
   { "title": "ASP Classic", "name": "asp-classic" },
   { "title": "Python" },
+  { "title": "Django" },
   { "title": "Scala" },
   { "title": "Android" },
   { "title": "Rails" },

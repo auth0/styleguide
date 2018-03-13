@@ -5,3 +5,4 @@ lerna-debug.log
 build
 .DS_Store
 packages/react-components/lib
+.idea

@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import centered from '@kadira/react-storybook-decorator-centered';
+import { storiesOf, action } from '@storybook/react';
+import centered from '@storybook/addon-centered';
 import { Select } from '../../src';
 
 storiesOf('Select', module)

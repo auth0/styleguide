@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import SidebarItem from './';
 import { SidebarSubitem } from '../';
 
 storiesOf('SidebarItem', module)
   .add('text prop', () => <SidebarItem text="Auth0" />)
   .add('text and icon prop', () => <SidebarItem text="Auth0" icon={12} />)
-  .add('text, icon and arrow prop', () => <SidebarItem text="Auth0" icon={12} arrow />)
   .add('text, icon and arrow prop', () => <SidebarItem text="Auth0" icon={12} arrow />)
   .add('text, icon, arrow and wrapper prop', () =>
     <SidebarItem text="Auth0" icon={12} wrapper={<em />} arrow />

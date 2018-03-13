@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import centered from '@kadira/react-storybook-decorator-centered';
+import { storiesOf } from '@storybook/react';
+import centered from '@storybook/addon-centered';
 import { Button } from '../../src';
 
 storiesOf('Button', module).addDecorator(centered).add('Button styles', () =>

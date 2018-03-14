@@ -52,7 +52,7 @@ class Splash extends React.Component {
             <p>To install the latest version:</p>
             <pre>
               <code className="bash">
-                {'npm i --save react@15 react-bootstrap@0.30 @auth0/styleguide-react-components'}
+                {'npm i --save react@16 react-bootstrap@0.32 @auth0/styleguide-react-components'}
               </code>
             </pre>
 

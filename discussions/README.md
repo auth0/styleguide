@@ -1,0 +1,1 @@
+In this directory is a collection of documents that cover a number of the technical and architectural decisions that have been made.

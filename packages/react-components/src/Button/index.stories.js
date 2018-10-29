@@ -32,7 +32,8 @@ storiesOf('Button', module)
   ))
 
   .add('Button w/ icon & text', () => (
-    <Button bsStyle="success">
-      <i className="icon icon-budicon-473" /> Create
+    <Button bsStyle="success" className="a0r-button">
+      <i className="icon icon-budicon-473" />
+      Create
     </Button>
   ));

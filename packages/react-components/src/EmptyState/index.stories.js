@@ -18,11 +18,12 @@ storiesOf('EmptyState', module)
         for your applications which can then be added to groups.`}
       iconCode="291"
     >
-      <Button href="#" bsStyle="transparent">
+      <Button href="#" className="btn-transparent">
         Read more
       </Button>
-      <Button bsStyle="success">
-        <i className="icon icon-budicon-473" /> Create your first role
+      <Button bsStyle="success" className="a0r-button">
+        <i className="icon icon-budicon-473" />
+        Create your first role
       </Button>
     </EmptyState>
   ));

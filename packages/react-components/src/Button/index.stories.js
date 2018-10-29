@@ -29,4 +29,10 @@ storiesOf('Button', module)
       {/* Deemphasize a button by making it look like a link while maintaining button behavior */}
       <Button bsStyle="link">Link</Button>
     </ButtonToolbar>
+  ))
+
+  .add('Button w/ icon & text', () => (
+    <Button bsStyle="success">
+      <i className="icon icon-budicon-473" /> Create
+    </Button>
   ));

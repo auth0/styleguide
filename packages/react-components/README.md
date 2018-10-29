@@ -1,6 +1,6 @@
 # Auth0 Styleguide - React Components
 
-Library of Auth0 React components. All the [react-bootstrap](http://react-bootstrap.github.io/components.html) components are re-exported inside this lib.
+Library of Auth0 React components. All the [react-bootstrap](https://react-bootstrap.github.io/components/alerts/) components are re-exported inside this lib.
 
 You can find the API, see examples, and play with live editing of every component on the [React Components section of our styleguide](https://styleguide.auth0.com/#/react).
 

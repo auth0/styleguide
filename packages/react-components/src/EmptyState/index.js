@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * Empty state: Simple component for onboarding users to sections with no data.
  */
-const EmptyState = ({ title, description, iconCode, image, children }) =>
+export const EmptyState = ({ title, description, iconCode, image, children }) =>
   <div className="a0r-empty-state">
     <h2 className="a0r-empty-state-title">{title}</h2>
     {image ||
@@ -28,5 +28,3 @@ EmptyState.propTypes = {
   image: PropTypes.node,
   children: PropTypes.node
 };
-
-export default EmptyState;

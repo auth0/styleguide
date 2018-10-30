@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * Select: Drop-down list.
  */
-const Select = ({ options, selected, label, color, handleChange }) =>
+export const Select = ({ options, selected, label, color, handleChange }) =>
   <div className="a0r-select">
     {label && <span>{label}</span>}
     <span className="a0r-value text-truncate" style={{ color }}>
@@ -49,5 +49,3 @@ Select.propTypes = {
   label: PropTypes.string,
   color: PropTypes.string
 };
-
-export default Select;

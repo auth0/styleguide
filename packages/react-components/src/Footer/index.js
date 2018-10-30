@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Footer: Auth0's footer component. Styles are inherited from components CSS bundle.
  */
-const Footer = () =>
+export const Footer = () =>
   <footer role="contentinfo" className="sc-footer">
     <div className="container">
       <div className="sc-footer__logo">
@@ -259,5 +259,3 @@ const Footer = () =>
       </div>
     </div>
   </footer>;
-
-export default Footer;

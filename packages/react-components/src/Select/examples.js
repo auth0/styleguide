@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import React from 'react';
-import Select from './';
+import { Select } from './';
 
 const examples = [
   {

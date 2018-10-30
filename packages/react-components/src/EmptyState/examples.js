@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/href-no-hash */
 import React from 'react';
-import EmptyState from './';
+import { EmptyState } from './';
 
 // Showcase component differents usecases
-const examples = [
+export const examples = [
   {
     component: (
       <EmptyState
@@ -35,5 +35,3 @@ const examples = [
     url: 'default'
   }
 ];
-
-export default examples;

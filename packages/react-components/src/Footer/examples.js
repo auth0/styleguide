@@ -1,7 +1,7 @@
 import React from 'react';
-import Footer from './';
+import { Footer } from './';
 
-const examples = [
+export const examples = [
   {
     component: <Footer />,
     code: '<Footer />',
@@ -11,5 +11,3 @@ const examples = [
     url: 'default'
   }
 ];
-
-export default examples;

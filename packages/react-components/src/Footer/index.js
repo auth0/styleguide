@@ -151,7 +151,7 @@ const Footer = () =>
               <h6 className="sc-footer__title">Contact</h6>
             </div>
             <div className="sc-footer__item sc-footer__item--text">
-              10900 NE 8th Street<br />Suite 700<br />Bellevue, WA 98004
+              10800 NE 8th Street<br />Suite 600<br />Bellevue, WA 98004
             </div>
           </div>
           <div className="sc-footer__contact-column sc-footer__contact-column--phone">

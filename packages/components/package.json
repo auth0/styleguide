@@ -1,6 +1,6 @@
 {
   "name": "@auth0/styleguide-components",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "HTML and CSS components for Auth0 projects.",
   "main": "build/core.css",
   "style": "build/core.css",
@@ -35,7 +35,7 @@
     "eslint": "^3.19.0",
     "eslint-config-auth0-base": "^13.0.0",
     "eslint-plugin-import": "^2.3.0",
-    "gulp": "github:gulpjs/gulp#c120a94",
+    "gulp": "github:gulpjs/gulp#d420a6a",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-ejs": "^2.3.0",

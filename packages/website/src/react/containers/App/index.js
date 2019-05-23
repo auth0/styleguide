@@ -1,5 +1,5 @@
 import React from 'react';
-import { Match, Miss } from 'react-router';
+import { Route, Switch } from 'react-router';
 import { ComponentPage, Splash } from 'react/containers';
 import { NotFound } from 'containers';
 import { Sidebar } from 'react/components';
@@ -11,21 +11,24 @@ import './index.styl';
 
 const componentsCollection = generateComponentsCollection(StyleguideComponents);
 
-const App = () =>
+const App = () => (
   <div className="auth0-react-styleguide">
     <Sidebar components={componentsCollection} />
     <main className="styleguide-content">
-      <Match pattern="/react" exactly render={() => <Splash version={version} />} />
-      {componentsCollection.map(component =>
-        <Match
-          key={component.title}
-          pattern={component.url}
-          render={() => <ComponentPage {...component} />}
-        />
-      )}
-      <Miss component={NotFound} />
+      <Switch>
+        <Route path="/react" exact render={() => <Splash version={version} />} />
+        {componentsCollection.map(component => (
+          <Route
+            key={component.title}
+            path={component.url}
+            render={() => <ComponentPage {...component} />}
+          />
+        ))}
+        {/* <Route component={NotFound} /> */}
+      </Switch>
     </main>
-  </div>;
+  </div>
+);
 
 export default App;
 

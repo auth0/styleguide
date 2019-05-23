@@ -4,7 +4,7 @@ import {
   SidebarItem,
   SidebarSubitem
 } from '@auth0/styleguide-react-components';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { kebabCase } from 'lodash';
 import sidebarConfig from './sidebar-config.json';
 import componentsConfig from '../../containers/Components/components-config.json';
@@ -78,9 +78,11 @@ class Sidebar extends Component {
         }
       >
         {dinamicSidebarConfig.map((fatherItem, i) => {
-          const realWrapper = fatherItem.url
-            ? <Link to={fatherItem.url} onClick={() => this.toggleState(`item-${i}`)} />
-            : <div onClick={() => this.toggleState(`item-${i}`)} />;
+          const realWrapper = fatherItem.url ? (
+            <Link to={fatherItem.url} onClick={() => this.toggleState(`item-${i}`)} />
+          ) : (
+            <div onClick={() => this.toggleState(`item-${i}`)} />
+          );
 
           return (
             <SidebarItem

@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import hljs from 'highlight.js';
 import './index.styl';
 
@@ -72,7 +72,9 @@ class ComponentExample extends Component {
           />
           <div style={activeSection !== 'pug' ? { display: 'none' } : {}} className="example-pug">
             <pre>
-              <code ref={e => (this.pugCode = e)} className="pug">{pug}</code>
+              <code ref={e => (this.pugCode = e)} className="pug">
+                {pug}
+              </code>
             </pre>
           </div>
           <div style={activeSection !== 'html' ? { display: 'none' } : {}} className="example-html">

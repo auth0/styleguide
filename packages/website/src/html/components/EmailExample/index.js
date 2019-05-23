@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import hljs from 'highlight.js';
 import './index.styl';
 

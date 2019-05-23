@@ -1,5 +1,5 @@
 import React from 'react';
-import { Match, Miss } from 'react-router';
+import { Switch, Route } from 'react-router';
 import { Home, GettingStarted, Design, Components, Stage, Email, Resources } from 'html/containers';
 import { Sidebar } from 'html/components';
 import { NotFound } from 'containers';
@@ -27,10 +27,10 @@ function scrollTo(element) {
   return true;
 }
 
-const App = () =>
+const App = () => (
   <div className="auth0-html-styleguide">
-    <Match
-      pattern="/"
+    <Route
+      path="/"
       render={({ location }) => {
         if (location.pathname.endsWith('/stage')) return null;
 
@@ -38,51 +38,53 @@ const App = () =>
       }}
     />
     <div className="styleguide-content">
-      <Match pattern="/" exactly component={Home} />
+      <Switch>
+        <Route path="/" exact component={Home} />
 
-      <Match pattern="/getting-started" exactly component={ScrollToTop} />
-      <Match pattern="/getting-started" component={GettingStarted} />
-      <Match pattern="/getting-started/:section" component={ScrollToSection} />
+        <Route path="/getting-started" exact component={ScrollToTop} />
+        <Route path="/getting-started" component={GettingStarted} />
+        <Route path="/getting-started/:section" component={ScrollToSection} />
 
-      <Match pattern="/design" exactly component={ScrollToTop} />
-      <Match pattern="/design" component={Design} />
-      <Match pattern="/design/:section" component={ScrollToSection} />
+        <Route path="/design" exact component={ScrollToTop} />
+        <Route path="/design" component={Design} />
+        <Route path="/design/:section" component={ScrollToSection} />
 
-      <Match pattern="/components" exactly component={ScrollToTop} />
-      <Match
-        pattern="/components"
-        render={({ location }) => {
-          // Don't render Components when matchs "/components/:section/stage".
-          if (location.pathname.endsWith('/stage')) return null;
-          return <Components />;
-        }}
-      />
-      <Match pattern="/components/:section" exactly component={ScrollToSection} />
+        <Route path="/components" exact component={ScrollToTop} />
+        <Route
+          path="/components"
+          render={({ location }) => {
+            // Don't render Components when Routes "/components/:section/stage".
+            if (location.pathname.endsWith('/stage')) return null;
+            return <Components />;
+          }}
+        />
+        <Route path="/components/:section" exact component={ScrollToSection} />
 
-      <Match pattern="/email-templates" exactly component={ScrollToTop} />
-      <Match
-        pattern="/email-templates"
-        render={({ location }) => {
-          // Don't render Emails when matchs "/components/:section/stage".
-          if (location.pathname.endsWith('/stage')) return null;
-          return <Email />;
-        }}
-      />
-      <Match pattern="/email-templates/:section" component={ScrollToSection} />
+        <Route path="/email-templates" exact component={ScrollToTop} />
+        <Route
+          path="/email-templates"
+          render={({ location }) => {
+            // Don't render Emails when Routes "/components/:section/stage".
+            if (location.pathname.endsWith('/stage')) return null;
+            return <Email />;
+          }}
+        />
+        <Route path="/email-templates/:section" component={ScrollToSection} />
 
-      <Match pattern="/resources" exactly component={ScrollToTop} />
-      <Match pattern="/resources" component={Resources} />
-      <Match pattern="/resources/:section" component={ScrollToSection} />
-
-      <Miss component={NotFound} />
+        <Route path="/resources" exact component={ScrollToTop} />
+        <Route path="/resources" component={Resources} />
+        <Route path="/resources/:section" component={ScrollToSection} />
+      </Switch>
+      {/* <Miss component={NotFound} /> */}
     </div>
 
-    <Match pattern="/components/:section/stage" exactly component={Stage} />
-    <Match
-      pattern="/email-templates/:section/stage"
-      exactly
+    <Route path="/components/:section/stage" exact component={Stage} />
+    <Route
+      path="/email-templates/:section/stage"
+      exact
       render={props => <Stage isEmail {...props} />}
     />
-  </div>;
+  </div>
+);
 
 export default App;

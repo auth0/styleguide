@@ -4,7 +4,7 @@ import {
   SidebarItem,
   SidebarSubitem
 } from '@auth0/styleguide-react-components';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import './index.styl';
 
 class Sidebar extends Component {
@@ -58,9 +58,9 @@ class Sidebar extends Component {
           open={rCItemOpen}
           wrapper={<div onClick={() => this.toggleState('rCItemOpen')} />} // eslint-disable-line jsx-a11y/no-static-element-interactions
         >
-          {components.map(({ title, url }) =>
+          {components.map(({ title, url }) => (
             <SidebarSubitem text={title} wrapper={<Link to={url} />} key={title} />
-          )}
+          ))}
         </SidebarItem>
         <SidebarItem text="CSS components" icon={258} wrapper={<Link to="/" />} arrow />
       </SidebarRC>

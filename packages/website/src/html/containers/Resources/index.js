@@ -126,8 +126,7 @@ class Resources extends Component {
             <h2 id="icons">Icons</h2>
             <p>
               Iconography is another language to communicate visually. Built by
-              &nbsp;
-              <a href="http://budicon.buditanrim.co/preview">Budi</a>.
+              <a href="https://budicon.co/">Budi</a>.
             </p>
             <input
               className="form-control"

@@ -13,6 +13,7 @@
   { "title": "NGINX" },
   { "title": "Falcor" },
   { "title": "Node" },
+  { "title": "Next.js", "name": "nextjs" },
   { "title": "Ruby" },
   { "title": "Apple" },
   { "title": "PHP" },

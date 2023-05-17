@@ -1,3 +1,6 @@
+
+**This repository is no longer maintained. Consider using [Quantum Design System](https://www.npmjs.com/package/@auth0/quantum-product) as an alternative.**
+
 Auth0 Styleguide
 ================
 

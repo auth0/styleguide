@@ -1,8 +1,24 @@
 @charset "UTF-8";
 
-// Core package (using local monorepo path - not npm)
-@import '../../core/src/vars/';
-@import '../../core/src/mixins/';
+// This file creates the monolithic index.css (like /latest/ structure)
+// It combines core + components with proper font overrides
+
+// Inter font
+@import './fonts/inter/index';
+
+$font-family-sans-serif = 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
+
+// Core package imports (using local monorepo path - not npm)
+@import '../node_modules/normalize-css/normalize.css'
+@import '../../core/src/vars/'
+@import '../../core/src/mixins/'
+@import '../../core/src/utilities/'
+@import '../../core/src/grid/'
+// Fonts imported separately above
+@import '../../core/src/typography/'
+@import '../../core/src/responsive/'
+@import '../../core/src/scaffolding/'
+@import '../../core/src/helpers/'
 
 // Quick fix for error with @extend .img-responsive in carousel and thumbnails
 // without importing whole scaffolding/index.styl file

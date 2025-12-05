@@ -9,7 +9,7 @@ Includes the common styles for every Auth0 applications like variables, mixins, 
 Using our CDN is the prefered solution. Just add the following line in your project's HTML head and you are done.
 
 ```html
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.5/core.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/3.1.0/core.min.css" />
 ```
 
 ### NPM

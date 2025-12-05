@@ -9,7 +9,7 @@ CSS components for Auth0 projects (based on Bootstrap components).
 Using our CDN is the prefered solution. Just add the following line in your project's HTML head and you are done.
 
 ```html
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/2.0.0/components.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/3.1.0/components.min.css" />
 ```
 
 ### NPM
@@ -39,23 +39,6 @@ Example
 ```
 bin/version patch
 ```
-
-## Font licensing update (v3.1.0)
-
-**Email Templates - Avenir Font Removal:** Removed proprietary Avenir font from MJML email templates and replaced with system font stack for maximum compatibility and legal compliance.
-
-Email templates now use:
-```
--apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
-```
-
-This ensures emails render with native fonts on all platforms without licensing issues:
-- **macOS/iOS:** San Francisco (Apple's system font)
-- **Windows:** Segoe UI
-- **Android:** Roboto
-- **Others:** Helvetica Neue or Arial
-
-Visual impact is minimal as system fonts provide professional typography. This change resolves licensing liability for Avenir font distribution.
 
 ## License
 

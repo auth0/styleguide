@@ -2,10 +2,12 @@
 // License: SIL Open Font License 1.1
 // https://github.com/rsms/inter
 
+$inter-cdn-base ?= 'https://cdn.auth0.com/styleguide/core/3.1.0/fonts/inter'
+
 // Inter Light (300)
 @font-face
   font-family: 'Inter'
-  src: url('./Inter-Light.ttf') format('truetype')
+  src: url($inter-cdn-base + '/Inter-Light.ttf') format('truetype')
   font-weight: 300
   font-style: normal
   font-display: swap
@@ -13,7 +15,7 @@
 // Inter Regular (400)
 @font-face
   font-family: 'Inter'
-  src: url('./Inter-Regular.ttf') format('truetype')
+  src: url($inter-cdn-base + '/Inter-Regular.ttf') format('truetype')
   font-weight: 400
   font-style: normal
   font-display: swap
@@ -21,7 +23,7 @@
 // Inter Medium (500)
 @font-face
   font-family: 'Inter'
-  src: url('./Inter-Medium.ttf') format('truetype')
+  src: url($inter-cdn-base + '/Inter-Medium.ttf') format('truetype')
   font-weight: 500
   font-style: normal
   font-display: swap
@@ -29,7 +31,7 @@
 // Inter SemiBold (600)
 @font-face
   font-family: 'Inter'
-  src: url('./Inter-SemiBold.ttf') format('truetype')
+  src: url($inter-cdn-base + '/Inter-SemiBold.ttf') format('truetype')
   font-weight: 600
   font-style: normal
   font-display: swap

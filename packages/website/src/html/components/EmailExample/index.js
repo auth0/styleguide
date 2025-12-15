@@ -79,20 +79,32 @@ class EmailExample extends Component {
               title="email-frame"
               className="email-iframe"
               srcDoc={html}
-              ref={e => (this.iframe = e)}
+              ref={e => {
+                this.iframe = e;
+              }}
               onLoad={this.resizeIframe}
             />
           </div>
           <div style={activeSection !== 'mjml' ? { display: 'none' } : {}} className="example-mjml">
             <pre>
-              <code ref={e => (this.mjmlCode = e)} className="mjml">
+              <code
+                ref={e => {
+                  this.mjmlCode = e;
+                }}
+                className="mjml"
+              >
                 {mjml}
               </code>
             </pre>
           </div>
           <div style={activeSection !== 'html' ? { display: 'none' } : {}} className="example-html">
             <pre>
-              <code ref={e => (this.htmlCode = e)} className="html">
+              <code
+                ref={e => {
+                  this.htmlCode = e;
+                }}
+                className="html"
+              >
                 {html}
               </code>
             </pre>

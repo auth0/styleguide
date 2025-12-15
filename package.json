@@ -3,6 +3,10 @@
   "version": "5.0.0",
   "scripts": {
     "heroku-postbuild": "lerna bootstrap",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "build": "lerna run build",
+    "publish:cdn": "lerna run publish:cdn",
     "precommit": "lint-staged"
   },
   "repository": {

@@ -14,6 +14,7 @@
     "build:js:umd-es": "rollup -c tools/rollup/rollup.config.js && rollup -c tools/rollup/rollup.config.js --environment PRODUCTION",
     "build:js:lib": "babel src -d lib",
     "build:css": "gulp styles",
+    "publish:cdn": "ccu",
     "start": "start-storybook -p 9001 -c .storybook",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",

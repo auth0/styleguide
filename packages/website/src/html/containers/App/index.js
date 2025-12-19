@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Home, GettingStarted, Design, Components, Stage, Email, Resources } from 'html/containers';
 import { Sidebar } from 'html/components';
-import { NotFound } from 'containers';
+// import { NotFound } from 'containers';
 import jump from 'jump.js';
 import './index.styl';
 

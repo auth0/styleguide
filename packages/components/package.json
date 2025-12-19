@@ -1,6 +1,6 @@
 {
   "name": "@auth0/styleguide-components",
-  "version": "2.0.11",
+  "version": "3.1.0",
   "description": "HTML and CSS components for Auth0 projects.",
   "main": "build/core.css",
   "style": "build/core.css",
@@ -8,6 +8,7 @@
     "prepublish": "NODE_ENV=production npm run build",
     "start": "gulp",
     "build": "gulp build",
+    "publish:cdn": "gulp cdn && ccu",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint build/components.css",
@@ -28,7 +29,6 @@
     "src"
   ],
   "devDependencies": {
-    "@auth0/styleguide-core": "^2.0.1",
     "animate.css": "^3.5.2",
     "bump-version": "^0.5.0",
     "component-cdn-uploader": "auth0/component-cdn-uploader#v1.3.0",

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import { ComponentPage, Splash } from 'react/containers';
-import { NotFound } from 'containers';
+// import { NotFound } from 'containers';
 import { Sidebar } from 'react/components';
 import * as StyleguideComponents from '@auth0/styleguide-react-components';
 import * as StyleguideComponentsExamples from '@auth0/styleguide-react-components/lib/examples';

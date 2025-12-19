@@ -72,14 +72,24 @@ class ComponentExample extends Component {
           />
           <div style={activeSection !== 'pug' ? { display: 'none' } : {}} className="example-pug">
             <pre>
-              <code ref={e => (this.pugCode = e)} className="pug">
+              <code
+                ref={e => {
+                  this.pugCode = e;
+                }}
+                className="pug"
+              >
                 {pug}
               </code>
             </pre>
           </div>
           <div style={activeSection !== 'html' ? { display: 'none' } : {}} className="example-html">
             <pre>
-              <code ref={e => (this.htmlCode = e)} className="html">
+              <code
+                ref={e => {
+                  this.htmlCode = e;
+                }}
+                className="html"
+              >
                 {html}
               </code>
             </pre>

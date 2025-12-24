@@ -15,10 +15,10 @@ And load the CSS from our CDN:
 
 ```html
 <!-- Core and Components CSS bundles are peer dependencies of react-components -->
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/2.0.5/core.min.css" />
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/2.0.0/components.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/3.1.0/core.min.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/3.1.0/components.min.css" />
 
-<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/1.0.2/react-components.css" />
+<link rel="stylesheet" href="https://cdn.auth0.com/styleguide/react-components/1.0.5/react-components.css" />
 ```
 
 The CSS bundles are also included on the packages installed via npm, but we encourage you to use it via our CDN so we all benefit from sharing the same url of the package to improve load time.

@@ -32,7 +32,7 @@
     "normalize-css": "^2.3.1"
   },
   "devDependencies": {
-    "@auth0/component-cdn-uploader": "^2.4.2",
+    "@auth0/component-cdn-uploader": "^2.0.0",
     "bump-version": "^0.5.0",
     "eslint": "^3.19.0",
     "eslint-config-auth0-base": "^13.0.0",
@@ -46,7 +46,7 @@
     "stylelint": "^7.5.0",
     "stylelint-config-standard": "^15.0.1"
   },
-  "cdn-component": {
+  "ccu": {
     "name": "core",
     "cdn": "https://cdn.auth0.com",
     "mainBundleFile": "core.css",

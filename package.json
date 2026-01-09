@@ -16,10 +16,11 @@
   "license": "UNLICENSED",
   "author": "Auth0 (https://auth0.com)",
   "engines": {
-    "npm": "^3.10.8"
+    "node": ">=18.0.0",
+    "npm": ">=10.0.0"
   },
   "dependencies": {
-    "lerna": "2.0.0-beta.38"
+    "lerna": "^4.0.0"
   },
   "devDependencies": {
     "husky": "^0.13.4",

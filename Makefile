@@ -1,9 +1,7 @@
 .PHONY: install lint test build publish
 
 install:
-	git config --global --add safe.directory "$$(pwd)" || true
 	npm ci
-	npm run heroku-postbuild
 
 lint:
 	npm run lint

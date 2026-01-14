@@ -9,7 +9,8 @@ gulp.task('styles', () =>
     .src('./src/main.styl')
     .pipe(
       $.stylus({
-        'include css': true
+        'include css': true,
+        paths: ['../../node_modules']
       })
     )
     .pipe(

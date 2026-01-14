@@ -19,7 +19,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint build/react-components.css",
-    "test": "npm run lint && mocha \"src/**/*.test.js\" --require test/setup.js --compilers js:babel-register"
+    "test": "npm run lint:js && mocha \"src/**/*.test.js\" --require test/setup.js --compilers js:babel-register"
   },
   "keywords": [
     "auth0",

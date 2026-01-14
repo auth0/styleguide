@@ -12,7 +12,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint build/core.css",
-    "test": "npm run lint"
+    "test": "npm run lint:js"
   },
   "keywords": [
     "auth0",

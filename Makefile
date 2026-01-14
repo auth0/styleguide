@@ -2,8 +2,7 @@
 
 install:
 	git config --global --add safe.directory "$$(pwd)" || true
-	npm ci
-	npm run heroku-postbuild
+	npm install
 
 lint:
 	npm run lint

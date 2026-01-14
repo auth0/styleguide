@@ -1,12 +1,17 @@
 {
   "name": "auth0-styleguide",
   "version": "5.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/core",
+    "packages/components",
+    "packages/react-components"
+  ],
   "scripts": {
-    "heroku-postbuild": "lerna bootstrap",
-    "lint": "lerna run lint",
-    "test": "lerna run test",
-    "build": "lerna run build",
-    "publish:cdn": "lerna run publish:cdn",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "publish:cdn": "npm run publish:cdn --workspaces --if-present",
     "precommit": "lint-staged"
   },
   "repository": {
@@ -19,15 +24,11 @@
     "node": ">=18.0.0",
     "npm": ">=10.0.0"
   },
-  "dependencies": {
-    "lerna": "^4.0.0"
-  },
   "devDependencies": {
     "husky": "^0.13.4",
     "lint-staged": "^3.6.0",
     "prettier": "^1.4.2"
   },
-  "private": true,
   "lint-staged": {
     "*.js": [
       "prettier --write --print-width 100 --single-quote",

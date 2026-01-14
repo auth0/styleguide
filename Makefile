@@ -2,7 +2,7 @@
 
 install:
 	git config --global --add safe.directory "$$(pwd)" || true
-	npm install
+	npm ci
 
 lint:
 	npm run lint
